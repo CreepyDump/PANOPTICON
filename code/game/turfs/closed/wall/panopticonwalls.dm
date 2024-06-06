@@ -1,0 +1,67 @@
+/turf/closed/wall/mineral/panopticon
+	canSmoothWith = null
+	desc = ""
+	smooth = SMOOTH_FALSE
+	var/smooth_icon = null
+	smooth_diag = FALSE
+	sheet_type = null
+	baseturfs = list(/turf/open/floor/rogue/dirt/road)
+	wallclimb = TRUE
+
+/turf/closed/wall/mineral/panopticon/Initialize()
+	if(smooth_icon)
+		icon = smooth_icon
+	. = ..()
+
+/turf/closed/wall/mineral/panopticon/bunker
+	name = "Bunker wall"
+	icon = 'icons/turf/walls/bunkerwall.dmi'
+	icon_state = "bunkerwall"
+	smooth = SMOOTH_MORE
+	blade_dulling = DULLING_BASH
+	max_integrity = 10000
+	sheet_type = null
+	break_sound = 'sound/combat/hits/onmetal/sheet (1).ogg'
+	attacked_sound = list('sound/combat/hits/onmetal/attackpipewall (1).ogg','sound/combat/hits/onmetal/attackpipewall (2).ogg')
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/bunker)
+	above_floor = /turf/open/floor/panopticon/bunker
+	baseturfs = list(/turf/open/floor/panopticon/bunker)
+	wallclimb = FALSE
+	damage_deflection = 20
+
+/turf/closed/wall/mineral/panopticon/bunker/rustwall
+	icon = 'icons/turf/walls/rust_wall.dmi'
+	icon_state = "rustwall"
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/bunker/rustwall)
+
+/turf/closed/wall/mineral/panopticon/kirpich
+	name = "Brick-wall"
+	icon = 'icons/turf/walls/kirpichwall.dmi'
+	icon_state = "kirpich"
+	smooth = SMOOTH_MORE
+	blade_dulling = DULLING_BASH
+	max_integrity = 10000
+	sheet_type = null
+	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
+	attacked_sound = list('sound/combat/hits/onrock/onrock (1).ogg','sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg')
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/kirpich)
+	above_floor = /turf/open/floor/panopticon/beton
+	baseturfs = list(/turf/open/floor/panopticon/bunker/metal)
+	wallclimb = FALSE
+	damage_deflection = 20
+
+/turf/closed/wall/mineral/panopticon/woods
+	name = "Wooden wall"
+	icon = 'icons/turf/walls/woodwall.dmi'
+	icon_state = "wood"
+	smooth = SMOOTH_MORE
+	blade_dulling = DULLING_BASH
+	max_integrity = 10000
+	sheet_type = null
+	break_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
+	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/woods)
+	above_floor = /turf/open/floor/panopticon/darkwood
+	baseturfs = list(/turf/open/floor/panopticon/darkwood)
+	wallclimb = TRUE
+	damage_deflection = 20
