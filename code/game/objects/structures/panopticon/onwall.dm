@@ -84,3 +84,6 @@
 	desc = "A sign that greets newcomers to Vostok Bunker."
 	icon = 'icons/panopticon/obj/bigass.dmi'
 	icon_state = "vostok_sign"
+
+/obj/structure/panopticon/onwall/graffiti
+	icon_state = "graffiti"

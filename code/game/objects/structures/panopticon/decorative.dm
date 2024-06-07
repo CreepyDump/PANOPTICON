@@ -38,11 +38,13 @@
 	desc = ""
 	icon_state = "relsi"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	max_integrity = 0
 
 /obj/structure/panopticon/bunkercabinet
 	name = "Steel cabinet"
 	icon_state = "komod"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	max_integrity = 0
 
 /obj/effect/decal/panopticon/mysor
 	name = "Rubbish"
@@ -54,6 +56,7 @@
 	desc = "I hope it feels fantastic!"
 	icon_state = "loh_sdoh"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	max_integrity = 0
 
 /obj/effect/decal/panopticon/pit
 	name = "Pit"
@@ -65,8 +68,28 @@
 	name = "Radiator"
 	icon_state = "radiator"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	max_integrity = 0
 
 /obj/effect/decal/panopticon/pallet
 	name = "Pallet"
 	icon_state = "pallet"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
+
+/obj/effect/decal/panopticon/skull
+	name = "Skull"
+	desc = "Poor Yorick!"
+	icon_state = "skull"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+
+/obj/effect/decal/panopticon/skull/Initialize()
+	. = ..()
+	dir = pick(GLOB.cardinals)
+
+/obj/effect/decal/panopticon/mirkstones
+	name = "Stones"
+	icon_state = "ston"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+
+/obj/effect/decal/panopticon/mirkstones/Initialize()
+	. = ..()
+	dir = pick(GLOB.cardinals)

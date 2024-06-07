@@ -88,6 +88,8 @@
 		if(prob(45))
 			new /turf/open/floor/panopticon/darkgrass(get_turf(src))
 			new /obj/structure/flora/panopticon/grass(get_turf(src))
+		if(prob(40))
+			new /obj/effect/decal/panopticon/mirkstones(get_turf(src))
 		if(prob(5))
 			new /obj/structure/panopticon/psychickgrib(get_turf(src))
 		if(prob(15))
@@ -102,8 +104,10 @@
 					new /turf/open/water/cleanshallow(get_turf(src))
 		if (prob(30))
 			new /turf/open/floor/panopticon/mud(get_turf(src))
-		if (prob(2))
+		if (prob(1))
 			new /obj/effect/mine/explosive/panopticon/landmine(get_turf(src))
+		if (prob(1))
+			new /obj/effect/decal/panopticon/skull(get_turf(src))
 
 /turf/open/floor/panopticon/mud
 	icon_state = "mud"
