@@ -1,1 +1,1 @@
-"Ne participes, nec mors sequetur"
+Moj je tata zločinac iz rata
