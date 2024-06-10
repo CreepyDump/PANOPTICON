@@ -153,6 +153,10 @@ GLOBAL_LIST_INIT(bunker_positions, list(
 	"Slug"
 	))
 
+GLOBAL_LIST_INIT(outside_positions, list(
+	"Strafbat"
+	))
+
 GLOBAL_LIST_INIT(test_positions, list(
 	"Tester"
 	))

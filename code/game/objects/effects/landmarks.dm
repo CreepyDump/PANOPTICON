@@ -101,6 +101,17 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 	jobspawn_override = list("Slug")
 
+/obj/effect/landmark/start/shtrafslate
+	name = "Strafslate"
+	icon_state = "arrow"
+	jobspawn_override = list("Strafbat")
+	delete_after_roundstart = FALSE
+
+/obj/effect/landmark/start/shtrafspawn
+	name = "Strafbat"
+	icon_state = "arrow"
+	jobspawn_override = list("Strafbat")
+
 /obj/effect/landmark/start/vagrantlate
 	name = "Beggarlate"
 	icon_state = "arrow"

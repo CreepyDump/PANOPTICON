@@ -134,6 +134,7 @@ obj/item/gun/ballistic/rifle/attackby(obj/item/A, mob/user, params)
 	rack_sound = 'sound/combat/Ranged/rifle-rack-01.ogg'
 	bolt_drop_sound = 'sound/combat/Ranged/rifle-bolt-01.ogg'
 	slot_flags = ITEM_SLOT_BACK
+	recoil = 1
 
 /obj/item/gun/ballistic/rifle/gusyevboltovka/getonmobprop(tag)
 	. = ..()

@@ -1,18 +1,17 @@
-/datum/job/roguetown/panopticon/slug
+/datum/job/panopticon/slug
 	title = "Slug"
 	flag = SLUG
 	department_flag = BUNKER
 	faction = "Station"
-	total_positions = 15
-	spawn_positions = 15
+	total_positions = 30
+	spawn_positions = 30
 	selection_color = JCOLOR_BUNKER
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/slug
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE
-
-	tutorial = "Cogito ergo sum."
+	tutorial = "A bunch of crackheads, hobos, outlaws and other dregs of society forced to hide deep in the wilds, occupying a godforsaken bunker."
 	display_order = JDO_SLUG
 	show_in_credits = TRUE
 	give_bank_account = FALSE
@@ -45,21 +44,20 @@
 		beltl = null
 		beltr = null
 		l_hand = /obj/item/panopticonweapon/boner/nailplank
-	if(prob(5))
-		cloak = /obj/item/clothing/armor/panopticon
-		head = /obj/item/clothing/head/panopticon/jeremyden
-		back = /obj/item/gun/ballistic/automatic/panopticon/krasnik
+	if(H.gender == MALE)
+		if(prob(5))
+			cloak = /obj/item/clothing/armor/panopticon
+			head = /obj/item/clothing/head/panopticon/jeremyden
+			backl = /obj/item/gun/ballistic/automatic/panopticon/krasnik
 	if(prob(75))
 		beltr = /obj/item/roguecoin/silver
 
 /datum/outfit/job/panopticon/slug
-	uniform = null
-	id = null
-	ears = null
-	belt = null
+	shoes = /obj/item/clothing/shoes/panopticon
+	shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
+	pants = /obj/item/clothing/under/panopticon/civilianpants
 	back = null
-	shoes = null
-	box = null
-	backpack = null
-	satchel  = null
-	duffelbag = null
+	id = null
+	belt = null
+	beltl = null
+	beltr = null

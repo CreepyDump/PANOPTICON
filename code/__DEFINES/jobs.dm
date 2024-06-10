@@ -5,8 +5,20 @@
 
 #define SLUG	(1<<0)
 
-#define JDO_SLUG 10
+#define JDO_SLUG 1
 
+#define JCOLOR_OUTSIDERS "#96832f"
+#define OUTSIDERS	(1<<3)
+
+#define SHTRAFBAT	(1<<0)
+
+#define JDO_SHTRAFBAT 1
+
+#define LESHIY	(1<<1)
+
+#define JDO_LESHIY 2
+
+// PANOPTICON //
 
 #define ENGSEC			(1<<0)
 

@@ -93,3 +93,8 @@
 /obj/effect/decal/panopticon/mirkstones/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
+
+/obj/effect/decal/panopticon/wartrash
+	name = "Trash"
+	icon_state = "wartrash"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'

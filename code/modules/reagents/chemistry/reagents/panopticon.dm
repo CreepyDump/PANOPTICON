@@ -42,14 +42,6 @@
 	ADD_TRAIT(M, TRAIT_DRUQK, "based")
 	M.update_body_parts_head_only()
 	SSdroning.area_entered(get_area(M), M.client)
-	M.overlay_fullscreen("heroino", /obj/screen/fullscreen/heroino)
-
-/obj/screen/fullscreen/heroino
-	icon = 'icons/mob/screen_full.dmi'
-	screen_loc = "1,1"
-	icon_state = "heroino"
-	alpha = 100
-
 //	if(!M.hud_used)
 //		return
 
@@ -60,6 +52,5 @@
 //	var/list/obj/screen/plane_master/plane_masters = M.hud_used.plane_masters[GAME_PLANE]
 //	game_plane_master_controller.remove_filter("heroino")
 	M.update_body_parts_head_only()
-	M.clear_fullscreen("heroino")
 	REMOVE_TRAIT(M, TRAIT_DRUQK, "based")
 	SSdroning.play_area_sound(get_area(M), M.client)

@@ -1,6 +1,3 @@
-/datum/job/roguetown
-	display_order = JOB_DISPLAY_ORDER_CAPTAIN
-
 /datum/job/roguetown/New()
 	. = ..()
 	if(give_bank_account)

@@ -810,7 +810,9 @@
 /turf/open/floor/panopticon/darkwood/parket,
 /area/panopticon/indoors/bunker)
 "sM" = (
-/obj/structure/panopticon/onwall/flag,
+/obj/structure/panopticon/onwall/graffiti{
+	dir = 8
+	},
 /turf/closed/wall/mineral/panopticon/bunker,
 /area/panopticon/indoors/bunker/special)
 "sO" = (
@@ -1681,6 +1683,9 @@
 /area/panopticon/indoors/bunker)
 "MF" = (
 /obj/structure/panopticon/onwall/inwallpipe,
+/obj/structure/panopticon/onwall/graffiti{
+	dir = 4
+	},
 /turf/closed/wall/mineral/panopticon/bunker,
 /area/panopticon/indoors/bunker/special)
 "ML" = (
@@ -1839,8 +1844,10 @@
 /turf/open/floor/panopticon/bunker/cargo,
 /area/panopticon/indoors/bunker)
 "PH" = (
-/obj/structure/panopticon/onwall/consulposter,
-/turf/closed/wall/mineral/panopticon/bunker,
+/obj/structure/panopticon/onwall/graffiti{
+	dir = 8
+	},
+/turf/closed/wall/mineral/panopticon/bunker/rustwall,
 /area/panopticon/indoors/bunker/special)
 "PL" = (
 /obj/machinery/light/small,
@@ -14410,7 +14417,7 @@ IB
 IB
 IB
 IB
-kC
+sM
 KF
 KF
 KF
@@ -14671,7 +14678,7 @@ KF
 KF
 UP
 NY
-NY
+PH
 NY
 NY
 NY
@@ -14791,7 +14798,7 @@ IB
 IB
 IB
 IB
-PH
+kC
 KF
 KF
 KF
@@ -14918,7 +14925,7 @@ IB
 IB
 IB
 IB
-kC
+sM
 fQ
 KF
 KF
@@ -15303,7 +15310,7 @@ kC
 kC
 kC
 kC
-kC
+sM
 kC
 IB
 IB

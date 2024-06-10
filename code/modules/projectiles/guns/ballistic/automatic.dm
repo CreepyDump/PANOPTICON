@@ -358,6 +358,7 @@
 	fire_sound_volume = 85
 	rack_sound = 'sound/combat/Ranged/automat-rack-01.ogg'
 	slot_flags = ITEM_SLOT_BACK
+	recoil = 1
 
 /obj/item/gun/ballistic/automatic/panopticon/krasnik/getonmobprop(tag)
 	. = ..()

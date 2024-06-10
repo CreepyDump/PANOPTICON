@@ -286,3 +286,4 @@
 	icon = 'icons/panopticon/items/guns.dmi'
 	icon_state = "doublebarrel"
 	item_state = "shotgun_db"
+	recoil = 2

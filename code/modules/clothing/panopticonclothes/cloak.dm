@@ -14,7 +14,6 @@
 	item_state = "bomj"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	sleeved = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK

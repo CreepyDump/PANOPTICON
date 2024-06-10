@@ -62,3 +62,6 @@
 
 /datum/skill/combat/unarmed
 	name = "Fist-fighting"
+
+/datum/skill/combat/guns
+	name = "Guns"

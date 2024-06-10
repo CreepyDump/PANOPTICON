@@ -97,6 +97,14 @@
 	soundenv = 15
 	first_time_text = "DARKWOOD"
 	converted_type = /area/rogue/indoors/shelter/woods
+	ambush_times = list("night", "dawn", "day")
+	ambush_types = list(
+				/turf/open/floor/panopticon/darkgrass,
+				/turf/open/floor/panopticon/mud)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 36,
+				/mob/living/simple_animal/hostile/retaliate/panopticon/baun = 30)
+
 /area/panopticon/indoors/shelter/darkwood
 	droning_sound = 'sound/music/area/deadcats.ogg'
 	droning_sound_dusk = null
@@ -113,3 +121,14 @@
 	droning_sound = 'sound/music/area/derevnya.ogg'
 	droning_sound_dusk = 'sound/music/area/derevnya.ogg'
 	droning_sound_night = 'sound/music/area/forest.ogg'
+
+/area/panopticon/outdoors/darkwood/pole
+	name = "fields"
+	ambientrain = RAIN_OUT
+	ambientsounds = AMB_FORESTDAY
+	ambientnight = AMB_FORESTNIGHT
+	spookysounds = HORROR_FOREST
+	spookynight = HORROR_FOREST
+	droning_sound = 'sound/music/area/pole.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null

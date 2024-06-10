@@ -18,6 +18,7 @@
 	force = 5
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
+	associated_skill = /datum/skill/combat/guns
 
 	var/fire_sound = 'sound/blank.ogg'
 	var/vary_fire_sound = TRUE
@@ -28,7 +29,7 @@
 	var/suppressed_sound = 'sound/blank.ogg'
 	var/suppressed_volume = 60
 	var/can_unsuppress = TRUE
-	var/recoil = 1						//boom boom shake the room
+	var/recoil = 0						//boom boom shake the room
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers

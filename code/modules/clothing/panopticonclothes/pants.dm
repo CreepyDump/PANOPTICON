@@ -21,3 +21,9 @@
 	gender = PLURAL
 	icon_state = "civilianpants"
 	item_state = "civilianpants"
+
+/obj/item/clothing/under/panopticon/dedushkapants
+	name = "Checkered pants"
+	gender = PLURAL
+	icon_state = "ded"
+	item_state = "ded"

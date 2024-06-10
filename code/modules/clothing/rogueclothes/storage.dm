@@ -201,7 +201,7 @@
 	desc = ""
 	icon_state = "backpack"
 	item_state = "backpack"
-	icon = 'icons/roguetown/clothing/storage.dmi'
+	icon = 'icons/panopticon/obj/clothes/storage.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK_L
 	resistance_flags = NONE

@@ -49,3 +49,9 @@
 	icon_state = "shtrafbat"
 	item_state = "shtrafbat"
 	flags_inv = HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/head/panopticon/vargcap
+	name = "Folker Cap"
+	icon_state = "varg"
+	item_state = "varg"
+	flags_inv = HIDEEARS|HIDEHAIR

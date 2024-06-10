@@ -17,3 +17,12 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|ARMS|VITALS
+
+
+/obj/item/clothing/suit/panopticon/shirt/shtrafbatshirt
+	name = "Kosovorotka"
+	icon_state = "kosovorotka"
+	item_state = "kosovorotka"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS
