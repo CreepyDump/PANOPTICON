@@ -164,7 +164,13 @@
 						'sound/ambience/noises/bunker (7).ogg',\
 						'sound/ambience/noises/hull.ogg',\
 						'sound/ambience/noises/bunker (8).ogg',\
+						'sound/ambience/noises/genspooky (2).ogg',\
+						'sound/ambience/noises/genspooky (3).ogg',\
 						'sound/ambience/noises/genspooky (5).ogg',\
+						'sound/ambience/noises/genspooky (6).ogg',\
+						'sound/ambience/noises/genspooky (7).ogg',\
+						'sound/ambience/noises/genspooky (8).ogg',\
+						'sound/ambience/noises/genspooky (9).ogg',\
 						'sound/ambience/noises/strange.ogg',\
 						'sound/ambience/noises/thefuck.ogg',\
 						'sound/ambience/noises/noise1.ogg',\
@@ -198,6 +204,7 @@
 						'sound/ambience/noises/birds (4).ogg',\
 						'sound/ambience/noises/birds (5).ogg',\
 						'sound/ambience/noises/birds (6).ogg',\
+						'sound/ambience/noises/genspooky (7).ogg',\
 						'sound/ambience/noises/wheeze.ogg',\
 						'sound/ambience/noises/dogs (1).ogg',\
 						'sound/ambience/noises/dogs (2).ogg',\

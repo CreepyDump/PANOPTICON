@@ -98,3 +98,10 @@
 	name = "Trash"
 	icon_state = "wartrash"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
+
+/obj/structure/panopticon/minesdoski
+	name = ""
+	desc = ""
+	icon_state = "mines"
+	icon = 'icons/panopticon/obj/bigass.dmi'
+	max_integrity = 0

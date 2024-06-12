@@ -1,5 +1,5 @@
 /turf/open/floor/panopticon
-	name = "floor"
+	name = ""
 	desc = ""
 	canSmoothWith = null
 	smooth = SMOOTH_FALSE
@@ -133,3 +133,18 @@
 	barefootstep = FOOTSTEP_SOFT_BAREFOOT
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
+
+/turf/open/floor/panopticon/road
+	name = ""
+	icon_state = "road"
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/grassland.wav'
+
+/obj/effect/decal/panopticon/road
+	name = ""
+	icon = 'icons/turf/panopticonfloor.dmi'
+	icon_state = "roadover"
