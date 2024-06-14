@@ -14,6 +14,7 @@
 	icon_state = "red_barrel"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	density = TRUE
+	attacked_sound = 'sound/foley/slap (1).ogg'
 
 /obj/structure/panopticon/barrel/red/fire_act(added, maxstacks)
 	explosion(get_turf(src), 0, 1, 5, flame_range = 5)
@@ -32,6 +33,7 @@
 	icon_state = "blue_barrel"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	density = TRUE
+	attacked_sound = 'sound/foley/slap (1).ogg'
 
 /obj/structure/panopticon/relsi
 	name = "track"
@@ -45,6 +47,9 @@
 	icon_state = "komod"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	max_integrity = 0
+	density = TRUE
+	climbable = TRUE
+	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 
 /obj/effect/decal/panopticon/mysor
 	name = "Rubbish"
@@ -69,6 +74,7 @@
 	icon_state = "radiator"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	max_integrity = 0
+	attacked_sound = 'sound/foley/slap (1).ogg'
 
 /obj/effect/decal/panopticon/pallet
 	name = "Pallet"
@@ -105,3 +111,28 @@
 	icon_state = "mines"
 	icon = 'icons/panopticon/obj/bigass.dmi'
 	max_integrity = 0
+
+/obj/structure/panopticon/meatpile
+	name = "Big meatpile"
+	desc = "It has a dreadful stench to it, and it's no longer possible to eat it because of the rot."
+	icon_state = "meat"
+	icon = 'icons/panopticon/obj/bigass.dmi'
+	max_integrity = 0
+	attacked_sound = 'sound/misc/fleisch.ogg'
+	var/datum/looping_sound/fliesloop/soundloop
+	layer = GHOST_LAYER
+
+/obj/structure/panopticon/meatpile/Initialize()
+	soundloop = new(list(src), FALSE)
+	soundloop.start()
+	. = ..()
+
+/obj/structure/panopticon/meatpile/Destroy()
+	if(soundloop)
+		soundloop.stop()
+	..()
+
+/obj/structure/panopticon/meatpile/obj_break(damage_flag)
+	if(soundloop)
+		soundloop.stop()
+	..()

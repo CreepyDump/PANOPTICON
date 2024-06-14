@@ -3,10 +3,10 @@
 	flag = SHTRAFBAT
 	department_flag = OUTSIDERS
 	faction = "Station"
-	total_positions = 15
-	spawn_positions = 15
+	total_positions = 7
+	spawn_positions = 7
 	selection_color = JCOLOR_OUTSIDERS
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	outfit = /datum/outfit/job/panopticon/shtrafbat
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE

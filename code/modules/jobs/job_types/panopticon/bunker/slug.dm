@@ -36,21 +36,21 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(1,2,3,4,5), TRUE)
 		H.STALUC = rand(1, 20)
-	if(prob(10))
-		r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
-	if(prob(25))
-		cloak = /obj/item/clothing/cloak/panopticon/bomjaracoat
-		head = /obj/item/clothing/head/panopticon/bomjara
-		beltl = null
-		beltr = null
-		l_hand = /obj/item/panopticonweapon/boner/nailplank
-	if(H.gender == MALE)
-		if(prob(5))
-			cloak = /obj/item/clothing/armor/panopticon
-			head = /obj/item/clothing/head/panopticon/jeremyden
-			backl = /obj/item/gun/ballistic/automatic/panopticon/krasnik
-	if(prob(75))
-		beltr = /obj/item/roguecoin/silver
+		if(prob(10))
+			r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
+		if(prob(25))
+			cloak = /obj/item/clothing/cloak/panopticon/bomjaracoat
+			head = /obj/item/clothing/head/panopticon/bomjara
+			beltl = null
+			beltr = null
+			l_hand = /obj/item/panopticonweapon/boner/nailplank
+		if(H.gender == MALE)
+			if(prob(5))
+				cloak = /obj/item/clothing/armor/panopticon
+				head = /obj/item/clothing/head/panopticon/jeremyden
+				backl = /obj/item/gun/ballistic/automatic/panopticon/krasnik
+	if(prob(35))
+		l_hand = /obj/item/roguecoin/silver
 
 /datum/outfit/job/panopticon/slug
 	shoes = /obj/item/clothing/shoes/panopticon

@@ -42,7 +42,8 @@
 	ADD_TRAIT(M, TRAIT_DRUQK, "based")
 	M.update_body_parts_head_only()
 	SSdroning.area_entered(get_area(M), M.client)
-	M.apply_status_effect(/datum/status_effect/buff/druqks)
+	M.Jitter(20)
+	M.Dizzy(20)
 //	if(!M.hud_used)
 //		return
 

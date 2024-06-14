@@ -119,7 +119,7 @@
 
 // Base version - place these on maps/templates.
 /obj/effect/mob_spawn/human
-	mob_type = /mob/living/carbon/human
+	mob_type = /mob/living/carbon/human/species/human/northern
 	//Human specific stuff.
 	var/mob_species = null		//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
@@ -302,6 +302,13 @@
 
 /obj/effect/mob_spawn/human/corpse/assistant/spanishflu_infection
 	disease = /datum/disease/fluspanish
+
+/obj/effect/mob_spawn/human/corpse/skotomogilnik
+	name = "Necronox corpse"
+	outfit = /datum/outfit/job/panopticon/slug
+	disease = /datum/disease/anthrax
+	brute_damage = 1000
+	oxy_damage = 1000
 
 /obj/effect/mob_spawn/human/corpse/cargo_tech
 	name = "Cargo Tech"

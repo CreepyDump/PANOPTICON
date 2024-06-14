@@ -53,6 +53,8 @@
 	name = "bunker"
 	icon_state = "bunkerzone"
 	droning_sound = 'sound/music/area/bunker.ogg'
+	ambientsounds = null
+	ambientnight = null
 	spookysounds = SPOOKY_BUNKER
 	droning_sound_dusk = null
 	droning_sound_night = null

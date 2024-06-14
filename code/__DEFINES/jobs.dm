@@ -18,6 +18,10 @@
 
 #define JDO_LESHIY 2
 
+#define LENINIST	(1<<2)
+
+#define JDO_LENINIST 3
+
 // PANOPTICON //
 
 #define ENGSEC			(1<<0)

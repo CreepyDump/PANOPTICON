@@ -22,7 +22,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/panopticon/beton,
-/area/panopticon/indoors/bunker/special)
+/area/rogue/indoors/town/bath)
 "aw" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/blood/gibs,
@@ -160,6 +160,10 @@
 	},
 /turf/open/floor/panopticon/bunker/scorched,
 /area/panopticon/indoors/bunker/special)
+"dH" = (
+/obj/structure/mineral_door/panopticon/bunker,
+/turf/open/floor/panopticon/beton,
+/area/rogue/indoors/town/bath)
 "dO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/panopticon/bunker/scorched,
@@ -412,7 +416,7 @@
 "jr" = (
 /obj/machinery/light/small,
 /turf/open/floor/panopticon/beton,
-/area/panopticon/indoors/bunker/special)
+/area/rogue/indoors/town/bath)
 "jL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -644,6 +648,9 @@
 	},
 /turf/open/floor/panopticon/bunker,
 /area/panopticon/indoors/bunker)
+"oq" = (
+/turf/closed/wall/mineral/panopticon/bunker,
+/area/rogue/indoors/town/bath)
 "ot" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -786,7 +793,7 @@
 "se" = (
 /obj/item/soap,
 /turf/open/floor/panopticon/beton,
-/area/panopticon/indoors/bunker/special)
+/area/rogue/indoors/town/bath)
 "sj" = (
 /obj/effect/decal/panopticon/mysor{
 	dir = 4
@@ -817,7 +824,7 @@
 /area/panopticon/indoors/bunker/special)
 "sO" = (
 /turf/open/floor/panopticon/beton,
-/area/panopticon/indoors/bunker/special)
+/area/rogue/indoors/town/bath)
 "sT" = (
 /turf/open/floor/panopticon/bunker/cargo,
 /area/panopticon/indoors/bunker)
@@ -1653,7 +1660,7 @@
 "LE" = (
 /obj/machinery/light/small/broken,
 /turf/open/floor/panopticon/beton,
-/area/panopticon/indoors/bunker/special)
+/area/rogue/indoors/town/bath)
 "LN" = (
 /obj/effect/decal/panopticon/mysor,
 /turf/open/floor/panopticon/bunker/bunkergrid,
@@ -1704,6 +1711,10 @@
 	},
 /turf/open/floor/panopticon/bunker/cargo,
 /area/panopticon/indoors/bunker)
+"MX" = (
+/obj/structure/panopticon/onwall/vent/animated,
+/turf/closed/wall/mineral/panopticon/bunker/rustwall,
+/area/panopticon/indoors/bunker/special)
 "Ni" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/panopticon/bunkercabinet,
@@ -2277,7 +2288,7 @@
 	},
 /obj/effect/landmark/start/slugsspawn,
 /turf/open/floor/panopticon/beton,
-/area/panopticon/indoors/bunker/special)
+/area/rogue/indoors/town/bath)
 "YI" = (
 /obj/structure/panopticon/onwall/wallpipe{
 	dir = 8
@@ -24506,9 +24517,9 @@ yC
 yC
 NY
 NY
+MX
 NY
-NY
-NY
+MX
 NY
 NY
 yC
@@ -24758,13 +24769,13 @@ yC
 yC
 yC
 yC
-Eo
+MX
 De
 su
 ed
 ed
 ed
-NY
+MX
 yC
 yC
 yC
@@ -28572,14 +28583,14 @@ QB
 fz
 fz
 QB
-kC
-kC
-kC
-kC
-kC
-kC
-kC
-kC
+oq
+oq
+oq
+oq
+oq
+oq
+oq
+oq
 yC
 yC
 yC
@@ -28706,7 +28717,7 @@ sO
 sO
 sO
 sO
-kC
+oq
 yC
 yC
 yC
@@ -28827,13 +28838,13 @@ fz
 fz
 QB
 LE
-kC
+oq
 YA
 LE
-kC
+oq
 as
 sO
-kC
+oq
 yC
 yC
 yC
@@ -28960,7 +28971,7 @@ se
 sO
 sO
 sO
-kC
+oq
 yC
 yC
 yC
@@ -29087,7 +29098,7 @@ sO
 sO
 sO
 LE
-kC
+oq
 yC
 yC
 yC
@@ -29214,7 +29225,7 @@ sO
 sO
 sO
 sO
-kC
+oq
 yC
 yC
 yC
@@ -29335,13 +29346,13 @@ fz
 fz
 QB
 LE
-kC
+oq
 as
 jr
-kC
+oq
 as
 sO
-kC
+oq
 yC
 yC
 yC
@@ -29468,7 +29479,7 @@ sO
 sO
 sO
 sO
-kC
+oq
 yC
 yC
 yC
@@ -29595,7 +29606,7 @@ sO
 sO
 sO
 jr
-kC
+oq
 yC
 yC
 yC
@@ -29722,7 +29733,7 @@ sO
 sO
 sO
 sO
-kC
+oq
 yC
 yC
 yC
@@ -29843,13 +29854,13 @@ fz
 fz
 QB
 LE
-kC
+oq
 as
 jr
-kC
+oq
 as
 sO
-kC
+oq
 yC
 yC
 yC
@@ -29976,7 +29987,7 @@ sO
 sO
 sO
 sO
-kC
+oq
 yC
 yC
 yC
@@ -30099,7 +30110,7 @@ QB
 QB
 QB
 QB
-cj
+dH
 QB
 QB
 QB

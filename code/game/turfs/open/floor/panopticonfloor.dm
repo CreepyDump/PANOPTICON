@@ -135,7 +135,6 @@
 	landsound = 'sound/foley/jumpland/stoneland.wav'
 
 /turf/open/floor/panopticon/road
-	name = ""
 	icon_state = "road"
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_SAND

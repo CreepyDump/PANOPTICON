@@ -42,6 +42,11 @@
 	desc = "Painting portrays an unidentified man. The frame is signed, possible name is written on it"
 	icon_state = "pnposter6"
 
+/obj/structure/panopticon/onwall/commies
+	name = "Vladimir Ilich Lennin"
+	desc = "Lennin lived. Lennin is alive. Lennin will live."
+	icon_state = "pnposter7"
+
 /obj/structure/panopticon/onwall/pipe
 	name = "Pipe"
 	desc = ""
@@ -78,6 +83,9 @@
 /obj/structure/panopticon/onwall/vent
 	name = "Vent"
 	icon_state = "vents"
+
+/obj/structure/panopticon/onwall/vent/animated
+	icon_state = "vent"
 
 /obj/structure/panopticon/onwall/vostoksign
 	name = "Welcome to Vostok"
