@@ -2,7 +2,7 @@
 "af" = (/obj/effect/decal/cleanable/blood,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "aA" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "aD" = (/obj/effect/decal/panopticon/pallet{dir = 8},/turf/open/water/river,/area/panopticon/outdoors/darkwood/pole)
-"aG" = (/obj/structure/panopticon/automat/radio,/obj/effect/decal/cleanable/dirt,/obj/structure/table/finer,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
+"aG" = (/obj/structure/panopticon/automat/radio,/obj/effect/decal/cleanable/dirt,/obj/structure/table/vtable,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
 "aM" = (/obj/effect/decal/panopticon/skull{dir = 6},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "aN" = (/obj/structure/mirror,/obj/effect/decal/cleanable/dirt,/turf/open/floor/panopticon/darkwood,/area/panopticon/outdoors/darkwood/deadvillage)
 "aY" = (/obj/effect/decal/cleanable/blood/gibs,/turf/open/floor/panopticon/mud,/area/panopticon/indoors/caves)
@@ -36,7 +36,7 @@
 "go" = (/obj/effect/decal/panopticon/road,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "gB" = (/obj/structure/fence/end{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "gG" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/drip{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
-"gQ" = (/obj/structure/panopticon/automat/heroinmachine,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"gQ" = (/obj/structure/panopticon/automat/heroinmachine,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "gW" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/deadvillage)
 "ht" = (/obj/effect/decal/panopticon/road{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "hv" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
@@ -53,7 +53,7 @@
 "iM" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "ja" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "jk" = (/obj/effect/decal/panopticon/skull{dir = 10},/obj/effect/decal/cleanable/blood/splatter,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
-"jp" = (/obj/structure/closet/crate/roguecloset/crafted,/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"jp" = (/obj/structure/closet/crate/roguecloset/crafted,/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "jC" = (/obj/structure/bookcase,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
 "jQ" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon/outdoors/caves)
 "jT" = (/obj/structure/bed/panopticon/wooden,/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/start/shtrafspawn{dir = 8},/turf/open/floor/panopticon/darkwood,/area/panopticon/outdoors/darkwood/deadvillage)
@@ -63,7 +63,7 @@
 "kT" = (/obj/effect/decal/remains/saiga,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "kX" = (/obj/effect/landmark/start/lesnik{dir = 1},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "le" = (/obj/structure/panopticon/automat/meatgrind,/obj/effect/decal/cleanable/blood/gibs/down,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
-"lf" = (/obj/effect/landmark/start/necrolenninist,/obj/structure/bed/rogue/shit,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"lf" = (/obj/effect/landmark/start/necrolenninist,/obj/structure/bed/rogue/shit,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "lz" = (/obj/machinery/light/rogue/torchholder{icon_state = "torchwall1"; dir = 4},/turf/open/floor/panopticon/mud,/area/panopticon/indoors/caves)
 "lH" = (/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood/deadvillage)
 "lI" = (/obj/effect/decal/panopticon/wartrash{dir = 1},/obj/effect/decal/panopticon/skull{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
@@ -83,7 +83,7 @@
 "nC" = (/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood/pole)
 "ol" = (/obj/effect/decal/panopticon/road{dir = 10},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "ou" = (/turf/closed/mineral/random/rogue/high,/area/panopticon/outdoors/caves)
-"oy" = (/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"oy" = (/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "oB" = (/obj/effect/decal/panopticon/road{dir = 5},/obj/effect/decal/panopticon/road,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "oG" = (/obj/effect/decal/remains/bigrat,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "pe" = (/obj/effect/decal/panopticon/road{dir = 6},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
@@ -114,8 +114,7 @@
 "uk" = (/obj/effect/decal/panopticon/mirkstones,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "uq" = (/obj/effect/decal/cleanable/blood/gibs/limb{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "ut" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
-"uD" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 8},/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
-"uK" = (/obj/structure/fluff/traveltile,/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood/pole)
+"uD" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 8},/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "uL" = (/obj/structure/fence/corner{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "vm" = (/turf/open/transparent/openspace,/area/panopticon/outdoors/darkwood)
 "vp" = (/turf/open/floor/panopticon/mud,/area/panopticon/indoors/caves)
@@ -142,7 +141,7 @@
 "yx" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "yQ" = (/obj/structure/ladder/earth,/turf/open/floor/panopticon/mud,/area/panopticon/indoors/caves)
 "zf" = (/obj/effect/decal/panopticon/mirkstones{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
-"zl" = (/obj/structure/panopticon/onwall/commies,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"zl" = (/obj/structure/panopticon/onwall/commies,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/indoors/shelter/darkwood)
 "zp" = (/obj/effect/decal/cleanable/blood/gibs/old,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "zN" = (/obj/structure/fluff/railing/wood{dir = 5},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "Aq" = (/obj/effect/decal/panopticon/road{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
@@ -151,7 +150,7 @@
 "Bz" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "BZ" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "Cb" = (/obj/effect/decal/panopticon/mirkstones{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
-"Ck" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"Ck" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "Cq" = (/obj/effect/decal/cleanable/blood/gibs/down,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "CG" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "CK" = (/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
@@ -159,9 +158,9 @@
 "Da" = (/obj/effect/decal/panopticon/road,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "Dr" = (/obj/structure/fence{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "Dz" = (/obj/structure/bed/panopticon/wooden,/obj/effect/landmark/start/shtrafspawn{dir = 1},/turf/open/floor/panopticon/darkwood,/area/panopticon/outdoors/darkwood/deadvillage)
-"DG" = (/obj/structure/panopticon/radiator{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"DG" = (/obj/structure/panopticon/radiator{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "DZ" = (/obj/structure/fence/end,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
-"Ef" = (/obj/structure/fluff/traveltile{aportalgoesto = "mirkwoodout"; aportalid = "mirkwoodout"},/turf/open/floor/rogue/naturalstone,/area/panopticon/outdoors/caves)
+"Ef" = (/obj/structure/fluff/traveltile{aportalgoesto = "mirkwoodin"; aportalid = "mirkwoodout"},/turf/open/floor/rogue/naturalstone,/area/panopticon/outdoors/caves)
 "EC" = (/obj/structure/fence/cut/medium{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "EO" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/panopticon/skull{dir = 5},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
 "EP" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/deadvillage)
@@ -177,7 +176,7 @@
 "Gb" = (/obj/effect/decal/cleanable/dirt,/obj/structure/fermenting_barrel/beer,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
 "Gv" = (/obj/structure/panopticon/kol{dir = 4},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "GE" = (/obj/structure/fence/corner{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/pole)
-"GJ" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necrolenninist{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"GJ" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necrolenninist{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "GL" = (/obj/effect/decal/remains/saiga,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "Ha" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "Hm" = (/obj/structure/panopticon/meatpile,/obj/effect/decal/cleanable/blood/gibs/torso{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
@@ -205,17 +204,17 @@
 "Ly" = (/obj/structure/fence/corner{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "LC" = (/obj/effect/decal/cleanable/blood/drip{dir = 4},/obj/structure/panopticon/meatpile{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "LG" = (/obj/effect/decal/cleanable/blood/gibs/body{dir = 4},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
-"Mc" = (/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"Mc" = (/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/indoors/shelter/darkwood)
 "Mr" = (/obj/effect/decal/cleanable/cobweb,/turf/open/floor/panopticon/darkwood,/area/panopticon/outdoors/darkwood/deadvillage)
 "Mt" = (/obj/effect/decal/panopticon/road{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "MG" = (/turf/open/water/river,/area/panopticon/outdoors/darkwood/pole)
 "MJ" = (/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "MM" = (/obj/structure/fence{dir = 1},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/pole)
 "Nd" = (/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/deadvillage)
-"Nj" = (/obj/structure/mineral_door/wood/deadbolt,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
-"NH" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necrolenninist{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"Nj" = (/obj/structure/mineral_door/wood/deadbolt,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
+"NH" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necrolenninist{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "NI" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
-"NV" = (/obj/structure/panopticon/onwall/vent,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"NV" = (/obj/structure/panopticon/onwall/vent,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/indoors/shelter/darkwood)
 "NW" = (/obj/effect/decal/cleanable/urine,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "Od" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon)
 "Og" = (/obj/structure/mineral_door/wood/deadbolt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
@@ -239,8 +238,8 @@
 "SK" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat2"},/obj/item/reagent_containers/food/snacks/poo,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "SY" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/deadvillage)
 "Te" = (/obj/effect/decal/panopticon/skull{dir = 8},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
-"Tf" = (/obj/structure/fluff/traveltile,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
-"Th" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"Tf" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/vtable/v2,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
+"Th" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "Tz" = (/obj/effect/decal/panopticon/skull{dir = 9},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "TG" = (/obj/structure/fence/corner{dir = 6},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/pole)
 "TI" = (/turf/closed/mineral/random/rogue/high,/area/panopticon/outdoors/darkwood)
@@ -264,7 +263,7 @@
 "Xv" = (/obj/effect/landmark/start/shtrafslate,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "Xx" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "XJ" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/darkwood/deadvillage)
-"XP" = (/obj/structure/panopticon/automat/kotel,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"XP" = (/obj/structure/panopticon/automat/kotel,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "XR" = (/obj/effect/decal/panopticon/road,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "Yr" = (/obj/effect/decal/panopticon/mirkstones{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "YB" = (/obj/effect/decal/panopticon/skull{dir = 6},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
@@ -293,8 +292,8 @@ sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsI
 sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsasasasasaRAsasasasasasasasasasasakosasaTNsasasavBCqFELurmIhIiMGMGIlsasasasasasaSpSpsasasasayfsaSpSpSpsaSt
 sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsaydsasasasasasasasasaUWsasaLdsasasasasasasasasasasaFEJtwlQVSpeNMGVDIlsasasasasasasaSpSpSpsaDZsaSpSpSpsaSt
 sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsasasaoGgGsaLCFEWGFETzsasaFEsasaFEkTsasasaBzsasasasaFEsaSpsasaWLIiMGMGaDsasasasasasasasasasamHAqAqAqxfAqSt
-sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsasasasasnsasasacLFEsaFEFEFEsaFEJwFEFEsasasasasasasasasasaBzsasasaIiMGMGIlsasasasasasasasasamrTOnCnCnCuKIk
-sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsatpFEsasasasasasasasasasasasaFEsasaBzsasasasasasasasasasasaKOsaUWJwIiMGMGSpsasasasasasasasamrFmnCnCnCuKIk
+sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsasasasasnsasasacLFEsaFEFEFEsaFEJwFEFEsasasasasasasasasasaBzsasasaIiMGMGIlsasasasasasasasasamrTOnCnCnCnCIk
+sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsatpFEsasasasasasasasasasasasaFEsasaBzsasasasasasasasasasasaKOsaUWJwIiMGMGSpsasasasasasasasamrFmnCnCnCnCIk
 sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsaaMFEsazpsasasasasasaBZFpFpsaBZsasasasaFEsasakosasasasasasasasasalIgBIiMGIlsasaSpSpsasasasasagogogogogoSt
 sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayfsaFEsasasasasaFEFEsasaFpFpFpFpFpsasasasaFEFEFEsasasasasasasasasasasayfIiMGMGsasasasasasasasagBsasaSpsasaSt
 sIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsIsayftpsasasasasasasaFEsasaFpFpFpFpFpFpsaFEuqFEFECGsasasaFSsaFEsasasasasayfIiMGIlSpsaSpSpsasasasayfsasaSpsasaSt
@@ -432,7 +431,7 @@ OdOdOdTIMJcdcdcdMJcdcdMJMJDahtRQKtixcdcdMJMJMJMJMJMJhvhvcdMJMJcdcdcdcdcdhvcdcdMJ
 OdxUTIcdcdcdcdcdMJMJMJMJcdcdcmRQRQRQbxMJMJMJMJcdMJcdcdhvcdMJcdcdcdMJcdcdcdcdcdcdcdcdJeNINIFBmZmZmZjZmZmZmZmZNIJecdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmpw
 OdxUTIcdcdcdcdcdMJcdcdcdMJcdcdolRQRQRQlOcdcdMJcdMJcdMJMJMJhvMJcdMJMJcdcdcdcdcdcdcdcdJeNImZmZmZSKFBXJwjXJXJmZNIJecdcdcdcdcdcdcdcdcdcdcdcdMJMJcdcdMJvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmpw
 OdxUTIcdcdcdcdcdMJMJMJMJcdcdMJcdhtRQRQlOcdMJMJcdcdMJcdcdMJcdcdcdcdcdcdcdcdcdcdcdcdcdJeNImZaNebXJXJXJXJXJXJmZNIJecdcdcdcdcdcdcdcdcdcdcdcdMJcdcdcdcdvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmpw
-OdxUTIcdcdMJcdMJcdcdMJMJMJMJMJcdcmRQRQpfMJMJMJMJMJMJcdcdcdcdcdcdMJcdMJcdcdcdcdcdcdcdJeNImZKnmZmZXJaGXJXJXJmZFBJehvcdcdcdcdcdcdcdcdcdcdcdMJhvMJcdcdvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmpw
+OdxUTIcdcdMJcdMJcdcdMJMJMJMJMJcdcmRQRQpfMJMJMJMJMJMJcdcdcdcdcdcdMJcdMJcdcdcdcdcdcdcdJeNImZKnmZmZXJaGTfXJXJmZFBJehvcdcdcdcdcdcdcdcdcdcdcdMJhvMJcdcdvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmpw
 OdxUTIcdcdcdcdcdMJcdMJMJMJMJMJMJcmRQRQlOcdMJcdMJcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdJeNImZqvmsmZmZmZcTcTmZmZFBJecdcdcdcdcdcdcdcdcdcdcdcdMJMJcdcdcdcdvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmpw
 OdxUTIcdcdcdMJcdcdMJMJMJcdcdcdMJQRRQRQlOMJcdMJMJMJMJRGaAaAaAaAaASYyxyxyxyxyxyxyxyxyxhKNImZqvKnmZNINIFBFBUBBlNIJecdcdcdcdcdcdcdcdcdcdcdcdcdcdMJMJMJMJvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmpw
 OdxUTIcdcdcdcdcdMJcdcdcdcdMJhvhvhvolRQbxMJcdMJMJcdMJJeFBFBFBNININImZmZmZmZmZmZmZzfNININImZCMmZmZFBYrNINININIFBlTaAaAyxyxyxyxaAaAHAcdcdcdcdcdcdcdcdcdvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmpw
@@ -462,9 +461,9 @@ OdxUxUTIcdMJcdcdcmRQRQlOcdMJcdcdcdcdcdcdcdcdcdcdcdhvhvcBFBFBNININImZmZmZmZmZmZmZ
 OdxUxUMJcdMJMJcdcmRQRQKtcdMJMJcdcdcdcdcdcdcdcdcdcdhvhvgWNIFBNINININININdNINININIFBFBwDNININININININININIFBFBFBNININININININIFBFBZDcdcdcdcdcdcdcdcdcdcdcdMJcdcdMJcdMJcdMJcdcdcdcdcdcdcdcdMJcdcdcdcdcdcdcdMJcdcdcdcdMJMJcdMJcdMJcdMJMJMJcdcdcdcdMJcdMJMJcdcdhvcdOd
 OdxUTIcdcdMJMJcdcmRQRQRQlOMJMJMJMJcdcdcdcdcdcdcdcdhvhvJeFBFBNININdNINdNdNININIUBNdFBFBNINININIVrVrNININIFBNINININININININIFBFBNIZDcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdcdMJMJcdcdcdcdcdcdcdcdcdcdcdMJcdcdMJcdcdcdMJMJMJcdcdcdcdcdcdcdMJcdcdMJMJcdMJMJcdcdcdhvcdOd
 OdxUxUcdcdMJcdcdcdolRQRQKtMJcdMJcdcdhvhvcdcdcdcdcdhvhvesyxaAaAaAaAyxSYyxyxyxaAaASYSYSYyxyxNImAlHlHiFyxyxyxyxyxyxyxyxyxyxyxaAaAaAhKcdcdcdcdcdcdcdMJcdcdMJcdcdcdMJcdcdcdcdcdcdcdcdcdcdcdcdMJcdcdMJcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdcdcdMJcdMJMJcdcdcdMJMJcdcdcdcdOd
-OdxUTIcdcdMJhvhvcdQRRQlWRQbxcdMJMJcdhvhvhvcdcdcdcdcdhvhvhvhvhvhvcdcdMJcdcdcdcdMJMJcdMJcdcdcmRQRQpecdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdcdcdcdcdMJcdcdMJcdcdcdcdcdcdcdcdcdxaMJcdcdcdMJcdcdcdcdcdcdcdcdcdcdcdMJMJcdMJcdcdcdMJMJcdcdMJcdcdcdcdcdcdcdTfIk
-OdxUTIMJcdututhvcdMJDahtRQRQlOcdcdcdhvhvhvcdcdcdcdcdcdhvhvhvhvhvhvcdMJMJcdcdcdhvhvcdcdcdcdmpRQRQlOcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdcdcdcdcdcdcdcdMJcdcdcdcdMJMJcdcdcdcdcdcdcdcdcdMJcdcdcdcdMJcdcdMJcdcdcdcdcdcdcdcdMJcdcdcdcdcdcdMJMJcdcdcdcdTfIk
-OdxUTIcdcduthvcdcdMJcdcmRQRQpfMJcdcdcdhvhvhvcdcdcdcdcdcdhvcdcdcdcdcdcdcdcdcdcdhvhvhvcdcdmpRQRQRQlOcdcdcdcdcdhvcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdMJcdcdcdcdcdcdcdcdMJcdcdcdcdMJMJcdcdMJcdcdcdcdcdMJMJMJMJMJMJcdcdMJcdcdMJcdcdcdcdTfIk
+OdxUTIcdcdMJhvhvcdQRRQlWRQbxcdMJMJcdhvhvhvcdcdcdcdcdhvhvhvhvhvhvcdcdMJcdcdcdcdMJMJcdMJcdcdcmRQRQpecdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdcdcdcdcdMJcdcdMJcdcdcdcdcdcdcdcdcdxaMJcdcdcdMJcdcdcdcdcdcdcdcdcdcdcdMJMJcdMJcdcdcdMJMJcdcdMJcdcdcdcdcdcdcdcdIk
+OdxUTIMJcdututhvcdMJDahtRQRQlOcdcdcdhvhvhvcdcdcdcdcdcdhvhvhvhvhvhvcdMJMJcdcdcdhvhvcdcdcdcdmpRQRQlOcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdcdcdcdcdcdcdcdMJcdcdcdcdMJMJcdcdcdcdcdcdcdcdcdMJcdcdcdcdMJcdcdMJcdcdcdcdcdcdcdcdMJcdcdcdcdcdcdMJMJcdcdcdcdcdIk
+OdxUTIcdcduthvcdcdMJcdcmRQRQpfMJcdcdcdhvhvhvcdcdcdcdcdcdhvcdcdcdcdcdcdcdcdcdcdhvhvhvcdcdmpRQRQRQlOcdcdcdcdcdhvcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdMJcdcdcdcdcdcdcdcdMJcdcdcdcdMJMJcdcdMJcdcdcdcdcdMJMJMJMJMJMJcdcdMJcdcdMJcdcdcdcdcdIk
 OdTIcdcdcdutMJcdMJMJcdcmRQRQKtMJMJcdcdcdhvcdcdcdcdcdcdcdhvhvcdcdcdcdcdMJcdhvhvhvhvcdcdcmRQRQRQpecdcdcdcdcdcdhvhvcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdhvhvMJcdcdcdcdcdcdcdcdcdMJcdcdcdutcdcdcdcdcdcdcdcdcdcdcdcdcdcdhvhvhvcdcdcdcdMJcdcdMJMJMJcdMJcdMJMJMJcdcdcdcdcdOd
 OdTIcdMJhvutMJMJcdMJMJcdhtRQRQbxMJcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJcdcdhvhvhvhvcdcdcdmpRQRQpecdcdcdcdcdcdcdhvhvhvcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdhvhvhvhvcdcdMJMJcdcdcdcdcdcdcdcdhvhvcdcdMJcdMJcdcdMJMJcdcdhvhvhvhvhvhvhvhvcdhvcdcdMJMJMJMJcdcdcdMJMJcdcdcdcdcdOd
 OdxUcdcdhvMJcdMJMJcdcdMJcdhtRQRQbxMtcdcdMJcdcdcdcdcdcdcdMJMJMJcdMJcdMJcdhvhvhvhvcdcdmpRQRQRQlOcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdMJhvhvhvhvhvhvMJcdcdcdcdcdcdMJMJhvhvhvcdcdMJcdcdMJcdcdcdcdcdhvcdhvcdhvhvhvhvhvhvhvhvcdcdMJcdcdcdMJMJMJcdcdcdcdcdOd

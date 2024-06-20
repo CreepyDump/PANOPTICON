@@ -3,8 +3,8 @@
 	flag = SLUG
 	department_flag = BUNKER
 	faction = "Station"
-	total_positions = 30
-	spawn_positions = 30
+	total_positions = 10
+	spawn_positions = 10
 	selection_color = JCOLOR_BUNKER
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)

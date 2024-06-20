@@ -42,12 +42,7 @@
 				if(istype(G, /mob/dead/observer/rogue/arcaneeye))
 					return
 				if(alert("J01N TH3 TR4TH?", "", "Yes", "No") == "Yes")
-					for(var/obj/effect/landmark/underworld/A in world)
-						var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(A.loc)
-						O.livingname = G.name
-						O.ckey = G.ckey
-						SSdroning.area_entered(get_area(O), O.client)
-					verbs -= /client/proc/descend
+					G.returntolobby()
 				return
 
 //		var/take_triumph = FALSE
@@ -56,12 +51,7 @@
 			if(C.skeletons)
 				G.returntolobby()			
 		if(alert("J01N TH3 TR4TH?", "", "Yes", "No") == "Yes")
-			for(var/obj/effect/landmark/underworld/A in world)
-				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(A.loc)
-				O.livingname = G.name
-				O.ckey = G.ckey
-				SSdroning.area_entered(get_area(O), O.client)
-			verbs -= /client/proc/descend
+			G.returntolobby()
 /*		if(world.time < G.ghostize_time + RESPAWNTIME)
 			var/ttime = round((G.ghostize_time + RESPAWNTIME - world.time) / 10)
 			var/list/thingsz = list("My connection to the world is still too strong.",\

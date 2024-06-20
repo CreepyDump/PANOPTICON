@@ -828,10 +828,6 @@
 "sT" = (
 /turf/open/floor/panopticon/bunker/cargo,
 /area/panopticon/indoors/bunker)
-"sW" = (
-/obj/structure/mineral_door/panopticon/bunker,
-/turf/closed/wall/mineral/panopticon/bunker,
-/area/panopticon/indoors/bunker)
 "tc" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -20569,7 +20565,7 @@ QB
 QB
 fz
 fz
-sW
+QB
 vS
 vS
 vS
