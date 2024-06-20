@@ -321,11 +321,11 @@ GLOBAL_VAR(restart_counter)
 	var/s = ""
 	s += "<center><a href=\"https://discord.gg/9WrcysEHsr\">"
 #ifdef MATURESERVER
-	s += "<big><b>PANOPTICON</b></big></a><br>"
-	s += "<b>Survival Roleplay Experience</b></center><br>"
+	s += "<big><b>PANOPTICON |РУС| |ENG|</b></big></a><br>"
+	s += "<b>Mad-Roleplay Experience</b></center><br>"
 #else
-	s += "<big><b>PANOPTICON</b></big></a><br>"
-	s += "<b>Mad Roleplay Survivng Game</b></center><br>"
+	s += "<big><b>PANOPTICON |РУС| |ENG|</b></big></a><br>"
+	s += "<b>Survival-Roleplay Experience</b></center><br>"
 #endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"
 

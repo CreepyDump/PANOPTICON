@@ -1,5 +1,5 @@
 /datum/job/panopticon/necroleninist
-	title = "Necrolenninist"
+	title = "Necroleninist"
 	flag = LENINIST
 	department_flag = OUTSIDERS
 	faction = "Station"
@@ -11,7 +11,7 @@
 	outfit = /datum/outfit/job/panopticon/necroleninist
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE
-	tutorial = "A Cult of people who idolize a legendary revolutionary named Lennin. But this man is probably not connected to their fascination with bio-magick."
+	tutorial = "A Cult of people who idolize a legendary revolutionary named Lenin. But this man is probably not connected to their fascination with bio-magick."
 	display_order = JDO_LENINIST
 	show_in_credits = TRUE
 	give_bank_account = FALSE
@@ -37,7 +37,6 @@
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/leninist()
-
 /datum/outfit/job/panopticon/necroleninist
 	uniform = null
 	id = null
