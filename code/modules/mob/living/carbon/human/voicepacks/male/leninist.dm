@@ -1,0 +1,18 @@
+/datum/voicepack/male/leninist/get_sound(soundin, modifiers)
+	var/used
+	switch(soundin)
+		if("breathgasp")
+			used = list('sound/vo/male/leninist/breathgasp (1).ogg')
+		if("firescream")
+			used = list('sound/vo/male/leninist/firescream (1).ogg')
+		if("laugh")
+			used = list('sound/vo/male/leninist/laugh (1).ogg','sound/vo/male/leninist/laugh (2).ogg','sound/vo/male/leninist/laugh (3).ogg')
+		if("pain")
+			used = list('sound/vo/male/leninist/pain (1).ogg','sound/vo/male/leninist/pain (2).ogg')
+		if("scream")
+			used = list('sound/vo/male/leninist/scream (1).ogg')
+		if("rage")
+			used = list('sound/vo/male/leninist/rage (1).ogg','sound/vo/male/leninist/rage (2).ogg','sound/vo/male/leninist/rage (3).ogg')
+	if(!used)
+		used = ..(soundin, modifiers)
+	return used

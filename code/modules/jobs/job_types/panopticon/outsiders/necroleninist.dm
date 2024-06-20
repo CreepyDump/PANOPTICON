@@ -34,12 +34,16 @@
 	else
 		beltl = /obj/item/rogueweapon/sickle
 		beltr = /obj/item/rogueweapon/hammer
+	if(H.dna?.species)
+		if(H.dna.species.id == "human")
+			H.dna.species.soundpack_m = new /datum/voicepack/male/leninist()
 
 /datum/outfit/job/panopticon/necroleninist
 	uniform = null
 	id = null
 	head = /obj/item/clothing/head/hooded/panopticon/necroleninist
 	cloak = /obj/item/clothing/cloak/panopticon/necroleninist
+	pants = /obj/item/clothing/under/panopticon/civilianpants
 	ears = null
 	belt = /obj/item/storage/belt/rogue/leather
 	back = null

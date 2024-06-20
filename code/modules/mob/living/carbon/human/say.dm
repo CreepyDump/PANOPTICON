@@ -159,5 +159,12 @@
 	if(dna.species)
 		dna.species.send_voice(src)
 
-/datum/species/proc/send_voice(mob/living/carbon/human/H)
-	playsound(get_turf(H), pick('sound/misc/mantalk (1).ogg','sound/misc/mantalk (2).ogg'), 100, FALSE, -1)
+/datum/species/proc/send_voice(mob/living/carbon/H)
+	if(H.gender == MALE)
+		switch(H.job)
+			if("Necrolenninist")
+				playsound(get_turf(H), pick('sound/misc/occulttalk (1).ogg','sound/misc/occulttalk (2).ogg'), 100, FALSE, -1)
+			else
+				playsound(get_turf(H), pick('sound/misc/mantalk (1).ogg','sound/misc/mantalk (2).ogg'), 100, FALSE, -1)
+	else
+		playsound(get_turf(H), pick('sound/misc/womantalk (1).ogg','sound/misc/womantalk (2).ogg'), 100, FALSE, -1)
