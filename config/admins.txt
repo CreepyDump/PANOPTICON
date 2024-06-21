@@ -6,3 +6,6 @@
 
 CrazyDuster = Host
 emoats18 = Host
+MoonMagick = Badmin
+MicroPeni = Moderator
+AkayenTheFake = Moderator
