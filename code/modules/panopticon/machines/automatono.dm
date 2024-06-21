@@ -159,8 +159,8 @@
 
 
 /obj/structure/panopticon/automat/heroinmachine/attackby(obj/item/I, mob/living/carbon/user, params)
-	if(istype(I, /obj/item/roguecoin/silver))
-		var/obj/item/roguecoin/silver/M = I
+	if(istype(I, /obj/item/panopticonmoney/ten))
+		var/obj/item/panopticonmoney/ten/M = I
 		user.visible_message("<span class='warning'>[user] stuffs some [M] inside the Automato</span>", "<span class='notice'>I stick [M] inside the Automato.</span>")
 		playsound(get_turf(src), 'sound/misc/elec (2).ogg', 100 , FALSE, FALSE)
 		new /obj/item/reagent_containers/glass/bottle/heroinium(drop_location())

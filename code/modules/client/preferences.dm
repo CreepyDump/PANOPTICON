@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<td width='100%' align='center'>"
 
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Roles</a><br>"
-			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Bastards</a><br>"
+//			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Bastards</a><br>"
 
 			dat += "</table>"
 

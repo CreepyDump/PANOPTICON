@@ -2,11 +2,13 @@
 	name = "Steel bed"
 	icon_state = "bunker_bed"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	sleepy = 3
 
 /obj/structure/bed/panopticon/wooden
 	name = "Wood bed"
 	icon_state = "wooden_bed"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	sleepy = 3
 
 /obj/structure/panopticon/barrel/red
 	name = "Red barrel"
@@ -23,9 +25,8 @@
 /obj/structure/reagent_dispensers/fueltank/bullet_act(obj/projectile/P)
 	. = ..()
 	if(!QDELETED(src)) //wasn't deleted by the projectile's effects.
-		if(!P.nodamage && ((P.damage_type == BURN) || (P.damage_type == BRUTE)))
-			explosion(get_turf(src), 0, 1, 5, flame_range = 5)
-			qdel(src)
+		explosion(get_turf(src), 0, 1, 5, flame_range = 5)
+		qdel(src)
 
 /obj/structure/panopticon/barrel/blue
 	name = "Blue barrel"
@@ -88,15 +89,6 @@
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 
 /obj/effect/decal/panopticon/skull/Initialize()
-	. = ..()
-	dir = pick(GLOB.cardinals)
-
-/obj/effect/decal/panopticon/mirkstones
-	name = "Stones"
-	icon_state = "ston"
-	icon = 'icons/panopticon/obj/mirkwood.dmi'
-
-/obj/effect/decal/panopticon/mirkstones/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
 

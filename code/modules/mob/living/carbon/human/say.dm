@@ -162,7 +162,7 @@
 /datum/species/proc/send_voice(mob/living/carbon/H)
 	if(H.gender == MALE)
 		switch(H.job)
-			if("Necrolenninist")
+			if("Necroleninist")
 				playsound(get_turf(H), pick('sound/misc/occulttalk (1).ogg','sound/misc/occulttalk (2).ogg'), 100, FALSE, -1)
 			else
 				playsound(get_turf(H), pick('sound/misc/mantalk (1).ogg','sound/misc/mantalk (2).ogg'), 100, FALSE, -1)

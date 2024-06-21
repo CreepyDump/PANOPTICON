@@ -118,10 +118,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Lesnik")
 	delete_after_roundstart = FALSE
 
-/obj/effect/landmark/start/necrolenninist
-	name = "Necrolenninist"
+/obj/effect/landmark/start/necroleninist
+	name = "Necroleninist"
 	icon_state = "arrow"
-	jobspawn_override = list("Necrolenninist")
+	jobspawn_override = list("Necroleninist")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vagrantlate

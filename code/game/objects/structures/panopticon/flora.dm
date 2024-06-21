@@ -3,6 +3,7 @@
 	icon_state = "g1"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	layer = ABOVE_MOB_LAYER
+	max_integrity = 1
 
 /obj/structure/flora/panopticon/grass/Initialize()
 	. = ..()
@@ -17,6 +18,7 @@
 	name = "Psychickshroom"
 	icon_state = "grib"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	max_integrity = 1
 
 /obj/structure/panopticon/psychickgrib/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -69,3 +71,44 @@
 /obj/structure/panopticon/panopticontree/Initialize()
 	. = ..()
 	icon_state = "panoptree_[rand(1,5)]"
+
+/obj/structure/panopticon/mirkstones
+	name = "Stones"
+	icon_state = "ston"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	max_integrity = 100
+
+/obj/structure/panopticon/mirkstones/Initialize()
+	. = ..()
+	dir = pick(GLOB.cardinals)
+
+/obj/structure/panopticon/mirkstones/Crossed(mob/living/L)
+	if(istype(L) && !L.throwing)
+		if(L.m_intent == MOVE_INTENT_RUN)
+			L.visible_message("<span class='warning'>[L] trips over the rock!</span>","<span class='warning'>I trip over the rock!</span>")
+			L.Knockdown(10)
+			L.consider_ambush()
+	..()
+
+
+/obj/structure/panopticon/mirkstones/attackby(obj/item/W, mob/user, params)
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(istype(W, /obj/item/natural/stone))
+		user.visible_message("<span class='info'>[user] strikes the stone against the rock.</span>")
+		playsound(src.loc, 'sound/items/stonestone.ogg', 100)
+		if(prob(35))
+			var/datum/effect_system/spark_spread/S = new()
+			var/turf/front = get_turf(src)
+			S.set_up(1, 1, front)
+			S.start()
+		return
+	if(istype(W, /obj/item/natural/rock))
+		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
+		user.visible_message("<span class='info'>[user] strikes the rocks together.</span>")
+		if(prob(10))
+			var/datum/effect_system/spark_spread/S = new()
+			var/turf/front = get_turf(src)
+			S.set_up(1, 1, front)
+			S.start()
+		return
+	..()

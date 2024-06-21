@@ -4,7 +4,7 @@
 	desc = ""
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
-	item_state = "welder"
+	item_state = "brasswelder"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -12,11 +12,11 @@
 	force = 3
 	throwforce = 5
 	hitsound = "swing_hit"
-	usesound = list('sound/blank.ogg')
+	usesound = list('sound/panopticon/svarka.ogg')
 	drop_sound = 'sound/blank.ogg'
 	pickup_sound =  'sound/blank.ogg'
-	var/acti_sound = 'sound/blank.ogg'
-	var/deac_sound = 'sound/blank.ogg'
+	var/acti_sound = 'sound/panopticon/svarka_on.ogg'
+	var/deac_sound = 'sound/panopticon/svarka_off.ogg'
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL

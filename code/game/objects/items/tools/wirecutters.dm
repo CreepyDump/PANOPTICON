@@ -14,8 +14,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=80)
 	attack_verb = list("pinched", "nipped")
-	hitsound = 'sound/blank.ogg'
-	usesound = 'sound/blank.ogg'
+	hitsound = 'sound/panopticon/wirecutter.ogg'
+	usesound = 'sound/panopticon/wirecutter.ogg'
 	drop_sound = 'sound/blank.ogg'
 	pickup_sound =  'sound/blank.ogg'
 

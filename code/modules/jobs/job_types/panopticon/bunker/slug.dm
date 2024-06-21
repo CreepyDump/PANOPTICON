@@ -50,7 +50,7 @@
 				head = /obj/item/clothing/head/panopticon/jeremyden
 				backl = /obj/item/gun/ballistic/automatic/panopticon/krasnik
 	if(prob(35))
-		l_hand = /obj/item/roguecoin/silver
+		l_hand = /obj/item/panopticonmoney/ten
 
 /datum/outfit/job/panopticon/slug
 	shoes = /obj/item/clothing/shoes/panopticon

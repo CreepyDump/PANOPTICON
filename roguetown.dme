@@ -1077,6 +1077,7 @@
 #include "code\game\objects\items\melee\transforming.dm"
 #include "code\game\objects\items\panopticonitems\druggies.dm"
 #include "code\game\objects\items\panopticonitems\jratva.dm"
+#include "code\game\objects\items\panopticonitems\misc.dm"
 #include "code\game\objects\items\panopticoniweapons\dumb.dm"
 #include "code\game\objects\items\panopticoniweapons\sharp.dm"
 #include "code\game\objects\items\robot\ai_upgrades.dm"
