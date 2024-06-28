@@ -15,7 +15,8 @@
 	desc = ""
 	density = TRUE
 	anchored = TRUE
-
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "straight"
 

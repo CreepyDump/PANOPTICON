@@ -18,22 +18,26 @@
 	can_random = FALSE
 /datum/job/panopticon/necroleninist/New()
 	. = ..()
-	peopleknowme = list()
+	peopleknowme = list("Necroleninist")
+	peopleiknow = list("Necroleninist")
 
 /datum/outfit/job/panopticon/necroleninist/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(3,4,5,6), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/farming, pick(2,3,4,5,6,7,8), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3,4,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(3,4,5,6), TRUE)
-		H.STASTR = rand(6, 20)
-	if(prob(25))
-		r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
-		beltr = /obj/item/panopticonweapon/knife
-	else
-		beltl = /obj/item/rogueweapon/sickle
-		beltr = /obj/item/rogueweapon/hammer
+		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(3,4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3,4,5), TRUE)
+		H.STASTR = rand(10, 20)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/heal)
+		H.mind.adjust_skillrank(/datum/skill/magic/holy, pick(1,2,3,4,5), TRUE)
+		if(prob(25))
+			r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
+			beltr = /obj/item/panopticonweapon/knife
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(3,4,5,6), TRUE)
+		else
+			beltl = /obj/item/rogueweapon/sickle
+			beltr = /obj/item/rogueweapon/hammer
+			H.mind.adjust_skillrank(/datum/skill/labor/farming, pick(3,4,5,6), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3,4,5), TRUE)
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/leninist()

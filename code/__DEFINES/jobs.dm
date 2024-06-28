@@ -1,26 +1,45 @@
 // PANOPTICON //
 
 #define JCOLOR_BUNKER "#2c662f"
-#define BUNKER	(1<<4)
+#define BUNKER	(1<<0)
 
 #define SLUG	(1<<0)
 
 #define JDO_SLUG 1
 
+#define JCOLOR_TOWN "#3e6274"
+#define TOWN	(1<<1)
+
+#define MAYOR	(1<<0)
+
+#define JDO_MAYOR 2
+
+#define GREYDIVISION	(1<<1)
+
+#define JDO_GREYDIVISION 3
+
+#define BARMAN	(1<<2)
+
+#define JDO_BARMAN 4
+
+#define CITIZEN	(1<<3)
+
+#define JDO_CITIZEN 5
+
 #define JCOLOR_OUTSIDERS "#96832f"
-#define OUTSIDERS	(1<<3)
+#define OUTSIDERS	(1<<2)
 
-#define SHTRAFBAT	(1<<0)
+#define LENINIST	(1<<0)
 
-#define JDO_SHTRAFBAT 1
+#define JDO_LENINIST 6
 
 #define LESHIY	(1<<1)
 
-#define JDO_LESHIY 2
+#define JDO_LESHIY 7
 
-#define LENINIST	(1<<2)
+#define SHTRAFBAT	(1<<2)
 
-#define JDO_LENINIST 3
+#define JDO_SHTRAFBAT 8
 
 // PANOPTICON //
 

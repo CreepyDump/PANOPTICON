@@ -11,5 +11,12 @@
 	sleeved = 'icons/panopticon/obj/clothes/onmob/boots.dmi'
 	sleevetype = "leg"
 	bloody_icon_state = "shoeblood"
+
+/obj/item/clothing/shoes/panopticon/jackboots
+	name = "workboots"
+	icon_state = "jackboots"
+	item_state = "jackboots"
+	sleevetype = "leg"
+	bloody_icon_state = "shoeblood"
 	equip_delay_self = 30
 	resistance_flags = FIRE_PROOF

@@ -55,3 +55,9 @@
 	icon_state = "varg"
 	item_state = "varg"
 	flags_inv = HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/head/panopticon/mayor
+	name = "Major's Cap"
+	icon_state = "mayor"
+	item_state = "mayor"
+	flags_inv = HIDEEARS

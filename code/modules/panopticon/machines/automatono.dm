@@ -107,7 +107,6 @@
 	var/datum/looping_sound/reactor/soundloop
 	max_integrity = 0
 
-
 /obj/structure/panopticon/automat/kotel/Initialize()
 	soundloop = new(list(src), FALSE)
 	soundloop.start()

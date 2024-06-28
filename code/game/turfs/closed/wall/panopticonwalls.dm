@@ -47,8 +47,16 @@
 	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/kirpich)
 	above_floor = /turf/open/floor/panopticon/beton
 	baseturfs = list(/turf/open/floor/panopticon/bunker/metal)
-	wallclimb = FALSE
+	wallclimb = TRUE
 	damage_deflection = 20
+
+/turf/closed/wall/mineral/panopticon/kirpich/townwall
+	name = "Stonistic wall"
+	icon = 'icons/turf/walls/townwall.dmi'
+	icon_state = "townkirpich"
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/kirpich/townwall)
+	above_floor = /turf/open/floor/panopticon/town
+	baseturfs = list(/turf/open/floor/panopticon/town/streets)
 
 /turf/closed/wall/mineral/panopticon/woods
 	name = "Wooden wall"

@@ -14,6 +14,12 @@
 	SSdroning.area_entered(get_area(M), M.client)
 	M.overlay_fullscreen("narcos", /obj/screen/fullscreen/narcos)
 
+/datum/reagent/psychick/on_mob_life(mob/living/carbon/M)
+	if(M.has_flaw(/datum/charflaw/addiction/junkie))
+		M.sate_addiction()
+	M.apply_status_effect(/datum/status_effect/buff/ozium)
+	..()
+
 /datum/reagent/psychick/on_mob_end_metabolize(mob/living/M)
 	to_chat(M, "<span class='danger'>I feel mentally retarded</span>")
 	M.playsound_local(M, 'sound/misc/mechsound.ogg', 100, FALSE)
@@ -42,10 +48,6 @@
 	ADD_TRAIT(M, TRAIT_DRUQK, "based")
 	M.update_body_parts_head_only()
 	SSdroning.area_entered(get_area(M), M.client)
-	M.Jitter(5)
-	M.Dizzy(5)
-	M.heal_bodypart_damage(1,1)
-	M.apply_status_effect(/datum/status_effect/buff/druqks)
 	REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 //	if(!M.hud_used)
 //		return
@@ -54,13 +56,16 @@
 	M.adjustToxLoss(1, 0)
 	M.adjustOxyLoss(1.5*REM, 0)
 
-//	var/list/obj/screen/plane_master/plane_masters = M.hud_used.plane_masters[GAME_PLANE]
-//	game_plane_master_controller.add_filter("heroino",1,list("type"="radial_blur", "x"=5, "y"=15))
-
-/datum/reagent/heroin/on_mob_end_metabolize(mob/living/M)
-//	var/list/obj/screen/plane_master/plane_masters = M.hud_used.plane_masters[GAME_PLANE]
-//	game_plane_master_controller.remove_filter("heroino")
-	M.update_body_parts_head_only()
-	REMOVE_TRAIT(M, TRAIT_DRUQK, "based")
-	SSdroning.play_area_sound(get_area(M), M.client)
-	M.remove_status_effect(/datum/status_effect/buff/druqks)
+/datum/reagent/heroin/on_mob_life(mob/living/carbon/M)
+	M.Jitter(5)
+	M.Dizzy(5)
+	M.heal_bodypart_damage(1,1)
+	if(prob(5))
+		if(M.gender == FEMALE)
+			M.emote(pick("twitch_s","giggle"))
+		else
+			M.emote(pick("twitch_s","chuckle"))
+	if(M.has_flaw(/datum/charflaw/addiction/junkie))
+		M.sate_addiction()
+	M.apply_status_effect(/datum/status_effect/buff/druqks)
+	..()

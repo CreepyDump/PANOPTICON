@@ -3,7 +3,7 @@
 	max_stages = 3
 	spread_text = "Airborne"
 	cure_text = "Regret"
-	cures = list(/datum/reagent/medicine/spaceacillin)
+	cures = list(/datum/reagent/consumable/ethanol)
 	cure_chance = 10
 	agent = "Siberian Plaque"
 	viable_mobtypes = list(/mob/living/carbon/human)

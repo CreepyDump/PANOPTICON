@@ -18,11 +18,12 @@
 
 /datum/job/panopticon/shtrafbat/New()
 	. = ..()
-	peopleknowme = list()
+	peopleknowme = list("Strafbat")
+	peopleiknow = list("Strafbat")
 
 /datum/outfit/job/panopticon/shtrafbat/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/panopticon
+	shoes = /obj/item/clothing/shoes/panopticon/jackboots
 	shirt = /obj/item/clothing/suit/panopticon/shirt/shtrafbatshirt
 	pants = /obj/item/clothing/under/panopticon/dedushkapants
 	head = /obj/item/clothing/head/panopticon/shtrafbathelm

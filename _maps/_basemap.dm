@@ -4,7 +4,7 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "map_files\panopticon\bunker.dmm"
+		#include "map_files\panopticon\mirkwood.dmm"
 		#include "map_files\Rogueworld\Rogueworld.dmm"
 
 		#ifdef TRAVISBUILDING

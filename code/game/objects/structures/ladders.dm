@@ -250,3 +250,17 @@
 
 	else if(down)
 		icon_state = "ladder2"
+
+/obj/structure/ladder/toiletladder
+	name = "toilet"
+	desc = "There is something under this..."
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	icon_state = "toiletdown"
+	obj_flags = BLOCK_Z_OUT_DOWN
+
+/obj/structure/ladder/toiletladder/update_icon()
+	if(up)
+		icon_state = "toiletup"
+
+	else if(down)
+		icon_state = "toiletdown"

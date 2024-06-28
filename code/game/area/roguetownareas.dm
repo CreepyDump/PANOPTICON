@@ -93,14 +93,14 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 10,
 				/mob/living/carbon/human/species/goblin/npc/ambush/hell = 20)
-	droning_sound = 'sound/music/area/decap.ogg'
+	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	first_time_text = "MOUNT DECAPITATION"
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 /area/rogue/indoors/shelter/mountains/decap
-	droning_sound = 'sound/music/area/decap.ogg'
+	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -298,12 +298,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/skeleton/npc = 10,
 				/mob/living/carbon/human/species/goblin/npc/hell = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 5)
-	droning_sound = 'sound/music/area/decap.ogg'
+	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/decap
 /area/rogue/outdoors/exposed/decap
-	droning_sound = 'sound/music/area/decap.ogg'
+	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -524,12 +524,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/town
 	name = "basement"
 	icon_state = "pink"
-	droning_sound = 'sound/music/area/bunker.ogg'
+	droning_sound = 'sound/music/area/bunkerspecial.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/under/town
 /area/rogue/outdoors/exposed/under/town
-	droning_sound = 'sound/music/area/bunker.ogg'
+	droning_sound = 'sound/music/area/bunkerspecial.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -572,13 +572,13 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_BASEMENT
 	spookysounds = SPOOKY_BUNKER
 	spookynight = SPOOKY_BUNKER
-	droning_sound = 'sound/music/area/bunker.ogg'
+	droning_sound = 'sound/music/area/bunkerspecial.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	soundenv = 5
 	converted_type = /area/rogue/outdoors/exposed/under/basement
 /area/rogue/outdoors/exposed/under/basement
-	droning_sound = 'sound/music/area/bunker.ogg'
+	droning_sound = 'sound/music/area/bunkerspecial.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 

@@ -3,8 +3,8 @@
 	flag = SLUG
 	department_flag = BUNKER
 	faction = "Station"
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 15
+	spawn_positions = 15
 	selection_color = JCOLOR_BUNKER
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
@@ -32,10 +32,15 @@
 	beltl = /obj/item/panopticonweapon/knife
 	beltr = null
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,2,3,4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2,3,4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(1,2,3,4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(2,3,4), TRUE)
 		H.STALUC = rand(1, 20)
+		H.STASTR = rand(5, 12)
+		H.STAINT = rand(1, 10)
+		H.STAPER = rand(8,18)
+
 		if(prob(10))
 			r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
 		if(prob(25))

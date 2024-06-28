@@ -16,6 +16,10 @@
 	icon_state = "fancymirror"
 	pixel_y = 32
 
+/obj/structure/mirror/shitweb
+	icon_state = "mirror_shitweb"
+	pixel_y = 32
+
 /obj/structure/mirror/Initialize(mapload)
 	. = ..()
 	if(icon_state == "mirror_broke" && !broken)

@@ -5,3 +5,7 @@
 			peopleiknow += X
 			peopleknowme += X
 		for(var/X in GLOB.outside_positions)
+			return	
+		for(var/X in GLOB.town_positions)
+			peopleiknow += X
+			peopleknowme += X

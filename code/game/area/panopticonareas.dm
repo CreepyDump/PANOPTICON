@@ -64,6 +64,11 @@
 /area/panopticon/indoors/bunker/special
 	name = "bunker special"
 	icon_state = "bunkerspecial"
+	droning_sound = 'sound/music/area/bunkerspecial2.ogg'
+
+/area/panopticon/indoors/bunker/specialdva
+	name = "bunker special two"
+	icon_state = "isnear"
 	droning_sound = 'sound/music/area/bunkerspecial.ogg'
 
 /area/panopticon/indoors/caves
@@ -132,3 +137,61 @@
 	droning_sound = 'sound/music/area/pole.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+
+//TOWN
+
+/area/panopticon/outdoors/town
+	name = "Town"
+	icon_state = "isnear"
+	outdoors = TRUE
+	ambientrain = RAIN_OUT
+	ambientsounds = AMB_TOWNDAY
+	ambientnight = AMB_TOWNNIGHT
+	spookysounds = null
+	spookynight = SPOOKY_NIGHT
+	droning_sound = 'sound/music/area/town.ogg'
+	droning_sound_dusk = 'sound/music/area/town_dusk.ogg'
+	droning_sound_night = 'sound/music/area/prison.ogg'
+	converted_type = /area/panopticon/indoors
+	soundenv = 16
+
+/area/panopticon/indoors/town
+	name = "Town"
+	icon_state = "yellow"
+	outdoors = TRUE
+	ambientrain = RAIN_OUT
+	spookysounds = SPOOKY_RATS
+	spookynight = null
+	droning_sound = 'sound/music/area/town_indoors.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/panopticon/outdoors/town
+	soundenv = 5
+
+/area/panopticon/indoors/town/shop
+	name = "Shop"
+	icon_state = "dk_yellow"
+	outdoors = TRUE
+	ambientrain = RAIN_OUT
+	spookysounds = SPOOKY_RATS
+	spookynight = null
+	droning_sound = 'sound/music/area/shop.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/panopticon/outdoors/town
+	soundenv = 5
+
+/area/panopticon/indoors/sewerslut
+	name = "Sewers"
+	icon_state = "green"
+	ambientrain = RAIN_SEWER
+	ambientsounds = AMB_BASEMENT
+	ambientnight = AMB_BASEMENT
+	spookysounds = SPOOKY_RATS
+	spookynight = SPOOKY_CAVE
+	droning_sound = 'sound/music/area/sewers.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	soundenv = 2
+	plane = INDOOR_PLANE
+	converted_type = /area/panopticon/outdoors

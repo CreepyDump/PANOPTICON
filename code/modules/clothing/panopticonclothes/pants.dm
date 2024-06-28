@@ -27,3 +27,9 @@
 	gender = PLURAL
 	icon_state = "ded"
 	item_state = "ded"
+
+/obj/item/clothing/under/panopticon/greys
+	name = "Greys pants"
+	gender = MALE
+	icon_state = "greypants"
+	item_state = "greypants"

@@ -57,6 +57,10 @@
 	icon_state = "bunker_floor"
 	footstepstealth = TRUE
 
+/turf/open/floor/panopticon/bunker/cargo/typetwo
+	icon_state = "rust"
+	footstepstealth = TRUE
+
 /turf/open/floor/panopticon/bunker/scorched
 	icon_state = "dick_scorched"
 	footstepstealth = TRUE
@@ -85,9 +89,14 @@
 	if(grassgenerator)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
+		if(locate(/turf/open/water/) in get_turf(src))
+			return
 		if(prob(45))
 			new /turf/open/floor/panopticon/darkgrass(get_turf(src))
-			new /obj/structure/flora/panopticon/grass(get_turf(src))
+			if (prob(50))
+				new /obj/structure/flora/panopticon/grass(get_turf(src))
+			if (prob(50))
+				new /obj/structure/flora/roguegrass/bush(get_turf(src))
 		if(prob(40))
 			var/stonegener = pick(1,2)
 			switch(stonegener)
@@ -152,3 +161,17 @@
 	name = ""
 	icon = 'icons/turf/panopticonfloor.dmi'
 	icon_state = "roadover"
+
+/turf/open/floor/panopticon/town
+	icon_state = "townroof"
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/woodland.wav'
+
+/turf/open/floor/panopticon/town/streets
+	icon_state = "town"
+	footstep = FOOTSTEP_STONE
+	landsound = 'sound/foley/jumpland/stoneland.wav'

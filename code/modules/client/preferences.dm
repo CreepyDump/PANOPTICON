@@ -899,7 +899,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	popup.open(FALSE)
 	onclose(user, "capturekeypress", src)
 
-/datum/preferences/proc/SetChoices(mob/user, limit = 15, list/splitJobs = list("Slug", "Strafbat"), widthPerColumn = 295, height = 620) //295 620
+/datum/preferences/proc/SetChoices(mob/user, limit = 10, list/splitJobs = list("Slug", "Necroleninist", "Major"), widthPerColumn = 295, height = 620) //295 620
 	if(!SSjob)
 		return
 

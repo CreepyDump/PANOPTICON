@@ -43,11 +43,11 @@
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	max_integrity = 0
 
-/obj/structure/panopticon/bunkercabinet
+/obj/structure/closet/crate/drawer/bunkercabinet
 	name = "Steel cabinet"
-	icon_state = "komod"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
-	max_integrity = 0
+	icon_state = "komod"
+	base_icon_state = "komod"
 	density = TRUE
 	climbable = TRUE
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
@@ -63,6 +63,8 @@
 	icon_state = "loh_sdoh"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	max_integrity = 0
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 
 /obj/effect/decal/panopticon/pit
 	name = "Pit"
@@ -77,10 +79,11 @@
 	max_integrity = 0
 	attacked_sound = 'sound/foley/slap (1).ogg'
 
-/obj/effect/decal/panopticon/pallet
+/obj/structure/panopticon/pallet
 	name = "Pallet"
 	icon_state = "pallet"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	max_integrity = 100
 
 /obj/effect/decal/panopticon/skull
 	name = "Skull"
@@ -103,6 +106,8 @@
 	icon_state = "mines"
 	icon = 'icons/panopticon/obj/bigass.dmi'
 	max_integrity = 0
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 
 /obj/structure/panopticon/meatpile
 	name = "Big meatpile"
@@ -112,7 +117,8 @@
 	max_integrity = 0
 	attacked_sound = 'sound/misc/fleisch.ogg'
 	var/datum/looping_sound/fliesloop/soundloop
-	layer = GHOST_LAYER
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 
 /obj/structure/panopticon/meatpile/Initialize()
 	soundloop = new(list(src), FALSE)
@@ -128,3 +134,15 @@
 	if(soundloop)
 		soundloop.stop()
 	..()
+
+/obj/effect/decal/panopticon/sewergrate
+	name = "grate"
+	desc = "smells fucking awful"
+	icon_state = "sewer"
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+
+/obj/structure/panopticon/idol
+	name = "Idol"
+	icon_state = "idol"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	max_integrity = 0

@@ -18,7 +18,7 @@
 	can_random = FALSE
 /datum/job/panopticon/lesnik/New()
 	. = ..()
-	peopleknowme = list()
+	peopleiknow = list("Major")
 
 /datum/outfit/job/panopticon/lesnik/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -32,8 +32,11 @@
 	r_hand = /obj/item/rogueweapon/stoneaxe/woodcut
 	backpack_contents = list(/obj/item/reagent_containers/food/snacks/grown/psychickgrib = 2)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(1,2,3,4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(4,5), TRUE)
+		H.STAINT = rand(1, 7)
+		H.STAEND = rand(10, 15)
+		H.STASTR = rand(10, 20)
 	ADD_TRAIT(H, TRAIT_NOGUNS, TRAIT_GENERIC)
 
 /datum/outfit/job/panopticon/lesnik

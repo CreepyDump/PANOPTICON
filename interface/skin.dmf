@@ -180,7 +180,7 @@ window "statwindow"
 		highlight-color = #f9bb00
 		tab-text-color = #b29426
 		tab-background-color = #000000
-		tab-font-family = "1 Blackmoor LET-Broken,Vinland"
+		tab-font-family = "Vinland"
 		tab-font-size = 20
 		prefix-color = #f9bb00
 		suffix-color = #d6dbd5
@@ -205,22 +205,29 @@ window "preferencess_window"
 		size = 700x530
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
 		can-close = false
 		can-resize = false
 		icon = 'icons\\tg_32.png'
+		outer-size = 716x569
+		outer-pos = 291,0
+		inner-size = 700x530
+		inner-pos = 8,31
+		screen-size = 1920x1032
 	elem "preferences_browser"
 		type = BROWSER
 		pos = 0,0
 		size = 700x530
 		anchor1 = 0,0
 		anchor2 = 75,100
+		background-color = none
 		saved-params = ""
 	elem "character_preview_map"
 		type = MAP
-		pos = 260,200
+		pos = 260,160
 		size = 140x192
 		anchor1 = 75,0
 		anchor2 = 100,100

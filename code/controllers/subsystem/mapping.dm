@@ -243,6 +243,7 @@ SUBSYSTEM_DEF(mapping)
 	#ifndef FASTLOAD
 	otherZ += load_map_config("_maps/map_files/panopticon/bunker.json")
 	otherZ += load_map_config("_maps/map_files/panopticon/mirkwood.json")
+	otherZ += load_map_config("_maps/map_files/panopticon/town.json")
 	#endif
 	#ifdef ROGUEWORLD
 	otherZ += load_map_config("_maps/map_files/roguetown/otherz/rogueworld.json")

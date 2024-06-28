@@ -187,11 +187,12 @@
 	icon_state = "railing"
 	density = FALSE
 	anchored = TRUE
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 	deconstructible = FALSE
 	flags_1 = ON_BORDER_1
 	climbable = TRUE
 	var/passcrawl = TRUE
-	layer = ABOVE_MOB_LAYER
 
 
 /obj/structure/fluff/railing/Initialize()

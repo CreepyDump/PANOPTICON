@@ -124,6 +124,24 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Necroleninist")
 	delete_after_roundstart = FALSE
 
+/obj/effect/landmark/start/lodger
+	name = "Lodger"
+	icon_state = "arrow"
+	jobspawn_override = list("Lodger")
+	delete_after_roundstart = FALSE
+	
+/obj/effect/landmark/start/policia
+	name = "policespawn"
+	icon_state = "arrow"
+	jobspawn_override = list("Greys", "Major")
+	delete_after_roundstart = FALSE
+
+/obj/effect/landmark/start/bar
+	name = "barman"
+	icon_state = "arrow"
+	jobspawn_override = list("Tippler")
+	delete_after_roundstart = FALSE
+
 /obj/effect/landmark/start/vagrantlate
 	name = "Beggarlate"
 	icon_state = "arrow"

@@ -47,6 +47,15 @@
 	desc = "Lennin lived. Lennin is alive. Lennin will live."
 	icon_state = "pnposter7"
 
+/obj/structure/panopticon/onwall/wanted
+	name = "WANTED:"
+	desc = "Untitled middle-aged guy. Total creep. Torched the former restaurant behind the tavern."
+	icon_state = "pnposter8"
+
+/obj/structure/panopticon/onwall/wanted/unabomber
+	desc = "Middle-aged guy, identified as 'The Homicide Bomber'."
+	icon_state = "pnposter9"
+
 /obj/structure/panopticon/onwall/pipe
 	name = "Pipe"
 	desc = ""

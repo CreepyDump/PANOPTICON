@@ -1,4 +1,4 @@
-#define MUSIC_TAV list("Мясокомбинат" = 'sound/music/jukeboxes/anger1.ogg', "Заговор" = 'sound/music/jukeboxes/anger2.ogg', "Эй брат любер!" = 'sound/music/jukeboxes/anger3.ogg', "Снова я один" = 'sound/music/jukeboxes/calm1.ogg', "Свобода" = 'sound/music/jukeboxes/calm2.ogg', "Солдатами не рождаются" = 'sound/music/jukeboxes/anger4.ogg', "Наваждение" = 'sound/music/jukeboxes/calm3.ogg')
+#define MUSIC_TAV list("Мясокомбинат" = 'sound/music/jukeboxes/myasokombinat.ogg', "Заговор" = 'sound/music/jukeboxes/zagovor.ogg', "Свобода" = 'sound/music/jukeboxes/svoboda.ogg', "Солдатами не рождаются" = 'sound/music/jukeboxes/soldat.ogg', "Эй брат любер!" = 'sound/music/jukeboxes/bratluber.ogg', "Не смешно" = 'sound/music/jukeboxes/nesmeshno.ogg', "Панк и Рок-н-ролл" = 'sound/music/jukeboxes/punknrocknroll.ogg', "Свобода" = 'sound/music/jukeboxes/svoboda.ogg', "Зоопарк" = 'sound/music/jukeboxes/zoopark.ogg', "Мы из Кронштадта" = 'sound/music/jukeboxes/kronshtadt.ogg')
 
 /datum/looping_sound/musloop
 	mid_sounds = list()
