@@ -51,7 +51,7 @@
 			l_hand = /obj/item/panopticonweapon/boner/nailplank
 		if(H.gender == MALE)
 			if(prob(5))
-				cloak = /obj/item/clothing/armor/panopticon
+				cloak = /obj/item/clothing/armor/panopticon/cloak
 				head = /obj/item/clothing/head/panopticon/jeremyden
 				backl = /obj/item/gun/ballistic/automatic/panopticon/krasnik
 	if(prob(35))

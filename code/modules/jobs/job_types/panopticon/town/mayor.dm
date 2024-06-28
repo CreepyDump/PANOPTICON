@@ -28,7 +28,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	pants = /obj/item/clothing/under/panopticon/greys
 	mask = /obj/item/clothing/mask/gas/panopticon/zelinskiy
-	armor = /obj/item/clothing/armor/panopticon/grey
+	armor = /obj/item/clothing/armor/panopticon/cloak/grey
 	head = /obj/item/clothing/head/panopticon/mayor
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(3,4,5), TRUE)
