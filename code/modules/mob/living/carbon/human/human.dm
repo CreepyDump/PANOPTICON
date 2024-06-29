@@ -268,6 +268,16 @@
 	else
 		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_SHOES]'>[(shoes && !(shoes.item_flags & ABSTRACT)) ? shoes : "<font color=grey>Boots</font>"]</A></td></tr>"
 
+	if(SLOT_R_STORE in obscured)
+		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_R_STORE]'>[(r_store && !(r_store.item_flags & ABSTRACT)) ? r_store : "<font color=grey>Hip</font>"]</A></td></tr>"
+
+	if(SLOT_L_STORE in obscured)
+		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_L_STORE]'>[(l_store && !(l_store.item_flags & ABSTRACT)) ? l_store : "<font color=grey>Hip</font>"]</A></td></tr>"
+
 	dat += "<tr><td><hr></td></tr>"
 
 	dat += {"</table>"}

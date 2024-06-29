@@ -892,7 +892,7 @@ There are several things that need to be remembered:
 */
 
 /mob/living/carbon/human/update_inv_pockets()
-	return/*
+	return
 	if(client && hud_used)
 		var/obj/screen/inventory/inv
 
@@ -912,7 +912,7 @@ There are several things that need to be remembered:
 			r_store.screen_loc = ui_storage2
 			if(hud_used.hud_shown)
 				client.screen += r_store
-			update_observer_view(r_store)*/
+			update_observer_view(r_store)
 
 
 /mob/living/carbon/human/update_inv_wear_mask()

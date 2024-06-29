@@ -211,6 +211,10 @@
 		H.equip_to_slot_or_del(new beltl(H),SLOT_BELT_L, TRUE)
 	if(beltr)
 		H.equip_to_slot_or_del(new beltr(H),SLOT_BELT_R, TRUE)
+	if(l_pocket)
+		H.equip_to_slot_or_del(new l_pocket(H),SLOT_L_STORE, TRUE)
+	if(r_pocket)
+		H.equip_to_slot_or_del(new r_pocket(H),SLOT_R_STORE, TRUE)
 	if(backr)
 		H.equip_to_slot_or_del(new backr(H),SLOT_BACK_R, TRUE)
 	if(backl)
@@ -240,12 +244,6 @@
 			testing("PIH")
 		//	H.put_in_hands(new r_hand(get_turf(H)),TRUE)
 			H.equip_to_slot_or_del(new r_hand(H),SLOT_HANDS, TRUE)
-
-	if(!visualsOnly) // Items in pockets or backpack don't show up on mob's icon.
-		if(l_pocket)
-			H.equip_to_slot_or_del(new l_pocket(H),SLOT_L_STORE, TRUE)
-		if(r_pocket)
-			H.equip_to_slot_or_del(new r_pocket(H),SLOT_R_STORE, TRUE)
 
 //		if(box)
 //			if(!backpack_contents)

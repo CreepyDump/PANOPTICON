@@ -156,6 +156,8 @@
 #define rogueui_shoes "WEST-3:16,SOUTH+1"
 #define rogueui_beltr "WEST-4,SOUTH+2"
 #define rogueui_beltl "WEST-2,SOUTH+2"
+#define rogueui_pocketr "WEST-4:-16,SOUTH+1"
+#define rogueui_pocketl "WEST-2:+16,SOUTH+1"
 #define rogueui_belt "WEST-3,SOUTH+2"
 #define rogueui_shirt "WEST-3,SOUTH+3"
 #define rogueui_pants "WEST-4:16,SOUTH+1"
@@ -182,14 +184,14 @@
 #define rogueui_clock "WEST-3:-16,CENTER+6:1"
 
 #define rogueui_intents "WEST-5:-16,SOUTH+8"
-#define rogueui_stress "WEST-3,CENTER+3"
+#define rogueui_stress "WEST-1:-16,CENTER+1"
 #define rogueui_spells "WEST-4:2,SOUTH+8"
 
 #define rogueui_fat "WEST-1,CENTER+2"
 #define rogueui_stam "WEST-1:0,CENTER+4"
 #define rogueui_blood "EAST-1, NORTH-11"
 
-#define rogueui_cmode "WEST-1:-16,CENTER+1"
+#define rogueui_cmode "WEST-3,CENTER+3"
 #define rogueui_def "WEST-2,NORTH-5"
 
 #define rogueui_rmbintents "WEST-4:-16,CENTER+1"

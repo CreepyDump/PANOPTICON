@@ -179,11 +179,9 @@
 			beltr = I
 			update_inv_belt()
 		if(SLOT_BACK_R)
-
 			backr = I
 			update_inv_back()
 		if(SLOT_BACK_L)
-
 			backl = I
 			update_inv_back()
 		if(SLOT_L_STORE)

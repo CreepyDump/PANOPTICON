@@ -390,6 +390,8 @@
 							if("groin")
 								stealpos.Add(V.get_item_by_slot(SLOT_BELT_R))
 								stealpos.Add(V.get_item_by_slot(SLOT_BELT_L))	
+								stealpos.Add(V.get_item_by_slot(SLOT_R_STORE))
+								stealpos.Add(V.get_item_by_slot(SLOT_L_STORE))	
 							if("r_hand" || "l_hand")
 								stealpos.Add(V.get_item_by_slot(SLOT_RING))
 						var/obj/item/picked = pick(stealpos)
