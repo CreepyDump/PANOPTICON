@@ -8,7 +8,13 @@
 	name = "Wood bed"
 	icon_state = "wooden_bed"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
-	sleepy = 3
+	sleepy = 5
+
+/obj/structure/bed/panopticon/pigs
+	name = "Garbage bed"
+	icon_state = "pig_bed"
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	sleepy = 1
 
 /obj/structure/panopticon/barrel/red
 	name = "Red barrel"
@@ -146,3 +152,41 @@
 	icon_state = "idol"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	max_integrity = 0
+
+/obj/effect/decal/panopticon/skulldraw
+	name = ""
+	icon_state = "skull"
+	icon = 'icons/panopticon/obj/bigass.dmi'
+
+/obj/structure/panopticon/plaque
+	name = "Broken Plaque"
+	desc = "remains of the former grandeur of the Church is here."
+	icon_state = "plaque"
+	max_integrity = 20
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	density = TRUE
+
+/obj/structure/panopticon/brkcloset
+	name = "Broken closet"
+	desc = ""
+	icon_state = "junk_cabinet"
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	max_integrity = 0
+
+/obj/structure/panopticon/brklocker
+	name = "Broken locker"
+	desc = ""
+	icon_state = "junk_locker"
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	max_integrity = 0
+
+/obj/structure/panopticon/brklocker/Initialize()
+	. = ..()
+	if(prob(12))
+		new /obj/item/ammo_box/m10mm(get_turf(src))
+	if(prob(26))
+		new /obj/item/panopticonweapon/boner/nailplank(get_turf(src))
+	if(prob(10))
+		new /obj/item/reagent_containers/glass/bottle/heroinium(get_turf(src))
+	if(prob(30))
+		new /obj/item/panopticonweapon/molotok(get_turf(src))

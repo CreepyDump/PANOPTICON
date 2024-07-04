@@ -31,12 +31,9 @@
 
 /turf/open/floor/panopticon/darkwood/parket
 	icon_state = "parket"
-	footstep = FOOTSTEP_WOOD
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_WOOD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	tiled_dirt = FALSE
-	landsound = 'sound/foley/jumpland/woodland.wav'
+
+/turf/open/floor/panopticon/darkwood/birchwood
+	icon_state = "birch"
 
 /turf/open/floor/panopticon/bunker
 	icon_state = "bunkershit"
@@ -175,3 +172,20 @@
 	icon_state = "town"
 	footstep = FOOTSTEP_STONE
 	landsound = 'sound/foley/jumpland/stoneland.wav'
+
+/turf/open/floor/panopticon/cement
+	icon_state = "tsement"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/dirtland.wav'
+
+/obj/effect/decal/panopticon/pepeldeco
+	name = ""
+	icon = 'icons/turf/panopticonfloor.dmi'
+	icon_state = "pepeldeco"
+
+/turf/open/floor/panopticon/cement/pepel
+	icon_state = "burnthemall"

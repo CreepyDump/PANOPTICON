@@ -227,6 +227,11 @@
 	max_stacks = 10
 	desc = "<span class='red'>I've failed to craft something.</span>"
 */
+/datum/stressevent/tv
+	timer = 1 MINUTES
+	stressadd = -1
+	desc = "<span class='red'>WHAT THE FUCK IS PLAYING ON TV?!?!.</span>"
+
 /datum/stressevent/miasmagas
 	timer = 10 SECONDS
 	stressadd = 1

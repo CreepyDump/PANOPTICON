@@ -74,3 +74,12 @@
 /obj/item/clothing/head/hooded/panopticon/necroleninist/dropped(mob/user)
 	. = ..()
 	user.update_fov_angles()
+
+
+/obj/item/clothing/cloak/panopticon/nkvd
+	name = "NKVD coat"
+	icon_state = "nkvd"
+	item_state = "nkvd"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	slot_flags = ITEM_SLOT_ARMOR

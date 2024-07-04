@@ -58,6 +58,14 @@
 
 /obj/item/clothing/head/panopticon/mayor
 	name = "Major's Cap"
+	desc = ""
 	icon_state = "mayor"
 	item_state = "mayor"
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/panopticon/nkvd
+	name = "NKVD Cap"
+	desc = ""
+	icon_state = "nkvd"
+	item_state = "nkvd"
 	flags_inv = HIDEEARS

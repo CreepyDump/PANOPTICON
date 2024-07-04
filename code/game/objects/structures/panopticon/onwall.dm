@@ -104,3 +104,15 @@
 
 /obj/structure/panopticon/onwall/graffiti
 	icon_state = "graffiti"
+
+/obj/structure/panopticon/onwall/burnedposter
+	name = "Unknown poster"
+	desc = "The poster's content is shrouded in obscurity after the fire."
+	icon_state = "burned"
+
+/obj/structure/panopticon/onwall/burn
+	icon_state = "burn"
+
+/obj/structure/panopticon/onwall/carpet
+	name = "Carpet"
+	icon_state = "carpet"

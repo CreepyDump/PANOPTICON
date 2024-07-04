@@ -27,8 +27,6 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3,4,5), TRUE)
 		H.STASTR = rand(10, 20)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/heal)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, pick(1,2,3,4,5), TRUE)
 		if(prob(25))
 			r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
 			beltr = /obj/item/panopticonweapon/knife

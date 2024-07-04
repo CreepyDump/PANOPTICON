@@ -127,7 +127,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = ""
 	icon_state = "cigoff"
 	throw_speed = 0.5
-	item_state = "cigoff"
+	item_state = "spliffoff"
 	w_class = WEIGHT_CLASS_TINY
 	body_parts_covered = null
 	grind_results = list()

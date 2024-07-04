@@ -6,7 +6,7 @@
 	total_positions = 15
 	spawn_positions = 15
 	selection_color = JCOLOR_TOWN
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	outfit = /datum/outfit/job/panopticon/citizen
 	bypass_lastclass = TRUE
@@ -24,6 +24,8 @@
 
 /datum/outfit/job/panopticon/citizen/pre_equip(mob/living/carbon/human/H)
 	..()
+	var/datum/disease/advance/chuma = new /datum/disease/anthrax
+	chuma.name = "Unknown"
 	shoes = /obj/item/clothing/shoes/panopticon
 	pants = /obj/item/clothing/under/panopticon/civilianpants
 	if(prob(80))
@@ -42,6 +44,11 @@
 			if(3)
 				H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,2,3,4,5), TRUE)
 				wrists = /obj/item/clothing/wrists/roguetown/wrappings
+	if(prob(10))
+		H.playsound_local(H, 'sound/misc/littlescary1.ogg', 60)
+		to_chat(H, "<span class='cult italic'><b><span class='big'>i AM SICK WITH DISEASE.</span></b></span>")
+		chuma.try_infect(H)
+		mask = /obj/item/clothing/mask/infected
 
 /datum/outfit/job/panopticon/citizen
 	uniform = null

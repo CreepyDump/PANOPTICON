@@ -82,3 +82,13 @@
 	icon_state = "foambox_riot"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	custom_materials = list(/datum/material/iron = 50000)
+
+/obj/item/ammo_box/m10mm
+	name = "ammo box (10mm)"
+	desc = ""
+	icon = 'icons/panopticon/items/misc.dmi'
+	icon_state = "10mm"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 8
+	multiple_sprites = AMMO_BOX_ONE_SPRITE

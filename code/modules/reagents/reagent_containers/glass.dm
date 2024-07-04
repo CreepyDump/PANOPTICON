@@ -217,10 +217,13 @@
 	return reagents.maximum_volume
 
 /obj/item/reagent_containers/glass/beaker/jar
-	name = "honey jar"
+	name = "jar"
 	desc = ""
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "vapour"
+	volume = 40
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5,10,15,20,25,30,40)
 
 /obj/item/reagent_containers/glass/beaker/large
 	name = "large beaker"

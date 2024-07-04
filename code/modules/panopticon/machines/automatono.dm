@@ -164,3 +164,60 @@
 		playsound(get_turf(src), 'sound/misc/elec (2).ogg', 100 , FALSE, FALSE)
 		new /obj/item/reagent_containers/glass/bottle/heroinium(drop_location())
 		qdel(M)
+
+/datum/looping_sound/tvloop
+	mid_sounds = list('sound/ambience/tv1.ogg')
+	end_sound = list('sound/ambience/tv2.ogg')
+	mid_length = 25
+	volume = 50
+	extra_range = 5
+	persistent_loop = TRUE
+	var/stresstogive = /datum/stressevent/tv
+
+/datum/looping_sound/tvloop/on_hear_sound(mob/M)
+	. = ..()
+	if(stresstogive)
+		if(isliving(M))
+			var/mob/living/L = M
+			L.add_stress(stresstogive)
+
+/obj/structure/panopticon/automat/televizor
+	name = "Strange TV"
+	desc = "I wonder if it still works..."
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	icon_state = "tv0"
+	density = FALSE
+	max_integrity = 30
+	anchored = TRUE
+	var/datum/looping_sound/tvloop/soundloop
+	var/curfile
+	var/playing = FALSE
+	var/curvol = 70
+
+/obj/structure/panopticon/automat/televizor/Initialize()
+	soundloop = new(list(src), FALSE)
+	. = ..()
+
+/obj/structure/panopticon/automat/televizor/Destroy()
+	if(soundloop)
+		soundloop.stop()
+	..()
+
+/obj/structure/panopticon/automat/televizor/obj_break(damage_flag)
+	if(soundloop)
+		soundloop.stop()
+	..()
+
+/obj/structure/panopticon/automat/televizor/attack_hand(mob/living/user)
+	. = ..()
+	if(.)
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(!playing)
+		playing = TRUE
+		soundloop.start()
+		icon_state = "tv1"
+	else
+		playing = FALSE
+		soundloop.stop()
+		icon_state = "tv0"

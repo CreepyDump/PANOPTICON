@@ -609,7 +609,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	dat += "<table><tr><td valign='top'>"
 	var/column_counter = 0
 
-	var/list/omegalist = list(GLOB.bunker_positions, GLOB.outside_positions, GLOB.town_positions)
+	var/list/omegalist = list(GLOB.bunker_positions, GLOB.town_positions, GLOB.outside_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
