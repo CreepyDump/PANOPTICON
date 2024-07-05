@@ -319,23 +319,27 @@ GLOBAL_VAR(restart_counter)
 
 /world/proc/update_status()
 	var/s = ""
-	s += "<center><a href=\"https://discord.gg/DgZHVfeHvf\">"
+	s += "<a href=\"https://discord.gg/DgZHVfeHvf\">"
 #ifdef MATURESERVER
-	s += "<big><b>PANOPTICON</b></big></a><br>"
-	s += "<b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
+	s += "<big><b>PANOPTICON</b> &#8212; </big></a><br>"
+	s += "<center><b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
 #else
-	s += "<big><b>PANOPTICON</b></big></a><br>"
-	s += "<b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
+	s += "<big><b>PANOPTICON</b> &#8212; </big></a><br>"
+	s += "<center><b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
 #endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"
 
 //	s += "! <b>UPDATE 4.4</b> 4/22/2022<br><br>"
 #ifdef MATURESERVER
-	s += "\["
+	var/hostedby
+	s += ""
+	hostedby = CONFIG_GET(string/hostedby)
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		s += "<b>GAME STATUS:</b> IN LOBBY"
+		s += "&#5859; <b> SERVER STATUS:</b> IN LOBBY &#5833; "
 	else
-		s += "<b>GAME STATUS:</b> PLAYING"
+		s += "&#5859; <b>GAME STATUS:</b> PLAYING &#5833; "
+	if (!host && hostedby)
+		s += "Hosted by <b>[hostedby]</b>"
 #endif
 	status = s
 	return s
