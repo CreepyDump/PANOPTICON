@@ -6,6 +6,7 @@
 	total_positions = 15
 	spawn_positions = 15
 	selection_color = JCOLOR_BUNKER
+	allowed_races = list("Humen")
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/slug

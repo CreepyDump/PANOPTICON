@@ -81,3 +81,14 @@
 	baseturfs = list(/turf/open/floor/panopticon/darkwood)
 	wallclimb = TRUE
 	damage_deflection = 20
+
+/turf/closed/wall/mineral/panopticon/woods/alt
+	name = "Wooden wall"
+	icon = 'icons/turf/walls/woodwall.dmi'
+	icon_state = "wood"
+	smooth = SMOOTH_MORE
+	blade_dulling = DULLING_BASH
+	max_integrity = 500
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/woods/alt)
+	wallclimb = FALSE
+	damage_deflection = 20

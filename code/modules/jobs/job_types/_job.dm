@@ -100,6 +100,8 @@
 
 	var/can_random = TRUE
 
+	/// Some jobs have unique combat mode music, because why not?
+	var/cmode_music
 
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
 	return TRUE
@@ -109,9 +111,14 @@
 /datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
 	if(ishuman(H))
 		H.playsound_local(H, 'sound/misc/hello.ogg', 90, FALSE)
-//		H.overlay_fullscreen("panoptic_title", /obj/screen/fullscreen/panopticontitle)
-//		H.clear_fullscreen_after_animate("panoptic_title")
-
+		var/list/in_range = range(2, H)
+		var/obj/structure/bed/a_mimir
+		if(a_mimir in range (in_range))
+			H.forceMove(get_turf(a_mimir))
+			a_mimir.buckle_mob(H)
+			H.AdjustSleeping(4 SECONDS)
+		if(H?.ckey == "crazyduster")
+			H.put_in_hands(new /obj/item/rogueweapon/pitchfork(H.drop_location()), FALSE)
 	if(mind_traits)
 		for(var/t in mind_traits)
 			ADD_TRAIT(H.mind, t, JOB_TRAIT)
@@ -161,6 +168,9 @@
 
 	if(show_in_credits)
 		SScrediticons.processing += H
+
+	if(cmode_music)
+		H.cmode_music = cmode_music
 
 /mob/living/carbon/human/proc/add_credit()
 	if(!mind || !client)

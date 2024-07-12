@@ -6,6 +6,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = JCOLOR_OUTSIDERS
+	allowed_races = list("Humen")
 	allowed_sexes = list(MALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/lesnik
@@ -16,9 +17,10 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
+	cmode_music = 'sound/music/combat/bornagain.ogg'
+
 /datum/job/panopticon/lesnik/New()
 	. = ..()
-	peopleiknow = list("Major")
 
 /datum/outfit/job/panopticon/lesnik/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -37,7 +39,7 @@
 		H.STAINT = rand(1, 7)
 		H.STAEND = rand(10, 15)
 		H.STASTR = rand(10, 20)
-	ADD_TRAIT(H, TRAIT_NOGUNS, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOGUNS, TRAIT_GENERIC)
 
 /datum/outfit/job/panopticon/lesnik
 	uniform = null

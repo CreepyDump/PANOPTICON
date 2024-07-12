@@ -5,7 +5,7 @@
 	name = "Humen"
 	id = "human"
 	desc = "<b>Humen</b><br>\
-	A reason of whole wars and famine in our history. But despite of their bloodlust\
+	A reason of whole wars and famine in our history. But despite of their bloodlust \
 	it is the only being that is able to be creative."
 
 	skin_tone_wording = "Origins"
@@ -100,3 +100,6 @@
 
 /datum/species/human/northern/random_surname()
 	return " [pick(world.file2list("strings/rt/names/human/humnorlast.txt"))]"
+
+/datum/species/human/northern/check_roundstart_eligible()
+	return TRUE

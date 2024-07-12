@@ -140,6 +140,8 @@
 ///BRANCHES
 
 /obj/structure/flora/newbranch
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 	name = "branch"
 	desc = "A stable branch, should be safe to walk on."
 	icon = 'icons/roguetown/misc/tree.dmi'

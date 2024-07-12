@@ -2,6 +2,7 @@
 	name = "Psychickshroom"
 	desc = ""
 	icon = 'icons/panopticon/items/consumable.dmi'
+	is_recipe_samogon = TRUE
 	icon_state = "psychick"
 	filling_color = "#a32d8f"
 	foodtype = VEGETABLES | GROSS

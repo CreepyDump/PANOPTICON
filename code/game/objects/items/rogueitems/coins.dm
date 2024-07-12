@@ -1,5 +1,3 @@
-n
-
 #define CTYPE_GOLD 1
 #define CTYPE_SILV 2
 #define CTYPE_COPP 3

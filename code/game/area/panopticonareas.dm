@@ -96,9 +96,10 @@
 	ambientnight = AMB_FORESTNIGHT
 	spookysounds = HORROR_FOREST
 	spookynight = HORROR_FOREST
+	droning_sound_dawn = 'sound/music/area/morning.ogg'
 	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_dusk = 'sound/music/area/forest.ogg'
+	droning_sound_night = 'sound/music/area/forest.ogg'
 	soundenv = 15
 	first_time_text = "DARKWOOD"
 	converted_type = /area/rogue/indoors/shelter/woods
@@ -135,8 +136,8 @@
 	spookysounds = HORROR_FOREST
 	spookynight = HORROR_FOREST
 	droning_sound = 'sound/music/area/pole.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_dusk = 'sound/music/area/darkwood.ogg'
+	droning_sound_night = 'sound/music/area/darkwood.ogg'
 
 //TOWN
 

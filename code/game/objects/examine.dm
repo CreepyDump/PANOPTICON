@@ -24,7 +24,7 @@
 //		. += "<span class='notice'><a href='?src=[REF(src)];inspect=1'>Inspect</a></span>"
 
 	if(get_real_price() > 0 && (HAS_TRAIT(user, RTRAIT_SEEPRICES) || simpleton_price))
-		. += "<span class='info'>Value: [get_real_price()] mammon</span>"
+		. += "<span class='info'>Value: [get_real_price()] farkas</span>"
 
 //	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
 

@@ -4,6 +4,8 @@
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	layer = ABOVE_MOB_LAYER
 	max_integrity = 1
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 
 /obj/structure/flora/panopticon/grass/Initialize()
 	. = ..()
@@ -34,6 +36,8 @@
 	density = 1
 	max_integrity = 200
 	blade_dulling = DULLING_CUT
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 	pixel_x = -16
 	layer = 4.81
 	plane = GAME_PLANE_UPPER

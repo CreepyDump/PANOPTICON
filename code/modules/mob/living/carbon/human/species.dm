@@ -154,20 +154,25 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return TRUE
 	return FALSE
 
-/proc/generate_selectable_species()
-	for(var/I in subtypesof(/datum/species))
-		var/datum/species/S = new I
-		if(S.check_roundstart_eligible())
-			GLOB.roundstart_races += S.name
-			qdel(S)
+/proc/get_selectable_species()
 	if(!GLOB.roundstart_races.len)
-		GLOB.roundstart_races += "human"
+		generate_selectable_species()
+	return GLOB.roundstart_races
+
+/proc/generate_selectable_species()
+	for(var/species_type in subtypesof(/datum/species))
+		var/datum/species/species = new species_type
+		if(species.check_roundstart_eligible())
+			GLOB.roundstart_races += species.name
+		qdel(species)
+	if(!GLOB.roundstart_races.len)
+		GLOB.roundstart_races += "Humen"
+	sortList(GLOB.roundstart_races, GLOBAL_PROC_REF(cmp_text_dsc))
 
 /datum/species/proc/check_roundstart_eligible()
+	if(name && id && (id in (CONFIG_GET(keyed_list/roundstart_races))))
+		return TRUE
 	return FALSE
-//	if(id in (CONFIG_GET(keyed_list/roundstart_races)))
-//		return TRUE
-//	return FALSE
 
 /datum/species/proc/random_name(gender,unique,lastname)
 	for(var/i in 1 to 5)

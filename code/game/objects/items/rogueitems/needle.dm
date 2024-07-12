@@ -86,12 +86,7 @@
 		return
 	if(do_after(user, 20))
 		playsound(loc, 'sound/foley/sewflesh.ogg', 100, TRUE, -2)
-		var/moveup = 10
-		if(user.mind)
-			moveup = (((user.mind.get_skill_level(/datum/skill/misc/medicine)) * 30) + moveup)
-		W.progress = min(W.progress + moveup, 100)
-		if(W.progress == 100)
-			W.sewn()
+		W.sewn()
 
 		H.update_damage_overlays()
 

@@ -6,6 +6,7 @@
 	total_positions = 15
 	spawn_positions = 15
 	selection_color = JCOLOR_OUTSIDERS
+	allowed_races = list("Humen")
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/necroleninist
@@ -16,6 +17,9 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
+	cmode_music = 'sound/music/combat/bladesymphony.ogg'
+	spells = list(/obj/effect/proc_holder/spell/invoked/necroleninistrevive)
+
 /datum/job/panopticon/necroleninist/New()
 	. = ..()
 	peopleknowme = list("Necroleninist")
@@ -26,7 +30,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3,4,5), TRUE)
-		H.STASTR = rand(10, 20)
+		H.STASTR = rand(8, 13)
 		if(prob(25))
 			r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
 			beltr = /obj/item/panopticonweapon/knife

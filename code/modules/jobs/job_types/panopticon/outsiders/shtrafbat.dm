@@ -6,6 +6,7 @@
 	total_positions = 7
 	spawn_positions = 7
 	selection_color = JCOLOR_OUTSIDERS
+	allowed_races = list("Humen")
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	outfit = /datum/outfit/job/panopticon/shtrafbat
 	bypass_lastclass = TRUE
@@ -15,6 +16,8 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
+	cmode_music = 'sound/music/combat/desperation.ogg'
+
 
 /datum/job/panopticon/shtrafbat/New()
 	. = ..()

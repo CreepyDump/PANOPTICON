@@ -90,6 +90,7 @@
 	icon_state = "pallet"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	max_integrity = 100
+	layer = LYING_MOB_LAYER
 
 /obj/effect/decal/panopticon/skull
 	name = "Skull"

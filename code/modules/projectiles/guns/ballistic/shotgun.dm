@@ -280,10 +280,18 @@
 		return ..()
 
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/doublebarrel
+/obj/item/gun/ballistic/shotgun/doublebarrel/panopticon
 	name = "Double-barrel gun"
-	desc = "Double-barrelled shotgun made too fuckin' shitty to always jam."
+	desc = "Double-barrelled shotgun. Made too fuckin' shitty to always jam."
 	icon = 'icons/panopticon/items/guns.dmi'
 	icon_state = "doublebarrel"
 	item_state = "shotgun_db"
 	recoil = 2
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/process_chamber()
+	. = ..()
+	do_sparks(1, TRUE, src)
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/afterattack(atom/target, mob/living/user)
+	if(prob(50))
+		to_chat(user, "<span class='danger'>My [src] jams after shot!</span>")

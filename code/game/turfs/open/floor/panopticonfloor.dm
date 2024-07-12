@@ -173,6 +173,11 @@
 	footstep = FOOTSTEP_STONE
 	landsound = 'sound/foley/jumpland/stoneland.wav'
 
+/turf/open/floor/panopticon/town/plitka
+	icon_state = "plitka_old"
+	footstep = FOOTSTEP_STONE
+	landsound = 'sound/foley/jumpland/stoneland.wav'
+
 /turf/open/floor/panopticon/cement
 	icon_state = "tsement"
 	footstep = FOOTSTEP_SAND
@@ -189,3 +194,16 @@
 
 /turf/open/floor/panopticon/cement/pepel
 	icon_state = "burnthemall"
+
+/turf/open/floor/panopticon/gulag/snow
+	icon_state = "sneg"
+	footstep = FOOTSTEP_SNOW
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/dirtland.ogg'
+
+/turf/open/floor/panopticon/gulag/Initialize()
+	. = ..()
+	dir = pick(GLOB.cardinals)

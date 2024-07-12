@@ -713,6 +713,8 @@
 		user.visible_message("<span class='warning'>[user] snuffs [src].</span>")
 		burn_out()
 
+/obj/machinery/light/rogue/hearth/Crossed(atom/movable/AM, oldLoc)
+	return
 
 /obj/machinery/light/rogue/campfire
 	name = "campfire"

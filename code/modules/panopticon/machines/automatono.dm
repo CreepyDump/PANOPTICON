@@ -138,7 +138,7 @@
 	rattlesound = 'sound/foley/doors/lockrattlemetal.ogg'
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 
-/obj/structure/mineral_door/bars/Initialize()
+/obj/structure/mineral_door/panopticon/bunker/Initialize()
 	..()
 	add_overlay(mutable_appearance(icon, "bunkerdooropen", ABOVE_MOB_LAYER))
 
@@ -221,3 +221,161 @@
 		playing = FALSE
 		soundloop.stop()
 		icon_state = "tv0"
+
+/obj/structure/panopticon/automat/proc/newbudget(budget, mob/user, specify)
+	var/turf/T
+	if(!user || (!ismob(user)))
+		T = get_turf(src)
+	else
+		T = get_turf(user)
+	if(!budget)
+		return
+	budget = round(budget)
+	var/found
+	if(specify)
+		found = TRUE
+		switch(specify)
+			if("THOUSAND")
+				var/zenars = budget/10
+				if(zenars >= 1)
+					var/obj/item/panopticonmoney/hundred/G = new (T)
+					if(zenars > 1)
+						for(var/i in 2 to zenars)
+							var/obj/item/panopticonmoney/hundred/GV = new /obj/item/panopticonmoney/hundred(G)
+							G.held += GV
+					G.update_icon()
+					user.put_in_hands(G)
+			if("TEN")
+				var/zenars = budget/5
+				if(zenars >= 1)
+					var/obj/item/panopticonmoney/ten/G = new (T)
+					if(zenars > 1)
+						for(var/i in 2 to zenars)
+							var/obj/item/panopticonmoney/ten/GV = new /obj/item/panopticonmoney/ten(G)
+							G.held += GV
+					G.update_icon()
+					user.put_in_hands(G)
+			if("ONE")
+				var/zenars = budget
+				if(zenars >= 1)
+					var/obj/item/panopticonmoney/one/G = new (T)
+					if(zenars > 1)
+						for(var/i in 2 to zenars)
+							var/obj/item/panopticonmoney/one/GV = new /obj/item/panopticonmoney/one(G)
+							G.held += GV
+					G.update_icon()
+					user.put_in_hands(G)
+	else
+		var/zenars = budget/10
+		if(zenars >= 1)
+			for(var/i in 1 to zenars)
+				budget -= 10
+				found = TRUE
+				new /obj/item/panopticonmoney/hundred(T)
+		zenars = budget/5
+		if(zenars >= 1)
+			for(var/i in 1 to zenars)
+				budget -= 5
+				found = TRUE
+				new /obj/item/panopticonmoney/ten(T)
+		if(budget >= 1)
+			for(var/i in 1 to budget)
+				found = TRUE
+				new /obj/item/panopticonmoney/one(T)
+	if(found)
+		playsound(T, 'sound/misc/coindispense.ogg', 100, FALSE, -1)
+
+/obj/structure/panopticon/automat/bank/obj_break(damage_flag)
+	..()
+	newbudget(budget)
+	budget = 0
+	update_icon()
+
+/obj/structure/panopticon/automat/bank/update_icon()
+	cut_overlays()
+	if(obj_broken)
+		set_light(0)
+		return
+	set_light(1, 1, "#1b7bf1")
+
+/obj/structure/panopticon/automat/bank/Destroy()
+	set_light(0)
+	newbudget(budget)
+	budget = 0
+	return ..()
+
+
+/obj/structure/panopticon/automat/bank
+	name = "Money Keeper"
+	desc = "A."
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	icon_state = "zarplata"
+	layer = BELOW_OBJ_LAYER
+	density = FALSE
+	anchored = TRUE
+	destroy_sound = 'sound/foley/breaksound.ogg'
+	break_sound = 'sound/foley/machinebreak.ogg'
+	max_integrity = 0
+	integrity_failure = 0.33
+	pixel_y = 32
+	var/budget = 0
+
+/obj/structure/panopticon/automat/bank/attack_hand(mob/user)
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	if(H.real_name in SStreasury.bank_accounts)
+		var/amt = SStreasury.bank_accounts[H.real_name]
+		if(!amt)
+			say("Your balance is nothing.")
+			return
+		if(amt < 0)
+			say("Your balance is NEGATIVE.")
+			return
+		var/list/choicez = list()
+		if(amt > 10)
+			choicez += "THOUSAND"
+		if(amt > 5)
+			choicez += "TEN"
+		choicez += "ONE"
+		var/selection = input(user, "Make a Selection", src) as null|anything in choicez
+		if(!selection)
+			return
+		amt = SStreasury.bank_accounts[H.real_name]
+		var/mod = 1
+		if(selection == "THOUSAND")
+			mod = 10
+		if(selection == "TEN")
+			mod = 5
+		var/coin_amt = input(user, "There is [SStreasury.treasury_value] banknotes. You may withdraw [amt/mod] [selection] from your account.", src) as null|num
+		coin_amt = round(coin_amt)
+		if(coin_amt < 1)
+			return
+		amt = SStreasury.bank_accounts[H.real_name]
+		if(!Adjacent(user))
+			return
+		if((coin_amt*mod) > amt)
+			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+			return
+		if(!SStreasury.withdraw_money_account(coin_amt*mod, H.real_name))
+			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+			return
+		newbudget(coin_amt*mod, user, selection)
+	else
+		SStreasury.create_bank_account(H.real_name)
+		spawn(5)
+			say("New account created.")
+			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+
+/obj/structure/panopticon/automat/bank/attackby(obj/item/P, mob/user, params)
+	if(ishuman(user))
+		if(istype(P, /obj/item/panopticonmoney))
+			var/mob/living/carbon/human/H = user
+			if(H.real_name in SStreasury.bank_accounts)
+				SStreasury.generate_money_account(P.get_real_price(), H.real_name)
+				qdel(P)
+				playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
+				return
+			else
+				say("No account found. Register it at first.")
+	return ..()

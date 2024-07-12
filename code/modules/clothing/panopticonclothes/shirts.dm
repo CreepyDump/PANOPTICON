@@ -9,6 +9,8 @@
 	edelay_type = 1
 	equip_delay_self = 25
 	bloody_icon_state = "bodyblood"
+	boobed = TRUE
+	sewrepair = TRUE
 
 /obj/item/clothing/suit/panopticon/shirt/civilianshirt
 	name = "Civilian uniform"

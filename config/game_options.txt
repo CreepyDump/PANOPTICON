@@ -20,7 +20,7 @@ REVIVAL_BRAIN_LIFE -1
 
 ## EMOJI ###
 ## Comment this out if you want to disable emojis
-EMOJIS
+#EMOJIS
 
 ## MOB MOVEMENT ###
 
@@ -431,13 +431,14 @@ SILICON_MAX_LAW_AMOUNT 12
 
 ## You probably want humans on your space station, but technically speaking you can turn them off without any ill effect
 ROUNDSTART_RACES humann
-ROUNDSTART_RACES dwarfm
-ROUNDSTART_RACES tiefling
-ROUNDSTART_RACES humans
-ROUNDSTART_RACES halfelf
-ROUNDSTART_RACES elfs
-ROUNDSTART_RACES elfd
-ROUNDSTART_RACES aasimar
+ROUNDSTART_RACES odongh
+#ROUNDSTART_RACES dwarfm
+#ROUNDSTART_RACES tiefling
+#ROUNDSTART_RACES humans
+#ROUNDSTART_RACES halfelf
+#ROUNDSTART_RACES elfs
+#ROUNDSTART_RACES elfd
+#ROUNDSTART_RACES aasimar
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
 #ROUNDSTART_RACES lizard

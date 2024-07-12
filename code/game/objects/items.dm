@@ -15,6 +15,9 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
+	//ВОЗМОЖНОСТЬ ПРЕДМЕТА БЫТЬ РЕЦЕПТОМ ДЛЯ САМОГОНКИ
+	var/is_recipe_samogon  = FALSE //using spit emote spits the item out of our mouth and falls out after some time
+
 	///Icon file for mob worn overlays.
 	///no var for state because it should *always* be the same as icon_state
 	var/icon/mob_overlay_icon

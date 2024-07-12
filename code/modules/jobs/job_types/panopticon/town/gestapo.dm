@@ -7,6 +7,7 @@
 	spawn_positions = 10
 	selection_color = JCOLOR_TOWN
 	allowed_sexes = list(MALE)
+	allowed_races = list("Humen")
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	outfit = /datum/outfit/job/panopticon/greydivision
 	bypass_lastclass = TRUE
@@ -16,6 +17,7 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
+	cmode_music = 'sound/music/combat/time2die.ogg'
 
 /datum/job/panopticon/greydivision/New()
 	. = ..()

@@ -335,9 +335,9 @@ GLOBAL_VAR(restart_counter)
 	s += ""
 	hostedby = CONFIG_GET(string/hostedby)
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		s += "&#5859; <b> SERVER STATUS:</b> IN LOBBY &#5833; "
+		s += "&#5859; <b> SERVER STATUS:</b> IN LOBBY &#5833;<br> "
 	else
-		s += "&#5859; <b>GAME STATUS:</b> PLAYING &#5833; "
+		s += "&#5859; <b>GAME STATUS:</b> PLAYING &#5833;<br> "
 	if (!host && hostedby)
 		s += "Hosted by <b>[hostedby]</b>"
 #endif

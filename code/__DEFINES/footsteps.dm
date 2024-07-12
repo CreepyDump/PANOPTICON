@@ -3,6 +3,7 @@
 #define FOOTSTEP_PLATING "plating"
 #define FOOTSTEP_CARPET "carpet"
 #define FOOTSTEP_SAND "sand"
+#define FOOTSTEP_SNOW "snow"
 #define FOOTSTEP_GRASS "grass"
 #define FOOTSTEP_WATER "water"
 #define FOOTSTEP_LAVA "lava"
@@ -90,6 +91,10 @@ GLOBAL_LIST_INIT(footstep, list(
 		'sound/foley/footsteps/FTMUD (3).ogg',
 		'sound/foley/footsteps/FTMUD (4).ogg',
 		'sound/foley/footsteps/FTMUD (5).ogg'), 100, 0),
+	FOOTSTEP_SNOW = list(list(
+			'sound/foley/footsteps/snow1.ogg',
+		'sound/foley/footsteps/snow2.ogg',
+		'sound/foley/footsteps/snow3.ogg'), 100, 0),
 ))
 //bare footsteps lists
 GLOBAL_LIST_INIT(barefootstep, list(

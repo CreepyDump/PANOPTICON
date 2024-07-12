@@ -80,3 +80,48 @@
 			return pick('sound/vo/mobs/baun/death (1).ogg','sound/vo/mobs/baun/death (2).ogg')
 		if("idle")
 			return pick('sound/vo/mobs/baun/idle (1).ogg','sound/vo/mobs/baun/idle (2).ogg','sound/vo/mobs/baun/idle (3).ogg')
+
+/mob/living/simple_animal/hostile/retaliate/panopticon/flies
+	name = "Corpseflies"
+	desc = ""
+	icon = 'icons/roguetown/mob/rotten.dmi'
+	icon_state = "rotten"
+	icon_living = "rotten"
+	icon_dead = null
+	mob_biotypes = MOB_UNDEAD|MOB_BUG
+	mob_size = MOB_SIZE_SMALL
+	movement_type = FLYING
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	pass_flags = PASSTABLE|PASSMOB
+	base_intents = list(/datum/intent/simple/bite)
+	gender = NEUTER
+	speak_chance = 0
+	turns_per_move = 5
+	response_help_continuous = "passes through"
+	response_help_simple = "pass through"
+	aggro_vision_range = 10
+	maxHealth = 10
+	health = 5
+	layer = 16
+	plane = 16
+	spacewalk = TRUE
+	stat_attack = UNCONSCIOUS
+	robust_searching = 1
+	speed = 1
+	move_to_delay = 5 //delay for the automated movement.
+	harm_intent_damage = 1
+	obj_damage = 1
+	melee_damage_lower = 5
+	melee_damage_upper = 15
+	attack_same = FALSE
+	attack_sound = 'sound/misc/fliesloop.ogg'
+	dodge_sound = 'sound/combat/dodge.ogg'
+	parry_sound = 'sound/misc/fliesloop.ogg'
+	d_intent = INTENT_HARM
+	speak_emote = list("bzzes")
+	bloodcrawl = BLOODCRAWL_EAT
+	del_on_death = TRUE
+	STAEND = 11
+	faction = list("flies")
+	footstep_type = null
+	aggressive = 1

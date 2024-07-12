@@ -174,6 +174,17 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	menuoptions = list()
 	return
 
+/datum/preferences/proc/set_new_race(datum/species/new_race, user)
+	pref_species = new_race
+	real_name = pref_species.random_name(gender,1)
+	ResetJobs()
+	if(user)
+		if(pref_species.desc)
+			to_chat(user, "[pref_species.desc]")
+		to_chat(user, "<font color='red'>Classes reset.</font>")
+	random_character(gender)
+	accessory = "Nothing"
+
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='14%'>"
 #define MAX_MUTANT_ROWS 4
 
@@ -251,6 +262,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a> <a href='?_src_=prefs;preference=name;task=random'>\[R\]</a>"
 
 			dat += "<BR>"
+			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
 //			dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Always Random Species: [(randomise[RANDOM_SPECIES]) ? "Yes" : "No"]</A><br>"
 
@@ -1826,24 +1838,10 @@ Slots: [job.spawn_positions]</span>
 							continue
 						crap += bla
 
-					var/result = input(user, "Select a race", "Roguetown") as null|anything in crap
+					var/result = input(user, "Select a race", "Character Preference") as null|anything in crap
 
 					if(result)
-						//var/newtype = GLOB.species_list[result]
-						pref_species = result
-						//Now that we changed our species, we must verify that the mutant colour is still allowed.
-						var/temp_hsv = RGBtoHSV(features["mcolor"])
-						if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#7F7F7F")[3]))
-							features["mcolor"] = pref_species.default_color
-						real_name = pref_species.random_name(gender,1)
-						ResetJobs()
-						if(pref_species.desc)
-							to_chat(user, "[pref_species.desc]")
-						to_chat(user, "<font color='red'>Classes reset.</font>")
-						random_character(gender)
-						accessory = "Nothing"
-						if(age == AGE_YOUNG)
-							age = AGE_ADULT
+						set_new_race(result, user)
 
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
@@ -2304,13 +2302,12 @@ Slots: [job.spawn_positions]</span>
 	var/datum/species/chosen_species
 	chosen_species = pref_species.type
 	if(!(pref_species.name in GLOB.roundstart_races))
-		chosen_species = /datum/species/human/northern
-		pref_species = new /datum/species/human/northern
+		set_new_race(new /datum/species/human/northern)
+
 		random_character(gender)
 	if(parent)
 		if(pref_species.patreon_req > parent.patreonlevel())
-			chosen_species = /datum/species/human/northern
-			pref_species = new /datum/species/human/northern
+			set_new_race(new /datum/species/human/northern)
 			random_character(gender)
 
 	character.age = age

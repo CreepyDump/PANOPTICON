@@ -6,6 +6,7 @@
 	total_positions = 15
 	spawn_positions = 15
 	selection_color = JCOLOR_TOWN
+	allowed_races = list("Humen")
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	outfit = /datum/outfit/job/panopticon/citizen
@@ -44,9 +45,9 @@
 			if(3)
 				H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,2,3,4,5), TRUE)
 				wrists = /obj/item/clothing/wrists/roguetown/wrappings
-	if(prob(10))
+	if(prob(30))
 		H.playsound_local(H, 'sound/misc/littlescary1.ogg', 60)
-		to_chat(H, "<span class='cult italic'><b><span class='big'>i AM SICK WITH DISEASE.</span></b></span>")
+		to_chat(H, "<span class='cult italic'><b><span class='big'>I AM SICK WITH DISEASE.</span></b></span>")
 		chuma.try_infect(H)
 		mask = /obj/item/clothing/mask/infected
 

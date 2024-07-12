@@ -49,13 +49,11 @@
 	if(!(C.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD)))
 		qdel(src)
 		return
-	if(amount > 5 MINUTES)
-		if(is_zombie)
-			var/datum/antagonist/zombie/Z = C.mind.has_antag_datum(/datum/antagonist/zombie)
 
 	var/findonerotten = FALSE
 	var/shouldupdate = FALSE
 	var/dustme = FALSE
+	var/mutable_appearance/hive = mutable_appearance('icons/roguetown/mob/rotten.dmi', "hive", TABARD_LAYER)
 	for(var/obj/item/bodypart/B in C.bodyparts)
 		if(!B.skeletonized && B.is_organic_limb())
 			if(!B.rotted)
@@ -64,8 +62,11 @@
 					findonerotten = TRUE
 					shouldupdate = TRUE
 					C.change_stat("constitution", -8, "rottenlimbs")
-			else
-				if(amount > 15 MINUTES)
+				if(amount > 10 MINUTES)
+					if(istype(C, /mob/living/carbon/human))
+						C.add_overlay(hive)
+					new /mob/living/simple_animal/hostile/retaliate/panopticon/flies(src)
+				if(amount > 30 MINUTES)
 					if(!is_zombie)
 						B.skeletonize()
 						if(C.dna && C.dna.species)
@@ -74,7 +75,7 @@
 						shouldupdate = TRUE
 				else
 					findonerotten = TRUE
-		if(amount > 25 MINUTES)
+		if(amount > 60 MINUTES)
 			if(!is_zombie)
 				if(B.skeletonized)
 					dustme = TRUE
@@ -86,7 +87,7 @@
 	if(findonerotten)
 		var/turf/open/T = C.loc
 		if(istype(T))
-			T.add_pollutants(/datum/pollutant/rot, 5)
+			T.add_pollutants(/datum/pollutant/rot, 10)
 			if(soundloop && soundloop.stopped && !is_zombie)
 				soundloop.start()
 		else
@@ -115,7 +116,7 @@
 			soundloop.start()
 		var/turf/open/T = get_turf(L)
 		if(istype(T))
-			T.add_pollutants(/datum/pollutant/rot, 5)
+			T.add_pollutants(/datum/pollutant/rot, 10)
 	if(amount > 20 MINUTES)
 		qdel(src)
 		return L.dust(drop_items=TRUE)

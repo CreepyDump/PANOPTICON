@@ -54,10 +54,14 @@
 	color = "#643200"
 	taste_description = "literal shit"
 
+/datum/reagent/poo/on_mob_life(mob/living/carbon/M)
+	if(!HAS_TRAIT(M, RTRAIT_NOSTINK))
+		M.adjustToxLoss(1)
+		M.add_nausea(100)
+
 /datum/reagent/poo/reaction_turf(var/turf/T)
 	if(isturf(T))
 		new /obj/effect/decal/cleanable/poo(T)
-	qdel(src)
 
 //URINE
 /datum/reagent/urine
@@ -70,7 +74,6 @@
 /datum/reagent/urine/reaction_turf(var/turf/T)
 	if(isturf(T))
 		new /obj/effect/decal/cleanable/urine(T)
-	qdel(src)
 
 
 /obj/item/reagent_containers/food/snacks/poo
@@ -78,12 +81,12 @@
 	desc = "Dinner is ready."
 	icon = 'icons/panopticon/items/consumable.dmi'
 	icon_state = "poo1"
+	list_reagents = list(/datum/reagent/poo, 10)
+	bitesize = 3
 
 /obj/item/reagent_containers/food/snacks/poo/New()
 	..()
 	icon_state = pick("poo1", "poo2", "poo3", "poo4")
-	reagents.add_reagent(/datum/reagent/poo, 10)
-	bitesize = 3
 
 /obj/item/reagent_containers/food/snacks/poo/throw_impact(atom/hit_atom)
 	var/turf/T = src.loc

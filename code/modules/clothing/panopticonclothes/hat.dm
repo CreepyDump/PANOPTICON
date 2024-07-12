@@ -48,6 +48,7 @@
 	desc = "A helmet worn primarily by the exiled battalion troops, or by those who succeeded in killin' those fuckers."
 	icon_state = "shtrafbat"
 	item_state = "shtrafbat"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/panopticon/vargcap
@@ -69,3 +70,18 @@
 	icon_state = "nkvd"
 	item_state = "nkvd"
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/panopticon/grandnecroleninist
+	name = "Grand-Necroleninist hood"
+	desc = ""
+	icon_state = "grand"
+	item_state = "grand"
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/64x64.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+
+/obj/item/clothing/head/panopticon/platok
+	name = "Babushka bandana"
+	icon_state = "platok"
+	item_state = "platok"
+	flags_inv = HIDEEARS|HIDEHAIR

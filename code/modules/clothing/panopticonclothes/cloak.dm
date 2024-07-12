@@ -83,3 +83,12 @@
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	slot_flags = ITEM_SLOT_ARMOR
+
+
+/obj/item/clothing/cloak/panopticon/grandnecroleninist
+	name = "Grand-Necroleninist membrane"
+	icon_state = "grand"
+	item_state = "grand"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
