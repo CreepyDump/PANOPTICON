@@ -339,7 +339,7 @@ GLOBAL_VAR(restart_counter)
 	else
 		s += "&#5859; <b>GAME STATUS:</b> PLAYING &#5833;<br> "
 	if (!host && hostedby)
-		s += "Hosted by <b>[hostedby]</b>"
+		s += "Hosted by <b>Crazy Duster</b>"
 #endif
 	status = s
 	return s
