@@ -34,6 +34,12 @@
 		explosion(get_turf(src), 0, 1, 5, flame_range = 5)
 		qdel(src)
 
+/obj/structure/panopticon/barrel/red/propan
+	name = "Propane tank"
+	desc = ""
+	icon_state = "propan"
+	icon = 'icons/panopticon/obj/64x64.dmi'
+
 /obj/structure/panopticon/barrel/blue
 	name = "Blue barrel"
 	desc = "Pointless, a completely hollow barrel."
@@ -58,10 +64,49 @@
 	climbable = TRUE
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 
-/obj/effect/decal/panopticon/mysor
+/obj/structure/closet/crate/drawer/bunkercabinet/sidetable
+	name = "Side table"
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "sidetable"
+	base_icon_state = "sidetable"
+
+/obj/structure/rack/panopticon/shelf
+	name = "Shelf"
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "shelf"
+	climbable = FALSE
+
+/obj/structure/closet/crate/panopticoncrate
+	name = "Wooden crate"
+	icon = 'icons/panopticon/obj/town.dmi'
+	base_icon_state = "crate"
+	icon_state = "crate"
+
+/obj/structure/closet/crate/metalshkaf
+	name = "Metal cabinet"
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	base_icon_state = "shkaf"
+	icon_state = "shkaf"
+
+/obj/structure/closet/bigshkaf
+	name = "Closet"
+	icon = 'icons/panopticon/obj/64x64.dmi'
+	icon_state = "closet"
+	dir = SOUTH
+	pixel_y = 32
+
+/obj/structure/panopticon/mysor
 	name = "Rubbish"
 	icon_state = "rubbish"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
+
+/obj/structure/panopticon/mysor/doski
+	icon_state = "broken_doski"
+	icon = 'icons/panopticon/obj/town.dmi'
+
+/obj/structure/panopticon/mysor/town
+	icon_state = "trash"
+	icon = 'icons/panopticon/obj/town.dmi'
 
 /obj/structure/panopticon/kol
 	name = "Spike"
@@ -72,7 +117,7 @@
 	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 
-/obj/effect/decal/panopticon/pit
+/obj/structure/panopticon/pit
 	name = "Pit"
 	desc = "How deep the humanity-hole goes."
 	icon_state = "pit"
@@ -92,17 +137,17 @@
 	max_integrity = 100
 	layer = LYING_MOB_LAYER
 
-/obj/effect/decal/panopticon/skull
+/obj/structure/panopticon/skull
 	name = "Skull"
 	desc = "Poor Yorick!"
 	icon_state = "skull"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 
-/obj/effect/decal/panopticon/skull/Initialize()
+/obj/structure/panopticon/skull/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
-/obj/effect/decal/panopticon/wartrash
+/obj/structure/panopticon/wartrash
 	name = "Trash"
 	icon_state = "wartrash"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
@@ -142,7 +187,7 @@
 		soundloop.stop()
 	..()
 
-/obj/effect/decal/panopticon/sewergrate
+/obj/structure/panopticon/sewergrate
 	name = "grate"
 	desc = "smells fucking awful"
 	icon_state = "sewer"
@@ -154,7 +199,7 @@
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	max_integrity = 0
 
-/obj/effect/decal/panopticon/skulldraw
+/obj/structure/panopticon/skulldraw
 	name = ""
 	icon_state = "skull"
 	icon = 'icons/panopticon/obj/bigass.dmi'
@@ -191,3 +236,19 @@
 		new /obj/item/reagent_containers/glass/bottle/heroinium(get_turf(src))
 	if(prob(30))
 		new /obj/item/panopticonweapon/molotok(get_turf(src))
+
+/obj/structure/panopticon/petlya
+	name = "Exit rope"
+	desc = "..."
+	icon_state = "exit"
+	icon = 'icons/panopticon/obj/town.dmi'
+	max_integrity = 0
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
+
+/obj/structure/panopticon/shutters
+	name = "Mine shutters"
+	desc = "They are here so long ago opened up that they've been driven into the ground."
+	icon_state = "shutter"
+	icon = 'icons/panopticon/obj/town.dmi'
+	max_integrity = 0

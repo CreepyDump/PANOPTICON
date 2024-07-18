@@ -2,7 +2,7 @@
 	title = "Lesnik"
 	flag = LESHIY
 	department_flag = OUTSIDERS
-	faction = list("Station", "lynx")
+	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = JCOLOR_OUTSIDERS

@@ -756,6 +756,12 @@
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 
+/datum/emote/living/scream/fallscream
+	key = "fallscream"
+	nomsg = TRUE
+	emote_type = EMOTE_AUDIBLE
+	only_forced_audio = TRUE
+
 /datum/emote/living/aggro
 	key = "aggro"
 	emote_type = EMOTE_AUDIBLE

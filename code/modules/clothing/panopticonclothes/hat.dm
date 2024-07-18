@@ -79,9 +79,36 @@
 	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/64x64.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE|HIDEEYES
 
 /obj/item/clothing/head/panopticon/platok
 	name = "Babushka bandana"
 	icon_state = "platok"
 	item_state = "platok"
+	flags_inv = HIDEEARS|HIDEHAIR
+
+
+/obj/item/clothing/head/panopticon/cannibal
+	name = "Cannibal helmet"
+	desc = "A helmet worn primarily by the exiled battalion troops, or by those who succeeded in killin' those fuckers."
+	icon_state = "cannibal"
+	item_state = "cannibal"
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/64x64.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	armor = list("melee" = 60, "bullet" = 45, "laser" = 0, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE|HIDEEYES|HIDENECK
+
+/obj/item/clothing/head/panopticon/creep
+	name = "Creep Mask"
+	desc = "A typical robber's mask made as a weird monkey's head."
+	icon_state = "creep"
+	item_state = "creep"
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE|HIDEEYES|HIDENECK
+
+/obj/item/clothing/head/panopticon/grey
+	name = "Iron helmet"
+	icon_state = "iron_helm3"
+	item_state = "iron_helm3"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR

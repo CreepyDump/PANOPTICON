@@ -46,7 +46,7 @@
 /area/rogue/indoors/shelter
 	droning_sound = 'sound/music/area/prison.ogg'
 	droning_sound_dusk = 'sound/music/area/jutkayahyina.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_night = null
 
 //BUNKER
 /area/panopticon/indoors/bunker

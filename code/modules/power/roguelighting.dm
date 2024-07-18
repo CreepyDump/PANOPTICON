@@ -99,6 +99,8 @@
 /obj/machinery/light/roguestreet/midlamp
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "midlamp1"
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 	base_state = "midlamp"
 	pixel_x = -16
 	density = TRUE

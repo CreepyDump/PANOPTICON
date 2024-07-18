@@ -33,6 +33,8 @@
 				used = list('sound/vo/male/gen/embed (1).ogg','sound/vo/male/gen/embed (2).ogg','sound/vo/male/gen/embed (3).ogg')
 			if("fatigue")
 				used = 'sound/vo/male/gen/fatigue.ogg'
+			if("fallscream")
+				used = 'sound/vo/male/gen/fallscream.ogg'
 			if("firescream")
 				if(prob(5))
 					used = 'sound/vo/male/gen/firescream (4).ogg' //it burns!

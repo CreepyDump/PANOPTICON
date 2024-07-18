@@ -141,3 +141,13 @@
 
 /obj/structure/stairs/intercept_zImpact(atom/movable/AM, levels = 1)
 	. = ..()
+
+/obj/structure/stairs/panopticon
+	name = "old-wood stairs"
+	icon = 'icons/turf/panopticonfloor.dmi'
+	icon_state = "lestnisa"
+
+/obj/structure/stairs/panopticon/stonistic
+	name = "stonistic stairs"
+	icon = 'icons/turf/panopticonfloor.dmi'
+	icon_state = "lestnisa2"

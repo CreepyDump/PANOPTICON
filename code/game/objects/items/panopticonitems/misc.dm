@@ -173,6 +173,10 @@
 	icon_state = "one"
 	sellprice = 1
 
+#undef CTYPE_THOUSAND
+#undef CTYPE_TEN
+#undef CTYPE_ONE
+
 /obj/item/storage/fancy/cigarettes/jeltomorkanal
 	name = "Jeltomorkanal"
 	desc = ""
@@ -203,6 +207,46 @@
 			if("gen")
 				return list("shrink" = 0.3,"sx" = 0,"sy" = -1,"nx" = 13,"ny" = -1,"wx" = 4,"wy" = 0,"ex" = 7,"ey" = -1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 2,"sflip" = 0,"wflip" = 0,"eflip" = 8)
 
-#undef CTYPE_THOUSAND
-#undef CTYPE_TEN
-#undef CTYPE_ONE
+/obj/item/storage/pill_bottle/pervitin
+	name = "Pervitin"
+	desc = "Some drug that helps with anesthesia."
+	icon = 'icons/panopticon/items/misc.dmi'
+	icon_state = "pervitin"
+	item_state = "pervitin"
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/storage/pill_bottle/pervitin/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/pervitin(src)
+
+/obj/item/natural/cloth/bandages
+	name = "bandage"
+	icon = 'icons/panopticon/items/misc.dmi'
+	icon_state = "bandage"
+	possible_item_intents = list(/datum/intent/use)
+	max_integrity = 50
+
+/obj/item/storage/firstaid/panopticon
+	desc = "should at least help with anything."
+	icon_state = "medkit"
+	icon = 'icons/panopticon/obj/clothes/storage.dmi'
+	throw_speed = 0
+	throw_range = 0
+	empty = FALSE
+
+/obj/item/storage/firstaid/panopticon/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.3,"sx" = 0,"sy" = -1,"nx" = 13,"ny" = -1,"wx" = 4,"wy" = 0,"ex" = 7,"ey" = -1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 2,"sflip" = 0,"wflip" = 0,"eflip" = 8)
+
+/obj/item/storage/firstaid/panopticon/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/natural/cloth/bandages = 2,
+		/obj/item/needle = 3,
+		/obj/item/storage/pill_bottle/pervitin = 1,
+		/obj/item/clothing/mask/infected = 1)
+	generate_items_inside(items_inside,src)

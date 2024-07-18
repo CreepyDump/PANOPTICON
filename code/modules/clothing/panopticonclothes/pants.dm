@@ -33,3 +33,24 @@
 	gender = MALE
 	icon_state = "greypants"
 	item_state = "greypants"
+
+/obj/item/clothing/under/panopticon/gulag
+	name = "Zek pants"
+	icon_state = "zek"
+	item_state = "zek"
+
+/obj/item/clothing/under/panopticon/gulfik
+	name = "Rags"
+	slot_flags = ITEM_SLOT_PANTS
+	can_adjust = FALSE
+	body_parts_covered = GROIN
+	icon_state = "gulfik"
+	item_state = "gulfik"
+	sleevetype = "leg"
+	equip_delay_self = 30
+	bloody_icon_state = "bodyblood"
+	sewrepair = TRUE
+	r_sleeve_zone = BODY_ZONE_R_LEG
+	l_sleeve_zone = BODY_ZONE_L_LEG
+	r_sleeve_status = SLEEVE_ROLLED
+	l_sleeve_status = SLEEVE_ROLLED

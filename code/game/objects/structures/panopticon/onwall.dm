@@ -19,7 +19,7 @@
 
 /obj/structure/panopticon/onwall/insectposter
 	name = "Fly blight"
-	desc = "Poster refers to an incident when a few flies inside of a bunker caused an infestation that resulted a 25-person exodus to the outside of the bunker"
+	desc = "Poster refers to an incident when a few flies inside of a bunker caused an infestation that resulted a 25-person exodus to the outside of the bunker."
 	icon_state = "pnposter2"
 
 /obj/structure/panopticon/onwall/leprosyposter
@@ -29,7 +29,7 @@
 
 /obj/structure/panopticon/onwall/consulposter
 	name = "Grand Conseil"
-	desc = "Painting portrays Grand Counseil de la Concorde, who has already departed the world a long time ago"
+	desc = "Painting portrays Grand Counseil de la Concorde, who has already departed the world a long time ago."
 	icon_state = "pnposter4"
 
 /obj/structure/panopticon/onwall/grobposter
@@ -39,7 +39,7 @@
 
 /obj/structure/panopticon/onwall/kitarik
 	name = "Kristopher Tarkovski"
-	desc = "Painting portrays an unidentified man. The frame is signed, possible name is written on it"
+	desc = "Painting portrays an unidentified man. The frame is signed, possible name is written on it."
 	icon_state = "pnposter6"
 
 /obj/structure/panopticon/onwall/commies
@@ -49,12 +49,18 @@
 
 /obj/structure/panopticon/onwall/wanted
 	name = "WANTED:"
-	desc = "Untitled middle-aged guy. Total creep. Torched the former restaurant behind the tavern."
+	desc = "Untitled middle-aged guy. Total creep."
 	icon_state = "pnposter8"
 
 /obj/structure/panopticon/onwall/wanted/unabomber
 	desc = "Middle-aged guy, identified as 'The Homicide Bomber'."
 	icon_state = "pnposter9"
+
+/obj/structure/panopticon/onwall/sam
+	name = "Uncle Gray"
+	desc = "Painting portrays the 'Uncle Gray', urging you to join The Gray Division."
+	icon_state = "pnposter10"
+
 
 /obj/structure/panopticon/onwall/pipe
 	name = "Pipe"
@@ -116,3 +122,28 @@
 /obj/structure/panopticon/onwall/carpet
 	name = "Carpet"
 	icon_state = "carpet"
+
+/obj/structure/panopticon/onwall/there
+	name = "Arrow"
+	desc = "The way lays here!"
+	icon_state = "there"
+
+/obj/structure/panopticon/onwall/eroch
+	name = "Bar 'Eroch' sign"
+	desc = "All broken hearts are right there!"
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "eroch"
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
+
+/obj/structure/panopticon/onwall/hospital
+	name = "'Hospital' sign"
+	desc = "Maybe there could be some medical help here."
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "hospital"
+
+/obj/structure/panopticon/onwall/greys
+	name = "'Greys' sign"
+	desc = "That's where the Empire's constabulary is based."
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "greys"

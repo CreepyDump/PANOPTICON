@@ -300,11 +300,22 @@
 	blade_dulling = DULLING_BASHCHOP
 	layer = ABOVE_MOB_LAYER
 
+/obj/structure/zabor
+	name = "Stone wall"
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "zabor"
+	density = TRUE
+	anchored = TRUE
+	layer = HIGH_OBJ_LAYER
+	climbable = FALSE
+
+/obj/structure/zabor/border
+	icon_state = "zaborborder"
+
 /obj/structure/fluff/railing/border
 	name = "border"
 	desc = ""
 	icon_state = "border"
-	passcrawl = FALSE
 
 /obj/structure/fluff/railing/fence
 	name = "palisade"

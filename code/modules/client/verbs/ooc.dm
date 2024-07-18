@@ -81,7 +81,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		var/chat_color = "#c5c5c5"
 		if(C.prefs.chat_toggles & CHAT_OOC)
 			if(holder)
-				to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='#4972bc'><span class='message linkify'>[msg]</span></font>")
+				to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='#BA1616'><span class='message linkify'>[msg]</span></font>")
 			else
 				to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='[chat_color]'><span class='message linkify'>[msg]</span></font>")
 
@@ -183,7 +183,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			var/chat_color = "#c5c5c5"
 			if(C.prefs.chat_toggles & CHAT_OOC)
 				if(holder)
-					to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='#4972bc'><span class='message linkify'>[msg]</span></font>")
+					to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='#BA1616'><span class='message linkify'>[msg]</span></font>")
 				else
 					to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='[chat_color]'><span class='message linkify'>[msg]</span></font>")
 

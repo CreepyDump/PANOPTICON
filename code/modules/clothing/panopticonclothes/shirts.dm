@@ -28,3 +28,11 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|ARMS|VITALS
+
+/obj/item/clothing/suit/panopticon/shirt/gulag
+	name = "Zek shirt"
+	icon_state = "zek"
+	item_state = "zek"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS

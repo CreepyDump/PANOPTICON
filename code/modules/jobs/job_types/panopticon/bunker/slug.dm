@@ -22,31 +22,43 @@
 	. = ..()
 	peopleknowme = list()
 
+
+/datum/outfit/job/panopticon/slug/proc/handle_speech(original_message, wrapped_message)
+	var/message = wrapped_message[1]
+	if(message)
+		message = "[replacetext(message, ".", "!")]!!"
+	wrapped_message[1] = message
+	return COMPONENT_UPPERCASE_SPEECH
+
 /datum/outfit/job/panopticon/slug/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/panopticon
-	shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
-	pants = /obj/item/clothing/under/panopticon/civilianpants
 	back = null
 	id = null
-	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/panopticonweapon/knife
-	beltr = null
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(2,3,4), TRUE)
+		RegisterSignal(H, COMSIG_MOB_SAY, .proc/handle_speech)
 		H.STALUC = rand(1, 20)
 		H.STASTR = rand(5, 12)
 		H.STAINT = rand(1, 10)
 		H.STAPER = rand(8,18)
-
 		if(prob(10))
 			r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
+			head = /obj/item/clothing/mask/pig
+		else
+			if(prob(35))
+				head = /obj/item/clothing/head/panopticon/creep
+			else
+				head = /obj/item/clothing/head/panopticon/cannibal
+			belt = /obj/item/storage/belt/rogue/leather
+			beltl = /obj/item/panopticonweapon/knife
 		if(prob(25))
 			cloak = /obj/item/clothing/cloak/panopticon/bomjaracoat
 			head = /obj/item/clothing/head/panopticon/bomjara
+			pants = /obj/item/clothing/under/panopticon/civilianpants	
+			shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
 			beltl = null
 			beltr = null
 			l_hand = /obj/item/panopticonweapon/boner/nailplank
@@ -60,8 +72,8 @@
 
 /datum/outfit/job/panopticon/slug
 	shoes = /obj/item/clothing/shoes/panopticon
-	shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
-	pants = /obj/item/clothing/under/panopticon/civilianpants
+	shirt = null
+	pants = /obj/item/clothing/under/panopticon/gulfik
 	back = null
 	id = null
 	belt = null

@@ -210,3 +210,13 @@
 	name = "strange key"
 	icon_state = "eyekey"
 	lockid = "porta"
+
+/obj/item/roguekey/mayor
+	name = "Major key"
+	icon_state = "rustkey"
+	lockid = "major"
+
+/obj/item/roguekey/jailcells
+	name = "All-cells key"
+	icon_state = "rustkey"
+	lockid = "jailcells"

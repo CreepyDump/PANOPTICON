@@ -1062,6 +1062,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 			if(ishumannorthern(target))
 				var/mob/living/carbon/human/H = target
 				var/list/skin_slop = H.dna.species.get_skin_list()
+				priority_announce("[target.real_name] IS NOW BLACK!!!", "BLACKAMOOR ALARM", 'sound/misc/buddy_alarm.ogg', "Captain")
 				H.skin_tone = skin_slop["Blackamoor"]
 				H.update_body() 
 		if(ADMIN_PUNISHMENT_GIB)

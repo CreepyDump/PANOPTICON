@@ -10,7 +10,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	var/target_amount = 0				//If they are focused on a particular number. Steal objectives have their own counter.
 	var/completed = 0					//currently only used for custom objectives.
 	var/martyr_compatible = 0			//If the objective is compatible with martyr objective, i.e. if you can still do it while dead.
-	var/triumph_count = 1
+	var/triumph_count = 0
 
 /datum/objective/New(var/text)
 	if(text)
@@ -399,7 +399,14 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 			return FALSE
 	return TRUE
 
+/datum/objective/lenin
+	name = "Revive The Spirit of Communism"
+	explanation_text = "Make him live!"
+	team_explanation_text = "Make him live!"
 
+/datum/objective/lenin/check_completion()
+	if(leninalive == TRUE)
+		return TRUE
 
 /datum/objective/dungeoneer
 	name = "protect"

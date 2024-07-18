@@ -1,3 +1,5 @@
+var/leninalive = FALSE
+
 /obj/effect/rune/panopticon
 	cultist_name = "Rune"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
@@ -26,6 +28,7 @@
 /obj/effect/rune/panopticon/lenin_summon/invoke(var/list/invokers)
 	to_chat(invokers, "<span class='danger'>YOU HAVE MADE IT.</span>")
 	priority_announce("Something imperishable is coming!", "Old-World Announcer", 'sound/misc/necrolenin_alert.ogg', "Captain")
+	leninalive = TRUE
 	qdel(src)
 
 /obj/effect/rune/panopticon/sacrifice
@@ -56,35 +59,13 @@
 	addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 5)
 	rune_in_use = FALSE
 
-/obj/effect/proc_holder/spell/necroleninistrevive
+/obj/effect/proc_holder/spell/targeted/touch/necroleninistrevive
 	name = "Revive"
 	overlay_state = "Revive"
-	antimagic_allowed = TRUE
+	desc = ""
+	hand_path = /obj/item/melee/touch_attack/revive
 	charge_max = 600
-
-/obj/effect/proc_holder/spell/necroleninistrevive/cast(list/targets, mob/living/user)
-	..()
-	if(isliving(targets[1]))
-		var/mob/living/target = targets[1]
-		if(target == user)
-			return FALSE
-		if(!user.Adjacent(target))
-			return FALSE
-		else
-			if(target.stat == DEAD)
-				if(target.revive(full_heal = FALSE))
-					target.mind.add_antag_datum(/datum/antagonist/zombie)
-					target.grab_ghost(force = TRUE) // even suicides
-					target.emote("breathgasp")
-					target.Jitter(100)
-					to_chat(target, "<span class='notice'>I live, AGAIN!</span>")
-					sleep(rand(1,5))
-			target.visible_message("<span class='warning'>Nothing happens.</span>")
-
-
-/obj/effect/proc_holder/spell/invoked/necroleninistrevive/cast_check(skipcharge = 0,mob/user = usr)
-	if(!..())
-		return TRUE
+	clothes_req = FALSE
 
 /obj/effect/proc_holder/spell/self/leninrunes
 	name = "Draw a Rune"

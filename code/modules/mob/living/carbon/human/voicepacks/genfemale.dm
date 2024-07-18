@@ -35,6 +35,8 @@
 				used = list('sound/vo/female/gen/fatigue (1).ogg','sound/vo/female/gen/fatigue (2).ogg','sound/vo/female/gen/fatigue (3).ogg')
 			if("firescream")
 				used = list('sound/vo/female/gen/firescream (1).ogg','sound/vo/female/gen/firescream (2).ogg')
+			if("fallscream")
+				used = 'sound/vo/female/gen/fallscream.ogg'
 			if("gag")
 				used = list('sound/vo/female/gen/gag (1).ogg','sound/vo/female/gen/gag (2).ogg','sound/vo/female/gen/gag (3).ogg')
 			if("gasp")

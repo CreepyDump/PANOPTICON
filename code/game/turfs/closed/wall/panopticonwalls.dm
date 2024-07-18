@@ -58,11 +58,19 @@
 	above_floor = /turf/open/floor/panopticon/town
 	baseturfs = list(/turf/open/floor/panopticon/town/streets)
 
+/turf/closed/wall/mineral/panopticon/kirpich/townwall/alt
+	name = "Metalistic wall"
+	icon = 'icons/turf/walls/townwallalt.dmi'
+	icon_state = "metal"
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/kirpich/townwall)
+	above_floor = /turf/open/floor/panopticon/town
+	baseturfs = list(/turf/open/floor/panopticon/town/streets)
+
 /turf/closed/wall/mineral/panopticon/kirpich/beton
 	name = "Betonistic wall"
 	icon = 'icons/turf/walls/beton.dmi'
 	icon_state = "beton"
-	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/kirpich/townwall)
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/kirpich)
 	above_floor = /turf/open/floor/panopticon/beton
 	baseturfs = list(/turf/open/floor/panopticon/beton)
 

@@ -259,3 +259,9 @@
 	icon_state = "pill9"
 	list_reagents = list(/datum/reagent/iron = 30)
 	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/pervitin
+	name = "pill"
+	desc = ""
+	icon_state = "pill9"
+	list_reagents = list(/datum/reagent/medicine/morphine = 10)

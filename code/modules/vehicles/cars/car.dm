@@ -93,3 +93,9 @@
 		M.visible_message("<span class='warning'>[M] is forced into \the [src]!</span>")
 	M.forceMove(src)
 	add_occupant(M, VEHICLE_CONTROL_KIDNAPPED)
+
+/obj/vehicle/sealed/car/gruzovik
+	layer = ABOVE_MOB_LAYER
+	anchored = TRUE
+	icon = 'icons/panopticon/obj/gruzovikblyaaa.dmi'
+	icon_state = "gruzovik"

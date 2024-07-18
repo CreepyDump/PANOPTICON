@@ -118,7 +118,7 @@
 		if (prob(1))
 			new /obj/effect/mine/explosive/panopticon/landmine(get_turf(src))
 		if (prob(1))
-			new /obj/effect/decal/panopticon/skull(get_turf(src))
+			new /obj/structure/panopticon/skull(get_turf(src))
 
 /turf/open/floor/panopticon/mud
 	icon_state = "mud"
@@ -154,7 +154,7 @@
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/grassland.wav'
 
-/obj/effect/decal/panopticon/road
+/obj/structure/panopticon/road
 	name = ""
 	icon = 'icons/turf/panopticonfloor.dmi'
 	icon_state = "roadover"
@@ -187,7 +187,7 @@
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/dirtland.wav'
 
-/obj/effect/decal/panopticon/pepeldeco
+/obj/structure/panopticon/pepeldeco
 	name = ""
 	icon = 'icons/turf/panopticonfloor.dmi'
 	icon_state = "pepeldeco"
@@ -207,3 +207,9 @@
 /turf/open/floor/panopticon/gulag/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
+
+
+/obj/structure/panopticon/townborders
+	name = ""
+	icon = 'icons/turf/panopticonfloor.dmi'
+	icon_state = "bordur"

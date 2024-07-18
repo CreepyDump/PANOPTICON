@@ -676,13 +676,23 @@
 	base_state = "donjon"
 	keylock = TRUE
 	max_integrity = 2000
-	over_state = "dunjonopen"
+	over_state = null
 	var/viewportdir
 	kickthresh = 15
 	locksound = 'sound/foley/doors/lockmetal.ogg'
 	unlocksound = 'sound/foley/doors/lockmetal.ogg'
 	rattlesound = 'sound/foley/doors/lockrattlemetal.ogg'
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
+
+/obj/structure/mineral_door/wood/donjon/panopticon
+	desc = ""
+	icon_state = "gulagdoor"
+	base_state = "gulagdoor"
+	keylock = TRUE
+	max_integrity = 3000
+	over_state = "gulagdooropen"
+	openSound = 'sound/foley/doors/bunkerdoor.ogg'
+	closeSound = 'sound/foley/doors/bunkerdoor.ogg'
 
 /obj/structure/mineral_door/wood/donjon/stone
 	desc = ""

@@ -28,8 +28,8 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: JSL Ancient, TrueType;}
 .prefix					{					font-weight: bold;}
 
 .ooc					{color: #c5c5c5;	font-weight: bold; font-family: JSL Ancient;}
-.adminobserverooc		{color: #cca300;	font-weight: bold; font-family: JSL Ancient;}
-.adminooc				{color: #4972bc;	font-weight: bold;}
+.adminobserverooc		{color: #BA1616;	font-weight: bold; font-family: JSL Ancient;}
+.adminooc				{color: #BA1616;	font-weight: bold;}
 
 .adminsay				{color:	#FF4500;	font-weight: bold;}
 .admin					{color: #386aff;	font-weight: bold;}

@@ -29,10 +29,10 @@
 	chuma.name = "Unknown"
 	shoes = /obj/item/clothing/shoes/panopticon
 	pants = /obj/item/clothing/under/panopticon/civilianpants
-	if(prob(80))
-		shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
-	else
+	if(prob(20))
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	if(prob(40))
+		cloak = /obj/item/clothing/armor/panopticon/cloak/brown
 	if(H.mind)
 		switch(pick(1,2,3))
 			if(1)
@@ -45,7 +45,10 @@
 			if(3)
 				H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,2,3,4,5), TRUE)
 				wrists = /obj/item/clothing/wrists/roguetown/wrappings
-	if(prob(30))
+	if(H.gender == FEMALE)
+		if(prob(35))
+			head = /obj/item/clothing/head/panopticon/platok
+	if(prob(25))
 		H.playsound_local(H, 'sound/misc/littlescary1.ogg', 60)
 		to_chat(H, "<span class='cult italic'><b><span class='big'>I AM SICK WITH DISEASE.</span></b></span>")
 		chuma.try_infect(H)
@@ -57,7 +60,9 @@
 	ears = null
 	belt = null
 	back = null
-	shoes = null
+	shoes = /obj/item/clothing/shoes/panopticon
+	pants = /obj/item/clothing/under/panopticon/civilianpants
+	shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
 	box = null
 	backpack = null
 	satchel  = null

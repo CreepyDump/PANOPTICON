@@ -538,6 +538,8 @@
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
+	if(M.has_flaw(/datum/charflaw/addiction/junkie))
+		M.sate_addiction()
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_cycle)

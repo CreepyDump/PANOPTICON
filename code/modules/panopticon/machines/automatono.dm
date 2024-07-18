@@ -307,7 +307,7 @@
 
 /obj/structure/panopticon/automat/bank
 	name = "Money Keeper"
-	desc = "A."
+	desc = "An automaton that keeps your money savings. Don't forget to link an account!"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	icon_state = "zarplata"
 	layer = BELOW_OBJ_LAYER
@@ -379,3 +379,46 @@
 			else
 				say("No account found. Register it at first.")
 	return ..()
+
+/obj/structure/panopticon/automat/announcer
+	name = "Town-announcer"
+	desc = "THE SCREAM!"
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "announcer"
+	plane = GAME_PLANE_UPPER
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+	max_integrity = 1000
+	var/can_scream = TRUE
+	var/timeout = 100 SECONDS
+
+/obj/structure/panopticon/automat/announcer/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	var/thing = input(user, "You want to scream something for the lands?") in list("Yes", "No")
+	if(!thing)
+		return
+	if(thing == "Yes")
+		if(!can_scream)
+			return
+		scream(user)
+	else
+		return
+
+/obj/structure/panopticon/automat/announcer/proc/scream(mob/living/carbon/user)
+	var/thingy = stripped_input(user, "What you want to say?", "")
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(!can_scream)
+		return
+	priority_announce(thingy, "Old-World Announcer", 'sound/misc/alert.ogg', "Captain")
+//	SEND_SOUND(world, sound('sound/misc/alert.ogg'))
+	can_scream = FALSE
+	addtimer(CALLBACK(src, .proc/cann_scream), timeout)
+
+/obj/structure/panopticon/automat/announcer/proc/cann_scream()
+	if(QDELETED(src))
+		return
+	can_scream = TRUE

@@ -109,3 +109,30 @@
 	M.Stun(40)
 	M.petrify()
 	return ..()
+
+
+/obj/item/melee/touch_attack/revive
+	name = "Revive"
+	desc = ""
+	catchphrase = null
+	on_use_sound = 'sound/blank.ogg'
+	icon_state = "fleshtostone"
+	item_state = "fleshtostone"
+
+/obj/item/melee/touch_attack/revive/afterattack(atom/target, mob/living/carbon/user, proximity)
+	..()
+	var/mob/living/targethumano = target
+	if(targethumano == user)
+		return FALSE
+	if(!user.Adjacent(targethumano))
+		return FALSE
+	else
+		if(targethumano.stat == DEAD)
+			if(targethumano.revive(full_heal = FALSE))
+				targethumano.mind.add_antag_datum(/datum/antagonist/zombie)
+				targethumano.grab_ghost(force = TRUE) // even suicides
+				targethumano.emote("breathgasp")
+				targethumano.Jitter(100)
+				to_chat(targethumano, "<span class='notice'>I live, AGAIN!</span>")
+				sleep(rand(1,5))
+		targethumano.visible_message("<span class='warning'>Nothing happens.</span>")

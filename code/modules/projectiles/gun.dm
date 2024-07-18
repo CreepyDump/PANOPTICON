@@ -12,6 +12,7 @@
 	custom_materials = list(/datum/material/iron=2000)
 	w_class = WEIGHT_CLASS_NORMAL
 	possible_item_intents = list(INTENT_GENERIC, RANGED_FIRE)
+	gripped_intents = list(INTENT_GENERIC, RANGED_FIRE)
 	throwforce = 5
 	throw_speed = 1
 	throw_range = 5

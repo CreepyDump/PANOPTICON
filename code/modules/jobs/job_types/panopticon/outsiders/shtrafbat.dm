@@ -45,6 +45,8 @@
 		backpack_contents = list(/obj/item/reagent_containers/glass/bottle/heroinium = 1)
 		neck = null
 		head = /obj/item/clothing/head/panopticon/govnar
+	else
+		cloak = /obj/item/clothing/cloak/panopticon/douglas
 	if(prob(60))
 		backl = /obj/item/gun/ballistic/rifle/gusyevboltovka
 

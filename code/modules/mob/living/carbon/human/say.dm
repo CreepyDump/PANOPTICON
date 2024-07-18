@@ -164,6 +164,8 @@
 		switch(H.job)
 			if("Necroleninist")
 				playsound(get_turf(H), pick('sound/misc/occulttalk (1).ogg','sound/misc/occulttalk (2).ogg'), 100, FALSE, -1)
+			if("Slug")
+				playsound(get_turf(H), pick('sound/misc/retardtalk (1).ogg','sound/misc/retardtalk (2).ogg'), 100, FALSE, -1)
 			if("Major")
 				playsound(get_turf(H), pick('sound/misc/majortalk.ogg'), 100, FALSE, -1)
 			if("Greys")
@@ -171,4 +173,7 @@
 			else
 				playsound(get_turf(H), pick('sound/misc/mantalk (1).ogg','sound/misc/mantalk (2).ogg'), 100, FALSE, -1)
 	else
-		playsound(get_turf(H), pick('sound/misc/womantalk (1).ogg','sound/misc/womantalk (2).ogg'), 100, FALSE, -1)
+		if(istype(H.dna.species, /datum/species/human/odongh))
+			playsound(get_turf(H), pick('sound/misc/odonghtalk.ogg'), 100, FALSE, -1)
+		else
+			playsound(get_turf(H), pick('sound/misc/womantalk (1).ogg','sound/misc/womantalk (2).ogg'), 100, FALSE, -1)

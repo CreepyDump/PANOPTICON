@@ -37,7 +37,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, pick(1,2,3,4,5), TRUE)
 		H.STASTR = rand(6,13)
 		H.STAINT = rand(4,15)
-	if(prob(30))
+	if(prob(15))
 		H.playsound_local(H, 'sound/misc/littlescary1.ogg', 60)
 		to_chat(H, "<span class='cult italic'><b><span class='big'>I AM SICK WITH DISEASE.</span></b></span>")
 		chuma.try_infect(H)

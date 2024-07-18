@@ -33,3 +33,13 @@
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.01
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 25, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/mask/pig
+	name = "Pig mask"
+	desc = "WEEEEK WEEEEEK!!"
+	icon = 'icons/panopticon/obj/clothes/masks.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/mask.dmi'
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEEYES|HIDEFACE|HIDENECK|HIDEFACIALHAIR
+	icon_state = "pig"
+	item_state = "pig"
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
