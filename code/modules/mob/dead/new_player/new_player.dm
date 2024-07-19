@@ -614,9 +614,9 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
 		if(C.allmig)
-			omegalist = list(GLOB.allmig_positions)
+			omegalist = list(GLOB.bunker_positions)
 	if(istype(SSticker.mode, /datum/game_mode/roguewar))
-		omegalist = list(GLOB.roguewar_positions)
+		omegalist = list(GLOB.bunker_positions)
 
 	for(var/list/category in omegalist)
 		if(!SSjob.name_occupations[category[1]])

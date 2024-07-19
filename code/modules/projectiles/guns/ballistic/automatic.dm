@@ -349,8 +349,8 @@
 	icon = 'icons/panopticon/items/guns.dmi'
 	icon_state = "krasnik"
 	item_state = "krasnik"
-	weapon_weight = WEAPON_HEAVY
-	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
+	weapon_weight = WEAPON_MEDIUM
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45
 	fire_delay = 30
 	burst_size = 1
 	can_suppress = FALSE

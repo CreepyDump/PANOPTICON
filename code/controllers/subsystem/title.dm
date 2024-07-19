@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(title)
 #ifndef ROGUEWORLD
 		file_path = "icons/default_title.dmi"
 #else
-		file_path = "icons/rogueworld_title.dmi"
+		file_path = "icons/necronox_title.dmi"
 #endif
 	ASSERT(fexists(file_path))
 

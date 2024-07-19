@@ -1233,3 +1233,32 @@ Traitors and the like can also be revived with the previous role mostly intact.
 					if(!source)
 						return
 			REMOVE_TRAIT(D,chosen_trait,source)
+
+/mob/dead/new_player/proc/necronox()
+	set category = "Server"
+	set name = "NECRONOX TIME"
+
+#ifdef TESTSERVER
+	return
+#endif
+	if(SSticker.current_state > GAME_STATE_PREGAME)
+		to_chat(src, "<span class='warning'>Too late.</span>")
+		return
+	if(alert(src,"Force NECRONOX?","PANOPTICON","YES","NO") == "YES")
+		if(SSticker.current_state <= GAME_STATE_PREGAME)
+			var/icon/ikon
+			var/file_path = "icons/necronox_title.dmi"
+			ASSERT(fexists(file_path))
+			ikon = new(fcopy_rsc(file_path))
+			if(SStitle.splash_turf && ikon)
+				SStitle.splash_turf.icon = ikon
+			for(var/mob/dead/new_player/player in GLOB.player_list)
+				player.playsound_local(player, 'sound/music/NECRONOX.ogg', 100, TRUE)
+			SSticker.isrogueworld = TRUE
+			SSticker.failedstarts = 13
+			SSticker.current_state = GAME_STATE_SETTING_UP
+			Master.SetRunLevel(RUNLEVEL_SETUP)
+			if(SSticker.start_immediately)
+				SSticker.fire()
+		else
+			to_chat(src, "Something went wrong.")
