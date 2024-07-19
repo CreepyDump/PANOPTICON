@@ -97,6 +97,6 @@
 /obj/vehicle/sealed/car/gruzovik
 	layer = ABOVE_MOB_LAYER
 	anchored = TRUE
-	engine_sound = 'sousound/panopticon/gruzovik.ogg'
+	engine_sound = 'sound/panopticon/gruzovik.ogg'
 	icon = 'icons/panopticon/obj/gruzovikblyaaa.dmi'
 	icon_state = "gruzovik"
