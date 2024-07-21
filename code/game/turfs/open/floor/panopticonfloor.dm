@@ -204,7 +204,7 @@
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/dirtland.ogg'
 
-/turf/open/floor/panopticon/gulag/Initialize()
+/turf/open/floor/panopticon/gulag/snow/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
 

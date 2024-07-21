@@ -1,5 +1,5 @@
 //used in various places
-#define ALL_RACES_LIST		list("human", "Odongh")
+#define ALL_RACES_LIST		list("human", "odongh")
 
 #define ALL_RACES_LIST_NAMES		list("Humen", "Humen", "Odongh")
 

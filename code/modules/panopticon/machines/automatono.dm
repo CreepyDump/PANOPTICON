@@ -166,8 +166,7 @@
 		qdel(M)
 
 /datum/looping_sound/tvloop
-	mid_sounds = list('sound/ambience/tv1.ogg')
-	end_sound = list('sound/ambience/tv2.ogg')
+	mid_sounds = list('sound/ambience/tv.ogg')
 	mid_length = 25
 	volume = 50
 	extra_range = 5

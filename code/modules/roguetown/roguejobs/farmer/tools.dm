@@ -226,11 +226,11 @@
 		if(D.planted_crop)
 			D.planted_crop.attackby(src, user)
 			return
-	if(istype(T, /turf/open/floor/rogue/grass))
+	if(istype(T, /turf/open/floor/panopticon/darkgrass))
 		if(user.used_intent.type == /datum/intent/till)
 			playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
 			if (do_after(user,30, target = src))
-				T.ChangeTurf(/turf/open/floor/rogue/dirt, flags = CHANGETURF_INHERIT_AIR)
+				T.ChangeTurf(/turf/open/floor/panopticon/mud, flags = CHANGETURF_INHERIT_AIR)
 				playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
 			return
 	. = ..()

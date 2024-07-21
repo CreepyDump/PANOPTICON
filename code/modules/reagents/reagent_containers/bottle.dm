@@ -440,3 +440,6 @@
 	name = "bromine bottle"
 	list_reagents = list(/datum/reagent/bromine = 30)
 
+/obj/item/reagent_containers/glass/bottle/blood
+	name = "blood bottle"
+	list_reagents = list (/datum/reagent/blood = 30)

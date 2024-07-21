@@ -12,7 +12,7 @@
 	default_color = "FFFFFF"
 	liked_food = GROSS | GRAIN
 	species_traits = list(LIPS,NO_UNDERWEAR, EYECOLOR)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_VIRUSIMMUNE,TRAIT_NOHUNGER)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
 	possible_ages = list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED)
@@ -41,6 +41,10 @@
 	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 1, "constitution" = -2, "endurance" = 0, "speed" = -1, "fortune" = 1)
 	enflamed_icon = "widefire"
 
+/datum/species/human/odongh/send_voice(mob/living/carbon/human/H)
+	playsound(get_turf(H), pick('sound/misc/odonghtalk.ogg'), 100, TRUE, -1)
+
+
 /datum/species/human/odongh/check_roundstart_eligible()
 	return TRUE
 
@@ -58,19 +62,19 @@
 	if(unique)
 		if(gender == MALE)
 			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/rt/names/elf/elfwm.txt") )
+				randname = pick( world.file2list("strings/rt/names/dwarf/odongs.txt") )
 				if(!findname(randname))
 					break
 		if(gender == FEMALE)
 			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/rt/names/elf/elfwf.txt") )
+				randname = pick( world.file2list("strings/rt/names/dwarf/odongs.txt") )
 				if(!findname(randname))
 					break
 	else
 		if(gender == MALE)
-			randname = pick( world.file2list("strings/rt/names/elf/elfwm.txt") )
+			randname = pick( world.file2list("strings/rt/names/dwarf/odongs.txt") )
 		if(gender == FEMALE)
-			randname = pick( world.file2list("strings/rt/names/elf/elfwf.txt") )
+			randname = pick( world.file2list("strings/rt/names/dwarf/odongs.txt") )
 	randname += " Halfelven"
 	return randname
 

@@ -173,7 +173,4 @@
 			else
 				playsound(get_turf(H), pick('sound/misc/mantalk (1).ogg','sound/misc/mantalk (2).ogg'), 100, FALSE, -1)
 	else
-		if(istype(H.dna.species, /datum/species/human/odongh))
-			playsound(get_turf(H), pick('sound/misc/odonghtalk.ogg'), 100, FALSE, -1)
-		else
-			playsound(get_turf(H), pick('sound/misc/womantalk (1).ogg','sound/misc/womantalk (2).ogg'), 100, FALSE, -1)
+		playsound(get_turf(H), pick('sound/misc/womantalk (1).ogg','sound/misc/womantalk (2).ogg'), 100, FALSE, -1)

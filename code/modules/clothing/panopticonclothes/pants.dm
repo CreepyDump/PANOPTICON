@@ -54,3 +54,10 @@
 	l_sleeve_zone = BODY_ZONE_L_LEG
 	r_sleeve_status = SLEEVE_ROLLED
 	l_sleeve_status = SLEEVE_ROLLED
+
+/obj/item/clothing/under/panopticon/odongh
+	name = "Steppelander pants"
+	icon_state = "odongh"
+	item_state = "odongh"
+	allowed_race = list("odongh")
+	body_parts_covered = CHEST|ARMS|VITALS

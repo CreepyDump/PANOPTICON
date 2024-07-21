@@ -37,9 +37,13 @@
 
 #define JDO_LESHIY 7
 
-#define SHTRAFBAT	(1<<2)
+#define NOMAD	(1<<2)
 
-#define JDO_SHTRAFBAT 8
+#define JDO_NOMAD 9
+
+#define SHTRAFBAT	(1<<3)
+
+#define JDO_SHTRAFBAT 9
 
 // PANOPTICON //
 

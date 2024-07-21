@@ -13,7 +13,8 @@
 	if(!istype(T, /turf/open/floor/rogue/dirt))
 		if(!istype(T, /turf/open/transparent/openspace))
 			if(!istype(T, /turf/open/floor/rogue/grass))
-				return
+				if(!istype(T, /turf/open/floor/panopticon/darkgrass))
+					return
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/woodwall

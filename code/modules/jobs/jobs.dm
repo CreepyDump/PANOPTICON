@@ -156,6 +156,7 @@ GLOBAL_LIST_INIT(bunker_positions, list(
 GLOBAL_LIST_INIT(outside_positions, list(
 	"Necroleninist",
 	"Lesnik",
+	"Nomad",
 	"Strafbat"
 	))
 
