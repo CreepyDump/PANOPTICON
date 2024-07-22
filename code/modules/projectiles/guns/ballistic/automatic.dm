@@ -343,6 +343,7 @@
 	fire_sound = 'sound/blank.ogg'
 	casing_ejector = FALSE
 
+
 /obj/item/gun/ballistic/automatic/panopticon/krasnik
 	name = "KAR-37"
 	desc = ""
@@ -350,9 +351,9 @@
 	icon_state = "krasnik"
 	item_state = "krasnik"
 	weapon_weight = WEAPON_MEDIUM
-	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	mag_type = /obj/item/ammo_box/magazine/smgm45
 	fire_delay = 30
-	burst_size = 1
+	burst_size = 3
 	can_suppress = FALSE
 	fire_sound = 'sound/combat/Ranged/automat-fire-01.ogg'
 	fire_sound_volume = 85

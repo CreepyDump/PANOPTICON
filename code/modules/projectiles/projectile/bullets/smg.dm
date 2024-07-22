@@ -2,7 +2,11 @@
 
 /obj/projectile/bullet/c45
 	name = ".45 bullet"
-	damage = 30
+	speed = 0.4
+	damage = 45
+	paralyze = 30
+	dismemberment = 50
+	armor_penetration = 50
 
 // 4.6x30mm (Autorifles)
 
