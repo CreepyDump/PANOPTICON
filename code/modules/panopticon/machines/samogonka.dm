@@ -1,72 +1,88 @@
-/obj/structure/panopticon/automat/samogonapparat
-	name = "Self-made distiller"
-	desc = ""
+/obj/item/reagent_containers/glass/beaker/banka
+	name = "Banka"
 	icon = 'icons/panopticon/obj/samogon.dmi'
-	icon_state = "samogon1"
-	layer = BELOW_OBJ_LAYER
-	density = TRUE
-	pass_flags = PASSTABLE
-	resistance_flags = ACID_PROOF
-	var/operating = FALSE
+	icon_state = "banka"
+	fill_icon_thresholds = list(0, 10, 25, 50, 75, 80, 90)
+
+/obj/item/reagent_containers/glass/beaker/banka/update_icon()
+	overlays.Cut()
+
+	if (!is_open_container())
+		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
+		overlays += lid
+
+/obj/item/weapon/cooper_pipe
+	name = "Cooper pipe"
+	icon = 'icons/panopticon/obj/samogon.dmi'
+	icon_state = "truba"
+
+/obj/item/reagent_containers/canister
+	name = "Canister"
+	icon = 'icons/panopticon/obj/samogon.dmi'
+	icon_state = "canister00"
+	density = 0
+	anchored = 0
+	volume = 300
 	var/obj/item/reagent_containers/beaker = null
-	var/limit = 10
-	var/speed = 1
-	var/list/holdingitems
+	var/obj/item/weapon/cooper_pipe/cooper_pipe = null
 
-/obj/structure/panopticon/automat/samogonapparat/Initialize()
-	. = ..()
-	holdingitems = list()
-	beaker = new /obj/item/reagent_containers/glass/beaker/jar(src)
 
-/obj/structure/panopticon/automat/samogonapparat/Destroy()
-	if(beaker)
-		beaker.forceMove(drop_location())
-	return ..()
+/obj/item/reagent_containers/canister/update_icon()
+	icon_state = "canister"+num2text(!isnull(cooper_pipe))+num2text(!isnull(beaker))
 
-	if(beaker || length(holdingitems))
-		. += "<span class='notice'>\The [src] contains:</span>"
-		if(beaker)
-			. += "<span class='notice'>- \A [beaker].</span>"
-		for(var/i in holdingitems)
-			var/obj/item/O = i
-			. += "<span class='notice'>- \A [O.name].</span>"
+/obj/item/reagent_containers/canister/attack_hand()
+	return
 
-/obj/structure/panopticon/automat/samogonapparat/update_icon()
-	if(beaker)
-		icon_state = "samogon1"
-	else
-		icon_state = "samogon0"
+/obj/item/reagent_containers/canister/verb_pickup()
+	return
 
-/obj/structure/panopticon/automat/samogonapparat/attackby(obj/item/I, mob/user, params)
-	if (istype(I, /obj/item/reagent_containers) && I.is_open_container())
-		var/obj/item/reagent_containers/B = I
-		. = TRUE //no afterattack
-		if(!user.transferItemToLoc(B, src))
+
+/obj/item/reagent_containers/canister/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	..()
+
+	if (istype(O,/obj/item/reagent_containers))
+		if (beaker || !cooper_pipe)
+			var/obj/item/reagent_containers/RC = O
+			if (!RC.reagents.total_volume)
+				reagents.trans_to(RC, min(reagents.total_volume, RC.reagents.maximum_volume))
 			return
-		to_chat(user, "<span class='notice'>I add [B] to [src].</span>")
+		else if (istype(O,/obj/item/reagent_containers/glass/beaker/banka))
+			src.beaker =  O
+			user.dropItemToGround()
+			O.loc = src
+			update_icon()
+			src.updateUsrDialog()
+			return
+
+	if (istype(O,/obj/item/weapon/cooper_pipe))
+		src.cooper_pipe =  O
+		user.dropItemToGround()
+		O.loc = src
 		update_icon()
-		return TRUE //no afterattack
+		src.updateUsrDialog()
+		return
 
-	if(holdingitems.len >= limit)
-		to_chat(user, "<span class='warning'>[src] is filled to capacity!</span>")
-		return TRUE
+/obj/item/reagent_containers/canister/proc/disassemble()
 
-	if(user.transferItemToLoc(I, src))
-		if(I.is_recipe_samogon)
-			to_chat(user, "<span class='notice'>I add [I] to [src].</span>")
-			holdingitems[I] = TRUE
-			return FALSE
-		else
-			to_chat(user, "<span class='warning'>I can't put [I] to [src], that's would be so dumb!</span>")
-			return TRUE
-/obj/structure/panopticon/automat/samogonapparat/proc/remove_object(obj/item/O)
-	holdingitems -= O
-	qdel(O)
+	if (usr.stat != 0)
+		return
 
-/obj/structure/panopticon/automat/samogonapparat/attack_hand(mob/user)
-	. = ..()
-	if(INTENT_GRAB)
-		for(var/i in holdingitems)
-			var/obj/item/O = i
-			O.forceMove(drop_location())
-			holdingitems -= O
+	if (beaker)
+		beaker.loc = src.loc
+		beaker = null
+
+	if(cooper_pipe)
+		cooper_pipe.loc = src.loc
+		cooper_pipe = null
+
+/obj/item/reagent_containers/canister/verb/verb_toggle_brew()
+	set src in oview(1) // One square distance
+	set category = "MOONSHINE"
+	set name = "Toggle Brewing"
+
+/obj/item/reagent_containers/canister/verb/verb_disassemble()
+	set src in oview(1) // One square distance
+	set category = "MOONSHINE"
+	set name = "Disassemble"
+
+	disassemble()

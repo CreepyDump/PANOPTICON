@@ -111,6 +111,13 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/on_ex_act(severity)
 	return
 
+/datum/reagent/proc/distillate(var/amount)
+	return
+
+/datum/reagent/proc/condensate(var/amount)
+	return
+
+
 // Called if the reagent has passed the overdose threshold and is set to be triggering overdose effects
 /datum/reagent/proc/overdose_process(mob/living/M)
 	return

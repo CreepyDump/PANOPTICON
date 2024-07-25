@@ -28,6 +28,12 @@
 		playsound(src,'sound/misc/vampirespell.ogg', 50, TRUE)
 	qdel(src)
 
+/obj/structure/panopticon/psychickgrib/attack_hand(mob/user)
+	. = ..()
+	if(INTENT_GRAB)
+		user.visible_message("<span class='notice'>[user] harvests shroom.</span>")
+		deconstruct(src)
+
 /obj/structure/panopticon/panopticontree
 	name = "Strange tree"
 	desc = "Looks bizzare!"

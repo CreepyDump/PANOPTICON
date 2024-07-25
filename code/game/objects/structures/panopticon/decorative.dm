@@ -88,7 +88,7 @@
 	base_icon_state = "shkaf"
 	icon_state = "shkaf"
 
-/obj/structure/closet/bigshkaf
+/obj/structure/closet/crate/bigshkaf
 	name = "Closet"
 	icon = 'icons/panopticon/obj/64x64.dmi'
 	icon_state = "closet"
