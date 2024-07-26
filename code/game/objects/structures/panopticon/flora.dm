@@ -18,7 +18,7 @@
 
 /obj/structure/panopticon/psychickgrib
 	name = "Psychickshroom"
-	icon_state = "grib"
+	icon_state = "grib1"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	max_integrity = 1
 
@@ -29,6 +29,42 @@
 	qdel(src)
 
 /obj/structure/panopticon/psychickgrib/attack_hand(mob/user)
+	. = ..()
+	if(INTENT_GRAB)
+		user.visible_message("<span class='notice'>[user] harvests shroom.</span>")
+		deconstruct(src)
+
+/obj/structure/panopticon/throbber
+	name = "Throbbershroom"
+	icon_state = "grib2"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	max_integrity = 1
+
+/obj/structure/panopticon/throbber/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		new /obj/item/reagent_containers/food/snacks/throbber(get_turf(src))
+		playsound(src,'sound/misc/throbber.ogg', 50, TRUE)
+	qdel(src)
+
+/obj/structure/panopticon/throbber/attack_hand(mob/user)
+	. = ..()
+	if(INTENT_GRAB)
+		user.visible_message("<span class='notice'>[user] harvests shroom.</span>")
+		deconstruct(src)
+
+/obj/structure/panopticon/seltshmack
+	name = "Seltshmack"
+	icon_state = "grib3"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	max_integrity = 1
+
+/obj/structure/panopticon/seltshmack/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		new /obj/item/reagent_containers/food/snacks/seltshmack(get_turf(src))
+		playsound(src,'sound/items/seedextract.ogg', 50, TRUE)
+	qdel(src)
+
+/obj/structure/panopticon/seltshmack/attack_hand(mob/user)
 	. = ..()
 	if(INTENT_GRAB)
 		user.visible_message("<span class='notice'>[user] harvests shroom.</span>")
@@ -122,3 +158,20 @@
 			S.start()
 		return
 	..()
+
+/obj/structure/flora/panopticontree/log
+	name = "Strange log"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	icon_state = "brevno"
+	opacity = 0
+	max_integrity = 100
+	climbable = TRUE
+	climb_time = 0
+	layer = TABLE_LAYER
+	plane = GAME_PLANE
+	blade_dulling = DULLING_PICK
+	static_debris = null
+	debris = null
+	alpha = 255
+	pixel_x = -16
+	climb_offset = 14

@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/grown/psychickgrib
 	name = "Psychickshroom"
-	desc = ""
+	desc = "A shroom!"
 	icon = 'icons/panopticon/items/consumable.dmi'
 	is_recipe_samogon = TRUE
 	icon_state = "psychick"

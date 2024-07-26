@@ -557,7 +557,7 @@
 "UQ" = (/obj/structure/stairs{dir = 1},/turf/open/transparent/openspace,/area/panopticon/indoors/town)
 "US" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/clothing/armor/panopticon,/obj/item/clothing/armor/panopticon,/obj/item/clothing/armor/panopticon,/obj/item/clothing/head/panopticon/grey,/obj/item/clothing/head/panopticon/grey,/obj/item/clothing/head/panopticon/grey,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
 "UT" = (/mob/living/carbon/human/species/human/northern/bum,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
-"UW" = (/obj/structure/zabor/border{dir = 8},/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"UW" = (/obj/structure/zabor/border{dir = 8},/obj/structure/flora/newtree,/turf/open/floor/panopticon/,/area/panopticon/outdoors/darkwood)
 "Vd" = (/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/town)
 "Vh" = (/obj/structure/mineral_door/wood/deadbolt{dir = 2},/turf/open/floor/rogue/tile/bath,/area/panopticon/indoors/town)
 "Vi" = (/obj/structure/mineral_door/wood/deadbolt{dir = 8; locked = 1},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)

@@ -18,11 +18,13 @@
 	layer = 2.8
 
 /obj/structure/closet/dirthole/grave
+	desc = "There would be you!"
 	stage = 3
 	faildirt = 3
 	icon_state = "grave"
 
 /obj/structure/closet/dirthole/closed
+	desc = "There would be you!"
 	stage = 4
 	faildirt = 3
 	climb_offset = 10
