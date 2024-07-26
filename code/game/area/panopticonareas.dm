@@ -213,7 +213,7 @@
 	soundenv = 16
 
 /area/panopticon/indoors/hell
-	name = "HELL"
+	name = "HELL INDOORS"
 	icon_state = "isnear"
 	outdoors = TRUE
 	ambientrain = null
@@ -226,7 +226,7 @@
 	droning_sound_night = null
 	soundenv = 16
 
-/area/panopticon/indoors/hell
-	name = "HELL"
+/area/panopticon/indoors/hell/dinner
+	name = "HELL DINNER"
 	icon_state = "isnear"
 	droning_sound = 'sound/music/area/dinner.ogg'
