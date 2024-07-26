@@ -10,7 +10,7 @@
 
 /obj/item/reagent_containers/food/snacks/seltshmack
 	name = "seltshmack"
-	desc = "A shroom!
+	desc = "A shroom!"
 	bitesize = 1
 	icon = 'icons/panopticon/items/consumable.dmi'
 	icon_state = "seltshmack"
