@@ -196,3 +196,37 @@
 	soundenv = 2
 	plane = INDOOR_PLANE
 	converted_type = /area/panopticon/outdoors
+
+/area/panopticon/outdoors/hell
+	name = "HELL"
+	icon_state = "isnear"
+	outdoors = TRUE
+	ambientrain = null
+	ambientsounds = AMB_CAVELAVA
+	ambientnight = AMB_CAVELAVA
+	spookysounds = SPOOKY_BUNKER
+	spookynight = SPOOKY_BUNKER
+	droning_sound = 'sound/music/area/underworlddrone.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/panopticon/indoors/hell
+	soundenv = 16
+
+/area/panopticon/indoors/hell
+	name = "HELL"
+	icon_state = "isnear"
+	outdoors = TRUE
+	ambientrain = null
+	ambientsounds = AMB_INGEN
+	ambientnight = AMB_INGEN
+	spookysounds = SPOOKY_BUNKER
+	spookynight = SPOOKY_BUNKER
+	droning_sound = 'sound/music/area/church.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	soundenv = 16
+
+/area/panopticon/indoors/hell
+	name = "HELL"
+	icon_state = "isnear"
+	droning_sound = 'sound/music/area/dinner.ogg'
