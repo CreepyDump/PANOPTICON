@@ -20,7 +20,7 @@
 			if("choke")
 				used = 'sound/vo/male/gen/choke.ogg'
 			if("chuckle")
-				used = 'sound/vo/male/gen/chuckle.ogg'
+				used = list('sound/vo/male/gen/chuckle.ogg', 'sound/vo/male/gen/chuckle.wav')
 			if("clearthroat")
 				used = list('sound/vo/male/gen/clearthroat (1).ogg','sound/vo/male/gen/clearthroat (2).ogg','sound/vo/male/gen/clearthroat (3).ogg')
 			if("cough")

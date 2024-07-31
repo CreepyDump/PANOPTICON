@@ -252,3 +252,38 @@
 	icon_state = "shutter"
 	icon = 'icons/panopticon/obj/town.dmi'
 	max_integrity = 0
+
+/obj/structure/chair/bench/oldasscouch
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	icon_state = "divan1"
+
+/obj/structure/chair/bench/oldasscouch/r
+	icon_state = "divan2"
+
+/obj/structure/panopticon/crate
+	name = "Steel stash"
+	icon_state = "tainik"
+	icon = 'icons/panopticon/obj/town.dmi'
+	max_integrity = 20
+	attacked_sound = 'sound/combat/hits/onmetal/sheet (2).ogg'
+
+/obj/structure/panopticon/seltshmack/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(prob(5))
+			new /obj/item/storage/firstaid/panopticon(get_turf(src))
+		else
+			return
+		if(prob(17))
+			new /obj/item/storage/pill_bottle/pervitin(get_turf(src))
+		else
+			return
+		if(prob(45))
+			new /obj/item/storage/fancy/cigarettes/jeltomorkanal(get_turf(src))
+		else
+			new /obj/item/panopticonmoney/one(get_turf(src))
+		if(prob(29))
+			new /obj/item/panopticonmoney/ten(get_turf(src))
+		if(prob(1))
+			new /obj/item/panopticonmoney/hundred(get_turf(src))
+		playsound(src,'sound/combat/hits/onmetal/grille (2).ogg', 50, TRUE)
+	qdel(src)

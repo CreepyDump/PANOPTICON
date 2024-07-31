@@ -1,88 +1,91 @@
-/obj/item/reagent_containers/glass/beaker/banka
-	name = "Banka"
+//////////////ETHANOL REFINERY/////////////////
+
+/obj/structure/distillery
+	name = "hooch distiller"
+	desc = "An moonshine apparat. Turns any shrooms into alcohol."
+	density = FALSE
+	anchored = TRUE
 	icon = 'icons/panopticon/obj/samogon.dmi'
-	icon_state = "banka"
-	fill_icon_thresholds = list(0, 10, 25, 50, 75, 80, 90)
+	icon_state = "samogon"
+	var/active = FALSE
+	var/obj/item/reagent_containers/glass/beaker/jar/collector = null
 
-/obj/item/reagent_containers/glass/beaker/banka/update_icon()
-	overlays.Cut()
+/obj/structure/distillery/update_icon()
+	..()
+	if (active)
+		icon_state = "distillery1"
+	else
+		icon_state = "distillery"
 
-	if (!is_open_container())
-		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
-		overlays += lid
-
-/obj/item/weapon/cooper_pipe
-	name = "Cooper pipe"
-	icon = 'icons/panopticon/obj/samogon.dmi'
-	icon_state = "truba"
-
-/obj/item/reagent_containers/canister
-	name = "Canister"
-	icon = 'icons/panopticon/obj/samogon.dmi'
-	icon_state = "canister00"
-	density = 0
-	anchored = 0
-	volume = 300
-	var/obj/item/reagent_containers/beaker = null
-	var/obj/item/weapon/cooper_pipe/cooper_pipe = null
-
-
-/obj/item/reagent_containers/canister/update_icon()
-	icon_state = "canister"+num2text(!isnull(cooper_pipe))+num2text(!isnull(beaker))
-
-/obj/item/reagent_containers/canister/attack_hand()
-	return
-
-/obj/item/reagent_containers/canister/verb_pickup()
-	return
-
-
-/obj/item/reagent_containers/canister/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/structure/distillery/attack_hand(var/mob/living/human/H)
+	if (!collector && !active)
+		H << "You cannot turn the distiller active without a collector."
+		return
+	if (collector && !active)
+		H << "You turn the distiller active."
+		active = TRUE
+		update_icon()
+		process_machine()
+	..()
+/obj/structure/distillery/attackby(var/obj/item/reagent_containers/B as obj, var/mob/living/human/H as mob)
+	if (B.reagents)
+		if (B.reagents.total_volume > 0 && collector && collector.reagents.get_free_space() > 0)
+			var/amt_transf = collector.reagents.get_free_space()
+			var/tamt = B.reagents.trans_to_holder(src.reagents, min(10, amt_transf), TRUE, FALSE)
+			H << "You pour [tamt] units from \the [B] into the distiller."
+			update_icon()
+			return
+	if (istype(B, /obj/item/reagent_containers/glass) && !collector)
+		if (B.reagents.total_volume > 0)
+			H << "The collector must be empty!"
+			return
+		else
+			H << "You place [B] as the collector for the distiller."
+			collector =  B
+			H.drop_item()
+			B.loc = src
+			update_icon()
+			return
 	..()
 
-	if (istype(O,/obj/item/reagent_containers))
-		if (beaker || !cooper_pipe)
-			var/obj/item/reagent_containers/RC = O
-			if (!RC.reagents.total_volume)
-				reagents.trans_to(RC, min(reagents.total_volume, RC.reagents.maximum_volume))
-			return
-		else if (istype(O,/obj/item/reagent_containers/glass/beaker/banka))
-			src.beaker =  O
-			user.dropItemToGround()
-			O.loc = src
+/obj/structure/distillery/verb/empty()
+	set category = null
+	set name = "Remove Collector"
+	set src in range(1, usr)
+
+	if (!collector)
+		usr << "There is nothing to remove from \the [src]."
+		return
+
+	if (active)
+		usr << "<span class = 'danger'>You cannot remove the [collector] while the distiller is running!</span>"
+		return
+
+	if (collector && !active)
+		visible_message("You remove \the [collector].","[usr] removes \the [collector] from \the [src].")
+		collector.loc = get_turf(src)
+		collector = null
+		return
+
+	return
+
+/obj/structure/distillery/proc/process_machine()
+	if (!active)
+		return
+	else
+		spawn(150)
+			var/ethanol_sum = 0
+			for (var/datum/reagent/r in reagents.reagent_list)
+				if (istype(r, /datum/reagent/ethanol))
+					ethanol_sum += reagents.get_reagent_amount(r.id)*(1-(r.strength/100))
+					reagents.remove_reagent(r.id,reagents.get_reagent_amount(r.id))
+				else
+					reagents.remove_reagent(r.id,reagents.get_reagent_amount(r.id))
+
+			var/voltotransf = min(collector.reagents.get_free_space(),ethanol_sum)
+			collector.reagents.add_reagent("ethanol",voltotransf)
+
+
+			active = FALSE
 			update_icon()
-			src.updateUsrDialog()
-			return
-
-	if (istype(O,/obj/item/weapon/cooper_pipe))
-		src.cooper_pipe =  O
-		user.dropItemToGround()
-		O.loc = src
-		update_icon()
-		src.updateUsrDialog()
-		return
-
-/obj/item/reagent_containers/canister/proc/disassemble()
-
-	if (usr.stat != 0)
-		return
-
-	if (beaker)
-		beaker.loc = src.loc
-		beaker = null
-
-	if(cooper_pipe)
-		cooper_pipe.loc = src.loc
-		cooper_pipe = null
-
-/obj/item/reagent_containers/canister/verb/verb_toggle_brew()
-	set src in oview(1) // One square distance
-	set category = "MOONSHINE"
-	set name = "Toggle Brewing"
-
-/obj/item/reagent_containers/canister/verb/verb_disassemble()
-	set src in oview(1) // One square distance
-	set category = "MOONSHINE"
-	set name = "Disassemble"
-
-	disassemble()
+			visible_message("\The [src] finishes distilling.")

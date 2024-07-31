@@ -1,6 +1,6 @@
 "ar" = (/obj/structure/chair/wood/rogue/chair3,/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/bunker)
 "aA" = (/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/bunker/special)
-"aU" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/bunker/special)
+"aU" = (/obj/machinery/light/small{dir = 1},/obj/structure/panopticon/crate,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/bunker/special)
 "bi" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 4},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "bj" = (/obj/structure/panopticon/onwall/grobposter,/turf/closed/wall/mineral/panopticon/bunker,/area/panopticon/indoors/bunker/special)
 "bm" = (/obj/machinery/light/small{dir = 4; bulb_colour = "#FFF7C4"},/obj/structure/bed/panopticon/bunker,/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/bunker)
@@ -361,6 +361,7 @@
 "Lh" = (/obj/effect/decal/cleanable/cobweb/cobweb2,/obj/machinery/light/rogue/firebowl/stump,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "Lu" = (/obj/structure/panopticon/onwall/wallpipe{dir = 4},/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors/bunker/specialdva)
 "LA" = (/obj/structure/panopticon/pit,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
+"LB" = (/obj/structure/panopticon/crate,/turf/open/floor/panopticon/beton,/area/panopticon/indoors/bunker)
 "LO" = (/obj/structure/panopticon/kol{dir = 1},/turf/open/floor/panopticon/mud,/area/panopticon/indoors/caves)
 "LT" = (/obj/structure/toilet,/obj/effect/decal/cleanable/blood/gibs/core,/obj/machinery/light/small{dir = 4; bulb_colour = "#FFF7C4"},/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker/special)
 "LU" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/bunker/special)
@@ -497,6 +498,7 @@
 "YA" = (/obj/structure/panopticon/onwall/inwallpipe,/turf/closed/wall/mineral/panopticon/bunker,/area/panopticon/indoors/bunker)
 "YG" = (/obj/structure/table/wood{icon_state = "longtable"; dir = 1},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/bunker)
 "YJ" = (/obj/effect/decal/cleanable/blood/gibs/old,/obj/effect/decal/cleanable/blood,/turf/open/floor/panopticon/bunker,/area/panopticon/indoors/bunker)
+"YK" = (/obj/structure/panopticon/crate,/turf/open/floor/panopticon/mud,/area/panopticon/indoors/caves)
 "YL" = (/obj/effect/decal/cleanable/blood/gibs/up,/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon)
 "YP" = (/obj/machinery/light/small{dir = 4; bulb_colour = "#FFF7C4"},/obj/structure/panopticon/mysor{dir = 8},/turf/open/floor/panopticon/bunker,/area/panopticon/indoors/bunker)
 "YV" = (/obj/structure/panopticon/skull,/turf/open/floor/panopticon/mud,/area/panopticon/indoors/caves)
@@ -512,6 +514,7 @@
 "ZC" = (/obj/machinery/light/small{bulb_colour = "#FFF7C4"},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/bunker)
 "ZF" = (/obj/structure/panopticon/barrel/blue{dir = 8},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/bunker/special)
 "ZL" = (/obj/structure/panopticon/onwall/vent,/turf/closed/wall/mineral/panopticon/bunker,/area/panopticon/indoors/bunker/specialdva)
+"ZW" = (/obj/structure/panopticon/crate,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "ZX" = (/obj/effect/decal/cleanable/oil/slippery,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/bunker/special)
 
 (1,1,1) = {"
@@ -594,7 +597,7 @@ FIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFI
 (1,1,2) = {"
 IaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIa
 IaIaIaIaTRJxDiIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIa
-IaIaIaIazfiAzfTRIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfzfzfzfzfVdIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIa
+IaIaIaIazfiAzfTRIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfZWzfzfzfVdIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIa
 IaIaIaTRzfzfzfzfIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaVdzfzfzfzfTRTRzfIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIa
 IaIaIacUzfzfzfzfIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfTRzfNfIaIaIaVEzfIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIa
 IaIapOzfzfzfzfVdzfIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfTRTRzfIaIaIaIaTRzfeCIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIa
@@ -618,7 +621,7 @@ IaIaIaIaIaIaIaIaIaIaIaIaIaIacUzfzfzfIaIaIaIaIaIaIaTRzfIaIaIaIaIaIaIaIaFihhaAaAaA
 IaIaIaIaIaIaIaIaIaIaIaIaIaIazfzfzfIaIaIaIaIaIaIaIaJxzfIaIaIaIaIaIaIaIaFiaAaAaAaAaAaAaAaAFiIaIaIaIaIaIaIaFrzfzfXynUnUnUKFUqnUIaIaIaIa
 IaIaIaIaIaIaIaIaIaIaIaIaIaIaVdzfzfIaIaIaIaIaIaIajfTRzfIaIaIaIaIaIaIaIaFihhaAaAaAaAhhaAaAFiIaIaIaIaIaIaIaIaIaIaIaIaIanUKFKFnUIaIaIaIa
 IaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfzfIaIaIaIaIaIazfzfzfzfIaIaIaIaIaIaIaIaFiaAaAaAaAaAaAaAaAFiIaIaIaIaIaIaIaIaIaIaIaIaIanUKFKFnUIaIaIaIa
-IaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfzfTRTRIaIaIaIazfiAzfIaIaIaIaIaIaIaIaIaFiFiFiFieeeeFiFiFiFiIanUnUUJnUnUnUnUYAnUnUIanUnUKFNpnUIaIaIaIa
+IaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfzfTRYKIaIaIaIazfiAzfIaIaIaIaIaIaIaIaIaFiFiFiFieeeeFiFiFiFiIanUnUUJnUnUnUnUYAnUnUIanUnUKFNpnUIaIaIaIa
 IaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfTRTRTRDiIaIaIazfzfzfIaIaIaIaIaIaIaIaIanUYAnUnUqiKRnUnUnUnUnUnUYemgfcmgmgnOYephnUnUnUKFKFgjnUIaIaIaIa
 IaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIalkTRTRIaIaIahMzfzfzfIaIaIaIaIaIaIaIanUXyZabxZaZaZaZaMXZaZaZatAmgmgmgmgDqmgmgmgtAKFKFKFKFnUnUIaIaIaFI
 IaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIazfzfIaIaIaIaIaIaIaIaIanUnUjHZaZaZaZaZaZaZaZaZaHDtAmgmgmgmgmgmgmgDqtAKFKFAinUnUIaIaIaFIFI
@@ -649,7 +652,7 @@ IaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIanUZaZanUFIFIFIFIFIFIFIFIFIFIFIsVZaZanUFIFI
 IaIaIaIaIaIaIaIanXnXnXnXnUsVnUlXnUsVnUnUtyZanUFIFIFIFIFIFIFIFIFIFIFInUeTZawgFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFI
 IaIaIaIaIaIaIaIanXcNtAcNlulujvlululuarluZaZanUFIFIFIFIFIFIFIFIFIFIFInUjHHDnUFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFI
 FiFiuTFiJdFinXsWlhKtnXFpnUlubBluluyljcuNZaHDsVFIFIFIFIFIFIFIFIFIFIFInUZattnUPtFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFI
-FilDxNENABFinXojxvHMHMHMvlluSKuNluluqNuNZaZanUFIFIFIFIFIFIFIFIFIFIFInUZaZaZaXysVnUnUFIFIFInUnUnUnUnUnUnUzWnUnUnUFIFIFIFIFIFIFIFIFIFI
+FilDxNENABFinXojxvHMLBHMvlluSKuNluluqNuNZaZanUFIFIFIFIFIFIFIFIFIFIFInUZaZaZaXysVnUnUFIFIFInUnUnUnUnUnUnUzWnUnUnUFIFIFIFIFIFIFIFIFIFI
 uTnKHsmemeFinXHMHMHMHMBXvllulusMnUEJluluZattnUFIFIFIFIFIFIFIFIFIFIFInUsVZaZaZaZaMXVOnUFIFInUAGVhvUDNOTnxcoYGlunUFIFIFIFIFIFIFIFIFIFI
 FiSrijmemedjcNHMHMHMHMHMDLlululululululuZaZanUFIFIFIFIFIFIFIFIFIFIFIFInUXyUBZaZaZaZanUnUFInUEJlulululululululunUFIFIFIFIFIFIFIFIFIFI
 uTDEmekWsDFinXHMKtHMHMHMvllugZCilugZSKluZaZahzFIFIFIFIFIFIFIFIFIFIFIFIFInUYAnUnUZaZaZqnUFIsVwIluwIlululuwIOJbmnUFIFIFIFIFIFIFIFIFIFI

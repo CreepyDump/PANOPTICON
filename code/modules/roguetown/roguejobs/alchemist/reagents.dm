@@ -45,3 +45,16 @@
 	M.add_nausea(9)
 	M.adjustToxLoss(3, 0)
 	return ..()
+
+/datum/reagent/organpoison
+	name = "Organ Poison"
+	description = "A viscous black liquid clings to the glass."
+	reagent_state = LIQUID
+	color = "#ff2f00"
+	metabolization_rate = 0.1
+
+/datum/reagent/organpoison/on_mob_life(mob/living/carbon/M)
+	if(!HAS_TRAIT(M, TRAIT_POHYI))
+		M.add_nausea(9)
+		M.adjustToxLoss(3, 0)
+	return ..()

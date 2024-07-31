@@ -7,7 +7,7 @@
 	slot = ORGAN_SLOT_LUNGS
 	gender = PLURAL
 	w_class = WEIGHT_CLASS_SMALL
-
+	fried_type = /obj/item/reagent_containers/food/snacks/panopticon/friedlungs
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
@@ -451,3 +451,16 @@
 	cold_level_1_threshold = 200
 	cold_level_2_threshold = 140
 	cold_level_3_threshold = 100
+
+/obj/item/reagent_containers/food/snacks/panopticon/friedlungs
+	name = "fried lungs"
+	desc = ""
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "lungs_fried"
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("burnt flesh" = 1)
+	eat_effect = null
+	rotprocess = 15 MINUTES
+	sellprice = 0

@@ -4,7 +4,7 @@
 	icon_state = "heart-on"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_HEART
-
+	fried_type = /obj/item/reagent_containers/food/snacks/panopticon/friedheart
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = 5 * STANDARD_ORGAN_DECAY		//designed to fail about 5 minutes after death
 
@@ -235,3 +235,16 @@
 		owner.heal_overall_damage(15, 15, 0, BODYPART_ORGANIC)
 		if(owner.reagents.get_reagent_amount(/datum/reagent/medicine/ephedrine) < 20)
 			owner.reagents.add_reagent(/datum/reagent/medicine/ephedrine, 10)
+
+/obj/item/reagent_containers/food/snacks/panopticon/friedheart
+	name = "fried heart"
+	desc = ""
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "heart_fried"
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("burnt flesh" = 1)
+	eat_effect = null
+	rotprocess = 15 MINUTES
+	sellprice = 0

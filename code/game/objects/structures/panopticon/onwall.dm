@@ -147,3 +147,6 @@
 	desc = "That's where the Empire's constabulary is based."
 	icon = 'icons/panopticon/obj/town.dmi'
 	icon_state = "greys"
+
+/obj/structure/panopticon/onwall/oldass
+	icon_state = "oldass_wall"

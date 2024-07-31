@@ -26,6 +26,7 @@
 #define TRAIT_LIMPDICK 				"limp_dick"
 #define TRAIT_SEXPASS				"sexpass"
 #define TRAIT_STEELHEARTED 			"steelhearted" //no bad mood from dismembering or seeing this
+#define TRAIT_POHYI				"alleater" //ДА МНЕ ВООБЩЕ ПОХУЙ ЧТО ЖРАТЬ БЛЯТЬ
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_WEBWALK = "I can move freely between webs.",
@@ -41,7 +42,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_EMPATH = "I can notice stress levels in detail.",
 	RTRAIT_BREADY = "Defensive stance does not passively fatigue me.",
 	RTRAIT_MEDIUMARMOR = "I can move freely in medium armor.",
-	RTRAIT_HEAVYARMOR = "I can move freely in heavy armor."
+	RTRAIT_HEAVYARMOR = "I can move freely in heavy armor.",
+	TRAIT_POHYI = "I don't care what to eat"
 	))
 
 

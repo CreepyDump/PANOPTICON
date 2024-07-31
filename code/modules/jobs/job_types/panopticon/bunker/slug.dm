@@ -40,6 +40,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(2,3,4), TRUE)
 		RegisterSignal(H, COMSIG_MOB_SAY, .proc/handle_speech)
+		ADD_TRAIT(H, TRAIT_POHYI, TRAIT_GENERIC)
 		H.STALUC = rand(1, 20)
 		H.STASTR = rand(5, 12)
 		H.STAINT = rand(1, 10)
@@ -69,6 +70,9 @@
 				backl = /obj/item/gun/ballistic/automatic/panopticon/krasnik
 	if(prob(35))
 		l_hand = /obj/item/panopticonmoney/ten
+	if(H.dna?.species)
+		if(H.dna.species.id == "human")
+			H.dna.species.soundpack_m = new /datum/voicepack/male/shizoid()
 
 /datum/outfit/job/panopticon/slug
 	shoes = /obj/item/clothing/shoes/panopticon

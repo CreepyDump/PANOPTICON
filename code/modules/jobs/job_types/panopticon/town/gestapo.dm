@@ -34,6 +34,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
+		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 5, TRUE)
 		H.STASPD = rand(6,12)
 		H.STACON = rand(10,15)

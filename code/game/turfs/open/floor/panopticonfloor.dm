@@ -148,6 +148,9 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
 
+/turf/open/floor/panopticon/beton/stone
+	icon_state = "stone"
+
 /turf/open/floor/panopticon/hell
 	icon_state = "hell"
 	layer = MID_TURF_LAYER

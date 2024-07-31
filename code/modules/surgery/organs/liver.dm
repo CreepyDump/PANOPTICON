@@ -8,7 +8,7 @@
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_LIVER
 	desc = ""
-
+	fried_type = /obj/item/reagent_containers/food/snacks/panopticon/friedliver
 	maxHealth = STANDARD_ORGAN_THRESHOLD
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
@@ -102,3 +102,16 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	damage += 100/severity
+
+/obj/item/reagent_containers/food/snacks/panopticon/friedliver
+	name = "fried heart"
+	desc = ""
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "liver_fried"
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("burnt flesh" = 1)
+	eat_effect = null
+	rotprocess = 15 MINUTES
+	sellprice = 0

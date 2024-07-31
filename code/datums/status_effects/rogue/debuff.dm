@@ -79,6 +79,8 @@
 	duration = 1
 
 /datum/status_effect/debuff/uncookedfood/on_apply()
+	if(HAS_TRAIT(owner, TRAIT_POHYI))
+		return ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_nausea(100)

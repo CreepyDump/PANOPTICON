@@ -30,6 +30,7 @@
 	H.mind?.add_antag_datum(/datum/antagonist/necroleninist)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(3,4,5), TRUE)
+		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3,4,5), TRUE)
 		H.STASTR = rand(8, 13)
 		if(prob(25))

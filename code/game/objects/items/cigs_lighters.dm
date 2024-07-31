@@ -125,7 +125,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette
 	name = "cigarette"
 	desc = ""
-	icon_state = "cigoff"
+	icon_state = "spliffoff"
 	throw_speed = 0.5
 	item_state = "spliffoff"
 	w_class = WEIGHT_CLASS_TINY
@@ -140,8 +140,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/nextdragtime = 0
 	var/lit = FALSE
 	var/starts_lit = FALSE
-	var/icon_on = "cigon"  //Note - these are in masks.dmi not in cigarette.dmi
-	var/icon_off = "cigoff"
+	var/icon_on = "spliffon"  //Note - these are in masks.dmi not in cigarette.dmi
+	var/icon_off = "spliffoff"
 	var/type_butt = /obj/item/cigbutt
 	var/lastHolder = null
 	var/smoketime = 180 // 1 is 2 seconds, so a single cigarette will last 6 minutes.
@@ -379,6 +379,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "spliffoff"
 	icon_on = "spliffon"
 	icon_off = "spliffoff"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/mouth_items.dmi'
+	icon = 'icons/roguetown/items/lighting.dmi'
 	type_butt = /obj/item/cigbutt/roach
 	throw_speed = 0.5
 	item_state = "spliffoff"

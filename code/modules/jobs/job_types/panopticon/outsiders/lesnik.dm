@@ -40,6 +40,8 @@
 		H.STAEND = rand(10, 15)
 		H.STASTR = rand(10, 20)
 		ADD_TRAIT(H, TRAIT_NOGUNS, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_POHYI, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
 /datum/outfit/job/panopticon/lesnik
 	uniform = null

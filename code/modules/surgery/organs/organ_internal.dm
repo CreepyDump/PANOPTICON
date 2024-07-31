@@ -16,9 +16,9 @@
 	var/decay_factor 	= 0										//same as above but when without a living owner, set to 0 for generic organs
 	var/high_threshold	= STANDARD_ORGAN_THRESHOLD * 0.45		//when severe organ damage occurs
 	var/low_threshold	= STANDARD_ORGAN_THRESHOLD * 0.1		//when minor organ damage occurs
-
 	///Organ variables for determining what we alert the owner with when they pass/clear the damage thresholds
 	var/prev_damage = 0
+	var/fried_type = null	//instead of becoming
 	var/low_threshold_passed
 	var/high_threshold_passed
 	var/now_failing
@@ -102,14 +102,14 @@
 	S.icon = icon
 	S.icon_state = icon_state
 	S.w_class = w_class
-
+	S.fried_type = fried_type
 	return S
 
 /obj/item/reagent_containers/food/snacks/organ
 	name = "appendix"
 	icon_state = "appendix"
 	icon = 'icons/obj/surgery.dmi'
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/berrypoison = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/organpoison = 1)
 	foodtype = RAW | MEAT | GROSS
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
