@@ -237,15 +237,6 @@
 	if(prob(30))
 		new /obj/item/panopticonweapon/molotok(get_turf(src))
 
-/obj/structure/panopticon/petlya
-	name = "Exit rope"
-	desc = "..."
-	icon_state = "exit"
-	icon = 'icons/panopticon/obj/town.dmi'
-	max_integrity = 0
-	layer = ABOVE_MOB_LAYER
-	plane = GAME_PLANE_UPPER
-
 /obj/structure/panopticon/shutters
 	name = "Mine shutters"
 	desc = "They are here so long ago opened up that they've been driven into the ground."
@@ -267,7 +258,7 @@
 	max_integrity = 20
 	attacked_sound = 'sound/combat/hits/onmetal/sheet (2).ogg'
 
-/obj/structure/panopticon/seltshmack/deconstruct(disassembled = TRUE)
+/obj/structure/panopticon/crate/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(prob(5))
 			new /obj/item/storage/firstaid/panopticon(get_turf(src))

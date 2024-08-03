@@ -32,7 +32,7 @@
 	mask = /obj/item/clothing/mask/gas/panopticon/zelinskiy
 	armor = /obj/item/clothing/armor/panopticon/cloak/grey
 	head = /obj/item/clothing/head/panopticon/mayor
-	belt = /obj/item/storage/belt/rogue/leather
+	belt = /obj/item/storage/belt/rogue/panopticon/mayor
 	beltr = /obj/item/keyring/major
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(3,4,5), TRUE)

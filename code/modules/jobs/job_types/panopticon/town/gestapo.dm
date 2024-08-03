@@ -31,6 +31,7 @@
 	pants = /obj/item/clothing/under/panopticon/greys
 	mask = /obj/item/clothing/mask/gas/panopticon
 	gloves = /obj/item/clothing/gloves/roguetown/angle
+	belt = /obj/item/storage/belt/rogue/panopticon
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)

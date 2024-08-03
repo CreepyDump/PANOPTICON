@@ -27,14 +27,14 @@
 /datum/outfit/job/panopticon/shtrafbat/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/panopticon/jackboots
-	shirt = /obj/item/clothing/suit/panopticon/shirt/shtrafbatshirt
-	pants = /obj/item/clothing/under/panopticon/dedushkapants
+	shirt = /obj/item/clothing/suit/panopticon/shirt/strafbatshirt
+	pants = /obj/item/clothing/under/panopticon/strafbatpants
 	head = /obj/item/clothing/head/panopticon/shtrafbathelm
 	backl = null
 	backr = /obj/item/storage/backpack/rogue/satchel
 	back = null
 	id = null
-	belt = /obj/item/storage/belt/rogue/leather/hand
+	belt = /obj/item/storage/belt/rogue/panopticon/strafbat
 	beltl = null
 	beltr = /obj/item/gun/ballistic/automatic/pistol/knuckleshot
 	backpack_contents = list(/obj/item/panopticonweapon/molotok = 1)

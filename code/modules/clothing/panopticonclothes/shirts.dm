@@ -21,7 +21,7 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 
 
-/obj/item/clothing/suit/panopticon/shirt/shtrafbatshirt
+/obj/item/clothing/suit/panopticon/shirt/slavicshirt
 	name = "Kosovorotka"
 	icon_state = "kosovorotka"
 	item_state = "kosovorotka"
@@ -43,3 +43,11 @@
 	item_state = "odongh"
 	allowed_race = list("odongh")
 	body_parts_covered = CHEST|ARMS|VITALS
+
+/obj/item/clothing/suit/panopticon/shirt/strafbatshirt
+	name = "Strafbat-Brown shirt"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS
+	icon_state = "strafbat"
+	item_state = "strafbat"

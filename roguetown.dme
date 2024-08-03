@@ -1789,6 +1789,7 @@
 #include "code\modules\clothing\panopticonclothes\mask.dm"
 #include "code\modules\clothing\panopticonclothes\pants.dm"
 #include "code\modules\clothing\panopticonclothes\shirts.dm"
+#include "code\modules\clothing\panopticonclothes\storage.dm"
 #include "code\modules\clothing\rogueclothes\armor.dm"
 #include "code\modules\clothing\rogueclothes\cloaks.dm"
 #include "code\modules\clothing\rogueclothes\feet.dm"

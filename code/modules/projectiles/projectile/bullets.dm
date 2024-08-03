@@ -8,3 +8,5 @@
 	flag = "bullet"
 	hitsound_wall = "ricochet"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	embedchance = 25
+	woundclass = BCLASS_STAB

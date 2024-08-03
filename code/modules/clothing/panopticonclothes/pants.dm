@@ -61,3 +61,9 @@
 	item_state = "odongh"
 	allowed_race = list("odongh")
 	body_parts_covered = CHEST|ARMS|VITALS
+
+/obj/item/clothing/under/panopticon/strafbatpants
+	name = "Strafbat-Brown pants"
+	gender = PLURAL
+	icon_state = "strafbat"
+	item_state = "strafbat"

@@ -6,9 +6,10 @@
 
 // 7.62 (Nagant Rifle)
 
-/obj/projectile/bullet/a762
+/obj/projectile/bullet/a762	
 	name = "7.62 bullet"
-	damage = 60
+	damage = 45
+	armor_penetration = 20
 
 /obj/projectile/bullet/a762_enchanted
 	name = "enchanted 7.62 bullet"

@@ -125,3 +125,116 @@
 	faction = list("flies")
 	footstep_type = null
 	aggressive = 1
+
+/mob/living/simple_animal/hostile/retaliate/panopticon/mutant
+	icon = 'icons/panopticon/mob/bigdemon.dmi'
+	name = "killer"
+	icon_state = "killer"
+	icon_living = "killer"
+	icon_dead = "killer"
+	gender = MALE
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 2
+	see_in_dark = 10
+	move_to_delay = 3
+	base_intents = list(/datum/intent/simple/slash)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 10)
+	faction = list("porojdenie")
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	health = 300
+	maxHealth = 400
+	melee_damage_lower = 45
+	melee_damage_upper = 70
+	vision_range = 3
+	aggro_vision_range = 4
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	d_intent = INTENT_PARRY
+	retreat_distance = 0
+	minimum_distance = 0
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 16
+	STASPD = 5
+	defprob = 40
+	defdrain = 10
+	del_on_deaggro = 44 SECONDS
+	retreat_health = 0
+	food = 0
+	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
+	dodgetime = 0
+	aggressive = 1
+//	stat_attack = UNCONSCIOUS
+
+/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/death(gibbed)
+	..()
+	update_icon()
+
+/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/taunted(mob/user)
+	emote("aggro")
+	Retaliate()
+	GiveTarget(user)
+	return
+
+/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/Life()
+	..()
+	if(pulledby)
+		Retaliate()
+		GiveTarget(pulledby)
+
+/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/simple_limb_hit(zone)
+	if(!zone)
+		return ""
+	switch(zone)
+		if(BODY_ZONE_PRECISE_R_EYE)
+			return "head"
+		if(BODY_ZONE_PRECISE_L_EYE)
+			return "head"
+		if(BODY_ZONE_PRECISE_NOSE)
+			return "nose"
+		if(BODY_ZONE_PRECISE_MOUTH)
+			return "mouth"
+		if(BODY_ZONE_PRECISE_HAIR)
+			return "head"
+		if(BODY_ZONE_PRECISE_EARS)
+			return "head"
+		if(BODY_ZONE_PRECISE_NECK)
+			return "neck"
+		if(BODY_ZONE_PRECISE_L_HAND)
+			return "foreleg"
+		if(BODY_ZONE_PRECISE_R_HAND)
+			return "foreleg"
+		if(BODY_ZONE_PRECISE_L_FOOT)
+			return "leg"
+		if(BODY_ZONE_PRECISE_R_FOOT)
+			return "leg"
+		if(BODY_ZONE_PRECISE_STOMACH)
+			return "stomach"
+		if(BODY_ZONE_PRECISE_GROIN)
+			return "tail"
+		if(BODY_ZONE_HEAD)
+			return "head"
+		if(BODY_ZONE_R_LEG)
+			return "leg"
+		if(BODY_ZONE_L_LEG)
+			return "leg"
+		if(BODY_ZONE_R_ARM)
+			return "foreleg"
+		if(BODY_ZONE_L_ARM)
+			return "foreleg"
+	return ..()
+
+
+/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/get_sound(input)
+	switch(input)
+		if("aggro")
+			return pick('sound/vo/mobs/zombie/firescream (1).ogg')
+		if("pain")
+			return pick('sound/vo/mobs/zombie/pain (1).ogg')
+		if("death")
+			return pick('sound/vo/mobs/zombie/death (1).ogg')
+		if("idle")
+			return pick('sound/vo/mobs/zombie/idle (1).ogg','sound/vo/mobs/zombie/idle (2).ogg','sound/vo/mobs/zombie/idle (3).ogg')
