@@ -690,7 +690,6 @@
 	base_state = "gulagdoor"
 	keylock = TRUE
 	max_integrity = 3000
-	over_state = "gulagdooropen"
 	openSound = 'sound/foley/doors/bunkerdoor.ogg'
 	closeSound = 'sound/foley/doors/bunkerdoor.ogg'
 

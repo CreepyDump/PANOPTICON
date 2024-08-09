@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(outside_positions, list(
 
 GLOBAL_LIST_INIT(town_positions, list(
 	"Major",
-	"Greys",
+	"Gendarme",
 	"Tippler",
 	"Lodger"
 	))

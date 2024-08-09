@@ -22,7 +22,7 @@
 /datum/job/panopticon/mayor/New()
 	. = ..()
 	peopleknowme = null
-	peopleiknow = list("Lodger", "Tippler", "Greys")
+	peopleiknow = list("Lodger", "Tippler", "Gendarme")
 
 /datum/outfit/job/panopticon/mayor/pre_equip(mob/living/carbon/human/H)
 	..()

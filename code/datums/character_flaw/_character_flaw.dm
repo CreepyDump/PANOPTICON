@@ -7,7 +7,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"No Arm (R)"=/datum/charflaw/limbloss/arm_r,
 	"No Arm (L)"=/datum/charflaw/limbloss/arm_l,
 	"Paranoid"=/datum/charflaw/paranoid,
-	"Random Flaw"=/datum/charflaw/randflaw))
+	"Random Sin"=/datum/charflaw/randflaw))
 
 /datum/charflaw
 	var/name
@@ -127,6 +127,14 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/spectacles(H), SLOT_WEAR_MASK)
 	else
 		new /obj/item/clothing/mask/rogue/spectacles(get_turf(H))
+
+/datum/charflaw/hemophiliac
+	name = "Hemophilia"
+	desc = "My blood has a very low clotting ability, so I should avoid bleeding!"
+
+/datum/charflaw/hemophiliac/on_mob_creation(mob/user)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_HEMOPHILIAC, TRAIT_GENERIC)
 
 /datum/charflaw/paranoid
 	name = "Paranoid"

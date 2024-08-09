@@ -1,5 +1,5 @@
 /datum/job/panopticon/greydivision
-	title = "Greys"
+	title = "Gendarme"
 	flag = GREYDIVISION
 	department_flag = TOWN
 	faction = "Station"
@@ -21,8 +21,8 @@
 
 /datum/job/panopticon/greydivision/New()
 	. = ..()
-	peopleknowme = list("Greys")
-	peopleiknow = list("Greys")
+	peopleknowme = list("Gendarme")
+	peopleiknow = list("Gendarme")
 
 /datum/outfit/job/panopticon/greydivision/pre_equip(mob/living/carbon/human/H)
 	..()

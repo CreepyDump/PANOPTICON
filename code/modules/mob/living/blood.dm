@@ -151,7 +151,10 @@
 		if(!HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
 			return
 	if(blood_volume)
-		blood_volume = max(blood_volume - amt, 0)
+		if(HAS_TRAIT(src, TRAIT_HEMOPHILIAC))
+			blood_volume = max(blood_volume - amt, 3)
+		else
+			blood_volume = max(blood_volume - amt, 0)
 		SSticker.blood_lost += amt
 		if(isturf(src.loc)) //Blood loss still happens in locker, floor stays clean
 			add_drip_floor(src.loc, amt)

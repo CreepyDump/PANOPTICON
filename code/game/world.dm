@@ -321,10 +321,10 @@ GLOBAL_VAR(restart_counter)
 	var/s = ""
 	s += "<a href=\"https://discord.gg/DgZHVfeHvf\">"
 #ifdef MATURESERVER
-	s += "<big><b>PANOPTICON</b> &#8212; </big></a><br>"
+	s += "<big><b>PANOPTICON (RU | ENG)</b> &#8212; </big></a><br>"
 	s += "<center><b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
 #else
-	s += "<big><b>PANOPTICON</b> &#8212; </big></a><br>"
+	s += "<big><b>PANOPTICON(RU | ENG)</b> &#8212; </big></a><br>"
 	s += "<center><b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
 #endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"

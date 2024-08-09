@@ -34,3 +34,6 @@
 
 /datum/skill/misc/sewing
 	name = "Sewing"
+
+/datum/skill/misc/hooch
+	name = "Moonshiner"

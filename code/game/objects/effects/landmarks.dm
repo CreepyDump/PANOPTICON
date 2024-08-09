@@ -139,7 +139,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/policia
 	name = "policespawn"
 	icon_state = "arrow"
-	jobspawn_override = list("Greys", "Major")
+	jobspawn_override = list("Gendarme", "Major")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/bar

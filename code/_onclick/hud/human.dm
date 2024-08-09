@@ -326,6 +326,7 @@
 	inv_box.icon_state = "pocket"
 	inv_box.screen_loc = rogueui_pocketr
 	inv_box.slot_id = SLOT_R_STORE
+	inv_box.icon_full = "genslot"
 	inv_box.hud = src
 	static_inventory += inv_box
 
@@ -335,6 +336,7 @@
 	inv_box.icon_state = "pocket"
 	inv_box.screen_loc = rogueui_pocketl
 	inv_box.slot_id = SLOT_L_STORE
+	inv_box.icon_full = "genslot"
 	inv_box.hud = src
 	static_inventory += inv_box
 

@@ -36,7 +36,7 @@
 	id = null
 	belt = /obj/item/storage/belt/rogue/panopticon/strafbat
 	beltl = null
-	beltr = /obj/item/gun/ballistic/automatic/pistol/knuckleshot
+	beltr = null
 	backpack_contents = list(/obj/item/panopticonweapon/molotok = 1)
 	if(H.mind)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)

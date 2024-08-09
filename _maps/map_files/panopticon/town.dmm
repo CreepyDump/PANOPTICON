@@ -476,7 +476,7 @@
 "Me" = (/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "Mf" = (/obj/structure/table/wood{icon_state = "longtable_mid"; dir = 1},/obj/item/reagent_containers/food/condiment/peppermill{pixel_x = 2; pixel_y = 8},/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town/shop)
 "Mh" = (/obj/structure/bed/panopticon/wooden,/obj/effect/landmark/start/lodger{dir = 8},/turf/open/floor/carpet/red,/area/panopticon/indoors/town)
-"Ml" = (/obj/item/restraints/legcuffs/beartrap,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
+"Ml" = (/obj/item/restraints/legcuffs/beartrap/armed,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "Mw" = (/obj/effect/landmark/start/bar{dir = 1},/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town/shop)
 "MJ" = (/obj/structure/chair/wood/rogue/chair3{dir = 8},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
 "MN" = (/obj/structure/table/wood{icon_state = "largetable"; dir = 6},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)

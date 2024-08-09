@@ -547,11 +547,22 @@
 /datum/emote/living/spit/run_emote(mob/user, params, type_override, intentional)
 	message_param = initial(message_param) // reset
 	if(ishuman(user))
+		var/obj/item/cover
+		var/turf/T = get_step(user, user.dir)
 		var/mob/living/carbon/human/H = user
 		if(H.mouth)
 			if(H.mouth.spitoutmouth)
-				H.visible_message("<span class='warning'>[H] spits out [H.mouth].</span>")
-				H.dropItemToGround(H.mouth, silent = FALSE)
+				if(H.wear_mask && MASKCOVERSMOUTH)
+					cover = H.wear_mask
+				else if(H.head && MASKCOVERSMOUTH)
+					cover = H.head
+				if(!T)		
+					return
+				if(cover)
+					H.visible_message("<span class='warning'>[H] spits out [H.mouth] on [cover].</span>")
+				else
+					H.visible_message("<span class='warning'>[H] spits out [H.mouth].</span>")
+					H.dropItemToGround(H.mouth, silent = FALSE)
 			return
 	..()
 

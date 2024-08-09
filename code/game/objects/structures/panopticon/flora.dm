@@ -116,7 +116,7 @@
 
 /obj/structure/panopticon/panopticontree/Initialize()
 	. = ..()
-	icon_state = "panoptree_[rand(1,5)]"
+	icon_state = "panoptree_[rand(1,8)]"
 
 /obj/structure/panopticon/mirkstones
 	name = "Stones"
