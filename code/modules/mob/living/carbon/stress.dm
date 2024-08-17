@@ -615,3 +615,8 @@
 /datum/stressevent/moondust_purest
 	stressadd = -6
 	desc = "<span class='green'>PUREST moondust surges through me!</span>"
+
+/datum/stressevent/maniac_woke_up
+	stressadd = 20
+	desc = "<span class='red'>MADNESS IS COMING</span>"
+	timer = 30 HOURS

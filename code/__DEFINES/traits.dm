@@ -27,6 +27,8 @@
 #define TRAIT_SEXPASS				"sexpass"
 #define TRAIT_STEELHEARTED 			"steelhearted" //no bad mood from dismembering or seeing this
 #define TRAIT_POHYI				"alleater" //ДА МНЕ ВООБЩЕ ПОХУЙ ЧТО ЖРАТЬ БЛЯТЬ
+#define TRAIT_SCREENSHAKE "screenshake" //screen will always be shaking, you cannot stop it
+#define TRAIT_SCHIZO_AMBIENCE "schizo_ambience" //replaces all ambience with creepy shit
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_WEBWALK = "I can move freely between webs.",

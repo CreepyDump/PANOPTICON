@@ -72,7 +72,6 @@
 	desc = ""
 	icon_state = "chainkini"
 	item_state = "chainkini"
-	allowed_sex = list(FEMALE)
 	allowed_race = ALL_RACES_LIST
 	body_parts_covered = CHEST|GROIN
 	anvilrepair = /datum/skill/craft/armorsmithing

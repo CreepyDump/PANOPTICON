@@ -65,6 +65,11 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Prayer") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	//log_admin("HELP: [key_name(src)]: [msg]")
 
+	var/datum/antagonist/maniac/maniac = mind?.has_antag_datum(/datum/antagonist/maniac)
+	if(maniac && (text2num(msg_tmp) == maniac.sum_keys))
+		maniac.wake_up()
+
+
 /proc/CentCom_announce(text , mob/Sender)
 	var/msg = copytext_char(sanitize(text), 1, MAX_MESSAGE_LEN)
 	msg = "<span class='adminnotice'><b><font color=orange>CENTCOM:</font>[ADMIN_FULLMONTY(Sender)] [ADMIN_CENTCOM_REPLY(Sender)]:</b> [msg]</span>"

@@ -21,9 +21,11 @@ SUBSYSTEM_DEF(droning)
 	var/list/new_droning = list()
 	new_droning |= area_entered.droning_sound_current
 
-	if(HAS_TRAIT(entering.mob, TRAIT_DRUQK))
+	if(HAS_TRAIT(entering.mob, TRAIT_SCHIZO_AMBIENCE))
+		new_droning = list('sound/music/area/shizo6.ogg', 'sound/music/area/shizo5.ogg', 'sound/music/area/shizo4.ogg', 'sound/music/area/shizo3.ogg', 'sound/music/area/shizo2.ogg', 'sound/music/area/shizo1.ogg')
+	else if(HAS_TRAIT(entering.mob, TRAIT_DRUQK))
 		new_droning = list('sound/music/heroin.ogg', 100)
-	if(HAS_TRAIT(entering.mob, TRAIT_PSYCHICK))
+	else if(HAS_TRAIT(entering.mob, TRAIT_PSYCHICK))
 		new_droning = list('sound/music/trip.ogg', 100)
 	//Same ambience, don't bother
 	if(last_droning ~= new_droning)
@@ -64,9 +66,11 @@ SUBSYSTEM_DEF(droning)
 			else
 				used_gay = area_player.droning_sound
 
-		if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
+		if(HAS_TRAIT(listener.mob, TRAIT_SCHIZO_AMBIENCE))
+			used_gay = list('sound/music/area/shizo6.ogg', 'sound/music/area/shizo5.ogg', 'sound/music/area/shizo4.ogg', 'sound/music/area/shizo3.ogg', 'sound/music/area/shizo2.ogg', 'sound/music/area/shizo1.ogg')
+		else if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
 			used_gay = list('sound/music/heroin.ogg', 100)
-		if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
+		else if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
 			used_gay = list('sound/music/trip.ogg', 100)
 		//our music for real
 		area_player.droning_sound_current = used_gay
@@ -88,7 +92,7 @@ SUBSYSTEM_DEF(droning)
 
 	if(HAS_TRAIT(dreamer.mob, TRAIT_DRUQK))
 		return
-	if(HAS_TRAIT(dreamer.mob, TRAIT_PSYCHICK))
+	else if(HAS_TRAIT(dreamer.mob, TRAIT_PSYCHICK))
 		return
 
 	//kill the previous droning sound
@@ -108,9 +112,11 @@ SUBSYSTEM_DEF(droning)
 	if(shouldskip)
 		var/sound/droning = sound(pick(area_player.droning_sound_current), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, listener?.prefs.musicvol)
 
-		if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
+		if(HAS_TRAIT(listener.mob, TRAIT_SCHIZO_AMBIENCE))
+			droning.file = list('sound/music/area/shizo6.ogg', 'sound/music/area/shizo5.ogg', 'sound/music/area/shizo4.ogg', 'sound/music/area/shizo3.ogg', 'sound/music/area/shizo2.ogg', 'sound/music/area/shizo1.ogg')
+		else if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
 			droning.file = 'sound/music/heroin.ogg'
-		if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
+		else if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
 			droning.file = 'sound/music/trip.ogg'
 
 		listener.droning_sound = droning
@@ -131,9 +137,11 @@ SUBSYSTEM_DEF(droning)
 		listener.last_droning_sound = null
 		var/sound/droning = sound(pick(area_player.droning_sound_current), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, listener?.prefs.musicvol)
 
-		if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
+		if(HAS_TRAIT(listener.mob, TRAIT_SCHIZO_AMBIENCE))
+			droning.file = list('sound/music/area/shizo6.ogg', 'sound/music/area/shizo5.ogg', 'sound/music/area/shizo4.ogg', 'sound/music/area/shizo3.ogg', 'sound/music/area/shizo2.ogg', 'sound/music/area/shizo1.ogg')
+		else if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
 			droning.file = 'sound/music/heroin.ogg'
-		if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
+		else if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
 			droning.file = 'sound/music/trip.ogg'
 
 		listener.droning_sound = droning

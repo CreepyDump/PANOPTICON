@@ -79,7 +79,7 @@
 		else
 			icon_state = "w-[base_state]"
 
-/obj/structure/roguewindow/openclose/attack_right(mob/user)
+/obj/structure/roguewindow/attack_right(mob/user)
 	if(get_dir(src,user) == lockdir)
 		if(brokenstate)
 			to_chat(user, "<span class='warning'>It's broken, that would be foolish.</span>")

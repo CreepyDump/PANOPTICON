@@ -6,7 +6,8 @@
 
 //These are synced with the Database, if you change the values of the defines
 //then you MUST update the database!
-#define ROLE_VILLAIN			"Maniac"
+#define ROLE_VILLAIN			"Villain"
+#define ROLE_MANIAC				"Maniac"
 #define ROLE_WEREWOLF			"Werewolf"
 #define ROLE_VAMPIRE			"Vampire"
 #define ROLE_NBEAST				"Vampire Lord"
