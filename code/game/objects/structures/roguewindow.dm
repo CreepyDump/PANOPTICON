@@ -3,7 +3,7 @@
 	name = "window"
 	desc = ""
 	icon = 'icons/roguetown/misc/structure.dmi'
-	icon_state = "window-solid"
+	icon_state = "woodwindowdir"
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
@@ -22,6 +22,8 @@
 	destroy_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
 
 /obj/structure/roguewindow/Initialize()
+	lockdir = dir
+	icon_state = base_state
 	update_icon()
 	..()
 

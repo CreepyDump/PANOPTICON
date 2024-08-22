@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/syringe
 	name = "steel syringe"
-	desc = ""
+	desc = "Running soul through the veins."
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_0"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'

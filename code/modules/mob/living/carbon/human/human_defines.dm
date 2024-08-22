@@ -12,7 +12,7 @@
 	can_buckle = TRUE
 	buckle_lying = FALSE
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-
+	var/global/atom/movable/smelly_vis = null
 	ambushable = 1
 
 	var/footstep_type = FOOTSTEP_MOB_HUMAN

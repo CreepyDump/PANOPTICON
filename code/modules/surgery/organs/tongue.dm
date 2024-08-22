@@ -1,6 +1,6 @@
 /obj/item/organ/tongue
 	name = "tongue"
-	desc = ""
+	desc = "finally someone has shut up."
 	icon_state = "tonguenormal"
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_TONGUE

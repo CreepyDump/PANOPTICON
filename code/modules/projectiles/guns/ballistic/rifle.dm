@@ -125,8 +125,8 @@ obj/item/gun/ballistic/rifle/attackby(obj/item/A, mob/user, params)
 /obj/item/gun/ballistic/rifle/gusyevboltovka
 	name = "Gusyev Boltovka gun"
 	desc = ""
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_MEDIUM
 	icon = 'icons/panopticon/items/guns.dmi'
 	icon_state = "gusyev"
 	item_state = "moistnugget"

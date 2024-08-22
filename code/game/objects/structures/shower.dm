@@ -136,6 +136,8 @@
 	if(iscarbon(L))
 		var/mob/living/carbon/M = L
 		. = TRUE
+		
+		M.set_hygiene(HYGIENE_LEVEL_CLEAN)
 
 		for(var/obj/item/I in M.held_items)
 			wash_obj(I)

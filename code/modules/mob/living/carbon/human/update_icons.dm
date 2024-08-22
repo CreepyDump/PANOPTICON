@@ -1930,3 +1930,30 @@ generate/load female uniform sprites matching all previously decided variables
 	update_inv_head()
 	update_inv_wear_mask()
 	update_inv_mouth()
+
+/mob/living/carbon/human/proc/add_smelly(var/update_icons=1)
+//	overlays_standing[SMELLING_LAYER] = null
+	if(!smelly_vis)
+		smelly_vis = new()
+		smelly_vis.icon = 'icons/effects/effects.dmi'
+		smelly_vis.icon_state = "smell"
+		smelly_vis.name = ""
+		smelly_vis.mouse_opacity = 0
+		smelly_vis.vis_flags = 0
+	if(vis_contents.Find(smelly_vis))
+		return
+	vis_contents += smelly_vis
+//	overlays_standing[SMELLING_LAYER] = standing
+
+//	if(update_icons)	update_icons()
+
+/mob/living/carbon/human/proc/remove_smelly(var/update_icons=1)
+	vis_contents -= smelly_vis
+/*
+	overlays_standing[SMELLING_LAYER] = null
+	var/image/standing = null
+	overlays_standing[SMELLING_LAYER] = standing
+
+	if(update_icons)	update_icons()
+	update_hair()
+*/

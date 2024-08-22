@@ -1,6 +1,6 @@
 /obj/item/organ/heart
 	name = "heart"
-	desc = ""
+	desc = "Someone's become a heartless bastard."
 	icon_state = "heart-on"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_HEART

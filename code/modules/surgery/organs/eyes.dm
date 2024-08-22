@@ -1,7 +1,7 @@
 /obj/item/organ/eyes
 	name = "eye"
 	icon_state = "eye1"
-	desc = ""
+	desc = "I see you."
 	zone = BODY_ZONE_PRECISE_R_EYE
 	slot = ORGAN_SLOT_EYES
 	gender = PLURAL

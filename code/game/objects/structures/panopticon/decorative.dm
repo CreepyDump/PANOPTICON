@@ -194,10 +194,46 @@
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 
 /obj/structure/panopticon/idol
-	name = "Idol"
+	name = "Idol of an God"
 	icon_state = "idol"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	max_integrity = 0
+
+/obj/structure/panopticon/idol/attack_hand(mob/living/carbon/human/user)
+	. = ..()
+	var/mob/living/carbon/C = user
+	to_chat(user, span_notice("I need to pray for gods help..."))
+	if(do_after(user, 60 SECONDS, target = src))
+		if(prob(60))
+			if(C.can_heartattack())
+				C.set_heartattack(TRUE)
+				C.say(pick("OH MY BALLSSSSSSS!!", "ARGHH!", "AAAAAAH, HELP!!!!", "I AM DYING!!!", "AAAAAAAAAAA!"))
+				playsound(user, 'sound/misc/DEATH.ogg', 85)
+				C.playsound_local(user, 'sound/misc/deadbell.ogg', 100)
+				to_chat(user, span_cultlarge("FUCKING WEAKLING CREATURE, IT'S TIME TO DIE!"))
+		else
+			var/choice = alert(user,"The gods have heard you. What do you want?",,"Medicinae dose...","Sclopetis...","Magicae Sanitatem...")
+			switch(choice)
+				if("Medicinae dose...")
+					playsound(src, 'sound/misc/Logic_transform.ogg', 100)
+					new /obj/item/reagent_containers/glass/bottle/heroinium(get_turf(user))
+				if("Sclopetis...")
+					playsound(src, 'sound/misc/Logic_transform.ogg', 100)
+					var/gun = pick(1,2,3)
+					switch(gun)
+						if(1)
+							new /obj/item/gun/ballistic/automatic/panopticon/krasnik(get_turf(user))
+						if(2)
+							new /obj/item/gun/ballistic/automatic/panopticon/krasnik(get_turf(user))
+						if(3)
+							new /obj/item/gun/ballistic/rifle/gusyevboltovka(get_turf(user))
+				if("Magicae Sanitatem...")
+					playsound(src, 'sound/misc/Logic_transform.ogg', 100)
+					C.fully_heal()
+					for(var/datum/disease/anthrax/A in C.diseases)
+						A.cure()
+					ADD_TRAIT(C, TRAIT_VIRUSIMMUNE, TRAIT_GENERIC)
+
 
 /obj/structure/panopticon/skulldraw
 	name = ""

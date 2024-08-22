@@ -284,14 +284,82 @@
 	name = "Double-barrel gun"
 	desc = "Double-barrelled shotgun. Made too fuckin' shitty to always jam."
 	icon = 'icons/panopticon/items/guns.dmi'
-	icon_state = "doublebarrel"
-	item_state = "shotgun_db"
+	icon_state = "double"
+	item_state = "double"
 	recoil = 2
+	fire_sound = 'sound/combat/Ranged/shotgunshoot.ogg'
+	dry_fire_sound = 'sound/combat/Ranged/handgun-dry-01.ogg'
+	load_sound = 'sound/combat/Ranged/shotgunloadin.ogg'
+	load_empty_sound = 'sound/combat/Ranged/shotgunloadin.ogg'
+	eject_sound = 'sound/combat/Ranged/shotgunloadout.ogg'
+	eject_empty_sound = 'sound/combat/Ranged/shotgunloadout.ogg'
+	rack_sound = 'sound/combat/Ranged/shotgunopen.ogg'
+	lock_back_sound = 'sound/combat/Ranged/shotgunopen.ogg'
+	bolt_drop_sound = 'sound/combat/Ranged/shotgunopen.ogg'
+	var/open = 0
+	var/maxAmmoSprite = 2
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	var/is_jammed = 0
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/process_chamber()
 	. = ..()
 	do_sparks(1, TRUE, src)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/afterattack(atom/target, mob/living/user)
+	. = ..()
 	if(prob(50))
-		to_chat(user, "<span class='danger'>My [src] jams after shot!</span>")
+		to_chat(user, "<span class='danger'>[src] jams before shot!</span>")
+		is_jammed = 1
+	if(is_jammed)
+		to_chat(user, "<span class='danger'>[src] is jammed!</span>")
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/update_icon()
+	if(open)
+		if(magazine && magazine.contents.len)
+			var/numero = magazine.contents.len
+			if(magazine.contents.len == 0)
+				numero = 0
+			if(magazine.contents.len >= maxAmmoSprite)
+				numero = maxAmmoSprite
+
+			icon_state = "[initial(icon_state)]_open[numero]"
+		else
+			icon_state = "[initial(icon_state)]_open0"
+	else
+		icon_state = initial(icon_state)
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/proc/toggle(mob/user)
+	if(!open)
+		open = 1
+		update_icon()
+		user.next_move = world.time + 6
+
+	else
+		open = 0
+		update_icon()
+		user.next_move = world.time + 6
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/attack_self(mob/user)
+	if(is_jammed)
+		unjam(user)
+		return
+
+	toggle(user)
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/panopticon/proc/unjam(mob/M)
+	if(is_jammed)
+		M.visible_message("<span class='combatbold'>[M]</span> <span class='combat'>is trying to unjam</span> <span class='combatbold'>[src]!</span>")
+		if(do_after(M, 15))
+			is_jammed = 0
+//			playsound(src.loc, unjam_sound, 50, 1)
+//			playsound(src.loc, unload_sound, 50, 0)
+			while(get_ammo() > 0)
+				var/obj/item/ammo_casing/CB
+				CB = magazine.get_round()
+				chambered = null
+			update_icon()
+			M.next_move = world.time + 6
+			toggle(M)
+			return
+		else
+			return

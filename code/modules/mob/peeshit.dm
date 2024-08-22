@@ -71,6 +71,11 @@
 	color = COLOR_YELLOW
 	taste_description = "urine"
 
+/datum/reagent/urine/on_mob_life(mob/living/carbon/M)
+	if(!HAS_TRAIT(M, RTRAIT_NOSTINK))
+		M.adjustToxLoss(1)
+		M.add_nausea(50)
+
 /datum/reagent/urine/reaction_turf(var/turf/T)
 	if(isturf(T))
 		new /obj/effect/decal/cleanable/urine(T)

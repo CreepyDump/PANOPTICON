@@ -73,3 +73,21 @@
 	craftdiff = 0
 	subtype_reqs = TRUE
 	structurecraft = /obj/structure/fluff/dryingrack
+
+/datum/crafting_recipe/roguetown/cooking/meatcube
+	name = "meat cube"
+	reqs = list(
+		/obj/item/organ/liver = 1,
+		/obj/item/organ/stomach = 1,
+		/obj/item/organ/heart = 1)
+	result = /obj/item/reagent_containers/food/snacks/meatcube
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/cooking/humansalo
+	name = "Human salo"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meatcube = 2,
+		/obj/item/reagent_containers/powder/flour/salt = 1)
+	result = /obj/item/reagent_containers/food/snacks/fat/salo
+	craftdiff = 1
+	req_table = TRUE

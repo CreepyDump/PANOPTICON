@@ -170,6 +170,12 @@
 #define SANITY_CRAZY 25
 #define SANITY_INSANE 0
 
+//Hygiene levels for humans
+#define HYGIENE_LEVEL_CLEAN 250
+#define HYGIENE_LEVEL_NORMAL 200
+#define HYGIENE_LEVEL_DIRTY 75
+#define HYGIENE_FACTOR 0.1
+
 //Nutrition levels for humans
 #define NUTRITION_LEVEL_FULL 1000
 #define NUTRITION_LEVEL_FAT 800

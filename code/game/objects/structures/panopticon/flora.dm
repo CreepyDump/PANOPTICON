@@ -32,7 +32,12 @@
 	. = ..()
 	if(INTENT_GRAB)
 		user.visible_message("<span class='notice'>[user] harvests shroom.</span>")
-		deconstruct(src)
+		if(do_after(user, 4 SECONDS, target = src))
+			if(prob(50))
+				deconstruct(src)
+			else
+				to_chat(user, span_alert("Fuck! I've broke the shroom!"))
+				qdel(src)
 
 /obj/structure/panopticon/throbber
 	name = "Throbbershroom"
@@ -50,7 +55,12 @@
 	. = ..()
 	if(INTENT_GRAB)
 		user.visible_message("<span class='notice'>[user] harvests shroom.</span>")
-		deconstruct(src)
+		if(do_after(user, 4 SECONDS, target = src))
+			if(prob(50))
+				deconstruct(src)
+			else
+				to_chat(user, span_alert("Fuck! I've broke the shroom!"))
+				qdel(src)
 
 /obj/structure/panopticon/seltshmack
 	name = "Seltshmack"
@@ -60,7 +70,10 @@
 
 /obj/structure/panopticon/seltshmack/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/reagent_containers/food/snacks/seltshmack(get_turf(src))
+		if(prob(50))
+			new /obj/item/reagent_containers/food/snacks/seltshmack(get_turf(src))
+		else
+			new /obj/item/reagent_containers/food/snacks/seltshmack/fake(get_turf(src))
 		playsound(src,'sound/items/seedextract.ogg', 50, TRUE)
 	qdel(src)
 
@@ -68,7 +81,12 @@
 	. = ..()
 	if(INTENT_GRAB)
 		user.visible_message("<span class='notice'>[user] harvests shroom.</span>")
-		deconstruct(src)
+		if(do_after(user, 4 SECONDS, target = src))
+			if(prob(50))
+				deconstruct(src)
+			else
+				to_chat(user, span_alert("Fuck! I've broke the shroom!"))
+				qdel(src)
 
 /obj/structure/panopticon/panopticontree
 	name = "Strange tree"

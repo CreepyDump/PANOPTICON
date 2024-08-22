@@ -548,7 +548,7 @@
 
 /obj/structure/mineral_door/wood
 	name = "door"
-	desc = ""
+	desc = "Troubles always comes in without knocking."
 	icon_state = "woodhandle"
 	openSound = 'sound/foley/doors/creak.ogg'
 	closeSound = 'sound/foley/doors/shut.ogg'
@@ -627,16 +627,13 @@
 	opacity = FALSE
 	icon_state = "woodwindow"
 	windowed = TRUE
-	desc = ""
 	over_state = "woodwindowopen"
 
 /obj/structure/mineral_door/wood/fancywood
 	icon_state = "fancy_wood"
-	desc = ""
 	over_state = "fancy_woodopen"
 
 /obj/structure/mineral_door/wood/deadbolt
-	desc = ""
 	icon_state = "wooddir"
 	base_state = "wood"
 	var/lockdir
@@ -671,7 +668,6 @@
 		to_chat(user, "<span class='warning'>The door doesn't lock from this side.</span>")
 
 /obj/structure/mineral_door/wood/donjon
-	desc = ""
 	icon_state = "donjondir"
 	base_state = "donjon"
 	keylock = TRUE
@@ -685,7 +681,6 @@
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 
 /obj/structure/mineral_door/wood/donjon/panopticon
-	desc = ""
 	icon_state = "gulagdoor"
 	base_state = "gulagdoor"
 	keylock = TRUE
@@ -694,7 +689,6 @@
 	closeSound = 'sound/foley/doors/bunkerdoor.ogg'
 
 /obj/structure/mineral_door/wood/donjon/stone
-	desc = ""
 	icon_state = "stone"
 	base_state = "stone"
 	keylock = TRUE

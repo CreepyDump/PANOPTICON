@@ -376,7 +376,7 @@
 	water_color = "#d7da4d"
 	slowdown = 5
 	swim_skill = TRUE
-	water_reagent = /datum/reagent/water/gross
+	water_reagent = /datum/reagent/urine
 
 /turf/open/water/piss/Initialize()
 	icon = 'icons/turf/panopticonfloor.dmi'

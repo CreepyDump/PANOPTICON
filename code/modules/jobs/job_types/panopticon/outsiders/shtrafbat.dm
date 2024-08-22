@@ -47,7 +47,7 @@
 		neck = null
 		head = /obj/item/clothing/head/panopticon/govnar
 	if(prob(60))
-		backl = /obj/item/gun/ballistic/rifle/gusyevboltovka
+		r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
 
 /datum/outfit/job/panopticon/shtrafbat
 	uniform = null

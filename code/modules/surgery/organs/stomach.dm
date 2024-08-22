@@ -5,7 +5,7 @@
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_STOMACH
 	attack_verb = list("gored", "squished", "slapped", "digested")
-	desc = ""
+	desc = "The gluttonous pit of mankind."
 	fried_type = /obj/item/reagent_containers/food/snacks/panopticon/friedstomach
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY

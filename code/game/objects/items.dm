@@ -672,10 +672,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 //If you are making custom procs but would like to retain partial or complete functionality of this one, include a 'return ..()' to where you want this to happen.
 //Set disable_warning to TRUE if you wish it to not give you outputs.
 /obj/item/proc/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
-	if(twohands_required)
-		if(!disable_warning)
-			to_chat(M, "<span class='warning'>[src] is too bulky to carry with anything but my hands!</span>")
-		return 0
 
 	if(!M)
 		return FALSE

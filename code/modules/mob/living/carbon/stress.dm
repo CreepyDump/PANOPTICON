@@ -334,6 +334,11 @@
 	stressadd = 2
 	desc = "<span class='red'>YUCK!</span>"
 
+/datum/stressevent/smelly
+	timer = 2 MINUTES
+	stressadd = 5
+	desc = "<span class='red'>I smell like shit.</span>"
+
 /datum/stressevent/rotfood
 	timer = 2 MINUTES
 	stressadd = 4
@@ -602,6 +607,11 @@
 	stressadd = -1
 	desc = "<span class='blue'>Relaxing.</span>"
 	timer = 1 MINUTES
+
+/datum/stressevent/clean
+	timer = 2 MINUTES
+	stressadd = -3
+	desc = "<span class='green'>I smell nice!</span>"
 
 /datum/stressevent/ozium
 	stressadd = -99
