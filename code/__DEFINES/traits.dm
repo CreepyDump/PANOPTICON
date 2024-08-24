@@ -210,6 +210,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HEMOPHILIAC		"hemophiliac"
 #define TRAIT_NOPAIN			"no_pain"
 #define TRAIT_DRUQK				"druqk"
+#define TRAIT_HHHHH				"hhhhh"
 #define TRAIT_PSYCHICK			"psychick"
 
 //non-mob traits

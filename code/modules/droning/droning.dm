@@ -25,6 +25,8 @@ SUBSYSTEM_DEF(droning)
 		new_droning = list('sound/music/area/shizo6.ogg', 'sound/music/area/shizo5.ogg', 'sound/music/area/shizo4.ogg', 'sound/music/area/shizo3.ogg', 'sound/music/area/shizo2.ogg', 'sound/music/area/shizo1.ogg')
 	else if(HAS_TRAIT(entering.mob, TRAIT_DRUQK))
 		new_droning = list('sound/music/heroin.ogg', 100)
+	else if(HAS_TRAIT(entering.mob, TRAIT_HHHHH))
+		new_droning = list('sound/misc/hhh.ogg', 100)
 	else if(HAS_TRAIT(entering.mob, TRAIT_PSYCHICK))
 		new_droning = list('sound/music/trip.ogg', 100)
 	//Same ambience, don't bother
@@ -70,6 +72,8 @@ SUBSYSTEM_DEF(droning)
 			used_gay = list('sound/music/area/shizo6.ogg', 'sound/music/area/shizo5.ogg', 'sound/music/area/shizo4.ogg', 'sound/music/area/shizo3.ogg', 'sound/music/area/shizo2.ogg', 'sound/music/area/shizo1.ogg')
 		else if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
 			used_gay = list('sound/music/heroin.ogg', 100)
+		else if(HAS_TRAIT(listener.mob, TRAIT_HHHHH))
+			used_gay = list('sound/misc/hhh.ogg', 100)
 		else if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
 			used_gay = list('sound/music/trip.ogg', 100)
 		//our music for real
@@ -116,6 +120,8 @@ SUBSYSTEM_DEF(droning)
 			droning.file = list('sound/music/area/shizo6.ogg', 'sound/music/area/shizo5.ogg', 'sound/music/area/shizo4.ogg', 'sound/music/area/shizo3.ogg', 'sound/music/area/shizo2.ogg', 'sound/music/area/shizo1.ogg')
 		else if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
 			droning.file = 'sound/music/heroin.ogg'
+		else if(HAS_TRAIT(listener.mob, TRAIT_HHHHH))
+			droning.file = list('sound/misc/hhh.ogg', 100)
 		else if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
 			droning.file = 'sound/music/trip.ogg'
 
@@ -141,6 +147,8 @@ SUBSYSTEM_DEF(droning)
 			droning.file = list('sound/music/area/shizo6.ogg', 'sound/music/area/shizo5.ogg', 'sound/music/area/shizo4.ogg', 'sound/music/area/shizo3.ogg', 'sound/music/area/shizo2.ogg', 'sound/music/area/shizo1.ogg')
 		else if(HAS_TRAIT(listener.mob, TRAIT_DRUQK))
 			droning.file = 'sound/music/heroin.ogg'
+		else if(HAS_TRAIT(listener.mob, TRAIT_HHHHH))
+			droning.file = list('sound/misc/hhh.ogg', 100)	
 		else if(HAS_TRAIT(listener.mob, TRAIT_PSYCHICK))
 			droning.file = 'sound/music/trip.ogg'
 

@@ -70,6 +70,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/undershirt = "Nude"				//undershirt type
 	var/accessory = "Nothing"
 	var/detail = "Nothing"
+	var/body_detail = "Nothing"
 	var/socks = "Nude"					//socks type
 	var/backpack = DBACKPACK				//backpack type
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
@@ -407,7 +408,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "<br>"
 				dat += "<b>Face Detail:</b> <a href='?_src_=prefs;preference=detail;task=input'>[detail]</a>"
 				dat += "<br>"
-				dat += "<b>Body Detail:</b> <a href='?_src_=prefs;preference=bdetail;task=input'>None</a>"
+				dat += "<b>Body Detail:</b> <a href='?_src_=prefs;preference=bdetail;task=input'>[body_detail]</a>"
 				if(gender == FEMALE)
 					dat += "<br>"
 				dat += "<br></td>"
@@ -1786,10 +1787,10 @@ Slots: [job.spawn_positions]</span>
 					if(new_hairstyle)
 						accessory = new_hairstyle
 
-//				if("detail_color")
-//					var/new_underwear_color = input(user, "Choose your detail's color:", "Strange Ink") as color|null
-//					if(new_underwear_color)
-//						detail_color = new_underwear_color
+				if("detail_color")
+					var/new_underwear_color = input(user, "Choose your detail's color:", "Strange Ink") as color|null
+					if(new_underwear_color)
+						detail_color = new_underwear_color
 
 				if("detail")
 					var/list/spec_detail = pref_species.get_spec_detail_list(gender)
@@ -1802,9 +1803,14 @@ Slots: [job.spawn_positions]</span>
 						detail = new_detail
 
 				if("bdetail")
-					var/list/loly = list("Not yet.","Work in progress.","Don't click me.","Stop clicking this.","Nope.","Be patient.","Sooner or later.")
-					to_chat(user, "<font color='red'>[pick(loly)]</font>")
-					return
+					var/list/spec_detail = pref_species.get_spec_bdetail_list(gender)
+					var/list/detaillist = list()
+					for(var/datum/sprite_accessory/body_markings/panopticon/X in spec_detail)
+						detaillist += X.name
+					var/new_detail
+					new_detail = input(user, "Choose your character's detail:", "Make me unique")  as null|anything in detaillist
+					if(new_detail)
+						body_detail = new_detail
 
 				if("socks")
 					var/new_socks

@@ -161,16 +161,19 @@
 
 /datum/species/proc/send_voice(mob/living/carbon/human/H)
 	if(H.gender == MALE)
-		switch(H.job)
-			if("Necroleninist")
-				playsound(get_turf(H), pick('sound/misc/occulttalk (1).ogg','sound/misc/occulttalk (2).ogg'), 100, FALSE, -1)
-			if("Slug")
-				playsound(get_turf(H), pick('sound/misc/retardtalk (1).ogg','sound/misc/retardtalk (2).ogg'), 100, FALSE, -1)
-			if("Major")
-				playsound(get_turf(H), pick('sound/misc/majortalk.ogg'), 100, FALSE, -1)
-			if("Gendarme")
-				playsound(get_turf(H), pick('sound/misc/greytalk.ogg'), 100, FALSE, -1)
-			else
-				playsound(get_turf(H), pick('sound/misc/mantalk (1).ogg','sound/misc/mantalk (2).ogg'), 100, FALSE, -1)
+		if(istype(H.wear_mask, /obj/item/clothing/mask/gas/panopticon/greys))
+			playsound(get_turf(H), pick('sound/misc/greytalk.ogg'), 100, FALSE, -1)
+		else
+			switch(H.job)
+				if("Necroleninist")
+					playsound(get_turf(H), pick('sound/misc/occulttalk (1).ogg','sound/misc/occulttalk (2).ogg'), 100, FALSE, -1)
+				if("Slug")
+					playsound(get_turf(H), pick('sound/misc/retardtalk (1).ogg','sound/misc/retardtalk (2).ogg'), 100, FALSE, -1)
+				if("Major")
+					playsound(get_turf(H), pick('sound/misc/majortalk.ogg'), 100, FALSE, -1)
+				if("Gendarme")
+					playsound(get_turf(H), pick('sound/misc/bobbytalk (1).ogg', 'sound/misc/bobbytalk (2).ogg'), 100, FALSE, -1)
+				else
+					playsound(get_turf(H), pick('sound/misc/mantalk (1).ogg','sound/misc/mantalk (2).ogg'), 100, FALSE, -1)
 	else
 		playsound(get_turf(H), pick('sound/misc/womantalk (1).ogg','sound/misc/womantalk (2).ogg'), 100, FALSE, -1)

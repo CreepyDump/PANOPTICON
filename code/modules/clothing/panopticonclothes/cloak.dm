@@ -79,6 +79,7 @@
 /obj/item/clothing/cloak/panopticon/nkvd
 	name = "NKVD coat"
 	icon_state = "nkvd"
+	sleeved = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
 	item_state = "nkvd"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -88,6 +89,7 @@
 /obj/item/clothing/cloak/panopticon/grandnecroleninist
 	name = "Grand-Necroleninist membrane"
 	icon_state = "grand"
+	sleeved = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
 	item_state = "grand"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -96,6 +98,7 @@
 /obj/item/clothing/cloak/panopticon/douglas
 	name = "Piss-camo cloak"
 	icon_state = "douglas"
+	sleeved = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
 	item_state = "douglas"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN|ARMS

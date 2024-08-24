@@ -334,6 +334,27 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						spec_hair += X
 			return spec_hair
 
+/datum/species/proc/get_spec_bdetail_list(gender)
+	if(!GLOB.bdetail_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/body_markings/panopticon, GLOB.bdetail_list, GLOB.bdetail_m, GLOB.bdetail_f)
+	var/datum/sprite_accessory/X
+	var/list/spec_hair = list()
+	switch(gender)
+		if(MALE)
+			for(var/O in GLOB.bdetail_m)
+				X = GLOB.bdetail_list[O]
+				if(X)
+					if(id in X.specuse)
+						spec_hair += X
+			return spec_hair
+		if(FEMALE)
+			for(var/O in GLOB.bdetail_f)
+				X = GLOB.bdetail_list[O]
+				if(X)
+					if(id in X.specuse)
+						spec_hair += X
+			return spec_hair
+
 /datum/species/proc/get_hexcolor(var/list/L)
 	return L
 

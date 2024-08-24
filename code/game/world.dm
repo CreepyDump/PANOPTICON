@@ -274,7 +274,7 @@ GLOBAL_VAR(restart_counter)
 //	else
 //	to_chat(world, "<span class='boldannounce'><b><u><a href='byond://winset?command=.reconnect'>CLICK TO RECONNECT</a></u></b></span>")
 
-	var/round_end_sound = 'sound/misc/end.ogg'
+	var/round_end_sound = pick('sound/misc/end1.ogg', 'sound/misc/end2.ogg')
 	for(var/client/thing in GLOB.clients)
 		if(!thing)
 			continue

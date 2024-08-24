@@ -16,7 +16,7 @@
 /datum/antagonist/maniac/proc/handle_visions(mob/living/dreamer)
 	//Jumpscare funny
 	if(prob(2))
-		hallucinations.jumpscare(dreamer)
+		dreamer.flash_fullscreen("maniac")
 	//Random laughter
 	else if(prob(1))
 		var/static/list/funnies = list(
@@ -99,7 +99,7 @@
 	if(!dreamer?.client)
 		return
 	var/static/list/spookies = pick(
-		'sound/vo/mobs/zombie/firescream (1).ogg',
+		'sound/misc/DEATH.ogg',
 	)
 	dreamer.playsound_local(dreamer, pick(spookies), 100)
 	var/chase_tiles = 7

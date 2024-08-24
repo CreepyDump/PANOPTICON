@@ -29,8 +29,8 @@
 	shoes = /obj/item/clothing/shoes/panopticon/jackboots
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	pants = /obj/item/clothing/under/panopticon/greys
-	mask = /obj/item/clothing/mask/gas/panopticon/zelinskiy
-	armor = /obj/item/clothing/armor/panopticon/cloak/grey
+	mask = /obj/item/clothing/mask/gas/panopticon
+	cloak = /obj/item/clothing/armor/panopticon/cloak/grey
 	head = /obj/item/clothing/head/panopticon/mayor
 	belt = /obj/item/storage/belt/rogue/panopticon/mayor
 	beltr = /obj/item/keyring/major

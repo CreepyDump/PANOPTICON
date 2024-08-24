@@ -127,6 +127,7 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: JSL Ancient, TrueType;}
 .sandspeak				{font-family: "Arabolical", JSL Ancient;}
 .delf					{font-family: "Dauphin", JSL Ancient;}
 .hellspeak				{font-family: "Nosfer", JSL Ancient;}
+.psycho					{font-family: "Psycho", JSL Ancient;}
 .undead					{font-family: "FriskyVampire", JSL Ancient;}
 .orc					{font-family: "Thief by The Riddler", JSL Ancient;}
 .beast					{font-family: "Thief by The Riddler", JSL Ancient;}

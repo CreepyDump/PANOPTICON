@@ -33,6 +33,8 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	if(prob(40))
 		cloak = /obj/item/clothing/armor/panopticon/cloak/brown
+	if(prob(10))
+		backr = /obj/item/storage/backpack/rogue/satchel
 	if(H.mind)
 		switch(pick(1,2,3))
 			if(1)
@@ -42,6 +44,7 @@
 				H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3,4,5), TRUE)
 				H.mind.adjust_skillrank(/datum/skill/labor/butchering, pick(1,2,3,4,5), TRUE)
 				H.mind.adjust_skillrank(/datum/skill/craft/cooking, pick(1,2,3,4,5), TRUE)
+				head = /obj/item/clothing/head/panopticon/furajka
 			if(3)
 				H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,2,3,4,5), TRUE)
 				wrists = /obj/item/clothing/wrists/roguetown/wrappings

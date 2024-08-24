@@ -4,12 +4,13 @@
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	layer = ABOVE_MOB_LAYER
 	max_integrity = 1
-	layer = ABOVE_MOB_LAYER
-	plane = GAME_PLANE_UPPER
 
 /obj/structure/flora/panopticon/grass/Initialize()
 	. = ..()
 	icon_state = "g[rand(1,4)]"
+	if(prob(35))
+		layer = ABOVE_MOB_LAYER
+		plane = GAME_PLANE_UPPER
 
 /obj/structure/flora/panopticon/grass/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

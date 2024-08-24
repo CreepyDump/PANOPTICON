@@ -71,6 +71,13 @@
 	item_state = "nkvd"
 	flags_inv = HIDEEARS
 
+/obj/item/clothing/head/panopticon/furajka
+	name = "Sailor Cap"
+	desc = ""
+	icon_state = "furajka"
+	item_state = "furajka"
+	flags_inv = HIDEEARS
+
 /obj/item/clothing/head/panopticon/grandnecroleninist
 	name = "Grand-Necroleninist hood"
 	desc = ""

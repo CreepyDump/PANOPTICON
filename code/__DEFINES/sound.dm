@@ -86,14 +86,12 @@
 
 #define AMB_GENCAVE list('sound/ambience/cave.ogg')
 
-#define AMB_TOWNDAY list('sound/ambience/townday.ogg')
+#define AMB_TOWNDAY list('sound/ambience/towngen.ogg')
 
 #define AMB_MOUNTAIN list('sound/ambience/MOUNTAIN (1).ogg',\
 						'sound/ambience/MOUNTAIN (2).ogg')
 
-#define AMB_TOWNNIGHT list('sound/ambience/townnight (1).ogg',\
-						'sound/ambience/townnight (2).ogg',\
-						'sound/ambience/townnight (3).ogg')
+#define AMB_TOWNNIGHT list('sound/ambience/townnigh.ogg')
 
 #define AMB_BOGDAY list('sound/ambience/bogday (1).ogg',\
 						'sound/ambience/bogday (2).ogg',\
@@ -107,6 +105,9 @@
 
 #define AMB_INGEN list('sound/ambience/indoorgen.ogg')
 
+#define AMB_BUNKER list('sound/ambience/bunker.ogg')
+
+#define AMB_SEWERS list('sound/ambience/sewers.ogg')
 
 #define AMB_BASEMENT list('sound/ambience/basement.ogg')
 
@@ -141,7 +142,9 @@
 
 #define SPOOKY_CAVE list('sound/ambience/noises/cave (1).ogg',\
 						'sound/ambience/noises/cave (2).ogg',\
-						'sound/ambience/noises/cave (3).ogg')
+						'sound/ambience/noises/cave (3).ogg',\
+						'sound/ambience/noises/cave (4).ogg',\
+						'sound/ambience/noises/cave (5).ogg')
 
 #define SPOOKY_NIGHT list('sound/ambience/noises/owl.ogg',\
 						'sound/ambience/noises/cikada (1).ogg',\
@@ -194,7 +197,8 @@
 						'sound/ambience/noises/mystical (5).ogg',\
 						'sound/ambience/noises/mystical (6).ogg')
 
-#define HORROR_FOREST list('sound/ambience/noises/koshka.ogg',\
+#define HORROR_FOREST list('sound/ambience/noises/crow.ogg',\
+						'sound/ambience/noises/koshka.ogg',\
 						'sound/ambience/noises/tvar.ogg',\
 						'sound/ambience/noises/tvardeath.ogg',\
 						'sound/ambience/noises/growler.ogg',\
@@ -208,8 +212,51 @@
 						'sound/ambience/noises/wheeze.ogg',\
 						'sound/ambience/noises/dogs (1).ogg',\
 						'sound/ambience/noises/dogs (2).ogg',\
-						'sound/ambience/noises/birds (7).ogg')
+						'sound/ambience/noises/birds (7).ogg',\
+						'sound/ambience/noises/tree (1).ogg',\
+						'sound/ambience/noises/tree (2).ogg',\
+						'sound/ambience/noises/tree (3).ogg')
 
+#define TOWN_AMBIENT list('sound/ambience/noises/crow.ogg',\
+						'sound/ambience/noises/koshka.ogg',\
+						'sound/ambience/noises/tvar.ogg',\
+						'sound/ambience/noises/tvardeath.ogg',\
+						'sound/ambience/noises/birds (1).ogg',\
+						'sound/ambience/noises/birds (2).ogg',\
+						'sound/ambience/noises/birds (3).ogg',\
+						'sound/ambience/noises/birds (4).ogg',\
+						'sound/ambience/noises/birds (5).ogg',\
+						'sound/ambience/noises/birds (6).ogg',\
+						'sound/ambience/noises/genspooky (5).ogg',\
+						'sound/ambience/noises/genspooky (6).ogg',\
+						'sound/ambience/noises/genspooky (7).ogg',\
+						'sound/ambience/noises/genspooky (8).ogg',\
+						'sound/ambience/noises/genspooky (9).ogg',\
+						'sound/ambience/noises/wheeze.ogg',\
+						'sound/ambience/noises/dogs (1).ogg',\
+						'sound/ambience/noises/dogs (2).ogg',\
+						'sound/ambience/noises/birds (7).ogg',\
+						'sound/ambience/noises/dist_growl.ogg',\
+						'sound/ambience/noises/town_moan.ogg')
+
+#define SPOOKY_SEWER list('sound/ambience/noises/RAT1.ogg',\
+						'sound/ambience/noises/RAT2.ogg',\
+						'sound/ambience/noises/hole_hit (2).ogg',\
+						'sound/ambience/noises/hole_hit (1).ogg',\
+						'sound/ambience/noises/town_moan.ogg',\
+						'sound/ambience/noises/veterok.ogg',\
+						'sound/ambience/noises/scary_breath (1).ogg',\
+						'sound/ambience/noises/scary_breath (2).ogg',\
+						'sound/ambience/noises/scary_breath (3).ogg',\
+						'sound/ambience/noises/scary_breath (4).ogg',\
+						'sound/ambience/noises/genspooky (2).ogg',\
+						'sound/ambience/noises/genspooky (3).ogg',\
+						'sound/ambience/noises/genspooky (4).ogg',\
+						'sound/ambience/noises/genspooky (5).ogg',\
+						'sound/ambience/noises/genspooky (6).ogg',\
+						'sound/ambience/noises/genspooky (7).ogg',\
+						'sound/ambience/noises/genspooky (8).ogg',\
+						'sound/ambience/noises/genspooky (9).ogg')
 
 #define INTERACTION_SOUND_RANGE_MODIFIER 0
 #define EQUIP_SOUND_VOLUME 100

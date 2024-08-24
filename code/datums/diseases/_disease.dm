@@ -114,8 +114,11 @@
 	var/turf/T = affected_mob.loc
 	if(istype(T))
 		for(var/mob/living/carbon/C in oview(spread_range, affected_mob))
+			var/mob/living/carbon/human/H = C
 			var/turf/V = get_turf(C)
 			if(disease_air_spread_walk(T, V))
+				if(istype(H.wear_mask, /obj/item/clothing/mask/gas))
+					return
 				C.AirborneContractDisease(src, force_spread)
 
 /proc/disease_air_spread_walk(turf/start, turf/end)

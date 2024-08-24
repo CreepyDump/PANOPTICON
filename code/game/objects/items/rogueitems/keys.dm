@@ -216,6 +216,11 @@
 	icon_state = "rustkey"
 	lockid = "major"
 
+/obj/item/roguekey/barmenhyita
+	name = "Bar-Pantry key"
+	icon_state = "rustkey"
+	lockid = "barmenhyita"
+
 /obj/item/roguekey/jailcells
 	name = "All-cells key"
 	icon_state = "rustkey"

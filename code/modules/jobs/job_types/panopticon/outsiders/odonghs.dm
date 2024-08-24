@@ -25,7 +25,6 @@
 
 /datum/outfit/job/panopticon/nomad/pre_equip(mob/living/carbon/human/H)
 	..()
-	backr = /obj/item/storage/backpack/rogue/backpack
 	belt = /obj/item/storage/belt/rogue/leather/hand
 	beltr =/obj/item/rogueweapon/pick
 	if(H.mind)

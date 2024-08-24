@@ -61,6 +61,9 @@
 	desc = "Painting portrays the 'Uncle Gray', urging you to join The Gray Division."
 	icon_state = "pnposter10"
 
+/obj/structure/panopticon/onwall/love
+	name = "LOVE"
+	icon_state = "pnposter11"
 
 /obj/structure/panopticon/onwall/pipe
 	name = "Pipe"
@@ -150,3 +153,15 @@
 
 /obj/structure/panopticon/onwall/oldass
 	icon_state = "oldass_wall"
+
+/obj/structure/panopticon/onwall/oldass/anotherome
+	icon_state = "govno"
+
+/obj/structure/panopticon/onwall/weirdflag
+	name = "Weird symbol Flag"
+	icon_state = "weird"
+
+/obj/structure/panopticon/onwall/ungern
+	name = "Roman Sternberg"
+	desc = "Painting portrays an unidentified man. The frame is signed, possible name is written on it."
+	icon_state = "ungern"

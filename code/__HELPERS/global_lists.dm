@@ -17,6 +17,8 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/accessories, GLOB.accessories_list, GLOB.accessories_m, GLOB.accessories_f)
 	//snowflake
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/detail, GLOB.detail_list, GLOB.detail_m, GLOB.detail_f)
+	//snowflake
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/body_markings/panopticon, GLOB.bdetail_list, GLOB.bdetail_m, GLOB.bdetail_f)
 
 
 	//bodypart accessories (blizzard intensifies)

@@ -29,9 +29,11 @@
 	shoes = /obj/item/clothing/shoes/panopticon/jackboots
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	pants = /obj/item/clothing/under/panopticon/greys
-	mask = /obj/item/clothing/mask/gas/panopticon
+	mask = /obj/item/clothing/mask/gas/panopticon/greys
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/panopticon
+	if(prob(35))
+		cloak = /obj/item/clothing/armor/panopticon/cloak/grey/hitman
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)

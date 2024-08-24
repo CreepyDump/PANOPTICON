@@ -44,8 +44,9 @@
 	soundenv = 16
 
 /area/rogue/indoors/shelter
-	droning_sound = 'sound/music/area/prison.ogg'
-	droning_sound_dusk = 'sound/music/area/jutkayahyina.ogg'
+	ambientsounds = 'sound/ambience/ambient.ogg'
+	droning_sound = null
+	droning_sound_dusk = null
 	droning_sound_night = null
 
 //BUNKER
@@ -53,8 +54,8 @@
 	name = "bunker"
 	icon_state = "bunkerzone"
 	droning_sound = 'sound/music/area/bunker.ogg'
-	ambientsounds = null
-	ambientnight = null
+	ambientsounds = AMB_BUNKER
+	ambientnight = AMB_BUNKER
 	spookysounds = SPOOKY_BUNKER
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -112,6 +113,7 @@
 				/mob/living/simple_animal/hostile/retaliate/panopticon/baun = 30)
 
 /area/panopticon/indoors/shelter/darkwood
+	ambientsounds = 'sound/ambience/shelter.ogg'
 	droning_sound = 'sound/music/area/deadcats.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -131,8 +133,8 @@
 /area/panopticon/outdoors/darkwood/pole
 	name = "fields"
 	ambientrain = RAIN_OUT
-	ambientsounds = AMB_FORESTDAY
-	ambientnight = AMB_FORESTNIGHT
+	ambientsounds = 'sound/ambience/pole.ogg'
+	ambientnight = 'sound/ambience/pole.ogg'
 	spookysounds = HORROR_FOREST
 	spookynight = HORROR_FOREST
 	droning_sound = 'sound/music/area/pole.ogg'
@@ -149,7 +151,7 @@
 	ambientsounds = AMB_TOWNDAY
 	ambientnight = AMB_TOWNNIGHT
 	spookysounds = null
-	spookynight = SPOOKY_NIGHT
+	spookynight = TOWN_AMBIENT
 	droning_sound = 'sound/music/area/town.ogg'
 	droning_sound_dusk = 'sound/music/area/town_dusk.ogg'
 	droning_sound_night = 'sound/music/area/prison.ogg'
@@ -186,8 +188,8 @@
 	name = "Sewers"
 	icon_state = "green"
 	ambientrain = RAIN_SEWER
-	ambientsounds = AMB_BASEMENT
-	ambientnight = AMB_BASEMENT
+	ambientsounds = AMB_SEWERS
+	ambientnight = AMB_SEWERS
 	spookysounds = SPOOKY_RATS
 	spookynight = SPOOKY_CAVE
 	droning_sound = 'sound/music/area/sewers.ogg'

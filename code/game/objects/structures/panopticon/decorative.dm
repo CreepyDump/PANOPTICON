@@ -99,6 +99,7 @@
 	name = "Rubbish"
 	icon_state = "rubbish"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	max_integrity = 0
 
 /obj/structure/panopticon/mysor/doski
 	icon_state = "broken_doski"
@@ -107,6 +108,14 @@
 /obj/structure/panopticon/mysor/town
 	icon_state = "trash"
 	icon = 'icons/panopticon/obj/town.dmi'
+
+/obj/structure/panopticon/mysor/town/alt
+	icon_state = "musorinki"
+	icon = 'icons/panopticon/obj/town.dmi'
+
+/obj/structure/panopticon/mysor/town/alt/Initialize()
+	. = ..()
+	dir = pick(GLOB.cardinals)
 
 /obj/structure/panopticon/kol
 	name = "Spike"
@@ -129,6 +138,14 @@
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	max_integrity = 0
 	attacked_sound = 'sound/foley/slap (1).ogg'
+
+/obj/structure/panopticon/stove
+	name = "Stove"
+	icon_state = "plitka"
+	icon = 'icons/panopticon/obj/town.dmi'
+	max_integrity = 0
+	attacked_sound = 'sound/foley/slap (1).ogg'
+
 
 /obj/structure/panopticon/pallet
 	name = "Pallet"
@@ -309,3 +326,17 @@
 		new /obj/item/panopticonmoney/hundred(get_turf(src))
 	playsound(src,'sound/combat/hits/onmetal/grille (2).ogg', 50, TRUE)
 	qdel(src)
+
+/obj/structure/climbshit
+	icon_state = null
+	opacity = 0
+	max_integrity = 100
+	climbable = TRUE
+	climb_time = 0
+	layer = TABLE_LAYER
+	plane = GAME_PLANE
+	blade_dulling = DULLING_PICK
+	static_debris = null
+	debris = null
+	alpha = 255
+	climb_offset = 14

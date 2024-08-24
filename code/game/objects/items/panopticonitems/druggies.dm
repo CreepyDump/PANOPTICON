@@ -14,3 +14,11 @@
 	icon = 'icons/panopticon/items/consumable.dmi'
 	icon_state = "heroin"
 	list_reagents = list(/datum/reagent/heroin = 30)
+
+/obj/item/reagent_containers/glass/bottle/psychicksamogonka
+	name = "Moonshine"
+	list_reagents = list(/datum/reagent/psychicksamogon = 30)
+
+///obj/item/reagent_containers/glass/bottle/shmacksamogonka
+//	name = "Moonshine"
+//	list_reagents = list(/datum/reagent/shmacksamogonka = 30)

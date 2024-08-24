@@ -22,4 +22,5 @@
 	name = ".45 bullet casing"
 	desc = ""
 	caliber = ".45"
+	icon_state = "762-casing"
 	projectile_type = /obj/projectile/bullet/c45

@@ -609,14 +609,14 @@
 /datum/sprite_accessory/underwear
 	icon = 'icons/mob/clothing/underwear.dmi'
 	use_static = FALSE
-/*#ifdef MATURESERVER
+#ifdef MATURESERVER
 /datum/sprite_accessory/underwear/nude
 	name = "None"
 	icon_state = null
 	gender = NEUTER
 	use_static = TRUE
 	specuse = ALL_RACES_LIST
-#else*/
+#else
 /datum/sprite_accessory/underwear/regm
 	name = "Undies"
 	icon_state = "male_reg"
@@ -648,7 +648,7 @@
 	specuse = ALL_RACES_LIST
 	roundstart = FALSE
 
-//#endif
+#endif
 ////////////////////////////
 // Undershirt Definitions //
 ////////////////////////////
@@ -680,6 +680,21 @@
 
 /datum/sprite_accessory/body_markings
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+
+/datum/sprite_accessory/body_markings/panopticon
+	name = ""
+	icon = 'icons/mob/mutant_bodyparts.dmi'
+	gender = NEUTER
+	use_static = TRUE
+	specuse = list("human", "dwarf", "elf")
+
+/datum/sprite_accessory/body_markings/panopticon/nothing
+	name = "Nothing"
+	icon_state = "none"
+
+///datum/sprite_accessory/body_markings/panopticon/cross
+//	name = "Cross tattoo"
+//	icon_state = "cross"
 
 /datum/sprite_accessory/body_markings/none
 	name = "None"

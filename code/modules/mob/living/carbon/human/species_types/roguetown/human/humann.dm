@@ -96,6 +96,7 @@
 			randname = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
 		if(gender == FEMALE)
 			randname = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+	randname += " [pick(world.file2list("strings/rt/names/human/humnorlast.txt"))]"
 	return randname
 
 /datum/species/human/northern/random_surname()

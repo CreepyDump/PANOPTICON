@@ -3,7 +3,7 @@
 /obj/projectile/bullet/c45
 	name = ".45 bullet"
 	speed = 0.4
-	damage = 45
+	damage = 35
 	paralyze = 30
 	dismemberment = 50
 	armor_penetration = 50

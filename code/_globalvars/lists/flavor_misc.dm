@@ -14,6 +14,10 @@ GLOBAL_LIST_EMPTY(accessories_f)	//stores only hair names
 GLOBAL_LIST_EMPTY(detail_list)			//stores /datum/sprite_accessory/hair indexed by name
 GLOBAL_LIST_EMPTY(detail_m)		//stores only hair names
 GLOBAL_LIST_EMPTY(detail_f)	//stores only hair names
+	//snowflake
+GLOBAL_LIST_EMPTY(bdetail_list)			//stores /datum/sprite_accessory/hair indexed by name
+GLOBAL_LIST_EMPTY(bdetail_m)		//stores only hair names
+GLOBAL_LIST_EMPTY(bdetail_f)	//stores only hair names
 	//Underwear
 GLOBAL_LIST_EMPTY(underwear_list)		//stores /datum/sprite_accessory/underwear indexed by name
 GLOBAL_LIST_EMPTY(underwear_m)	//stores only underwear name
