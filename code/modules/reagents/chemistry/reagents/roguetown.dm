@@ -11,7 +11,7 @@
 		if(!M.wear_mask == new/obj/item/clothing/mask/gas(M))
 			M.add_nausea(15)
 			M.add_stress(/datum/stressevent/miasmagas)
-			if(prob(15))
-				anthrax.try_infect(M)
+//			if(prob(1))
+//				anthrax.try_infect(M)
 
 	. = ..()
