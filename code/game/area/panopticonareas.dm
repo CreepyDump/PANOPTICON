@@ -110,7 +110,7 @@
 				/turf/open/floor/panopticon/mud)
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 36,
-				/mob/living/simple_animal/hostile/retaliate/panopticon/baun = 30)
+				/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/baun = 30)
 
 /area/panopticon/indoors/shelter/darkwood
 	ambientsounds = 'sound/ambience/shelter.ogg'

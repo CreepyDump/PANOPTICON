@@ -430,7 +430,7 @@ Works together with spawning an observer, noted above.
 This is the proc mobs get to turn into a ghost. Forked from ghostize due to compatibility issues.
 */
 /mob/living/verb/ghost()
-	set category = "Options"
+	set category = "Filth"
 	set name = "Leave the cruel world"
 	set desc = "Are you want?"
 

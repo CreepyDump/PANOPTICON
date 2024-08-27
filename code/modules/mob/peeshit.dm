@@ -185,7 +185,7 @@
 				reagents.trans_to(V, rand(1,5))
 
 		playsound(get_turf(src), 'sound/misc/poo2.ogg', 80)
-		bowels -= rand(60,80)
+		bowels -= rand(60,120)
 
 /mob/living/carbon/human/proc/urinate(intentional = FALSE)
 	if(bladder < 30)
@@ -231,7 +231,7 @@
 			if(TT)//In case it's somehow not there.
 				M.visible_message("<span class='pissen'>[src] pisses on the [TT.name].</span>")
 
-		bladder -= rand(25,50)
+		bladder -= rand(25,100)
 		playsound(get_turf(src), 'sound/misc/pee.ogg', 60)
 
 /mob/living/carbon/human/verb/shit()

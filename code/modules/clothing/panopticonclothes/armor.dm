@@ -15,12 +15,14 @@
 
 /obj/item/clothing/armor/panopticon/cloak/grey
 	name = "Greys major coat"
+	allowed_sex = list(MALE)
 	icon_state = "greycoat"
 	item_state = "greycoat"
 	armor = list("melee" = 45, "bullet" = 26, "laser" = 0,"energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/armor/panopticon/cloak/grey/hitman
 	name = "Gendarme coat"
+	allowed_sex = list(MALE, FEMALE)
 	icon = 'icons/panopticon/obj/clothes/cloak.dmi'
 	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
 	sleeved = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'

@@ -65,7 +65,7 @@
 				if(amount > 10 MINUTES)
 					if(istype(C, /mob/living/carbon/human))
 						C.add_overlay(hive)
-					new /mob/living/simple_animal/hostile/retaliate/panopticon/flies(src)
+					new /mob/living/simple_animal/hostile/retaliate/rogue/panopticon/flies(src)
 				if(amount > 30 MINUTES)
 					if(!is_zombie)
 						B.skeletonize()

@@ -138,10 +138,6 @@
 	rattlesound = 'sound/foley/doors/lockrattlemetal.ogg'
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 
-/obj/structure/mineral_door/panopticon/bunker/Initialize()
-	..()
-	add_overlay(mutable_appearance(icon, "bunkerdooropen", ABOVE_MOB_LAYER))
-
 /obj/structure/panopticon/automat/heroinmachine
 	name = "COP Automato"
 	desc = "An automatic-drug-machine, that is a true trove for heroin crackheads."

@@ -9,6 +9,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 5
+	possible_item_intents = list(/datum/intent/dagger/thrust)
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 5
 	throw_speed = 3

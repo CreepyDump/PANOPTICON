@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/panopticon/kalodemon
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/kalodemon
 	name = "Golgothan"
 	desc = ""
 	icon = 'icons/panopticon/mob/npc.dmi'
@@ -27,11 +27,11 @@
 	stat_attack = SOFT_CRIT
 	footstep_type = FOOTSTEP_GENERIC_HEAVY
 
-/mob/living/simple_animal/hostile/panopticon/kalodemon/Initialize()
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/kalodemon/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/baun
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/baun
 	name = "Bayun Cat"
 	desc = "Deadliest cute creature in the world!"
 	icon = 'icons/panopticon/mob/npc.dmi'
@@ -42,7 +42,7 @@
 	speak_chance = 3
 	emote_see = ("Meows!")
 	turns_per_move = 5
-	speed = 1
+	speed = 0.5
 	maxHealth = 100
 	health = 100
 	taunt_chance = 50
@@ -56,7 +56,7 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	retreat_distance = 0
 	minimum_distance = 0
-	move_to_delay = 1.1
+	move_to_delay = 2
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_CLAW
 	melee_damage_lower = 10
@@ -70,7 +70,7 @@
 	aggressive = 1
 
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/baun/get_sound(input)
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/baun/get_sound(input)
 	switch(input)
 		if("aggro")
 			return pick('sound/vo/mobs/baun/attack (1).ogg','sound/vo/mobs/baun/attack (2).ogg',)
@@ -81,7 +81,7 @@
 		if("idle")
 			return pick('sound/vo/mobs/baun/idle (1).ogg','sound/vo/mobs/baun/idle (2).ogg','sound/vo/mobs/baun/idle (3).ogg')
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/flies
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/flies
 	name = "Corpseflies"
 	desc = ""
 	icon = 'icons/roguetown/mob/rotten.dmi'
@@ -126,12 +126,12 @@
 	footstep_type = null
 	aggressive = 1
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/mutant
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant
 	icon = 'icons/panopticon/mob/bigdemon.dmi'
 	name = "killer"
 	icon_state = "killer"
 	icon_living = "killer"
-	icon_dead = "killer"
+	icon_dead = "killer-dead"
 	gender = MALE
 	emote_hear = null
 	emote_see = null
@@ -141,10 +141,10 @@
 	move_to_delay = 3
 	base_intents = list(/datum/intent/simple/slash)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 10)
-	faction = list("porojdenie")
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 300
-	maxHealth = 400
+	faction = list("begotten")
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	health = 500
+	maxHealth = 600
 	melee_damage_lower = 45
 	melee_damage_upper = 70
 	vision_range = 3
@@ -164,28 +164,28 @@
 	del_on_deaggro = 44 SECONDS
 	retreat_health = 0
 	food = 0
-	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
+	attack_sound = list('sound/vo/mobs/begotten/attack_claw_hit01.ogg','sound/vo/mobs/begotten/attack_claw_hit02.ogg','sound/vo/mobs/begotten/attack_claw_hit03.ogg')
 	dodgetime = 0
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/death(gibbed)
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant/death(gibbed)
 	..()
 	update_icon()
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/taunted(mob/user)
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant/taunted(mob/user)
 	emote("aggro")
 	Retaliate()
 	GiveTarget(user)
 	return
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/Life()
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant/Life()
 	..()
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/simple_limb_hit(zone)
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant/simple_limb_hit(zone)
 	if(!zone)
 		return ""
 	switch(zone)
@@ -227,14 +227,17 @@
 			return "foreleg"
 	return ..()
 
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant/find_food()
+	if(!.)
+		return eat_bodies()
 
-/mob/living/simple_animal/hostile/retaliate/panopticon/mutant/get_sound(input)
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant/get_sound(input)
 	switch(input)
 		if("aggro")
-			return pick('sound/vo/mobs/zombie/firescream (1).ogg')
+			return pick('sound/vo/mobs/begotten/agro01_brut.ogg', 'sound/vo/mobs/begotten/agro02_brut.ogg', 'sound/vo/mobs/begotten/agro03_brut.ogg')
 		if("pain")
-			return pick('sound/vo/mobs/zombie/pain (1).ogg')
+			return pick('sound/vo/mobs/begotten/pain01_brut.ogg', 'sound/vo/mobs/begotten/pain02_brut.ogg')
 		if("death")
 			return pick('sound/vo/mobs/zombie/death (1).ogg')
 		if("idle")
-			return pick('sound/vo/mobs/zombie/idle (1).ogg','sound/vo/mobs/zombie/idle (2).ogg','sound/vo/mobs/zombie/idle (3).ogg')
+			return pick('sound/vo/mobs/begotten/idle01_brut.ogg','sound/vo/mobs/begotten/idle02_brut.ogg','sound/vo/mobs/begotten/idle03_brut.ogg')

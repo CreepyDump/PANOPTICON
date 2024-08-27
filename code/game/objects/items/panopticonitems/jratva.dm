@@ -58,3 +58,25 @@
 	foodtype = RAW | TOXIC
 	fried_type = /obj/item/organ/heart
 	cooked_type = /obj/item/organ/heart
+
+/obj/item/reagent_containers/food/snacks/penisvkusno
+	name = "Dingaling"
+	desc = "So that's what 'peccatum originale' was..."
+	bitesize = 5
+	icon = 'icons/panopticon/items/consumable.dmi'
+	icon_state = "penis"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/liquidgibs = 10, /datum/reagent/toxin/bad_food = 5)
+	filling_color = "#6d3737"
+	foodtype = MEAT | GROSS
+	rotprocess = 15 MINUTES
+
+/obj/item/reagent_containers/food/snacks/piztec
+	name = "Meatballs"
+	desc = "That's definetely not real tasty..."
+	bitesize = 5
+	icon = 'icons/panopticon/items/consumable.dmi'
+	icon_state = "piztec"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/liquidgibs = 5, /datum/reagent/toxin/bad_food = 5)
+	filling_color = "#851414"
+	foodtype = MEAT | GROSS
+	rotprocess = 15 MINUTES

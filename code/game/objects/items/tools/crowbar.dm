@@ -14,13 +14,12 @@
 	custom_materials = list(/datum/material/iron=50)
 	drop_sound = 'sound/blank.ogg'
 	pickup_sound =  'sound/blank.ogg'
-
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
-	tool_behaviour = TOOL_CROWBAR
+	possible_item_intents = list(INTENT_GENERIC)
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	var/force_opens = FALSE
-
+	
 /obj/item/crowbar/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is beating [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(loc, 'sound/blank.ogg', 50, TRUE, -1)

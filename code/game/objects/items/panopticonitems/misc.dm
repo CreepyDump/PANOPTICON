@@ -195,8 +195,10 @@
 	gripped_intents = null
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
-	force = 10
-	throwforce = 15
+	force = 13
+	throw_speed = 2
+	throw_range = 7
+	throwforce = 20
 	obj_flags = null
 	w_class = WEIGHT_CLASS_NORMAL
 

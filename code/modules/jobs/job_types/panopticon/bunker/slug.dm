@@ -41,6 +41,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(2,3,4), TRUE)
 		RegisterSignal(H, COMSIG_MOB_SAY, .proc/handle_speech)
 		ADD_TRAIT(H, TRAIT_POHYI, TRAIT_GENERIC)
+		H.apply_status_effect(/datum/status_effect/shizophrenia)
 		H.STALUC = rand(1, 20)
 		H.STASTR = rand(5, 12)
 		H.STAINT = rand(1, 10)

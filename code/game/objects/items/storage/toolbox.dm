@@ -7,6 +7,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/toolbox_righthand.dmi'
 	flags_1 = CONDUCT_1
 	force = 12
+	possible_item_intents = list(INTENT_GENERIC)
 	throwforce = 12
 	throw_speed = 2
 	throw_range = 7
@@ -47,6 +48,7 @@
 	material_flags = NONE
 
 /obj/item/storage/toolbox/emergency/PopulateContents()
+	new /obj/item/crowbar(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/screwdriver(src)

@@ -76,7 +76,7 @@
 	SSdroning.kill_loop(src.client)
 	SSdroning.kill_droning(src.client)
 	src.playsound_local(src, 'sound/misc/deth.ogg', 100)
-
+	to_chat(src.client, span_bigbold(span_suicide("You are dead! You can respawn by clicking 'Leave the cruel world' verb in the 'Filth' tab.")))
 	set_drugginess(0)
 	set_disgust(0)
 	SetSleeping(0, 0)

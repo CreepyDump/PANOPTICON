@@ -91,3 +91,20 @@
 	result = /obj/item/reagent_containers/food/snacks/fat/salo
 	craftdiff = 1
 	req_table = TRUE
+
+/datum/crafting_recipe/roguetown/cooking/sausagepiztec
+	name = "Weenie"
+	reqs = list(
+		/obj/item/organ/tongue = 1,
+		/obj/item/reagent_containers/food/snacks/throbber = 2)
+	tools = list(/obj/item/needle)
+	result = /obj/item/reagent_containers/food/snacks/penisvkusno
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/cooking/prostopiztec
+	name = "Thing"
+	reqs = list(
+		/obj/item/organ/stomach = 1,
+		/obj/item/organ/eyes = 1)
+	result = /obj/item/reagent_containers/food/snacks/piztec
+	craftdiff = 0

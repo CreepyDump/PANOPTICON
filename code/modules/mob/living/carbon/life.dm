@@ -7,6 +7,9 @@
 					simple_wounds -= WO
 					qdel(WO)
 
+/mob/living/proc/handle_stomach()
+	return
+
 /mob/living/carbon/handle_wounds()
 	for(var/obj/item/bodypart/BP in bodyparts)
 		for(var/datum/wound/WO in BP.wounds)
@@ -38,7 +41,7 @@
 			return
 
 		handle_blood()
-
+		handle_stomach()
 		handle_roguebreath()
 		handle_wounds()
 		var/bprv = handle_bodyparts()
@@ -137,7 +140,7 @@
 		if (QDELETED(src))
 			return
 		handle_blood()
-
+		
 	check_cremation()
 
 /mob/living/carbon/handle_random_events()//BP/WOUND BASED PAIN
@@ -946,3 +949,22 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		return
 
 	heart.beating = !status
+
+/mob/living/carbon/human/handle_stomach()
+	spawn(0)
+		for(var/a in stomach_contents)
+			if(!(a in contents) || isnull(a))
+				stomach_contents.Remove(a)
+				continue
+			if(iscarbon(a)|| isanimal(a))
+				var/mob/living/M = a
+				if(M.stat == DEAD)
+					M.death(1)
+					stomach_contents.Remove(M)
+					qdel(M)
+					continue
+				if(life_tick % 3 == 1)
+					if(!(M.status_flags & GODMODE))
+						M.adjustBruteLoss(5)
+					nutrition += 10
+	handle_excrement()

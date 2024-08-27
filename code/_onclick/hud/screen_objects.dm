@@ -1529,10 +1529,18 @@
 			if(H.stress)
 				state2use = "stress2"
 				if(H.stress >= 10)
+					if(HAS_TRAIT(H, TRAIT_SCHIZO_AMBIENCE))
+						if(!H.job == "Slug")
+							H.remove_status_effect(/datum/status_effect/shizophrenia)
 					state2use = "stress3"
 				if(H.stress >= 20)
+					if(HAS_TRAIT(H, TRAIT_SCHIZO_AMBIENCE))
+						if(!H.job == "Slug")
+							H.remove_status_effect(/datum/status_effect/shizophrenia)
 					state2use = "stress4"
 				if(H.stress >= 30)
+					if(!HAS_TRAIT(H, TRAIT_SCHIZO_AMBIENCE))
+						H.apply_status_effect(/datum/status_effect/shizophrenia)
 					state2use = "stress5"
 		if(H.has_status_effect(/datum/status_effect/buff/drunk))
 			state2use = "mood_drunk"

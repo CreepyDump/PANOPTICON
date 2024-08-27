@@ -369,7 +369,7 @@
 "Uw" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "Uy" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "UB" = (/obj/structure/panopticon/onwall/oldass{dir = 4},/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/shelter/darkwood)
-"UF" = (/mob/living/simple_animal/hostile/retaliate/panopticon/baun{dir = 4},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
+"UF" = (/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/baun{dir = 4},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "UL" = (/obj/structure/panopticon/mirkstones,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "UX" = (/obj/structure/panopticon/kol{dir = 1},/obj/structure/panopticon/road{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "UZ" = (/turf/open/chasm/jungle,/area/panopticon/outdoors/darkwood/pole)
