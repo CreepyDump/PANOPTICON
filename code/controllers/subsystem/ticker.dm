@@ -138,9 +138,11 @@ SUBSYSTEM_DEF(ticker)
 		music = world.file2list(ROUND_START_MUSIC_LIST, "\n")
 		login_music = pick(music)
 	else
+#ifndef ROGUEWORLD
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
-
-	login_music = 'sound/music/title.ogg'
+#else
+		login_music = "sound/music/NECRONOX.ogg"
+#endif
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)

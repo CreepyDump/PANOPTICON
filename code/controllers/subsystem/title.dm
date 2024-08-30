@@ -31,12 +31,12 @@ SUBSYSTEM_DEF(title)
 	if(length(title_screens))
 		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
 
-	if(!file_path)
-#ifndef ROGUEWORLD
-		file_path = "icons/default_title.dmi"
-#else
-		file_path = "icons/necronox_title.dmi"
-#endif
+//	if(!file_path)
+//#ifndef ROGUEWORLD
+//		file_path = "icons/default_title.dmi"
+//#else
+//		file_path = "icons/necronox_title.dmi"
+//#endif
 	ASSERT(fexists(file_path))
 
 	icon = new(fcopy_rsc(file_path))

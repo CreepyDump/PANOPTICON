@@ -151,7 +151,7 @@ SUBSYSTEM_DEF(triumphs)
 
 
 /mob/dead/new_player/verb/hiderole()
-	set category = "Triumphs"
+	set category = null
 	set name = "HideRole"
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 		if(client.ckey in GLOB.hiderole)
@@ -179,7 +179,7 @@ SUBSYSTEM_DEF(triumphs)
 		to_chat(src, "It's too late.")
 
 /mob/dead/new_player/verb/donatorupgrade()
-	set category = "Triumphs"
+	set category = null
 	set name = "DonateTriumphs"
 	if(!client)
 		return
@@ -225,7 +225,7 @@ SUBSYSTEM_DEF(triumphs)
 	to_chat(src, "<span class='info'>Your Patreon Level: [shown_patreon_level]</span>")
 
 /mob/dead/new_player/verb/forcerogueworld()
-	set category = "Triumphs"
+	set category = null
 	set name = "Rogueworld"
 	set hidden=1
 #ifdef TESTSERVER
@@ -264,7 +264,7 @@ SUBSYSTEM_DEF(triumphs)
 					to_chat(src, "I haven't TRIUMPHED enough.")
 
 /mob/dead/new_player/verb/wipetriumphs()
-	set category = "Triumphs"
+	set category = null
 	set name = "WipeTriumphs"
 	if(!client)
 		return

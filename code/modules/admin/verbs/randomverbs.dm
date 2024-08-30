@@ -1252,8 +1252,6 @@ Traitors and the like can also be revived with the previous role mostly intact.
 			ikon = new(fcopy_rsc(file_path))
 			if(SStitle.splash_turf && ikon)
 				SStitle.splash_turf.icon = ikon
-			for(var/mob/dead/new_player/player in GLOB.player_list)
-				player.playsound_local(player, 'sound/music/NECRONOX.ogg', 100, TRUE)
 			SSticker.isrogueworld = TRUE
 			SSticker.failedstarts = 13
 			SSticker.current_state = GAME_STATE_SETTING_UP

@@ -119,7 +119,8 @@
 			if(disease_air_spread_walk(T, V))
 				if(istype(H.wear_mask, /obj/item/clothing/mask/gas))
 					return
-				C.AirborneContractDisease(src, force_spread)
+				else
+					C.AirborneContractDisease(src, force_spread)
 
 /proc/disease_air_spread_walk(turf/start, turf/end)
 	if(!start || !end)

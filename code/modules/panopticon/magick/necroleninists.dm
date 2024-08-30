@@ -25,39 +25,19 @@ var/leninalive = FALSE
 	invoke_damage = 0.5
 	rune_in_use = FALSE
 
+/obj/effect/rune/panopticon/lenin_summon/OnCrafted(dirin, mob/living/carbon/human/user)
+	. = ..()
+	var/obj/item/bodypart/chest/M
+	user.emote("agony")
+	user.adjustBruteLoss(20)
+	M.add_wound(/datum/wound/cut, skipcheck = FALSE)
+	user.visible_message("<span class='warning'>[user] cuts the [M] for ritual.</span>")
+
 /obj/effect/rune/panopticon/lenin_summon/invoke(var/list/invokers)
 	to_chat(invokers, "<span class='danger'>YOU HAVE MADE IT.</span>")
 	priority_announce("Something imperishable is coming!", "Old-World Announcer", 'sound/misc/necrolenin_alert.ogg', "Captain")
 	leninalive = TRUE
 	qdel(src)
-
-/obj/effect/rune/panopticon/sacrifice
-	cultist_name = "Offer"
-	cultist_desc = ""
-	req_cultists_text = "2 for conversion, 3 for living sacrifices and sacrifice targets."
-	invocation = "Mah'weyh pleggh at e'ntrath!"
-	icon_state = "rune2"
-	color = RUNE_COLOR_OFFER
-	req_cultists = 1
-	rune_in_use = FALSE
-
-/obj/effect/rune/panopticon/sacrifice/do_invoke_glow()
-	return
-
-/obj/effect/rune/panopticon/sacrifice/invoke(var/list/invokers)
-	if(rune_in_use)
-		return
-	var/mob/living/L
-	var/list/in_range = range(1, L)
-	rune_in_use = TRUE
-	visible_message("<span class='warning'>[src] pulses blood red!</span>")
-	var/oldcolor = color
-	color = RUNE_COLOR_DARKRED
-	if(src in range (in_range))
-		L.gib()
-	animate(src, color = oldcolor, time = 5)
-	addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 5)
-	rune_in_use = FALSE
 
 /obj/effect/proc_holder/spell/targeted/touch/necroleninistrevive
 	name = "Revive"
@@ -67,18 +47,49 @@ var/leninalive = FALSE
 	charge_max = 600
 	clothes_req = FALSE
 
-/obj/effect/proc_holder/spell/self/leninrunes
-	name = "Draw a Rune"
-	overlay_state = "lenin"
-	antimagic_allowed = TRUE
-	charge_max = 600
+/datum/crafting_recipe/roguetown/leninstmagick
+	always_availible = FALSE
+	skillcraft = /datum/skill/magic/blood
 
-/obj/effect/proc_holder/spell/self/leninrunes/cast(list/targets,mob/user = usr)
-	..()
-	var/list/possible_spells = list()
-	var/pickrune = input(user, "Pick a rune to draw") as null|anything in possible_spells
-	if(!pickrune)
-		return FALSE
-	if(pickrune == "Rune Of The Returner")
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/hudFix, user), 12)
-		new /obj/effect/rune/panopticon/lenin_summon(src)
+/datum/crafting_recipe/roguetown/leninstmagick/first
+	name = "first wonder"
+	result = /obj/structure/wonder
+	tools = (/obj/item/rogueweapon/sickle)
+	reqs = list(
+		/obj/item/bodypart = 2,
+		/obj/item/organ/eyes = 1,
+		/obj/item/organ/lungs = 1
+	)
+
+/datum/crafting_recipe/roguetown/leninstmagick/reviverunesickle
+	name = "LENIN REVIVE RUNE (BY USING SICKLE)"
+	result = /obj/effect/rune/panopticon/lenin_summon
+	tools = (/obj/item/rogueweapon/sickle)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/leninstmagick/reviveruneknife
+	name = "LENIN REVIVE RUNE (BY USING KNIFE)"
+	result = /obj/effect/rune/panopticon/lenin_summon
+	tools = (/obj/item/panopticonweapon/knife)
+	craftdiff = 4
+
+//Wonder structure
+/obj/structure/wonder
+	name = "wonder"
+	desc = "What a disgusting thing, what type of maniac would make this!?"
+	icon = 'icons/roguetown/maniac/creations.dmi'
+	icon_state = "creation1"
+	resistance_flags = INDESTRUCTIBLE
+	density = TRUE
+	anchored = TRUE
+	
+/obj/structure/wonder/Initialize()
+	. = ..()
+	icon_state = pick("creation1", "creation2", "creation3", "creation4")
+
+/obj/structure/wonder/OnCrafted(dirin, mob/living/carbon/human/user)
+	. = ..()
+	var/obj/item/bodypart/chest/M
+	user.emote("agony")
+	user.adjustBruteLoss(10)
+	M.add_wound(/datum/wound/stab, skipcheck = FALSE)

@@ -86,7 +86,7 @@
 	desc = "Dinner is ready."
 	icon = 'icons/panopticon/items/consumable.dmi'
 	icon_state = "poo1"
-	list_reagents = list(/datum/reagent/poo, 10)
+	list_reagents = list(/datum/reagent/poo = 10)
 	bitesize = 3
 
 /obj/item/reagent_containers/food/snacks/poo/New()
