@@ -26,6 +26,24 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_BEHIND|FOV_RIGHT|FOV_LEFT
 
+/obj/item/clothing/head/panopticon/hijab
+	name = "Hijab"
+	desc = "One of the recognizable symbols of Jidat culture. It is worn by women of sultans or wife-beaters."
+	icon_state = "hijab"
+	item_state = "hijab"
+	dynamic_hair_suffix = ""
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_BEHIND
+
+/obj/item/clothing/head/panopticon/hijab/black
+	color = CLOTHING_BLACK
+
+/obj/item/clothing/head/panopticon/hijab/yellow
+	color = CLOTHING_BLUE
+
+/obj/item/clothing/head/panopticon/hijab/green
+	color = CLOTHING_GREEN
+
 /obj/item/clothing/head/panopticon/jeremyden
 	name = "Old hunter hat"
 	icon_state = "jeremyhat"

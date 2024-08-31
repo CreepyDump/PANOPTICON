@@ -49,7 +49,19 @@
 				H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,2,3,4,5), TRUE)
 				wrists = /obj/item/clothing/wrists/roguetown/wrappings
 	if(H.gender == FEMALE)
-		if(prob(35))
+		var/list/skin_slop = H.dna.species.get_skin_list()
+		if(H.skin_tone == skin_slop["Blackamoor"])
+			var/sosi_hyi_churka = pick(1,2,3,4)
+			switch(sosi_hyi_churka)
+				if(1)
+					head = /obj/item/clothing/head/panopticon/hijab
+				if(2)
+					head = /obj/item/clothing/head/panopticon/hijab/black
+				if(3)
+					head = /obj/item/clothing/head/panopticon/hijab/yellow
+				if(4)
+					head = /obj/item/clothing/head/panopticon/hijab/green
+		else if(prob(35))
 			head = /obj/item/clothing/head/panopticon/platok
 	if(prob(25))
 		H.playsound_local(H, 'sound/misc/littlescary1.ogg', 60)
