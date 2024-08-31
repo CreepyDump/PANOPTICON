@@ -49,7 +49,7 @@ GLOBAL_VAR(command_name)
 	GLOB.station_name = newname
 
 #ifdef ROGUEWORLD
-	world.name = "PANOPTICON"
+	world.name = "PANOPTICON (NECRONOX)"
 #else
 	world.name = "PANOPTICON"
 #endif

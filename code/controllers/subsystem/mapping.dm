@@ -247,7 +247,7 @@ SUBSYSTEM_DEF(mapping)
 	otherZ += load_map_config("_maps/map_files/panopticon/gurmani.json")
 	#endif
 	#ifdef ROGUEWORLD
-	otherZ += load_map_config("_maps/map_files/roguetown/otherz/rogueworld.json")
+	otherZ += load_map_config("_maps/map_files/panopticon/snowles.json")
 	#endif
 //	otherZ += load_map_config("_maps/map_files/roguetown/otherz/special.json")
 	if(otherZ.len)

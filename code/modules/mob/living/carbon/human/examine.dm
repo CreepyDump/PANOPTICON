@@ -52,6 +52,9 @@
 			if(used_title == "Adventurer")
 				used_title = advjob
 				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name] [used_title].")
+			else if(used_title == "Zek")
+				used_title = advjob
+				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name] [used_title].")				
 			else
 				if(islatejoin)
 					. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the returning [race_name] [used_title].")

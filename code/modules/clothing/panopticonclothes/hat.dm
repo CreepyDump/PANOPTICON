@@ -34,15 +34,6 @@
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEEYES
 	block2add = FOV_BEHIND
 
-/obj/item/clothing/head/panopticon/govnar
-	name = "Fool bag"
-	icon_state = "govnar"
-	item_state = "govnar"
-	dynamic_hair_suffix = ""
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEYES
-	block2add = FOV_BEHIND|FOV_RIGHT|FOV_LEFT
-	equip_delay_other = 30
-
 /obj/item/clothing/head/panopticon/shtrafbathelm
 	name = "Strafbat-Helm"
 	desc = "A helmet worn primarily by the exiled battalion troops, or by those who succeeded in killin' those fuckers."
@@ -58,7 +49,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/panopticon/mayor
-	name = "Major's Cap"
+	name = "Major's furajka"
 	desc = ""
 	icon_state = "mayor"
 	item_state = "mayor"
@@ -77,6 +68,13 @@
 	icon_state = "furajka"
 	item_state = "furajka"
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/panopticon/holycap
+	name = "Helek officer-cap"
+	desc = ""
+	icon_state = "holycap"
+	item_state = "holycap"
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/panopticon/grandnecroleninist
 	name = "Grand-Necroleninist hood"
@@ -119,3 +117,12 @@
 	item_state = "iron_helm3"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/head/panopticon/meshok
+	name = "Fool bag"
+	icon_state = "meshok"
+	item_state = "meshok"
+	dynamic_hair_suffix = ""
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_BEHIND|FOV_RIGHT|FOV_LEFT
+	equip_delay_other = 30

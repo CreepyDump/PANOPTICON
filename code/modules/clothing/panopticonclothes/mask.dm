@@ -9,6 +9,17 @@
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	equip_delay_self = 30
 
+/obj/item/clothing/mask/panopticon/govnar
+	name = "Strafbat Balaclava"
+	icon = 'icons/panopticon/obj/clothes/head.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/head.dmi'	
+	icon_state = "govnar"
+	item_state = "govnar"
+	dynamic_hair_suffix = ""
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP|ITEM_SLOT_MASK
+
 /obj/item/clothing/mask/gas/panopticon/greys
 	name = "old-imperia mask"
 	desc = "Hopefully the filters on this thing still works."

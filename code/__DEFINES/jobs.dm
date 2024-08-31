@@ -45,6 +45,14 @@
 
 #define JDO_SHTRAFBAT 9
 
+#define JCOLOR_UNTER "#228564"
+#define UNTERS	(1<<4)
+
+#define ZEK	(1<<0)
+
+#define JDO_ZEK 10
+
+
 // PANOPTICON //
 
 #define ENGSEC			(1<<0)

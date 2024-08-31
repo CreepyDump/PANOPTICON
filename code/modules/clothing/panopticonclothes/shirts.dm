@@ -37,6 +37,10 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|ARMS|VITALS
 
+/obj/item/clothing/suit/panopticon/shirt/gulag/necronox
+	icon_state = "gulag"
+	item_state = "gulag"
+
 /obj/item/clothing/suit/panopticon/shirt/odongh
 	name = "Odongh robe"
 	icon_state = "odongh"

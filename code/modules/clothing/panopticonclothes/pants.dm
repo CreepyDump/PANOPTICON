@@ -39,6 +39,10 @@
 	icon_state = "zek"
 	item_state = "zek"
 
+/obj/item/clothing/under/panopticon/gulag/necronox
+	icon_state = "greypants"
+	item_state = "greypants"
+
 /obj/item/clothing/under/panopticon/gulfik
 	name = "Rags"
 	slot_flags = ITEM_SLOT_PANTS

@@ -29,7 +29,11 @@ SUBSYSTEM_DEF(title)
 			title_screens += S
 
 	if(length(title_screens))
+#ifdef ROGUEWORLD
+		file_path = "icons/necronox_title.dmi"
+#else
 		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
+#endif
 
 //	if(!file_path)
 //#ifndef ROGUEWORLD

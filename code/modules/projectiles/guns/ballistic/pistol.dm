@@ -114,6 +114,7 @@
 	rack_sound = 'sound/combat/Ranged/handgun-rack-01.ogg'
 	lock_back_sound = 'sound/combat/Ranged/handgun-lock-01.ogg'
 	bolt_drop_sound = 'sound/combat/Ranged/handgun-bolt-01.ogg'
+	slot_flags = ITEM_SLOT_HIP
 
 /obj/item/gun/ballistic/automatic/pistol/knuckleshot/getonmobprop(tag)
 	. = ..()

@@ -45,7 +45,7 @@
 	if(prob(50))
 		backpack_contents = list(/obj/item/reagent_containers/glass/bottle/heroinium = 1)
 		neck = null
-		head = /obj/item/clothing/head/panopticon/govnar
+		mask = /obj/item/clothing/mask/panopticon/govnar
 	if(prob(60))
 		r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
 

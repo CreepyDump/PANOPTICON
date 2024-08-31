@@ -1256,7 +1256,5 @@ Traitors and the like can also be revived with the previous role mostly intact.
 			SSticker.failedstarts = 13
 			SSticker.current_state = GAME_STATE_SETTING_UP
 			Master.SetRunLevel(RUNLEVEL_SETUP)
-			if(SSticker.start_immediately)
-				SSticker.fire()
 		else
 			to_chat(src, "Something went wrong.")
