@@ -74,6 +74,13 @@
 	above_floor = /turf/open/floor/panopticon/beton
 	baseturfs = list(/turf/open/floor/panopticon/beton)
 
+/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass
+	name = "Betonistic wall"
+	icon = 'icons/turf/walls/darkbeton.dmi'
+	icon_state = "beton"
+	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/kirpich)
+	above_floor = /turf/open/floor/panopticon/beton/stone
+	baseturfs = list(/turf/open/floor/panopticon/beton/stone)
 
 /turf/closed/wall/mineral/panopticon/kirpich/stone
 	icon = 'icons/turf/walls/stonistic.dmi'

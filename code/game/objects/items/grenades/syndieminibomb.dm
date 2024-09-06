@@ -83,28 +83,31 @@
 
 /obj/item/grenade/syndieminibomb/frag
 	desc = "Igniter with pin, casing, and explosive insides. What else do you need for a good gift?"
-	name = "Fragmentation grenade"
+	name = "Grenade"
 	icon = 'icons/obj/grenade.dmi'
-	icon_state = "frag"
-	item_state = "flashbang"
-	deliveryamt = 30 // amount of type to deliver
-	spawner_type = /obj/item/ammo_casing/caseless/rogue/fragment
+	icon_state = "stgnade"
+	item_state = "stgnade"
+/*	spawner_type = /obj/item/ammo_casing/caseless/rogue/fragment
+	var/spread_range = 7
+	var/num_fragments = 30
 
-	prime()													// Prime now just handles the two loops that query for people in lockers and people who can see it.
-		explosion(src.loc,0,0,3,0)
-		if(spawner_type && deliveryamt)
-			var/turf/T = get_turf(src)
-			var/list/turfs = circleview(T, 4)
-			for(var/i=1, i<=deliveryamt, i++)
-				var/atom/movable/x = new spawner_type
-				x.loc = T
-				for(var/j = 1, j <= rand(3, 6), j++)
-					var/atom/TARGET
-					var/turf/TUR = pick(turfs)
-					TARGET = TUR
-					for(var/mob/living/carbon/human/H in oview(4,T))
-						if(prob(75))
-							TARGET = H
-					x.throw_at(TARGET, 4,10)
-		qdel(src)
-		return
+	/obj/item/grenade/syndieminibomb/frag/prime()													// Prime now just handles the two loops that query for people in lockers and people who can see it.
+		..()
+		if (!ismob(loc))
+
+			var/list/target_turfs = getcircle(T, spread_range)
+			var/fragments_per_projectile = round(num_fragments/target_turfs.len)
+
+			for (var/turf/TT in target_turfs)
+				var/obj/item/ammo_casing/caseless/rogue/fragment/P = new spawner_type(T)
+				P.pellets = fragments_per_projectile
+				P.range = 5
+				P.launch_fragment(TT)
+
+				// any mob on the source turf, lying or not, absorbs 100% of shrapnel now
+				for (var/mob/living/L in T)
+					P.attack_mob(L, 0, 0)
+
+		spawn (5)
+			qdel(src)
+*/

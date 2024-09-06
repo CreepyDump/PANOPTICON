@@ -246,6 +246,40 @@
 	gender = MALE
 	specuse = list("elf")
 
+/datum/sprite_accessory/hair/dumbass
+	name = "Dumbass"
+	icon_state = "hair_dumbass"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/hair/trap
+	name = "Faggot"
+	icon_state = "hair_trap"
+	specuse = list("human")
+
+/datum/sprite_accessory/hair/femboy
+	name = "Femine"
+	icon_state = "hair_femboy"
+	specuse = list("human")
+
+/datum/sprite_accessory/hair/monk
+	name = "Monk"
+	icon_state = "hair_monk"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/hair/blackman
+	name = "Blackman-Afro"
+	icon_state = "hair_migger"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/hair/bozo
+	name = "Bozo"
+	icon_state = "hair_bozo"
+	gender = MALE
+	specuse = list("human")
+
 /////////////////////////////
 // GIRLY Hair Definitions  //
 /////////////////////////////
@@ -413,7 +447,7 @@
 	specuse = list("human", "elf", "tiefling")
 
 /datum/sprite_accessory/facial_hair/hermit
-	name = "Wise Hermit"
+	name = "Moonshiner"
 	icon_state = "facial_moonshiner"
 	gender = MALE
 	specuse = list("human", "elf")
@@ -491,6 +525,47 @@
 	gender = MALE
 	specuse = list("dwarf")
 
+/datum/sprite_accessory/facial_hair/watson
+	name = "Watson"
+	icon_state = "facial_watson"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/facial_hair/turkiyye
+	name = "Kiphian"
+	icon_state = "facial_turkiyye"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/facial_hair/threeoclock
+	name = "Tired"
+	icon_state = "facial_3oclock"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/facial_hair/neckbeard
+	name = "Neck-beard"
+	icon_state = "facial_neckbeard"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/facial_hair/smallstache
+	name = "Painter"
+	icon_state = "facial_smallstache"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/facial_hair/walrus
+	name = "Walrus"
+	icon_state = "facial_walrus"
+	gender = MALE
+	specuse = list("human")
+
+/datum/sprite_accessory/facial_hair/hermit
+	name = "Hermit"
+	icon_state = "facial_hermit"
+	gender = MALE
+	specuse = list("human")
 ///////////////////////////
 // Accessory Definitions //
 ///////////////////////////

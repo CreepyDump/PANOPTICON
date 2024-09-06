@@ -68,7 +68,7 @@
 	maptext = {"<span style='vertical-align:top; text-align:center;
 				color: #[voicecolor]; font-size: 100%;
 				text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
-				font-family: "JSL Ancient";'>[credited]</span>"}
+				font-family: "Crimson Text";'>[credited]</span>"}
 	creditee = credited
 	maptext_x = -32
 	maptext_y = 8

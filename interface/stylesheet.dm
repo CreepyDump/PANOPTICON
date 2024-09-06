@@ -7,28 +7,28 @@
 // Sample font-size: DM: 8 CSS: 64px
 
 /client/script = {"<style>
-body					{text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;	word-wrap: break-word; overflow-x: hidden; overflow-y: scroll; color: #c9c1ba; font-size: 16px; font-family: "JSL Ancient";}
+body					{text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;	word-wrap: break-word; overflow-x: hidden; overflow-y: scroll; color: #c9c1ba; font-size: 16px; font-family: "Crimson Text";}
 
-h1, h2, h3, h4, h5, h6	{color: #c9c1ba;	font-family: JSL Ancient;}
+h1, h2, h3, h4, h5, h6	{color: #c9c1ba;	font-family: Crimson Text;}
 
-em						{font-style: normal;	font-weight: bold; font-family: JSL Ancient;}
+em						{font-style: normal;	font-weight: bold; font-family: Crimson Text;}
 
 a:link						{color: #ae83cb;	font-weight: bold;}
 
-.motd					{color: #638500;	font-family: JSL Ancient;}
+.motd					{color: #638500;	font-family: Crimson Text;}
 .motd h1, .motd h2, .motd h3, .motd h4, .motd h5, .motd h6
 	{color: #638500;	text-decoration: underline;}
 .motd a, .motd a:link, .motd a:visited, .motd a:active, .motd a:hover
 	{color: #638500;}
-h1.alert, h2.alert	{color: #c9c1ba;font-family: JSL Ancient, TrueType;}
+h1.alert, h2.alert	{color: #c9c1ba;font-family: Crimson Text, TrueType;}
 .italics				{					font-style: italic;}
 
 .bold					{					font-weight: bold;}
 
 .prefix					{					font-weight: bold;}
 
-.ooc					{color: #c5c5c5;	font-weight: bold; font-family: JSL Ancient;}
-.adminobserverooc		{color: #BA1616;	font-weight: bold; font-family: JSL Ancient;}
+.ooc					{color: #c5c5c5;	font-weight: bold; font-family: Crimson Text;}
+.adminobserverooc		{color: #BA1616;	font-weight: bold; font-family: Crimson Text;}
 .adminooc				{color: #BA1616;	font-weight: bold;}
 
 .adminsay				{color:	#FF4500;	font-weight: bold;}
@@ -36,7 +36,7 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: JSL Ancient, TrueType;}
 
 .name					{					font-weight: bold;}
 
-.say					{font-family: JSL Ancient;}
+.say					{font-family: Crimson Text;}
 .deadsay				{color: #e2c1ff}
 .binarysay				{color: #20c20e;	background-color: #000000;	display: block;}
 .binarysay a			{color: #00ff00;}
@@ -121,22 +121,22 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: JSL Ancient, TrueType;}
 .robot					{font-family: "Courier New", cursive, sans-serif;}
 
 
-.human					{font-family: "Honoka Mincho", JSL Ancient;}
-.elf					{font-family: "Dauphin", cursive, JSL Ancient;}
-.dwarf					{font-family: "MasonAlternate", JSL Ancient;}
-.sandspeak				{font-family: "Arabolical", JSL Ancient;}
-.delf					{font-family: "Dauphin", JSL Ancient;}
-.hellspeak				{font-family: "Nosfer", JSL Ancient;}
-.psycho					{font-family: "Psycho", JSL Ancient;}
-.undead					{font-family: "FriskyVampire", JSL Ancient;}
-.orc					{font-family: "Thief by The Riddler", JSL Ancient;}
-.beast					{font-family: "Thief by The Riddler", JSL Ancient;}
+.human					{font-family: "Honoka Mincho", Crimson Text;}
+.elf					{font-family: "Dauphin", cursive, Crimson Text;}
+.dwarf					{font-family: "MasonAlternate", Crimson Text;}
+.sandspeak				{font-family: "Arabolical", Crimson Text;}
+.delf					{font-family: "Dauphin", Crimson Text;}
+.hellspeak				{font-family: "Nosfer", Crimson Text;}
+.psycho					{font-family: "Psycho", Crimson Text;}
+.undead					{font-family: "FriskyVampire", Crimson Text;}
+.orc					{font-family: "Thief by The Riddler", Crimson Text;}
+.beast					{font-family: "Thief by The Riddler", Crimson Text;}
 
 .torture				{color: #42ff20}
 
 .command_headset		{font-weight: bold;	font-size: 3;}
 .small					{font-size: 50%;}
-.smallyell				{font-size: 70%;font-family: JSL Ancient;}
+.smallyell				{font-size: 70%;font-family: Crimson Text;}
 .big					{font-size: 120%;}
 .reallybig				{font-size: 180%;}
 .extremelybig			{font-size: 220%;}

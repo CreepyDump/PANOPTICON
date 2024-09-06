@@ -560,10 +560,10 @@ GLOBAL_LIST_EMPTY(asset_datums)
 /datum/asset/simple/roguefonts
 	verify = TRUE
 	assets = list(
-		"JSL Ancient.ttf" = 'interface/fonts/jslancient.ttf',
+		"Crimson Text.ttf" = 'interface/fonts/Crimson Text.ttf',
 		"chiseld.ttf" = 'interface/fonts/chiseld.ttf',
-		"Vinland.ttf" = 'interface/fonts/vinland.ttf',
-		"handwrite.ttf" = 'interface/fonts/handwrite.ttf',
+		"Herold.ttf" = 'interface/fonts/Herold.ttf',
+		"1725 Unicode Poster.otf" = 'interface/fonts/1725 Unicode Poster.otf',
 		"book1.ttf" = 'interface/fonts/book1.ttf',
 		"book2.ttf" = 'interface/fonts/book1.ttf',
 		"book3.ttf" = 'interface/fonts/book1.ttf',

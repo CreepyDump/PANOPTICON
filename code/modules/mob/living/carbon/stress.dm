@@ -515,6 +515,26 @@
 	stressadd = -5
 	desc = "<span class='green'>Pain makes it better.</span>"
 
+/datum/stressevent/shittt
+	timer = 5 MINUTES
+	stressadd = 8
+	desc = "<span class='green'>I feel shit down to my throat...</span>"
+
+/datum/stressevent/pissss
+	timer = 5 MINUTES
+	stressadd = 8
+	desc = "<span class='green'>I feel piss down to my throat...</span>"
+
+/datum/stressevent/shitinpants
+	timer = 5 MINUTES
+	stressadd = 4
+	desc = "<span class='green'>My pants are in the shit now!</span>"
+
+/datum/stressevent/pissinpants
+	timer = 5 MINUTES
+	stressadd = 4
+	desc = "<span class='green'>My pants are wet now!</span>"
+
 /datum/stressevent/joke
 	timer = 30 MINUTES
 	stressadd = -5

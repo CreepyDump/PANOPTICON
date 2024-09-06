@@ -171,7 +171,7 @@ window "statwindow"
 		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
-		font-family = "JSL Ancient"
+		font-family = "1725 Unicode Poster"
 		font-size = 12
 		text-color = #d6dbd5
 		background-color = #000000
@@ -180,7 +180,7 @@ window "statwindow"
 		highlight-color = #f9bb00
 		tab-text-color = #b29426
 		tab-background-color = #000000
-		tab-font-family = "Vinland"
+		tab-font-family = "Herold"
 		tab-font-size = 20
 		prefix-color = #f9bb00
 		suffix-color = #d6dbd5

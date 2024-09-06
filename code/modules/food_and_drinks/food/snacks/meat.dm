@@ -4,6 +4,8 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab
 	name = "meat"
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "meatcutlet"
 	desc = ""
 	dried_type = /obj/item/reagent_containers/food/snacks/sosjerky/healthy
 	bitesize = 3
@@ -312,7 +314,8 @@
 /obj/item/reagent_containers/food/snacks/meat/steak
 	name = "steak"
 	desc = ""
-	icon_state = "meatsteak"
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "friedsteak"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	trash = /obj/item/trash/plate

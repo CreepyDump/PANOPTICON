@@ -20,3 +20,11 @@
 	bloody_icon_state = "shoeblood"
 	equip_delay_self = 30
 	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/shoes/panopticon/zekboots
+	name = "Wool boots"
+	icon_state = "wool_shit"
+	item_state = "wool_shit"
+	sleevetype = "leg"
+	bloody_icon_state = "shoeblood"
+	resistance_flags = FREEZE_PROOF

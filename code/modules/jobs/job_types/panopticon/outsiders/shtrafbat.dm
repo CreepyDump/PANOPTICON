@@ -44,8 +44,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3,4,5), TRUE)
 	if(prob(50))
 		backpack_contents = list(/obj/item/reagent_containers/glass/bottle/heroinium = 1)
-		neck = null
-		mask = /obj/item/clothing/mask/panopticon/govnar
+		neck = /obj/item/clothing/neck/panopticon/govnar
 	if(prob(60))
 		r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
 

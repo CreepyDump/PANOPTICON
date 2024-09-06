@@ -97,6 +97,7 @@
 		I.play_tool_sound(src)
 		deconstruct()
 	else if(cistern)
+		var/obj/item/kitchen/fork/Fork = I
 		if(user.used_intent.type != INTENT_HARM)
 			if(I.w_class > WEIGHT_CLASS_NORMAL)
 				to_chat(user, "<span class='warning'>[I] does not fit!</span>")
@@ -109,7 +110,11 @@
 				return
 			w_items += I.w_class
 			to_chat(user, "<span class='notice'>I carefully place [I] into the toilet.</span>")
-
+		else if(Fork)
+			user.visible_message("<span class='notice'>Begins to cleaning up the [src]</span>", "<span class='notice'>I start cleaning up the [src]...</span>")
+			playsound(get_turf(src), 'sound/misc/vilka.ogg', 65, FALSE, FALSE)
+			if(do_after(user, 4 SECONDS, target = src))
+				user.visible_message("<span class='notice'>Cleaned the [src]</span>", "<span class='green'>[src] is now clean!</span>")
 	else if(istype(I, /obj/item/reagent_containers))
 		if (!open)
 			return

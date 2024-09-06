@@ -164,19 +164,24 @@
 
 		//Poo in the loo.
 		var/obj/structure/toilet/T = locate() in src.loc
+		var/obj/structure/ladder/toiletladder/TL = locate() in src.loc
 		var/mob/living/M = locate() in src.loc
 		if(T && T.open)
-			M.visible_message("<span class='shiten'>[src] defecates into \the [T].</span>", "<span class='notice'>I shit into \the [T].</span>")
+			M.visible_message("<span class='shiten'>[src] defecates into \the [T ? T : TL].</span>", "<span class='notice'>I shit into \the [T ? T : TL].</span>")
 
 		else if(wear_pants)
 			M.visible_message("<span class='shiten'>[src] shit \his pants!</span>", "<span class='shiten'>I shat my pants...</shiten>")
 			reagents.add_reagent(/datum/reagent/poo, 10)
+			var/mob/living/carbon/L = src
+			L.add_stress(/datum/stressevent/shitinpants)
 
 		//Poo on the face.
 		else if(M != src && M.lying)//Can only shit on them if they're lying down.
 			M.visible_message("<span class='shiten'><b>[src]</b> shits right on <b>[M]</b>'s face!</span>")
 			M.reagents.add_reagent(/datum/reagent/poo, 10)
-
+			var/mob/living/carbon/L = M
+			L.vomit()
+			L.add_stress(/datum/stressevent/shittt)
 		//Poo on the floor.
 		else
 			M.visible_message("<span class='shiten'>[src] craps.</span>")
@@ -195,6 +200,7 @@
 
 	var/obj/structure/urinal/U = locate() in src.loc
 	var/obj/structure/toilet/T = locate() in src.loc
+	var/obj/structure/ladder/toiletladder/TL = locate() in src.loc
 	var/obj/structure/sink/S = locate() in src.loc
 	var/obj/item/reagent_containers/RC = locate() in src.loc
 	var/mob/living/M = locate() in src.loc
@@ -203,8 +209,8 @@
 			M.visible_message("<span class='pissen'>[src] urinates into [U ? U : S].</span>")
 			reagents.remove_any(rand(1,8))
 
-		else if(T && T.open)//In the toilet.
-			M.visible_message("<B>[src]</B> urinates into [T].")
+		else if(T && T.open || TL)//In the toilet.
+			M.visible_message("<B>[src]</B> urinates into [T ? T : TL].")
 			reagents.remove_any(rand(1,8))
 
 		else if(RC && (istype(RC,/obj/item/reagent_containers/food/drinks || istype(RC,/obj/item/reagent_containers/glass))))
@@ -215,13 +221,17 @@
 				RC.reagents.add_reagent(/datum/reagent/urine, amount)
 				if(reagents)
 					reagents.trans_to(RC, amount)
+				var/mob/living/carbon/L = M
+				L.vomit()
+				L.add_stress(/datum/stressevent/pissss)
 
 		else if(wear_pants)//In your pants.
 			M.visible_message("<span class='pissen'>[src] pisses \his pants.</span>")
 			var/obj/effect/decal/cleanable/urine/D = new/obj/effect/decal/cleanable/urine(src.loc)
 			if(reagents)
 				reagents.trans_to(D, rand(1,8))
-
+			var/mob/living/carbon/L = src
+			L.add_stress(/datum/stressevent/pissinpants)
 
 		else//On the floor.
 			var/turf/TT = src.loc

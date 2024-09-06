@@ -48,7 +48,7 @@ GLOBAL_LIST_EMPTY(zekspawns)
 			head = /obj/item/clothing/head/panopticon/meshok
 
 /datum/outfit/job/panopticon/zek
-	shoes = /obj/item/clothing/shoes/panopticon/jackboots
+	shoes = /obj/item/clothing/shoes/panopticon/zekboots
 	shirt = /obj/item/clothing/suit/panopticon/shirt/gulag/necronox
 	pants = /obj/item/clothing/under/panopticon/gulag/necronox
 	back = null

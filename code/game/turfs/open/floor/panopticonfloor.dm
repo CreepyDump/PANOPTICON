@@ -32,6 +32,9 @@
 /turf/open/floor/panopticon/darkwood/parket
 	icon_state = "parket"
 
+/turf/open/floor/panopticon/darkwood/parketpizda
+	icon_state = "oldass"
+
 /turf/open/floor/panopticon/darkwood/birchwood
 	icon_state = "birch"
 
@@ -69,7 +72,6 @@
 	icon_state = "ebanyto"
 
 /turf/open/floor/panopticon/darkgrass
-	name = "dark grass"
 	icon_state = "darkgrass"
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_GRASS

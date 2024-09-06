@@ -7,16 +7,16 @@
 	item_state = "flashbang"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	throw_speed = 1
-	throw_range = 7
+	throw_speed = 4
+	throw_range = 8
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = FLAMMABLE
 	max_integrity = 40
 	var/active = 0
 	var/det_time = 50
 	var/display_timer = 1
 	var/clumsy_check = GRENADE_CLUMSY_FUMBLE
+	var/explosion_size = 2
 
 /obj/item/grenade/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -76,6 +76,14 @@
 	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/proc/prime()
+	set waitfor = 0
+
+	var/turf/T = get_turf(src)
+	if(!T) return
+
+	else
+		explosion(T,1,2,3,5, TRUE, FALSE, 0, FALSE, FALSE, 'sound/misc/FragGrenade.ogg')
+		qdel(src)
 
 /obj/item/grenade/proc/update_mob()
 	if(ismob(loc))
