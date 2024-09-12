@@ -1,13 +1,15 @@
 /datum/disease/anthrax
 	name = "Necronox"
 	max_stages = 5
+	stage_prob = 3
 	spread_text = "Airborne"
 	cure_text = "Regret"
 	cures = list(/datum/reagent/consumable/ethanol)
 	cure_chance = 45
 	agent = "Siberian Plaque"
+	disease_flags = CURABLE
 	viable_mobtypes = list(/mob/living/carbon/human)
-	permeability_mod = 0.75
+	permeability_mod = 1
 	desc = ""
 	severity = DISEASE_SEVERITY_DANGEROUS
 	var/sound = FALSE
@@ -81,14 +83,3 @@
 			if(prob(20))
 				to_chat(affected_mob, "<span class='danger'>[pick("You feel uncomfortably hot...", "You feel so sick!", "You feel like taking off some clothes...")]</span>")
 				affected_mob.adjust_bodytemperature(40)
-			if(prob(5))
-				H.stop_sound_channel(CHANNEL_HEARTBEAT)
-				H.playsound_local(H, 'sound/blank.ogg', 100, 0)
-				if(H.stat == CONSCIOUS)
-					H.visible_message("<span class='danger'>[H] clutches at [H.p_their()] chest as if [H.p_their()] heart is stopping!</span>", \
-						"<span class='danger'>I feel a terrible pain in your chest, as if your heart has stopped!</span>")
-				H.adjustStaminaLoss(60)
-				H.set_heartattack(TRUE)
-				H.reagents.add_reagent(/datum/reagent/medicine/C2/penthrite, 3) // To give the victim a final chance to shock their heart before losing consciousness
-
-	return

@@ -214,6 +214,8 @@
 	if(on)
 		playsound(src.loc, 'sound/items/firesnuff.ogg', 100)
 	..()
+	QDEL_NULL(particles)
+	STOP_PROCESSING(SSobj, src)
 	update_icon()
 
 /obj/machinery/light/rogue/update_icon()
@@ -241,6 +243,8 @@
 		update_icon()
 		if(soundloop)
 			soundloop.start()
+		particles = new/particles/bonfire()
+		START_PROCESSING(SSobj, src)
 		addtimer(CALLBACK(src, .proc/trigger_weather), rand(5,20))
 		return TRUE
 
@@ -783,3 +787,20 @@
 	if(locate(/obj/machinery/light/rogue/firebowl) in get_turf(mover))
 		return 1
 	return !density
+
+/particles/bonfire
+		icon = 'icons/panopticon/misc/dimok.dmi'
+		icon_state = "bonfire"
+		width = 928
+		height = 928
+		count = 1000
+		spawning = 4
+		lifespan = 0.7 SECONDS
+		fade = 1 SECONDS
+		grow = -0.01
+		velocity = list(0, -200)
+		position = generator("box", list(-928,-928,0), list(928,928,0))
+		drift = generator("vector", list(0, -0.2), list(0, 0.2))
+		gravity = list(0, 0.95)
+		rotation = 30
+		spin = generator("num", -20, 20)

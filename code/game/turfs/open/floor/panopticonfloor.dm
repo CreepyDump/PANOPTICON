@@ -219,11 +219,18 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/dirtland.ogg'
+	initial_gas_mix = FROZEN_ATMOS
+	slowdown = 2
 
 /turf/open/floor/panopticon/gulag/snow/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
+/turf/open/floor/panopticon/gulag/snow/Crossed(mob/living/carbon/human/A)
+	if(istype(A.wear_mask, /obj/item/clothing/shoes))
+		slowdown = 0
+	else
+		return
 
 /obj/structure/panopticon/townborders
 	name = ""

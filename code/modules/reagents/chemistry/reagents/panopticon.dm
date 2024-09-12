@@ -80,7 +80,7 @@
 	color = "#7E399090"
 	taste_description = "purple"
 	overdose_threshold = 35
-	metabolization_rate = 0.5
+	metabolization_rate = 1
 
 /datum/reagent/psychicksamogon/on_mob_life(mob/living/carbon/lean_monster, delta_time, times_fired)
 	if(lean_monster.has_flaw(/datum/charflaw/addiction/junkie))
@@ -89,6 +89,15 @@
 	if(prob(5))
 		if(lean_monster.can_heartattack())
 			lean_monster.set_heartattack(TRUE)
+	var/static/list/funnies = list(
+			'sound/misc/comic1.ogg',
+			'sound/misc/comic2.ogg',
+			'sound/misc/comic3.ogg',
+			'sound/misc/comic4.ogg',
+		)
+	if(prob(25))
+		lean_monster.playsound_local(lean_monster, pick(funnies), 100)
+
 
 /datum/reagent/psychicksamogon/on_mob_metabolize(mob/living/carbon/lean_monster, delta_time)
 	ADD_TRAIT(lean_monster, TRAIT_HHHHH, "based")
@@ -111,6 +120,7 @@
 		if(lean_monster.can_heartattack())
 			lean_monster.set_heartattack(TRUE)
 	lean_monster.update_body_parts_head_only()
+	SSdroning.play_area_sound(get_area(lean_monster), lean_monster.client)
 
 /datum/reagent/shmacksamogonka
 	name = "Fungus jus"

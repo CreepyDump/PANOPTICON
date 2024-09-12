@@ -696,3 +696,8 @@
 		R.add_fingerprint(user)
 		qdel(src)
 	building = FALSE
+
+/obj/structure/table/panopticum
+	name = "table"
+	desc = ""
+	icon = 'icons/obj/smooth_structures/table2.dmi'

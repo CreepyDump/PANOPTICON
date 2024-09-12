@@ -274,13 +274,22 @@ GLOBAL_VAR(restart_counter)
 //	else
 //	to_chat(world, "<span class='boldannounce'><b><u><a href='byond://winset?command=.reconnect'>CLICK TO RECONNECT</a></u></b></span>")
 
-	var/round_end_sound = pick('sound/misc/end1.ogg', 'sound/misc/end2.ogg')
+	var/round_end_sound = pick(1,2)
 	for(var/client/thing in GLOB.clients)
 		if(!thing)
 			continue
-		thing << sound(round_end_sound)
+		switch(round_end_sound)
+			if(1)
+				thing << sound('sound/misc/end1.ogg')
+			if(2)
+				thing << sound('sound/misc/end2.ogg')
 
 	to_chat(world, "Please be patient as the server restarts. You will be automatically reconnected in about 60 seconds.")
+	switch(round_end_sound)
+		if(1)
+			sleep(51 SECONDS)
+		if(2)
+			sleep(15 SECONDS)
 	Master.Shutdown()	//run SS shutdowns? rtchange
 
 	TgsReboot()
