@@ -972,7 +972,7 @@
 	..()
 
 /obj/structure/fluff/psycross
-	name = "pantheon cross"
+	name = "Cross"
 	icon_state = "psycross"
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	break_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'

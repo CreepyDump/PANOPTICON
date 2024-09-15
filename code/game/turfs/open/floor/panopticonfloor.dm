@@ -241,6 +241,10 @@
 	name = "metal grating"
 	icon = 'icons/turf/panopticonfloor.dmi'
 	icon_state = "metalreshet"
+	max_integrity = 100
+	anchored = TRUE
+	density = TRUE
+	attacked_sound = 'sound/foley/slap (1).ogg'
 
 /turf/open/floor/panopticon/gulag/snow/Crossed(mob/living/carbon/human/A)
 	if(istype(A.wear_mask, /obj/item/clothing/shoes))

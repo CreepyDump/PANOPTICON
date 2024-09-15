@@ -161,7 +161,18 @@
 /area/panopticon/indoors/town
 	name = "Town"
 	icon_state = "yellow"
-	outdoors = TRUE
+	ambientrain = RAIN_OUT
+	spookysounds = SPOOKY_RATS
+	spookynight = null
+	droning_sound = 'sound/music/area/town_indoors.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/panopticon/outdoors/town
+	soundenv = 5
+
+/area/panopticon/indoors/town
+	name = "Town"
+	icon_state = "yellow"
 	ambientrain = RAIN_OUT
 	spookysounds = SPOOKY_RATS
 	spookynight = null
@@ -174,7 +185,6 @@
 /area/panopticon/indoors/town/shop
 	name = "Shop"
 	icon_state = "dk_yellow"
-	outdoors = TRUE
 	ambientrain = RAIN_OUT
 	spookysounds = SPOOKY_RATS
 	spookynight = null
