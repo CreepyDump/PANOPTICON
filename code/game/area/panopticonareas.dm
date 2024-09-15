@@ -170,13 +170,13 @@
 	converted_type = /area/panopticon/outdoors/town
 	soundenv = 5
 
-/area/panopticon/indoors/town
+/area/panopticon/indoors/town/church
 	name = "Town"
-	icon_state = "yellow"
+	icon_state = "purple"
 	ambientrain = RAIN_OUT
 	spookysounds = SPOOKY_RATS
 	spookynight = null
-	droning_sound = 'sound/music/area/town_indoors.ogg'
+	droning_sound = 'sound/music/area/church.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/panopticon/outdoors/town
