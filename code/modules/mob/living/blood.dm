@@ -160,11 +160,11 @@
 			add_drip_floor(src.loc, amt)
 		var/vol2use
 		if(amt > 1)
-			vol2use = 'sound/misc/bleed (1).ogg'
+			vol2use = pick('sound/misc/bleed (1).ogg', 'sound/misc/bleed (4).ogg')
 		if(amt > 2)
-			vol2use = 'sound/misc/bleed (2).ogg'
+			vol2use = pick('sound/misc/bleed (2).ogg', 'sound/misc/bleed (5).ogg')
 		if(amt > 3)
-			vol2use = 'sound/misc/bleed (3).ogg'
+			vol2use = pick('sound/misc/bleed (3).ogg', 'sound/misc/bleed (6).ogg')
 		if(lying || stat)
 			vol2use = null
 		if(vol2use)

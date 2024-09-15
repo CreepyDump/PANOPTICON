@@ -107,7 +107,7 @@
 
 /turf/closed/wall/mineral/panopticon/woods/alt
 	name = "Wooden wall"
-	icon = 'icons/turf/walls/woodwall.dmi'
+	icon = 'icons/turf/walls/woodwallalt.dmi'
 	icon_state = "wood"
 	smooth = SMOOTH_MORE
 	blade_dulling = DULLING_BASH

@@ -89,7 +89,16 @@
 	to_chat(user, msg)
 
 ///Called after moodevent/s have been added/removed.
+/mob/proc/flash_sadness()
+	if(prob(2))
+		src.flash_fullscreen("blackflash2")
+		animate(src.client, pixel_y = 1, time = 1, loop = -1, flags = ANIMATION_RELATIVE)
+		animate(pixel_y = -1, time = 1, flags = ANIMATION_RELATIVE)
+		var/spoopysound = pick('sound/panopticon/badmood1.ogg','sound/panopticon/badmood2.ogg','sound/panopticon/badmood3.ogg')
+		src.playsound_local(src, spoopysound, 100)
+
 /datum/component/mood/proc/update_mood()
+	var/mob/living/owner = parent
 	mood = 0
 	shown_mood = 0
 	for(var/i in mood_events)
@@ -102,10 +111,13 @@
 
 	switch(mood)
 		if(-INFINITY to MOOD_LEVEL_SAD4)
+			owner.flash_sadness()
 			mood_level = 1
 		if(MOOD_LEVEL_SAD4 to MOOD_LEVEL_SAD3)
+			owner.flash_sadness()
 			mood_level = 2
 		if(MOOD_LEVEL_SAD3 to MOOD_LEVEL_SAD2)
+			owner.flash_sadness()
 			mood_level = 3
 		if(MOOD_LEVEL_SAD2 to MOOD_LEVEL_SAD1)
 			mood_level = 4
@@ -120,7 +132,6 @@
 		if(MOOD_LEVEL_HAPPY4 to INFINITY)
 			mood_level = 9
 	update_mood_icon()
-
 
 /datum/component/mood/proc/update_mood_icon()
 	var/mob/living/owner = parent

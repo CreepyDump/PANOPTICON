@@ -495,8 +495,8 @@
 /obj/structure/mineral_door/paperframe
 	name = "paper frame door"
 	icon_state = "paperframe"
-	openSound = 'sound/foley/doors/creak.ogg'
-	closeSound = 'sound/foley/doors/shut.ogg'
+	openSound = 'sound/foley/doors/shittyopen.ogg'
+	closeSound = 'sound/foley/doors/shittyclose.ogg'
 	sheetType = /obj/item/stack/sheet/paperframes
 	sheetAmount = 3
 	resistance_flags = FLAMMABLE

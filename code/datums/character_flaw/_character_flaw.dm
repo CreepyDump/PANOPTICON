@@ -2,11 +2,14 @@
 GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alcoholic,
 	"Smoker"=/datum/charflaw/addiction/smoker,
 	"Junkie"=/datum/charflaw/addiction/junkie,
+	"Bad Eyesight"=/datum/charflaw/badsight,
+	"Leprosy"=/datum/charflaw/leper,
 	"Cyclops (R)"=/datum/charflaw/noeyer,
 	"Cyclops (L)"=/datum/charflaw/noeyel,
 	"No Arm (R)"=/datum/charflaw/limbloss/arm_r,
 	"No Arm (L)"=/datum/charflaw/limbloss/arm_l,
 	"Paranoid"=/datum/charflaw/paranoid,
+	"Faggot"=/datum/charflaw/faggot,
 	"Random Sin"=/datum/charflaw/randflaw))
 
 /datum/charflaw
@@ -91,13 +94,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 
 /datum/charflaw/badsight
 	name = "Bad Eyesight"
-	desc = "I need spectacles to see normally from my years spent reading books."
-
-/datum/charflaw/badsight/on_mob_creation(mob/user)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+	desc = "I need glasses to see normally."
 
 /datum/charflaw/badsight/flaw_on_life(mob/user)
 	if(!ishuman(user))
@@ -109,7 +106,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 				var/obj/item/I = H.wear_mask
 				if(!I.obj_broken)
 					return
-	H.blur_eyes(2)
+	H.blur_eyes(6)
 	H.apply_status_effect(/datum/status_effect/debuff/badvision)
 
 /datum/status_effect/debuff/badvision
@@ -128,13 +125,15 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	else
 		new /obj/item/clothing/mask/rogue/spectacles(get_turf(H))
 
-/datum/charflaw/hemophiliac
-	name = "Hemophilia"
-	desc = "My blood has a very low clotting ability, so I should avoid bleeding!"
+/datum/charflaw/leper
+	name = "Leprosy"
+	desc = "I am a leper, i always feel how my body becomes weeker!"
 
-/datum/charflaw/hemophiliac/on_mob_creation(mob/user)
+/datum/charflaw/leper/on_mob_creation(mob/user)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_HEMOPHILIAC, TRAIT_GENERIC)
+	var/mob/living/carbon/human/H = user
+	if(ishuman(user))
+		H.leprosy = 1
 
 /datum/charflaw/paranoid
 	name = "Paranoid"
@@ -196,3 +195,31 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	if(!H.wear_mask)
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/eyepatch/left(H), SLOT_WEAR_MASK)
 	H.update_fov_angles()
+
+
+/datum/charflaw/faggot
+	name = "Faggotry"
+	desc = "I believe that females must vanish so only the stronger sex remains."
+	var/last_check = 0
+
+/datum/charflaw/faggot/flaw_on_life(mob/user)
+	if(world.time < last_check + 10 SECONDS)
+		return
+	if(!user)
+		return
+	last_check = world.time
+	var/cnt = 0
+	for(var/mob/living/carbon/human/L in hearers(7, user))
+		if(L == src)
+			continue
+		if(L.stat)
+			continue
+		if(L.dna?.species)
+			if(ishuman(user))
+				if(L.gender == FEMALE)
+					cnt++
+		if(cnt > 2)
+			break
+	if(cnt > 2)
+		user.add_stress(/datum/stressevent/faggotseewoman)
+	cnt = 0

@@ -68,6 +68,14 @@
 	vary = TRUE
 	ignore_wallz = FALSE
 
+/datum/looping_sound/reactor
+	mid_sounds = list('sound/ambience/reactor.ogg')
+	mid_length = 60
+	volume = 50
+	extra_range = -1
+	vary = TRUE
+	ignore_wallz = FALSE
+
 /datum/looping_sound/fireloop
 	mid_sounds = list('sound/misc/fire_place.ogg')
 	mid_length = 35

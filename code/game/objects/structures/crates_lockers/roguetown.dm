@@ -68,7 +68,7 @@
 	drag_slowdown = 4
 	horizontal = FALSE
 	allow_dense = FALSE
-	open_sound = 'sound/foley/doors/creak.ogg'
+	open_sound = 'sound/foley/doors/shittyopen.ogg'
 	close_sound = 'sound/foley/latch.ogg'
 	max_integrity = 200
 	blade_dulling = DULLING_BASHCHOP

@@ -214,8 +214,6 @@
 	if(on)
 		playsound(src.loc, 'sound/items/firesnuff.ogg', 100)
 	..()
-	QDEL_NULL(particles)
-	STOP_PROCESSING(SSobj, src)
 	update_icon()
 
 /obj/machinery/light/rogue/update_icon()
@@ -243,8 +241,6 @@
 		update_icon()
 		if(soundloop)
 			soundloop.start()
-		particles = new/particles/bonfire()
-		START_PROCESSING(SSobj, src)
 		addtimer(CALLBACK(src, .proc/trigger_weather), rand(5,20))
 		return TRUE
 
@@ -446,6 +442,8 @@
 	icon_state = "wallcandle1"
 	base_state = "wallcandle"
 	crossfire = FALSE
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 	cookonme = FALSE
 	pixel_y = 32
 	soundloop = null
@@ -734,6 +732,20 @@
 	bulb_colour = "#da5e21"
 	cookonme = TRUE
 
+/obj/machinery/light/rogue/campfire/burn_out()
+	. = ..()
+	QDEL_NULL(particles)
+	STOP_PROCESSING(SSobj, src)
+
+/obj/machinery/light/rogue/campfire/Initialize()
+	. = ..()
+	particles = new/particles/bonfire()
+
+/obj/machinery/light/rogue/campfire/fire_act(added, maxstacks)
+	. = ..()
+	particles = new/particles/bonfire()
+	START_PROCESSING(SSobj, src)
+
 /obj/machinery/light/rogue/campfire/process()
 	..()
 	if(isopenturf(loc))
@@ -789,18 +801,19 @@
 	return !density
 
 /particles/bonfire
-		icon = 'icons/panopticon/misc/dimok.dmi'
-		icon_state = "bonfire"
-		width = 928
-		height = 928
-		count = 1000
-		spawning = 4
-		lifespan = 0.7 SECONDS
-		fade = 1 SECONDS
-		grow = -0.01
-		velocity = list(0, -200)
-		position = generator("box", list(-928,-928,0), list(928,928,0))
-		drift = generator("vector", list(0, -0.2), list(0, 0.2))
-		gravity = list(0, 0.95)
-		rotation = 30
-		spin = generator("num", -20, 20)
+	icon = 'icons/panopticon/misc/dimok.dmi'
+	icon_state = "bonfire"
+	width = 100
+	height = 100
+	count = 1000
+	spawning = 4
+	lifespan = 0.7 SECONDS
+	fade = 1 SECONDS
+	grow = -0.01
+	velocity = list(0, 0)
+	position = generator("circle", 0, 16, NORMAL_RAND)
+	drift = generator("vector", list(0, -0.2), list(0, 0.2))
+	gravity = list(0, 0.95)
+	scale = generator("vector", list(0.3, 0.3), list(1,1), NORMAL_RAND)
+	rotation = 30
+	spin = generator("num", -20, 20)

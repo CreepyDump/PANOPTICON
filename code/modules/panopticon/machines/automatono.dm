@@ -150,15 +150,37 @@
 	break_sound = 'sound/foley/machinebreak.ogg'
 	max_integrity = 300
 	integrity_failure = 0.33
-	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
+	var/datum/looping_sound/reactor/soundloop
+	var/playing = TRUE
+	var/curvol = 70
 
+/obj/structure/panopticon/automat/heroinmachine/Initialize()
+	soundloop = new(list(src), FALSE)
+	soundloop.start()
+	. = ..()
+
+/obj/structure/panopticon/automat/heroinmachine/Destroy()
+	if(soundloop)
+		soundloop.stop()
+	..()
+
+/obj/structure/panopticon/automat/heroinmachine/obj_break(damage_flag)
+	if(soundloop)
+		soundloop.stop()
+	..()
 
 /obj/structure/panopticon/automat/heroinmachine/attackby(obj/item/I, mob/living/carbon/user, params)
 	if(istype(I, /obj/item/panopticonmoney/ten))
 		var/obj/item/panopticonmoney/ten/M = I
 		user.visible_message("<span class='warning'>[user] stuffs some [M] inside the Automato</span>", "<span class='notice'>I stick [M] inside the Automato.</span>")
-		playsound(get_turf(src), 'sound/misc/elec (2).ogg', 100 , FALSE, FALSE)
+		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
 		new /obj/item/reagent_containers/glass/bottle/heroinium(drop_location())
+		qdel(M)
+	if(istype(I, /obj/item/panopticonmoney/one))
+		var/obj/item/panopticonmoney/one/M = I
+		user.visible_message("<span class='warning'>[user] stuffs some [M] inside the Automato</span>", "<span class='notice'>I stick [M] inside the Automato.</span>")
+		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
+		new /obj/item/reagent_containers/syringe(drop_location())
 		qdel(M)
 
 /datum/looping_sound/tvloop
@@ -185,7 +207,6 @@
 	max_integrity = 30
 	anchored = TRUE
 	var/datum/looping_sound/tvloop/soundloop
-	var/curfile
 	var/playing = FALSE
 	var/curvol = 70
 

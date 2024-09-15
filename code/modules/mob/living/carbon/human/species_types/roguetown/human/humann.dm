@@ -14,7 +14,7 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
-	possible_ages = list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
@@ -46,10 +46,10 @@
 /datum/species/human/northern/get_skin_list()
 	return list(
 	"Praslavian" = "fff0e9",
-	"Kelf" = "fcccb3",
-	"Indos" = "d9a284",
-	"Kandyilph" = "B5985E",
-	"Kipoh" = "9c6f52",
+	"Irfogater" = "fcccb3",
+	"Kiphian" = "d9a284",
+	"Jidatovian" = "B5985E",
+	"Wo'Joi" = "9c6f52",
 	"Blackamoor" = "4e3729"
 	)
 

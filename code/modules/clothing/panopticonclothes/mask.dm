@@ -80,3 +80,17 @@
 	icon_state = "pig"
 	item_state = "pig"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
+
+/obj/item/clothing/mask/carnaval
+	name = "Gourmet-Club official mask"
+	desc = "Made with the expensive fabric and smells like dead children."
+	icon = 'icons/panopticon/obj/clothes/masks.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/mask.dmi'
+	flags_inv = HIDEEYES|HIDEFACE
+	icon_state = "gourmet_man"
+	item_state = "gourmet_man"
+	slot_flags = ITEM_SLOT_MASK
+
+/obj/item/clothing/mask/carnaval/female
+	icon_state = "gourmet_fem"
+	item_state = "gourmet_fem"

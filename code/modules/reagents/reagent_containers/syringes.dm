@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/syringe
-	name = "steel syringe"
+	name = "syringe"
 	desc = "Running soul through the veins."
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_0"

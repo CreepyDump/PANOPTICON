@@ -91,7 +91,11 @@
 			var/mob/living/carbon/human/H = user
 			if(H.marriedto == real_name)
 				. += "<span class='love'>It's my spouse.</span>"
-
+			
+		if(user.has_flaw(/datum/charflaw/faggot))
+			if(gender == FEMALE)
+				. += "<span class='userdanger'>WOMAN!</span>"
+		
 		if(real_name in GLOB.excommunicated_players)
 			. += "<span class='userdanger'>HERETIC! SHAME!</span>"
 

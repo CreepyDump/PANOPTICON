@@ -2116,7 +2116,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return 0
 
 		user.do_attack_animation(target, ATTACK_EFFECT_DISARM)
-		playsound(target, 'sound/combat/hits/kick/kick.ogg', 100, TRUE, -1)
+		playsound(target, 'sound/combat/hits/kick/crueltysquad.ogg', 100, TRUE, -1)
 
 		var/turf/target_oldturf = target.loc
 		var/shove_dir = get_dir(user.loc, target_oldturf)

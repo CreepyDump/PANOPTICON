@@ -55,7 +55,17 @@
 			else
 				head = /obj/item/clothing/head/panopticon/cannibal
 			belt = /obj/item/storage/belt/rogue/leather
-			beltl = /obj/item/panopticonweapon/knife
+			switch(pick(1,2,3,4,5))
+				if(1)
+					beltl = /obj/item/panopticonweapon/knife
+				if(2)
+					r_hand = /obj/item/panopticonweapon/boner/nailplank
+				if(3)	
+					l_hand = /obj/item/panopticonweapon/rebar
+				if(4)
+					l_hand = /obj/item/panopticonweapon/bonespear
+				if(5)
+					r_hand = /obj/item/panopticonweapon/boner
 		if(prob(25))
 			cloak = /obj/item/clothing/cloak/panopticon/bomjaracoat
 			head = /obj/item/clothing/head/panopticon/bomjara
@@ -63,7 +73,6 @@
 			shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
 			beltl = null
 			beltr = null
-			l_hand = /obj/item/panopticonweapon/boner/nailplank
 		if(H.gender == MALE)
 			if(prob(5))
 				cloak = /obj/item/clothing/armor/panopticon/cloak

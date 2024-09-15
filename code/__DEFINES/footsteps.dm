@@ -94,7 +94,8 @@ GLOBAL_LIST_INIT(footstep, list(
 	FOOTSTEP_SNOW = list(list(
 			'sound/foley/footsteps/snow1.ogg',
 		'sound/foley/footsteps/snow2.ogg',
-		'sound/foley/footsteps/snow3.ogg'), 100, 0),
+		'sound/foley/footsteps/snow3.ogg',
+		'sound/foley/footsteps/snow4.ogg'), 100, 0),
 ))
 //bare footsteps lists
 GLOBAL_LIST_INIT(barefootstep, list(

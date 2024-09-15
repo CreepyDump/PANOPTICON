@@ -69,9 +69,6 @@
 		else
 			postfix = "soon"
 		to_chat(src, "The game will start [postfix].")
-		if(client)
-			var/list/thinz = list("takes a seat.", "settles in.", "joins the session", "joins the table.", "becomes a player.")
-			SEND_TEXT(world, "<span class='notice'>[ckey] [pick(thinz)]</span>")
 /*
 	if(!client.patreonlevel())
 		verbs += /mob/dead/new_player/proc/register_patreon

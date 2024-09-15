@@ -15,7 +15,7 @@
 
 	//Rogue Slots /////////////////////////////////
 
-	grain = new /obj/screen/grain
+	grain = owner.overlay_fullscreen("noise", /obj/screen/fullscreen/noise)
 	grain.hud = src
 	static_inventory += grain
 

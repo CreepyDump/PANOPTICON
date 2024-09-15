@@ -204,11 +204,12 @@
 
 /mob/living/carbon/update_fire(var/fire_icon = "Generic_mob_burning")
 	remove_overlay(FIRE_LAYER)
+	QDEL_NULL(particles)
 	if(on_fire || islava(loc))
 		var/mutable_appearance/new_fire_overlay = mutable_appearance('icons/mob/OnFire.dmi', fire_icon, -FIRE_LAYER)
 		new_fire_overlay.appearance_flags = RESET_COLOR
 		overlays_standing[FIRE_LAYER] = new_fire_overlay
-
+		particles = new/particles/embers()
 	apply_overlay(FIRE_LAYER)
 
 /mob/living/carbon/update_warning(var/datum/intent/I)

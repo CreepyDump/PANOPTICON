@@ -84,6 +84,7 @@
 
 	..()
 	owner.overlay_fullscreen("see_through_darkness", /obj/screen/fullscreen/see_through_darkness)
+	owner.overlay_fullscreen("noise", /obj/screen/fullscreen/noise)
 /*
 	var/widescreen_layout = FALSE
 	if(owner.client?.prefs?.widescreenpref)

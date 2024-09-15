@@ -326,7 +326,7 @@
 /obj/structure/spawnerofmutantz/Initialize()
 	. = ..()
 	icon_state = null
-	addtimer(CALLBACK(src, .proc/createbegotten), 120 SECONDS)
+	addtimer(CALLBACK(src, .proc/createbegotten), pick(60, 120, 240, 180, 500) SECONDS)
 
 /obj/structure/spawnerofmutantz/update_icon()
 	. = ..()
@@ -359,7 +359,7 @@
 		return
 	if(spawning)
 		return
-	if(prob(60))
+	if(prob(45))
 		spawning = TRUE
 		update_icon()
 		addtimer(CALLBACK(src, .proc/createbegottenafter), 5 SECONDS)

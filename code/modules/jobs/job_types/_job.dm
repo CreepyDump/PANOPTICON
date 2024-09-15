@@ -106,18 +106,97 @@
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
 	return TRUE
 
+/mob/living/proc/announceshit()
+	var/text_to_show
+	if(!mind)
+		return
+	switch(pick(1,2,3))
+		if(1)
+			text_to_show = "The people who have really\nmade history are the martyrs."
+		if(2)
+			text_to_show = "I feel like my head is a great cliff.\nAnd every, every day quietly\nthe soil is shattering."
+		if(3)
+			text_to_show = "Our mankind\nwas a mistake."
+	if(!text_to_show)
+		return
+	if(text_to_show in mind.areas_entered)
+		return
+	mind.areas_entered += text_to_show
+	var/obj/screen/area_text/T = new()
+	client.screen += T
+	T.maptext = {"<span style='vertical-align:top; text-align:center;
+				color: #CE1C1C; font-size: 150%;
+				text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+				font-family:"Crimson Text";'>[text_to_show]</span>"}
+	T.maptext_width = 205
+	T.maptext_height = 209
+	T.maptext_x = 12
+	T.maptext_y = -120
+	playsound_local(src, 'sound/misc/hello.ogg', 90, FALSE)
+	animate(T, alpha = 255, time = 10, easing = EASE_IN)
+	addtimer(CALLBACK(src, PROC_REF(clear_area_text), T), 35)
+
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 /datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
 	if(ishuman(H))
-		H.playsound_local(H, 'sound/misc/hello.ogg', 90, FALSE)
+		H.announceshit()
 		var/list/in_range = range(2, H)
 		var/obj/structure/bed/a_mimir
 		if(a_mimir in range (in_range))
 			H.forceMove(get_turf(a_mimir))
 			a_mimir.buckle_mob(H)
 			H.AdjustSleeping(4 SECONDS)
-//		if(H?.ckey == "crazyduster")
+		if(H?.ckey == "crazyduster")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "akayenthefake")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "vseslav 2008")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "uhboer")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "moonMagick")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "user21466654")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "carl3134")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "i_am_not_eating_clowns")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "chaoticagent")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
+		if(H?.ckey == "globalorganizer")
+			if(H.gender == MALE)
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
+			else
+				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
 	if(mind_traits)
 		for(var/t in mind_traits)
 			ADD_TRAIT(H.mind, t, JOB_TRAIT)

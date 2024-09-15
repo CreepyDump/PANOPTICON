@@ -80,7 +80,7 @@
 	icon_state = "incut"
 	blade_class = BCLASS_CUT
 	attack_verb = list("cuts", "slashes")
-	hitsound = list('sound/combat/hits/bladed/smallslash (1).ogg', 'sound/combat/hits/bladed/smallslash (2).ogg', 'sound/combat/hits/bladed/smallslash (3).ogg')
+	hitsound = list('sound/combat/hits/bladed/smallslash (1).ogg', 'sound/combat/hits/bladed/smallslash (2).ogg', 'sound/combat/hits/bladed/smallslash (3).ogg', 'sound/combat/hits/bladed/smallslash (4).ogg', 'sound/combat/hits/bladed/smallslash (5).ogg')
 	animname = "cut"
 	chargetime = 0
 

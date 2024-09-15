@@ -255,18 +255,38 @@
 	blend_mode = BLEND_ADD
 	show_when_dead = TRUE
 
-/atom/movable/screen/fullscreen/maniac 
+/obj/screen/fullscreen/maniac
 	icon = 'icons/roguetown/maniac/fullscreen.dmi'
 	icon_state = "hall0"
 	alpha = 0
 
-/atom/movable/screen/fullscreen/maniac/New(client/C)
+/obj/screen/fullscreen/maniac/New(client/C)
 	. = ..()
 	icon_state = "hall[rand(1, 13)]"
 
-/atom/movable/screen/fullscreen/dreaming
+/obj/screen/fullscreen/dreaming
 	icon = 'icons/roguetown/maniac/fullscreen_wakeup.dmi'
 	icon_state = "dream"
 
-/atom/movable/screen/fullscreen/dreaming/waking_up
+/obj/screen/fullscreen/dreaming/waking_up
 	icon_state = "wake_up"
+
+//Noise holder
+/obj/screen/fullscreen/noise
+	icon = 'icons/effects/noise.dmi'
+	icon_state = "blank"
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	plane = FULLSCREEN_PLANE
+	layer = GRAIN_LAYER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	var/poggers = 1
+	var/loggers = "k"
+
+/obj/screen/fullscreen/noise/update_for_view(client_view)
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	poggers = rand(1,9)
+	update_icon()
+
+/obj/screen/fullscreen/noise/update_icon_state()
+	. = ..()
+	icon_state = "[poggers][loggers]"

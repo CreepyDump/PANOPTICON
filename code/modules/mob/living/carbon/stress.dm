@@ -229,7 +229,7 @@
 */
 /datum/stressevent/tv
 	timer = 1 MINUTES
-	stressadd = -1
+	stressadd = -2
 	desc = "<span class='red'>WHAT THE FUCK IS PLAYING ON TV?!?!.</span>"
 
 /datum/stressevent/miasmagas
@@ -400,6 +400,11 @@
 	timer = 15 SECONDS
 	stressadd = 2
 	desc = "<span class='red'>There are too many people who don't look like me here.</span>"
+
+/datum/stressevent/faggotseewoman
+	timer = 15 SECONDS
+	stressadd = 3
+	desc = "<span class='red'>I've seen a fucking women!</span>"
 
 /datum/stressevent/parablood
 	timer = 15 SECONDS

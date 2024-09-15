@@ -67,7 +67,7 @@
 	if(!icon_state)
 		icon_state = "clear_bottle1"
 	if(icon_state == "clear_bottle1")
-		icon_state = "clear_bottle[rand(1,4)]"
+		icon_state = "clear_bottle[rand(1,3)]"
 	update_icon()
 
 /obj/item/reagent_containers/glass/bottle/epinephrine

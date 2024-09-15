@@ -57,6 +57,7 @@
 
 /obj/structure/closet/crate/drawer/bunkercabinet
 	name = "Steel cabinet"
+	desc = ""
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	icon_state = "komod"
 	base_icon_state = "komod"

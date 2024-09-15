@@ -114,6 +114,30 @@
 			return TRUE
 	return
 
+/**
+ * Picks a random element from a list based on a weighting system:
+ * 1. Adds up the total of weights for each element
+ * 2. Gets a number between 1 and that total
+ * 3. For each element in the list, subtracts its weighting from that number
+ * 4. If that makes the number 0 or less, return that element.
+ * Will output null sometimes if you use decimals (e.g. 0.1 instead of 10) as rand() uses integers, not floats
+**/
+/proc/pick_weight(list/list_to_pick)
+	var/total = 0
+	var/item
+	for(item in list_to_pick)
+		if(!list_to_pick[item])
+			list_to_pick[item] = 1
+		total += list_to_pick[item]
+
+	total = rand(1, total)
+	for(item in list_to_pick)
+		total -= list_to_pick[item]
+		if(total <= 0)
+			return item
+
+	return null
+
 //Removes a string from a list
 /proc/remove_strings_from_list(string, list/L)
 	if(!LAZYLEN(L) || !string)

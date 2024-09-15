@@ -549,7 +549,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 
 	M.key = key
-	client.verbs -= /client/proc/descend
+	M.verbs -= /client/proc/descend
 //	M.Login()	//wat
 	return
 

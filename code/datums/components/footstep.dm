@@ -97,7 +97,6 @@
 	var/used_sound
 	var/list/used_footsteps
 
-	animate(H, pixel_y = 0.5, time = 0.2, loop = 0, flags = ANIMATION_RELATIVE)
 	if(H.shoes || feetCover) //are we wearing shoes
 		used_footsteps = GLOB.footstep[T.footstep][1]
 		used_footsteps = used_footsteps.Copy()
@@ -136,3 +135,6 @@
 				GLOB.barefootstep[T.barefootstep][2],
 				TRUE,
 				GLOB.barefootstep[T.barefootstep][3] + e_range)
+	animate(H, time = 0.6, pixel_y = 2, loop = 0, easing=BACK_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
+	sleep(0.8 SECONDS)
+	animate(H, time = 0.6, pixel_y = 0, loop = 0, easing=BACK_EASING|EASE_IN, flags = ANIMATION_PARALLEL)

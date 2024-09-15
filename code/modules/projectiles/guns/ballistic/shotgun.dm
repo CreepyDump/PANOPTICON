@@ -354,8 +354,6 @@
 //			playsound(src.loc, unjam_sound, 50, 1)
 //			playsound(src.loc, unload_sound, 50, 0)
 			while(get_ammo() > 0)
-				var/obj/item/ammo_casing/CB
-				CB = magazine.get_round()
 				chambered = null
 			update_icon()
 			M.next_move = world.time + 6

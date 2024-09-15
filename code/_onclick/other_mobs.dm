@@ -125,6 +125,7 @@
 		if(I)
 			transferItemToLoc(I, newloc = H, force = FALSE, silent = TRUE)
 			H.put_in_active_hand(I)
+			src.do_item_attack_animation(H, I=src)
 			visible_message("<span class='notice'>[src.name] gives [I] to [H.name].</span>")
 			return
 		else

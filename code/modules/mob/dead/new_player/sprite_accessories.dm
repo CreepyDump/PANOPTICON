@@ -255,6 +255,7 @@
 /datum/sprite_accessory/hair/trap
 	name = "Faggot"
 	icon_state = "hair_trap"
+	gender = MALE
 	specuse = list("human")
 
 /datum/sprite_accessory/hair/femboy

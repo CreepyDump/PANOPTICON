@@ -1108,7 +1108,7 @@
 
 /mob/living/carbon/fakefireextinguish()
 	remove_overlay(FIRE_LAYER)
-
+	QDEL_NULL(particles)
 /mob/living/carbon/proc/create_bodyparts()
 	var/l_arm_index_next = -1
 	var/r_arm_index_next = 0

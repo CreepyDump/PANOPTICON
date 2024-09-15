@@ -90,48 +90,54 @@
 			return
 		if(locate(/turf/open/water/) in get_turf(src))
 			return
-		if(prob(45))
-			new /turf/open/floor/panopticon/darkgrass(get_turf(src))
-			if (prob(50))
+		var/state = pick_weight(list("darkgrass" = 6, "bush" = 5, "tree" = 4, "log" = 1, "dirthole" = 1, "stones" = 5, "smallstone" = 2, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "mud" = 1, "water" = 2, "nothing" = 40))
+		switch(state)
+			if ("darkgrass")
 				new /obj/structure/flora/panopticon/grass(get_turf(src))
-			if (prob(25))
+			if("nothing")
+				return
+			if ("bush")
 				new /obj/structure/flora/roguegrass/bush(get_turf(src))
-			if (prob(10))
+			if ("dirthole")
 				new /obj/structure/closet/dirthole/closed(get_turf(src))
-		if(prob(40))
-			var/stonegener = pick(1,2)
-			switch(stonegener)
-				if(1)
-					new /obj/structure/panopticon/mirkstones(get_turf(src))
-				if(2)
-					new /obj/item/natural/stone(get_turf(src))
-		if(prob(5))
-			var/unluckyjuw = pick(1,2,3)
-			switch(unluckyjuw)
-				if(1)
-					new /obj/structure/panopticon/seltshmack(get_turf(src))
-				if(2)
-					new /obj/structure/panopticon/psychickgrib(get_turf(src))
-				if(3)
-					new /obj/structure/panopticon/throbber(get_turf(src))
-		if(prob(15))
-			new /obj/structure/panopticon/panopticontree(get_turf(src))
-			new /turf/open/floor/panopticon/mud(get_turf(src))
-		if (prob(20))
-			var/randomwater = pick(1,2)
-			switch(randomwater)
-				if(1)
-					new /turf/open/water/swamp/deep(get_turf(src))
-				if(2)
-					new /turf/open/water/cleanshallow(get_turf(src))
-		if (prob(30))
-			new /turf/open/floor/panopticon/mud(get_turf(src))
+			if("stones")
+				new /obj/structure/panopticon/mirkstones(get_turf(src))
+			if("smallstone")
+				new /obj/item/natural/stone(get_turf(src))
+			if("seltshmack")
+				new /obj/structure/panopticon/seltshmack(get_turf(src))
+			if("psychickshroom")
+				new /obj/structure/panopticon/psychickgrib(get_turf(src))
+			if("throbber")
+				new /obj/structure/panopticon/throbber(get_turf(src))
+			if("tree")
+				var/canspawn = TRUE
+				var/near_t = range(2, src)
+				if((locate(/turf/closed/wall) in near_t) || (locate(/obj/structure/panopticon/panopticontree) in near_t) || (locate(/obj/structure/flora/panopticontree/log) in near_t))
+					canspawn = FALSE
+				if(canspawn)
+					new /obj/structure/panopticon/panopticontree(get_turf(src))
+					new /turf/open/floor/panopticon/mud(get_turf(src))
+			if ("water")
+				var/randomwater = pick(1,2)
+				switch(randomwater)
+					if(1)
+						new /turf/open/water/swamp/deep(get_turf(src))
+					if(2)
+						new /turf/open/water/cleanshallow(get_turf(src))
+			if ("mud")
+				new /turf/open/floor/panopticon/mud(get_turf(src))
+			if ("log")
+				new /obj/structure/flora/panopticontree/log(get_turf(src))
 		if (prob(1))
-			new /obj/effect/mine/explosive/panopticon/landmine(get_turf(src))
+			var/canspawn = TRUE
+			var/near_t = range(1, src)
+			if((locate(/turf/closed/wall) in near_t) || (locate(/turf/open/water/cleanshallow) in near_t) || (locate(/turf/open/water/swamp/deep) in near_t))
+				canspawn = FALSE
+			if(canspawn)
+				new /obj/effect/mine/explosive/panopticon/landmine(get_turf(src))
 		if (prob(1))
 			new /obj/structure/panopticon/skull(get_turf(src))
-		if (prob(1))
-			new /obj/structure/flora/panopticontree/log(get_turf(src))
 
 /turf/open/floor/panopticon/mud
 	icon_state = "mud"
@@ -226,11 +232,33 @@
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
+/obj/effect/turf_decal/panopticon/snowcorner
+	name = ""
+	icon = 'icons/turf/panopticonfloor.dmi'
+	icon_state = "snow_corner"
+
+/obj/structure/panopticon/metalgrate
+	name = "metal grating"
+	icon = 'icons/turf/panopticonfloor.dmi'
+	icon_state = "metalreshet"
+
 /turf/open/floor/panopticon/gulag/snow/Crossed(mob/living/carbon/human/A)
 	if(istype(A.wear_mask, /obj/item/clothing/shoes))
 		slowdown = 0
 	else
 		return
+
+/turf/open/floor/panopticon/gulag/derevo
+	icon_state = "derevogulag"
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/woodland.ogg'
+
+/turf/open/floor/panopticon/gulag/derevo/Initialize()
+	. = ..()
+	dir = pick(GLOB.cardinals)
 
 /obj/structure/panopticon/townborders
 	name = ""

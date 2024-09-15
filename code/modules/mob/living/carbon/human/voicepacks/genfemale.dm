@@ -78,7 +78,10 @@
 			if("sigh")
 				used = list('sound/vo/female/gen/sigh (1).ogg','sound/vo/female/gen/sigh (2).ogg','sound/vo/female/gen/sigh (3).ogg')
 			if("snore")
-				used = list('sound/vo/female/gen/snore (1).ogg','sound/vo/female/gen/snore (2).ogg','sound/vo/female/gen/snore (3).ogg')
+				if(prob(15))
+					used = list('sound/vo/snoring.ogg')
+				else
+					used = list('sound/vo/female/gen/snore (1).ogg','sound/vo/female/gen/snore (2).ogg','sound/vo/female/gen/snore (3).ogg')
 			if("whimper")
 				used = list('sound/vo/female/gen/whimper (1).ogg','sound/vo/female/gen/whimper (2).ogg','sound/vo/female/gen/whimper (3).ogg')
 			if("whistle")

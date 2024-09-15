@@ -36,7 +36,7 @@
 	attack_verb = list("cuts", "slashes")
 	animname = "cut"
 	blade_class = BCLASS_CUT
-	hitsound = list('sound/combat/hits/bladed/smallslash (1).ogg', 'sound/combat/hits/bladed/smallslash (2).ogg', 'sound/combat/hits/bladed/smallslash (3).ogg')
+	hitsound = list('sound/combat/hits/bladed/smallslash (1).ogg', 'sound/combat/hits/bladed/smallslash (2).ogg', 'sound/combat/hits/bladed/smallslash (3).ogg', 'sound/combat/hits/bladed/smallslash (4).ogg', 'sound/combat/hits/bladed/smallslash (5).ogg')
 	penfactor = 0
 	chargetime = 0
 	swingdelay = 0
@@ -78,7 +78,7 @@
 	attack_verb = list("chops")
 	animname = "chop"
 	blade_class = BCLASS_CHOP
-	hitsound = list('sound/combat/hits/bladed/smallslash (1).ogg', 'sound/combat/hits/bladed/smallslash (2).ogg', 'sound/combat/hits/bladed/smallslash (3).ogg')
+	hitsound = list('sound/combat/hits/bladed/smallslash (1).ogg', 'sound/combat/hits/bladed/smallslash (2).ogg', 'sound/combat/hits/bladed/smallslash (3).ogg', 'sound/combat/hits/bladed/smallslash (4).ogg', 'sound/combat/hits/bladed/smallslash (5).ogg')
 	penfactor = 10
 	damfactor = 1.5
 	swingdelay = 5

@@ -738,86 +738,72 @@
 /mob
 	no_bump_effect = FALSE
 
-/atom/movable/proc/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
+/atom/movable/proc/do_attack_animation(atom/attacked_atom, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!no_effect && (visual_effect_icon || used_item))
-		do_item_attack_animation(A, visual_effect_icon, used_item)
+		do_item_attack_animation(attacked_atom, visual_effect_icon, used_item)
 
-	if(!no_bump_effect)
-		return
-
-	if(ismob(A))
-		var/mob/M = A
-		if(M.stat == DEAD)
-			return
-
-	if(A == src)
+	if(attacked_atom == src)
 		return //don't do an animation if attacking self
 	var/pixel_x_diff = 0
 	var/pixel_y_diff = 0
+	var/turn_dir = 1
 
-	var/direction = get_dir(src, A)
+	var/direction = get_dir(src, attacked_atom)
 	if(direction & NORTH)
 		pixel_y_diff = 8
+		turn_dir = prob(50) ? -1 : 1
 	else if(direction & SOUTH)
 		pixel_y_diff = -8
+		turn_dir = prob(50) ? -1 : 1
 
 	if(direction & EAST)
 		pixel_x_diff = 8
 	else if(direction & WEST)
 		pixel_x_diff = -8
+		turn_dir = -1
 
-	animate(A, pixel_x = A.pixel_x + pixel_x_diff, pixel_y = A.pixel_y + pixel_y_diff, time = 2)
-	animate(A, pixel_x = A.pixel_x - pixel_x_diff, pixel_y = A.pixel_y - pixel_y_diff, time = 2)
+	var/matrix/initial_transform = matrix(transform)
+	var/matrix/rotated_transform = transform.Turn(15 * turn_dir)
+	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, transform=rotated_transform, time = 1, easing=BACK_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
+	animate(pixel_x = pixel_x - pixel_x_diff, pixel_y = pixel_y - pixel_y_diff, transform=initial_transform, time = 2, easing=SINE_EASING, flags = ANIMATION_PARALLEL)
 
 /atom/movable/proc/do_item_attack_animation(atom/A, visual_effect_icon, obj/item/used_item)
-//	var/noanim = FALSE
-	if(used_item)
-		if(used_item.no_effect)
-			return
-	if(!visual_effect_icon)
+	var/image/attack_image
+	if(visual_effect_icon)
+		attack_image = image('icons/effects/effects.dmi', A, visual_effect_icon, A.layer + 0.1)
+	else if(used_item)
+		attack_image = image(icon = used_item, loc = A, layer = A.layer + 0.1)
+		attack_image.plane = GAME_PLANE
+
+		// Scale the icon.
+		attack_image.transform *= 0.4
+		// The icon should not rotate.
+		attack_image.appearance_flags = APPEARANCE_UI
+
+		// Set the direction of the icon animation.
+		var/direction = get_dir(src, A)
+		if(direction & NORTH)
+			attack_image.pixel_y = -12
+		else if(direction & SOUTH)
+			attack_image.pixel_y = 12
+
+		if(direction & EAST)
+			attack_image.pixel_x = -14
+		else if(direction & WEST)
+			attack_image.pixel_x = 14
+
+		if(!direction) // Attacked self?!
+			attack_image.pixel_z = 16
+
+	if(!attack_image)
 		return
-/*
-	I = image(icon = 'icons/effects/effects.dmi', loc = src, icon_state = visual_effect_icon, layer = src.layer + 0.1)
-	if(A == src)
-		return
-	else
-		I.dir = get_dir(src, A)
-	if(I.dir & NORTH)
-		I.pixel_y = 32
-	else if(I.dir & SOUTH)
-		I.pixel_y = -32
 
-	if(I.dir & EAST)
-		I.pixel_x = 32
-	else if(I.dir & WEST)
-		I.pixel_x = -32
-	noanim = TRUE
+	flick_overlay(attack_image, GLOB.clients, 10)
 
-
-	if(!I)
-		return
-
-	I.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	flick_overlay(I, GLOB.clients, 5) // 5 ticks/half a second
-
-	if(!noanim)
-		// And animate the attack!
-		animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
-	*/
-	if(A == src)
-		return
-	var/obj/effect/temp_visual/dir_setting/attack_effect/atk = new(get_turf(src), get_dir(src, A))
-	atk.icon_state = visual_effect_icon
-	atk.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	if(atk.dir & NORTH)
-		atk.pixel_y = 32
-	else if(atk.dir & SOUTH)
-		atk.pixel_y = -32
-	if(atk.dir & EAST)
-		atk.pixel_x = 32
-	else if(atk.dir & WEST)
-		atk.pixel_x = -32
-
+	// And animate the attack!
+	animate(attack_image, alpha = 175, transform = matrix() * 0.75, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
+	animate(time = 1)
+	animate(alpha = 0, time = 3, easing = CIRCULAR_EASING|EASE_OUT)
 /obj/effect/temp_visual/dir_setting/attack_effect
 	icon = 'icons/effects/effects.dmi'
 	duration = 3

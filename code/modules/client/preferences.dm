@@ -2382,8 +2382,9 @@ Slots: [job.spawn_positions]</span>
 			O.drop_limb()
 		character.regenerate_limb(BODY_ZONE_R_ARM)
 		character.regenerate_limb(BODY_ZONE_L_ARM)
-		if(istype(charflaw, /datum/charflaw/badsight))
-			charflaw = new /datum/charflaw/randflaw()
+		if(istype(charflaw, /datum/charflaw/faggot))
+			if(character.gender == FEMALE)	
+				charflaw = new /datum/charflaw/randflaw()
 		character.charflaw = new charflaw.type()
 		character.charflaw.on_mob_creation(character)
 
