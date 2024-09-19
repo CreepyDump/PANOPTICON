@@ -141,13 +141,12 @@ GLOBAL_LIST_EMPTY(explosions)
 	SSlighting.postpone(postponeCycles)
 	SSmachines.postpone(postponeCycles)
 
-	var/datum/effect_system/explosion/E
-	if(smoke)
-		E = new /datum/effect_system/explosion/smoke
-	else
-		E = new
-	E.set_up(epicenter)
-	E.start()
+	if(devastation_range > 0)
+		new /obj/effect/temp_visual/explosion(epicenter, max_range, LIGHT_COLOR_LAVA, FALSE, TRUE)
+	else if(heavy_impact_range > 0)
+		new /obj/effect/temp_visual/explosion(epicenter, max_range, LIGHT_COLOR_LAVA, FALSE, FALSE)
+	else if(light_impact_range > 0)
+		new /obj/effect/temp_visual/explosion(epicenter, max_range, LIGHT_COLOR_LAVA, TRUE, FALSE)
 
 	EX_PREPROCESS_CHECK_TICK
 

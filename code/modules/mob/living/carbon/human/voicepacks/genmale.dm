@@ -77,7 +77,7 @@
 			if("rage")
 				used = list('sound/vo/male/gen/rage (1).ogg','sound/vo/male/gen/rage (2).ogg')
 			if("scream")
-				used = list('sound/vo/male/gen/scream (1).ogg','sound/vo/male/gen/scream (2).ogg')
+				used = list('sound/vo/male/gen/scream (1).ogg','sound/vo/male/gen/scream (2).ogg', 'sound/vo/male/gen/scream (3).ogg', 'sound/vo/male/gen/scream (4).ogg')
 			if("shh")
 				used = 'sound/vo/male/gen/shh.ogg'
 			if("sigh")

@@ -317,6 +317,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	duration = 4
 
+/*
 /obj/effect/temp_visual/explosion
 	name = "explosion"
 	icon = 'icons/effects/96x96.dmi'
@@ -324,7 +325,7 @@
 	pixel_x = -32
 	pixel_y = -32
 	duration = 8
-
+*/
 /obj/effect/temp_visual/explosion/fast
 	icon_state = "explosionfast"
 	duration = 4
@@ -342,7 +343,7 @@
 	duration = 3
 
 /obj/effect/temp_visual/impact_effect
-	icon_state = "impact_bullet"
+	icon_state = null
 	duration = 5
 
 /obj/effect/temp_visual/impact_effect/Initialize(mapload, x, y)

@@ -655,3 +655,15 @@
 	stressadd = 20
 	desc = "<span class='red'>MADNESS IS COMING</span>"
 	timer = 30 HOURS
+
+/datum/stressevent/chantnonleninist
+	max_stacks = 1
+	timer = 2 MINUTES
+	stressadd = 3
+	desc = "<span class='red'>I've heard something very strange for me...</span>"
+
+/datum/stressevent/chantleninist
+	max_stacks = 3
+	timer = 2 MINUTES
+	stressadd = -3
+	desc = "<span class='cult'>I heard a chant of praising Lenin!</span>"

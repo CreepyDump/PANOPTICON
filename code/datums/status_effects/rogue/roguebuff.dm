@@ -182,3 +182,13 @@
 	name = "Dazed"
 	desc = ""
 	icon_state = "weed"
+
+/datum/status_effect/buff/chant
+	id = "chantbuff"
+	effectedstats = list("speed" = -2, "constitution" = -2, "endurance" = -2)
+	duration = 45
+	alert_type = /obj/screen/alert/status_effect/moodgood
+
+/datum/status_effect/buff/chant/on_apply()
+	owner.add_stress(/datum/stressevent/chantleninist)
+	return ..()

@@ -48,3 +48,11 @@
 //	add_overlay(MA)
 
 //	animate(transform = matrix(), time = 30)
+
+/obj/screen/weather/snowfall
+	alpha = 180
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state	= "snowfall_light"
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	mouse_opacity = 0
+	plane = WEATHER_PLANE

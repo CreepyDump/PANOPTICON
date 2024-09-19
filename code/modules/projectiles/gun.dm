@@ -1,6 +1,22 @@
 
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
 
+/particles/firing_smoke
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "smoke5"
+	width = 500
+	height = 500
+	count = 5
+	spawning = 15
+	lifespan = 0.5 SECONDS
+	fade = 2.4 SECONDS
+	grow = 0.12
+	drift = generator(GEN_CIRCLE, 8, 8)
+	scale = 0.1
+	spin = generator(GEN_NUM, -20, 20)
+	velocity = list(50, 0)
+	friction = generator(GEN_NUM, 0.3, 0.6)
+
 /obj/item/gun
 	name = "gun"
 	desc = ""
@@ -66,7 +82,7 @@
 	var/mutable_appearance/knife_overlay
 	var/knife_x_offset = 0
 	var/knife_y_offset = 0
-
+	var/barrel_smoke_on_shoot = FALSE
 	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
 	var/ammo_y_offset = 0
 	var/flight_x_offset = 0
@@ -190,6 +206,15 @@
 			user.visible_message("<span class='danger'>[user] shoots [src]!</span>", \
 							"<span class='danger'>I shoot [src]!</span>", \
 							COMBAT_MESSAGE_RANGE)
+
+	if(barrel_smoke_on_shoot)
+		var/x_component = sin(get_angle(user, pbtarget)) * 40
+		var/y_component = cos(get_angle(user, pbtarget)) * 40
+		var/obj/effect/abstract/particle_holder/gun_smoke = new(get_turf(src), /particles/firing_smoke)
+		gun_smoke.particles.velocity = list(x_component, y_component)
+		addtimer(VARSET_CALLBACK(gun_smoke.particles, count, 0), 5)
+		addtimer(VARSET_CALLBACK(gun_smoke.particles, drift, 0), 3)
+		QDEL_IN(gun_smoke, 0.6 SECONDS)
 
 /obj/item/gun/emp_act(severity)
 	. = ..()

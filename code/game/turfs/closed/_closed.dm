@@ -100,6 +100,7 @@
 		var/turf/open/transparent/openspace/target = get_step_multiz(src, UP)
 		if(istype(target))
 			target.ChangeTurf(above_floor)
+	add_debris_element()
 
 /turf/closed/Destroy()
 	if(above_floor)

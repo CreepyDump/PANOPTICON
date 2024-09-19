@@ -435,16 +435,18 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set desc = "Are you want?"
 
 	if(stat != DEAD)
-		to_chat(src, "<span class='danger'>I am alive. What a shame!</span>")
-		return FALSE
+		var/response = alert(usr, "Do you REALLY wanna die?","PANOPTICON","Ghostize","Stay In Body")
+		if(response != "Ghostize")
+			return FALSE//didn't want to ghost after-all
+		else
+			var/obj/item/organ/brain/brain = usr.getorganslot(ORGAN_SLOT_BRAIN)
+			if(brain)
+				brain.applyOrganDamage(120)
+			ghostize(TRUE)
+			return TRUE
 	if(stat == DEAD)
 		ghostize(TRUE)
 		return TRUE
-	var/response = alert(usr, "Do you REALLY wanna die?",list("Ghost","Stay In Body"))
-	if(response != "Ghost")
-		return FALSE//didn't want to ghost after-all
-	ghostize(FALSE) // FALSE parameter is so we can never re-enter our body. U ded.
-	return TRUE
 
 /mob/camera/verb/ghost()
 	set category = "OOC"

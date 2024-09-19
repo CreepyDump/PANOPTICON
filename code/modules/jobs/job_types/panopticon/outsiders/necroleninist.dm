@@ -27,8 +27,8 @@
 
 /datum/outfit/job/panopticon/necroleninist/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind?.add_antag_datum(/datum/antagonist/necroleninist)
 	if(H.mind)
+		H.mind.add_antag_datum(/datum/antagonist/necroleninist)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(3,4,5), TRUE)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3,4,5), TRUE)
@@ -88,21 +88,81 @@
 
 /datum/antagonist/necroleninist
 	name = "Necroleninist"
+	roundend_category = "Necroleninists"
+	antagpanel_category = "necroleninist"
 	increase_votepwr = FALSE
+	job_rank = ROLE_LENINIST
+	antag_hud_type = ANTAG_HUD_TRAITOR
+	antag_hud_name = "necroleninist"
+	confess_lines = list("HERETIC!", "SACRIFICE!", "BLOOD!")
 	objectives = /datum/objective/lenin
-
-/datum/antagonist/necroleninist/on_gain()
-	var /datum/objective/lenin/revive = new
-	revive.owner = owner
-	src.objectives += revive
-	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-	return ..()
+	var/bloodshit = 1000
+	var/last_use
 
 /datum/antagonist/necroleninist/on_removal()
+	var/mob/living/carbon/human/D = owner
+	to_chat(owner.current, "<span class='danger'>LENIN LEFT US!!!</span>")
+	owner.special_role = null
+	D.gib(FALSE,FALSE,FALSE,FALSE)
 	return ..()
 
 
 /datum/antagonist/necroleninist/greet()
-	owner.current.playsound_local(get_turf(owner.current), 'sound/music/traitor.ogg', 80, FALSE, pressure_affected = FALSE)
+	return
+
+
+/datum/antagonist/necroleninist/on_gain()
+	owner.special_role = name
+	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
+	if(prob(5))
+		if(eyes)
+			eyes.Remove(owner.current,1)
+			QDEL_NULL(eyes)
+		eyes = new /obj/item/organ/eyes/night_vision/zombie
+		eyes.Insert(owner.current)
+	forge_necroleninist_objectives()
+	finalize_necroleninist()
+	var/mob/living/carbon/human/H = owner
+	H.verbs |= /mob/living/carbon/human/proc/chanting
+	return ..()
+
+/datum/antagonist/necroleninist/proc/add_objective(datum/objective/O)
+	objectives += O
+
+/datum/antagonist/necroleninist/proc/remove_objective(datum/objective/O)
+	objectives -= O
+
+/datum/antagonist/necroleninist/proc/forge_necroleninist_objectives()
+	return
+
+/datum/antagonist/necroleninist/proc/finalize_necroleninist()
+	to_chat(owner.current, "<span class='cult'>Foolish mortals tried to stop us, but this day is going to be an final song for them!.</span>")
 	owner.announce_objectives()
-	..()
+	owner.current.playsound_local(get_turf(owner.current), 'sound/panopticon/revolutsia.ogg', 100, FALSE, pressure_affected = FALSE)
+
+/mob/living/carbon/human/proc/chanting()
+	set name = "Chant"
+	set category = "Blood Magicka"
+
+	var/datum/antagonist/necroleninist/chlenin = mind.has_antag_datum(/datum/antagonist/necroleninist)
+	var/mob/living/carbon/C = usr
+	var/mob/living/carbon/O //Остальные хуйлуши вокруг некролениниста
+	if(!chlenin)
+		return
+	if(world.time < chlenin.last_use + 180 SECONDS)
+		var/timet2 = (chlenin.last_use + 180 SECONDS) - world.time
+		to_chat(src, "<span class='warning'>No.. not yet. [round(timet2/10)]s</span>")
+		return
+	else
+		if(C.gender == FEMALE)
+			playsound(get_turf(C), 'sound/vo/male/leninist/woman_chant.ogg', 90, ignore_walls = TRUE, soundping = TRUE)
+		else
+			playsound(get_turf(C), 'sound/vo/male/leninist/man_chant.ogg', 90, ignore_walls = TRUE, soundping = TRUE)
+		C.visible_message("<span class='necrosis'>\The [C] humming a blood melody.</span>")
+		if(O in view(10))
+			if(!O.job == "Necroleninist")
+				O.apply_status_effect(/datum/status_effect/debuff/chant)
+			else
+				O.apply_status_effect(/datum/status_effect/buff/chant)
+	chlenin.last_use = world.time

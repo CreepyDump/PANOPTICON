@@ -171,3 +171,14 @@
 	name = "Muscle Soreness"
 	desc = ""
 	icon_state = "muscles"
+
+
+/datum/status_effect/debuff/chant
+	id = "chantbad"
+	effectedstats = list("speed" = -2, "constitution" = -2, "endurance" = -2)
+	duration = 45
+	alert_type = /obj/screen/alert/status_effect/moodbad
+
+/datum/status_effect/debuff/chant/on_apply()
+	owner.add_stress(/datum/stressevent/chantnonleninist)
+	return ..()

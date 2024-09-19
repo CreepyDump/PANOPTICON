@@ -16,6 +16,23 @@
 	var/on = FALSE
 	var/brightness_on = 40 //range of light when on
 	var/flashlight_power = 1 //strength of the light when on
+	var/obj/effect/flashlight_spot/spotlight = null
+	var/obj/effect/flashlight_spot/beam/beam = null
+
+/obj/item/flashlight/Destroy()
+	var/obj/OO = spotlight
+	var/obj/OOO = beam
+	OO = null
+	OOO = null
+	qdel(OO)
+	qdel(OOO)
+	..()
+
+/obj/item/flashlight/process()
+	if(spotlight && beam)
+		spotlight.alpha = 35
+		beam.alpha = spotlight.alpha
+	
 
 /obj/item/flashlight/Initialize()
 	. = ..()
@@ -24,6 +41,7 @@
 	update_brightness()
 
 /obj/item/flashlight/proc/update_brightness(mob/user = null)
+	spotlight_update()
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
 		if(flashlight_power)
@@ -33,6 +51,32 @@
 	else
 		icon_state = initial(icon_state)
 		set_light(0)
+/mob/living/carbon/human/Move()
+	..()
+	var/obj/item/l_hand = get_item_for_held_index(1) //hardcoded 2-hands only, for now.
+	var/obj/item/r_hand = get_item_for_held_index(2)
+	if(istype(r_hand, /obj/item/flashlight))
+		var/obj/item/flashlight/F = r_hand
+		F.spotlight_update()
+
+	if(istype(l_hand, /obj/item/flashlight))
+		var/obj/item/flashlight/F = l_hand
+		F.spotlight_update()
+
+/mob/living/carbon/human/setDir(newdir)
+	var/obj/item/l_hand = get_item_for_held_index(1) //hardcoded 2-hands only, for now.
+	var/obj/item/r_hand = get_item_for_held_index(2)
+	..()
+	if(istype(r_hand, /obj/item/flashlight))
+		var/obj/item/flashlight/F = r_hand
+		F.spotlight_update()
+
+	if(istype(l_hand, /obj/item/flashlight))
+		var/obj/item/flashlight/F = l_hand
+		F.spotlight_update()
+
+/obj/item/flashlight/afterattack(atom/A, mob/user)
+	spotlight_update(A, src:loc:x - A.x, A.y - src:loc:y)
 
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
@@ -714,3 +758,103 @@
 	flags_1 = CONDUCT_1
 	item_flags = DROPDEL
 	actions_types = list()
+
+/obj/effect/flashlight_spot
+	name = null
+	icon = 'icons/effects/128x128.dmi'
+	icon_state = "lightingbeam"
+	pixel_x = -48
+	pixel_y = -48
+	alpha = 90
+	blend_mode = 2
+	mouse_opacity = 0
+	var/fforce = 0
+	var/range = 0
+	plane = 25
+	layer = 10
+	color = "#ffcb9e"
+
+/obj/effect/flashlight_spot/beam
+	name = null
+	icon = 'icons/effects/64x64_2.dmi'
+	icon_state = ""
+	pixel_x = -82
+	pixel_y = -64
+	alpha = 90
+	blend_mode = 2
+	mouse_opacity = 0
+	force = 3
+	range = 2
+
+
+/obj/effect/flashlight_spot/New()
+	..()
+	set_light(range, fforce, "#ffbf87")
+
+/obj/effect/flashlight_spot/Destroy()
+	set_light(0)
+	..()
+
+/obj/item/flashlight/proc/spotlight_update(var/atom/onClick, var/finalX, var/finalY)
+	if(!on)
+		if(spotlight)
+			var/obj/O = spotlight
+			var/obj/OO = beam
+			spotlight = null
+			beam = null
+			qdel(O)
+			qdel(OO)
+			return
+	if(on)
+		if(!spotlight)
+			spotlight = new
+			beam = new
+		spotlight.alpha = 30
+		beam.alpha = spotlight.alpha
+
+	if(ishuman(loc))
+		var/mob/living/carbon/human/H = loc
+		var/turf/start = get_step(H, H.dir)
+		if(!onClick && on)
+			beam.Move(H.loc)
+			beam.dir = H.dir
+		else
+			if(on)
+				beam.Move(H.loc)
+				beam.dir = WEST
+				beam.transform = null
+				beam.transform = turn(beam.transform, arctan(finalX, finalY))
+				spotlight.Move(get_turf(onClick))
+		for(var/i = 0; i <= 5; i++)
+			if(onClick) break;
+			if(!on) break;
+			var/turf/T = get_step(start, H.dir)
+			var/matrix/M = matrix()
+			var/matrix/MM = matrix()
+			switch(H.dir)
+				if(NORTH)
+					beam.pixel_y = -68
+					beam.pixel_x = -82
+					MM.Scale(1, 1+i/6)
+				if(WEST)
+					beam.pixel_x = - 82
+					beam.pixel_y = -82
+					MM.Scale(1+i/6, 1)
+				if(EAST)
+					beam.pixel_x = - 82
+					beam.pixel_y = -82
+					MM.Scale(1+i/6, 1)
+				if(SOUTH)
+					beam.pixel_x = -82
+					beam.pixel_y = -92
+					MM.Scale(1, 1+i/6)
+			M.Scale(0.2+((i+2)/10)) // i max eh 6
+			spotlight.Move(start)
+			animate(spotlight, transform = M, time = 5)
+			animate(beam, transform = MM, time = 5)
+			if(T.opacity)
+				break;
+			for(var/atom/A in T)
+				if(A.opacity)
+					break;
+			start = T

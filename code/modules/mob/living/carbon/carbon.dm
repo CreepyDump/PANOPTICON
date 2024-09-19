@@ -228,6 +228,7 @@
 		thrown_thing.safe_throw_at(target, thrown_range, thrown_speed, src, null, null, null, move_force)
 		if(!used_sound)
 			used_sound = pick(PUNCHWOOSH)
+		do_attack_animation(target, no_effect = TRUE)
 		playsound(get_turf(src), used_sound, 100, FALSE)
 
 /mob/living/carbon/restrained(ignore_grab = TRUE)
@@ -604,7 +605,7 @@
 		Immobilize(59)
 
 	if(!blood)
-		playsound(get_turf(src), pick('sound/vo/vomit.ogg','sound/vo/vomit_2.ogg'), 100, TRUE)
+		playsound(get_turf(src), pick('sound/vo/vomit.ogg','sound/vo/vomit_2.ogg','sound/vo/vomit_3.ogg'), 100, TRUE)
 	else
 		if(stat != DEAD)
 			playsound(src, pick('sound/vo/throat.ogg','sound/vo/throat2.ogg','sound/vo/throat3.ogg'), 100, FALSE)
@@ -650,7 +651,7 @@
 	..()
 	if(dna)
 		dna.real_name = real_name
-
+	
 /mob/living/carbon/update_mobility()
 	. = ..()
 	if(!(mobility_flags & MOBILITY_STAND))
@@ -1105,6 +1106,7 @@
 	new_fire_overlay.appearance_flags = RESET_COLOR
 	overlays_standing[FIRE_LAYER] = new_fire_overlay
 	apply_overlay(FIRE_LAYER)
+	particles = new/particles/embers()
 
 /mob/living/carbon/fakefireextinguish()
 	remove_overlay(FIRE_LAYER)

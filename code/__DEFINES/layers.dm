@@ -94,7 +94,7 @@
 #define MASSIVE_OBJ_LAYER 11
 #define POINT_LAYER 12
 
-#define CHAT_LAYER 12.1
+#define CHAT_LAYER 13
 
 #define WARN_LAYER 12.2
 
@@ -109,6 +109,16 @@
 
 #define LIGHTING_PLANE 15
 #define LIGHTING_LAYER 15 //15
+
+#define O_LIGHTING_VISUAL_PLANE 16
+#define O_LIGHTING_VISUAL_RENDER_TARGET "O_LIGHT_VISUAL_PLANE"
+
+#define LIGHTING_EXPOSURE_PLANE 16
+#define LIGHTING_LAMPS_SELFGLOW 17 // Light sources glow (lamps, doors overlay, etc.)
+#define LIGHTING_LAMPS_PLANE 18 // Light sources themselves (lamps, screens, etc.)
+#define LIGHTING_LAMPS_GLARE 19
+#define LIGHTING_LAMPS_RENDER_TARGET "*LIGHTING_LAMPS_RENDER_TARGET"
+#define TRANSPARENT_FLOOR_PLANE -11 //Transparent plane that shows openspace underneath the floor
 
 #define ABOVE_LIGHTING_PLANE 16
 #define ABOVE_LIGHTING_LAYER 16
@@ -156,3 +166,14 @@
 #define PLANE_MASTERS_GAME "plane_masters_game"
 
 #define FOV_EFFECTS_LAYER 10000
+
+//---------- EMISSIVES -------------
+//Layering order of these is not particularly meaningful.
+//Important part is the seperation of the planes for control via plane_master
+
+/// This plane masks out lighting to create an "emissive" effect, ie for glowing lights in otherwise dark areas.
+#define EMISSIVE_PLANE 15
+/// The render target used by the emissive layer.
+#define EMISSIVE_RENDER_TARGET "*EMISSIVE_PLANE"
+/// The layer you should use if you _really_ don't want an emissive overlay to be blocked.
+#define EMISSIVE_LAYER_UNBLOCKABLE 999
