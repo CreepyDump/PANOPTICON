@@ -18,6 +18,15 @@
 	var/clumsy_check = GRENADE_CLUMSY_FUMBLE
 	var/explosion_size = 2
 
+	// dealing with creating a [/datum/component/pellet_cloud] on detonate
+	/// if set, will spew out projectiles of this type
+	var/shrapnel_type
+	/// the higher this number, the more projectiles are created as shrapnel
+	var/shrapnel_radius
+	///Did we add the component responsible for spawning sharpnel to this?
+	var/shrapnel_initialized
+
+
 /obj/item/grenade/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(src, 'sound/blank.ogg', 50, TRUE)
@@ -70,6 +79,9 @@
 		add_fingerprint(user)
 		if(msg)
 			to_chat(user, "<span class='warning'>I prime [src]! [capitalize(DisplayTimeText(det_time))]!</span>")
+//	if(shrapnel_type && shrapnel_radius)
+//		shrapnel_initialized = TRUE
+//		AddComponent(/datum/component/pellet_cloud, projectile_type = shrapnel_type, magnitude = shrapnel_radius)
 	playsound(src, 'sound/blank.ogg', volume, TRUE)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
@@ -81,6 +93,10 @@
 	var/turf/T = get_turf(src)
 	if(!T) return
 
+	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized) // add a second check for adding the component in case whatever triggered the grenade went straight to prime (badminnery for example)
+		shrapnel_initialized = TRUE
+//		AddComponent(/datum/component/pellet_cloud, projectile_type = shrapnel_type, magnitude = shrapnel_radius)
+	
 	else
 		explosion(T,1,2,3,5, TRUE, FALSE, 0, FALSE, FALSE, 'sound/misc/FragGrenade.ogg')
 		qdel(src)

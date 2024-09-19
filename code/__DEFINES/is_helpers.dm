@@ -53,6 +53,16 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 
 #define islava(A) (istype(A, /turf/open/lava))
 
+#define isammocasing(A) (istype(A, /obj/item/ammo_casing))
+
+#define isgrenade(A) (istype(A, /obj/item/grenade))
+
+#define issupplypod(A) (istype(A, /obj/structure/closet/supplypod))
+
+#define islandmine(A) (istype(A, /obj/effect/mine))
+
+#define iswater(A)istype(A, /turf/open/water)
+
 #define ischasm(A) (istype(A, /turf/open/chasm))
 
 #define isplatingturf(A) (istype(A, /turf/open/floor/plating))

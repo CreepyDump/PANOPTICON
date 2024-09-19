@@ -302,10 +302,35 @@
 // /obj/item/pen signals
 #define COMSIG_PEN_ROTATED "pen_rotated"						//called after rotation in /obj/item/pen/attack_self(): (rotation, mob/living/carbon/user)
 
-// /obj/projectile signals (sent to the firer)
-#define COMSIG_PROJECTILE_ON_HIT "projectile_on_hit"			// from base of /obj/projectile/proc/on_hit(): (atom/movable/firer, atom/target, Angle)
-#define COMSIG_PROJECTILE_BEFORE_FIRE "projectile_before_fire" 			// from base of /obj/projectile/proc/fire(): (obj/projectile, atom/original_target)
-#define COMSIG_PROJECTILE_PREHIT "com_proj_prehit"				// sent to targets during the process_hit proc of projectiles
+///from base of /obj/projectile/proc/on_hit(), like COMSIG_PROJECTILE_ON_HIT but on the projectile itself and with the hit limb (if any): (atom/movable/firer, atom/target, Angle, hit_limb)
+#define COMSIG_PROJECTILE_SELF_ON_HIT "projectile_self_on_hit"
+///from base of /obj/projectile/proc/on_hit(): (atom/movable/firer, atom/target, Angle)
+#define COMSIG_PROJECTILE_ON_HIT "projectile_on_hit"
+///from base of /obj/projectile/proc/fire(): (obj/projectile, atom/original_target)
+#define COMSIG_PROJECTILE_BEFORE_FIRE "projectile_before_fire"
+///from the base of /obj/projectile/proc/fire(): ()
+#define COMSIG_PROJECTILE_FIRE "projectile_fire"
+///sent to targets during the process_hit proc of projectiles
+#define COMSIG_PROJECTILE_PREHIT "com_proj_prehit"
+///sent to targets during the process_hit proc of projectiles
+#define COMSIG_PROJECTILE_RANGE_OUT "projectile_range_out"
+///from [/obj/item/proc/tryEmbed] sent when trying to force an embed (mainly for projectiles and eating glass)
+#define COMSIG_EMBED_TRY_FORCE "item_try_embed"
+	#define COMPONENT_EMBED_SUCCESS (1<<1)
+
+///sent to targets during the process_hit proc of projectiles
+#define COMSIG_PELLET_CLOUD_INIT "pellet_cloud_init"
+///from [/obj/effect/mine/proc/triggermine]:
+#define COMSIG_MINE_TRIGGERED "minegoboom"
+///from [/obj/structure/closet/supplypod/proc/preOpen]:
+#define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
+
+///called in /obj/item/gun/process_fire (user, target, params, zone_override)
+#define COMSIG_GRENADE_DETONATE "grenade_prime"
+//called from many places in grenade code (armed_by, nade, det_time, delayoverride)
+#define COMSIG_MOB_GRENADE_ARMED "grenade_mob_armed"
+///called in /obj/item/gun/process_fire (user, target, params, zone_override)
+#define COMSIG_GRENADE_ARMED "grenade_armed"
 
 // /obj/mecha signals
 #define COMSIG_MECHA_ACTION_ACTIVATE "mecha_action_activate"	//sent from mecha action buttons to the mecha they're linked to

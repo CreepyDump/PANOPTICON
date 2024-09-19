@@ -87,6 +87,25 @@
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "stgnade"
 	item_state = "stgnade"
+	throwforce = 10
+	throw_speed = 2
+	throw_range = 6
+//	shrapnel_type = /obj/projectile/bullet/shrapnel
+//	shrapnel_radius = 3
+
+/obj/item/grenade/syndieminibomb/frag/preprime(mob/user, delayoverride, msg = TRUE, volume = 70)
+	. = ..()
+	var/turf/T = get_turf(src)
+	log_grenade(user, T) //Inbuilt admin procs already handle null users
+	if(user)
+		add_fingerprint(user)
+		if(msg)
+			to_chat(user, "<span class='warning'>I activate the [src]! [DisplayTimeText(det_time)]!</span>")
+	playsound(src, 'sound/blank.ogg', volume, TRUE)
+	icon_state = initial(icon_state) + "_active"
+	active = TRUE
+	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+
 /*	spawner_type = /obj/item/ammo_casing/caseless/rogue/fragment
 	var/spread_range = 7
 	var/num_fragments = 30

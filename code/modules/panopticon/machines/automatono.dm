@@ -41,12 +41,12 @@
 	anchored = TRUE
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	icon_state = "mine"
-	var/shrapnel_type = /obj/projectile/bullet/shrapnel
-	var/shrapnel_magnitude = 3
-	var/shred_triggerer = FALSE
+//	var/shrapnel_type = /obj/projectile/bullet/shrapnel
+//	var/shrapnel_magnitude = 3
+//	var/shred_triggerer = FALSE
 
 /obj/effect/mine/explosive/panopticon/landmine/triggermine(atom/movable/AM)
-	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+//	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 	return ..()
 
 

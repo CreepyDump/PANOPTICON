@@ -110,6 +110,8 @@
 	var/temporary_unstoppable_movement = FALSE
 
 	var/woundclass = null
+	var/shrapnel_type
+	var/sharpness = NONE
 	var/embedchance = 0
 	var/obj/item/dropped = FALSE
 	var/ammo_type
