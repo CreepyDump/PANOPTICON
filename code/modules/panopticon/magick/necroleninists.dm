@@ -82,7 +82,7 @@ var/leninalive = FALSE
 	resistance_flags = INDESTRUCTIBLE
 	density = TRUE
 	anchored = TRUE
-	
+
 /obj/structure/wonder/Initialize()
 	. = ..()
 	icon_state = pick("creation1", "creation2", "creation3", "creation4")
@@ -93,7 +93,7 @@ var/leninalive = FALSE
 	user.emote("agony")
 	user.adjustBruteLoss(10)
 	M.add_wound(/datum/wound/stab, skipcheck = FALSE)
-
+/*
 /obj/structure/panopticon/automat/meatgrind
 	name = "man-eater"
 	desc = "MEAT MEAT MEAT"
@@ -120,3 +120,4 @@ var/leninalive = FALSE
 			new /obj/item/reagent_containers/food/snacks/meatcube(get_turf(M), 5)
 			buckled_mobs[1].gib()
 			playsound(get_turf(src), 'sound/panopticon/badmood2.ogg', 50, FALSE, FALSE)
+*/

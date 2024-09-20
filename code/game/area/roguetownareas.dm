@@ -167,7 +167,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_BOGNIGHT
 	spookysounds = SPOOKY_FROG
 	spookynight = SPOOKY_NIGHT
-	droning_sound = 'sound/music/area/boloto.ogg'
+	droning_sound = 'sound/music/area/forest.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	ambush_times = list("night","dawn","dusk","day")
@@ -182,7 +182,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	first_time_text = "THE TERRORBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
 /area/rogue/indoors/shelter/bog
-	droning_sound = 'sound/music/area/boloto.ogg'
+	droning_sound = 'sound/music/area/forest.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
