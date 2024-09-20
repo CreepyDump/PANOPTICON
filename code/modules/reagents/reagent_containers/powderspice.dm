@@ -261,7 +261,6 @@
 	. = 1
 
 /datum/reagent/moondust_purest/on_mob_metabolize(mob/living/M)
-	M.playsound_local(M, 'sound/ravein/small/hello_my_friend.ogg', 100, FALSE)
 	M.flash_fullscreen("can_you_see")
 	M.overlay_fullscreen("purest_kaif", /obj/screen/fullscreen/purest)
 	animate(M.client, pixel_y = 1, time = 1, loop = -1, flags = ANIMATION_RELATIVE)

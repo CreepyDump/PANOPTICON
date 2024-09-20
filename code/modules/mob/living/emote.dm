@@ -236,6 +236,23 @@
 	set category = "Emotes"
 
 	emote("dance", intentional = TRUE)
+	if(dancing)
+		dancing = 0
+		return
+	pixel_y = initial(pixel_y)
+	dancing = 1
+	var/oldpixely = pixel_y
+	while(dancing)
+		var/pixely = rand(5, 6)
+		animate(src, pixel_y = pixely, time = 0.5)
+		sleep(1)
+		animate(src, pixel_y = oldpixely, time = 0.7)
+		sleep(2)
+		animate(src, pixel_y = 2, time = 0.2)
+		sleep(1)
+		animate(src, pixel_y = oldpixely, time = 0.2)
+		if(resting || lying)
+			dancing = 0
 
 /datum/emote/living/deathgasp
 	key = ""

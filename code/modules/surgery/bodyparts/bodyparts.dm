@@ -149,12 +149,15 @@
 		if(!contents.len)
 			to_chat(user, "<span class='warning'>There is nothing left inside [src]!</span>")
 			return
-		playsound(loc, 'sound/foley/butcher.ogg', 50, TRUE, -1)
-		user.visible_message("<span class='warning'>[user] begins to cut open [src].</span>",\
-			"<span class='notice'>I begin to cut open [src]...</span>")
-		if(do_after(user, 54, target = src))
-			drop_organs(user, TRUE)
-			user.visible_message("<span class='warning'>\The [src] spills it's organs out.")
+		if(user.cmode == TRUE)
+			return
+		else
+			playsound(loc, 'sound/foley/butcher.ogg', 50, TRUE, -1)
+			user.visible_message("<span class='warning'>[user] begins to cut open [src].</span>",\
+				"<span class='notice'>I begin to cut open [src]...</span>")
+			if(do_after(user, 54, target = src))
+				drop_organs(user, TRUE)
+				user.visible_message("<span class='warning'>\The [src] spills it's organs out.")
 	else
 		return ..()
 		if(!meat_type)

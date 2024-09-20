@@ -46,11 +46,11 @@
 	var/undershirt = "Nude" //Which undershirt the player wants
 
 	var/cached_underwear = "Nude"
-
+	var/dancing = 0
 	var/accessory = "None"
 	var/detail = "None"
 	var/marking = "None"
-
+	var/body_detail = "None"
 	var/shavelevel = 0
 
 	var/socks = "Nude" //Which socks the player wants

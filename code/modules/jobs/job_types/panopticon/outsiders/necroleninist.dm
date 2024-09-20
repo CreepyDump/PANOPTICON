@@ -28,6 +28,7 @@
 /datum/outfit/job/panopticon/necroleninist/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
+		H.verbs += list(/mob/living/carbon/human/proc/chanting)	
 		H.mind.add_antag_datum(/datum/antagonist/necroleninist)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(3,4,5), TRUE)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
@@ -95,7 +96,7 @@
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "necroleninist"
 	confess_lines = list("HERETIC!", "SACRIFICE!", "BLOOD!")
-	objectives = /datum/objective/lenin
+	objectives = /datum/objective/martyr
 	var/bloodshit = 1000
 	var/last_use
 
@@ -123,8 +124,6 @@
 		eyes.Insert(owner.current)
 	forge_necroleninist_objectives()
 	finalize_necroleninist()
-	var/mob/living/carbon/human/H = owner
-	H.verbs |= /mob/living/carbon/human/proc/chanting
 	return ..()
 
 /datum/antagonist/necroleninist/proc/add_objective(datum/objective/O)
@@ -138,7 +137,6 @@
 
 /datum/antagonist/necroleninist/proc/finalize_necroleninist()
 	to_chat(owner.current, "<span class='cult'>Foolish mortals tried to stop us, but this day is going to be an final song for them!.</span>")
-	owner.announce_objectives()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/panopticon/revolutsia.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /mob/living/carbon/human/proc/chanting()

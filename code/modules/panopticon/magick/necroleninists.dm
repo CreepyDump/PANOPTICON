@@ -93,3 +93,30 @@ var/leninalive = FALSE
 	user.emote("agony")
 	user.adjustBruteLoss(10)
 	M.add_wound(/datum/wound/stab, skipcheck = FALSE)
+
+/obj/structure/panopticon/automat/meatgrind
+	name = "man-eater"
+	desc = "MEAT MEAT MEAT"
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	icon_state = "human_eater"
+	density = FALSE
+	anchored = TRUE
+	can_buckle = TRUE
+	buckle_lying = 0
+	destroy_sound = 'sound/foley/breaksound.ogg'
+	break_sound = 'sound/foley/machinebreak.ogg'
+	anchored = TRUE
+	var/datum/looping_sound/deus/soundloop
+	max_integrity = 0
+
+/obj/structure/panopticon/automat/meatgrind/Initialize()
+	soundloop = new(list(src), FALSE)
+	soundloop.start()
+	. = ..()
+
+/obj/structure/panopticon/automat/meatgrind/post_buckle_mob(mob/living/M)
+	if(has_buckled_mobs())
+		if(buckled_mobs.len < 2)
+			new /obj/item/reagent_containers/food/snacks/meatcube(get_turf(M), 5)
+			buckled_mobs[1].gib()
+			playsound(get_turf(src), 'sound/panopticon/badmood2.ogg', 50, FALSE, FALSE)

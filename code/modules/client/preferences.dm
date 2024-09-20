@@ -1602,6 +1602,7 @@ Slots: [job.spawn_positions]</span>
 					random_species()
 					accessory = "Nothing"
 					detail = "Nothing"
+					body_detail = "Nothing"
 					if(age == AGE_YOUNG)
 						age = AGE_ADULT
 				if("bag")
@@ -1612,6 +1613,7 @@ Slots: [job.spawn_positions]</span>
 					random_character(gender)
 					accessory = "Nothing"
 					detail = "Nothing"
+					body_detail = "Nothing"
 					if(age == AGE_YOUNG)
 						age = AGE_ADULT
 
@@ -1801,7 +1803,7 @@ Slots: [job.spawn_positions]</span>
 					new_detail = input(user, "Choose your character's detail:", "Make me unique")  as null|anything in detaillist //don't ask
 					if(new_detail)
 						detail = new_detail
-
+//сука я заебался
 				if("bdetail")
 					var/list/spec_detail = pref_species.get_spec_bdetail_list(gender)
 					var/list/detaillist = list()
@@ -2052,6 +2054,7 @@ Slots: [job.spawn_positions]</span>
 						to_chat(user, "<font color='red'>Classes reset.</font>")
 						random_character(gender)
 						accessory = "Nothing"
+						body_detail = "Nothing"
 						detail = "Nothing"
 				if("domhand")
 					if(domhand == 1)
@@ -2285,6 +2288,7 @@ Slots: [job.spawn_positions]</span>
 							random_character()
 							accessory = "Nothing"
 							detail = "Nothing"
+							body_detail = "Nothing"
 							real_name = pref_species.random_name(gender,1)
 							save_character()
 
@@ -2366,6 +2370,7 @@ Slots: [job.spawn_positions]</span>
 	character.undershirt = undershirt
 //	character.accessory = accessory
 	character.detail = detail
+	character.body_detail = body_detail
 	character.socks = socks
 	character.PATRON = selected_patron
 	character.backpack = backpack

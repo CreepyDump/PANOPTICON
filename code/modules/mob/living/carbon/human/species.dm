@@ -919,6 +919,19 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 				standing += accessory_overlay
 
+		//bdetail
+		if(H.body_detail)
+			var/datum/sprite_accessory/body_markings/detail = GLOB.detail_list[H.detail]
+			var/mutable_appearance/accessory_overlay
+			if(detail)
+				accessory_overlay = mutable_appearance(detail.icon, "[detail.icon_state]", -BODY_LAYER)
+				if(!detail.use_static)
+					if(detail.color_src == HAIR)
+						accessory_overlay.color = "#[H.hair_color]"
+					else
+						accessory_overlay.color = "#" + H.detail_color
+				standing += accessory_overlay
+
 		if(H.accessory)
 			var/datum/sprite_accessory/accessories/accessory = GLOB.accessories_list[H.accessory]
 			var/mutable_appearance/accessory_overlay

@@ -259,12 +259,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	first_time_text = "ARAIGNÉE"
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 100)
-	droning_sound = 'sound/music/area/spidercave.ogg'
+	droning_sound = 'sound/music/area/sleeping.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/spidercave
 /area/rogue/outdoors/spidercave
-	droning_sound = 'sound/music/area/spidercave.ogg'
+	droning_sound = 'sound/music/area/sleeping.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -273,12 +273,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientsounds = AMB_BASEMENT
 	ambientnight = AMB_BASEMENT
 	icon_state = "blueold"
-	droning_sound = 'sound/music/area/spidercave.ogg'
+	droning_sound = 'sound/music/area/sleeping.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/spidercave
 /area/rogue/outdoors/spidercave
-	droning_sound = 'sound/music/area/spidercave.ogg'
+	droning_sound = 'sound/music/area/sleeping.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -413,12 +413,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/church
 	name = "church"
 	icon_state = "blueold"
-	droning_sound = 'sound/music/area/church.ogg'
+	droning_sound = 'sound/music/area/necronox_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/church
 /area/rogue/outdoors/exposed/church
-	droning_sound = 'sound/music/area/church.ogg'
+	droning_sound = 'sound/music/area/necronox_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 

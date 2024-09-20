@@ -113,7 +113,7 @@
 				/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/baun = 30)
 
 /area/panopticon/indoors/shelter/darkwood
-	ambientsounds = 'sound/ambience/shelter.ogg'
+	ambientsounds = null
 	droning_sound = 'sound/music/area/deadcats.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -134,13 +134,14 @@
 /area/panopticon/outdoors/darkwood/pole
 	name = "fields"
 	ambientrain = RAIN_OUT
-	ambientsounds = 'sound/ambience/pole.ogg'
-	ambientnight = 'sound/ambience/pole.ogg'
+	ambientsounds = 'sound/ambience/desertday.ogg'
+	ambientnight = 'sound/ambience/desertnight.ogg'
 	spookysounds = HORROR_FOREST
 	spookynight = HORROR_FOREST
-	droning_sound = 'sound/music/area/pole.ogg'
+	droning_sound_dawn = 'sound/music/area/derevnya_utro.ogg'
+	droning_sound = 'sound/music/area/lustmord.ogg'
 	droning_sound_dusk = 'sound/music/area/darkwood.ogg'
-	droning_sound_night = 'sound/music/area/darkwood.ogg'
+	droning_sound_night = 'sound/music/area/pole.ogg'
 
 //TOWN
 
@@ -177,7 +178,7 @@
 	ambientrain = RAIN_OUT
 	spookysounds = SPOOKY_RATS
 	spookynight = null
-	droning_sound = 'sound/music/area/church.ogg'
+	droning_sound = 'sound/music/area/necronox_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/panopticon/outdoors/town
