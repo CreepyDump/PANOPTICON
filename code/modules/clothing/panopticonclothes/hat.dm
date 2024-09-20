@@ -145,7 +145,7 @@
 	block2add = FOV_BEHIND|FOV_RIGHT|FOV_LEFT
 	equip_delay_other = 30
 
-	/obj/item/clothing/head/panopticon/keptyouwaitinghuh
+/obj/item/clothing/head/panopticon/keptyouwaitinghuh
 	name = "Kir Adams headband"
 	desc = " "
 	icon_state = "snake"

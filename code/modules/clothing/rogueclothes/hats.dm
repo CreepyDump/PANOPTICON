@@ -227,7 +227,7 @@
 /obj/item/clothing/head/roguetown/armingcap/dwarf
 	color = "#cb3434"
 
-/obj/item/clothing/head/roguetown/headband
+/obj/item/clothing/head/roguetown/headband	
 	name = "headband"
 	icon_state = "headband"
 	item_state = "headband"
