@@ -144,3 +144,10 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_BEHIND|FOV_RIGHT|FOV_LEFT
 	equip_delay_other = 30
+
+	/obj/item/clothing/head/panopticon/keptyouwaitinghuh
+	name = "Kir Adams headband"
+	desc = " "
+	icon_state = "snake"
+	item_state = "snake"
+	flags_inv = null

@@ -147,6 +147,8 @@
 			H.forceMove(get_turf(a_mimir))
 			a_mimir.buckle_mob(H)
 			H.AdjustSleeping(4 SECONDS)
+		if(H?.ckey == "lolkekxdbruh")
+			new /obj/item/clothing/head/panopticon/keptyouwaitinghuh(H.drop_location(), FALSE)
 		if(H?.ckey == "crazyduster")
 			if(H.gender == MALE)
 				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
