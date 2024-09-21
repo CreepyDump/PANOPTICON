@@ -151,3 +151,6 @@
 	icon_state = "snake"
 	item_state = "snake"
 	flags_inv = null
+	block2add = FOV_BEHIND|FOV_LEFT
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	dynamic_hair_suffix = "+generic"

@@ -158,7 +158,8 @@
 		else
 			playsound(get_turf(C), 'sound/vo/male/leninist/man_chant.ogg', 90, ignore_walls = TRUE, soundping = TRUE)
 		C.visible_message("<span class='necrosis'>\The [C] humming a blood melody.</span>")
-		if(O in view(10))
+		var/turf/source = get_turf(src)
+		for(O in get_hearers_in_view(15, source))
 			if(!O.job == "Necroleninist")
 				O.apply_status_effect(/datum/status_effect/debuff/chant)
 			else

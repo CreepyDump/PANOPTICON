@@ -128,7 +128,7 @@
 		return FALSE
 	else
 		if(targethumano.stat == DEAD)
-			if(targethumano.revive(full_heal = FALSE))
+			if(targethumano.revive(full_heal = TRUE))
 				targethumano.mind.add_antag_datum(/datum/antagonist/zombie)
 				targethumano.grab_ghost(force = TRUE) // even suicides
 				targethumano.emote("breathgasp")

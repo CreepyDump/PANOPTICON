@@ -52,7 +52,7 @@
 
 /obj/structure/panopticon/automat/radio
 	name = "old-world radio"
-	desc = "Play something for me!"
+	desc = "It is interesting that such an expensive item is here!"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	icon_state = "radio0"
 	density = FALSE
@@ -61,7 +61,7 @@
 	var/datum/looping_sound/musloop/soundloop
 	var/curfile
 	var/playing = FALSE
-	var/curvol = 70
+	var/curvol = 85
 	var/list/music_tracks
 
 /obj/structure/panopticon/automat/radio/Initialize()
@@ -102,6 +102,20 @@
 	else
 		playing = FALSE
 		soundloop.stop()
+
+/obj/structure/panopticon/automat/radio/bar
+	name = "Bar radio"
+	desc = "Play something for me!"
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	icon_state = "radio0"
+	density = FALSE
+	max_integrity = 0
+	anchored = TRUE
+
+/obj/structure/panopticon/automat/radio/bar/Initialize()
+	. = ..()
+	soundloop = new(list(src), FALSE)
+	music_tracks = MUSIC_BAR
 
 /obj/structure/panopticon/automat/kotel
 	name = "Rusty boiler"
