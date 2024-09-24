@@ -305,7 +305,7 @@ GLOBAL_VAR(restart_counter)
 		return
 
 	if(TgsAvailable())
-		send2chat(new /datum/tgs_message_content("Round ending!"), CONFIG_GET(string/chat_announce_new_game))
+		send2chat(new /datum/tgs_message_content("# Round end."), CONFIG_GET(string/chat_announce_new_game))
 		testing("tgsavailable passed")
 		var/do_hard_reboot
 		// check the hard reboot counter
