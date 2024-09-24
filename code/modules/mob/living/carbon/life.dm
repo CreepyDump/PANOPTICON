@@ -50,6 +50,8 @@
 			updatehealth()
 		update_stress()
 		handle_nausea()
+		if(leninalive == TRUE)
+			INVOKE_ASYNC(src, /mob/living/carbon.proc/leninprivet)
 		if(blood_volume > BLOOD_VOLUME_SURVIVE)
 			if(!heart_attacking)
 				adjustOxyLoss(-1.6)

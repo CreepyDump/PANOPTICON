@@ -96,7 +96,7 @@
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "necroleninist"
 	confess_lines = list("HERETIC!", "SACRIFICE!", "BLOOD!")
-	objectives = /datum/objective/martyr
+	objectives = /datum/objective/lenin
 	var/bloodshit = 1000
 	var/last_use
 

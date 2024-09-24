@@ -405,8 +405,11 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	team_explanation_text = "Make him live!"
 
 /datum/objective/lenin/check_completion()
-	if(leninalive == TRUE)
-		return TRUE
+	var/list/datum/mind/owners = get_owners()
+	for(var/datum/mind/M in owners)
+		if(leninalive == FALSE)
+			return FALSE
+	return TRUE
 
 /datum/objective/dungeoneer
 	name = "protect"

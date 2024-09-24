@@ -36,6 +36,7 @@
 		var/mob/living/M = A
 		M.adjust_fire_stacks(-100)
 		M.SoakMob(FULL_BODY)
+		M.apply_status_effect(/datum/status_effect/raindrops)
 		return TRUE
 	var/datum/reagent/water/W = new()
 	if(isobj(A))
@@ -124,3 +125,62 @@
 			var/mob/living/L = M
 			if(L.client)
 				SSdroning.kill_rain(L.client)
+
+/datum/status_effect/raindrops
+	id = "raindrops"
+	duration = 3 SECONDS
+	status_type = STATUS_EFFECT_REFRESH
+	/// Fullscreen effect used to provide the visual to that player and only that player
+	var/atom/movable/screen/fullscreen/raindrops/holder
+
+/datum/status_effect/raindrops/on_creation(mob/living/new_owner, ...)
+	. = ..()
+	holder = new_owner.overlay_fullscreen("raindrops", /atom/movable/screen/fullscreen/raindrops)
+
+/datum/status_effect/raindrops/tick(delta_time, times_fired) //happening here for now
+	. = ..()
+	tick_interval = rand(0, 5) //next drop happens in a random amount of time
+	for(var/i in rand(1,2))
+		droplet()
+
+/datum/status_effect/raindrops/proc/droplet()
+	var/obj/effect/temp_visual/raindrops/onedrop = new(owner) //put it inside the mob so it follows the player as they move
+	onedrop.pixel_x += rand(-80, 480)
+	onedrop.pixel_y += rand(-80, 480) //get put somewhere randomly on the screen
+	//because it's a downscaled large image, it starts out in the bottom left corner by default
+	holder.vis_contents += onedrop
+
+/datum/status_effect/raindrops/refresh(effect, ...) //also spawn a droplet every time we're refreshed, makes the rain look far more dense if we're standing outside
+	for(var/i in rand(1,2))
+		droplet()
+	return ..()
+
+/datum/status_effect/raindrops/on_remove()
+	owner.clear_fullscreen("raindrops")
+	if(holder && !QDELETED(holder))
+		qdel(holder)
+	return ..()
+
+/**
+ * This provides the images to only the person with it
+ */
+/atom/movable/screen/fullscreen/raindrops
+	icon_state = "raindrops"
+	appearance_flags = PIXEL_SCALE | RESET_TRANSFORM
+	plane = GRAVITY_PULSE_PLANE 
+
+/**
+ * this is an individual raindrop, multiple of these are spawned and added to the fullscreen to emulate random raindrops
+ */
+/obj/effect/temp_visual/raindrops
+	plane = GRAVITY_PULSE_PLANE
+	icon = 'icons/effects/160x160.dmi' //massive picture for smoother edges
+	icon_state = "raindrop"
+	appearance_flags = PIXEL_SCALE | RESET_TRANSFORM
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	duration = (0.8 SECONDS) //fades out over this time, not too long, not too slow
+
+/obj/effect/temp_visual/raindrops/Initialize(mapload)
+	. = ..()
+	transform = matrix()/5 //we do this so it can larger if needed
+	animate(src, alpha = 0, time = duration)

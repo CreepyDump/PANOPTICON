@@ -93,6 +93,15 @@
 	..()
 	icon_state = pick("poo1", "poo2", "poo3", "poo4")
 
+/obj/item/reagent_containers/food/snacks/poo/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/slippery, 40)
+
+/obj/item/reagent_containers/food/snacks/poo/Crossed(atom/movable/AM, oldloc)
+	. = ..()
+	playsound(src, 'sound/panopticon/squishy.ogg', 68)
+	qdel(src)
+
 /obj/item/reagent_containers/food/snacks/poo/throw_impact(atom/hit_atom)
 	var/turf/T = src.loc
 	if(isturf(T))
@@ -172,6 +181,7 @@
 		else if(wear_pants)
 			M.visible_message("<span class='shiten'>[src] shit \his pants!</span>", "<span class='shiten'>I shat my pants...</shiten>")
 			reagents.add_reagent(/datum/reagent/poo, 10)
+			adjust_hygiene(-25)
 			var/mob/living/carbon/L = src
 			L.add_stress(/datum/stressevent/shitinpants)
 
@@ -228,6 +238,7 @@
 		else if(wear_pants)//In your pants.
 			M.visible_message("<span class='pissen'>[src] pisses \his pants.</span>")
 			var/obj/effect/decal/cleanable/urine/D = new/obj/effect/decal/cleanable/urine(src.loc)
+			adjust_hygiene(-15)
 			if(reagents)
 				reagents.trans_to(D, rand(1,8))
 			var/mob/living/carbon/L = src

@@ -257,12 +257,21 @@
 
 /obj/screen/fullscreen/maniac
 	icon = 'icons/roguetown/maniac/fullscreen.dmi'
+	screen_loc = "CENTER-7,CENTER-7"
+	plane = FULLSCREEN_PLANE
+	layer = GRAIN_LAYER
 	icon_state = "hall0"
 	alpha = 0
+	var/lolz = 1
+	
+/obj/screen/fullscreen/maniac/update_for_view(client_view)
+	screen_loc = "CENTER-7,CENTER-7"
+	lolz = rand(1, 13)
+	update_icon()
 
-/obj/screen/fullscreen/maniac/New(client/C)
+/obj/screen/fullscreen/maniac/update_icon_state()
 	. = ..()
-	icon_state = "hall[rand(1, 13)]"
+	icon_state = "hall[lolz]"
 
 /obj/screen/fullscreen/dreaming
 	icon = 'icons/roguetown/maniac/fullscreen_wakeup.dmi'
@@ -290,3 +299,7 @@
 /obj/screen/fullscreen/noise/update_icon_state()
 	. = ..()
 	icon_state = "[poggers][loggers]"
+
+/obj/screen/fullscreen/maniac/New(client/C)
+	. = ..()
+	animate(src, alpha = 255, time = 30)

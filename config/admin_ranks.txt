@@ -55,7 +55,7 @@ Exclude =
 Edit =
 
 Name = Badmin
-Include = @ POSSESS POLL BUILD SERVER FUN
+Include = @ POSSESS POLL BUILD SERVER FUN BAN
 Exclude =
 Edit =
 
@@ -74,7 +74,7 @@ Include = EVERYTHING
 Exclude = AUTOADMIN
 Edit = EVERYTHING
 
-Name = Host
+Name = GOD
 Include = EVERYTHING
 Exclude = AUTOADMIN
 Edit = EVERYTHING
@@ -89,4 +89,16 @@ Edit =
 Name = Watcher
 Include = WATCH BAN
 Exclude =
+Edit =
+
+#--- PANOPTICON
+
+Name = Test Moderator
+Include = BAN STEALTH FUN
+Exclude = FUN
+Edit =
+
+Name = Begotten
+Include = @ POSSESS POLL BUILD SERVER FUN BAN
+Exclude = FUN
 Edit =

@@ -304,6 +304,7 @@
 				C.emote("agony")
 				BP.add_wound(/datum/wound/fracture)
 				C.apply_damage(trap_damage, BRUTE, def_zone)
+				shake_camera(src, 2, 2)
 				C.consider_ambush()
 				return FALSE
 	..()

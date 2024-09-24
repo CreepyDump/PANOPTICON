@@ -4,6 +4,9 @@
 #Ranks will match to those with the same name in admin_ranks.txt, if a match isn't found the user won't be adminned.
 #If SQL-based admin loading is enabled, admins listed here will always be loaded first and will override any duplicate entries in the database
 
-CrazyDuster = Host
-emoats18 = Host
-AkayenTheFake = Badmin
+CrazyDuster = GOD
+emoats18 = GOD
+AkayenTheFake = Begotten
+Badhiller26 = Test Moderator
+Jacob_Madson = Test Moderator
+Agic

@@ -94,24 +94,49 @@ var/leninalive = FALSE
 	user.adjustBruteLoss(10)
 	M.add_wound(/datum/wound/stab, skipcheck = FALSE)
 
-/obj/structure/panopticon/automat/lenin
+/obj/structure/panopticon/lenin
 	name = "Lenin altar"
 	desc = "Fill up the plenty cup with their blood!"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	icon_state = "altar"
-	density = TRUE
+	density = FALSE
 	anchored = TRUE
 	can_buckle = TRUE
-	buckle_lying = 90
+	buckle_lying = 0
 	destroy_sound = 'sound/foley/breaksound.ogg'
 	break_sound = 'sound/foley/machinebreak.ogg'
 	anchored = TRUE
-	var/datum/looping_sound/deus/soundloop
 	max_integrity = 0
+	var/leniniscoming = 0
 
-/obj/structure/panopticon/automat/meatgrind/post_buckle_mob(mob/living/M)
+/obj/structure/panopticon/lenin/post_buckle_mob(mob/living/M)
 	if(has_buckled_mobs())
-		if(buckled_mobs.len < 2)
-			new /obj/item/reagent_containers/food/snacks/meatcube(get_turf(M), 5)
-			buckled_mobs[1].gib()
-			playsound(get_turf(src), 'sound/panopticon/badmood2.ogg', 50, FALSE, FALSE)
+		if(M.job == "Necroleninist")
+			visible_message("<span class='notice'>[M.name] can't be killed on [src]!</span>")
+		else if(do_after(M, 25 SECONDS, target = src))
+			to_chat(M, span_danger("I feel weaker with each second..."))	
+			playsound(get_turf(M), 'sound/panopticon/badmood2.ogg', 45, FALSE, FALSE)
+			M.emote("agony")
+			sleep(2 SECONDS)
+			var/obj/item/organ/brain/brain = M.getorganslot(ORGAN_SLOT_BRAIN)
+			if(brain)
+				brain.applyOrganDamage(500)
+			playsound(M, pick('sound/vo/throat.ogg','sound/vo/throat2.ogg','sound/vo/throat3.ogg'), 100, FALSE)
+			M.add_wound(/datum/wound/artery/throat, skipcheck = TRUE)
+			M.add_wound(/datum/wound/dismemberment, skipcheck = TRUE)
+			leniniscoming += rand(5,20)
+		unbuckle_all_mobs()
+	process()
+
+/obj/structure/panopticon/lenin/process()
+	if(leniniscoming >= 25)
+		priority_announce("Something imperishable is coming!", "Old-World Announcer", 'sound/misc/necrolenin_alert.ogg', "Captain")
+		leninalive = TRUE
+		sleep(10 SECONDS)
+		SEND_SOUND(world, sound('sound/panopticon/krasnaya_armya.ogg'))
+		leniniscoming -= 0
+		sleep(56 SECONDS)
+		for(var/mob/living/carbon/human/M in GLOB.player_list)
+			M.gib(FALSE, FALSE, FALSE)
+			SSticker.declare_completion()
+			SSticker.current_state = GAME_STATE_FINISHED
