@@ -1,4 +1,4 @@
-/* 
+/*
 NOTES:
 There is a DB table to track ckeys and associated discord IDs.
 This system REQUIRES TGS, and will auto-disable if TGS is not present.
@@ -15,7 +15,7 @@ ROUNDSTART:
 2] A ping is sent to the discord with the IDs of people who wished to be notified
 3] The file is emptied
 
-MIDROUND: 
+MIDROUND:
 1] Someone usees the notify verb, it adds their discord ID to the list.
 2] On fire, it will write that to the disk, as long as conditions above are correct
 
@@ -43,7 +43,7 @@ SUBSYSTEM_DEF(discord)
 		enabled = 1 // Allows other procs to use this (Account linking, etc)
 	else
 		can_fire = 0 // We dont want excess firing
-		return ..() // Cancel 
+		return ..() // Cancel
 
 	try
 		people_to_notify = json_decode(file2text(notify_file))
@@ -54,21 +54,21 @@ SUBSYSTEM_DEF(discord)
 		// I would use jointext here, but I dont think you can two-side glue with it, and I would have to strip characters otherwise
 		notifymsg += "<@[id]> " // 22 charaters per notify, 90 notifies per message, so I am not making a failsafe because 90 people arent going to notify at once
 	if(notifymsg)
-		send2chat("[notifymsg]", CONFIG_GET(string/chat_announce_new_game)) // Sends the message to the discord, using same config option as the roundstart notification
+		send2chat(new /datum/tgs_message_content("[notifymsg]"), CONFIG_GET(string/chat_announce_new_game)) // Sends the message to the discord, using same config option as the roundstart notification
 	fdel(notify_file) // Deletes the file
 	return ..()
-	
+
 /datum/controller/subsystem/discord/fire()
 	if(!enabled)
 		return // Dont do shit if its disabled
 	if(notify_members == notify_members_cache)
-		return // Dont re-write the file 
+		return // Dont re-write the file
 	// If we are all clear
 	write_notify_file()
-	
+
 /datum/controller/subsystem/discord/Shutdown()
 	write_notify_file() // Guaranteed force-write on server close
-	
+
 /datum/controller/subsystem/discord/proc/write_notify_file()
 	if(!enabled) // Dont do shit if its disabled
 		return
@@ -78,7 +78,10 @@ SUBSYSTEM_DEF(discord)
 
 // Returns ID from ckey
 /datum/controller/subsystem/discord/proc/lookup_id(lookup_ckey)
-	var/datum/DBQuery/query_get_discord_id = SSdbcore.NewQuery("SELECT discord_id FROM [format_table_name("player")] WHERE ckey = '[sanitizeSQL(lookup_ckey)]'")
+	var/datum/DBQuery/query_get_discord_id = SSdbcore.NewQuery(
+		"SELECT discord_id FROM [format_table_name("player")] WHERE ckey = :ckey",
+		list("ckey" = lookup_ckey)
+	)
 	if(!query_get_discord_id.Execute())
 		qdel(query_get_discord_id)
 		return
@@ -88,7 +91,10 @@ SUBSYSTEM_DEF(discord)
 
 // Returns ckey from ID
 /datum/controller/subsystem/discord/proc/lookup_ckey(lookup_id)
-	var/datum/DBQuery/query_get_discord_ckey = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("player")] WHERE discord_id = '[sanitizeSQL(lookup_id)]'")
+	var/datum/DBQuery/query_get_discord_ckey = SSdbcore.NewQuery(
+		"SELECT ckey FROM [format_table_name("player")] WHERE discord_id = :discord_id",
+		list("discord_id" = lookup_id)
+	)
 	if(!query_get_discord_ckey.Execute())
 		qdel(query_get_discord_ckey)
 		return
@@ -98,14 +104,20 @@ SUBSYSTEM_DEF(discord)
 
 // Finalises link
 /datum/controller/subsystem/discord/proc/link_account(ckey)
-	var/datum/DBQuery/link_account = SSdbcore.NewQuery("UPDATE [format_table_name("player")] SET discord_id = '[sanitizeSQL(account_link_cache[ckey])]' WHERE ckey = '[sanitizeSQL(ckey)]'")
+	var/datum/DBQuery/link_account = SSdbcore.NewQuery(
+		"UPDATE [format_table_name("player")] SET discord_id = :discord_id WHERE ckey = :ckey",
+		list("discord_id" = account_link_cache[ckey], "ckey" = ckey)
+	)
 	link_account.Execute()
 	qdel(link_account)
 	account_link_cache -= ckey
 
 // Unlink account (Admin verb used)
 /datum/controller/subsystem/discord/proc/unlink_account(ckey)
-	var/datum/DBQuery/unlink_account = SSdbcore.NewQuery("UPDATE [format_table_name("player")] SET discord_id = NULL WHERE ckey = '[sanitizeSQL(ckey)]'")
+	var/datum/DBQuery/unlink_account = SSdbcore.NewQuery(
+		"UPDATE [format_table_name("player")] SET discord_id = NULL WHERE ckey = :ckey",
+		list("ckey" = ckey)
+	)
 	unlink_account.Execute()
 	qdel(unlink_account)
 
