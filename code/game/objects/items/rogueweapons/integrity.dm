@@ -2,6 +2,7 @@
 	var/blade_int = 0
 	var/max_blade_int = 0
 	var/required_repair_skill = 0
+	var/sword_spark
 
 /obj/item/proc/remove_bintegrity(amt as num)
 	blade_int = blade_int - amt
@@ -46,10 +47,14 @@
 			user.visible_message("<span class='notice'>[user] sharpens [src]!</span>")
 			degrade_bintegrity(0.5)
 			add_bintegrity(max_blade_int * 0.1)
-			if(prob(35))
-				var/datum/effect_system/spark_spread/S = new()
-				var/turf/front = get_step(user,user.dir)
-				S.set_up(1, 1, front)
-				S.start()
+			if(!locate(/obj/item) in get_turf(src))
+				if(prob(35))
+					if(sword_spark == TRUE)
+						grind_spark_sword(user)
+					else
+						grind_spark(user)
+
+			if(locate(/obj/item) in get_turf(src))
+				ground_spark(src)
 			return
 	. = ..()

@@ -135,3 +135,9 @@
 	var/obj/effect/dummy/lighting_obj/moblight/mob_light_obj = new (src, _color, _range, _power, _duration)
 	return mob_light_obj
 
+/atom/proc/set_light_on(new_value)
+	if(new_value == light_on)
+		return
+	SEND_SIGNAL(src, COMSIG_ATOM_SET_LIGHT_ON, new_value)
+	. = light_on
+	light_on = new_value

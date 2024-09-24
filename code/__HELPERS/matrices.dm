@@ -5,13 +5,13 @@
 /atom/proc/SpinAnimation(speed = 10, loops = -1, clockwise = 1, segments = 3, parallel = TRUE)
 	if(!segments)
 		return
-	var/segment = 360/segments
+	var/segment = 360 / segments
 	if(!clockwise)
 		segment = -segment
 	var/list/matrices = list()
-	for(var/i in 1 to segments-1)
+	for(var/i in 1 to segments - 1)
 		var/matrix/M = matrix(transform)
-		M.Turn(segment*i)
+		M.Turn(segment * i)
 		matrices += M
 	var/matrix/last = matrix(transform)
 	matrices += last

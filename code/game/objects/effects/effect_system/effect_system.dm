@@ -66,7 +66,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		direction = pick(GLOB.cardinals)
 	else
 		direction = pick(GLOB.alldirs)
-	var/steps_amt = pick(1,2,3)
+	var/steps_amt = pick(0,1)
 	for(var/j in 1 to steps_amt)
 		sleep(5)
 		step(E,direction)

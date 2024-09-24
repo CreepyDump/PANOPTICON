@@ -15,6 +15,7 @@
 	name = "portal"
 	desc = ""
 	icon = 'icons/obj/stationobjs.dmi'
+	plane = ABOVE_LIGHTING_PLANE
 	icon_state = "portal"
 	anchored = TRUE
 	var/mech_sized = FALSE

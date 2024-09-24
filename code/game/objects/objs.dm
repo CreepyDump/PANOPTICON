@@ -43,7 +43,7 @@
 	var/break_message = null
 	var/destroy_sound = 'sound/foley/breaksound.ogg'
 	var/destroy_message = null
-
+	var/spark_on_hit = null
 	var/animate_dmg = TRUE
 
 	vis_flags = VIS_INHERIT_PLANE
@@ -344,3 +344,14 @@
 /obj/proc/dump_contents()
 	CRASH("Unimplemented.")
 	return
+
+/obj/attackby(obj/item/W, mob/user, params)
+	. = ..()
+
+	if(src.spark_on_hit == TRUE)
+
+		if(W.sword_spark == TRUE)
+//		if(prob(25))
+			do_sparks(2, FALSE, src)
+			return
+//	..()

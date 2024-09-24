@@ -27,6 +27,7 @@
 	minstr = 7
 	sellprice = 30
 	wdefense = 4
+	sword_spark = TRUE
 
 /obj/item/rogueweapon/sword/Initialize()
 	. = ..()

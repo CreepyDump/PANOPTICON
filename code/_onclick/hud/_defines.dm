@@ -96,39 +96,44 @@
 #define ui_borg_intents "EAST-2:26,SOUTH:5"
 
 
-//Upper-middle right (alerts)
-#define ui_alert1 "EAST+0:-14,CENTER-7:16"
-#define ui_alert2 "EAST+0:-34,CENTER-7:16"
-#define ui_alert3 "EAST+0:-54,CENTER-7:16"
-#define ui_alert4 "EAST+0:-74,CENTER-7:16"
-#define ui_alert5 "EAST+0:-94,CENTER-7:16"
-#define ui_alert6 "EAST+0:-114,CENTER-7:16"
-#define ui_alert7 "EAST+0:-134,CENTER-7:16"
-#define ui_alert8 "EAST+0:-154,CENTER-7:16"
-#define ui_alert9 "EAST+0:-174,CENTER-7:16"
-#define ui_alert10 "EAST+0:-194,CENTER-7:16"
+//Upper-left (alerts)
+#define ui_alert1 "WEST-5:0,TOP:-64" // FIRST ROW STARTS HERE // 1
+#define ui_alert2 "WEST-5:19,TOP:-64" // 2
+#define ui_alert3 "WEST-5:38,TOP:-64" // 3
+#define ui_alert4 "WEST-5:57,TOP:-64" // 4
+#define ui_alert5 "WEST-5:76,TOP:-64" // 5
+#define ui_alert6 "WEST-5:95,TOP:-64" // 6
+#define ui_alert7 "WEST-5:114,TOP:-64" // 7
+#define ui_alert8 "WEST-5:133,TOP:-64" // 8
+#define ui_alert9 "WEST-5:152,TOP:-64" // FIRST ROW ENDS HERE // 9
 
-#define ui_balert1 "EAST+0:-14,CENTER+7:-16"
-#define ui_balert2 "EAST+0:-34,CENTER+7:-16"
-#define ui_balert3 "EAST+0:-54,CENTER+7:-16"
-#define ui_balert4 "EAST+0:-74,CENTER+7:-16"
-#define ui_balert5 "EAST+0:-94,CENTER+7:-16"
-#define ui_balert6 "EAST+0:-114,CENTER+7:-16"
-#define ui_balert7 "EAST+0:-134,CENTER+7:-16"
-#define ui_balert8 "EAST+0:-154,CENTER+7:-16"
-#define ui_balert9 "EAST+0:-174,CENTER+7:-16"
-#define ui_balert10 "EAST+0:-194,CENTER+7:-16"
+#define ui_alert10 "WEST-5:114,TOP:-96" // 10
 
-#define ui_dalert1 "WEST+0:14,CENTER+7:-16"
-#define ui_dalert2 "WEST+0:34,CENTER+7:-16"
-#define ui_dalert3 "WEST+0:54,CENTER+7:-16"
-#define ui_dalert4 "WEST+0:74,CENTER+7:-16"
-#define ui_dalert5 "WEST+0:94,CENTER+7:-16"
-#define ui_dalert6 "WEST+0:114,CENTER+7:-16"
-#define ui_dalert7 "WEST+0:134,CENTER+7:-16"
-#define ui_dalert8 "WEST+0:154,CENTER+7:-16"
-#define ui_dalert9 "WEST+0:174,CENTER+7:-16"
-#define ui_dalert10 "WEST+0:194,CENTER+7:-16"
+
+#define ui_balert1 "WEST-5:0,TOP:-32" // SECOND ROW STARTS HERE // 1
+#define ui_balert2 "WEST-5:19,TOP:-32" // 2
+#define ui_balert3 "WEST-5:38,TOP:-32" // 3
+#define ui_balert4 "WEST-5:57,TOP:-32" // 4
+#define ui_balert5 "WEST-5:76,TOP:-32" // 5
+#define ui_balert6 "WEST-5:95,TOP:-32" // 6
+#define ui_balert7 "WEST-5:114,TOP:-32" // 7
+#define ui_balert8 "WEST-5:133,TOP:-32" // 8
+#define ui_balert9 "WEST-5:152,TOP:-32" // SECOND ROW ENDS HERE // 9
+
+#define ui_balert10 "WEST-5:19,TOP:-96" // 10
+
+
+#define ui_dalert1 "WEST-5:0,TOP:0" // 1 // THIRST
+#define ui_dalert2 "WEST-5:19,TOP:0" // 2
+#define ui_dalert3 "WEST-5:38,TOP:0" // 3
+#define ui_dalert4 "WEST-5:57,TOP:0" // 4
+#define ui_dalert5 "WEST-5:76,TOP:0" // 5
+#define ui_dalert6 "WEST-5:95,TOP:0" // 6
+#define ui_dalert7 "WEST-5:114,TOP:0" // 7
+#define ui_dalert8 "WEST-5:133,TOP:0" // 8
+#define ui_dalert9 "WEST-5:152,TOP:0" // THIRD ROW ENDS HERE // 9
+
+#define ui_dalert10 "WEST-5:0,TOP:-96" // 10
 
 
 //Middle right (status indicators)

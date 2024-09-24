@@ -100,7 +100,7 @@
 			}
 			.value {
 				font-family: "Courier New", monospace;
-				font-size: 8pt;
+				font-size: 11pt;
 			}
 		</style>
 	</head>

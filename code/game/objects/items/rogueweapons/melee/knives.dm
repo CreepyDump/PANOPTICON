@@ -24,7 +24,7 @@
 	wdefense = 3
 	thrown_bclass = BCLASS_CUT
 	smeltresult = /obj/item/ingot/steel
-
+	sword_spark = FALSE
 
 
 /datum/intent/dagger

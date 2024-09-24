@@ -1,6 +1,19 @@
 macro "default"
 
 
+	elem 
+		name = "F5"
+		command = "Asay"
+	elem 
+		name = "F6"
+		command = "Player-Panel-New"
+	elem 
+		name = "F7"
+		command = "Game-Panel"
+	elem 
+		name = "F8"
+		command = "Aghost"
+
 menu "menu"
 	elem 
 		name = "&Game"

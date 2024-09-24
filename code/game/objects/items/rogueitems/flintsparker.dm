@@ -17,12 +17,10 @@
 	flintcd = world.time
 	playsound(user, 'sound/items/flint.ogg', 100, FALSE)
 	flick("flintstrike", src)
-	if(prob(80))
+	if(prob(25))
+		grind_spark(user)
+	if(prob(5))
 		user.flash_fullscreen("whiteflash")
-		var/datum/effect_system/spark_spread/S = new()
-		var/turf/front = get_step(user,user.dir)
-		S.set_up(1, 1, front)
-		S.start()
 
 /obj/item/flint/afterattack(atom/movable/A, mob/user, proximity)
 	. = ..()

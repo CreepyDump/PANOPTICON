@@ -12,6 +12,9 @@
 	///If non-null, overrides a/an/some in all cases
 	var/article
 
+	// Base transform matrix
+	var/matrix/base_transform = null
+
 	///First atom flags var
 	var/flags_1 = NONE
 	///Intearaction flags
@@ -89,6 +92,13 @@
 	var/datum/wires/wires = null
 
 	var/list/alternate_appearances
+
+	///Boolean variable for toggleable lights. Has no effect without the proper light_system, light_range and light_power values.
+	var/light_on = TRUE
+	///Light systems, both shouldn't be active at the same time.
+	var/light_system = STATIC_LIGHT
+	///Bitflags to determine lighting-related atom properties.
+	var/light_flags = NONE
 
 /**
   * Called when an atom is created in byond (built in engine proc)
@@ -374,6 +384,12 @@
 /atom/proc/return_analyzable_air()
 	return null
 
+// Updates the atom's transform
+/atom/proc/apply_transform(matrix/M)
+	if(!base_transform)
+		transform = M
+		return
+	var/matrix/base_copy = matrix(base_transform)
 ///Check if this atoms eye is still alive (probably)
 /atom/proc/check_eye(mob/user)
 	return

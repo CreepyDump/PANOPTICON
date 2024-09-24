@@ -24,10 +24,7 @@
 		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
 		user.visible_message("<span class='info'>[user] strikes the stones together.</span>")
 		if(prob(10))
-			var/datum/effect_system/spark_spread/S = new()
-			var/turf/front = get_step(user,user.dir)
-			S.set_up(1, 1, front)
-			S.start()
+			grind_spark(user)
 	else
 		..()
 
@@ -79,11 +76,8 @@
 	. = ..()
 	if(.) //damage received
 		if(damage_amount > 10)
-			if(prob(10))
-				var/datum/effect_system/spark_spread/S = new()
-				var/turf/front = get_turf(src)
-				S.set_up(1, 1, front)
-				S.start()
+			if(prob(15))
+				grind_spark(src)
 
 /obj/item/natural/rock/attackby(obj/item/W, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -91,19 +85,13 @@
 		user.visible_message("<span class='info'>[user] strikes the stone against the rock.</span>")
 		playsound(src.loc, 'sound/items/stonestone.ogg', 100)
 		if(prob(35))
-			var/datum/effect_system/spark_spread/S = new()
-			var/turf/front = get_turf(src)
-			S.set_up(1, 1, front)
-			S.start()
+			grind_spark(user)
 		return
 	if(istype(W, /obj/item/natural/rock))
 		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
 		user.visible_message("<span class='info'>[user] strikes the rocks together.</span>")
 		if(prob(10))
-			var/datum/effect_system/spark_spread/S = new()
-			var/turf/front = get_turf(src)
-			S.set_up(1, 1, front)
-			S.start()
+			grind_spark(user)
 		return
 	..()
 
