@@ -69,5 +69,4 @@
 #endif
 
 #ifdef TRAVISTESTING
-#define TESTING
 #endif

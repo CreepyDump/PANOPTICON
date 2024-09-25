@@ -214,7 +214,7 @@
 /area/panopticon/outdoors/hell
 	name = "HELL"
 	icon_state = "isnear"
-	outdoors = TRUE
+	outdoors = FALSE
 	ambientrain = null
 	ambientsounds = AMB_CAVELAVA
 	ambientnight = AMB_CAVELAVA
@@ -229,7 +229,7 @@
 /area/panopticon/indoors/hell
 	name = "HELL INDOORS"
 	icon_state = "isnear"
-	outdoors = TRUE
+	outdoors = FALSE
 	ambientrain = null
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN

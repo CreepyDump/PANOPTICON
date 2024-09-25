@@ -98,7 +98,7 @@
 //		AddComponent(/datum/component/pellet_cloud, projectile_type = shrapnel_type, magnitude = shrapnel_radius)
 	
 	else
-		explosion(T,1,2,3,5, TRUE, FALSE, 0, FALSE, FALSE, 'sound/misc/FragGrenade.ogg')
+		explosion(T,1,2,3,0, TRUE, FALSE, 0, FALSE, FALSE, 'sound/misc/FragGrenade.ogg')
 		qdel(src)
 
 /obj/item/grenade/proc/update_mob()

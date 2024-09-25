@@ -218,10 +218,15 @@
 
 /obj/item/roguekey/barmenhyita
 	name = "Bar-Pantry key"
-	icon_state = "rustkey"
+	icon_state = "brownkey"
 	lockid = "barmenhyita"
 
 /obj/item/roguekey/jailcells
 	name = "All-cells key"
 	icon_state = "rustkey"
 	lockid = "jailcells"
+
+/obj/item/roguekey/armory
+	name = "Armory key"
+	icon_state = "rustkey"
+	lockid = "armoury"

@@ -32,6 +32,7 @@
 	mask = /obj/item/clothing/mask/gas/panopticon/greys
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/panopticon
+	neck = /obj/item/roguekey/armory
 	if(prob(35))
 		cloak = /obj/item/clothing/armor/panopticon/cloak/grey/hitman
 	if(H.mind)
