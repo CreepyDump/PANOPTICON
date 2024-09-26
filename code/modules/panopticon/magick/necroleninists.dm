@@ -128,7 +128,7 @@ var/leninalive = FALSE
 	process()
 
 /obj/structure/panopticon/lenin/process()
-	if(leniniscoming >= 25)
+	if(leniniscoming >= 125)
 		priority_announce("Something imperishable is coming!", "Old-World Announcer", 'sound/misc/necrolenin_alert.ogg', "Captain")
 		leninalive = TRUE
 		sleep(10 SECONDS)
