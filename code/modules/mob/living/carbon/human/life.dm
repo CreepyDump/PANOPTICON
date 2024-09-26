@@ -399,27 +399,6 @@
 			return TRUE
 	return ..()
 
-/obj/item/proc/on_embed_life(mob/living/user)
-	return
-
-/mob/living/proc/handle_embedded_objects()
-	for(var/obj/item/I in simple_embedded_objects)
-
-		if(I.on_embed_life(src))
-			return
-
-		if(prob(I.embedding.embedded_pain_chance))
-//			BP.receive_damage(I.w_class*I.embedding.embedded_pain_multiplier)
-			to_chat(src, "<span class='danger'>[I] in me hurts!</span>")
-
-		if(prob(I.embedding.embedded_fall_chance))
-//			BP.receive_damage(I.w_class*I.embedding.embedded_fall_pain_multiplier)
-			simple_embedded_objects -= I
-			I.forceMove(drop_location())
-			to_chat(src,"<span class='danger'>[I] falls out of me!</span>")
-			if(!has_embedded_objects())
-				clear_alert("embeddedobject")
-
 /mob/living/carbon/human/handle_embedded_objects()
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
