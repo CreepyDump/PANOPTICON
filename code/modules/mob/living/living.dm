@@ -1,5 +1,6 @@
 /mob/living/Initialize()
 	. = ..()
+	update_shadow()
 	update_a_intents()
 	swap_rmb_intent(num=1)
 	if(unique_name)
@@ -319,10 +320,10 @@
 			if(I.wlength > WLENGTH_NORMAL)
 				CZ = TRUE
 			else //we have a short/medium weapon, so allow hitting legs
-				acceptable = list(BODY_ZONE_HEAD, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_STOMACH, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_R_EYE,BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_EARS, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG, BODY_ZONE_PRECISE_HAIR, BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_MOUTH)
+				acceptable = list(BODY_ZONE_HEAD, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_STOMACH, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_R_EYE,BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_EARS, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG, BODY_ZONE_PRECISE_SKULL, BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_MOUTH)
 		else
 			if(!CZ) //we are punching, no legs
-				acceptable = list(BODY_ZONE_HEAD, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_STOMACH, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_R_EYE,BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_EARS, BODY_ZONE_PRECISE_HAIR, BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_MOUTH)
+				acceptable = list(BODY_ZONE_HEAD, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_STOMACH, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_R_EYE,BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_EARS, BODY_ZONE_PRECISE_SKULL, BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_MOUTH)
 	else if(!(L.mobility_flags & MOBILITY_STAND) && (mobility_flags & MOBILITY_STAND)) //we are prone, victim is standing
 		if(I)
 			if(I.wlength > WLENGTH_NORMAL)
@@ -1098,27 +1099,25 @@
 
 /mob/living/carbon/human/resist_grab(moving_resist)
 	var/mob/living/L = pulledby
+	var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if((H.age != AGE_YOUNG) && (age == AGE_YOUNG))
-			var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
-			for(var/obj/item/grabbing/G in grabbedby)
-				if(G.limb_grabbed == head)
-					if(G.grabbee == pulledby)
-						if(G.sublimb_grabbed == BODY_ZONE_PRECISE_EARS)
-							visible_message("<span class='warning'>[src] struggles to break free from [pulledby]'s grip!</span>", \
-											"<span class='warning'>I struggle against [pulledby]'s grip!</span>", null, null, pulledby)
-							to_chat(pulledby, "<span class='warning'>[src] struggles against my grip!</span>")
-							return FALSE
-		if(HAS_TRAIT(H, RTRAIT_NOSEGRAB))
-			var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
+		for(var/obj/item/grabbing/G in grabbedby)
+			if(G.limb_grabbed == head)
+				if(G.grabbee == pulledby)
+					if(G.sublimb_grabbed == BODY_ZONE_PRECISE_EARS)
+						visible_message(span_warning("[src] struggles to break free from [pulledby]'s grip!"), \
+										span_warning("I struggle against [pulledby]'s grip!"), null, null, pulledby)
+						to_chat(pulledby, span_warning("[src] struggles against my grip!"))
+						return FALSE
+		if(HAS_TRAIT(H, RTRAIT_NOSEGRAB) && !HAS_TRAIT(src, TRAIT_MISSING_NOSE))
 			for(var/obj/item/grabbing/G in grabbedby)
 				if(G.limb_grabbed == head)
 					if(G.grabbee == pulledby)
 						if(G.sublimb_grabbed == BODY_ZONE_PRECISE_NOSE)
-							visible_message("<span class='warning'>[src] struggles to break free from [pulledby]'s grip!</span>", \
-											"<span class='warning'>I struggle against [pulledby]'s grip!</span>", null, null, pulledby)
-							to_chat(pulledby, "<span class='warning'>[src] struggles against my grip!</span>")
+							visible_message(span_warning("[src] struggles to break free from [pulledby]'s grip!"), \
+											span_warning("I struggle against [pulledby]'s grip!"), null, null, pulledby)
+							to_chat(pulledby, span_warning("[src] struggles against my grip!"))
 							return FALSE
 	return ..()
 
@@ -1977,3 +1976,23 @@
 	reset_perspective()
 	update_cone_show()
 //	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)
+
+/mob/living/update_transform()
+	perform_update_transform() // carbon mobs do it differently than silicons and simple animals.
+	update_shadow()
+	SEND_SIGNAL(src, COMSIG_LIVING_POST_UPDATE_TRANSFORM) // ...and we want the signal to be sent now.
+
+/mob/living/update_shadow()
+	vis_contents |= get_mob_shadow(NORMAL_MOB_SHADOW)
+
+/mob/living/proc/perform_update_transform()
+	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
+	var/changed = FALSE
+
+	if(resize != RESIZE_DEFAULT_SIZE)
+		changed = TRUE
+		ntransform.Scale(resize)
+		resize = RESIZE_DEFAULT_SIZE
+
+	if(changed)
+		animate(src, transform = ntransform, time = 2, easing = EASE_IN|EASE_OUT)

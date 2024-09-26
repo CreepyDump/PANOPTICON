@@ -8,7 +8,7 @@
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_LIVER
 	desc = ""
-	fried_type = /obj/item/reagent_containers/food/snacks/panopticon/friedliver
+
 	maxHealth = STANDARD_ORGAN_THRESHOLD
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
@@ -44,7 +44,7 @@
 			C.reagents.metabolize(C, can_overdose=TRUE)
 
 			if(provide_pain_message && damage > 10 && prob(damage/3))//the higher the damage the higher the probability
-				to_chat(C, "<span class='warning'>I feel a dull pain in my abdomen.</span>")
+				to_chat(C, span_warning("I feel a dull pain in my abdomen."))
 
 		else	//for when our liver's failing
 			C.liver_failure()
@@ -102,16 +102,3 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	damage += 100/severity
-
-/obj/item/reagent_containers/food/snacks/panopticon/friedliver
-	name = "fried heart"
-	desc = ""
-	icon = 'icons/obj/surgery.dmi'
-	icon_state = "liver_fried"
-	bitesize = 2
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	w_class = WEIGHT_CLASS_TINY
-	tastes = list("burnt flesh" = 1)
-	eat_effect = null
-	rotprocess = 15 MINUTES
-	sellprice = 0

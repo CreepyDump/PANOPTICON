@@ -289,15 +289,10 @@
 		if(method in list(INGEST, VAPOR, INJECT))
 			M.adjust_nutrition(-5)
 			if(show_message)
-				to_chat(M, "<span class='warning'>My stomach feels empty and cramps!</span>")
+				to_chat(M, span_warning("My stomach feels empty and cramps!"))
 		else
-			var/mob/living/carbon/C = M
-			for(var/s in C.surgeries)
-				var/datum/surgery/S = s
-				S.speed_modifier = max(0.1, S.speed_modifier)
-
 			if(show_message)
-				to_chat(M, "<span class='danger'>I feel my wounds fade away to nothing!</span>" )
+				to_chat(M, span_danger("I feel my wounds fade away to nothing!") )
 	..()
 
 /datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)

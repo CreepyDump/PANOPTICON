@@ -6,6 +6,8 @@
 	if(world.time > last_fatigued + 50) //regen fatigue
 		var/added = rogstam / maxrogstam
 		added = round(-10+ (added*-40))
+		if(HAS_TRAIT(src, TRAIT_MISSING_NOSE))
+			added = round(added * 0.5, 1)
 		if(rogfat >= 1)
 			rogfat_add(added)
 		else

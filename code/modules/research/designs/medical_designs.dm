@@ -602,8 +602,9 @@
 	id = "surgery_parent"
 	research_icon = 'icons/obj/surgery.dmi'
 	research_icon_state = "surgery_any"
-	var/surgery
+	var/datum/surgery_step/surgery_step
 
+/*
 /datum/design/surgery/experimental_dissection
 	name = "Advanced Dissection"
 	desc = ""
@@ -749,3 +750,4 @@
 	id = "surgery_zombie"
 	surgery = /datum/surgery/advanced/necrotic_revival
 	research_icon_state = "surgery_head"
+*/ 

@@ -144,7 +144,7 @@ There are several things that need to be remembered:
 			var/mutable_appearance/armdam_overlay = mutable_appearance(limb_icon, "armdam_[BP.body_zone]_0[BP.burnstate]", -ARM_DAMAGE_LAYER)
 			armdam_overlays += armdam_overlay
 		var/checker = FALSE
-		if(BP.get_bleedrate())
+		if(BP.get_bleed_rate())
 			checker = TRUE
 			if(BP.bandage)
 				var/mutable_appearance/damage_overlay = mutable_appearance(limb_icon, "[BP.body_zone]_b", -DAMAGE_LAYER)

@@ -16,7 +16,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/plane_master_controller)
 	owner_hud = hud
 	var/assoc_controlled_planes = list()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/instance = owner_hud.plane_masters["[i]"]
+		var/obj/screen/plane_master/instance = owner_hud.plane_masters["[i]"]
 		if(!instance) //If we looked for a hud that isn't instanced, just keep going
 			stack_trace("[i] isn't a valid plane master layer for [owner_hud.type], are you sure it exists in the first place?")
 			continue
@@ -27,41 +27,41 @@ INITIALIZE_IMMEDIATE(/atom/movable/plane_master_controller)
 /atom/movable/plane_master_controller/add_filter(name, priority, list/params)
 	. = ..()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/pm_iterator = controlled_planes[i]
+		var/obj/screen/plane_master/pm_iterator = controlled_planes[i]
 		pm_iterator.add_filter(name, priority, params)
 
 ///Full override so we can just use filterrific
 /atom/movable/plane_master_controller/remove_filter(name_or_names)
 	. = ..()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/pm_iterator = controlled_planes[i]
+		var/obj/screen/plane_master/pm_iterator = controlled_planes[i]
 		pm_iterator.remove_filter(name_or_names)
 
 /atom/movable/plane_master_controller/update_filters()
 	. = ..()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/pm_iterator = controlled_planes[i]
+		var/obj/screen/plane_master/pm_iterator = controlled_planes[i]
 		pm_iterator.update_filters()
 
 ///Gets all filters for this controllers plane masters
 /atom/movable/plane_master_controller/proc/get_filters(name)
 	. = list()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/pm_iterator = controlled_planes[i]
+		var/obj/screen/plane_master/pm_iterator = controlled_planes[i]
 		. += pm_iterator.get_filter(name)
 
 ///Transitions all filters owned by this plane master controller
 /atom/movable/plane_master_controller/transition_filter(name, time, list/new_params, easing, loop)
 	. = ..()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/pm_iterator = controlled_planes[i]
+		var/obj/screen/plane_master/pm_iterator = controlled_planes[i]
 		pm_iterator.transition_filter(name, time, new_params, easing, loop)
 
 ///Full override so we can just use filterrific
 /atom/movable/plane_master_controller/add_atom_colour(coloration, colour_priority)
 	. = ..()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/pm_iterator = controlled_planes[i]
+		var/obj/screen/plane_master/pm_iterator = controlled_planes[i]
 		pm_iterator.add_atom_colour(coloration, colour_priority)
 
 
@@ -69,14 +69,14 @@ INITIALIZE_IMMEDIATE(/atom/movable/plane_master_controller)
 /atom/movable/plane_master_controller/remove_atom_colour(colour_priority, coloration)
 	. = ..()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/pm_iterator = controlled_planes[i]
+		var/obj/screen/plane_master/pm_iterator = controlled_planes[i]
 		pm_iterator.remove_atom_colour(colour_priority, coloration)
 
 
 ///Resets the atom's color to null, and then sets it to the highest priority colour available
 /atom/movable/plane_master_controller/update_atom_colour()
 	for(var/i in controlled_planes)
-		var/atom/movable/screen/plane_master/pm_iterator = controlled_planes[i]
+		var/obj/screen/plane_master/pm_iterator = controlled_planes[i]
 		pm_iterator.update_atom_colour()
 
 

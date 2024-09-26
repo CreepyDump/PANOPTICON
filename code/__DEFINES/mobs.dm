@@ -26,13 +26,13 @@
 #define SUBMIT_INTENT 1
 
 //Blood levels
-#define BLOOD_VOLUME_MAXIMUM		600
-#define BLOOD_VOLUME_SLIME_SPLIT	1120
-#define BLOOD_VOLUME_NORMAL			500
-#define BLOOD_VOLUME_SAFE			450
-#define BLOOD_VOLUME_OKAY			350
-#define BLOOD_VOLUME_BAD			250
-#define BLOOD_VOLUME_SURVIVE		100
+#define BLOOD_VOLUME_MAXIMUM 1120
+#define BLOOD_VOLUME_SLIME_SPLIT 1120
+#define BLOOD_VOLUME_NORMAL 560
+#define BLOOD_VOLUME_SAFE 475
+#define BLOOD_VOLUME_OKAY 336
+#define BLOOD_VOLUME_BAD 224
+#define BLOOD_VOLUME_SURVIVE 122
 
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0
@@ -70,9 +70,10 @@
 
 #define BODYPART_NOT_DISABLED 0
 #define BODYPART_DISABLED_DAMAGE 1
-#define BODYPART_DISABLED_PARALYSIS 2
-#define BODYPART_DISABLED_CRIT 3 //plays a sound
-#define BODYPART_DISABLED_FALL 4 //temporary 60 seconds paralyzed
+#define BODYPART_DISABLED_PARALYSIS 2 //either a fall or twisting the limb
+#define BODYPART_DISABLED_WOUND 3 //bone fracture
+#define BODYPART_DISABLED_ROT 4 //limb is rotten oh nooo
+#define BODYPART_DISABLED_CLAMPED 5 //limb is clamped by a hemostat or speculum
 
 #define DEFAULT_BODYPART_ICON_ORGANIC 'icons/mob/human_parts_greyscale.dmi'
 #define DEFAULT_BODYPART_ICON_ROBOTIC 'icons/mob/augmentation/augments.dmi'
@@ -169,12 +170,6 @@
 #define SANITY_UNSTABLE 50
 #define SANITY_CRAZY 25
 #define SANITY_INSANE 0
-
-//Hygiene levels for humans
-#define HYGIENE_LEVEL_CLEAN 250
-#define HYGIENE_LEVEL_NORMAL 200
-#define HYGIENE_LEVEL_DIRTY 75
-#define HYGIENE_FACTOR 0.1
 
 //Nutrition levels for humans
 #define NUTRITION_LEVEL_FULL 1000
@@ -332,10 +327,10 @@
 #define OFFSET_UNDIES_F "underwearf"
 
 //MINOR TWEAKS/MISC
-#define AGE_MIN				18	//youngest a character can be
-#define AGE_MAX				85	//oldest a character can be
-#define WIZARD_AGE_MIN		30	//youngest a wizard can be
-#define APPRENTICE_AGE_MIN	29	//youngest an apprentice can be
+#define AGE_MIN				18	//minimum age a character can be
+#define AGE_MAX				85	//oldest age a character can be
+#define WIZARD_AGE_MIN		30	//minimum age a wizard can be
+#define APPRENTICE_AGE_MIN	29	//minimum age a apprentice can be
 #define SHOES_SLOWDOWN		0	//How much shoes slow you down by default. Negative values speed you up
 #define POCKET_STRIP_DELAY			40	//time taken (in deciseconds) to search somebody's pockets
 #define DOOR_CRUSH_DAMAGE	15	//the amount of damage that airlocks deal when they crush you
@@ -395,3 +390,60 @@
 //defense intents
 #define INTENT_DODGE 1
 #define INTENT_PARRY 2
+
+//skin tones defines
+
+//DWARF SKIN TONES
+#define SKIN_COLOR_PLATINUM "ffe0d1"
+#define SKIN_COLOR_AURUM "fcccb3"
+#define SKIN_COLOR_QUICKSILVER "edc6b3"
+#define SKIN_COLOR_BRASS "e2b9a3"
+#define SKIN_COLOR_IRON "d9a284"
+#define SKIN_COLOR_MALACHITE "c69b83"
+#define SKIN_COLOR_OBSIDIAN "3b2e27"
+#define SKIN_COLOR_BRIMSTONE "271f1a"
+
+//DARK ELF SKIN TONES
+#define SKIN_COLOR_COMMORAH "9796a9"
+#define SKIN_COLOR_GLOOMHAVEN "897489"
+#define SKIN_COLOR_DARKPILA "938f9c"
+#define SKIN_COLOR_SSHANNTYNLAN "737373"
+#define SKIN_COLOR_LLURTH_DREIR "6a616d"
+#define SKIN_COLOR_TAFRAVMA "5f5f70"
+#define SKIN_COLOR_YUETHINDRYNN "2F2F38"
+
+//WOOD ELF SKIN TONES
+#define SKIN_COLOR_DANDELION_CREEK "ffe0d1"
+#define SKIN_COLOR_ROSEVEIL "fcccb3"
+#define SKIN_COLOR_AZUREGROVE "edc6b3"
+#define SKIN_COLOR_ARBORSHOME "e2b9a3"
+#define SKIN_COLOR_ALMONDVALLE "c9a893"
+#define SKIN_COLOR_WALNUT_WOODS "ba9882"
+#define SKIN_COLOR_TIMBERBORN "5d4c41"
+
+//HUMEN SKIN TONES
+#define SKIN_COLOR_GRENZELHOFT "fff0e9"
+#define SKIN_COLOR_HAMMERHOLD "ffe0d1"
+#define SKIN_COLOR_AVAR "fcccb3"
+#define SKIN_COLOR_ROCKHILL "edc6b3"
+#define SKIN_COLOR_OTAVA "e2b9a3"
+#define SKIN_COLOR_ETRUSCA "d9a284"
+#define SKIN_COLOR_GRONN "c9a893"
+#define SKIN_COLOR_GIZA "ba9882"
+#define SKIN_COLOR_SHALVISTINE "ac8369"
+#define SKIN_COLOR_LALVESTINE "9c6f52"
+#define SKIN_COLOR_EBON "4e3729"
+
+//Hygiene levels for humans
+#define HYGIENE_LEVEL_CLEAN 250
+#define HYGIENE_LEVEL_NORMAL 200
+#define HYGIENE_LEVEL_DIRTY 75
+#define HYGIENE_FACTOR 0.1
+
+//SPECIAL SKIN TONES
+#define SKIN_COLOR_ROT "878f79"
+
+/// I don't know where else to put all of this, but these make 3/4ths look much better
+#define MOB_PIXEL_Z 7
+#define NORMAL_MOB_SHADOW "shadow"
+#define LYING_MOB_SHADOW "shadow_lying"

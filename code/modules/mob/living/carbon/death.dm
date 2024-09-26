@@ -46,6 +46,12 @@
 		visible_message("<span class='danger'>[M] bursts out of [src]!</span>")
 	. = ..()
 
+/mob/living/carbon/spill_embedded_objects()
+	. = ..()
+	for(var/obj/item/bodypart/bodypart as anything in bodyparts)
+		for(var/obj/item/embedded_item as anything in bodypart.embedded_objects)
+			bodypart.remove_embedded_object(embedded_item)
+
 /mob/living/carbon/spill_organs(no_brain, no_organs, no_bodyparts)
 	var/atom/Tsec = drop_location()
 	if(!no_bodyparts)

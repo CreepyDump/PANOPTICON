@@ -389,7 +389,7 @@
 	if(!base_transform)
 		transform = M
 		return
-	var/matrix/base_copy = matrix(base_transform)
+//	var/matrix/base_copy = matrix(base_transform)
 ///Check if this atoms eye is still alive (probably)
 /atom/proc/check_eye(mob/user)
 	return
@@ -609,7 +609,7 @@
   * deleted shortly after hitting something (during explosions or other massive events that
   * throw lots of items around - singularity being a notable example)
   */
-/atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+/atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, d_type = "blunt")
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
 		addtimer(CALLBACK(src, .proc/hitby_react, AM), 2)
 
@@ -1213,13 +1213,12 @@
 
 /atom/proc/update_filters()
 	filters = null
-	filter_data = sortTim(filter_data, /proc/cmp_filter_data_priority, TRUE)
+	sortTim(filter_data,associative = TRUE)
 	for(var/f in filter_data)
 		var/list/data = filter_data[f]
 		var/list/arguments = data.Copy()
 		arguments -= "priority"
 		filters += filter(arglist(arguments))
-	UNSETEMPTY(filter_data)
 
 /atom/proc/get_filter(name)
 	if(filter_data && filter_data[name])

@@ -81,6 +81,8 @@
 	if(!heavy_metal)
 		return
 	update_icon()
+	undo_messy()
+	do_messy()
 	SpinAnimation(10, 1)
 	var/turf/T = get_turf(src)
 	if(still_warm && T && T.bullet_sizzle)

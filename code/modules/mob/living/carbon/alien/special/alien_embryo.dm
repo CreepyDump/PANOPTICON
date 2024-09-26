@@ -53,13 +53,9 @@
 /obj/item/organ/body_egg/alien_embryo/egg_process()
 	if(stage < 5 && prob(3))
 		stage++
-		INVOKE_ASYNC(src, .proc/RefreshInfectionImage)
+		INVOKE_ASYNC(src, PROC_REF(RefreshInfectionImage))
 
 	if(stage == 5 && prob(50))
-		for(var/datum/surgery/S in owner.surgeries)
-			if(S.location == BODY_ZONE_CHEST && istype(S.get_surgery_step(), /datum/surgery_step/manipulate_organs))
-				AttemptGrow(0)
-				return
 		AttemptGrow()
 
 

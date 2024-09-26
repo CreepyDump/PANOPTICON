@@ -96,6 +96,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER //the icon to indicate this object is being dragged
 
 	var/datum/embedding_behavior/embedding
+	var/is_embedded = FALSE
 
 	var/flags_cover = 0 //for flags such as GLASSESCOVERSEYES
 	var/heat = 0
@@ -782,6 +783,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(hit_atom && !QDELETED(hit_atom))
+		undo_messy()
+		do_messy(duration = 4)
 		SEND_SIGNAL(src, COMSIG_MOVABLE_IMPACT, hit_atom, throwingdatum)
 		if(get_temperature() && isliving(hit_atom))
 			var/mob/living/L = hit_atom
@@ -803,7 +806,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 		else
 			playsound(src, drop_sound, YEET_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
-		return hit_atom.hitby(src, 0, itempush, throwingdatum=throwingdatum)
+		return hit_atom.hitby(src, 0, itempush, throwingdatum=throwingdatum, d_type=d_type)
 
 /obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
 	thrownby = thrower
@@ -829,6 +832,11 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/proc/get_belt_overlay() //Returns the icon used for overlaying the object on a belt
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
+
+/obj/item/onZImpact(turf/T, levels)
+	. = ..()
+	undo_messy()
+	do_messy(duration = 4)
 
 /obj/item/proc/update_slot_icon()
 	if(!ismob(loc))
@@ -906,20 +914,22 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 ///Returns the sharpness of src. If you want to get the sharpness of an item use this.
 /obj/item/proc/get_sharpness()
-	for(var/X in possible_item_intents)
-		var/datum/intent/D = new X()
-		if(D.blade_class == BCLASS_CUT)
-			return TRUE
-		if(D.blade_class == BCLASS_CHOP)
-			return TRUE
-	return sharpness
+	//Oh no, we are dulled out!
+	if(max_blade_int && (blade_int <= 0))
+		return FALSE
+	var/max_sharp = sharpness
+	for(var/datum/intent/intent as anything in possible_item_intents)
+		if(initial(intent.blade_class) == BCLASS_CUT)
+			max_sharp = max(max_sharp, IS_SHARP)
+		if(initial(intent.blade_class) == BCLASS_CHOP)
+			max_sharp = max(max_sharp, IS_SHARP)
+	return max_sharp
 
-/obj/item/proc/get_dismemberment_chance(obj/item/bodypart/affecting, input)
-	if(!input)
-		input = force
-	if(affecting.can_dismember(src))
-		if((sharpness || damtype == BURN) && w_class >= WEIGHT_CLASS_NORMAL && input >= 10)
-			. = force * (affecting.get_damage() / affecting.max_damage)
+/obj/item/proc/get_dismemberment_chance(obj/item/bodypart/affecting, mob/user)
+	if(!affecting.can_dismember(src))
+		return 0
+	if((get_sharpness() || damtype == BURN) && (w_class >= WEIGHT_CLASS_NORMAL) && force >= 10)
+		return force * (affecting.get_damage() / affecting.max_damage)
 
 /obj/item/proc/get_dismember_sound()
 	if(damtype == BURN)
@@ -946,7 +956,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	else
 		. = ""
 
-/obj/item/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+/obj/item/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, d_type = "blunt")
 	return
 
 /obj/item/attack_hulk(mob/living/carbon/human/user)

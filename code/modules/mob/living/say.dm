@@ -376,6 +376,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return null
 
 /mob/living/proc/treat_message(message)
+	if(HAS_TRAIT(src, TRAIT_GARGLE_SPEECH))
+		message = vocal_cord_torn(message)
 
 	if(HAS_TRAIT(src, TRAIT_UNINTELLIGIBLE_SPEECH))
 		message = unintelligize(message)

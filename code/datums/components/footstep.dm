@@ -45,7 +45,7 @@
 	var/mob/living/LM = parent
 	if(!T.footstep || LM.buckled || LM.lying || !CHECK_MULTIPLE_BITFIELDS(LM.mobility_flags, MOBILITY_STAND | MOBILITY_MOVE) || LM.throwing || LM.movement_type & (VENTCRAWLING | FLYING))
 		if (LM.lying && !LM.buckled && !(!T.footstep || LM.movement_type & (VENTCRAWLING | FLYING))) //play crawling sound if we're lying
-			playsound(T, 'sound/blank.ogg', 15 * volume)
+			playsound(T, 'sound/panopticon/crawl.ogg', 15 * volume)
 		return
 
 	if(iscarbon(LM))
@@ -135,6 +135,3 @@
 				GLOB.barefootstep[T.barefootstep][2],
 				TRUE,
 				GLOB.barefootstep[T.barefootstep][3] + e_range)
-	animate(H, time = 0.6, pixel_y = 2, loop = 0, easing=BACK_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
-	sleep(0.8 SECONDS)
-	animate(H, time = 0.6, pixel_y = 0, loop = 0, easing=BACK_EASING|EASE_IN, flags = ANIMATION_PARALLEL)

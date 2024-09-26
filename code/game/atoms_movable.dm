@@ -43,6 +43,11 @@
 	var/jumping = FALSE
 	var/zfalling = FALSE
 
+	///Lazylist to keep track on the sources of illumination.
+	var/list/affected_dynamic_lights
+	///Highest-intensity light affecting us, which determines our visibility.
+	var/affecting_dynamic_lumi = 0
+
 /atom/movable/proc/can_zFall(turf/source, levels = 1, turf/target, direction)
 	if(!direction)
 		direction = DOWN
@@ -976,3 +981,20 @@
 	animate(I, alpha = 175, pixel_x = to_x, pixel_y = to_y, time = 3, transform = M, easing = CUBIC_EASING)
 	sleep(1)
 	animate(I, alpha = 0, transform = matrix(), time = 1)
+
+//cool drop and throw effect
+/obj/item/proc/do_messy(pixel_variation = 8, angle_variation = 360, duration = 0)
+	animate(src, pixel_x = (pixel_x+rand(-pixel_variation,pixel_variation)), duration)
+	animate(src, pixel_y = (pixel_y+rand(-pixel_variation,pixel_variation)), duration)
+	if(our_angle)
+		animate(src, transform = transform.Turn(-our_angle), duration)
+		our_angle = 0
+	our_angle = rand(0,angle_variation)
+	transform = transform.Turn(our_angle)
+
+/obj/item/proc/undo_messy(duration = 0)
+	animate(src, pixel_x = pixel_x, duration)
+	animate(src, pixel_y = pixel_y, duration)
+	if(our_angle)
+		animate(src, transform = transform.Turn(-our_angle), duration)
+		our_angle = 0

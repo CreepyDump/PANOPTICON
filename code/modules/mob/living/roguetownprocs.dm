@@ -248,7 +248,7 @@
 					if(used_weapon && AB)
 						var/dam2take = round((get_complex_damage(AB,user,used_weapon.blade_dulling)/2),1)
 						if(dam2take)
-							used_weapon.take_damage(max(dam2take,1), BRUTE, "melee")
+							used_weapon.take_damage(max(dam2take,1), BRUTE, used_weapon.d_type)
 					return TRUE
 				else
 					return FALSE

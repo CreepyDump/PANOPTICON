@@ -65,6 +65,7 @@
 	muteinmouth = TRUE
 	w_class = WEIGHT_CLASS_TINY
 	spitoutmouth = FALSE
+	var/bandage_effectiveness = 0.9
 
 /obj/item/natural/cloth/attackby(obj/item/W, mob/living/user)
 	var/mob/living/carbon/human/H = user

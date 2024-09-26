@@ -100,11 +100,34 @@
 		mode() // Activate held item
 
 /mob/living/carbon/attackby(obj/item/I, mob/user, params)
+	if(!user.cmode)
+		var/try_to_fail = !istype(user.rmb_intent, /datum/rmb_intent/weak)
+		var/list/possible_steps = list()
+		for(var/datum/surgery_step/surgery_step as anything in GLOB.surgery_steps)
+			if(!surgery_step.name)
+				continue
+			if(surgery_step.can_do_step(user, src, user.zone_selected, I, user.used_intent))
+				possible_steps[surgery_step.name] = surgery_step
+		var/possible_len = length(possible_steps)
+		if(possible_len)
+			var/datum/surgery_step/done_step
+			if(possible_len > 1)
+				var/input = input(user, "Which surgery step do you want to perform?", "PESTRA", ) as null|anything in possible_steps
+				if(input)
+					done_step = possible_steps[input]
+			else
+				done_step = possible_steps[possible_steps[1]]
+			if(done_step?.try_op(user, src, user.zone_selected, I, user.used_intent, try_to_fail))
+				return TRUE
+		if(I.item_flags & SURGICAL_TOOL)
+			return TRUE
+	/*
 	for(var/datum/surgery/S in surgeries)
 		if(!(mobility_flags & MOBILITY_STAND) || !S.lying_required)
-			if((S.self_operable || user != src) && (user.used_intent.type == INTENT_HELP || user.used_intent.type == INTENT_DISARM))
-				if(S.next_step(user,user.used_intent))
+			if(S.self_operable || user != src)
+				if(S.next_step(user, user.used_intent))
 					return 1
+	*/
 	return ..()
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -130,7 +153,7 @@
 			if(victim.IsOffBalanced())
 				victim.Knockdown(30)
 			visible_message("<span class='danger'>[src] crashes into [victim]!",\
-				"<span class='danger'>I violently crash into [victim]!</span>")
+				span_danger("I violently crash into [victim]!"))
 		playsound(src,"genblunt",100,TRUE)
 
 
@@ -1282,3 +1305,15 @@
 	if(mood)
 		if(mood.sanity < SANITY_UNSTABLE)
 			return TRUE
+
+/mob/living/carbon/update_shadow()
+	vis_contents -= get_mob_shadow(NORMAL_MOB_SHADOW)
+	vis_contents -= get_mob_shadow(LYING_MOB_SHADOW, pixel_y = 3)
+	if(MOBILITY_STAND)
+		vis_contents |= get_mob_shadow(NORMAL_MOB_SHADOW)
+	else
+		vis_contents |= get_mob_shadow(LYING_MOB_SHADOW, pixel_y = 3)
+
+/mob/living/carbon/proc/neural_entanglement()
+	var/obj/item/bodypart/head/head = get_bodypart(BODY_ZONE_HEAD)
+	head.dismember(destroy = TRUE)

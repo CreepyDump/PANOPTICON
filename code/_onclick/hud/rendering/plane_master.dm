@@ -1,4 +1,4 @@
-/atom/movable/screen/plane_master
+/obj/screen/plane_master
 	screen_loc = "CENTER"
 	icon_state = "blank"
 	appearance_flags = PLANE_MASTER|NO_CLIENT_COLOR
@@ -19,76 +19,76 @@
 
 	var/hidden_for_user = FALSE
 
-/atom/movable/screen/plane_master/proc/Show(override)
+/obj/screen/plane_master/proc/Show(override)
 	alpha = override || show_alpha
 
-/atom/movable/screen/plane_master/proc/Hide(override)
+/obj/screen/plane_master/proc/Hide(override)
 	alpha = override || hide_alpha
 
 //Why do plane masters need a backdrop sometimes? Read https://secure.byond.com/forum/?post=2141928
 //Trust me, you need one. Period. If you don't think you do, you're doing something extremely wrong.
-/atom/movable/screen/plane_master/proc/backdrop(mob/mymob)
+/obj/screen/plane_master/proc/backdrop(mob/mymob)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!isnull(render_relay_plane))
 		relay_render_to_plane(mymob, render_relay_plane)
 
 ///Things rendered on "openspace"; holes in multi-z
-/atom/movable/screen/plane_master/openspace_backdrop
+/obj/screen/plane_master/openspace_backdrop
 	name = "open space backdrop plane master"
 	plane = OPENSPACE_BACKDROP_PLANE
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_MULTIPLY
 	alpha = 255
 
-/atom/movable/screen/plane_master/openspace
+/obj/screen/plane_master/openspace
 	name = "open space plane master"
 	plane = OPENSPACE_PLANE
 	appearance_flags = PLANE_MASTER
 
-/atom/movable/screen/plane_master/openspace/Initialize(mapload)
+/obj/screen/plane_master/openspace/Initialize(mapload)
 	. = ..()
 	add_filter("first_stage_openspace", 1, drop_shadow_filter(color = "#04080FAA", size = -10))
 	add_filter("second_stage_openspace", 2, drop_shadow_filter(color = "#04080FAA", size = -15))
 	add_filter("third_stage_openspace", 3, drop_shadow_filter(color = "#04080FAA", size = -20))
 
 ///For any transparent multi-z tiles we want to render
-/atom/movable/screen/plane_master/transparent
+/obj/screen/plane_master/transparent
 	name = "transparent plane master"
 	plane = TRANSPARENT_FLOOR_PLANE
 	appearance_flags = PLANE_MASTER
 
 ///Contains just the floor
-/atom/movable/screen/plane_master/floor
+/obj/screen/plane_master/floor
 	name = "floor plane master"
 	plane = FLOOR_PLANE
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
 
 ///Contains most things in the game world
-/atom/movable/screen/plane_master/game_world
+/obj/screen/plane_master/game_world
 	name = "game world plane master"
 	plane = GAME_PLANE
 	appearance_flags = PLANE_MASTER //should use client color
 	blend_mode = BLEND_OVERLAY
 
-/atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
+/obj/screen/plane_master/game_world/backdrop(mob/mymob)
 	. = ..()
 	add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 4, color = "#04080FAA"))
 
-/atom/movable/screen/plane_master/massive_obj
+/obj/screen/plane_master/massive_obj
 	name = "massive object plane master"
 	plane = MASSIVE_OBJ_LAYER
 	appearance_flags = PLANE_MASTER //should use client color
 	blend_mode = BLEND_OVERLAY
 
-/atom/movable/screen/plane_master/ghost
+/obj/screen/plane_master/ghost
 	name = "ghost plane master"
 	plane = WEATHER_PLANE
 	appearance_flags = PLANE_MASTER //should use client color
 	blend_mode = BLEND_OVERLAY
 	render_relay_plane = RENDER_PLANE_NON_GAME
 
-/atom/movable/screen/plane_master/point
+/obj/screen/plane_master/point
 	name = "point plane master"
 	plane = POINT_LAYER
 	appearance_flags = PLANE_MASTER //should use client color
@@ -99,7 +99,7 @@
  * vars are set as to replicate behavior when rendering to other planes
  * do not touch this unless you know what you are doing
  */
-/atom/movable/screen/plane_master/blackness
+/obj/screen/plane_master/blackness
 	name = "darkness plane master"
 	plane = BLACKNESS_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -108,14 +108,14 @@
 	//byond internal end
 
 ///Contains all lighting objects
-/atom/movable/screen/plane_master/lighting
+/obj/screen/plane_master/lighting
 	name = "lighting plane master"
 	plane = LIGHTING_PLANE
 	blend_mode_override = BLEND_MULTIPLY
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 
-/atom/movable/screen/plane_master/lighting/backdrop(mob/mymob)
+/obj/screen/plane_master/lighting/backdrop(mob/mymob)
 	. = ..()
 	mymob.overlay_fullscreen("lighting_backdrop_lit", /obj/screen/fullscreen/lighting_backdrop/lit)
 	mymob.overlay_fullscreen("lighting_backdrop_unlit", /obj/screen/fullscreen/lighting_backdrop/unlit)
@@ -130,12 +130,12 @@
  * A color matrix filter is applied to the emissive plane to mask out anything that isn't whatever the emissive color is.
  * This is then used to alpha mask the lighting plane.
  */
-/atom/movable/screen/plane_master/lighting/Initialize(mapload)
+/obj/screen/plane_master/lighting/Initialize(mapload)
 	. = ..()
 	add_filter("emissives", 1, alpha_mask_filter(render_source = EMISSIVE_RENDER_TARGET, flags = MASK_INVERSE))
 	add_filter("object_lighting", 2, alpha_mask_filter(render_source = O_LIGHTING_VISUAL_RENDER_TARGET, flags = MASK_INVERSE))
 
-/atom/movable/screen/plane_master/exposure
+/obj/screen/plane_master/exposure
 	name = "exposure plane master"
 	plane = LIGHTING_EXPOSURE_PLANE
 	appearance_flags = PLANE_MASTER|PIXEL_SCALE //should use client color
@@ -144,7 +144,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	render_relay_plane = RENDER_PLANE_GAME
 
-/atom/movable/screen/plane_master/lamps
+/obj/screen/plane_master/lamps
 	name = "lamps plane master"
 	plane = LIGHTING_LAMPS_PLANE
 	appearance_flags = PLANE_MASTER //should use client color
@@ -155,30 +155,30 @@
 
 	render_target = LIGHTING_LAMPS_RENDER_TARGET
 
-/atom/movable/screen/plane_master/above_lighting
+/obj/screen/plane_master/above_lighting
 	name = "above lighting plane master"
 	plane = ABOVE_LIGHTING_PLANE
 	appearance_flags = PLANE_MASTER //should use client color
 	blend_mode = BLEND_OVERLAY
 
 ///Contains space parallax
-/atom/movable/screen/plane_master/parallax
+/obj/screen/plane_master/parallax
 	name = "parallax plane master"
 	plane = PLANE_SPACE_PARALLAX
 	blend_mode = BLEND_MULTIPLY
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
-/atom/movable/screen/plane_master/parallax_white
+/obj/screen/plane_master/parallax_white
 	name = "parallax whitifier plane master"
 	plane = PLANE_SPACE
 
-/atom/movable/screen/plane_master/camera_static
+/obj/screen/plane_master/camera_static
 	name = "camera static plane master"
 	plane = CAMERA_STATIC_PLANE
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
 
-/atom/movable/screen/plane_master/o_light_visual
+/obj/screen/plane_master/o_light_visual
 	name = "overlight light visual plane master"
 	plane = O_LIGHTING_VISUAL_PLANE
 	render_target = O_LIGHTING_VISUAL_RENDER_TARGET
@@ -186,18 +186,18 @@
 	blend_mode = BLEND_MULTIPLY
 	blend_mode_override = BLEND_MULTIPLY
 
-/atom/movable/screen/plane_master/runechat
+/obj/screen/plane_master/runechat
 	name = "runechat plane master"
 	plane = CHAT_LAYER
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
 	render_relay_plane = RENDER_PLANE_NON_GAME
 
-/atom/movable/screen/plane_master/runechat/backdrop(mob/mymob)
+/obj/screen/plane_master/runechat/backdrop(mob/mymob)
 	. = ..()
 	add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 4, color = "#04080FAA"))
 
-/atom/movable/screen/plane_master/gravpulse
+/obj/screen/plane_master/gravpulse
 	name = "gravpulse plane"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	plane = GRAVITY_PULSE_PLANE
@@ -206,29 +206,94 @@
 	render_target = GRAVITY_PULSE_RENDER_TARGET
 	render_relay_plane = null
 
-/atom/movable/screen/plane_master/area
+/obj/screen/plane_master/area
 	name = "area plane"
 	plane = AREA_PLANE
 
-/atom/movable/screen/plane_master/fullscreen
+/obj/screen/plane_master/fullscreen
 	name = "fullscreen alert plane"
 	plane = FULLSCREEN_PLANE
 	render_relay_plane = RENDER_PLANE_NON_GAME
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
-/atom/movable/screen/plane_master/hud
+/obj/screen/plane_master/hud
 	name = "HUD plane"
 	plane = HUD_PLANE
 	render_relay_plane = RENDER_PLANE_NON_GAME
 
-/atom/movable/screen/plane_master/above_hud
+/obj/screen/plane_master/above_hud
 	name = "above HUD plane"
 	plane = ABOVE_HUD_PLANE
 	render_relay_plane = RENDER_PLANE_NON_GAME
 
-/atom/movable/screen/plane_master/splashscreen
+/obj/screen/plane_master/splashscreen
 	name = "splashscreen plane"
 	plane = SPLASHSCREEN_PLANE
 	render_relay_plane = RENDER_PLANE_NON_GAME
 
+//RT
+
+
+/obj/screen/plane_master/indoor_mask
+	plane = INDOOR_PLANE
+	mouse_opacity = 0
+	render_target = "*rainzone"
+	appearance_flags = PLANE_MASTER
+
+/obj/screen/plane_master/weather
+	plane = WEATHER_PLANE
+	mouse_opacity = 0
+	appearance_flags = PLANE_MASTER
+
+/obj/screen/plane_master/game_world_fov_hidden
+	name = "game world fov hidden plane master"
+	plane = GAME_PLANE_FOV_HIDDEN
+	appearance_flags = PLANE_MASTER
+	blend_mode = BLEND_OVERLAY
+
+/obj/screen/plane_master/game_world_fov_hidden/backdrop(mob/mymob)
+	filters = list()
+	if(istype(mymob) && mymob.client && mymob.client.prefs && mymob.client.prefs.ambientocclusion)
+		filters += AMBIENT_OCCLUSION
+	if(istype(mymob) && mymob.eye_blurry)
+		filters += GAUSSIAN_BLUR(CLAMP(mymob.eye_blurry*0.1,0.6,3))
+	if(istype(mymob))
+		if(isliving(mymob))
+			var/mob/living/L = mymob
+			if(L.has_status_effect(/datum/status_effect/buff/druqks))
+				filters += filter(type="ripple",x=80,size=50,radius=0,falloff = 1)
+				var/F1 = filters[filters.len]
+				filters += filter(type="color", color = list(0,0,1,0, 0,1,0,0, 1,0,0,0, 0,0,0,1, 0,0,0,0))
+				F1 = filters[filters.len-1]
+				animate(F1, size=50, radius=480, time=10, loop=-1, flags=ANIMATION_PARALLEL)
+	filters += filter(type = "alpha", render_source = FIELD_OF_VISION_BLOCKER_RENDER_TARGET, flags = MASK_INVERSE)
+
+/obj/screen/plane_master/game_world_above
+	name = "above game world plane master"
+	plane = GAME_PLANE_UPPER
+	appearance_flags = PLANE_MASTER
+	blend_mode = BLEND_OVERLAY
+
+/obj/screen/plane_master/game_world_above/backdrop(mob/mymob)
+	filters = list()
+	if(istype(mymob) && mymob.client && mymob.client.prefs && mymob.client.prefs.ambientocclusion)
+		filters += AMBIENT_OCCLUSION
+	if(istype(mymob) && mymob.eye_blurry)
+		filters += GAUSSIAN_BLUR(CLAMP(mymob.eye_blurry*0.1,0.6,3))
+	if(istype(mymob))
+		if(isliving(mymob))
+			var/mob/living/L = mymob
+			if(L.has_status_effect(/datum/status_effect/buff/druqks))
+				filters += filter(type="ripple",x=80,size=50,radius=0,falloff = 1)
+				var/F1 = filters[filters.len]
+				filters += filter(type="color", color = list(0,0,1,0, 0,1,0,0, 1,0,0,0, 0,0,0,1, 0,0,0,0))
+				F1 = filters[filters.len-1]
+				animate(F1, size=50, radius=480, time=10, loop=-1, flags=ANIMATION_PARALLEL)
+
+/obj/screen/plane_master/field_of_vision_blocker
+	name = "field of vision blocker plane master"
+	plane = FIELD_OF_VISION_BLOCKER_PLANE
+	render_target = FIELD_OF_VISION_BLOCKER_RENDER_TARGET
+	mouse_opacity = 0
+	appearance_flags = PLANE_MASTER
 

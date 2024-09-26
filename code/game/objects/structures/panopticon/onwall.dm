@@ -165,3 +165,50 @@
 	name = "Roman Sternberg"
 	desc = "Painting portrays an unidentified man. The frame is signed, possible name is written on it."
 	icon_state = "ungern"
+
+
+/obj/structure/panopticon/onwall/begotten
+	name = "God"
+	icon_state = "pnposter12"
+
+/obj/structure/panopticon/onwall/commiesagain
+	name = "Hammer & Sickle"
+	icon_state = "pnposter13"
+
+/obj/structure/panopticon/onwall/sun
+	name = "Great sun"
+	icon_state = "pnposter14"
+
+/obj/structure/panopticon/onwall/panopticonn
+	name = "Is near"
+	icon_state = "pnposter15"
+
+/obj/structure/panopticon/onwall/necroleninism
+	name = "Necro-Leninism"
+	desc = "Poster portrays a redcoat with gusyev rifle standing on a flaming mother earth. The poster says 'Spread Necro-Leninism around the world'."
+	icon_state = "pnposter16"
+
+/obj/structure/panopticon/onwall/runes
+	name = "Rune"
+	icon_state = "necroleninist"
+
+/obj/structure/panopticon/onwall/runes/other/one
+	name = "Rune"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	icon_state = "rune1"
+
+/obj/structure/panopticon/onwall/runes/other/two
+	name = "Rune"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	icon_state = "rune2"
+
+/obj/structure/panopticon/onwall/runes/other/three
+	name = "Rune"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+	icon_state = "rune3"
+
+/obj/structure/panopticon/onwall/objavlenia
+	name = "Bulletin"
+	desc = "the entire board is covered with ads. You can see anarchist propaganda on one of the pieces."
+	icon_state = "obyava"
+	max_integrity = 70

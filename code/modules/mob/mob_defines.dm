@@ -49,7 +49,7 @@
 
 	/// The zone this mob is currently targeting
 	var/zone_selected = BODY_ZONE_CHEST
-
+	var/organ_slot_selected = ORGAN_SLOT_HEART
 	var/computer_id = null
 	var/list/logging = list()
 

@@ -4,7 +4,7 @@
 	icon_state = "pulling"
 	icon = 'icons/mob/roguehudgrabs.dmi'
 	w_class = WEIGHT_CLASS_HUGE
-	possible_item_intents = list(/datum/intent/grab/obj/upgrade)
+	possible_item_intents = list(/datum/intent/grab/upgrade)
 	item_flags = ABSTRACT
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/grabbed				//ref to what atom we are grabbing
@@ -103,12 +103,12 @@
 		return FALSE
 	user.changeNext_move(CLICK_CD_MELEE)
 	switch(user.used_intent.type)
-		if(/datum/intent/grab/obj/upgrade)
+		if(/datum/intent/grab/upgrade)
 			if(!(M.status_flags & CANPUSH) || HAS_TRAIT(M, TRAIT_PUSHIMMUNE))
 				to_chat(user, "<span class='warning'>Can't get a grip!</span>")
 				return FALSE
 			M.grippedby(user)
-		if(/datum/intent/grab/obj/choke)
+		if(/datum/intent/grab/choke)
 			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
 				if(iscarbon(M) && M != user)
 					var/mob/living/carbon/C = M
@@ -119,20 +119,20 @@
 					C.visible_message("<span class='danger'>[user] [pick("chokes", "strangles")] [C]!</span>", \
 									"<span class='userdanger'>[user] [pick("chokes", "strangles")] me!</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
 					to_chat(user, "<span class='danger'>I [pick("choke", "strangle")] [C]!</span>")
-		if(/datum/intent/grab/obj/twist)
+		if(/datum/intent/grab/twist)
 			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
 				if(iscarbon(M))
 					twistlimb(user)
-		if(/datum/intent/grab/obj/twistitem)
+		if(/datum/intent/grab/twistitem)
 			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
 				if(ismob(M))
 					twistitemlimb(user)
-		if(/datum/intent/grab/obj/remove)
+		if(/datum/intent/grab/remove)
 			if(isitem(sublimb_grabbed))
 				removeembeddeditem(user)
 			else
 				user.stop_pulling()
-		if(/datum/intent/grab/obj/shove)
+		if(/datum/intent/grab/shove)
 			if(!(user.mobility_flags & MOBILITY_STAND))
 				to_chat(user, "<span class='warning'>I must stand..</span>")
 				return
@@ -180,7 +180,7 @@
 
 /obj/item/grabbing/proc/twistlimb(mob/living/user) //implies limb_grabbed and sublimb are things
 	var/mob/living/carbon/C = grabbed
-	var/armor_block = C.run_armor_check(limb_grabbed, "melee")
+	var/armor_block = C.run_armor_check(limb_grabbed, "slash")
 	var/damage = user.get_punch_dmg()
 	playsound(C.loc, "genblunt", 100, FALSE, -1)
 	C.next_attack_msg.Cut()
@@ -249,10 +249,10 @@
 /obj/item/grabbing/attack_turf(turf/T, mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
 	switch(user.used_intent.type)
-		if(/datum/intent/grab/obj/move)
+		if(/datum/intent/grab/move)
 			if(isturf(T))
 				user.Move_Pulled(T)
-		if(/datum/intent/grab/obj/smash)
+		if(/datum/intent/grab/smash)
 			if(!(user.mobility_flags & MOBILITY_STAND))
 				to_chat(user, "<span class='warning'>I must stand..</span>")
 				return
@@ -278,7 +278,7 @@
 
 /obj/item/grabbing/attack_obj(obj/O, mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
-	if(user.used_intent.type == /datum/intent/grab/obj/smash)
+	if(user.used_intent.type == /datum/intent/grab/smash)
 		if(isstructure(O) && O.blade_dulling != DULLING_CUT)
 			if(!(user.mobility_flags & MOBILITY_STAND))
 				to_chat(user, "<span class='warning'>I must stand..</span>")
@@ -294,7 +294,7 @@
 
 /obj/item/grabbing/proc/smashlimb(atom/A, mob/living/user) //implies limb_grabbed and sublimb are things
 	var/mob/living/carbon/C = grabbed
-	var/armor_block = C.run_armor_check(limb_grabbed, "melee")
+	var/armor_block = C.run_armor_check(limb_grabbed, d_type)
 	var/damage = user.get_punch_dmg()
 	C.next_attack_msg.Cut()
 	if(C.apply_damage(damage, BRUTE, limb_grabbed, armor_block))
@@ -308,7 +308,7 @@
 	C.next_attack_msg.Cut()
 	log_combat(user, C, "limbsmashed [limb_grabbed] ")
 
-/datum/intent/grab/obj
+/datum/intent/grab
 	unarmed = TRUE
 	chargetime = 0
 	noaa = TRUE
@@ -317,42 +317,42 @@
 	no_attack = TRUE
 
 
-/datum/intent/grab/obj/move
+/datum/intent/grab/move
 	name = "grab move"
 	desc = ""
 	icon_state = "inmove"
 
-/datum/intent/grab/obj/upgrade
+/datum/intent/grab/upgrade
 	name = "upgrade grab"
 	desc = ""
 	icon_state = "ingrab"
 
-/datum/intent/grab/obj/smash
+/datum/intent/grab/smash
 	name = "smash"
 	desc = ""
 	icon_state = "insmash"
 
-/datum/intent/grab/obj/twist
+/datum/intent/grab/twist
 	name = "twist"
 	desc = ""
 	icon_state = "intwist"
 
-/datum/intent/grab/obj/choke
+/datum/intent/grab/choke
 	name = "choke"
 	desc = ""
 	icon_state = "inchoke"
 
-/datum/intent/grab/obj/shove
+/datum/intent/grab/shove
 	name = "shove"
 	desc = ""
 	icon_state = "intackle"
 
-/datum/intent/grab/obj/twistitem
+/datum/intent/grab/twistitem
 	name = "twist in wound"
 	desc = ""
 	icon_state = "intwist"
 
-/datum/intent/grab/obj/remove
+/datum/intent/grab/remove
 	name = "remove"
 	desc = ""
 	icon_state = "intake"
@@ -396,7 +396,7 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	var/mob/living/carbon/C = grabbed
-	var/armor_block = C.run_armor_check(sublimb_grabbed, "melee")
+	var/armor_block = C.run_armor_check(sublimb_grabbed, d_type)
 	var/damage = user.get_punch_dmg()
 	if(HAS_TRAIT(user, RTRAIT_STRONGBITE))
 		damage = damage*2
@@ -433,6 +433,7 @@
 	log_combat(user, C, "limb chewed [sublimb_grabbed] ")
 
 //this is for carbon mobs being drink only
+//this is for carbon mobs being drink only
 /obj/item/grabbing/bite/proc/drinklimb(mob/living/user) //implies limb_grabbed and sublimb are things
 	if(!user.Adjacent(grabbed))
 		qdel(src)
@@ -441,20 +442,20 @@
 		return
 	if(world.time < last_drink + 2 SECONDS)
 		return
-	if(!limb_grabbed.get_bleedrate())
-		to_chat(user, "<span class='warning'>Sigh. It's not bleeding.</span>")
+	if(!limb_grabbed.get_bleed_rate())
+		to_chat(user, span_warning("Sigh. It's not bleeding."))
 		return
 	var/mob/living/carbon/C = grabbed
-	if(C.dna && C.dna.species && (NOBLOOD in C.dna.species.species_traits))
-		to_chat(user, "<span class='warning'>Sigh. No blood.</span>")
+	if(C.dna?.species && (NOBLOOD in C.dna.species.species_traits))
+		to_chat(user, span_warning("Sigh. No blood."))
 		return
 	if(C.blood_volume <= 0)
-		to_chat(user, "<span class='warning'>Sigh. No blood.</span>")
+		to_chat(user, span_warning("Sigh. No blood."))
 		return
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
-		if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psicross/s))
-			to_chat(user, "<span class='userdanger'>SILVER! HISSS!!!</span>")
+		if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psicross/original))
+			to_chat(user, span_userdanger("SILVER! HISSS!!!"))
 			return
 	last_drink = world.time
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -468,11 +469,11 @@
 				zomwerewolf = C.mind.has_antag_datum(/datum/antagonist/zombie)
 		if(VDrinker)
 			if(zomwerewolf)
-				to_chat(user, "<span class='danger'>I'm going to puke...</span>")
-				addtimer(CALLBACK(user, .mob/living/carbon/proc/vomit, 0, TRUE), rand(8 SECONDS, 15 SECONDS))
+				to_chat(user, span_danger("I'm going to puke..."))
+				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 			else
 				if(VVictim)
-					to_chat(user, "<span class='warning'>It's vitae, just like mine.</span>")
+					to_chat(user, span_warning("It's vitae, just like mine."))
 				else
 					C.blood_volume = max(C.blood_volume-45, 0)
 					if(VDrinker.isspawn)
@@ -480,8 +481,8 @@
 					else
 						VDrinker.handle_vitae(500)
 		else
-			to_chat(user, "<span class='warning'>I'm going to puke...</span>")
-			addtimer(CALLBACK(user, .mob/living/carbon/proc/vomit, 0, TRUE), rand(8 SECONDS, 15 SECONDS))
+			to_chat(user, span_warning("I'm going to puke..."))
+			addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 	else
 		if(user.mind)
 			if(user.mind.has_antag_datum(/datum/antagonist/vampirelord))
@@ -497,9 +498,9 @@
 
 	playsound(user.loc, 'sound/misc/drink_blood.ogg', 100, FALSE, -4)
 
-	C.visible_message("<span class='danger'>[user] drinks from [C]'s [sublimb_grabbed]!</span>", \
-					"<span class='userdanger'>[user] drinks from my [sublimb_grabbed]!</span>", "<span class='hear'>...</span>", COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, "<span class='warning'>I drink from [C]'s [sublimb_grabbed].</span>")
+	C.visible_message(span_danger("[user] drinks from [C]'s [parse_zone(sublimb_grabbed)]!"), \
+					span_userdanger("[user] drinks from my [parse_zone(sublimb_grabbed)]!"), span_hear("..."), COMBAT_MESSAGE_RANGE, user)
+	to_chat(user, span_warning("I drink from [C]'s [parse_zone(sublimb_grabbed)]."))
 	log_combat(user, C, "drank blood from ")
 
 	if(ishuman(C) && C.mind)
@@ -517,4 +518,4 @@
 							sleep(20)
 							C.fully_heal()
 					if("No")
-						to_chat(user, "<span class='warning'>I decide [C] is unworthy.</span>")
+						to_chat(user, span_warning("I decide [C] is unworthy."))

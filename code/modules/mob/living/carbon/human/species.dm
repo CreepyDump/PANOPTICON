@@ -135,25 +135,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/after_creation(mob/living/carbon/human/H)
 	return TRUE
 
-/datum/species/proc/try_to_mcrib(mob/user, obj/item/W, mob/living/carbon/human/victim)
-	//bad component usage omg!!!!
-	var/obj/item/bodypart/chest = victim.get_bodypart(BODY_ZONE_CHEST)
-	if(W.get_sharpness())
-		if(!chest?.meat_type)
-			return
-		user.visible_message("<span class='warning'>[user] begins to butcher [src]...</span>",\
-				"<span class='notice'>I begin to butcher [src]</span>")
-		if(do_mob(user, 54, target = src))
-			user.visible_message("<span class='warning'>[user] butchers [src].</span>",\
-					"<span class='notice'>I butcher [src]</span>")
-			playsound(victim, 'sound/misc/fleisch.ogg', 80, FALSE)
-			new chest.meat_type(victim.drop_location())
-			new /obj/effect/gibspawner/human(get_turf(victim))
-			victim.unequip_everything()
-			qdel(victim)
-			return TRUE
-	return FALSE
-
 /proc/get_selectable_species()
 	if(!GLOB.roundstart_races.len)
 		generate_selectable_species()
@@ -1894,7 +1875,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!target.lying_attack_check(user))
 			return 0
 
-		var/armor_block = target.run_armor_check(selzone, "melee", blade_dulling = user.used_intent.blade_class)
+		var/armor_block = target.run_armor_check(selzone, "blunt", blade_dulling = user.used_intent.blade_class)
 
 		target.lastattacker = user.real_name
 		if(target.mind)
@@ -2102,7 +2083,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				target.mind.attackedme[user.real_name] = world.time
 			var/selzone = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/unarmed, user.used_intent)
 			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(selzone))
-			var/armor_block = target.run_armor_check(selzone, "melee", blade_dulling = BCLASS_BLUNT)
+			var/armor_block = target.run_armor_check(selzone, "blunt", blade_dulling = BCLASS_BLUNT)
 			var/damage = user.get_punch_dmg() * 1.4
 			target.next_attack_msg.Cut()
 			var/nodmg = FALSE
@@ -2195,7 +2176,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(selzone))
 		if(!affecting)
 			affecting = target.get_bodypart(BODY_ZONE_CHEST)
-		var/armor_block = target.run_armor_check(selzone, "melee", blade_dulling = BCLASS_BLUNT)
+		var/armor_block = target.run_armor_check(selzone, "blunt", blade_dulling = BCLASS_BLUNT)
 		var/damage = user.get_punch_dmg()
 		if(!target.apply_damage(damage, user.dna.species.attack_type, affecting, armor_block))
 			target.next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
@@ -2275,7 +2256,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //	var/armor_block = H.run_armor_check(affecting, "melee", "<span class='notice'>My armor has protected my [hit_area]!</span>", "<span class='warning'>My armor has softened a hit to my [hit_area]!</span>",pen)
 
 	var/Iforce = get_complex_damage(I, user) //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
-	var/armor_block = H.run_armor_check(selzone, "melee", "", "",pen, damage = Iforce, blade_dulling=user.used_intent.blade_class)
+	var/armor_block = H.run_armor_check(selzone, I.d_type, "", "",pen, damage = Iforce, blade_dulling=user.used_intent.blade_class)
 
 	var/nodmg = FALSE
 
@@ -2288,7 +2269,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			nodmg = TRUE
 			H.next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
 			if(I)
-				I.take_damage(1, BRUTE, "melee")
+				I.take_damage(1, BRUTE, I.d_type)
 		if(!nodmg)
 			if(affecting.attacked_by(user.used_intent.blade_class, (Iforce * weakness) * ((100-(armor_block+armor))/100), user, selzone))
 				var/can_impale = TRUE

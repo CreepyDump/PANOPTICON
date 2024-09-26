@@ -30,7 +30,7 @@ var/leninalive = FALSE
 	var/obj/item/bodypart/chest/M
 	user.emote("agony")
 	user.adjustBruteLoss(20)
-	M.add_wound(/datum/wound/cut, skipcheck = FALSE)
+	M.add_wound(/datum/wound/slash, skipcheck = FALSE)
 	user.visible_message("<span class='warning'>[user] cuts the [M] for ritual.</span>")
 
 /obj/effect/rune/panopticon/lenin_summon/invoke(var/list/invokers)
@@ -89,10 +89,8 @@ var/leninalive = FALSE
 
 /obj/structure/wonder/OnCrafted(dirin, mob/living/carbon/human/user)
 	. = ..()
-	var/obj/item/bodypart/chest/M
 	user.emote("agony")
 	user.adjustBruteLoss(10)
-	M.add_wound(/datum/wound/stab, skipcheck = FALSE)
 
 /obj/structure/panopticon/lenin
 	name = "Lenin altar"
@@ -107,7 +105,7 @@ var/leninalive = FALSE
 	break_sound = 'sound/foley/machinebreak.ogg'
 	anchored = TRUE
 	max_integrity = 0
-	var/leniniscoming = 0
+	var/leniniscoming = 120
 
 /obj/structure/panopticon/lenin/post_buckle_mob(mob/living/M)
 	if(has_buckled_mobs())
@@ -122,8 +120,9 @@ var/leninalive = FALSE
 			if(brain)
 				brain.applyOrganDamage(500)
 			playsound(M, pick('sound/vo/throat.ogg','sound/vo/throat2.ogg','sound/vo/throat3.ogg'), 100, FALSE)
-			M.add_wound(/datum/wound/artery/throat, skipcheck = TRUE)
-			M.add_wound(/datum/wound/dismemberment, skipcheck = TRUE)
+			var/obj/item/bodypart/BP = M.get_bodypart(BODY_ZONE_HEAD)
+			if(BP)
+				BP.dismember()
 			leniniscoming += rand(5,20)
 		unbuckle_all_mobs()
 	process()

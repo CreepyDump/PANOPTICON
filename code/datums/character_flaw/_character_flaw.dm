@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 
 /datum/charflaw/noeyer
 	name = "Cyclops (R)"
-	desc = "I lost my right eye long ago. But it made me great at noticing things."
+	desc = "I lost my right eye long ago."
 
 /datum/charflaw/noeyer/on_mob_creation(mob/user)
 	..()
@@ -181,11 +181,13 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	var/mob/living/carbon/human/H = user
 	if(!H.wear_mask)
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/eyepatch(H), SLOT_WEAR_MASK)
+	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
+	head?.add_wound(/datum/wound/facial/eyes/right/permanent)
 	H.update_fov_angles()
 
 /datum/charflaw/noeyel
 	name = "Cyclops (L)"
-	desc = "I lost my left eye long ago. But it made me great at noticing things."
+	desc = "I lost my left eye long ago."
 
 /datum/charflaw/noeyel/on_mob_creation(mob/user)
 	..()
@@ -194,6 +196,8 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	var/mob/living/carbon/human/H = user
 	if(!H.wear_mask)
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/eyepatch/left(H), SLOT_WEAR_MASK)
+	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
+	head?.add_wound(/datum/wound/facial/eyes/left/permanent)
 	H.update_fov_angles()
 
 

@@ -88,6 +88,18 @@
 	droning_sound_dusk = null
 	droning_sound_night = null
 
+/area/panopticon/indoors/caves/odonghs
+	name = "cave"
+	icon_state = "blueold"
+	ambientsounds = AMB_GENCAVE
+	ambientnight = AMB_GENCAVE
+	spookysounds = SPOOKY_CAVE
+	spookynight = SPOOKY_CAVE
+	droning_sound = 'sound/music/area/Odongh.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/panopticon/outdoors/caves
+
 //FOREST
 
 /area/panopticon/outdoors/darkwood

@@ -131,11 +131,11 @@
 	duration = 3 SECONDS
 	status_type = STATUS_EFFECT_REFRESH
 	/// Fullscreen effect used to provide the visual to that player and only that player
-	var/atom/movable/screen/fullscreen/raindrops/holder
+	var/obj/screen/fullscreen/raindrops/holder
 
 /datum/status_effect/raindrops/on_creation(mob/living/new_owner, ...)
 	. = ..()
-	holder = new_owner.overlay_fullscreen("raindrops", /atom/movable/screen/fullscreen/raindrops)
+	holder = new_owner.overlay_fullscreen("raindrops", /obj/screen/fullscreen/raindrops)
 
 /datum/status_effect/raindrops/tick(delta_time, times_fired) //happening here for now
 	. = ..()
@@ -164,7 +164,7 @@
 /**
  * This provides the images to only the person with it
  */
-/atom/movable/screen/fullscreen/raindrops
+/obj/screen/fullscreen/raindrops
 	icon_state = "raindrops"
 	appearance_flags = PIXEL_SCALE | RESET_TRANSFORM
 	plane = GRAVITY_PULSE_PLANE 

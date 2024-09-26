@@ -54,7 +54,7 @@
 		return
 	return TRUE
 
-/mob/living/carbon/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
+/mob/living/carbon/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum, d_type = "blunt")
 	if(!skipcatch)	//ugly, but easy
 		if(can_catch_item())
 			if(istype(AM, /obj/item))
@@ -136,24 +136,27 @@
 
 /mob/living/carbon/proc/find_used_grab_limb(mob/living/user) //for finding the exact limb or inhand to grab
 	var/used_limb = BODY_ZONE_CHEST
+	var/missing_nose = HAS_TRAIT(src, TRAIT_MISSING_NOSE)
 	var/obj/item/bodypart/affecting
 	affecting = get_bodypart(check_zone(user.zone_selected))
 	if(user.zone_selected && affecting)
 		if(user.zone_selected in affecting.grabtargets)
-			//used_limb = parse_zone(user.zone_selected, src)
-			used_limb = user.zone_selected
+			if(missing_nose && user.zone_selected == BODY_ZONE_PRECISE_NOSE)
+				used_limb = BODY_ZONE_HEAD
+			else
+				used_limb = user.zone_selected
 		else
 			used_limb = affecting.body_zone
 	return used_limb
 
 /mob/living/carbon/proc/parse_inhand(zone, mob/living/target)
-	if (zone == BODY_ZONE_R_INHAND)
+	if (zone == BODY_ZONE_PRECISE_R_INHAND)
 		var/obj/item/I = target.get_item_for_held_index(2)
 		if(I.can_parry)
 			return I.name
 		else
 			return "right hand"
-	else if (zone == BODY_ZONE_L_INHAND)
+	else if (zone == BODY_ZONE_PRECISE_L_INHAND)
 		var/obj/item/I = target.get_item_for_held_index(1)
 		if(I.can_parry)
 			return I.name
@@ -266,13 +269,14 @@
 		var/datum/disease/D = thing
 		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
 			ContactContractDisease(D)
-
+	/*
 	for(var/datum/surgery/S in surgeries)
 		if(!(mobility_flags & MOBILITY_STAND) || !S.lying_required)
 			if(user.used_intent.type == INTENT_HELP || user.used_intent.type == INTENT_DISARM)
 				if(S.next_step(user, user.used_intent))
-					return 1
-	return 0
+					return TRUE
+	*/
+	return FALSE
 
 
 /mob/living/carbon/attack_paw(mob/living/carbon/monkey/M)
@@ -396,6 +400,7 @@
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.
 /mob/living/carbon/proc/secondary_shock(should_stun)
 	jitteriness = max(jitteriness - 990, 10)
+	update_shock_penalty()
 	if(should_stun)
 		Paralyze(60)
 

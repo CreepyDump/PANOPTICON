@@ -20,7 +20,7 @@
 			zone = BODY_ZONE_HEAD
 		if(BODY_ZONE_PRECISE_MOUTH)
 			zone = BODY_ZONE_HEAD
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			zone = BODY_ZONE_HEAD
 		if(BODY_ZONE_PRECISE_EARS)
 			zone = BODY_ZONE_HEAD
@@ -38,9 +38,9 @@
 			zone = BODY_ZONE_CHEST
 		if(BODY_ZONE_PRECISE_STOMACH)
 			zone = BODY_ZONE_CHEST
-		if(BODY_ZONE_R_INHAND)
+		if(BODY_ZONE_PRECISE_R_INHAND)
 			zone = BODY_ZONE_R_ARM
-		if(BODY_ZONE_L_INHAND)
+		if(BODY_ZONE_PRECISE_L_INHAND)
 			zone = BODY_ZONE_L_ARM
 
 	return zone
@@ -87,8 +87,8 @@
 	n = length(n)
 
 	for(var/p = 1 to min(n,MAX_BROADCAST_LEN))
-		if ((copytext_char(te, p, p + 1) == " " || prob(pr)))
-			t = text("[][]", t, copytext_char(te, p, p + 1))
+		if ((copytext(te, p, p + 1) == " " || prob(pr)))
+			t = text("[][]", t, copytext(te, p, p + 1))
 		else
 			t = text("[]*", t)
 	if(n > MAX_BROADCAST_LEN)
@@ -104,7 +104,7 @@
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
-		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
+		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,3)==3)
 			if(lowertext(newletter)=="o")
 				newletter="u"
@@ -139,7 +139,7 @@
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
-		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
+		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,2)==2)
 			if(lowertext(newletter)=="o")
 				newletter="u"
@@ -181,7 +181,7 @@
 	var/p = null
 	p = 1//1 is the start of any word
 	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext_char(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
+		var/n_letter = copytext(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
 		if (prob(80) && (ckey(n_letter) in list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z")))
 			if (prob(10))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
@@ -195,7 +195,7 @@
 						n_letter = text("[n_letter]-[n_letter]")
 		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
 		p++//for each letter p is increased to find where the next letter will be.
-	return copytext_char(sanitize(t),1,MAX_MESSAGE_LEN)
+	return copytext(sanitize(t),1,MAX_MESSAGE_LEN)
 
 ///Convert a message to derpy speak
 /proc/derpspeech(message, stuttering)
@@ -250,9 +250,9 @@
 		var/n_letter
 		var/n_mod = rand(1,4)
 		if(p+n_mod>n+1)
-			n_letter = copytext_char(te, p, n+1)
+			n_letter = copytext(te, p, n+1)
 		else
-			n_letter = copytext_char(te, p, p+n_mod)
+			n_letter = copytext(te, p, p+n_mod)
 		if (prob(50))
 			if (prob(30))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]")
@@ -262,7 +262,7 @@
 			n_letter = text("[n_letter]")
 		t = text("[t][n_letter]")
 		p=p+n_mod
-	return copytext_char(sanitize(t),1,MAX_MESSAGE_LEN)
+	return copytext(sanitize(t),1,MAX_MESSAGE_LEN)
 
 ///Shake the camera of the person viewing the mob SO REAL!
 /proc/shake_camera(mob/M, duration, strength=1)
@@ -336,7 +336,7 @@
 	if(hud_used && hud_used.action_intent)
 		hud_used.action_intent.icon_state = "[a_intent]"
 
-/mob/proc/examine_intent(var/numb, var/offhand = FALSE)
+/mob/proc/examine_intent(numb, offhand = FALSE)
 	var/datum/intent/to_examine
 	if(offhand)
 		if(numb)
@@ -601,7 +601,7 @@
 		if(19)
 			zone_selected = BODY_ZONE_HEAD
 		if(18)
-			zone_selected = BODY_ZONE_PRECISE_HAIR
+			zone_selected = BODY_ZONE_PRECISE_SKULL
 		if(17)
 			zone_selected = BODY_ZONE_PRECISE_EARS
 		if(16)
@@ -643,14 +643,17 @@
 			if(hud_used.zone_select)
 				hud_used.zone_select.update_icon()
 
+/mob/proc/select_organ_slot(choice)
+	organ_slot_selected = choice
+
 /mob/proc/select_zone(choice)
 	zone_selected = choice
 	switch(choice)
-		if(BODY_ZONE_HEAD)
+		if(BODY_ZONE_PRECISE_SKULL)
 			aimheight = 19
-		if(BODY_ZONE_PRECISE_HAIR)
-			aimheight = 18
 		if(BODY_ZONE_PRECISE_EARS)
+			aimheight = 18
+		if(BODY_ZONE_HEAD)
 			aimheight = 17
 		if(BODY_ZONE_PRECISE_R_EYE)
 			aimheight = 16
@@ -783,7 +786,7 @@
 		var/orbit_link
 		if (source && action == NOTIFY_ORBIT)
 			orbit_link = " <a href='?src=[REF(O)];follow=[REF(source)]'>(Orbit)</a>"
-		to_chat(O, "<span class='ghostalert'>[message][(enter_link) ? " [enter_link]" : ""][orbit_link]</span>")
+		to_chat(O, span_ghostalert("[message][(enter_link) ? " [enter_link]" : ""][orbit_link]"))
 		if(ghost_sound)
 			SEND_SOUND(O, sound(ghost_sound, volume = notify_volume))
 		if(flashwindow)
@@ -818,14 +821,14 @@
 		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
 			if(affecting.heal_damage(brute_heal, burn_heal, 0, BODYPART_ROBOTIC))
 				H.update_damage_overlays()
-			user.visible_message("<span class='notice'>[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [affecting.name].</span>", \
-			"<span class='notice'>I fix some of the [dam ? "dents on" : "burnt wires in"] [H == user ? "your" : "[H]'s"] [affecting.name].</span>")
+			user.visible_message(span_notice("[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [affecting.name]."), \
+			span_notice("I fix some of the [dam ? "dents on" : "burnt wires in"] [H == user ? "your" : "[H]'s"] [affecting.name]."))
 			return 1 //successful heal
 		else
-			to_chat(user, "<span class='warning'>[affecting] is already in good condition!</span>")
+			to_chat(user, span_warning("[affecting] is already in good condition!"))
 
 ///Is the passed in mob an admin ghost
-/proc/IsAdminGhost(var/mob/user)
+/proc/IsAdminGhost(mob/user)
 	if(!user)		//Are they a mob? Auto interface updates call this with a null src
 		return
 	if(!user.client) // Do they have a client?
@@ -857,14 +860,16 @@
 		var/datum/antagonist/A = M.mind.has_antag_datum(/datum/antagonist/)
 		if(A)
 			poll_message = "[poll_message] Status:[A.name]."
-	var/list/mob/dead/observer/candidates = pollCandidatesForMob(poll_message, ROLE_PAI, null, FALSE, 100, M)
+	var/list/mob/candidates = pollCandidatesForMob(poll_message, ROLE_PAI, null, FALSE, 100, M)
 
 	if(LAZYLEN(candidates))
-		var/mob/dead/observer/C = pick(candidates)
+		var/mob/C = pick(candidates)
 		to_chat(M, "Your mob has been taken over by a ghost!")
 		message_admins("[key_name_admin(C)] has taken control of ([ADMIN_LOOKUPFLW(M)])")
 		M.ghostize(0,drawskip=TRUE)
 		M.key = C.key
+		if(!QDELETED(C))	
+			qdel(C)
 		return TRUE
 	else
 		to_chat(M, "There were no ghosts willing to take control.")

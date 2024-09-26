@@ -127,3 +127,11 @@
 	extra_range = 0
 	vary = TRUE
 	ignore_wallz = TRUE
+
+
+/datum/looping_sound/tinnitus
+	mid_sounds = list('sound/misc/loops/earbleeding.ogg')
+	mid_length = 12 SECONDS
+	volume = 100
+	extra_range = 0
+	direct = TRUE

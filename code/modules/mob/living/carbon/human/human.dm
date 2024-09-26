@@ -31,24 +31,24 @@
 		if(1)
 			affecting = get_bodypart("[pick("r","l")]_leg")
 			to_chat(src, "<span class='danger'>I fall on my leg!</span>")
-			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "melee", damage = dam)))
+			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = dam)))
 				update_damage_overlays()
 		if(2)
 			affecting = get_bodypart("[pick("r","l")]_arm")
 			to_chat(src, "<span class='danger'>I fall on my arm!</span>")
-			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "melee", damage = dam)))
+			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = dam)))
 				update_damage_overlays()
 		if(3)
 			affecting = get_bodypart("chest")
 			to_chat(src, "<span class='danger'>I fall flat! I'm winded!</span>")
 			emote("gasp")
 			adjustOxyLoss(50)
-			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "melee", damage = dam)))
+			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = dam)))
 				update_damage_overlays()
 		if(4)
 			affecting = get_bodypart("head")
 			to_chat(src, "<span class='danger'>I fall on my head!</span>")
-			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "melee", damage = dam)))
+			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = dam)))
 				update_damage_overlays()
 
 	AdjustKnockdown(levels * 15)
@@ -297,76 +297,47 @@
 	spreadFire(AM)
 
 /mob/living/carbon/human/Topic(href, href_list)
-
-	if(href_list["inspect_limb"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+	var/observer_privilege = isobserver(usr)
+	if(href_list["inspect_limb"] && (observer_privilege || usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY)))
 		var/list/msg = list()
-		if(!ismob(usr))
-			return
 		var/mob/user = usr
-		var/obj/item/bodypart/BP = get_bodypart(check_zone(user.zone_selected))
-		msg += "<B>[parse_zone(check_zone(user.zone_selected))]:</B>\n"
-		if(BP)
-			if(get_location_accessible(src, check_zone(user.zone_selected)))
-				if(BP.disabled == BODYPART_DISABLED_CRIT)
-					msg += "I notice a broken bone.\n"
-				if(BP.disabled == BODYPART_DISABLED_FALL)
-					msg += "The leg is numb to touch.\n"
-				if(BP.bandage)
-					var/usedclass = "'notice'"
-					if(BP.bandage.return_blood_DNA())
-						usedclass = "'danger'"
-					msg += "<a href='?src=[REF(src)];bandage=[REF(BP.bandage)];bandaged_limb=[REF(BP)]' class=[usedclass]>Bandaged</a>\n"
-				else if(BP.wounds.len)
-					msg += "<B>Wounds:</B>\n"
-					for(var/datum/wound/W in BP.wounds)
-						msg += "[W.name]\n"
-
+		var/checked_zone = check_zone(href_list["inspect_limb"])
+		var/obj/item/bodypart/bodypart = get_bodypart(checked_zone)
+		if(bodypart)
+			var/list/bodypart_status = bodypart.inspect_limb(user)
+			if(length(bodypart_status))
+				msg += bodypart_status
 			else
-				msg += "Obscured by clothing.\n"
-			for(var/obj/item/I in BP.embedded_objects)
-				msg += "<a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(BP)]'>[I.name]</a>\n"
+				msg += "<B>[capitalize(bodypart.name)]:</B>"
+				msg += "[bodypart] is healthy."
 		else
-			msg += "<B>Limb is missing!</B>\n"
-		to_chat(usr, "[msg.Join("")]")
-
-	if(href_list["check_hb"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		if(Adjacent(usr))
-			usr.visible_message("<span class='info'>[usr] tries to hear [src]'s heartbeat.</span>")
-			if(do_after(usr, 30, needhand = 1, target = src))
-				if(stat == DEAD)
-					to_chat(usr, "<B>No heartbeat...</B>")
-				else
-					to_chat(usr, "<B>The heart is still beating.</B>")
+			msg += "<B>[capitalize(parse_zone(checked_zone))]:</B>"
+			msg += span_dead("Limb is missing!")
+		to_chat(usr, span_info("[msg.Join("\n")]"))
 
 	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
 		if(!L)
 			return
 		var/obj/item/I = locate(href_list["embedded_object"]) in L.embedded_objects
-		if(!I || I.loc != src) //no item, no limb, or item is not in limb or in the person anymore
+		if(!I) //no item, no limb, or item is not in limb or in the person anymore
 			return
 		var/time_taken = I.embedding.embedded_unsafe_removal_time*I.w_class
 		if(usr == src)
-			usr.visible_message("<span class='warning'>[usr] attempts to remove [I] from [usr.p_their()] [L.name].</span>","<span class='warning'>I attempt to remove [I] from my [L.name]...</span>")
+			usr.visible_message(span_warning("[usr] attempts to remove [I] from [usr.p_their()] [L.name]."),span_warning("I attempt to remove [I] from my [L.name]..."))
 		else
-			usr.visible_message("<span class='warning'>[usr] attempts to remove [I] from [src]'s [L.name].</span>","<span class='warning'>I attempt to remove [I] from [src]'s [L.name]...</span>")
-		if(do_after(usr, time_taken, needhand = 1, target = src))
-			if(!I || !L || I.loc != src || !(I in L.embedded_objects))
+			usr.visible_message(span_warning("[usr] attempts to remove [I] from [src]'s [L.name]."),span_warning("I attempt to remove [I] from [src]'s [L.name]..."))
+		if(do_after(usr, time_taken, needhand = TRUE, target = src))
+			if(QDELETED(I) || QDELETED(L) || !L.remove_embedded_object(I))
 				return
-			L.embedded_objects -= I
-			emote("pain", TRUE)
 			L.receive_damage(I.embedding.embedded_unsafe_removal_pain_multiplier*I.w_class)//It hurts to rip it out, get surgery you dingus.
-			I.forceMove(get_turf(src))
 			usr.put_in_hands(I)
+			emote("pain", TRUE)
 			playsound(loc, 'sound/foley/flesh_rem.ogg', 100, TRUE, -2)
 			if(usr == src)
-				usr.visible_message("<span class='notice'>[usr] rips [I] out of [usr.p_their()] [L.name]!</span>", "<span class='notice'>I successfully remove [I] from my [L.name].</span>")
+				usr.visible_message(span_notice("[usr] rips [I] out of [usr.p_their()] [L.name]!"), span_notice("I successfully remove [I] from my [L.name]."))
 			else
-				usr.visible_message("<span class='notice'>[usr] rips [I] out of [src]'s [L.name]!</span>", "<span class='notice'>I successfully remove [I] from [src]'s [L.name].</span>")
-			if(!has_embedded_objects())
-				clear_alert("embeddedobject")
-				SEND_SIGNAL(usr, COMSIG_CLEAR_MOOD_EVENT, "embedded")
-		return
+				usr.visible_message(span_notice("[usr] rips [I] out of [src]'s [L.name]!"), span_notice("I successfully remove [I] from [src]'s [L.name]."))
 
 	if(href_list["bandage"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		var/obj/item/bodypart/L = locate(href_list["bandaged_limb"]) in bodyparts
@@ -376,27 +347,24 @@
 		if(!I)
 			return
 		if(usr == src)
-			usr.visible_message("<span class='warning'>[usr] starts unbandaging [usr.p_their()] [L.name].</span>","<span class='warning'>I start unbandaging [L.name]...</span>")
+			usr.visible_message(span_warning("[usr] starts unbandaging [usr.p_their()] [L.name]."),span_warning("I start unbandaging [L.name]..."))
 		else
-			usr.visible_message("<span class='warning'>[usr] starts unbandaging [src]'s [L.name].</span>","<span class='warning'>I start unbandaging [src]'s [L.name]...</span>")
-		if(do_after(usr, 50, needhand = 1, target = src))
-			if(!I || !L || !(L.bandage == I))
+			usr.visible_message(span_warning("[usr] starts unbandaging [src]'s [L.name]."),span_warning("I start unbandaging [src]'s [L.name]..."))
+		if(do_after(usr, 50, needhand = TRUE, target = src))
+			if(QDELETED(I) || QDELETED(L) || (L.bandage != I))
 				return
-			I.forceMove(get_turf(src))
-			L.bandage = null
+			L.remove_bandage()
 			usr.put_in_hands(I)
-			src.update_damage_overlays()
-		return
 
 	if(href_list["item"]) //canUseTopic check for this is handled by mob/Topic()
 		var/slot = text2num(href_list["item"])
 		if(slot in check_obscured_slots(TRUE))
-			to_chat(usr, "<span class='warning'>I can't reach that! Something is covering it.</span>")
+			to_chat(usr, span_warning("I can't reach that! Something is covering it."))
 			return
 
 	if(href_list["undiesthing"]) //canUseTopic check for this is handled by mob/Topic()
 		if(!get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
-			to_chat(usr, "<span class='warning'>I can't reach that! Something is covering it.</span>")
+			to_chat(usr, span_warning("I can't reach that! Something is covering it."))
 			return
 		if(underwear == "Nude")
 			return
@@ -423,10 +391,10 @@
 		var/delay_denominator = 1
 		if(pocket_item && !(pocket_item.item_flags & ABSTRACT))
 			if(HAS_TRAIT(pocket_item, TRAIT_NODROP))
-				to_chat(usr, "<span class='warning'>I try to empty [src]'s [pocket_side] pocket, it seems to be stuck!</span>")
-			to_chat(usr, "<span class='notice'>I try to empty [src]'s [pocket_side] pocket.</span>")
+				to_chat(usr, span_warning("I try to empty [src]'s [pocket_side] pocket, it seems to be stuck!"))
+			to_chat(usr, span_notice("I try to empty [src]'s [pocket_side] pocket."))
 		else if(place_item && place_item.mob_can_equip(src, usr, pocket_id, 1) && !(place_item.item_flags & ABSTRACT))
-			to_chat(usr, "<span class='notice'>I try to place [place_item] into [src]'s [pocket_side] pocket.</span>")
+			to_chat(usr, span_notice("I try to place [place_item] into [src]'s [pocket_side] pocket."))
 			delay_denominator = 4
 		else
 			return
@@ -444,7 +412,7 @@
 				//updating inv screen after handled by living/Topic()
 		else
 			// Display a warning if the user mocks up
-			to_chat(src, "<span class='warning'>I feel your [pocket_side] pocket being fumbled with!</span>")
+			to_chat(src, span_warning("I feel your [pocket_side] pocket being fumbled with!"))
 
 ///////HUDs///////
 	if(href_list["hud"])
@@ -513,15 +481,15 @@
 						if(burndamage)
 							to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
 				if(getOxyLoss())
-					to_chat(usr, "<span class='danger'>Patient has signs of suffocation, emergency treatment may be required!</span>")
+					to_chat(usr, span_danger("Patient has signs of suffocation, emergency treatment may be required!"))
 				if(getToxLoss() > 20)
-					to_chat(usr, "<span class='danger'>Gathered data is inconsistent with the analysis, possible cause: poisoning.</span>")
+					to_chat(usr, span_danger("Gathered data is inconsistent with the analysis, possible cause: poisoning."))
 			if(!H.wear_ring) //You require access from here on out.
-				to_chat(H, "<span class='warning'>ERROR: Invalid access</span>")
+				to_chat(H, span_warning("ERROR: Invalid access"))
 				return
 			var/list/access = H.wear_ring.GetAccess()
 			if(!(ACCESS_MEDICAL in access))
-				to_chat(H, "<span class='warning'>ERROR: Invalid access</span>")
+				to_chat(H, span_warning("ERROR: Invalid access"))
 				return
 			if(href_list["p_stat"])
 				var/health_status = input(usr, "Specify a new physical status for this person.", "Medical HUD", R.fields["p_stat"]) in list("Active", "Physically Unfit", "*Unconscious*", "*Deceased*", "Cancel")
@@ -564,15 +532,15 @@
 						allowed_access = H.get_authentification_name()
 
 			if(!allowed_access)
-				to_chat(H, "<span class='warning'>ERROR: Invalid access.</span>")
+				to_chat(H, span_warning("ERROR: Invalid access."))
 				return
 
 			if(!perpname)
-				to_chat(H, "<span class='warning'>ERROR: Can not identify target.</span>")
+				to_chat(H, span_warning("ERROR: Can not identify target."))
 				return
 			R = find_record("name", perpname, GLOB.data_core.security)
 			if(!R)
-				to_chat(usr, "<span class='warning'>ERROR: Unable to locate data core entry for target.</span>")
+				to_chat(usr, span_warning("ERROR: Unable to locate data core entry for target."))
 				return
 			if(href_list["status"])
 				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", R.fields["criminal"]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
@@ -623,7 +591,7 @@
 						var/crime = GLOB.data_core.createCrimeEntry(t1, t2, allowed_access, station_time_timestamp())
 						GLOB.data_core.addMinorCrime(R.fields["id"], crime)
 						investigate_log("New Minor Crime: <strong>[t1]</strong>: [t2] | Added to [R.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-						to_chat(usr, "<span class='notice'>Successfully added a minor crime.</span>")
+						to_chat(usr, span_notice("Successfully added a minor crime."))
 						return
 					if("Major Crime")
 						var/t1 = stripped_input("Please input major crime names:", "Security HUD", "", null)
@@ -637,7 +605,7 @@
 						var/crime = GLOB.data_core.createCrimeEntry(t1, t2, allowed_access, station_time_timestamp())
 						GLOB.data_core.addMajorCrime(R.fields["id"], crime)
 						investigate_log("New Major Crime: <strong>[t1]</strong>: [t2] | Added to [R.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-						to_chat(usr, "<span class='notice'>Successfully added a major crime.</span>")
+						to_chat(usr, span_notice("Successfully added a major crime."))
 				return
 
 			if(href_list["view_comment"])
@@ -665,10 +633,10 @@
 				while(R.fields[text("com_[]", counter)])
 					counter++
 				R.fields[text("com_[]", counter)] = text("Made by [] on [] [], []<BR>[]", allowed_access, station_time_timestamp(), time2text(world.realtime, "MMM DD"), GLOB.year_integer+540, t1)
-				to_chat(usr, "<span class='notice'>Successfully added comment.</span>")
+				to_chat(usr, span_notice("Successfully added comment."))
 				return
 
-	..() //end of this massive fucking chain. TODO: make the hud chain not spooky. - Yeah, great job doing that.
+	return ..() //end of this massive fucking chain. TODO: make the hud chain not spooky. - Yeah, great job doing that.
 
 /mob/living/carbon/human/proc/canUseHUD()
 	return (mobility_flags & MOBILITY_USE)
@@ -1038,7 +1006,7 @@
 	if(admin_revive)
 		regenerate_limbs()
 		regenerate_organs()
-	remove_all_embedded_objects()
+	spill_embedded_objects()
 	set_heartattack(FALSE)
 	drunkenness = 0
 	for(var/datum/mutation/human/HM in dna.mutations)

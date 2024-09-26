@@ -1,24 +1,13 @@
 /mob/living/proc/handle_wounds()
-	for(var/datum/wound/WO in simple_wounds)
-		if(WO.passive_heal)
-			if(WO.whp > 0)
-				WO.whp = WO.whp - 1
-				if(WO.whp <= 0)
-					simple_wounds -= WO
-					qdel(WO)
+	if(stat >= DEAD)
+		for(var/datum/wound/wound as anything in get_wounds())
+			wound.on_death()
+		return
+	for(var/datum/wound/wound as anything in get_wounds())
+		wound.on_life()
 
 /mob/living/proc/handle_stomach()
 	return
-
-/mob/living/carbon/handle_wounds()
-	for(var/obj/item/bodypart/BP in bodyparts)
-		for(var/datum/wound/WO in BP.wounds)
-			if(WO.passive_heal)
-				if(WO.whp > 0)
-					WO.whp = WO.whp - 1
-					if(WO.whp <= 0)
-						BP.wounds -= WO
-						qdel(WO)
 
 /mob/living/carbon/Life()
 	set invisibility = 0
@@ -70,7 +59,7 @@
 						blood_volume = min(blood_volume + 10, BLOOD_VOLUME_MAXIMUM)
 					for(var/X in bodyparts)
 						var/obj/item/bodypart/affecting = X
-						if(affecting.get_bleedrate() <= 0.1)
+						if(affecting.get_bleed_rate() <= 0.1)
 							if(affecting.heal_damage(buckled.sleepy, buckled.sleepy, null, BODYPART_ORGANIC))
 								src.update_damage_overlays()
 					adjustToxLoss(-buckled.sleepy)
@@ -108,7 +97,7 @@
 							blood_volume = min(blood_volume + 10, BLOOD_VOLUME_MAXIMUM)
 						for(var/X in bodyparts)
 							var/obj/item/bodypart/affecting = X
-							if(affecting.get_bleedrate() <= 0.1)
+							if(affecting.get_bleed_rate() <= 0.1)
 								if(affecting.heal_damage(0.15, 0.15, null, BODYPART_ORGANIC))
 									src.update_damage_overlays()
 						adjustToxLoss(-0.1)
@@ -162,6 +151,7 @@
 			else
 				if(painpercent >= 100)
 					if(prob(probby))
+						update_shock_penalty()
 						Immobilize(10)
 						emote("painscream")
 						stuttering += 5
@@ -529,7 +519,7 @@
 	for(var/I in bodyparts)
 		var/obj/item/bodypart/BP = I
 		if(BP.body_zone == BODY_ZONE_HEAD)
-			for(var/datum/wound/artery/throat/A in BP.wounds)
+			for(var/datum/wound/artery/neck/A in BP.wounds)
 				return FALSE
 			for(var/obj/item/grabbing/G in grabbedby)
 				if(G.sublimb_grabbed == BODY_ZONE_PRECISE_MOUTH)

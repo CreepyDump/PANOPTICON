@@ -54,3 +54,19 @@
 #define ORGAN_FAILING			(1<<2)	//Failing organs perform damaging effects until replaced or fixed
 #define ORGAN_EXTERNAL			(1<<3)	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
 #define ORGAN_VITAL				(1<<4)	//Currently only the brain
+
+//wound severities for /datum/wound
+/// Wounds that are either surgically induced or too minor to matter
+#define WOUND_SEVERITY_SUPERFICIAL 0
+/// Wounds that are minor, such as bruises and minor cuts
+#define WOUND_SEVERITY_LIGHT 1
+/// Wounds that are moderate, such as dislocations
+#define WOUND_SEVERITY_MODERATE 2
+/// Wounds that are severe, such as broken bones
+#define WOUND_SEVERITY_SEVERE 3
+/// Wounds that are critical and will kill rather quickly, such as torn arteries
+#define WOUND_SEVERITY_CRITICAL 4
+/// Wounds that are almost immediately fatal, such as a dissected aorta
+#define WOUND_SEVERITY_FATAL 5
+/// This wound has a zombie or werewolf infection
+#define WOUND_SEVERITY_BIOHAZARD 6

@@ -12,6 +12,7 @@
 	var/obj/item/masteritem
 	var/mob/living/mastermob
 	var/unarmed = FALSE
+	var/item_d_type = "blunt"
 	var/intent_type
 	var/animname = "strike"
 	var/blade_class = BCLASS_BLUNT
@@ -116,6 +117,7 @@
 
 /datum/intent/proc/afterchange()
 	if(masteritem)
+		masteritem.d_type = item_d_type
 		var/list/benis = hitsound
 		if(benis)
 			masteritem.hitsound = benis

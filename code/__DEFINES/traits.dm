@@ -11,6 +11,7 @@
 #define RTRAIT_GOODLOVER				"Fabled Lover"
 #define RTRAIT_NOBLE					"Noble Blooded"
 #define RTRAIT_EMPATH					"Empath"
+#define TRAIT_GARGLE_SPEECH		"gargle_speech"
 #define RTRAIT_BREADY					"Battleready"
 #define RTRAIT_MEDIUMARMOR					"Maille Training"
 #define RTRAIT_HEAVYARMOR					"Plate Training"
@@ -29,10 +30,23 @@
 #define TRAIT_POHYI				"alleater" //ДА МНЕ ВООБЩЕ ПОХУЙ ЧТО ЖРАТЬ БЛЯТЬ
 #define TRAIT_SCREENSHAKE "screenshake" //screen will always be shaking, you cannot stop it
 #define TRAIT_SCHIZO_AMBIENCE "schizo_ambience" //replaces all ambience with creepy shit
+//NEW ROGUETOWN PORTS
+#define TRAIT_BRITTLE "brittle" //The limb is more susceptible to fractures
+#define TRAIT_FINGERLESS "fingerless" //The limb has no fingies
+#define TRAIT_CRITICAL_WEAKNESS "Critical Weakness"
+#define TRAIT_CYCLOPS_LEFT "Cyclops (Left)" //poked left eye
+#define TRAIT_CYCLOPS_RIGHT "Cyclops (Right)" //poked right eye
+#define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
+#define TRAIT_NO_BITE "no_bite" //prevents biting
+#define TRAIT_CRITICAL_RESISTANCE "Critical Resistance"
+#define TRAIT_NUTCRACKER "Nutcracker"
+#define TRAIT_IWASHAUNTED "iwashaunted" //prevents spawning a haunt from a decapitated body twice
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_WEBWALK = "I can move freely between webs.",
 	RTRAIT_NOSTINK = "My nose is numb to the smell of decay.",
+	TRAIT_CRITICAL_RESISTANCE = "I am resistant to wounds that would be life threatening to others.",
+	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	RTRAIT_ZJUMP = "Who needs to climb when you can make great leaps?",
 	RTRAIT_NOSEGRAB = "I love to grab the idiots by their noses.",
 	RTRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
@@ -40,6 +54,10 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_TORTURER = "I've learned the art of confessions.",
 	RTRAIT_HATEWOMEN = "Double damage against female mobs.",
 	RTRAIT_GOODLOVER = "It's a lucky thing to share my bed.",
+	TRAIT_CRITICAL_WEAKNESS = span_danger("I am weak to wounds that others could survive."),
+	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),
+	TRAIT_CYCLOPS_RIGHT = span_warning("My right eye has been poked out..."),
+	TRAIT_MISSING_NOSE = span_warning("I struggle to breathe."),
 	RTRAIT_NOBLE = "<span class='blue'>I'm of noble blood.</span>",
 	RTRAIT_EMPATH = "I can notice stress levels in detail.",
 	RTRAIT_BREADY = "Defensive stance does not passively fatigue me.",
@@ -257,6 +275,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define DISEASE_TRAIT "disease"
 #define SPECIES_TRAIT "species"
 #define ORGAN_TRAIT "organ"
+#define CRIT_TRAIT "crit"
+#define TRAIT_NOEMBED "noembed"
 #define ROUNDSTART_TRAIT "roundstart" //cannot be removed without admin intervention
 #define JOB_TRAIT "job"
 #define CYBORG_ITEM_TRAIT "cyborg-item"

@@ -228,6 +228,21 @@
 /obj/screen/fullscreen/color_vision/blue
 	color = "#0000ff"
 
+//Pain flashy
+/obj/screen/fullscreen/pain_flash
+	name = "pain flash"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "blank"
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	plane = FULLSCREEN_PLANE
+	layer = CRIT_LAYER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	show_when_dead = FALSE
+
+/obj/screen/fullscreen/pain_flash/update_for_view(client_view)
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+
+
 /obj/screen/fullscreen/lighting_backdrop
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "flash"

@@ -49,7 +49,7 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 	var/obj/screen/stress/stressies
 	var/obj/screen/cmode_button
 	var/obj/screen/rmbintent/rmb_intent
-
+	var/obj/screen/fullscreen/pain_flash/pain_flash
 	var/list/static_inventory = list() //the screen objects which are static
 	var/list/toggleable_inventory = list() //the screen objects which can be hidden
 	var/list/obj/screen/hotkeybuttons = list() //the buttons that can be used via hotkeys

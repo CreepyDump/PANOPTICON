@@ -139,7 +139,7 @@
 				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 		return
 
-	if(user.zone_selected == BODY_ZONE_R_INHAND)
+	if(user.zone_selected == BODY_ZONE_PRECISE_R_INHAND)
 		var/offh = 0
 		var/obj/item/W = M.held_items[1]
 		if(W)
@@ -151,7 +151,7 @@
 							"<span class='boldwarning'>I'm disarmed by [user]!</span>")
 			return
 
-	if(user.zone_selected == BODY_ZONE_L_INHAND)
+	if(user.zone_selected == BODY_ZONE_PRECISE_L_INHAND)
 		var/offh = 0
 		var/obj/item/W = M.held_items[2]
 		if(W)
@@ -287,33 +287,6 @@
 	testing("endforce [newforce]")
 	return newforce
 
-/obj/attacked_by(obj/item/I, mob/living/user)
-	user.changeNext_move(CLICK_CD_MELEE)
-	var/newforce = get_complex_damage(I, user, blade_dulling)
-	if(!newforce)
-		testing("dam33")
-		return 0
-	if(newforce < damage_deflection)
-		testing("dam44")
-		return 0
-	if(user.used_intent.no_attack)
-		return 0
-	log_combat(user, src, "attacked", I)
-	var/verbu = "hits"
-	verbu = pick(user.used_intent.attack_verb)
-	if(newforce > 1)
-		if(user.rogfat_add(5))
-			user.visible_message("<span class='danger'>[user] [verbu] [src] with [I]!</span>")
-		else
-			user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
-			newforce = 1
-	else
-		user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
-	take_damage(newforce, I.damtype, "melee", 1)
-	if(newforce > 1)
-		I.take_damage(1, BRUTE, "melee")
-	return TRUE
-
 /turf/proc/attacked_by(obj/item/I, mob/living/user)
 	var/newforce = get_complex_damage(I, user, blade_dulling)
 	if(!newforce)
@@ -337,9 +310,9 @@
 	else
 		user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
 
-	take_damage(newforce, I.damtype, "melee", 1)
+	take_damage(newforce, I.damtype, I.d_type, 1)
 	if(newforce > 1)
-		I.take_damage(1, BRUTE, "melee")
+		I.take_damage(1, BRUTE, I.d_type)
 	return TRUE
 
 /mob/living/proc/simple_limb_hit(zone)
@@ -366,7 +339,7 @@
 			return "body"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "body"
-		if(BODY_ZONE_PRECISE_HAIR)
+		if(BODY_ZONE_PRECISE_SKULL)
 			return "body"
 		if(BODY_ZONE_PRECISE_EARS)
 			return "body"
@@ -384,9 +357,7 @@
 			return "body"
 		if(BODY_ZONE_PRECISE_GROIN)
 			return "body"
-		if(BODY_ZONE_R_INHAND)
-			return "body"
-		if(BODY_ZONE_L_INHAND)
+		if(BODY_ZONE_PRECISE_R_INHAND)
 			return "body"
 	return "body"
 
@@ -402,13 +373,12 @@
 		apply_damage(newforce, I.damtype, def_zone = hitlim)
 		if(I.damtype == BRUTE)
 			next_attack_msg.Cut()
-			if(woundcritroll(user.used_intent.blade_class, newforce, user, hitlim) && HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
-//				throw_alert("embeddedobject", /obj/screen/alert/embeddedobject)
-				simple_embedded_objects |= I
-				I.add_mob_blood(src)
-				I.forceMove(src)
-				src.grabbedby(user, 1, item_override = I)
-				next_attack_msg += " <span class='userdanger'>[I] is stuck in [src]!</span>"
+			if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
+				var/datum/wound/crit_wound  = simple_woundcritroll(user.used_intent.blade_class, newforce, user, hitlim)
+				if(should_embed_weapon(crit_wound, I))
+					// throw_alert("embeddedobject", /obj/screen/alert/embeddedobject)
+					simple_add_embedded_object(I, silent = FALSE, crit_message = TRUE)
+					src.grabbedby(user, 1, item_override = I)
 			var/haha = user.used_intent.blade_class
 			if(newforce > 5)
 				if(haha != BCLASS_BLUNT)
@@ -427,6 +397,7 @@
 	send_item_attack_message(I, user, hitlim)
 	if(I.force)
 		return TRUE
+
 
 /mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
 	if(I.force < force_threshold || I.damtype == STAMINA)

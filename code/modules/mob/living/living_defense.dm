@@ -1,5 +1,5 @@
 
-/mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = null, soften_text = null, armor_penetration, penetrated_text, damage, blade_dulling)
+/mob/living/proc/run_armor_check(def_zone = null, attack_flag = "blunt", absorb_text = null, soften_text = null, armor_penetration, penetrated_text, damage, blade_dulling)
 	var/armor = getarmor(def_zone, attack_flag, damage, armor_penetration, blade_dulling)
 
 	//the if "armor" check is because this is used for everything on /living, including humans
@@ -84,7 +84,7 @@
 	return 0
 
 /mob/living/proc/check_projectile_wounding(obj/projectile/P, def_zone)
-	woundcritroll(P.woundclass, P.damage, null, def_zone)
+	simple_woundcritroll(P.woundclass, P.damage, null, def_zone)
 	return
 
 /mob/living/proc/check_projectile_embed(obj/projectile/P, def_zone)
@@ -106,7 +106,7 @@
 		else
 				return 0
 
-/mob/living/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
+/mob/living/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum, d_type = "blunt")
 	if(istype(AM, /obj/item))
 		var/obj/item/I = AM
 		var/dtype = BRUTE
@@ -114,7 +114,7 @@
 		SEND_SIGNAL(I, COMSIG_MOVABLE_IMPACT_ZONE, src, zone)
 		dtype = I.damtype
 		if(!blocked)
-			var/armor = run_armor_check(zone, "melee", "", "",I.armor_penetration, damage = I.throwforce)
+			var/armor = run_armor_check(zone, d_type, "", "",I.armor_penetration, damage = I.throwforce)
 			next_attack_msg.Cut()
 			var/nodmg = FALSE
 			if(!apply_damage(I.throwforce, dtype, zone, armor))
@@ -126,7 +126,7 @@
 					if(affecting)
 						affecting.attacked_by(I.thrown_bclass, I.throwforce)
 				else
-					woundcritroll(I.thrown_bclass, I.throwforce, null, zone)
+					simple_woundcritroll(I.thrown_bclass, I.throwforce, null, zone)
 					if(((throwingdatum ? throwingdatum.speed : I.throw_speed) >= EMBED_THROWSPEED_THRESHOLD) || I.embedding.embedded_ignore_throwspeed_threshold)
 						if(can_embed(I))
 							if(prob(I.embedding.embed_chance) && !HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
@@ -293,16 +293,16 @@
 
 /turf/proc/grabbedintents(mob/living/user)
 	//RTD up and down
-	return list(/datum/intent/grab/obj/move)
+	return list(/datum/intent/grab/move)
 
 /obj/proc/grabbedintents(mob/living/user, precise)
-	return list(/datum/intent/grab/obj/move)
+	return list(/datum/intent/grab/move)
 
 /obj/item/grabbedintents(mob/living/user, precise)
-	return list(/datum/intent/grab/obj/remove, /datum/intent/grab/obj/twistitem)
+	return list(/datum/intent/grab/remove, /datum/intent/grab/twistitem)
 
 /mob/proc/grabbedintents(mob/living/user, precise)
-	return list(/datum/intent/grab/obj/move)
+	return list(/datum/intent/grab/move)
 
 /mob/living/proc/send_grabbed_message(mob/living/carbon/user)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
