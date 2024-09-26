@@ -138,4 +138,3 @@ var/leninalive = FALSE
 		for(var/mob/living/carbon/human/M in GLOB.player_list)
 			M.gib(FALSE, FALSE, FALSE)
 			SSticker.declare_completion()
-			SSticker.current_state = GAME_STATE_FINISHED
