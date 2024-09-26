@@ -35,7 +35,7 @@
 	back = null
 	id = null
 	belt = /obj/item/storage/belt/rogue/panopticon/strafbat
-	beltl = null
+	beltl = /obj/item/flashlight/flare/torch/lantern
 	beltr = null
 	backpack_contents = list(/obj/item/panopticonweapon/molotok = 1)
 	if(H.mind)

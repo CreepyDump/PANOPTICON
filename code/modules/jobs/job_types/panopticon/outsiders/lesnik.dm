@@ -29,6 +29,9 @@
 	pants = /obj/item/clothing/under/panopticon/civilianpants
 	head = /obj/item/clothing/head/panopticon/vargcap
 	backl = /obj/item/storage/backpack/rogue/backpack
+	belt = /obj/item/storage/belt/rogue/leather
+	beltl = /obj/item/flashlight/flare/torch/lantern
+	beltr = null
 	back = null
 	id = null
 	r_hand = /obj/item/rogueweapon/stoneaxe/woodcut

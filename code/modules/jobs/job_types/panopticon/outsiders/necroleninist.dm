@@ -40,6 +40,7 @@
 			beltr = /obj/item/panopticonweapon/knife
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(3,4,5,6), TRUE)
 		else
+			r_hand = /obj/item/flashlight/flare/torch/lantern
 			beltl = /obj/item/rogueweapon/sickle
 			beltr = /obj/item/rogueweapon/hammer
 			H.mind.adjust_skillrank(/datum/skill/labor/farming, pick(3,4,5,6), TRUE)
