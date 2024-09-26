@@ -9,14 +9,14 @@
   */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(user.check_arm_grabbed(user.active_hand_index))
-		to_chat(user, "<span class='notice'>I can't move my arm!</span>")
+		to_chat(user, span_notice("I can't move my arm!"))
 		return
 	if(!user.has_hand_for_held_index(user.active_hand_index, TRUE)) //we obviously have a hadn, but we need to check for fingers/prosthetics
-		to_chat(user, "<span class='warning'>I can't move the fingers.</span>")
+		to_chat(user, span_warning("I can't move the fingers."))
 		return
 	if(!istype(src, /obj/item/grabbing))
 		if(HAS_TRAIT(user, TRAIT_CHUNKYFINGERS))
-			to_chat(user, "<span class='warning'>...What?</span>")
+			to_chat(user, span_warning("...What?"))
 			return
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
@@ -51,9 +51,6 @@
 /obj/attackby(obj/item/I, mob/living/user, params)
 	return ..() || ((obj_flags & CAN_BE_HIT) && I.attack_obj(src, user))
 
-/turf/attackby(obj/item/I, mob/living/user, params)
-	return ..() || (max_integrity && I.attack_turf(src, user))
-
 /mob/living/attackby(obj/item/I, mob/living/user, params)
 	if(..())
 		return TRUE
@@ -76,7 +73,7 @@
 		return FALSE
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>I don't want to harm other living beings!</span>")
+		to_chat(user, span_warning("I don't want to harm other living beings!"))
 		return
 
 	M.lastattacker = user.real_name
@@ -120,11 +117,11 @@
 		user.rogfat_add(10)
 	if(M.checkdefense(user.used_intent, user))
 		if(M.d_intent == INTENT_PARRY)
-			if(!M.get_active_held_item()) //we parried with a bracer, redirect damage
+			if(!M.get_active_held_item() && !M.get_inactive_held_item()) //we parried with a bracer, redirect damage
 				if(M.active_hand_index == 1)
-					user.tempatarget = "l_arm"
+					user.tempatarget = BODY_ZONE_L_ARM
 				else
-					user.tempatarget = "r_arm"
+					user.tempatarget = BODY_ZONE_R_ARM
 				if(M.attacked_by(src, user)) //we change intents when attacking sometimes so don't play if we do (embedding items)
 					if(user.used_intent == cached_intent)
 						var/tempsound = user.used_intent.hitsound
@@ -147,8 +144,8 @@
 				M.throw_item(get_step(M,turn(M.dir, 90)), offhand = offh)
 			else
 				M.dropItemToGround(W)
-			M.visible_message("<span class='notice'>[user] disarms [M]!</span>", \
-							"<span class='boldwarning'>I'm disarmed by [user]!</span>")
+			M.visible_message(span_notice("[user] disarms [M]!"), \
+							span_boldwarning("I'm disarmed by [user]!"))
 			return
 
 	if(user.zone_selected == BODY_ZONE_PRECISE_L_INHAND)
@@ -159,8 +156,8 @@
 				M.throw_item(get_step(M,turn(M.dir, 270)), offhand = offh)
 			else
 				M.dropItemToGround(W)
-			M.visible_message("<span class='notice'>[user] disarms [M]!</span>", \
-							"<span class='boldwarning'>I'm disarmed by [user]!</span>")
+			M.visible_message(span_notice("[user] disarms [M]!"), \
+							span_boldwarning("I'm disarmed by [user]!"))
 			return
 
 	if(M.attacked_by(src, user))
@@ -194,12 +191,15 @@
 /atom/movable/proc/attacked_by()
 	return FALSE
 
-/proc/get_complex_damage(obj/item/I, mob/living/user, blade_dulling)
+
+/proc/get_complex_damage(obj/item/I, mob/living/user, blade_dulling, turf/closed/mineral/T)
 	var/dullfactor = 1
-	if(!I.force)
+	if(!I?.force)
 		return 0
 	var/newforce = I.force
 	testing("startforce [newforce]")
+	if(!istype(user))
+		return newforce
 	var/cont = FALSE
 	var/used_str = user.STASTR
 	if(iscarbon(user))
@@ -212,7 +212,7 @@
 		used_str--
 	used_str = CLAMP(used_str, 1, 20)
 	if(used_str >= 11)
-		newforce = newforce + (newforce * ((used_str - 10) * 0.3))
+		newforce = newforce + (newforce * ((used_str - 10) * 0.1))
 	else if(used_str <= 9)
 		newforce = newforce - (newforce * ((10 - used_str) * 0.1))
 
@@ -227,16 +227,22 @@
 		if(DULLING_CUT) //wooden that can't be attacked by clubs (trees, bushes, grass)
 			switch(user.used_intent.blade_class)
 				if(BCLASS_CUT)
+					var/mob/living/lumberjacker = user
+					var/lumberskill = lumberjacker.mind.get_skill_level(/datum/skill/labor)
 					if(!I.remove_bintegrity(1))
 						dullfactor = 0.2
 					else
-						dullfactor = 0.75
+						dullfactor = 0.45 + (lumberskill * 0.15)
+						lumberjacker.mind.adjust_experience(/datum/skill/labor, (lumberjacker.STAINT*0.2))
 					cont = TRUE
 				if(BCLASS_CHOP)
+					var/mob/living/lumberjacker = user
+					var/lumberskill = lumberjacker.mind.get_skill_level(/datum/skill/labor)
 					if(!I.remove_bintegrity(1))
 						dullfactor = 0.2
 					else
-						dullfactor = 1.5
+						dullfactor = 1.2 + (lumberskill * 0.15)
+						lumberjacker.mind.adjust_experience(/datum/skill/labor, (lumberjacker.STAINT*0.2))
 					cont = TRUE
 			if(!cont)
 				return 0
@@ -270,15 +276,22 @@
 				if(BCLASS_BLUNT)
 					cont = TRUE
 				if(BCLASS_PICK)
-					dullfactor = 1.5
+					var/mob/living/miner = user
+					var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
+					dullfactor = 1.5 * (mineskill * 0.1)
 					cont = TRUE
 			if(!cont)
 				return 0
 		if(DULLING_PICK) //cannot deal damage if not a pick item. aka rock walls
+				    
 			if(user.used_intent.blade_class != BCLASS_PICK)
 				return 0
-			newforce = newforce * 10
+			var/mob/living/miner = user
+			var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
+			newforce = newforce * (8+(mineskill*1.5))
 			shake_camera(user, 1, 1)
+			miner.mind.adjust_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
+	
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
 		newforce = newforce * 0.5
@@ -286,6 +299,33 @@
 	newforce = max(newforce, 1)
 	testing("endforce [newforce]")
 	return newforce
+
+/obj/attacked_by(obj/item/I, mob/living/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	var/newforce = get_complex_damage(I, user, blade_dulling)
+	if(!newforce)
+		testing("dam33")
+		return 0
+	if(newforce < damage_deflection)
+		testing("dam44")
+		return 0
+	if(user.used_intent.no_attack)
+		return 0
+	log_combat(user, src, "attacked", I)
+	var/verbu = "hits"
+	verbu = pick(user.used_intent.attack_verb)
+	if(newforce > 1)
+		if(user.rogfat_add(5))
+			user.visible_message(span_danger("[user] [verbu] [src] with [I]!"))
+		else
+			user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
+			newforce = 1
+	else
+		user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
+	take_damage(newforce, I.damtype, I.d_type, 1)
+	if(newforce > 1)
+		I.take_damage(1, BRUTE, I.d_type)
+	return TRUE
 
 /turf/proc/attacked_by(obj/item/I, mob/living/user)
 	var/newforce = get_complex_damage(I, user, blade_dulling)
@@ -303,12 +343,12 @@
 	verbu = pick(user.used_intent.attack_verb)
 	if(newforce > 1)
 		if(user.rogfat_add(5))
-			user.visible_message("<span class='danger'>[user] [verbu] [src] with [I]!</span>")
+			user.visible_message(span_danger("[user] [verbu] [src] with [I]!"))
 		else
-			user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
+			user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
 			newforce = 1
 	else
-		user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
+		user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
 
 	take_damage(newforce, I.damtype, I.d_type, 1)
 	if(newforce > 1)
@@ -359,6 +399,8 @@
 			return "body"
 		if(BODY_ZONE_PRECISE_R_INHAND)
 			return "body"
+		if(BODY_ZONE_PRECISE_L_INHAND)
+			return "body"
 	return "body"
 
 /obj/item/proc/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
@@ -376,7 +418,7 @@
 			if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
 				var/datum/wound/crit_wound  = simple_woundcritroll(user.used_intent.blade_class, newforce, user, hitlim)
 				if(should_embed_weapon(crit_wound, I))
-					// throw_alert("embeddedobject", /obj/screen/alert/embeddedobject)
+					// throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
 					simple_add_embedded_object(I, silent = FALSE, crit_message = TRUE)
 					src.grabbedby(user, 1, item_override = I)
 			var/haha = user.used_intent.blade_class
@@ -397,7 +439,6 @@
 	send_item_attack_message(I, user, hitlim)
 	if(I.force)
 		return TRUE
-
 
 /mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
 	if(I.force < force_threshold || I.damtype == STAMINA)
@@ -458,7 +499,7 @@
 	if(user in viewers(src, null))
 		attack_message = "[user] [message_verb] [src][message_hit_area] with [I]!"
 		attack_message_local = "[user] [message_verb] me[message_hit_area] with [I]!"
-	visible_message("<span class='danger'>[attack_message][next_attack_msg.Join()]</span>",\
-		"<span class='danger'>[attack_message_local][next_attack_msg.Join()]</span>", null, COMBAT_MESSAGE_RANGE)
+	visible_message(span_danger("[attack_message][next_attack_msg.Join()]"),\
+		span_danger("[attack_message_local][next_attack_msg.Join()]"), null, COMBAT_MESSAGE_RANGE)
 	next_attack_msg.Cut()
 	return 1
