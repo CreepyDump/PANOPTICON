@@ -114,6 +114,12 @@
 	gender = MALE
 	specuse = list("human", "dwarf", "tiefling", "aasimar")
 
+/datum/sprite_accessory/hair/blackmetal
+	name = "Black Metal"
+	icon_state = "hair_blackmetal"
+	gender = MALE
+	specuse = list("human")
+
 /datum/sprite_accessory/hair/noble
 	name = "Noble"
 	icon_state = "hair_business"
@@ -715,6 +721,18 @@
 /datum/sprite_accessory/detail/mangled
 	name = "Mangled Jaw"
 	icon_state = "mangled"
+
+/datum/sprite_accessory/detail/corpseone
+	name = "Corpse-paint (1)"
+	icon_state = "corpsepaint1"
+
+/datum/sprite_accessory/detail/corpsetwo
+	name = "Corpse-paint (2)"
+	icon_state = "corpsepaint2"
+
+/datum/sprite_accessory/detail/corpsethree
+	name = "Corpse-paint (3)"
+	icon_state = "corpsepaint3"
 
 /datum/sprite_accessory/detail/warpaint_blue
 	name = "Warpaint (Blue)"

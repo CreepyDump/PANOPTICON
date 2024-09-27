@@ -78,7 +78,11 @@ SUBSYSTEM_DEF(ticker)
 	var/tri_lost = 0
 	var/list/cuckers = list()
 	var/cums = 0
-
+	var/holefall = 0 // ankles broken
+	var/pplsmited = 0 // people sm
+	var/moatfallers = 0 // moat fall
+	var/gibbs = 0 // gibs been
+	var/snort = 0 // drugs snorted
 	var/end_party = FALSE
 	var/last_lobby = 0
 

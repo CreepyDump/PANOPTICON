@@ -1056,27 +1056,34 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				var/mob/living/carbon/human/H = target
 				H.electrocution_animation(40)
 			to_chat(target, "<span class='danger'>The gods have punished you for your sins!</span>")
+			SSticker.pplsmited++
 		if(ADMIN_PUNISHMENT_BRAINDAMAGE)
 			target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 199, 199)
+			SSticker.pplsmited++
 		if(ADMIN_PUNISHMENT_BLACKMOORFUCKATION)
 			if(ishumannorthern(target))
 				var/mob/living/carbon/human/H = target
 				var/list/skin_slop = H.dna.species.get_skin_list()
 				priority_announce("[target.real_name] IS NOW BLACK!!!", "BLACKAMOOR ALARM", 'sound/misc/buddy_alarm.ogg', "Captain")
 				H.skin_tone = skin_slop["Blackamoor"]
-				H.update_body() 
+				H.update_body()
+				SSticker.pplsmited++ 
 		if(ADMIN_PUNISHMENT_GIB)
 			target.gib(FALSE)
+			SSticker.pplsmited++
 		if(ADMIN_PUNISHMENT_BSA)
 			bluespace_artillery(target)
+			SSticker.pplsmited++
 		if(ADMIN_PUNISHMENT_FIREBALL)
 			new /obj/effect/temp_visual/target(get_turf(target))
+			SSticker.pplsmited++
 		if(ADMIN_PUNISHMENT_ROD)
 			var/turf/T = get_turf(target)
 			var/startside = pick(GLOB.cardinals)
 			var/turf/startT = spaceDebrisStartLoc(startside, T.z)
 			var/turf/endT = spaceDebrisFinishLoc(startside, T.z)
 			new /obj/effect/immovablerod(startT, endT,target)
+			SSticker.pplsmited++
 		if(ADMIN_PUNISHMENT_SUPPLYPOD_QUICK)
 			var/target_path = input(usr,"Enter typepath of an atom you'd like to send with the pod (type \"empty\" to send an empty pod):" ,"Typepath","/obj/item/reagent_containers/food/snacks/grown/harebell") as null|text
 			var/obj/structure/closet/supplypod/centcompod/pod = new()
@@ -1114,6 +1121,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				return
 
 		if(ADMIN_PUNISHMENT_BRAZIL)
+			SSticker.pplsmited++
 			if(!ishuman(target))
 				to_chat(usr,span_warning("Target must be human!"))
 				return

@@ -65,7 +65,7 @@
 					if(has_status_effect(/datum/status_effect/debuff/trainsleep))
 						remove_status_effect(/datum/status_effect/debuff/trainsleep)
 			if(leprosy == 1)
-				adjustToxLoss(2)
+				src.bleed_rate += 5
 			else if(leprosy == 2)
 				if(client)
 					if(check_blacklist(client.ckey))

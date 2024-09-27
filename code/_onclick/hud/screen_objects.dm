@@ -1580,9 +1580,9 @@
 				if(islist(S.desc))
 					ddesc = pick(S.desc)
 				if(cnt > 1)
-					to_chat(M, "[ddesc] (x[cnt])")
+					to_chat(M, "• [ddesc] (x[cnt])")
 				else
-					to_chat(M, "[ddesc]")
+					to_chat(M, "• [ddesc]")
 			for(var/datum/stressevent/S in M.negative_stressors)
 				if(S in already_printed)
 					continue
@@ -1597,9 +1597,9 @@
 				if(islist(S.desc))
 					ddesc = pick(S.desc)
 				if(cnt > 1)
-					to_chat(M, "[ddesc] (x[cnt])")
+					to_chat(M, "• [ddesc] (x[cnt])")
 				else
-					to_chat(M, "[ddesc]")
+					to_chat(M, "• [ddesc]")
 			already_printed = list()
 			to_chat(M, "*--------*")
 

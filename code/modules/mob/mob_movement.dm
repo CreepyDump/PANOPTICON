@@ -159,6 +159,11 @@
 //	update_weather(TRUE)
 
 //	if(mob.m_intent == MOVE_INTENT_RUN) //backpedal and strafe slowdown for quick intent
+	if(L.fixedeye || L.tempfixeye)
+		if(L.dir != direct)
+			add_delay += 2
+			if(L.m_intent == MOVE_INTENT_RUN)
+				L.toggle_rogmove_intent(MOVE_INTENT_WALK)
 	if((direct & (direct - 1)) && mob.loc == n) //moved diagonally successfully
 		add_delay *= 2
 	mob.set_glide_size(DELAY_TO_GLIDE_SIZE(add_delay))
@@ -655,3 +660,22 @@
 /// Can this mob move between z levels
 /mob/proc/canZMove(direction, turf/target)
 	return FALSE
+
+/mob/living/proc/check_armor_weight()
+	return "Light"
+
+/mob/living/carbon/human/check_armor_weight() // Get the heaviest shirt/armor the mob is wearing.
+	var/heaviest = "Light"
+	if(istype(src.wear_armor, /obj/item/clothing))
+		var/obj/item/clothing/CL = src.wear_armor
+		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+			heaviest = "Heavy"
+		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+			heaviest = "Medium"
+	if(istype(src.wear_shirt, /obj/item/clothing))
+		var/obj/item/clothing/CL = src.wear_shirt
+		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+			heaviest = "Heavy"
+		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+			heaviest = "Medium"
+	return heaviest

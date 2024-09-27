@@ -5,6 +5,9 @@ GLOBAL_LIST_INIT(shizo_rights, world.file2list('strings/shizo.txt'))
 	duration = -1
 	tick_interval = 2
 	alert_type = null
+	var/hallucination_time = 20 MINUTES
+	var/hallucinated_recently = TRUE // we dont immediately begin schizoing round start
+	var/next_hal = 0 // next hallucination
 
 /datum/status_effect/shizophrenia/on_apply()
 	. = ..()
@@ -21,7 +24,28 @@ GLOBAL_LIST_INIT(shizo_rights, world.file2list('strings/shizo.txt'))
 	tick()
 
 /datum/status_effect/shizophrenia/tick(delta_time, times_fired)
-	INVOKE_ASYNC(src, .proc/handle_talk)
+	var/oldrecent = hallucinated_recently
+	if(prob(3))
+		if(oldrecent)
+			if(next_hal)
+				if(world.time > next_hal)
+					hallucinated_recently = FALSE
+		if(!hallucinated_recently)
+			var/mob/living/carbon/V = src
+			var/datum/hallucination/picked_hallucination = pick(/datum/hallucination/sounds, /datum/hallucination/fire, /datum/hallucination/delusion)
+			if(prob(50))
+				new picked_hallucination(V, TRUE)
+				next_hal = world.time + hallucination_time
+				hallucinated_recently = TRUE
+			else
+				V.overlay_fullscreen("hall1", /obj/screen/fullscreen/maniac)
+				sleep(3 SECONDS)
+				V.clear_fullscreen("hall1")
+				V.emote(pick("twitch","tremble","scream"))
+				next_hal = world.time + hallucination_time
+				hallucinated_recently = TRUE
+	else
+		INVOKE_ASYNC(src, .proc/handle_talk)
 
 /datum/status_effect/shizophrenia/proc/handle_talk()
 	var/list/objects = list()

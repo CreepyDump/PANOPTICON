@@ -26,6 +26,8 @@
 /mob/living/carbon/human/ZImpactDamage(turf/T, levels)
 	var/obj/item/bodypart/affecting
 	var/dam = levels * rand(10,50)
+	SSticker.moatfallers-- // If you get your ankles broken you fall. This makes sure only those that DIDN'T get damage get counted.
+	SSticker.holefall++
 	add_stress(/datum/stressevent/felldown)
 	switch(rand(1,4))
 		if(1)
@@ -50,6 +52,16 @@
 			to_chat(src, "<span class='danger'>I fall on my head!</span>")
 			if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = dam)))
 				update_damage_overlays()
+	if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = dam)))
+		update_damage_overlays()
+		if(levels >= 1)
+			//absurd damage to guarantee a crit
+			affecting.try_crit(BCLASS_TWIST, 300)
+
+	for(var/mob/living/M in T.contents)
+		visible_message("\The [src] hits \the [M.name]!")
+		M.AdjustKnockdown(levels * 20)
+		M.take_overall_damage(dam * 3.5)
 
 	AdjustKnockdown(levels * 15)
 
