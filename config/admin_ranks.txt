@@ -94,11 +94,11 @@ Edit =
 #--- PANOPTICON
 
 Name = Test Moderator
-Include = BAN STEALTH
-Exclude = FUN
+Include = @ BAN POSSES POLL BUILD FUN
+Exclude =
 Edit =
 
 Name = Begotten
-Include = @ POSSESS POLL BUILD SERVER FUN BAN
+Include = @ POSSESS POLL BUILD FUN BAN
 Exclude =
 Edit =

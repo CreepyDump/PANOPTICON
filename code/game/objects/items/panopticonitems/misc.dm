@@ -252,3 +252,36 @@
 		/obj/item/storage/pill_bottle/pervitin = 1,
 		/obj/item/clothing/mask/infected = 1)
 	generate_items_inside(items_inside,src)
+
+/obj/item/signal_horn
+	name = "signal horn"
+	desc = "Used to sound the alarm."
+	icon = 'icons/panopticon/items/misc.dmi'
+	icon_state = "signalhorn"
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/signal_horn/attack_self(mob/living/user)
+	. = ..()
+	user.visible_message(span_warning("[user] is about to sound the [src]!"))
+	if(do_after(user, 15))
+		sound_horn(user)
+
+/obj/item/signal_horn/proc/sound_horn(mob/living/user)
+	var/mob/living/carbon/O //Остальные хуйлуши вокруг некролениниста
+	user.visible_message(span_warning("[user] sounds the alarm!"))
+	playsound(src, 'sound/misc/necrolenin_alert.ogg', 100, TRUE)
+	for(O in get_hearers_in_view(7, src))
+		shake_camera(user, 11, 2)
+
+	for(var/mob/player in GLOB.player_list)
+
+		if(!player.mind) continue
+		if(player.stat == DEAD) continue
+		if(isbrain(player)) continue
+
+		//sound played for other players
+		if(player == src) continue
+		if(get_dist(player, src) > 7)
+			player.playsound_local(get_turf(player), 'sound/misc/necrolenin_alert.ogg', 35, FALSE, pressure_affected = FALSE)
+			to_chat(player, span_warningbig("I hear the horn alarm!"))
