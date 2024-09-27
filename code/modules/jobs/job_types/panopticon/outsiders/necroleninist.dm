@@ -17,7 +17,7 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
-	cmode_music = 'sound/music/combat/bladesymphony.ogg'
+	cmode_music = 'sound/music/combat/Way.ogg'
 	spells = list(/obj/effect/proc_holder/spell/targeted/touch/necroleninistrevive)
 
 /datum/job/panopticon/necroleninist/New()
