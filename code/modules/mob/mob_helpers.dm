@@ -74,7 +74,7 @@
   * This proc is dangerously laggy, avoid it or die
   */
 /proc/stars(n, pr)
-	n = html_encode(n)
+	n = strip_html_simple(n)
 	if (pr == null)
 		pr = 25
 	if (pr <= 0)
@@ -93,12 +93,12 @@
 			t = text("[]*", t)
 	if(n > MAX_BROADCAST_LEN)
 		t += "..." //signals missing text
-	return sanitize(t)
+	return (t)
 /**
   * Makes you speak like you're drunk
   */
 /proc/slur(n)
-	var/phrase = html_decode(n)
+	var/phrase = strip_html_simple(n)
 	var/leng = length(phrase)
 	var/counter=length(phrase)
 	var/newphrase=""
@@ -133,7 +133,7 @@
 
 /// Makes you talk like you got cult stunned, which is slurring but with some dark messages
 /proc/cultslur(n) // Inflicted on victims of a stun talisman
-	var/phrase = html_decode(n)
+	var/phrase = strip_html_simple(n)
 	var/leng = length(phrase)
 	var/counter=length(phrase)
 	var/newphrase=""
@@ -175,7 +175,7 @@
 
 ///Adds stuttering to the message passed in
 /proc/stutter(n)
-	var/te = html_decode(n)
+	var/te = strip_html_simple(n)
 	var/t = ""//placed before the message. Not really sure what it's for.
 	n = length(n)//length of the entire word
 	var/p = null
@@ -242,7 +242,7 @@
   * It's fairly easy to fix if dealing with single letters but not so much with compounds of letters./N
   */
 /proc/ninjaspeak(n) //NINJACODE
-	var/te = html_decode(n)
+	var/te = strip_html_simple(n)
 	var/t = ""
 	n = length(n)
 	var/p = 1

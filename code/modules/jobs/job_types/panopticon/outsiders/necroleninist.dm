@@ -141,6 +141,11 @@
 	to_chat(owner.current, "<span class='cult'>Foolish mortals tried to stop us, but this day is going to be an final song for them! We're need to revive our leader - Lenin!</span>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/panopticon/revolutsia.ogg', 100, FALSE, pressure_affected = FALSE)
 
+/datum/antagonist/necroleninist/proc/on_examinate(datum/source, atom/A)
+	if(istype(A, /obj/structure/headpike))
+		SEND_SIGNAL(owner.current, COMSIG_ADD_MOOD_EVENT, "oogabooga", /datum/mood_event/sacrifice_good)
+
+
 /mob/living/carbon/human/proc/chanting()
 	set name = "Chant"
 	set category = "Blood Magicka"

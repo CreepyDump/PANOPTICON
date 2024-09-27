@@ -7,6 +7,7 @@
 	can_sew = FALSE
 	can_cauterize = FALSE
 	critical = FALSE
+	var/do_blinding = TRUE
 
 /datum/wound/facial/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/facial) && (type == other.type))
@@ -59,8 +60,9 @@
 
 /datum/wound/facial/eyes/on_mob_gain(mob/living/affected)
 	. = ..()
-	affected.Stun(10)
-	affected.blind_eyes(5)
+	if(do_blinding)
+		affected.Stun(10)
+		affected.blind_eyes(5)
 
 /datum/wound/facial/eyes/right
 	name = "right eye evisceration"
@@ -93,6 +95,8 @@
 
 /datum/wound/facial/eyes/right/permanent
 	whp = null
+	sound_effect = null
+	do_blinding = FALSE
 
 /datum/wound/facial/eyes/left
 	name = "left eye evisceration"
@@ -125,6 +129,8 @@
 
 /datum/wound/facial/eyes/left/permanent
 	whp = null
+	sound_effect = null
+	do_blinding = FALSE
 
 /datum/wound/facial/tongue
 	name = "glossectomy"

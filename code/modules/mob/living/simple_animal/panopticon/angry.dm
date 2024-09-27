@@ -49,7 +49,7 @@
 	vision_range = 10
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
 						/obj/item/natural/hide = 2,
-						/obj/item/natural/fur = 1)
+						/obj/item/natural/fur = 1, /obj/item/natural/bundle/bone = 1)
 	base_intents = list(/datum/intent/simple/claw)
 	see_in_dark = 5
 	aggro_vision_range = 9
@@ -202,7 +202,7 @@
 	see_in_dark = 10
 	move_to_delay = 2
 	base_intents = list(/datum/intent/simple/slash)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 10)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 10, /obj/item/natural/bundle/bone = 3)
 	faction = list("begotten")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	health = 500
@@ -265,7 +265,7 @@
 	see_in_dark = 10
 	move_to_delay = 3
 	base_intents = list(/datum/intent/unarmed/punch)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 10)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 10, /obj/item/natural/bundle/bone = 1)
 	faction = list("begotten")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	health = 100

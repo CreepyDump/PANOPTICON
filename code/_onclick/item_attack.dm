@@ -418,7 +418,7 @@
 			if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
 				var/datum/wound/crit_wound  = simple_woundcritroll(user.used_intent.blade_class, newforce, user, hitlim)
 				if(should_embed_weapon(crit_wound, I))
-					// throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
+					// throw_alert("embeddedobject", /obj/screen/alert/embeddedobject)
 					simple_add_embedded_object(I, silent = FALSE, crit_message = TRUE)
 					src.grabbedby(user, 1, item_override = I)
 			var/haha = user.used_intent.blade_class

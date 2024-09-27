@@ -1,6 +1,6 @@
 /obj/item/rogueweapon/pick
 	force = 21
-	possible_item_intents = list(/datum/intent/pick)
+	possible_item_intents = list(/datum/intent/pick, /datum/intent/axe/cut)
 	name = "pick"
 	desc = ""
 	icon_state = "pick"

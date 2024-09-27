@@ -105,7 +105,7 @@ var/leninalive = FALSE
 	break_sound = 'sound/foley/machinebreak.ogg'
 	anchored = TRUE
 	max_integrity = 0
-	var/leniniscoming = 120
+	var/leniniscoming = 0
 
 /obj/structure/panopticon/lenin/post_buckle_mob(mob/living/M)
 	if(has_buckled_mobs())
@@ -135,6 +135,7 @@ var/leninalive = FALSE
 		SEND_SOUND(world, sound('sound/panopticon/krasnaya_armya.ogg'))
 		leniniscoming -= 0
 		sleep(56 SECONDS)
+		SSticker.declare_completion()
+		sleep(1 SECONDS)
 		for(var/mob/living/carbon/human/M in GLOB.player_list)
-			M.gib(FALSE, FALSE, FALSE)
-			SSticker.declare_completion()
+			M.gib(FALSE, FALSE, FALSE)	

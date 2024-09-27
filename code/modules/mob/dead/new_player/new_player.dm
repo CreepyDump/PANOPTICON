@@ -349,7 +349,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	var/list/dat = list()
 	dat += GLOB.roleplay_readme
 	if(dat)
-		var/datum/browser/popup = new(src, "Primer", "RT", 460, 550)
+		var/datum/browser/popup = new(src, "Primer", "PANOPTICON", 460, 550)
 		popup.set_content(dat.Join())
 		popup.open()
 
@@ -579,6 +579,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	if(humanc)
 		GLOB.character_list[character.mobid] = "[ckey] was [character.real_name] ([rank])<BR>"
 		GLOB.character_ckey_list[character.real_name] = character.ckey
+		if(!character.mind.special_role)
+			GLOB.actors_list[character.mobid] = "[character.real_name] as [rank]<BR>"
 		log_character("[character.ckey] ([ckey]) - [character.real_name] - [rank]")
 	if(GLOB.respawncounts[character.ckey])
 		var/AN = GLOB.respawncounts[character.ckey]

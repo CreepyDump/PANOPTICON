@@ -76,7 +76,7 @@
 
 	if(!nomsg)
 		user.log_message(msg, LOG_EMOTE)
-		msg = "<b>[user]</b> " + msg
+	var/dchatmsg = "<b>[user]</b> [msg]"
 
 	if(isliving(user))
 		var/mob/living/L = user
@@ -92,11 +92,11 @@
 				continue
 			var/T = get_turf(user)
 			if(M.stat == DEAD && M.client && (M.client.prefs?.chat_toggles & CHAT_GHOSTSIGHT) && !(M in viewers(T, null)))
-				M.show_message(msg)
+				M.show_message("[FOLLOW_LINK(M, user)] [dchatmsg]")
 		if(emote_type == EMOTE_AUDIBLE)
-			user.audible_message(msg)
+			user.audible_message(msg, audible_message_flags = EMOTE_MESSAGE)
 		else
-			user.visible_message(msg)
+			user.visible_message(msg, visible_message_flags = EMOTE_MESSAGE)
 
 /datum/emote/proc/get_env(mob/living/user)
 	return

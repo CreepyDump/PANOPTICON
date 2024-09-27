@@ -399,3 +399,63 @@
 			icon_state = "stickbundle2"
 		if(6 to 7)
 			icon_state = "stickbundle3"
+
+/obj/item/natural/bundle/bone
+	name = "stack of bones"
+	icon_state = "bonestack1"
+	possible_item_intents = list(/datum/intent/use)
+	desc = ""
+	force = 0
+	throwforce = 0
+	obj_flags = null
+	firefuel = null
+	resistance_flags = FLAMMABLE
+	w_class = WEIGHT_CLASS_TINY
+	spitoutmouth = FALSE
+	var/amount = 2
+
+/obj/item/natural/bundle/bone/examine(mob/user)
+	. = ..()
+	to_chat(user, "<span class='notice'>Bones in roll: [amount]</span>")
+
+/obj/item/natural/bundle/bone/attackby(obj/item/W, mob/living/user)
+	if(istype(W, /obj/item/natural/bone))
+		if(amount >= 10)
+			to_chat(user, "There's not enough space.")
+			return
+		amount += 1
+		user.visible_message("[user] adds [W] to [src]")
+		qdel(W)
+	if(istype(W, /obj/item/natural/bundle/bone))
+		var/obj/item/natural/bundle/bone/B = W
+		if(B.amount + amount <= 10)
+			user.visible_message("[user] adds [B] to [src]")
+			amount += B.amount
+			qdel(B)
+		else
+			to_chat(user, "There's not enough space.")
+	update_bundle()
+
+/obj/item/natural/bundle/bone/attack_right(mob/user)
+	var/mob/living/carbon/human/H = user
+	switch(amount)
+		if(2)
+			var/obj/item/natural/bone/F = new (src.loc)
+			var/obj/item/natural/bone/I = new (src.loc)
+			H.put_in_hands(F)
+			H.put_in_hands(I)
+			qdel(src)
+			return
+		else
+			amount -= 1
+			var/obj/item/natural/bone/F = new (src.loc)
+			H.put_in_hands(F)
+			user.visible_message("[user] removes [F] from [src]")
+	update_bundle()
+
+/obj/item/natural/bundle/bone/proc/update_bundle()
+	switch(amount)
+		if(2 to 5)
+			icon_state = "bonestack1"
+		if(6 to 10)
+			icon_state = "bonestack2"

@@ -124,12 +124,12 @@ GLOBAL_VAR_INIT(mobids, 1)
 
 	var/datum/gas_mixture/environment = loc.return_air()
 
-	var/t =	"<span class='notice'>Coordinates: [x],[y] \n</span>"
-	t +=	"<span class='danger'>Temperature: [environment.temperature] \n</span>"
+	var/t =	span_notice("Coordinates: [x],[y] \n")
+	t +=	span_danger("Temperature: [environment.temperature] \n")
 	for(var/id in environment.gases)
 		var/gas = environment.gases[id]
 		if(gas[MOLES])
-			t+="<span class='notice'>[gas[GAS_META][META_GAS_NAME]]: [gas[MOLES]] \n</span>"
+			t+=span_notice("[gas[GAS_META][META_GAS_NAME]]: [gas[MOLES]] \n")
 
 	to_chat(usr, t)
 
@@ -146,7 +146,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	if(!client)
 		return
 
-	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
+	msg = copytext(msg, 1, MAX_MESSAGE_LEN)
 
 	if(type)
 		if(type & MSG_VISUAL && eye_blind )//Vision related
@@ -188,19 +188,27 @@ GLOBAL_VAR_INIT(mobids, 1)
   * * vision_distance (optional) define how many tiles away the message can be seen.
   * * ignored_mob (optional) doesn't show any message to a given mob if TRUE.
   */
-/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs)
+/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE)
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
+
 	if(!islist(ignored_mobs))
 		ignored_mobs = list(ignored_mobs)
 	var/list/hearers = get_hearers_in_view(vision_distance, src) //caches the hearers and then removes ignored mobs.
 	hearers -= ignored_mobs
+
 	if(self_message)
 		hearers -= src
+
+	var/raw_msg = message
+	if(visible_message_flags & EMOTE_MESSAGE)
+		message = "<b>[src]</b> [message]"
+
 	for(var/mob/M in hearers)
 		if(!M.client)
 			continue
+
 		//This entire if/else chain could be in two lines but isn't for readibilties sake.
 		var/msg = message
 		if(M.see_invisible < invisibility)//if src is invisible to M
@@ -211,10 +219,15 @@ GLOBAL_VAR_INIT(mobids, 1)
 //			msg = blind_message
 		if(!msg)
 			continue
+
+		if(visible_message_flags & EMOTE_MESSAGE)
+			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
+
 		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
+
 ///Adds the functionality to self_message.
-/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs)
+/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE)
 	. = ..()
 	if(self_message)
 		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE)
@@ -229,12 +242,18 @@ GLOBAL_VAR_INIT(mobids, 1)
   * * deaf_message (optional) is what deaf people will see.
   * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
   */
-/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message)
+/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE)
 	var/list/hearers = get_hearers_in_view(hearing_distance, src)
 	if(self_message)
 		hearers -= src
+	var/raw_msg = message
+	if(audible_message_flags & EMOTE_MESSAGE)
+		message = "<b>[src]</b> [message]"
 	for(var/mob/M in hearers)
+		if(audible_message_flags & EMOTE_MESSAGE && M.can_hear())
+			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
 		M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+
 
 /**
   * Show a message to all mobs in earshot of this one
@@ -247,7 +266,7 @@ GLOBAL_VAR_INIT(mobids, 1)
   * * deaf_message (optional) is what deaf people will see.
   * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
   */
-/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message)
+/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE)
 	. = ..()
 	if(self_message)
 		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
@@ -308,7 +327,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 			qdel(W)
 		else
 			if(!disable_warning)
-				to_chat(src, "<span class='warning'>I couldn't equip that.</span>")
+				to_chat(src, span_warning("I couldn't equip that."))
 		return FALSE
 	equip_to_slot(W, slot, redraw_mob, initial) //This proc should not ever fail.
 	update_a_intents()
@@ -428,9 +447,22 @@ GLOBAL_VAR_INIT(mobids, 1)
 		to_chat(src, "<span class='warning'>Something is there but I can't see it!</span>")
 		return
 
-	if(isturf(A.loc) && isliving(src))
-		face_atom(A)
-		visible_message("<span class='emote'>[src] looks at [A].</span>")
+	if(isliving(src))
+		var/target = "\the [A]"
+		var/message = "[src] looks at"
+		if(A.loc == src)
+			target = "[src.p_their()] [A.name]"
+		if(A.loc.loc == src)
+			message = "[src] looks into"
+			target = "[src.p_their()] [A.loc.name]"
+		if(isliving(A))
+			var/mob/living/T = A
+			var/hitzone = T.simple_limb_hit(zone_selected)
+			if(!iscarbon(T))
+				target = "\the [T.name]'s [hitzone]"
+			if(iscarbon(T) && T != src)
+				target = "[T]'s [parse_zone(zone_selected)]"
+		visible_message(span_emote("[message] [target]."))
 	var/list/result = A.examine(src)
 	if(result)
 		to_chat(src, result.Join("\n"))
@@ -487,9 +519,9 @@ GLOBAL_VAR_INIT(mobids, 1)
 	lastpoint = world.time
 	var/obj/I = get_active_held_item()
 	if(I)
-		src.visible_message("<span class='info'>[src] points [I] at [A].</span>", "<span class='info'>I point [I] at [A].</span>")
+		src.visible_message(span_info("[src] points [I] at [A]."), span_info("I point [I] at [A]."))
 	else
-		src.visible_message("<span class='info'>[src] points at [A].</span>", "<span class='info'>I point at [A].</span>")
+		src.visible_message(span_info("[src] points at [A]."), span_info("I point at [A]."))
 
 	return TRUE
 
@@ -552,7 +584,7 @@ GLOBAL_VAR_INIT(mobids, 1)
   * This actually gets the mind datums notes
   */
 /mob/verb/memory()
-	set name = "Notes"
+	set name = "Memories"
 	set category = "Memory"
 	set desc = ""
 	if(mind)
@@ -564,13 +596,14 @@ GLOBAL_VAR_INIT(mobids, 1)
   * Add a note to the mind datum
   */
 /mob/verb/add_memory(msg as message)
-	set name = "AddNote"
+	set name = "New Memory"
 	set category = "Memory"
+	
 	if(mind)
 		if (world.time < memory_throttle_time)
 			return
 		memory_throttle_time = world.time + 5 SECONDS
-		msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
+		msg = copytext(msg, 1, MAX_MESSAGE_LEN)
 		msg = sanitize(msg)
 
 		mind.store_memory(msg)
@@ -586,19 +619,19 @@ GLOBAL_VAR_INIT(mobids, 1)
   */
 /mob/verb/abandon_mob()
 	set name = "{RETURN TO LOBBY}"
-	set category = "Options"
+	set category = "OOC"
 	set hidden = 1
 	if(!check_rights(0))
 		return
 	if (CONFIG_GET(flag/norespawn))
 		return
 	if ((stat != DEAD || !( SSticker )))
-		to_chat(usr, "<span class='boldnotice'>I must be dead to use this!</span>")
+		to_chat(usr, span_boldnotice("I must be dead to use this!"))
 		return
 
 	log_game("[key_name(usr)] used abandon mob.")
 
-	to_chat(src, "<span class='info'>Returned to lobby successfully.</span>")
+	to_chat(src, span_info("Returned to lobby successfully."))
 
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")
@@ -785,6 +818,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 			GLOB.cameranet.stat_entry()
 		if(statpanel("Tickets"))
 			GLOB.ahelp_tickets.stat_entry()
+			
 		if(length(GLOB.sdql2_queries))
 			if(statpanel("SDQL2"))
 				stat("Access Global SDQL2 List", GLOB.sdql2_vv_statobj)
@@ -1179,11 +1213,11 @@ GLOBAL_VAR_INIT(mobids, 1)
 /mob/proc/can_read(obj/O, silent = FALSE)
 	if(is_blind(src) || eye_blurry)
 		if(!silent)
-			to_chat(src, "<span class='warning'>I'm too blind to read.</span>")
+			to_chat(src, span_warning("I'm too blind to read."))
 		return
 	if(!is_literate())
 		if(!silent)
-			to_chat(src, "<span class='warning'>I can't make sense of these verba.</span>")
+			to_chat(src, span_warning("I can't make sense of these verba."))
 		return
 	return TRUE
 
@@ -1286,7 +1320,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	H.open_language_menu(usr)
 
 ///Adjust the nutrition of a mob
-/mob/proc/adjust_nutrition(var/change) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
+/mob/proc/adjust_nutrition(change) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		nutrition = NUTRITION_LEVEL_FULL
 	nutrition = max(0, nutrition + change)
@@ -1294,21 +1328,21 @@ GLOBAL_VAR_INIT(mobids, 1)
 		nutrition = NUTRITION_LEVEL_FULL
 
 ///Force set the mob nutrition
-/mob/proc/set_nutrition(var/change) //Seriously fuck you oldcoders.
+/mob/proc/set_nutrition(change) //Seriously fuck you oldcoders.
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		nutrition = NUTRITION_LEVEL_FULL
 	nutrition = max(0, change)
 	if(nutrition > NUTRITION_LEVEL_FULL)
 		nutrition = NUTRITION_LEVEL_FULL
 
-/mob/proc/adjust_hydration(var/change)
+/mob/proc/adjust_hydration(change)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		nutrition = HYDRATION_LEVEL_FULL
 	hydration = max(0, hydration + change)
 	if(hydration > HYDRATION_LEVEL_FULL)
 		hydration = HYDRATION_LEVEL_FULL
 
-/mob/proc/set_hydration(var/change)
+/mob/proc/set_hydration(change)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		nutrition = HYDRATION_LEVEL_FULL
 	hydration = max(0, change)
@@ -1354,12 +1388,11 @@ GLOBAL_VAR_INIT(mobids, 1)
 /mob/say_mod(input, message_mode)
 	var/customsayverb = findtext(input, "*")
 	if(customsayverb)
-		return lowertext(copytext_char(input, 1, customsayverb))
+		return lowertext(copytext(input, 1, customsayverb))
 	. = ..()
 
 /atom/movable/proc/attach_spans(input, list/spans)
 	var/customsayverb = findtext(input, "*")
 	if(customsayverb)
-		input = capitalize(copytext_char(input, customsayverb+1))
+		input = capitalize(copytext(input, customsayverb+1))
 	return "[message_spans_start(spans)][input]</span>"
-

@@ -208,3 +208,28 @@
 
 /obj/item/rogueweapon/shovel/small/crafted
 	sellprice = 5
+
+/datum/crafting_recipe/roguetown/skullmask
+	name = "skull mask"
+	result = /obj/item/clothing/mask/rogue/skullmask
+	reqs = list(/obj/item/natural/bone = 3,
+				/obj/item/natural/fibers = 1)
+	sellprice = 10
+	verbage = "crafts"
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/boneaxe
+	name = "bone axe"
+	result = /obj/item/rogueweapon/stoneaxe/boneaxe
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/bone = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/bonespear
+	name = "bone spear"
+	result = /obj/item/panopticonweapon/bonespear
+	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
+				/obj/item/natural/bone = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3

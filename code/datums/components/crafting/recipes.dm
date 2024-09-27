@@ -629,7 +629,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3)
 	result = /obj/item/reagent_containers/glass/bucket/wooden
 	category = CAT_NONE
-
+/*
 /datum/crafting_recipe/headpike
 	name = "Spike Head (Glass Spear)"
 	time = 65
@@ -650,7 +650,7 @@
 			/obj/item/twohanded/spear/bonespear = 1)
 	result = /obj/structure/headpike/bone
 	category = CAT_NONE
-
+*/
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
 	result = /obj/item/pressure_plate

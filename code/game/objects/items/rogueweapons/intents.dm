@@ -385,10 +385,10 @@
 	chargetime = 0
 	noaa = TRUE
 	rmb_ranged = TRUE
-	releasedrain = 0
-	misscost = 5
+	releasedrain = 10
+	misscost = 8
 	candodge = TRUE
-	canparry = FALSE
+	canparry = TRUE
 
 /datum/intent/unarmed/grab/rmb_ranged(atom/target, mob/user)
 	if(ismob(target))

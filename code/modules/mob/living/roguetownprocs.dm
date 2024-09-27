@@ -183,14 +183,16 @@
 						used_weapon = offhand
 						used_index = get_inactive_hand_index()
 						prob2defend += offhandthing
-				if(U && U.mind)
+				if(U?.mind)
 					if(intenty.masteritem)
 						if(!intenty.masteritem.associated_skill) //nme weapon improvised
 							prob2defend = prob2defend + 10
-						else
-							prob2defend = prob2defend - (U.mind.get_skill_level(intenty.masteritem.associated_skill) * 20)
-							var/amt2raise = max(round(U.STAINT/2), 0)
-							U.mind.adjust_experience(intenty.masteritem.associated_skill, amt2raise, FALSE)
+						else //attacker skill gain
+							var/attacker_skill = U.mind.get_skill_level(intenty.masteritem.associated_skill)
+							var/defender_skill = mind?.get_skill_level(intenty.masteritem.associated_skill)
+							prob2defend = prob2defend - (attacker_skill * 20)
+							if((U.mobility_flags & MOBILITY_STAND) && defender_skill && (attacker_skill < defender_skill - SKILL_LEVEL_NOVICE))
+								U.mind.adjust_experience(intenty.masteritem.associated_skill, max(round(U.STAINT/2), 0), FALSE)
 						if((intenty.masteritem.wbalance > 0) && (user.STASPD > src.STASPD)) //nme weapon is quick, so get a bonus based on spddiff
 							prob2defend = prob2defend - ( intenty.masteritem.wbalance * ((user.STASPD - src.STASPD) * 10) )
 					else
@@ -226,13 +228,17 @@
 				if(do_parry(used_weapon, drained, user)) //show message, invoke parry cd
 					if(istype(rmb_intent, /datum/rmb_intent/riposte))
 						user.apply_status_effect(/datum/status_effect/debuff/riposted)
-					if(used_weapon.associated_skill && mind)
-						var/amt2raise = STAINT/2
-						mind.adjust_experience(used_weapon.associated_skill, amt2raise, FALSE)
+					if(used_weapon.associated_skill && mind) //defender skill gain
+						var/attacker_skill = U.mind?.get_skill_level(used_weapon.associated_skill)
+						var/defender_skill = mind.get_skill_level(used_weapon.associated_skill)
+						if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
+							mind.adjust_experience(used_weapon.associated_skill, max(round(STAINT/2), 0), FALSE)
 					var/obj/item/AB = intenty.masteritem
-					if(AB && AB.associated_skill && user.mind)
-						var/amt2raise = max(round(user.STAINT/2),0)
-						user.mind.adjust_experience(AB.associated_skill, amt2raise, FALSE)
+					if(AB?.associated_skill && U.mind) //attacker skill gain
+						var/attacker_skill = U.mind.get_skill_level(AB.associated_skill)
+						var/defender_skill = mind?.get_skill_level(AB.associated_skill)
+						if((U.mobility_flags & MOBILITY_STAND) && defender_skill && (attacker_skill < defender_skill - SKILL_LEVEL_NOVICE))
+							U.mind.adjust_experience(AB.associated_skill, max(round(U.STAINT/2), 0), FALSE)
 					if(prob(66) && AB)
 						if((used_weapon.flags_1 & CONDUCT_1) && (AB.flags_1 & CONDUCT_1))
 							flash_fullscreen("whiteflash")
@@ -264,7 +270,9 @@
 					if(H.mind)
 						prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 				var/usename = intenty.name
-				if(U && U.mind)
+				if(U?.mind)
+					var/attacker_skill = U.mind?.get_skill_level(intenty.masteritem.associated_skill)
+					var/defender_skill = mind.get_skill_level(intenty.masteritem.associated_skill)
 					if(intenty.masteritem)
 						usename = intenty.masteritem.name
 						if(!intenty.masteritem.associated_skill) //nme weapon improvised
@@ -273,8 +281,8 @@
 							prob2defend = prob2defend - (U.mind.get_skill_level(intenty.masteritem.associated_skill) * 10)
 					else
 						prob2defend = prob2defend - (U.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
-						var/amt2raise = max(round(U.STAINT/2),0)
-						U.mind.adjust_experience(/datum/skill/combat/unarmed, amt2raise, FALSE)
+						if((U.mobility_flags & MOBILITY_STAND) && defender_skill && (attacker_skill < defender_skill - SKILL_LEVEL_NOVICE))
+							U.mind.adjust_experience(/datum/skill/combat/unarmed, max(round(U.STAINT/2), 0), FALSE)
 
 				prob2defend = clamp(prob2defend, 5, 99)
 				if(client?.prefs.showrolls)
@@ -284,9 +292,11 @@
 //							if(U.aimheight != H.aimheight)
 //								drained = drained + 15
 					if(do_unarmed_parry(usename, drained, user))
-						if(H && H.mind)
-							var/amt2raise = max(round(H.STAINT/2),0)
-							H.mind.adjust_experience(/datum/skill/combat/unarmed, amt2raise, FALSE)
+						if(H?.mind) //defender skill gain
+							var/attacker_skill = U.mind?.get_skill_level(/datum/skill/combat/unarmed)
+							var/defender_skill = H.mind.get_skill_level(/datum/skill/combat/unarmed)
+							if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
+								H.mind.adjust_experience(/datum/skill/combat/unarmed, max(round(STAINT/2), 0), FALSE)
 						flash_fullscreen("blackflash2")
 						return TRUE
 					else

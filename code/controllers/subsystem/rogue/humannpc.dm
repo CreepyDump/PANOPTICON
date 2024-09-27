@@ -1,7 +1,7 @@
 
 SUBSYSTEM_DEF(humannpc)
 	name = "humannpc"
-	wait = 5
+	wait = 1
 	flags = SS_KEEP_TIMING
 	priority = 50
 	var/list/processing = list()
@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(humannpc)
 		if (MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/humannpc/proc/process_ai(var/mob/living/carbon/human/mobinput)
+/datum/controller/subsystem/humannpc/proc/process_ai(mob/living/carbon/human/mobinput)
 	if(!mobinput)
 		return
 	if(QDELETED(mobinput))

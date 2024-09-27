@@ -219,9 +219,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			// Top-level menu table
 			dat += "<table width=100%>"
 			dat += "<tr>"
-			dat += "<td width='50%' align='left'>"
+			dat += "<td width='33%' align='left'>"
 			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change</a>"
-			dat += "<td width='50%' align='right'>"
+			dat += "<td width='34%' align='center'>"
+			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Roles</a><br>"
+			dat += "<td width='33%' align='right'>"
 			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Keybinds</a>"
 			dat += "</table>"
 
@@ -229,8 +231,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<table width=100%>"
 			dat += "<tr>"
 			dat += "<td width='100%' align='center'>"
-
-			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Roles</a><br>"
+			dat += "<br><a href='?_src_=prefs;preference=manifest'>VICTIM LIST</a>"
 //			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Bastards</a><br>"
 
 			dat += "</table>"
@@ -1661,7 +1662,7 @@ Slots: [job.spawn_positions]</span>
 						if(new_name)
 							real_name = new_name
 						else
-							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ', . and ,.</font>")
 
 //				if("age")
 //					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Years Dead") as num|null
@@ -2295,6 +2296,9 @@ Slots: [job.spawn_positions]</span>
 				if("tab")
 					if (href_list["tab"])
 						current_tab = text2num(href_list["tab"])
+				if("manifest")
+					parent.view_actors_manifest()
+					return
 
 	ShowChoices(user)
 	return 1
@@ -2441,7 +2445,7 @@ Slots: [job.spawn_positions]</span>
 	else
 		var/sanitized_name = reject_bad_name(raw_name,namedata["allow_numbers"])
 		if(!sanitized_name)
-			to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z,[namedata["allow_numbers"] ? ",0-9," : ""] -, ' and .</font>")
+			to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z,[namedata["allow_numbers"] ? ",0-9," : ""] -, ', . and ,.</font>")
 			return
 		else
 			custom_names[name_id] = sanitized_name

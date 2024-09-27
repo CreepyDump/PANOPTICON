@@ -81,6 +81,10 @@
 #define LINGHIVE_LING 2
 #define LINGHIVE_LINK 3
 
+#define ITALICS			(1<<0)
+#define REDUCE_RANGE	(1<<1)
+#define NOPASS			(1<<2)
+
 //Don't set this very much higher then 1024 unless you like inviting people in to dos your server with message spam
 #define MAX_MESSAGE_LEN			1024
 #define MAX_NAME_LEN			42
@@ -93,3 +97,4 @@
 // Audio/Visual Flags. Used to determine what sense are required to notice a message.
 #define MSG_VISUAL (1<<0)
 #define MSG_AUDIBLE (1<<1)
+#define EMOTE_MESSAGE (1<<0)

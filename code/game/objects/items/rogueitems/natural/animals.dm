@@ -58,3 +58,31 @@
 	var/can_saddle = FALSE
 	var/obj/item/ssaddle
 
+/obj/item/natural/bone
+	name = "bone"
+	icon_state = "bone"
+	desc = "A bone from a dead animal or person."
+	blade_dulling = 0
+	max_integrity = 20
+	static_debris = null
+	obj_flags = null
+	firefuel = null
+	w_class = WEIGHT_CLASS_NORMAL
+	twohands_required = FALSE
+	gripped_intents = null
+	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
+
+/obj/item/natural/bone/attackby(obj/item/W, mob/living/user)
+	var/mob/living/carbon/human/H = user
+	if(istype(W, /obj/item/natural/bone))
+		var/obj/item/natural/bundle/bone/F = new(src.loc)
+		H.put_in_hands(F)
+		H.visible_message("[user] adds the [src] into a bundle.")
+		qdel(W)
+		qdel(src)
+	if(istype(W, /obj/item/natural/bundle/bone))
+		var/obj/item/natural/bundle/bone/B = W
+		if(B.amount <= 5)
+			H.visible_message("[user] adds the [src] to the bundle.")
+			B.amount += 1
+			qdel(src)

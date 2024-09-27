@@ -1,6 +1,4 @@
 macro "default"
-
-
 	elem 
 		name = "F5"
 		command = "Asay"
@@ -13,6 +11,7 @@ macro "default"
 	elem 
 		name = "F8"
 		command = "Aghost"
+
 
 menu "menu"
 	elem 
@@ -178,6 +177,10 @@ window "statwindow"
 		background-color = #000000
 		saved-params = "pos;size"
 		is-pane = true
+		outer-size = 656x538
+		outer-pos = 291,0
+		inner-pos = 8,31
+		screen-size = 1920x1032
 	elem "stat"
 		type = INFO
 		pos = 0,0
@@ -241,7 +244,7 @@ window "preferencess_window"
 	elem "character_preview_map"
 		type = MAP
 		pos = 260,160
-		size = 140x192
+		size = 140x152
 		anchor1 = 75,0
 		anchor2 = 100,100
 		right-click = true
