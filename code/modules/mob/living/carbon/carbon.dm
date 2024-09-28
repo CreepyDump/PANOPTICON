@@ -1312,7 +1312,9 @@
 /mob/living/carbon/update_shadow()
 	vis_contents -= get_mob_shadow(NORMAL_MOB_SHADOW)
 	vis_contents -= get_mob_shadow(LYING_MOB_SHADOW, pixel_y = 3)
-	if(MOBILITY_STAND)
+	if(m_intent == MOVE_INTENT_SNEAK)
+		vis_contents |= get_mob_shadow(MOB_SHADOW_NONE)
+	else if(MOBILITY_STAND)
 		vis_contents |= get_mob_shadow(NORMAL_MOB_SHADOW)
 	else
 		vis_contents |= get_mob_shadow(LYING_MOB_SHADOW, pixel_y = 3)

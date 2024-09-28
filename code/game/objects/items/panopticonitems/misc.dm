@@ -253,7 +253,7 @@
 		/obj/item/clothing/mask/infected = 1)
 	generate_items_inside(items_inside,src)
 
-/obj/item/signal_horn
+	/obj/item/signal_horn
 	name = "signal horn"
 	desc = "Used to sound the alarm."
 	icon = 'icons/panopticon/items/misc.dmi'

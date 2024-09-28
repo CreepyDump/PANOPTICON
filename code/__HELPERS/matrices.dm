@@ -245,8 +245,8 @@ round(cos_inv_third+sqrt3_sin, 0.001), round(cos_inv_third-sqrt3_sin, 0.001), ro
 			matrix[i] = brightness
 
 /datum/ColorMatrix/proc/hex2value(hex)
-	var/num1 = copytext(hex, 1, 2)
-	var/num2 = copytext(hex, 2)
+	var/num1 = copytext_char(hex, 1, 2)
+	var/num2 = copytext_char(hex, 2)
 
 	if(isnum(text2num(num1)))
 		num1 = text2num(num1)
@@ -261,9 +261,9 @@ round(cos_inv_third+sqrt3_sin, 0.001), round(cos_inv_third-sqrt3_sin, 0.001), ro
 	return num1 * 16 + num2
 
 /datum/ColorMatrix/proc/SetColor(color, contrast = 1, brightness = null)
-	var/rr = hex2value(copytext(color, 2, 4)) / 255
-	var/gg = hex2value(copytext(color, 4, 6)) / 255
-	var/bb = hex2value(copytext(color, 6, 8)) / 255
+	var/rr = hex2value(copytext_char(color, 2, 4)) / 255
+	var/gg = hex2value(copytext_char(color, 4, 6)) / 255
+	var/bb = hex2value(copytext_char(color, 6, 8)) / 255
 
 	rr = round(rr * 1000) / 1000 * contrast
 	gg = round(gg * 1000) / 1000 * contrast

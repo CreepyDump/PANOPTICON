@@ -447,3 +447,4 @@
 #define MOB_PIXEL_Z 7
 #define NORMAL_MOB_SHADOW "shadow"
 #define LYING_MOB_SHADOW "shadow_lying"
+#define MOB_SHADOW_NONE "no name"

@@ -850,14 +850,14 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		var/m_len = length(message)
 		var/tracker = 1
 		while(tracker < m_len)
-			var/nletter = copytext(message, tracker, tracker + 1)
-			if(!(nletter in list("A", "E", "I", "O", "U", " ")) && (tracker % 2))
+			var/nletter = copytext_char(message, tracker, tracker + 1)
+			if(!(nletter in list("A", "E", "I", "O", "U", " ", "А", "Е", "И", "О", "У")) && (tracker % 2))
 				nletter = pick("GH", "SHK", "KSS", "SS", "GNHH")
 			else if((nletter == " ") && prob(50))
 				nletter = "... "
 			new_message += nletter
 			tracker++
-		for(var/uhoh in list("E", "I", "O"))
+		for(var/uhoh in list("E", "I", "O", "Е", "И", "О"))
 			new_message = replacetext(new_message, uhoh, pick("H", "G", "GHHH", "GRRR", "GLLL", "ZZZGH", "GLRG", "... ", "RRR"))
 		new_message = replacetext(new_message, "U", pick("UHHH", "UH... "))
 		message = new_message

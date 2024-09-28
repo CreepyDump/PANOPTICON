@@ -96,9 +96,9 @@ Edit =
 Name = Test Moderator
 Include = EVERYTHING
 Exclude = SERVER
-Edit =
+Edit = EVERYTHING
 
 Name = Begotten
 Include = EVERYTHING
 Exclude = SERVER
-Edit =
+Edit = EVERYTHING
