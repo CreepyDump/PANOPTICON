@@ -395,3 +395,8 @@ GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 
 #define MIASMA_CORPSE_MOLES 0.02
 #define MIASMA_GIBS_MOLES 0.005
+
+//If you're doing spreading things related to atmos, DO NOT USE CANATMOSPASS, IT IS NOT CHEAP. use this instead, the info is cached after all. it's tweaked just a bit to allow for circular checks
+#define TURFS_CAN_SHARE(T1, T2) (LAZYACCESS(T2.atmos_adjacent_turfs, T1) || LAZYLEN(T1.atmos_adjacent_turfs & T2.atmos_adjacent_turfs))
+//Use this to see if a turf is fully blocked or not, think windows or firelocks. Fails with 1x1 non full tile windows, but it's not worth the cost.
+#define TURF_SHARES(T) (LAZYLEN(T.atmos_adjacent_turfs))

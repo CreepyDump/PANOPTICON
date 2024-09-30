@@ -271,3 +271,53 @@
 			"The testicles are destroyed!",
 			"The testicles are eviscerated!",
 		)
+
+/*
+/// Spilling wounds
+/datum/wound/spill
+	name = "Spill"
+	check_name = span_revenboldnotice("<B>GUT SPILL</B>")
+	sound_effect = list('sound/panopticon/healthy/spill1.ogg', 'sound/panopticon/healthy/spill2.ogg')
+	severity = WOUND_SEVERITY_CRITICAL
+	whp = 250
+	woundpain = 120
+	mob_overlay = ""
+	sewn_overlay = ""
+	can_sew = FALSE
+	can_cauterize = FALSE
+	disabling = TRUE
+	critical = TRUE
+
+/datum/wound/spill/can_stack_with(datum/wound/other)
+	if(istype(other, /datum/wound/spill))
+		return FALSE
+	return TRUE
+
+/datum/wound/spill/on_mob_gain(mob/living/affected, obj/item/bodypart/new_limb, silent, datum/wound/old_wound, smited, add_descriptive)
+	. = ..()
+	if(!.)
+		return
+	if(affected)
+		if(sound_effect)
+			playsound(new_limb.owner, pick(sound_effect), 100, TRUE)
+		if(add_descriptive)
+			SEND_SIGNAL(affected, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_changelingbold(" [span_big("The guts are spilled!")]"))
+	new_limb.spilled = TRUE
+	affected.bleed(20)
+	affected.update_damage_overlays()
+	var/list/intestines = new_limb.getorganslot(ORGAN_SLOT_STOMACH)
+	for(var/obj/item/organ/gut in intestines)
+		gut.Remove(gut.owner)
+		if(QDELETED(gut))
+			continue
+		gut.organ_flags |= ORGAN_CUT_AWAY
+		var/turf/drop_location = affected.drop_location()
+		if(istype(drop_location))
+			gut.forceMove(affected.drop_location())
+			affected.AddComponent(/datum/component/rope, gut, 'icons/effects/beam.dmi', "gut_beam2", 3, TRUE, /obj/effect/ebeam/gut, CALLBACK(affected, /mob/living/carbon/proc/gut_cut))
+		else
+			qdel(gut)
+	for(var/obj/item/grab/grabber as anything in new_limb.grasped_by)
+		grabber.update_grab_mode()
+	qdel(src)
+*/

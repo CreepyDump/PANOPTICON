@@ -16,7 +16,7 @@
 	desc = ""
 	icon_state = "gas_atmos"
 	item_state = "gas_atmos"
-	armor = list("blunt" = 0, "slash" = 0, "stab" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 20, "acid" = 10)
+	armor = list("blunt" = 0, "slash" = 0, "stab" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 10, "fire" = 20, "acid" = 10)
 	w_class = WEIGHT_CLASS_SMALL
 	gas_transfer_coefficient = 0.001 //cargo cult time, this var does nothing but just in case someone actually makes it do something
 	permeability_coefficient = 0.001

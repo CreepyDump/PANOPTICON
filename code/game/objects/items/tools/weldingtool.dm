@@ -8,18 +8,24 @@
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_HIP
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/use)
+	parrysound = list('sound/combat/parry/parrygen.ogg')
+	swingsound = BLUNTWOOSH_MED
 	force = 3
 	throwforce = 5
 	hitsound = "swing_hit"
 	usesound = list('sound/panopticon/svarka.ogg')
 	drop_sound = 'sound/blank.ogg'
 	pickup_sound =  'sound/blank.ogg'
+	associated_skill = /datum/skill/combat/axesmaces
+	sharpness = IS_BLUNT
+	w_class = WEIGHT_CLASS_NORMAL
+	thrown_bclass = BCLASS_BLUNT
 	var/acti_sound = 'sound/panopticon/svarka_on.ogg'
 	var/deac_sound = 'sound/panopticon/svarka_off.ogg'
 	throw_speed = 3
 	throw_range = 5
-	w_class = WEIGHT_CLASS_SMALL
 	armor = list("blunt" = 0, "slash" = 0, "stab" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
 
@@ -214,7 +220,7 @@
 			to_chat(user, "<span class='notice'>I switch [src] on.</span>")
 			playsound(loc, acti_sound, 50, TRUE)
 			force = 15
-			damtype = "fire"
+			damtype = BURN
 			hitsound = 'sound/blank.ogg'
 			update_icon()
 			START_PROCESSING(SSobj, src)
@@ -232,7 +238,7 @@
 	set_light(0)
 
 	force = 3
-	damtype = "brute"
+	damtype = BRUTE
 	hitsound = "swing_hit"
 	update_icon()
 

@@ -1,5 +1,6 @@
 /mob/living/carbon/human/species/skeleton
 	name = "skeleton"
+	
 	race = /datum/species/human/northern
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest, /obj/item/bodypart/head, /obj/item/bodypart/l_arm,
@@ -11,19 +12,18 @@
 	possible_rmb_intents = list()
 
 /mob/living/carbon/human/species/skeleton/npc
-	aggressive=1
+	aggressive = 1
 	mode = AI_IDLE
-	static_npc = TRUE
 	wander = FALSE
 
 /mob/living/carbon/human/species/skeleton/npc/ambush
-	static_npc = FALSE
+
 	wander = TRUE
 
 /mob/living/carbon/human/species/skeleton/Initialize()
 	. = ..()
 	cut_overlays()
-	addtimer(CALLBACK(src, .proc/after_creation), 10)
+	addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
 /mob/living/carbon/human/species/skeleton/after_creation()
 	..()
@@ -41,10 +41,8 @@
 		qdel(O)
 	src.regenerate_limb(BODY_ZONE_R_ARM)
 	src.regenerate_limb(BODY_ZONE_L_ARM)
-	for(var/obj/item/bodypart/B in src.bodyparts)
-		B.skeletonize()
 	// src.remove_all_languages()
-	// removing this because i wanna actually be able to talk as a skellybones fella
+	// uncomment this to prohibit skeletons from knowing or speaking any languages. This is commented to allow skeletons to be the main subject of admin events. (eg: skeleton traders, skeletons concealing their bones and blending in with the kingdom society, the underworld bar skeletons, skeletons telling skeleton jokes)
 	var/obj/item/organ/eyes/eyes = src.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.Remove(src,1)
@@ -54,20 +52,20 @@
 	src.underwear = "Nude"
 	if(src.charflaw)
 		QDEL_NULL(src.charflaw)
-	update_body()
-	mob_biotypes = MOB_UNDEAD
+	mob_biotypes |= MOB_UNDEAD
 	faction = list("undead")
-	name = "skeleton"
-	real_name = "skeleton"
+	name = "skelelon"
+	real_name = "skelelon"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOFATSTAM, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOLIMBDISABLE, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_LIMBATTACHMENT, TRAIT_GENERIC)
+	for(var/obj/item/bodypart/B in src.bodyparts)
+		B.skeletonize(FALSE)
+	update_body()
 	if(skel_outfit)
 		var/datum/outfit/OU = new skel_outfit
 		if(OU)
@@ -76,21 +74,21 @@
 /datum/outfit/job/roguetown/npc/skeleton/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(prob(50))
-		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+		shoes = /obj/item/clothing/shoes/panopticon/zekboots
 	if(prob(10))
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+		armor = /obj/item/clothing/armor/panopticon
 	if(prob(30))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+		shirt = /obj/item/clothing/suit/panopticon/shirt/gulag
 		if(prob(50))
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
+			shirt = /obj/item/clothing/suit/panopticon/shirt/slavicshirt
 	if(prob(30))
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+		pants = /obj/item/clothing/under/panopticon/gulag
 		if(prob(50))
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
+			pants = /obj/item/clothing/under/panopticon/civilianpants
 	if(prob(10))
-		head = /obj/item/clothing/head/roguetown/helmet/leather
+		head = /obj/item/clothing/head/panopticon/meshok
 	if(prob(10))
-		head = /obj/item/clothing/head/roguetown/roguehood
+		head = /obj/item/clothing/head/panopticon/shtrafbathelm
 	if(H.gender == FEMALE)
 		H.STASTR = rand(9,12)
 	else
@@ -103,3 +101,9 @@
 		r_hand = /obj/item/rogueweapon/sword
 	else
 		r_hand = /obj/item/rogueweapon/stoneaxe/woodcut
+
+/mob/living/carbon/human/species/skeleton/npc/no_equipment
+    skel_outfit = null
+
+/mob/living/carbon/human/species/skeleton/no_equipment
+    skel_outfit = null

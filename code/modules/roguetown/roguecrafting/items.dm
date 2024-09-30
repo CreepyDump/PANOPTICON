@@ -233,3 +233,10 @@
 				/obj/item/natural/bone = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/boneknife
+	name = "bone spear"
+	result = /obj/item/panopticonweapon/knife
+	reqs = list(/obj/item/natural/bone = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3

@@ -12,7 +12,10 @@
 	var/mob/living/carbon/original_owner = null
 	var/status = BODYPART_ORGANIC
 	var/needs_processing = FALSE
-
+	/// This stupid variable is used by two game mechanics - Brain spilling, gut spilling
+	var/spilled = FALSE
+	/// Represents the icon we use when spilled == TRUE
+	var/spilled_overlay = "brain_busted"
 	var/static_icon = FALSE
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	var/aux_zone // used for hands

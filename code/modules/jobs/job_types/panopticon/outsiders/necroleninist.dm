@@ -118,7 +118,9 @@
 	owner.special_role = name
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
-	if(prob(5))
+	if(prob(85))
+		var/obj/item/bodypart/head/suka = owner.current.get_bodypart(BODY_ZONE_HEAD)
+		suka.skeletonize(FALSE)
 		if(eyes)
 			eyes.Remove(owner.current,1)
 			QDEL_NULL(eyes)

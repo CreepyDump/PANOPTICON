@@ -53,11 +53,11 @@
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/panopticon/shtrafbathelm
-	name = "Strafbat-Helm"
+	name = "Straf-Helm"
 	desc = "A helmet worn primarily by the exiled battalion troops, or by those who succeeded in killin' those fuckers."
 	icon_state = "shtrafbat"
 	item_state = "shtrafbat"
-	armor = list("blunt" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	armor = list("blunt" = 50, "slash" = 65, "stab" = 50, "bullet" = 45, "laser" = 0, "energy" = 0, "bomb" = 46, "bio" = 15, "rad" = 0, "fire" = 45, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/panopticon/vargcap
@@ -154,3 +154,11 @@
 	block2add = FOV_BEHIND
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	dynamic_hair_suffix = "+bigboss"
+
+/obj/item/clothing/head/panopticon/shtrafbathelm/helek
+	name = "Ofizieren-Helm"
+	desc = "The helmet of an officer of Helek's holy army. If you have it in your hands, it means you've either killed a bastard or become one."
+	icon_state = "shtrafbat"
+	item_state = "shtrafbat"
+	armor = list("blunt" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR

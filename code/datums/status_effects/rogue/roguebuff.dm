@@ -10,15 +10,14 @@
 
 /datum/status_effect/buff/drunk/on_apply()
 	. = ..()
+	var/image/drunk = image('icons/roguetown/mob/drunk.dmi', "drunk_s")
 	if(owner?.client)
-		var/mutable_appearance/hive = mutable_appearance('icons/roguetown/mob/rotten.dmi', "hive", TABARD_LAYER)
-		if(owner.client.screen && owner.client.screen.len)
-			var/obj/screen/plane_master/game_world/PM = locate(/obj/screen/plane_master/game_world) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/obj/screen/plane_master/game_world_above) in owner.client.screen
-			PM.backdrop(owner)
+		owner.overlays += drunk
+
+/datum/status_effect/buff/drunk/on_remove()
+	var/image/drunk = image('icons/roguetown/mob/drunk.dmi', "drunk_s")
+	if(owner?.client)
+		owner.overlays -= drunk
 
 /obj/screen/alert/status_effect/buff/drunk
 	name = "Drunk"
