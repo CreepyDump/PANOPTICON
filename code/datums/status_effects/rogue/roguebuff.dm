@@ -8,17 +8,6 @@
 	effectedstats = list("intelligence" = -2, "endurance" = 1)
 	duration = 5 MINUTES
 
-/datum/status_effect/buff/drunk/on_apply()
-	. = ..()
-	var/image/drunk = image('icons/roguetown/mob/drunk.dmi', "drunk_s")
-	if(owner?.client)
-		owner.overlays += drunk
-
-/datum/status_effect/buff/drunk/on_remove()
-	var/image/drunk = image('icons/roguetown/mob/drunk.dmi', "drunk_s")
-	if(owner?.client)
-		owner.overlays -= drunk
-
 /obj/screen/alert/status_effect/buff/drunk
 	name = "Drunk"
 	desc = ""
