@@ -465,7 +465,7 @@
 			return
 //		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 90 , FALSE, FALSE) НЕ НАШЕЛ ЕЩЁ ЗВУК
 		if(thing == "Heroin")
-			if(moneyz <= 35)
+			if(moneyz < 35)
 				to_chat(user, span_alert("DUMB BITCH, I NEED MORE MONEY INSIDE!"))
 			else
 				playsound(get_turf(src), 'sound/misc/mail.ogg', 100 , FALSE, FALSE)
@@ -473,7 +473,7 @@
 				moneyz -= 35
 				desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."
 		if(thing == "Injector")
-			if(moneyz <= 5)
+			if(moneyz < 5)
 				to_chat(user, span_alert("DUMB BITCH, I NEED MORE MONEY INSIDE!"))
 			else
 				playsound(get_turf(src), 'sound/misc/mail.ogg', 100 , FALSE, FALSE)
@@ -481,7 +481,7 @@
 				moneyz -= 5
 				desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."
 		if(thing == "Jeltomor")
-			if(moneyz <= 89)
+			if(moneyz < 89)
 				to_chat(user, span_alert("DUMB BITCH, I NEED MORE MONEY INSIDE!"))
 			else
 				playsound(get_turf(src), 'sound/misc/mail.ogg', 100 , FALSE, FALSE)
