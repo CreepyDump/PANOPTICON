@@ -12,6 +12,7 @@
 	rotprocess = 15 MINUTES
 	slices_num = 1
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
+	sellprice = 1
 
 /obj/item/reagent_containers/food/snacks/seltshmack
 	name = "seltshmack"
@@ -24,6 +25,7 @@
 	foodtype = VEGETABLES | SUGAR
 	fried_type = /obj/item/reagent_containers/food/snacks/seltshmack/fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/seltshmack/fried
+	sellprice = 5
 
 /obj/item/reagent_containers/food/snacks/seltshmack/fake
 	name = "seltshmack"
@@ -36,6 +38,7 @@
 	foodtype = VEGETABLES | TOXIC
 	fried_type = /obj/item/reagent_containers/food/snacks/seltshmack/fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/seltshmack/fried
+	sellprice = 5
 
 /obj/item/reagent_containers/food/snacks/seltshmack/fried
 	name = "fried seltshmack"
@@ -46,6 +49,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/sugar = 2)
 	filling_color = "#705f10"
 	foodtype = VEGETABLES | SUGAR
+	sellprice = 5
 
 /obj/item/reagent_containers/food/snacks/throbber
 	name = "throbbershroom"
@@ -58,6 +62,7 @@
 	foodtype = RAW | TOXIC
 	fried_type = /obj/item/organ/heart
 	cooked_type = /obj/item/organ/heart
+	sellprice = 5
 
 /obj/item/reagent_containers/food/snacks/penisvkusno
 	name = "Dingaling"
@@ -69,6 +74,7 @@
 	filling_color = "#6d3737"
 	foodtype = MEAT | GROSS
 	rotprocess = 15 MINUTES
+	sellprice = 100
 
 /obj/item/reagent_containers/food/snacks/piztec
 	name = "Meatballs"
@@ -80,3 +86,4 @@
 	filling_color = "#851414"
 	foodtype = MEAT | GROSS
 	rotprocess = 15 MINUTES
+	sellprice = 100

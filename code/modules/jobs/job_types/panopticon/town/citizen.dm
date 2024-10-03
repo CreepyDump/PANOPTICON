@@ -12,7 +12,7 @@
 	outfit = /datum/outfit/job/panopticon/citizen
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE
-	tutorial = "A regular fella living in this shithole. Nothing fancy"
+	tutorial = "A regular fella living in this shithole. Nothing fancy."
 	display_order = JDO_CITIZEN
 	show_in_credits = TRUE
 	give_bank_account = FALSE
@@ -26,7 +26,6 @@
 /datum/outfit/job/panopticon/citizen/pre_equip(mob/living/carbon/human/H)
 	..()
 	var/datum/disease/advance/chuma = new /datum/disease/anthrax
-	chuma.name = "Unknown"
 	shoes = /obj/item/clothing/shoes/panopticon
 	pants = /obj/item/clothing/under/panopticon/civilianpants
 	if(prob(20))

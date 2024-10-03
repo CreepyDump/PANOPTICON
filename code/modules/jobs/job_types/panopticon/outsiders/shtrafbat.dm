@@ -47,7 +47,8 @@
 		neck = /obj/item/clothing/neck/panopticon/govnar
 	if(prob(60))
 		r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
-	else if(prob(25))
+		head = /obj/item/clothing/head/panopticon/shtrafbathelm/helek
+	else if(prob(5))
 		r_hand = /obj/item/panopticonweapon/sledge
 
 /datum/outfit/job/panopticon/shtrafbat

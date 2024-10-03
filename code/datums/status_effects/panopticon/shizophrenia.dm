@@ -70,4 +70,4 @@ GLOBAL_LIST_INIT(shizo_rights, world.file2list('strings/shizo.txt'))
 							'sound/misc/comic4.ogg',
 							)
 			owner.playsound_local(get_turf(owner), speak_sound, 100, 0)
-			owner.Hear(message, speaker, /datum/language/common, message)
+			owner.Hear(message, speaker, /datum/language/common, message, null, spans = list(SPAN_BEAST))

@@ -18,39 +18,43 @@
 
 #define JDO_GREYDIVISION 3
 
-#define BARMAN	(1<<2)
+#define BISQUOP	(1<<2)
 
-#define JDO_BARMAN 4
+#define JDO_BISQUOP 4
 
-#define CITIZEN	(1<<3)
+#define BARMAN	(1<<3)
 
-#define JDO_CITIZEN 5
+#define JDO_BARMAN 5
+
+#define CITIZEN	(1<<4)
+
+#define JDO_CITIZEN 6
 
 #define JCOLOR_OUTSIDERS "#96832f"
 #define OUTSIDERS	(1<<2)
 
 #define LENINIST	(1<<0)
 
-#define JDO_LENINIST 6
+#define JDO_LENINIST 7
 
 #define LESHIY	(1<<1)
 
-#define JDO_LESHIY 7
+#define JDO_LESHIY 8
 
 #define NOMAD	(1<<2)
 
-#define JDO_NOMAD 9
+#define JDO_NOMAD 10
 
 #define SHTRAFBAT	(1<<3)
 
-#define JDO_SHTRAFBAT 9
+#define JDO_SHTRAFBAT 11
 
 #define JCOLOR_UNTER "#228564"
 #define UNTERS	(1<<4)
 
 #define ZEK	(1<<0)
 
-#define JDO_ZEK 10
+#define JDO_ZEK 1
 
 
 // PANOPTICON //

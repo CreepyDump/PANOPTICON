@@ -147,7 +147,7 @@
 
 /obj/structure/panopticon/onwall/greys
 	name = "'Greys' sign"
-	desc = "That's where the Empire's constabulary is based."
+	desc = "Empire's constabulary bivouac."
 	icon = 'icons/panopticon/obj/town.dmi'
 	icon_state = "greys"
 

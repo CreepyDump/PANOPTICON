@@ -17,6 +17,9 @@
 #define RTRAIT_HEAVYARMOR					"Plate Training"
 #define TRAIT_NOSHITTING		"no_shitten"
 #define TRAIT_NOPISSING			"no_pissen"
+#define TRAIT_HARDDISMEMBER		"hard_dismember"
+#define TRAIT_NUDIST "Nudist" //you can't wear most clothes
+#define TRAIT_RETARD_ANATOMY "Inhumen Anatomy" //can't wear hats and shoes
 #define TRAIT_NOFATSTAM				"nofatstam" //for ai
 #define TRAIT_NOSLEEP				"nosleep"
 #define TRAIT_BASHDOORS				"bashdoors"

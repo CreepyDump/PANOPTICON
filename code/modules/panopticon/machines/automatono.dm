@@ -160,51 +160,6 @@
 	rattlesound = 'sound/foley/doors/lockrattlemetal.ogg'
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 
-/obj/structure/panopticon/automat/heroinmachine
-	name = "COP Automato"
-	desc = "An automatic-drug-machine, that is a true trove for heroin crackheads."
-	icon = 'icons/panopticon/obj/indoorsen.dmi'
-	icon_state = "HEROIN_AUTOMAT"
-	layer = BELOW_OBJ_LAYER
-	density = TRUE
-	anchored = TRUE
-	destroy_sound = 'sound/foley/breaksound.ogg'
-	break_sound = 'sound/foley/machinebreak.ogg'
-	max_integrity = 300
-	integrity_failure = 0.33
-	var/datum/looping_sound/reactor/soundloop
-	var/playing = TRUE
-	var/curvol = 70
-
-/obj/structure/panopticon/automat/heroinmachine/Initialize()
-	soundloop = new(list(src), FALSE)
-	soundloop.start()
-	. = ..()
-
-/obj/structure/panopticon/automat/heroinmachine/Destroy()
-	if(soundloop)
-		soundloop.stop()
-	..()
-
-/obj/structure/panopticon/automat/heroinmachine/obj_break(damage_flag)
-	if(soundloop)
-		soundloop.stop()
-	..()
-
-/obj/structure/panopticon/automat/heroinmachine/attackby(obj/item/I, mob/living/carbon/user, params)
-	if(istype(I, /obj/item/panopticonmoney/ten))
-		var/obj/item/panopticonmoney/ten/M = I
-		user.visible_message("<span class='warning'>[user] stuffs some [M] inside the Automato</span>", "<span class='notice'>I stick [M] inside the Automato.</span>")
-		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
-		new /obj/item/reagent_containers/glass/bottle/heroinium(drop_location())
-		qdel(M)
-	if(istype(I, /obj/item/panopticonmoney/one))
-		var/obj/item/panopticonmoney/one/M = I
-		user.visible_message("<span class='warning'>[user] stuffs some [M] inside the Automato</span>", "<span class='notice'>I stick [M] inside the Automato.</span>")
-		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
-		new /obj/item/reagent_containers/syringe(drop_location())
-		qdel(M)
-
 /datum/looping_sound/tvloop
 	mid_sounds = list('sound/ambience/tv.ogg')
 	mid_length = 25
@@ -444,14 +399,14 @@
 		return
 
 /obj/structure/panopticon/automat/announcer/proc/scream(mob/living/carbon/user)
-	var/thingy = stripped_input(user, "What you want to say?", "")
-	if(!thingy)
+	var/inputmoneyshit = stripped_input(user, "What you want to say?", "")
+	if(!inputmoneyshit)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if(!can_scream)
 		return
-	priority_announce(thingy, "Old-World Announcer", 'sound/misc/alert.ogg', "Captain")
+	priority_announce(inputmoneyshit, "Old-World Announcer", 'sound/misc/alert.ogg', "Captain")
 //	SEND_SOUND(world, sound('sound/misc/alert.ogg'))
 	can_scream = FALSE
 	addtimer(CALLBACK(src, .proc/cann_scream), timeout)
@@ -460,3 +415,119 @@
 	if(QDELETED(src))
 		return
 	can_scream = TRUE
+
+/obj/structure/panopticon/automat/heroinmachine
+	name = "COP Automato"
+	desc = "An automatic-drug-machine, that is a true trove for heroin crackheads."
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	icon_state = "HEROIN_AUTOMAT"
+	layer = BELOW_OBJ_LAYER
+	density = TRUE
+	anchored = TRUE
+	destroy_sound = 'sound/foley/breaksound.ogg'
+	break_sound = 'sound/foley/machinebreak.ogg'
+	max_integrity = 300
+	integrity_failure = 0.33
+	var/datum/looping_sound/reactor/soundloop
+	var/playing = TRUE
+	var/curvol = 70
+	var/moneyz = 0
+
+/obj/structure/panopticon/automat/heroinmachine/Initialize()
+	desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."
+	soundloop = new(list(src), FALSE)
+	soundloop.start()
+	. = ..()
+
+/obj/structure/panopticon/automat/heroinmachine/Destroy()
+	if(soundloop)
+		soundloop.stop()
+	..()
+
+/obj/structure/panopticon/automat/heroinmachine/obj_break(damage_flag)
+	if(soundloop)
+		soundloop.stop()
+	..()
+
+/obj/structure/panopticon/automat/heroinmachine/attack_hand(mob/living/carbon/user)
+	. = ..()
+	if(.)
+		return
+	if(!user.client)
+		return
+	else
+		var/thing = input(user, "COP", "What i gonna pick!") as null|anything in list("Heroin", "Injector", "Jeltomor", "GIVE MY FUCKING MONEY BACK!")
+		if(!thing)
+			return
+		if(get_dist(src, user) >= 2)
+			return
+		if(moneyz < 10)
+			return
+//		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 90 , FALSE, FALSE) НЕ НАШЕЛ ЕЩЁ ЗВУК
+		if(thing == "Heroin")
+			if(moneyz <= 35)
+				to_chat(user, span_alert("DUMB BITCH, I NEED MORE MONEY INSIDE!"))
+			else
+				playsound(get_turf(src), 'sound/misc/mail.ogg', 100 , FALSE, FALSE)
+				new /obj/item/reagent_containers/glass/bottle/heroinium(drop_location())
+				moneyz -= 35
+				desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."
+		if(thing == "Injector")
+			if(moneyz <= 5)
+				to_chat(user, span_alert("DUMB BITCH, I NEED MORE MONEY INSIDE!"))
+			else
+				playsound(get_turf(src), 'sound/misc/mail.ogg', 100 , FALSE, FALSE)
+				new /obj/item/reagent_containers/syringe(drop_location())
+				moneyz -= 5
+				desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."
+		if(thing == "Jeltomor")
+			if(moneyz <= 89)
+				to_chat(user, span_alert("DUMB BITCH, I NEED MORE MONEY INSIDE!"))
+			else
+				playsound(get_turf(src), 'sound/misc/mail.ogg', 100 , FALSE, FALSE)
+				new /obj/item/storage/fancy/cigarettes/jeltomorkanal(drop_location())
+				moneyz -= 89
+				desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."
+		if(thing == "GIVE MY FUCKING MONEY BACK!")
+			//moneygive()
+			to_chat(user, span_alert("NO!!"))
+
+/obj/structure/panopticon/automat/heroinmachine/attackby(obj/item/I, mob/living/carbon/user, params)
+	if(istype(I, /obj/item/panopticonmoney/hundred))
+		moneyz += I.sellprice
+		qdel(I)
+	if(istype(I, /obj/item/panopticonmoney/ten))
+		moneyz += I.sellprice
+		qdel(I)
+	if(istype(I, /obj/item/panopticonmoney/one))
+		moneyz += I.sellprice
+		qdel(I)
+	user.visible_message("<span class='warning'>[user] stuffs some [I] inside the Automato</span>", "<span class='notice'>I stick [I] inside the Automato.</span>")
+	playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
+	desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."
+
+/obj/structure/panopticon/automat/heroinmachine/proc/moneygive(mob/living/carbon/user)
+	var/inputmoneyshit = input("COP", "I want it!") as num|null
+	if(!inputmoneyshit)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(moneyz <= 0)
+		return
+	if(inputmoneyshit > moneyz)
+		to_chat(user, span_alert("TOO MANY. PICK LESS."))
+		return
+	if(inputmoneyshit > 100)
+		to_chat(user, span_alert("TOO MANY AT ONCE. PICK LESS."))
+		return
+	moneyz -= inputmoneyshit
+	if(inputmoneyshit == 10)
+		new /obj/item/panopticonmoney/ten(get_turf(user))
+		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
+	if(inputmoneyshit == 100)
+		new /obj/item/panopticonmoney/hundred(get_turf(user))
+		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
+	else
+		new /obj/item/panopticonmoney/one(get_turf(user), inputmoneyshit)
+		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
+	desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."

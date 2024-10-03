@@ -158,7 +158,7 @@
 /obj/item/clothing/head/panopticon/shtrafbathelm/helek
 	name = "Ofizieren-Helm"
 	desc = "The helmet of an officer of Helek's holy army. If you have it in your hands, it means you've either killed a bastard or become one."
-	icon_state = "shtrafbat"
-	item_state = "shtrafbat"
+	icon_state = "helek"
+	item_state = "helek"
 	armor = list("blunt" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR

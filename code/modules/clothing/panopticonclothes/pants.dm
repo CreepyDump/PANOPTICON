@@ -63,7 +63,6 @@
 	name = "Steppelander pants"
 	icon_state = "odongh"
 	item_state = "odongh"
-	allowed_race = list("odongh")
 	body_parts_covered = CHEST|ARMS|VITALS
 
 /obj/item/clothing/under/panopticon/strafbatpants

@@ -2,11 +2,11 @@
 	name = "Psychickshroom"
 	desc = "A shroom!"
 	icon = 'icons/panopticon/items/consumable.dmi'
-	is_recipe_samogon = TRUE
 	icon_state = "psychick"
 	filling_color = "#a32d8f"
 	foodtype = VEGETABLES | GROSS
 	list_reagents = list(/datum/reagent/psychick = 15)
+	sellprice = 5
 
 /obj/item/reagent_containers/glass/bottle/heroinium
 	name = "Heroin"
@@ -14,10 +14,12 @@
 	icon = 'icons/panopticon/items/consumable.dmi'
 	icon_state = "heroin"
 	list_reagents = list(/datum/reagent/heroin = 30)
+	sellprice = 35
 
 /obj/item/reagent_containers/glass/bottle/psychicksamogonka
 	name = "Moonshine"
 	list_reagents = list(/datum/reagent/psychicksamogon = 30)
+	sellprice = 30
 
 ///obj/item/reagent_containers/glass/bottle/shmacksamogonka
 //	name = "Moonshine"

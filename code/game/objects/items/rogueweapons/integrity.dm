@@ -2,6 +2,7 @@
 	var/blade_int = 0
 	var/max_blade_int = 0
 	var/required_repair_skill = 0
+	var/dismember_blade_int = 0
 	var/sword_spark
 
 /obj/item/proc/remove_bintegrity(amt as num)
