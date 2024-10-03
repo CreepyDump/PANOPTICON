@@ -21,9 +21,9 @@
 	ambientnight = AMB_INGEN
 	spookysounds = SPOOKY_BUNKER
 	spookynight = SPOOKY_BUNKER
-	droning_sound = 'sound/music/area/town.ogg'
-	droning_sound_dusk = 'sound/music/area/jutkayahyina.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/indoorsen.ogg'
+	droning_sound_dusk = 'sound/music/area/indoorsen.ogg'
+	droning_sound_night = 'sound/music/area/indoorsen.ogg'
 	soundenv = 2
 	plane = INDOOR_PLANE
 	converted_type = /area/panopticon/outdoors
@@ -126,7 +126,7 @@
 
 /area/panopticon/indoors/shelter/darkwood
 	ambientsounds = null
-	droning_sound = 'sound/music/area/deadcats.ogg'
+	droning_sound = 'sound/music/area/indoorsen.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -168,7 +168,7 @@
 	spookynight = TOWN_AMBIENT
 	droning_sound = 'sound/music/area/town.ogg'
 	droning_sound_dusk = 'sound/music/area/town_dusk.ogg'
-	droning_sound_night = 'sound/music/area/prison.ogg'
+	droning_sound_night = 'sound/music/area/districtsmusic.ogg'
 	converted_type = /area/panopticon/indoors
 	soundenv = 16
 

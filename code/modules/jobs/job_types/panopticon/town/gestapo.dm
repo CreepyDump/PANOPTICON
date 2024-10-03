@@ -17,7 +17,7 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
-	cmode_music = 'sound/music/combat/time2die.ogg'
+	cmode_music = 'sound/music/combat/combatlodger.ogg'
 
 /datum/job/panopticon/greydivision/New()
 	. = ..()
