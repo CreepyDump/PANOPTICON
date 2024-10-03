@@ -133,7 +133,7 @@ obj/item/gun/ballistic/rifle/attackby(obj/item/A, mob/user, params)
 	fire_sound = 'sound/combat/Ranged/rifle-fire-01.ogg'
 	rack_sound = 'sound/combat/Ranged/rifle-rack-01.ogg'
 	bolt_drop_sound = 'sound/combat/Ranged/rifle-bolt-01.ogg'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK_L|ITEM_SLOT_BACK_R|ITEM_SLOT_BACK
 	twohands_required = TRUE
 	recoil = 1
 
