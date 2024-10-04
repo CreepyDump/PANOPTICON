@@ -212,3 +212,25 @@
 	desc = "the entire board is covered with ads. You can see anarchist propaganda on one of the pieces."
 	icon_state = "obyava"
 	max_integrity = 70
+
+/obj/structure/panopticon/onwall/realworld
+	name = "The Real World"
+	desc = "This painting shows an Irf swamp."
+	icon_state = "world"
+
+/obj/structure/panopticon/onwall/medic
+	name = "Medics memorandum"
+	desc = ""
+	icon_state = "medic"
+
+/obj/structure/panopticon/onwall/gedvanytsa
+	name = "Gedvyanitsa"
+	icon_state = "pnposter17"
+
+/obj/structure/panopticon/onwall/praybitch
+	name = "Praying hands"
+	icon_state = "pnposter18"
+
+/obj/structure/panopticon/onwall/americanburger
+	name = "Newland Merica flag"
+	icon_state = "confederat"

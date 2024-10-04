@@ -47,6 +47,7 @@
 		neck = /obj/item/clothing/neck/panopticon/govnar
 	if(prob(60))
 		r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
+		backpack_contents = list(/obj/item/ammo_box/a762 = 4)
 		head = /obj/item/clothing/head/panopticon/shtrafbathelm/helek
 	else if(prob(5))
 		r_hand = /obj/item/panopticonweapon/sledge

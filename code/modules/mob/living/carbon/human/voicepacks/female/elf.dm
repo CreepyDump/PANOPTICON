@@ -10,7 +10,7 @@
 	if(!used)
 		switch(soundin)
 			if("breathgasp")
-				used = list('sound/vo/female/elf/breathgasp (1).ogg','sound/vo/female/elf/breathgasp (2).ogg')
+				used = list('sound/vo/badlung1.ogg','sound/vo/badlung2.ogg')
 			if("fatigue")
 				used = 'sound/vo/female/elf/fatigue.ogg'
 			if("firescream")
