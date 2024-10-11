@@ -24,20 +24,21 @@
 	particles 	= new/particles/rain
 //	alpha = 190
 
-/obj/screen/weather/fog
+/obj/effect/realistic_fog
 	alpha = 180
 	icon = 'icons/mob/screen_full.dmi'
-	icon_state	= "phog1"
-	screen_loc = "1,1"
+	icon_state = "fog"
+	alpha = 0
+	plane = GAME_PLANE
+	layer = SPACEVINE_LAYER
+	anchored = TRUE
+	density = FALSE
 	mouse_opacity = 0
-	plane = WEATHER_PLANE
+	pixel_w = -96
+	pixel_z = -96
 
-/obj/screen/weather/fog/New(client/C)
+/obj/effect/realistic_fog/New(client/C)
 	. = ..()
-	var/mutable_appearance/MA = mutable_appearance(icon, "phog2")
-	MA.pixel_x = 480
-	add_overlay(MA)
-
 	var/matrix/M = matrix()
 	M.Translate(-480,0)
 	animate(src, transform = M, time = 300, loop = -1)

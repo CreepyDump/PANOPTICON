@@ -5,6 +5,8 @@
 ///Light made by masking the lighting darkness plane.
 #define MOVABLE_LIGHT 2
 
+#define MOVABLE_LIGHT_DIRECTIONAL 3
+
 #define LIGHT_ATTACHED (1<<0)
 
 //Bay lighting engine shit, not in /code/modules/lighting because BYOND is being shit about it

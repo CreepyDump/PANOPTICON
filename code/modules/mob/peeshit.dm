@@ -37,9 +37,9 @@
 
 /obj/effect/decal/cleanable/urine/Initialize()
 	. = ..()
-	create_reagents(5)
+	create_reagents(10)
 	icon_state = pick(random_icon_states)
-	reagents.add_reagent(/datum/reagent/urine,5)
+	reagents.add_reagent(/datum/reagent/urine,10)
 	for(var/obj/effect/decal/cleanable/urine/piss in src.loc)
 		if(piss != src)
 			qdel(piss)

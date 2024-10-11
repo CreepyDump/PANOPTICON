@@ -107,4 +107,4 @@
 		/obj/item/organ/stomach = 1,
 		/obj/item/organ/eyes = 1)
 	result = /obj/item/reagent_containers/food/snacks/piztec
-	craftdiff = 0
+	craftdiff = 1

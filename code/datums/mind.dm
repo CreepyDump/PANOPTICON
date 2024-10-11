@@ -979,3 +979,14 @@
 	..()
 	mind.assigned_role = ROLE_PAI
 	mind.special_role = ""
+
+/datum/mind/proc/get_learning_boon(skill)
+	var/datum/skill/S = GetSkillRef(skill)
+//	var/mob/living/carbon/human/H = current
+
+//	var/boon = H.age == AGE_YOUNG ? 1.2 : 1 // optional
+	var/boon = known_skills[S] == SKILL_LEVEL_NOVICE
+
+
+	boon += get_skill_level(skill) / 10
+	return boon

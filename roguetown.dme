@@ -2703,6 +2703,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\roguetown\werewolf\update_icons.dm"
 #include "code\modules\mob\living\simple_animal\hostile\roguetown\werewolf\werewolf.dm"
 #include "code\modules\mob\living\simple_animal\panopticon\angry.dm"
+#include "code\modules\mob\living\simple_animal\panopticon\other.dm"
 #include "code\modules\mob\living\simple_animal\rogue\rogueanimals.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\bigrat.dm"
 #include "code\modules\mob\living\simple_animal\rogue\creacher\honeyspider.dm"

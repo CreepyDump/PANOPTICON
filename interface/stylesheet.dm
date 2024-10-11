@@ -62,23 +62,23 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Crimson Text, TrueType;}
 
 .emote					{color: #b1bb9f;}
 
-.crit					{color: #c71d76;}
-.userdanger				{color: #c71d76;	font-weight: bold;	font-size: 120%;}
-.danger					{color: #b9322b;	font-weight: bold;}
-.warning				{color: #bb4e28;						font-size: 75%;}
+.crit					{color: #fd5b5b; font-weight: bold; text-shadow: 0px 0px 2px rgba(167, 43, 43, 0.4);}
+.userdanger				{color: #FF6D6D;	font-weight: bold;	font-size: 115%;}
+.danger					{color: #c51e1e;	font-weight: bold;}
+.warning				{color: #c51e1e;	font-style: italic; font-size: 85%;} 
 .boldwarning			{color: #bb4e28;	font-weight: bold}
 .announce				{color: #c51e1e;	font-weight: bold;}
 .boldannounce			{color: #c51e1e;	font-weight: bold;}
 .greenannounce			{color: #059223;	font-weight: bold;}
 .rose					{color: #e7bed8;}
 .love					{color: #e7bed8;	font-size: 75%;}
-.info					{color: #a9a5b6;						font-size: 75%;}
-.biginfo					{color: #a9a5b6;}
-.notice					{color: #f1d669;}
+.info					{color: #6685f5;						font-size: 75%;}
+.biginfo					{color: #6685f5;}
+.notice					{color: #6685f5;}
 .boldnotice				{color: #f1d669;	font-weight: bold;}
 .hear					{color: #6685f5;	font-style: italic;}
 .adminnotice			{color: #6685f5;}
-.adminhelp				{color: #ff0000;	font-weight: bold;}
+.adminhelp				{color: #ffa135;	font-weight: bold;}
 .unconscious			{color: #c9c1ba;	font-weight: bold;}
 .suicide				{color: #ff5050;	font-style: italic;}
 .green					{color: #80b077;}

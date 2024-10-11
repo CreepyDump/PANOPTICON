@@ -63,6 +63,7 @@ SUBSYSTEM_DEF(throwing)
 	var/delayed_time = 0
 	var/last_move = 0
 	var/extra = FALSE
+	var/is_spinning = FALSE
 
 /datum/thrownthing/Destroy()
 	SSthrowing.processing -= thrownthing

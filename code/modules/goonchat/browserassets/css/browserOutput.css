@@ -264,7 +264,7 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Crimson Text, TrueType;}
 
 em						{font-style: normal;	font-weight: bold;}
 
-.ooc					{color: #cca300;	font-weight: bold;}
+.ooc					{color: #9494b5;	font-weight: bold;}
 .adminobserverooc		{color: #0099cc;	font-weight: bold;}
 .adminooc				{color: #3d5bc3;	font-weight: bold;}
 
@@ -296,24 +296,24 @@ em						{font-style: normal;	font-weight: bold;}
 
 .alert					{color: #d82020;}
 
-.emote					{color: #b1bb9f;}
+.emote					{color: #b98c59;	font-style: italic;}
 
-.userdanger				{color: #c71d1d;	font-weight: bold;	font-size: 115%;}
-.danger					{color: #b9322b;	font-weight: bold;}
-.warning				{color: #b9322b;						font-size: 85%;}
+.userdanger				{color: #FF6D6D;	font-weight: bold;	font-size: 115%;}
+.danger					{color: #c51e1e;	font-weight: bold;}
+.warning				{color: #c51e1e;	font-style: italic; font-size: 85%;} 
 .alertwarning			{color: #FF0000;	font-weight: bold}
 .boldwarning			{color: #b9322b;	font-weight: bold}
 .announce				{color: #c51e1e;	font-weight: bold;}
 .boldannounce			{color: #c51e1e;	font-weight: bold;}
 .greenannounce			{color: #059223;	font-weight: bold;}
 .rose					{color: #ff5050;}
-.info					{color: #a9a5b6;						font-size: 85%;}
-.notice					{color: #f1d669;}
-.boldnotice				{color: #f1d669;	font-weight: bold;}
-.hear					{color: #6685f5;	font-style: italic;}
+.info					{color: #03b840;						font-size: 85%;}
+.notice					{color: #7996ff;}
+.boldnotice				{color: #7996ff;	font-weight: bold;}
+.hear					{color: #7996ff;	font-style: italic;}
 .adminnotice			{color: #6685f5;}
-.adminhelp				{color: #ff0000;	font-weight: bold;}
-.unconscious			{color: #c9c1ba;	font-weight: bold;}
+.adminhelp				{color: #ffa135;	font-weight: bold;}
+.unconscious			{color: #dfdfcf;	font-weight: bold;}
 .suicide				{color: #ff5050;	font-style: italic;}
 .green					{color: #80b077;}
 .red					{color: #b84d47}
@@ -404,9 +404,106 @@ em						{font-style: normal;	font-weight: bold;}
 .internal.boldnshit {color: #3d5bc3;	font-weight: bold;}
 
 /*PANOPTICON*/
-.shiten				{color: #55441f;	font-weight: bold;}
-.pissen				{color: #b4bd37;	font-weight: bold;}
+.shiten				{color: #55441f;	font-weight: bold; font-style: italic;}
+.pissen				{color: #b4bd37;	font-style: italic;}
+.dead					{color: #b280df;}
+.bloody					{color: #cc0f0f;}
+.artery					{color: #9B5455;}
+.infection				{color: #77c72b;}
+.necrosis				{color: #558d20;}
+.bone					{color: #e3dac9;}
+
 
 /* HELPER CLASSES */
 .text-normal {font-weight: normal;	font-style: normal;}
 .hidden {display: none;	visibility: hidden;}
+
+
+#scrollbar_container {
+
+	position: absolute;
+	left: 5px;
+	bottom: 15px;
+	width: 316px;
+	border-bottom: 1px solid black;
+}
+
+#scrollbar_track {
+	position: absolute;
+	top: 16px;
+	right: 0px;
+	height: 610px;
+	width: 16px;
+	background-image: url('code/modules/goonchat/browserassets/css/chatscrollbar-bg.png');
+
+	cursor: move;
+}
+
+#scrollbar_handle {
+	width: 14px;
+	left: 1px;
+	overflow: auto;
+
+	background-image: url('code/modules/goonchat/browserassets/css/chatscroller-m.png');
+	cursor: move;
+}
+
+#scrollbar_content {
+	overflow: hidden;
+	left: 10px;
+	bottom: 0px;
+	width: 300px;
+	height: 640px;
+}
+
+
+.scrollbart {
+	position: relative;
+	width: 14px;
+	height: 50%;
+	overflow: auto;
+	background-image: url('code/modules/goonchat/browserassets/css/chatscroller-t.png');
+	background-repeat: no-repeat;
+	cursor: move;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.scrollbarb {
+	position: relative;
+	width: 14px;
+	height: 50%;
+	overflow: auto;
+	background-image: url('code/modules/goonchat/browserassets/css/chatscroller-b.png');
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	cursor: move;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+
+#scrollbtnup {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 1px;
+	right: 0px;
+	overflow: auto;
+	background-image: url('code/modules/goonchat/browserassets/css/chatscrollbar-scrollup.png');
+}
+
+#scrollbtndown {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	overflow: hidden;
+	background-image: url('code/modules/goonchat/browserassets/css/chatscrollbar-scrolldown.png');
+
+}
+
