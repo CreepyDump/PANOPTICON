@@ -9,7 +9,7 @@
 	allowed_races = list("Humen")
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	outfit = /datum/outfit/job/panopticon/citizen
+	outfit = /datum/outfit/job/panopticon/hnysar
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE
 	tutorial = "Nailheads, or 'Gnusari' are a part of the crime syndicate that hasn't gone dark like the Slugs, but managed to adapt to the town streets."
@@ -17,15 +17,14 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
-	cmode_music = 'sound/music/combat/combatlodger.ogg'
+	cmode_music = 'sound/music/combat/Way.ogg'
 
-/datum/job/panopticon/citizen/New()
+/datum/job/panopticon/hnysar/New()
 	. = ..()
 	peopleknowme = list("Lodger")
 	peopleiknow = list("Lodger")
 
-/datum/outfit/job/panopticon/citizen/pre_equip(mob/living/carbon/human/H)
-	H.mind.current.playsound_local(get_turf(src), 'sound/panopticon/banditspawn.ogg', 100, FALSE, pressure_affected = FALSE)
+/datum/outfit/job/panopticon/hnysar/pre_equip(mob/living/carbon/human/H)
 	..()
 	var/datum/disease/advance/chuma = new /datum/disease/anthrax
 	shoes = /obj/item/clothing/shoes/panopticon
@@ -71,7 +70,7 @@
 		chuma.try_infect(H)
 		mask = /obj/item/clothing/mask/infected
 
-/datum/outfit/job/panopticon/citizen
+/datum/outfit/job/panopticon/hnysar
 	uniform = null
 	id = null
 	ears = null
@@ -85,7 +84,7 @@
 	satchel  = null
 	duffelbag = null
 
-/mob/living/carbon/human/proc/chanting()
+/mob/living/carbon/human/proc/insultsomeone()
 	set name = "Insult"
 	set category = "Noises"
 	var/mob/living/carbon/C = usr

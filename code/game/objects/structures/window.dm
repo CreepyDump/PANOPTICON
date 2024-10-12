@@ -27,7 +27,7 @@
 	var/real_explosion_block	//ignore this, just use explosion_block
 	var/breaksound = "shatter"
 	var/hitsound = 'sound/blank.ogg'
-
+	var/bloodied = FALSE
 
 /obj/structure/window/examine(mob/user)
 	. = ..()

@@ -56,6 +56,23 @@
 	icon_state = "gibbl1"
 	random_icon_states = list("gibbl1", "gibbl2", "gibbl3", "gibbl4", "gibbl5")
 	var/drips = 1
+///Absorb the /squirt subtype when it exists on the turf
+	var/absorb_squirts = TRUE
+
+/obj/effect/decal/cleanable/blood/splatter/Initialize(mapload)
+	. = ..()
+	var/obj/effect/decal/cleanable/blood/squirt/existing_squirt = locate() in loc
+	if(existing_squirt)
+		add_blood_DNA(existing_squirt.return_blood_DNA())
+		bloodiness = min((existing_squirt.bloodiness + bloodiness), BLOOD_AMOUNT_PER_DECAL)
+		qdel(existing_squirt)
+
+/obj/effect/decal/cleanable/blood/splatter/over_window // special layer/plane set to appear on windows
+	layer = ABOVE_WINDOW_LAYER
+	plane = GAME_PLANE
+	turf_loc_check = FALSE
+	alpha = 180
+	absorb_squirts = FALSE
 
 /obj/effect/decal/cleanable/blood/splatter/replace_decal(obj/effect/decal/cleanable/C) // Returns true if we should give up in favor of the pre-existing decal
 	if(..())
@@ -353,3 +370,119 @@
 		return TRUE
 	return FALSE
 
+/obj/effect/decal/cleanable/blood/hitsplatter
+	name = "blood splatter"
+	pass_flags = PASSTABLE | PASSGRILLE
+	icon_state = "hitsplatter1"
+	random_icon_states = list("hitsplatter1", "hitsplatter2", "hitsplatter3")
+	/// The turf we just came from, so we can back up when we hit a wall
+	var/turf/prev_loc
+	/// The cached info about the blood
+	var/list/blood_dna_info
+	/// Skip making the final blood splatter when we're done, like if we're not in a turf
+	var/skip = FALSE
+	/// How many tiles/items/people we can paint red
+	var/splatter_strength = 3
+	/// Insurance so that we don't keep moving once we hit a stoppoint
+	var/hit_endpoint = FALSE
+
+/obj/effect/decal/cleanable/blood/hitsplatter/Initialize(mapload, splatter_strength)
+	. = ..()
+	prev_loc = loc //Just so we are sure prev_loc exists
+	if(splatter_strength)
+		src.splatter_strength = splatter_strength
+/obj/effect/decal/cleanable/blood/hitsplatter/Destroy()
+	if(isturf(loc) && !skip)
+		playsound(src, 'sound/panopticon/splatter.ogg', 60, TRUE, -1)
+		if(blood_dna_info)
+			loc.add_blood_DNA(blood_dna_info)
+	return ..()
+/// Set the splatter up to fly through the air until it rounds out of steam or hits something
+/obj/effect/decal/cleanable/blood/hitsplatter/proc/fly_towards(turf/target_turf, range)
+	var/delay = 2
+	var/datum/move_loop/loop = SSmove_manager.move_towards(src, target_turf, delay, timeout = delay * range, priority = MOVEMENT_ABOVE_SPACE_PRIORITY, flags = MOVEMENT_LOOP_START_FAST)
+	RegisterSignal(loop, COMSIG_MOVELOOP_PREPROCESS_CHECK, .proc/pre_move)
+	RegisterSignal(loop, COMSIG_MOVELOOP_POSTPROCESS, .proc/post_move)
+	RegisterSignal(loop, COMSIG_PARENT_QDELETING, .proc/loop_done)
+/obj/effect/decal/cleanable/blood/hitsplatter/proc/pre_move(datum/move_loop/source)
+	SIGNAL_HANDLER
+	prev_loc = loc
+
+/obj/effect/decal/cleanable/blood/hitsplatter/proc/post_move(datum/move_loop/source)
+	SIGNAL_HANDLER
+	for(var/atom/iter_atom in get_turf(src))
+	var/turf/T = get_turf(src)
+
+	for(var/atom/movable/iter_atom as anything in T)
+		if(hit_endpoint)
+			return
+		if(splatter_strength <= 0)
+			break
+
+		if(isitem(iter_atom))
+			iter_atom.add_blood_DNA(blood_dna_info)
+			splatter_strength--
+		else if(ishuman(iter_atom))
+			var/mob/living/carbon/human/splashed_human = iter_atom
+			if(!splashed_human.is_eyes_covered())
+				splashed_human.blur_eyes(3)
+				to_chat(splashed_human, span_alert("You're blinded by a spray of blood!"))
+			splatter_strength--
+
+	if(splatter_strength <= 0) // we used all the puff so we delete it.
+		qdel(src)
+		return
+
+	new /obj/effect/decal/cleanable/blood/squirt(T, get_dir(prev_loc, loc), blood_dna_info)
+
+/obj/effect/decal/cleanable/blood/hitsplatter/proc/loop_done(datum/source)
+	SIGNAL_HANDLER
+	if(!QDELETED(src))
+		qdel(src)
+/obj/effect/decal/cleanable/blood/hitsplatter/Bump(atom/bumped_atom)
+	if(!iswallturf(bumped_atom) && !istype(bumped_atom, /obj/structure/window))
+		qdel(src)
+		return
+	if(istype(bumped_atom, /obj/structure/window))
+		var/obj/structure/window/bumped_window = bumped_atom
+		if(!bumped_window.fulltile)
+			qdel(src)
+			return
+	hit_endpoint = TRUE
+	if(isturf(prev_loc))
+		abstract_move(bumped_atom)
+		skip = TRUE
+		//Adjust pixel offset to make splatters appear on the wall
+		if(istype(bumped_atom, /obj/structure/window))
+			land_on_window(bumped_atom)
+		else
+			var/obj/effect/decal/cleanable/blood/splatter/over_window/final_splatter = new(prev_loc)
+			final_splatter.pixel_x = (dir == EAST ? 32 : (dir == WEST ? -32 : 0))
+			final_splatter.pixel_y = (dir == NORTH ? 32 : (dir == SOUTH ? -32 : 0))
+	else // This will only happen if prev_loc is not even a turf, which is highly unlikely.
+		abstract_move(bumped_atom)
+		qdel(src)
+/// A special case for hitsplatters hitting windows, since those can actually be moved around, store it in the window and slap it in the vis_contents
+/obj/effect/decal/cleanable/blood/hitsplatter/proc/land_on_window(obj/structure/window/the_window)
+	if(!the_window.fulltile)
+		return
+	var/obj/effect/decal/cleanable/blood/splatter/over_window/final_splatter = new
+	final_splatter.forceMove(the_window)
+	the_window.vis_contents += final_splatter
+	the_window.bloodied = TRUE
+	qdel(src)
+
+/obj/effect/decal/cleanable/blood/squirt
+	name = "blood trail"
+	icon_state = "squirt"
+	random_icon_states = null
+
+/obj/effect/decal/cleanable/blood/squirt/Initialize(mapload, direction, list/blood_dna)
+	. = ..()
+	dir = direction
+	var/obj/effect/decal/cleanable/blood/splatter/existing_blood = locate() in get_turf(src)
+	if(existing_blood?.absorb_squirts)
+		if(blood_dna)
+			existing_blood.add_blood_DNA(blood_dna)
+			existing_blood.bloodiness = min((existing_blood.bloodiness + bloodiness), BLOOD_AMOUNT_PER_DECAL)
+		return INITIALIZE_HINT_QDEL

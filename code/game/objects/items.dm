@@ -163,6 +163,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/l_sleeve_zone = BODY_ZONE_L_ARM
 
 	var/twohands_required = FALSE
+	
+	var/throw_sound = 'sound/panopticon/throw.ogg'
 
 	var/bloody_icon = 'icons/effects/blood.dmi'
 	var/bloody_icon_state = "itemblood"

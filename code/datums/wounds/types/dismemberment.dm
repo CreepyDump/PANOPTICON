@@ -22,6 +22,12 @@
 		return FALSE
 	return TRUE
 
+/datum/wound/dismemberment/on_mob_gain(mob/living/affected)
+	. = ..()
+	var/mob/living/carbon/owner = affected
+	owner.spray_blood(pick(GLOB.alldirs), 1)
+
+
 /datum/wound/dismemberment/head
 	name = "neck stump"
 	check_name = span_danger("<B>NECK STUMP</B>")

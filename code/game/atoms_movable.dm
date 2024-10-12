@@ -16,6 +16,8 @@
 	var/verb_ask = "asks"
 	var/verb_exclaim = "exclaims"
 	var/verb_whisper = "whispers"
+	var/tmp/list/active_movement
+	var/tmp/datum/movement_packet/move_packet
 	var/verb_yell = "yells"
 	var/speech_span
 	var/inertia_dir = 0
@@ -231,6 +233,23 @@
 
 	for(var/atom/movable/AM in buckled_mobs)
 		AM.set_glide_size(target)
+
+/**
+ * meant for movement with zero side effects. only use for objects that are supposed to move "invisibly" (like camera mobs or ghosts)
+ * if you want something to move onto a tile with a beartrap or recycler or tripmine or mouse without that object knowing about it at all, use this
+ * most of the time you want forceMove()FALS
+ */
+/atom/movable/proc/abstract_move(atom/new_loc)
+	if(QDELING(src))
+		CRASH("Illegal abstract_move() on [type]!")
+
+	RESOLVE_ACTIVE_MOVEMENT
+
+	var/atom/old_loc = loc
+	var/direction = get_dir(old_loc, new_loc)
+	loc = new_loc
+	Moved(old_loc, direction, TRUE, momentum_change = FALSE)
+
 ////////////////////////////////////////
 // Here's where we rewrite how byond handles movement except slightly different
 // To be removed on step_ conversion
@@ -239,7 +258,7 @@
 	. = FALSE
 	if(!newloc || newloc == loc)
 		return
-
+	RESOLVE_ACTIVE_MOVEMENT
 	if(!direct)
 		direct = get_dir(src, newloc)
 	if(!nodirchange && !throwing)
@@ -258,6 +277,8 @@
 	var/atom/oldloc = loc
 	var/area/oldarea = get_area(oldloc)
 	var/area/newarea = get_area(newloc)
+	var/list/old_locs
+	SET_ACTIVE_MOVEMENT(oldloc, newloc, FALSE, old_locs)
 	loc = newloc
 	. = TRUE
 	if(oldloc)
@@ -281,6 +302,7 @@
 			continue
 		var/atom/movable/thing = i
 		thing.Crossed(src)
+	RESOLVE_ACTIVE_MOVEMENT
 
 ////////////////////////////////////////
 
@@ -428,6 +450,11 @@
 		orbiting.end_orbit(src)
 		orbiting = null
 
+	if(move_packet)
+		if(!QDELETED(move_packet))
+			qdel(move_packet)
+		move_packet = null
+
 // Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
 // You probably want CanPass()
 /atom/movable/Cross(atom/movable/AM)
@@ -473,6 +500,9 @@
 
 /atom/movable/proc/doMove(atom/destination)
 	. = FALSE
+	RESOLVE_ACTIVE_MOVEMENT
+	
+
 	if(destination)
 		if(pulledby)
 			pulledby.stop_pulling()
@@ -480,7 +510,8 @@
 		var/same_loc = oldloc == destination
 		var/area/old_area = get_area(oldloc)
 		var/area/destarea = get_area(destination)
-
+		SET_ACTIVE_MOVEMENT(oldloc, NONE, TRUE, null)
+	
 		loc = destination
 		moving_diagonally = 0
 
@@ -519,6 +550,7 @@
 			if(old_area)
 				old_area.Exited(src, null)
 		loc = null
+	RESOLVE_ACTIVE_MOVEMENT
 
 /atom/movable/proc/onTransitZ(old_z,new_z)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_z, new_z)

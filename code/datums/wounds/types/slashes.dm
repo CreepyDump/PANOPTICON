@@ -74,6 +74,8 @@
 	affected.emote("paincrit", TRUE)
 	affected.Slowdown(20)
 	shake_camera(affected, 2, 2)
+	var/mob/living/carbon/owner = affected
+	owner.spray_blood(pick(GLOB.alldirs), 1)
 
 /datum/wound/slash/disembowel/on_bodypart_gain(obj/item/bodypart/affected)
 	. = ..()

@@ -1,22 +1,22 @@
 
 /datum/antagonist/bandit
-	name = "Bandit"
-	roundend_category = "bandits"
-	antagpanel_category = "Bandit"
+	name = "Gnusar"
+	roundend_category = "gnusari"
+	antagpanel_category = "Gnusar"
 	job_rank = ROLE_BANDIT
 	antag_hud_type = ANTAG_HUD_TRAITOR
-	antag_hud_name = "bandit"
+	antag_hud_name = "gnusar"
 	var/tri_amt
 	var/contrib
-	confess_lines = list("FREEDOM!!!", "I WILL NOT LIVE IN YOUR WALLS!", "I WILL NOT FOLLOW YOUR RULES!")
+	confess_lines = list("ДА ЗРАВСТВУЕТ МАМА АНАРХИЯ!!!", "БЕЙ БЕЛЫХ, ПОКА НЕ ПОЧЕРНЕЮТ!", "ЗАКОН - ЗЛО!")
 
 /datum/antagonist/bandit/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/bandit))
 		return "<span class='boldnotice'>Another free man. My ally.</span>"
 
 /datum/antagonist/bandit/on_gain()
-	owner.special_role = "Bandit"
-	owner.assigned_role = "Bandit"
+	owner.special_role = "Gnusar"
+	owner.assigned_role = "Gnusar"
 	owner.current.job = null
 	forge_objectives()
 	. = ..()
@@ -25,10 +25,10 @@
 	finalize_bandit()
 
 /datum/antagonist/bandit/proc/finalize_bandit()
-	owner.current.playsound_local(get_turf(owner.current), 'sound/music/traitor.ogg', 80, FALSE, pressure_affected = FALSE)
+	owner.current.playsound_local(get_turf(owner.current), 'sound/panopticon/banditspawn.ogg', 80, FALSE, pressure_affected = FALSE)
 	var/mob/living/carbon/human/H = owner.current
 	ADD_TRAIT(H, TRAIT_BANDITCAMP, TRAIT_GENERIC)
-	ADD_TRAIT(H, RTRAIT_SEEPRICES, TRAIT_GENERIC)
+	ADD_TRAIT(H, RTRAIT_TORTURER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
 /datum/antagonist/bandit/greet()
@@ -70,7 +70,7 @@
 		H.set_species(/datum/species/human/northern) //setspecies randomizes body
 		H.after_creation()
 //		H.real_name = H.client.prefs.pref_species.random_name(MALE,1) //set_species randomizes name
-	H.cmode_music = 'sound/music/combat/combatlodger.ogg'
+	H.cmode_music = 'sound/music/combat/Way.ogg'
 
 	addtimer(CALLBACK(H, /mob/living/carbon/human/.proc/choose_name_popup, "BANDIT"), 5 SECONDS)
 //	H.job = "Bandit"

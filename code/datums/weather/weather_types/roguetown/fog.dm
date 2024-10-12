@@ -25,7 +25,7 @@
 	impacted_z_levels = list()
 	var/lastlightning = 0
 
-	particles = list(/obj/screen/weather/fog)
+	particles = list(/obj/effect/realistic_fog)
 
 
 /datum/weather/fog/process()

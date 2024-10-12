@@ -247,6 +247,7 @@
 			thrown_speed = thrown_thing.throw_speed
 		if(!thrown_range)
 			thrown_range = thrown_thing.throw_range
+		playsound(src, 'sound/panopticon/throw.ogg', 50, FALSE, -1)
 		visible_message("<span class='danger'>[src] throws [thrown_thing].</span>", \
 						"<span class='danger'>I toss [thrown_thing].</span>")
 		log_message("has thrown [thrown_thing]", LOG_ATTACK)
@@ -254,7 +255,7 @@
 		thrown_thing.safe_throw_at(target, thrown_range, thrown_speed, src, null, null, null, move_force)
 		if(!used_sound)
 			used_sound = pick(PUNCHWOOSH)
-		do_attack_animation(target, no_effect = TRUE)
+		SpinAnimation(3,1)
 		playsound(get_turf(src), used_sound, 100, FALSE)
 
 /mob/living/carbon/restrained(ignore_grab = TRUE)
