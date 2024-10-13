@@ -697,8 +697,6 @@
 			if(istype(above, /turf/open/transparent/openspace))
 				forceMove(above)
 	spin = FALSE
-	if(spin)
-		SpinAnimation(5, 1)
 
 	SEND_SIGNAL(src, COMSIG_MOVABLE_POST_THROW, TT, spin)
 	SSthrowing.processing[src] = TT

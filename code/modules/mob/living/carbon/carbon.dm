@@ -255,7 +255,7 @@
 		thrown_thing.safe_throw_at(target, thrown_range, thrown_speed, src, null, null, null, move_force)
 		if(!used_sound)
 			used_sound = pick(PUNCHWOOSH)
-		SpinAnimation(3,1)
+		thrown_thing.SpinAnimation(3,1)
 		playsound(get_turf(src), used_sound, 100, FALSE)
 
 /mob/living/carbon/restrained(ignore_grab = TRUE)
