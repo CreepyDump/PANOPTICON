@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(shizo_rights, world.file2list('strings/shizo.txt'))
 				next_hal = world.time + hallucination_time
 				hallucinated_recently = TRUE
 			else
-				V.overlay_fullscreen("hall1", /obj/screen/fullscreen/maniac)
+				V.overlay_fullscreen("hall1", /atom/movable/screen/fullscreen/maniac)
 				sleep(3 SECONDS)
 				V.clear_fullscreen("hall1")
 				V.emote(pick("twitch","tremble","scream"))

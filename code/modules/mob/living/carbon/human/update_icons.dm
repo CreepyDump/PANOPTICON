@@ -313,7 +313,7 @@ There are several things that need to be remembered:
 	remove_overlay(PANTS_LAYER)
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_PANTS]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_PANTS]
 		inv.update_icon()
 
 	if(istype(wear_pants, /obj/item/clothing/under))
@@ -362,7 +362,7 @@ There are several things that need to be remembered:
 	remove_overlay(NECK_LAYER)
 
 	if(client && hud_used && hud_used.inv_slots[SLOT_NECK])
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_NECK]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_NECK]
 		inv.update_icon()
 
 	if(wear_neck)
@@ -388,7 +388,7 @@ There are several things that need to be remembered:
 	remove_overlay(RING_LAYER)
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_RING]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_RING]
 		inv.update_icon()
 
 	var/mutable_appearance/id_overlay
@@ -422,7 +422,7 @@ There are several things that need to be remembered:
 	remove_overlay(GLOVESLEEVE_LAYER)
 
 	if(client && hud_used && hud_used.inv_slots[SLOT_GLOVES])
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_GLOVES]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_GLOVES]
 		inv.update_icon()
 
 	if(!gloves && bloody_hands)
@@ -495,7 +495,7 @@ There are several things that need to be remembered:
 	remove_overlay(WRISTSLEEVE_LAYER)
 
 	if(client && hud_used && hud_used.inv_slots[SLOT_WRISTS])
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_WRISTS]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_WRISTS]
 		inv.update_icon()
 
 	if(wear_wrists)
@@ -555,7 +555,7 @@ There are several things that need to be remembered:
 		return
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_GLASSES]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_GLASSES]
 		inv.update_icon()
 
 	if(glasses)
@@ -585,7 +585,7 @@ There are several things that need to be remembered:
 		return
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_WEAR_MASK]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_WEAR_MASK]
 		inv.update_icon()
 
 	if(ears)
@@ -608,7 +608,7 @@ There are several things that need to be remembered:
 	remove_overlay(SHOES_LAYER)
 	remove_overlay(SHOESLEEVE_LAYER)
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_SHOES]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_SHOES]
 		inv.update_icon()
 
 	if(shoes)
@@ -655,7 +655,7 @@ There are several things that need to be remembered:
 	remove_overlay(BELT_LAYER)
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_S_STORE]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_S_STORE]
 		inv.update_icon()
 
 	if(s_store)
@@ -683,7 +683,7 @@ There are several things that need to be remembered:
 		return
 
 	if(client && hud_used && hud_used.inv_slots[SLOT_HEAD])
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_HEAD]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_HEAD]
 		inv.update_icon()
 
 	if(head)
@@ -718,7 +718,7 @@ There are several things that need to be remembered:
 	var/list/standing_behind = list()
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_BELT]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_BELT]
 		inv.update_icon()
 		inv = hud_used.inv_slots[SLOT_BELT_R]
 		inv.update_icon()
@@ -870,7 +870,7 @@ There are several things that need to be remembered:
 	remove_overlay(ARMOR_LAYER)
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_ARMOR]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_ARMOR]
 		inv.update_icon()
 
 	if(istype(wear_armor, /obj/item/clothing/suit))
@@ -894,7 +894,7 @@ There are several things that need to be remembered:
 /mob/living/carbon/human/update_inv_pockets()
 	return
 	if(client && hud_used)
-		var/obj/screen/inventory/inv
+		var/atom/movable/screen/inventory/inv
 
 		inv = hud_used.inv_slots[SLOT_L_STORE]
 		inv.update_icon()
@@ -940,7 +940,7 @@ There are several things that need to be remembered:
 	var/list/undercloaks = list()
 	var/list/backbehind = list()
 	if(client && hud_used && hud_used.inv_slots[SLOT_BACK])
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_BACK]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_BACK]
 		inv.update_icon()
 		inv = hud_used.inv_slots[SLOT_BACK_R]
 		inv.update_icon()
@@ -1069,7 +1069,7 @@ There are several things that need to be remembered:
 	remove_overlay(TABARD_LAYER)
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_CLOAK]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_CLOAK]
 		inv.update_icon()
 
 	var/list/cloaklays = list()
@@ -1186,7 +1186,7 @@ There are several things that need to be remembered:
 	remove_overlay(SHIRTSLEEVE_LAYER)
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_SHIRT]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_SHIRT]
 		inv.update_icon()
 
 	if(wear_shirt)
@@ -1261,7 +1261,7 @@ There are several things that need to be remembered:
 	remove_overlay(ARMORSLEEVE_LAYER)
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_ARMOR]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_ARMOR]
 		inv.update_icon()
 
 	if(wear_armor)
@@ -1333,7 +1333,7 @@ There are several things that need to be remembered:
 	remove_overlay(LEGSLEEVE_LAYER)
 
 	if(client && hud_used)
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_PANTS]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_PANTS]
 		inv.update_icon()
 
 	if(wear_pants)
@@ -1401,7 +1401,7 @@ There are several things that need to be remembered:
 		return
 
 	if(client && hud_used && hud_used.inv_slots[SLOT_MOUTH])
-		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_MOUTH]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_MOUTH]
 		inv.update_icon()
 
 	if(mouth)
@@ -1434,7 +1434,7 @@ There are several things that need to be remembered:
 	if(legcuffed)
 		overlays_standing[LEGCUFF_LAYER] = mutable_appearance('icons/roguetown/mob/bodies/cuffed.dmi', "[legcuffed.name]down", -LEGCUFF_LAYER)
 		apply_overlay(LEGCUFF_LAYER)
-		throw_alert("legcuffed", /obj/screen/alert/restrained/legcuffed, new_master = src.legcuffed)
+		throw_alert("legcuffed", /atom/movable/screen/alert/restrained/legcuffed, new_master = src.legcuffed)
 
 /proc/wear_female_version(t_color, icon, layer, type)
 	var/index = t_color

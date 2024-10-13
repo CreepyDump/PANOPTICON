@@ -112,7 +112,7 @@
 		if("beginner")
 			shown_d = "BEGINNER"
 
-	var/obj/screen/movable/snap/ms13/lockpicking/imagery = new
+	var/atom/movable/screen/movable/snap/ms13/lockpicking/imagery = new
 	imagery.picking_object = lock
 	imagery.picker = user
 	imagery.sweet_spot = rand(1,179)
@@ -138,7 +138,7 @@
 
 //the lockpicking UI, everything contained on this
 
-/obj/screen/movable/snap/ms13/lockpicking
+/atom/movable/screen/movable/snap/ms13/lockpicking
 	name = "lock"
 	icon = 'mojave/icons/hud/lockpicking.dmi'
 	icon_state = "base"
@@ -185,7 +185,7 @@
 	var/obj/linked_pick
 	var/obj/linked_wedge
 
-/obj/screen/movable/snap/ms13/lockpicking/Initialize()
+/atom/movable/screen/movable/snap/ms13/lockpicking/Initialize()
 	. = ..()
 	QDEL_NULL(linked_lock)
 	QDEL_NULL(linked_pick)
@@ -222,7 +222,7 @@
 	linked_pick.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	vis_contents += linked_pick
 
-/obj/screen/movable/snap/ms13/lockpicking/MouseMove(location, control, params)
+/atom/movable/screen/movable/snap/ms13/lockpicking/MouseMove(location, control, params)
 
 	. = ..()
 
@@ -242,7 +242,7 @@
 		M.Turn(90 - pick_angle)
 		linked_pick.transform = M
 
-/obj/screen/movable/snap/ms13/lockpicking/proc/autofire_on(client/usercli)
+/atom/movable/screen/movable/snap/ms13/lockpicking/proc/autofire_on(client/usercli)
 	SIGNAL_HANDLER
 
 	clicker = usercli
@@ -269,7 +269,7 @@
 
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/screen/movable/snap/ms13/lockpicking/proc/on_mouse_down(client/source, atom/_target, turf/location, control, params)
+/atom/movable/screen/movable/snap/ms13/lockpicking/proc/on_mouse_down(client/source, atom/_target, turf/location, control, params)
 	SIGNAL_HANDLER
 	var/list/modifiers = params2list(params)
 
@@ -292,12 +292,12 @@
 
 	INVOKE_ASYNC(src, PROC_REF(move_pick_forward))
 
-/obj/screen/movable/snap/ms13/lockpicking/proc/mob_detection(atom/source, mob/user, list/examine_list)
+/atom/movable/screen/movable/snap/ms13/lockpicking/proc/mob_detection(atom/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
 	examine_list += span_notice("They are picking the [picking_object]'s lock!")
 
-/obj/screen/movable/snap/ms13/lockpicking/proc/close_lockpick(client/source, atom/_target, turf/location, control, params)
+/atom/movable/screen/movable/snap/ms13/lockpicking/proc/close_lockpick(client/source, atom/_target, turf/location, control, params)
 	SIGNAL_HANDLER
 	qdel(src)
 	picking_object.being_picked = FALSE
@@ -307,20 +307,20 @@
 
 	to_chat(picker, "<span class='notice'>You stop picking the [picking_object.name]s lock.</span>")
 
-/obj/screen/movable/snap/ms13/lockpicking/proc/on_mouse_up(datum/source, atom/object, turf/location, control, params)
+/atom/movable/screen/movable/snap/ms13/lockpicking/proc/on_mouse_up(datum/source, atom/object, turf/location, control, params)
 	SIGNAL_HANDLER
 	mouse_status = LOCKPICK_MOUSEUP
 	lock_angle -= 10
 	process()
 
-/obj/screen/movable/snap/ms13/lockpicking/proc/move_pick_forward(control, params)
+/atom/movable/screen/movable/snap/ms13/lockpicking/proc/move_pick_forward(control, params)
 	SIGNAL_HANDLER
 	mouse_status = LOCKPICK_MOUSEDOWN
 	lock_angle += 10
 	process()
 
 //compilcated circle mathematics about rotations and shit, signals and the like
-/obj/screen/movable/snap/ms13/lockpicking/process()
+/atom/movable/screen/movable/snap/ms13/lockpicking/process()
 
 	if(!linked_lock || !picker)
 		lock_angle = 0
@@ -376,11 +376,11 @@
 
 	return TRUE
 
-/obj/screen/movable/snap/ms13/lockpicking/proc/play_turn_sound(timerd)
+/atom/movable/screen/movable/snap/ms13/lockpicking/proc/play_turn_sound(timerd)
 	playsound(picker.loc, pick(LOCKPICKING_TURN_SOUNDS), 50)
 	addtimer(CALLBACK(src, PROC_REF(turn_sound_reset)), 0.7 SECONDS) //stops the spam
 
-/obj/screen/movable/snap/ms13/lockpicking/proc/turn_sound_reset()
+/atom/movable/screen/movable/snap/ms13/lockpicking/proc/turn_sound_reset()
 	playing_lock_sound = FALSE
 
 //obj is told its picked, theoretically can be used for any objects

@@ -50,7 +50,7 @@
 
 //	animate(transform = matrix(), time = 30)
 
-/obj/screen/weather/snowfall
+/atom/movable/screen/weather/snowfall
 	alpha = 180
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state	= "snowfall_light"

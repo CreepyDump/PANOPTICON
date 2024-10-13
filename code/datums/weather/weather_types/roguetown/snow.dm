@@ -25,7 +25,7 @@
 	impacted_z_levels = list()
 	var/lastlightning = 0
 
-	particles = list(/obj/screen/weather/snowfall)
+	particles = list(/atom/movable/screen/weather/snowfall)
 
 /datum/weather/snow/New(z_levels)
 	impacted_z_levels = GLOB.sky_z.Copy()

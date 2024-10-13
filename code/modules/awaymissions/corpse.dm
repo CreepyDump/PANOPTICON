@@ -305,10 +305,40 @@
 
 /obj/effect/mob_spawn/human/corpse/skotomogilnik
 	name = "Necronox corpse"
-	outfit = /datum/outfit/job/panopticon/slug
+	outfit = /datum/outfit/job/panopticon/corpseodejda
 	disease = /datum/disease/anthrax
 	brute_damage = 1000
 	oxy_damage = 1000
+
+/datum/outfit/job/panopticon/corpseodejda
+	shoes = null
+	shirt = null
+	pants = null
+	back = null
+	id = null
+	belt = null
+	beltl = null
+	beltr = null
+
+/datum/outfit/job/panopticon/corpseodejda/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(65))
+		head = pick(/obj/item/clothing/head/panopticon/shtrafbathelm,\
+		/obj/item/clothing/head/panopticon/vargcap,\
+		/obj/item/clothing/head/panopticon/furajka,\
+		/obj/item/clothing/head/panopticon/cannibal,\
+		/obj/item/clothing/head/panopticon/meshok)
+	else if(prob(15))
+		mask = /obj/item/clothing/mask/gas/panopticon/greys
+	else
+		head = null
+	if(prob(50))
+		shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
+	if(prob(45))
+		shoes = /obj/item/clothing/shoes/panopticon
+	pants = pick(/obj/item/clothing/under/panopticon/civilianpants, /obj/item/clothing/under/panopticon/dedushkapants, /obj/item/clothing/under/panopticon/gulfik)
+	if(prob(15))
+		belt = /obj/item/storage/belt/rogue/leather
 
 /obj/effect/mob_spawn/human/corpse/cargo_tech
 	name = "Cargo Tech"

@@ -45,6 +45,8 @@
 
 //add this disease if the host does not already have too many
 /datum/disease/proc/try_infect(mob/living/infectee, make_copy = TRUE)
+	if(HAS_TRAIT(infectee, TRAIT_WEARING_GAS_MASK))
+		return
 	infect(infectee, make_copy)
 	return TRUE
 
@@ -104,6 +106,9 @@
 	if(!(spread_flags & DISEASE_SPREAD_AIRBORNE) && !force_spread)
 		return
 
+	if(HAS_TRAIT(affected_mob, TRAIT_WEARING_GAS_MASK))
+		return
+	
 	if(affected_mob.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) || (affected_mob.satiety > 0 && prob(affected_mob.satiety/10)))
 		return
 

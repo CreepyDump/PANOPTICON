@@ -101,14 +101,14 @@
 
 	if(client)
 		client.move_delay = initial(client.move_delay)
-		var/obj/screen/gameover/hog/H = new()
+		var/atom/movable/screen/gameover/hog/H = new()
 		H.layer = SPLASHSCREEN_LAYER+0.1
 		client.screen += H
 //		flick("gameover",H)
-//		addtimer(CALLBACK(H, /obj/screen/gameover/proc/Fade), 29)
+//		addtimer(CALLBACK(H, /atom/movable/screen/gameover/proc/Fade), 29)
 		H.Fade()
 		mob_timers["lastdied"] = world.time
-		addtimer(CALLBACK(H, /obj/screen/gameover/proc/Fade, TRUE), 100)
+		addtimer(CALLBACK(H, /atom/movable/screen/gameover/proc/Fade, TRUE), 100)
 //		addtimer(CALLBACK(client, .proc/ghostize, 1, src), 150)
 		add_client_colour(/datum/client_colour/monochrome)
 		client.verbs += /client/proc/descend

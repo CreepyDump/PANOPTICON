@@ -202,7 +202,8 @@
 	var/base_state = "tube"		// base description and icon_state
 	icon_state = "tube"
 	desc = ""
-	layer = WALL_OBJ_LAYER
+	layer = LIGHTING_LAYER
+	plane = LIGHTING_LAMPS_PLANE
 	max_integrity = 100
 	use_power = ACTIVE_POWER_USE
 	idle_power_usage = 2
@@ -334,10 +335,10 @@
 			var/area/A = get_area(src)
 			if(emergency_mode || (A && A.fire))
 				icon_state = "[base_state]_emergency"
-				icon_state = null
+				icon_state = "[base_state]"
 			else
 				icon_state = "[base_state]"
-				icon_state = null
+				icon_state = "[base_state]"
 				if(on)
 					var/mutable_appearance/glowybit = mutable_appearance(overlayicon, base_state, ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
 					glowybit.alpha = CLAMP(light_power*250, 30, 200)

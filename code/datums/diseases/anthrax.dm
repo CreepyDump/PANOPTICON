@@ -1,7 +1,7 @@
 /datum/disease/anthrax
 	name = "Necronox"
 	max_stages = 5
-	stage_prob = 3
+	stage_prob = 0.15
 	spread_text = "Airborne"
 	cure_text = "Regret"
 	cures = list(/datum/reagent/consumable/ethanol)

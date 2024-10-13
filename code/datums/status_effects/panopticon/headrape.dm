@@ -16,9 +16,9 @@
 	/// How much we are allowed to vary in y
 	var/variation_y = 32
 	/// Render relay plate we get our render_source from
-	var/obj/screen/plane_master/rendering_plate/source_plate
+	var/atom/movable/screen/plane_master/rendering_plate/source_plate
 	/// Render relay plate we are actually messing with
-	var/obj/screen/plane_master/rendering_plate/filter_plate
+	var/atom/movable/screen/plane_master/rendering_plate/filter_plate
 	/// Funny tinnitus sound effect
 	var/datum/looping_sound/tinnitus/tinnitus
 	/// Each filter we are handling, assoc list

@@ -122,7 +122,7 @@
 	if(text_to_show in mind.areas_entered)
 		return
 	mind.areas_entered += text_to_show
-	var/obj/screen/area_text/T = new()
+	var/atom/movable/screen/area_text/T = new()
 	client.screen += T
 	T.maptext = {"<span style='vertical-align:top; text-align:center;
 				color: #CE1C1C; font-size: 150%;

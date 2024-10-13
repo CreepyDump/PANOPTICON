@@ -115,7 +115,7 @@
 	name = "Revive"
 	desc = ""
 	catchphrase = null
-	on_use_sound = 'sound/blank.ogg'
+	on_use_sound = 'sound/panopticon/klara_heal.ogg'
 	icon_state = "fleshtostone"
 	item_state = "fleshtostone"
 

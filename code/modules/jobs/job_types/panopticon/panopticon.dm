@@ -3,3 +3,13 @@
 
 /datum/job/necronox/New()
 	. = ..()
+
+/datum/outfit/job/panopticon/pre_equip(mob/living/carbon/human/H)
+	if(H.mind)
+		var/killbastards = pick(/datum/skill/combat/unarmed,/datum/skill/combat/polearms, /datum/skill/combat/wrestling, /datum/skill/combat/guns, /datum/skill/misc/athletics)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(1,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(1,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, pick(1,2,3), TRUE)
+		if(prob(46))
+			H.mind.adjust_skillrank(killbastards, pick(1,2,3), TRUE)

@@ -12,7 +12,7 @@
 	ADD_TRAIT(M, TRAIT_PSYCHICK, "based")
 	M.update_body_parts_head_only()
 	SSdroning.area_entered(get_area(M), M.client)
-	M.overlay_fullscreen("narcos", /obj/screen/fullscreen/narcos)
+	M.overlay_fullscreen("narcos", /atom/movable/screen/fullscreen/narcos)
 
 /datum/reagent/psychick/on_mob_life(mob/living/carbon/M)
 	if(M.has_flaw(/datum/charflaw/addiction/junkie))

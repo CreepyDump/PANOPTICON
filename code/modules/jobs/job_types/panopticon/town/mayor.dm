@@ -39,6 +39,7 @@
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 
 /datum/outfit/job/panopticon/mayor
 	uniform = null

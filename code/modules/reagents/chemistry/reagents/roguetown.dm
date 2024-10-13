@@ -11,6 +11,9 @@
 	. = ..()
 
 /datum/reagent/miasmagas/proc/tryinfect(mob/living/carbon/M)
+	if(HAS_TRAIT(M, TRAIT_WEARING_GAS_MASK))
+		return
+
 	var/datum/disease/advance/anthrax = new /datum/disease/anthrax
 	if(!HAS_TRAIT(M, RTRAIT_NOSTINK))
 		if(!M.wear_mask == new/obj/item/clothing/mask/gas(M))

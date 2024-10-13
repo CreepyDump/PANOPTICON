@@ -94,3 +94,17 @@
 /obj/item/clothing/mask/carnaval/female
 	icon_state = "gourmet_fem"
 	item_state = "gourmet_fem"
+
+/obj/item/clothing/mask/coolio
+	name = "Thug sunglasses"
+	icon = 'icons/panopticon/obj/clothes/masks.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/mask.dmi'	
+	flash_protect = FLASH_PROTECTION_FLASH
+	icon_state = "cool"
+	item_state = "cool"
+	tint = 1
+	dynamic_hair_suffix = null
+	dynamic_fhair_suffix = null
+	flags_inv = HIDEEYES
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
+	body_parts_covered = EYES

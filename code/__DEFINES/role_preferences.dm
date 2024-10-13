@@ -74,11 +74,11 @@ GLOBAL_LIST_INIT(special_roles, list(
 
 GLOBAL_LIST_INIT(special_roles_rogue, list(
 //	ROLE_VILLAIN = /datum/antagonist/villain,
-	ROLE_PREBEL = /datum/antagonist/prebel,
+//	ROLE_PREBEL = /datum/antagonist/prebel,
 	ROLE_BANDIT = /datum/antagonist/bandit,
-	ROLE_ASPIRANT = /datum/antagonist/aspirant,
+//	ROLE_ASPIRANT = /datum/antagonist/aspirant,
 //	ROLE_WEREWOLF = /datum/antagonist/werewolf,
-	ROLE_NBEAST = /datum/antagonist/vampirelord
+//	ROLE_NBEAST = /datum/antagonist/vampirelord
 ))
 
 //Job defines for what happens when you fail to qualify for any job during job selection

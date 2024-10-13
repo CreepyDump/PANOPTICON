@@ -34,6 +34,11 @@
 /datum/weather/rain/weather_act(atom/A)
 	if(isliving(A))
 		var/mob/living/M = A
+		if(HAS_TRAIT(A, TRAIT_WEARING_GAS_MASK))
+			M.adjust_blurriness(1)
+			if(prob(10))
+				to_chat(M, "The [src] obscures your gas mask!")
+			return
 		M.adjust_fire_stacks(-100)
 		M.SoakMob(FULL_BODY)
 		M.apply_status_effect(/datum/status_effect/raindrops)
@@ -131,11 +136,11 @@
 	duration = 3 SECONDS
 	status_type = STATUS_EFFECT_REFRESH
 	/// Fullscreen effect used to provide the visual to that player and only that player
-	var/obj/screen/fullscreen/raindrops/holder
+	var/atom/movable/screen/fullscreen/raindrops/holder
 
 /datum/status_effect/raindrops/on_creation(mob/living/new_owner, ...)
 	. = ..()
-	holder = new_owner.overlay_fullscreen("raindrops", /obj/screen/fullscreen/raindrops)
+	holder = new_owner.overlay_fullscreen("raindrops", /atom/movable/screen/fullscreen/raindrops)
 
 /datum/status_effect/raindrops/tick(delta_time, times_fired) //happening here for now
 	. = ..()
@@ -164,7 +169,7 @@
 /**
  * This provides the images to only the person with it
  */
-/obj/screen/fullscreen/raindrops
+/atom/movable/screen/fullscreen/raindrops
 	icon_state = "raindrops"
 	appearance_flags = PIXEL_SCALE | RESET_TRANSFORM
 	plane = GRAVITY_PULSE_PLANE 

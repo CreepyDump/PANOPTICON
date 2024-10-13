@@ -217,12 +217,12 @@
 						'sound/ambience/noises/tree (2).ogg',\
 						'sound/ambience/noises/tree (3).ogg')
 
-#define TOWN_AMBIENT list('sound/ambience/noises/crow.ogg',\
-						'sound/ambience/noises/koshka.ogg',\
+#define TOWN_AMBIENT list('sound/ambience/noises/kolokol.ogg',\
+						'sound/ambience/noises/kolokol01.ogg',\
 						'sound/ambience/noises/tvar.ogg',\
+						'sound/ambience/noises/kolokol03.ogg',\
 						'sound/ambience/noises/tvardeath.ogg',\
-						'sound/ambience/noises/birds (1).ogg',\
-						'sound/ambience/noises/birds (2).ogg',\
+						'sound/ambience/noises/kolokol02.ogg',\
 						'sound/ambience/noises/birds (3).ogg',\
 						'sound/ambience/noises/birds (4).ogg',\
 						'sound/ambience/noises/birds (5).ogg',\

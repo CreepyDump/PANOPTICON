@@ -152,7 +152,7 @@
 	if(mailer)
 		return
 	if(in_range(user, src) || isobserver(user))
-//		var/obj/screen/read/R = user.hud_used.reads
+//		var/atom/movable/screen/read/R = user.hud_used.reads
 		user.hud_used.reads.icon_state = "scrap"
 		user.hud_used.reads.show()
 		var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">

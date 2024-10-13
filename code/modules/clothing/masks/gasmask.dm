@@ -3,6 +3,7 @@
 	desc = "" //More accurate
 	icon_state = "gas_alt"
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
+	clothing_traits = list(TRAIT_WEARING_GAS_MASK)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_NORMAL
 	item_state = "gas_alt"

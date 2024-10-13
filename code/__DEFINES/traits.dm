@@ -45,6 +45,10 @@
 #define TRAIT_NUTCRACKER "Nutcracker"
 #define TRAIT_IWASHAUNTED "iwashaunted" //prevents spawning a haunt from a decapitated body twice
 
+#define TRAIT_WEARING_GAS_MASK "wearing_gasmask" //If this person is wearing a gas mask
+
+#define TRAIT_PROTECTIVE_SUIT "wearing_protection" //If this person is wearing a suit that would render them immune from... CHEMICAL WARFARE
+
 GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_WEBWALK = "I can move freely between webs.",
 	RTRAIT_NOSTINK = "My nose is numb to the smell of decay.",

@@ -32,8 +32,8 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
 /datum/antagonist/bandit/greet()
-	to_chat(owner.current, "<span class='alertsyndie'>I am a BANDIT!</span>")
-	to_chat(owner.current, "<span class='info'>Long ago I did a crime worthy of my bounty being hung on the wall outside of the local inn.</span>")
+	owner.current.playsound_local(get_turf(owner.current), 'sound/panopticon/banditspawn.ogg', 80, FALSE, pressure_affected = FALSE)
+	to_chat(owner.current, "<span class='cult'>Time to rise and shine!.</span>")
 	owner.announce_objectives()
 	..()
 
@@ -70,7 +70,7 @@
 		H.set_species(/datum/species/human/northern) //setspecies randomizes body
 		H.after_creation()
 //		H.real_name = H.client.prefs.pref_species.random_name(MALE,1) //set_species randomizes name
-	H.cmode_music = 'sound/music/combat/Way.ogg'
+	H.cmode_music = 'sound/music/combat/livinginhell.ogg'
 
 	addtimer(CALLBACK(H, /mob/living/carbon/human/.proc/choose_name_popup, "BANDIT"), 5 SECONDS)
 //	H.job = "Bandit"
@@ -94,16 +94,19 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather
-	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
+	if(prob(30))
+		mask = /obj/item/clothing/mask/coolio
 	if(prob(23))
-		gloves = /obj/item/clothing/gloves/roguetown/leather
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson
+		pants = /obj/item/clothing/under/panopticon/dedushkapants
+		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
+		shoes = /obj/item/clothing/shoes/panopticon/jackboots
 	else
-		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-		armor = /obj/item/clothing/suit/roguetown/armor/leather
+		pants = /obj/item/clothing/under/panopticon/gulag
+		shirt = /obj/item/clothing/suit/panopticon/shirt/gulag
+		if(prob(25))
+			shoes = /obj/item/clothing/shoes/panopticon/zekboots
+
 	var/loadoutm = rand(1,3)
 	switch(loadoutm)
 		if(1)
@@ -128,19 +131,13 @@
 	if(B)
 		B.sellprice = rand(66, 123)
 
-	H.ambushable = FALSE
-
 /datum/antagonist/bandit/roundend_report()
 	if(owner?.current)
-		var/amt = tri_amt
 		var/the_name = owner.name
 		if(ishuman(owner.current))
 			var/mob/living/carbon/human/H = owner.current
 			the_name = H.real_name
-		if(!amt)
-			to_chat(world, "[the_name] was a bandit.")
-		else
-			to_chat(world, "[the_name] was a bandit. He stole [amt] triumphs worth of loot.")
+		to_chat(world, "[the_name] was a bandit.")
 	return
 
 	var/traitorwin = TRUE
@@ -155,14 +152,3 @@
 
 	if(!count)
 		count = 1
-
-	if(traitorwin)
-		owner.adjust_triumphs(count)
-		to_chat(owner.current, "<span class='greentext'>I've TRIUMPHED!</span>")
-		if(owner.current)
-			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/triumph.ogg', 100, FALSE, pressure_affected = FALSE)
-	else
-		to_chat(owner.current, "<span class='redtext'>I've failed to satisfy my greed.</span>")
-		if(owner.current)
-			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
-

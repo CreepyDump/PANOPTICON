@@ -223,6 +223,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change</a>"
 			dat += "<td width='34%' align='center'>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Roles</a><br>"
+			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Bastards</a><br>"
 			dat += "<td width='33%' align='right'>"
 			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Keybinds</a>"
 			dat += "</table>"
@@ -232,7 +233,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<tr>"
 			dat += "<td width='100%' align='center'>"
 			dat += "<br><a href='?_src_=prefs;preference=manifest'>VICTIM LIST</a>"
-//			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Bastards</a><br>"
 
 			dat += "</table>"
 
@@ -2246,11 +2246,11 @@ Slots: [job.spawn_positions]</span>
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
-						var/obj/screen/plane_master/game_world/PM = locate(/obj/screen/plane_master/game_world) in parent.screen
+						var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in parent.screen
 						PM.backdrop(parent.mob)
-						PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in parent.screen
+						PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in parent.screen
 						PM.backdrop(parent.mob)
-						PM = locate(/obj/screen/plane_master/game_world_above) in parent.screen
+						PM = locate(/atom/movable/screen/plane_master/game_world_above) in parent.screen
 						PM.backdrop(parent.mob)
 
 				if("auto_fit_viewport")
