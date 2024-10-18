@@ -125,7 +125,7 @@
 	H.change_stat("intelligence", -4)
 	var/obj/item/bodypart/B = H.get_bodypart("head")
 	if(B)
-		B.sellprice = rand(75, 50	0)
+		B.sellprice = rand(75, 500)
 
 /datum/antagonist/bandit/roundend_report()
 	if(owner?.current)
