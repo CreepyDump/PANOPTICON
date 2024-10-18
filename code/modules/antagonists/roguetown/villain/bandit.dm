@@ -81,21 +81,18 @@
 
 /datum/outfit/job/roguetown/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.verbs += list(/mob/living/carbon/human/proc/insultsomeone)	
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather
 	backl = /obj/item/storage/backpack/rogue/satchel
-	if(prob(30))
+	if(prob(45))
 		mask = /obj/item/clothing/mask/coolio
 	if(prob(23))
 		pants = /obj/item/clothing/under/panopticon/dedushkapants
@@ -111,17 +108,16 @@
 	switch(loadoutm)
 		if(1)
 			beltr = /obj/item/rogueweapon/sword/iron
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 			beltl = /obj/item/storage/belt/rogue/pouch
 		if(2)
-			beltr = /obj/item/rogueweapon/huntingknife/cleaver
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 		if(3)
-			beltr = /obj/item/rogueweapon/flail
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-	beltl = /obj/item/quiver/arrows
-	head = /obj/item/clothing/head/roguetown/menacing/bandit
+			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 1)
@@ -129,7 +125,7 @@
 	H.change_stat("intelligence", -4)
 	var/obj/item/bodypart/B = H.get_bodypart("head")
 	if(B)
-		B.sellprice = rand(66, 123)
+		B.sellprice = rand(75, 50	0)
 
 /datum/antagonist/bandit/roundend_report()
 	if(owner?.current)
@@ -152,3 +148,14 @@
 
 	if(!count)
 		count = 1
+
+/mob/living/carbon/human/proc/insultsomeone()
+	set name = "Insult"
+	set category = "Noises"
+	var/mob/living/carbon/C = usr
+	if(C.gender == FEMALE)
+		playsound(get_turf(C), pick('sound/panopticon/sdohni.ogg','sound/panopticon/fuckyou.ogg',), 90, ignore_walls = TRUE, soundping = TRUE)
+	else
+		playsound(get_turf(C), pick('sound/panopticon/suckmydick.ogg', 'sound/panopticon/unlucky.ogg', 'sound/panopticon/gondon.ogg', 'sound/panopticon/puppy.ogg'), 90, ignore_walls = TRUE, soundping = TRUE)
+	C.visible_message("<span class='necrosis'>\The [C] slurs.</span>")
+	var/turf/source = get_turf(src)

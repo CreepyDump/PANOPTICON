@@ -122,43 +122,9 @@
 	armor = list("blunt" = 60, "bullet" = 45, "laser" = 0, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE|HIDEEYES|HIDENECK
 
-/obj/item/clothing/head/panopticon/creep
-	name = "Creep Mask"
-	desc = "A typical robber's mask made as a weird monkey's head."
-	icon_state = "creep"
-	item_state = "creep"
-	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE|HIDEEYES|HIDENECK
-
-/obj/item/clothing/head/panopticon/grey
-	name = "Iron helmet"
-	icon_state = "iron_helm3"
-	item_state = "iron_helm3"
-	armor = list("blunt" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
-
-/obj/item/clothing/head/panopticon/meshok
-	name = "Fool bag"
-	icon_state = "meshok"
-	item_state = "meshok"
+/obj/item/clothing/head/panopticon/bandit
+	name = "Strelok Mask"
+	icon_state = "bandit"
+	item_state = "bandit"
 	dynamic_hair_suffix = ""
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	block2add = FOV_BEHIND|FOV_RIGHT|FOV_LEFT
-	equip_delay_other = 30
-
-/obj/item/clothing/head/panopticon/keptyouwaitinghuh
-	name = "Kir Adams headband"
-	desc = " "
-	icon_state = "snake"
-	item_state = "snake"
-	flags_inv = null
-	block2add = FOV_BEHIND
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	dynamic_hair_suffix = "+bigboss"
-
-/obj/item/clothing/head/panopticon/shtrafbathelm/helek
-	name = "Ofizieren-Helm"
-	desc = "The helmet of an officer of Helek's holy army. If you have it in your hands, it means you've either killed a bastard or become one."
-	icon_state = "helek"
-	item_state = "helek"
-	armor = list("blunt" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE|HIDENECK

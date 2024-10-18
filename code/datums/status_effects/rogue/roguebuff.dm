@@ -185,7 +185,7 @@
 
 /datum/status_effect/buff/chant
 	id = "chantbuff"
-	effectedstats = list("speed" = -2, "constitution" = -2, "endurance" = -2)
+	effectedstats = list("strength" = 3, "perception" = 2, "endurance" = 1)
 	duration = 45 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/moodgood
 
