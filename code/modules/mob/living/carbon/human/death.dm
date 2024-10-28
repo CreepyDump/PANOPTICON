@@ -92,7 +92,7 @@
 			for(var/mob/living/carbon/human/HU in GLOB.player_list)
 				if(!HU.stat)
 					if(is_in_roguetown(HU))
-						HU.playsound_local(get_turf(HU), 'sound/music/lorddeath.ogg', 80, FALSE, pressure_affected = FALSE)
+						HU.playsound_local(get_turf(HU), 'sound/blank.ogg', 80, FALSE, pressure_affected = FALSE)
 
 //		if(yeae)
 //			if(mind)

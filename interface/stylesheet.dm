@@ -127,7 +127,7 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Crimson Text, TrueType;}
 .sandspeak				{font-family: "Arabolical", Crimson Text;}
 .delf					{font-family: "Dauphin", Crimson Text;}
 .hellspeak				{font-family: "Nosfer", Crimson Text;}
-.psycho					{font-family: "Psycho", Crimson Text;}
+.psycho					{font-family: "Static Age", Crimson Text;}
 .undead					{font-family: "FriskyVampire", Crimson Text;}
 .orc					{font-family: "Thief by The Riddler", Crimson Text;}
 .beast					{font-family: "Thief by The Riddler", Crimson Text;}

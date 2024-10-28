@@ -183,5 +183,5 @@
 	mind.add_antag_datum(new_antag)
 	new_antag.transforming = world.time
 	to_chat(src, "<span class='danger'>I feel horrible...</span>")
-	src.playsound_local(get_turf(src), 'sound/music/horror.ogg', 80, FALSE, pressure_affected = FALSE)
+	src.playsound_local(get_turf(src), 'sound/blank.ogg', 80, FALSE, pressure_affected = FALSE)
 	flash_fullscreen("redflash3")

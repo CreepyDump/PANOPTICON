@@ -265,8 +265,7 @@
 	ambientnight = AMB_INGEN
 	spookysounds = SPOOKY_BUNKER
 	spookynight = SPOOKY_BUNKER
-	droning_sound = 'sound/music/area/town.ogg'
-	droning_sound_dusk = 'sound/music/area/jutkayahyina.ogg'
+	droning_sound = 'sound/music/area/necronox_indoors.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 	soundenv = 4
 	plane = INDOOR_PLANE
@@ -281,9 +280,6 @@
 	ambientnight = AMB_TOWNNIGHT
 	spookysounds = HORROR_FOREST
 	spookynight = SPOOKY_NIGHT
-	droning_sound = 'sound/music/area/derevnya.ogg'
-	droning_sound = 'sound/music/area/derevnya.ogg'
-	droning_sound_dusk = 'sound/music/area/jutkayahyina.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/necronox_day.ogg'
 	converted_type = /area/panopticon/indoors/necronox
 	soundenv = 4

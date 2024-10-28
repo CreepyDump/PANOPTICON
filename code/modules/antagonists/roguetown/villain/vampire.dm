@@ -377,8 +377,7 @@
 	mob_timers["becoming_vampire"] = world.time
 	addtimer(CALLBACK(src, .mob/living/carbon/human/proc/vampire_finalize), 2 MINUTES)
 	to_chat(src, "<span class='danger'>I feel sick...</span>")
-	src.playsound_local(get_turf(src), 'sound/music/horror.ogg', 80, FALSE, pressure_affected = FALSE)
-	flash_fullscreen("redflash3")
+	src.playsound_local(get_turf(src), 'sound/blank.ogg')
 
 /mob/living/carbon/human/proc/vampire_finalize()
 	if(!mind)
