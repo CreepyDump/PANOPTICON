@@ -96,25 +96,25 @@
 	dir = SOUTH
 	pixel_y = 32
 
-/obj/structure/panopticon/mysor
+/obj/effect/turf_decal/panopticon/mysor
 	name = "Rubbish"
 	icon_state = "rubbish"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	max_integrity = 0
 
-/obj/structure/panopticon/mysor/doski
+/obj/effect/turf_decal/panopticon/mysor/doski
 	icon_state = "broken_doski"
 	icon = 'icons/panopticon/obj/town.dmi'
 
-/obj/structure/panopticon/mysor/town
+/obj/effect/turf_decal/panopticon/mysor/town
 	icon_state = "trash"
 	icon = 'icons/panopticon/obj/town.dmi'
 
-/obj/structure/panopticon/mysor/town/alt
+/obj/effect/turf_decal/panopticon/mysor/town/alt
 	icon_state = "musorinki"
 	icon = 'icons/panopticon/obj/town.dmi'
 
-/obj/structure/panopticon/mysor/town/alt/Initialize()
+/obj/effect/turf_decal/panopticon/mysor/town/alt/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
@@ -205,7 +205,7 @@
 		soundloop.stop()
 	..()
 
-/obj/structure/panopticon/sewergrate
+/obj/effect/turf_decal/panopticon/sewergrate
 	name = "grate"
 	desc = "smells fucking awful"
 	icon_state = "sewer"
@@ -253,7 +253,7 @@
 					ADD_TRAIT(C, TRAIT_VIRUSIMMUNE, TRAIT_GENERIC)
 
 
-/obj/structure/panopticon/skulldraw
+/obj/effect/turf_decal/panopticon/skulldraw
 	name = ""
 	icon_state = "skull"
 	icon = 'icons/panopticon/obj/bigass.dmi'

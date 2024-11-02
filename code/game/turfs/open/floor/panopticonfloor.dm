@@ -176,8 +176,9 @@
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/grassland.wav'
 
-/obj/structure/panopticon/road
+/obj/effect/turf_decal/panopticon/road
 	name = ""
+	layer = BELOW_OBJ_LAYER
 	icon = 'icons/turf/panopticonfloor.dmi'
 	icon_state = "roadover"
 
@@ -264,7 +265,7 @@
 	. = ..()
 	dir = pick(GLOB.cardinals)
 
-/obj/structure/panopticon/townborders
+/obj/effect/turf_decal/panopticon/townborders
 	name = ""
 	icon = 'icons/turf/panopticonfloor.dmi'
 	icon_state = "bordur"

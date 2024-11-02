@@ -42,6 +42,7 @@
 	else
 		C.visible_message(span_danger("<B>The [src.name] is [pick("torn off", "sundered", "severed", "seperated", "unsewn")]!</B>"))
 	C.emote("painscream")
+	C.spray_blood(pick(GLOB.alldirs), 1)
 	src.add_mob_blood(C)
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
 	C.add_stress(/datum/stressevent/dismembered)

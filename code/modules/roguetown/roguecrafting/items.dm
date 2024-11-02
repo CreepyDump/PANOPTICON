@@ -232,11 +232,11 @@
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/natural/bone = 2,
 				/obj/item/natural/fibers = 1)
-	craftdiff = 3
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/boneknife
-	name = "bone spear"
+	name = "bone knife"
 	result = /obj/item/panopticonweapon/knife
 	reqs = list(/obj/item/natural/bone = 1,
 				/obj/item/natural/fibers = 1)
-	craftdiff = 3
+	craftdiff = 0

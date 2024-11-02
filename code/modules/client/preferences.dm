@@ -13,7 +13,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/muted = 0
 	var/last_ip
 	var/last_id
-
+	var/list/descriptor_entries = list()
+	var/list/custom_descriptors = list()
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
 	var/ooccolor = "#c43b23"
@@ -39,7 +40,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	// Custom Keybindings
 	var/list/key_bindings = list()
-
+	var/icon/dice = 'interface/dice.png'
 	var/tgui_fancy = TRUE
 	var/tgui_lock = TRUE
 	var/windowflashing = TRUE
@@ -198,15 +199,15 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	if(slot_randomized)
 		load_character(default_slot) // Reloads the character slot. Prevents random features from overwriting the slot if saved.
 		slot_randomized = FALSE
-	var/list/dat = list("<center>")
+	var/dat = "<META charset='UTF-8'> <Title>PANOPTICON</title> <style type='text/css'> html {overflow: auto;}; overflow:hidden; font-family: Times; background-repeat:repeat-x; } a {text-decoration:none;outline: none;border: none;margin:-1px;} a:focus{outline:none;border: none;} a:hover {Color:#0d0d0d;background:#505055;outline: none;border: none;} a.active { text-decoration:none; Color:#533333;border: none;} a.inactive:hover {Color:#0d0d0d;background:#bb0000;border: none;} a.active:hover {Color:#bb0000;background:#0f0f0f;} a.inactive:hover { text-decoration:none; Color:#0d0d0d; background:#bb0000;border: none;} a img { border: 0; } TABLE.winto { z-index:-1; position: absolute; top: 12; left:14; background-position: bottom; background-repeat:repeat-x; border: 4px dotted #222222; /* border-top:4px double #777777; */ border-bottom: none; border-top: none; } TR { border: 0px; } </style>"
 	if(tabchoice)
 		current_tab = tabchoice
 	if(tabchoice == 4)
 		current_tab = 0
-
-//	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Sheet</a>"
-//	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Game Preferences</a>"
-//	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC Preferences</a>"
+	user << browse_rsc(dice,"dice.png")
+	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Sheet</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Game Preferences</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC Preferences</a>"
 //	dat += "<a href='?_src_=prefs;preference=tab;tab=3' [current_tab == 3 ? "class='linkOn'" : ""]>Keybinds</a>"
 
 	dat += "</center>"
@@ -223,17 +224,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change</a>"
 			dat += "<td width='34%' align='center'>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Roles</a><br>"
-			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Bastards</a><br>"
+			dat += "<br><a href='?_src_=prefs;preference=manifest'>VICTIM LIST</a>"
 			dat += "<td width='33%' align='right'>"
 			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Keybinds</a>"
-			dat += "</table>"
-
-			// Next top level class choices table
-			dat += "<table width=100%>"
-			dat += "<tr>"
-			dat += "<td width='100%' align='center'>"
-			dat += "<br><a href='?_src_=prefs;preference=manifest'>VICTIM LIST</a>"
-
 			dat += "</table>"
 
 			if(CONFIG_GET(flag/roundstart_traits))
@@ -261,7 +254,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			if(check_nameban(user.ckey))
 				dat += "<a href='?_src_=prefs;preference=name;task=input'>NAMEBANNED</a><BR>"
 			else
-				dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a> <a href='?_src_=prefs;preference=name;task=random'>\[R\]</a>"
+				dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a> <a href='?_src_=prefs;preference=name;task=random'><img src='dice.png' height=16 width=16></a>"
 
 			dat += "<BR>"
 			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
@@ -396,6 +389,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //				dat += "<h3>Eye Color</h3>"
 				dat += "<b>Eye Color: </b><a href='?_src_=prefs;preference=eyes;task=input'>Change </a>"
 //				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EYE_COLOR]'>[(randomise[RANDOM_EYE_COLOR]) ? "Lock" : "Unlock"]</A>"
+				dat += "<br>"
+				dat += "<b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 				dat += "<br>"
 				dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 				dat += "<br>"
@@ -631,9 +626,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //			dat += "<b>tgui Monitors:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary" : "All"]</a><br>"
 //			dat += "<b>tgui Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
 //			dat += "<b>Show Runechat Chat Bubbles:</b> <a href='?_src_=prefs;preference=chat_on_map'>[chat_on_map ? "Enabled" : "Disabled"]</a><br>"
-//			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
-//			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
-//			dat += "<br>"
+			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
+			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<br>"
 //			dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
 //			dat += "<b>Hotkey mode:</b> <a href='?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Default"]</a><br>"
 //			dat += "<br>"
@@ -675,7 +670,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<b>Income Updates:</b> <a href='?_src_=prefs;preference=income_pings'>[(chat_toggles & CHAT_BANKCARD) ? "Allowed" : "Muted"]</a><br>"
 			dat += "<br>"
 */
-//			dat += "<b>FPS:</b> <a href='?_src_=prefs;preference=clientfps;task=input'>[clientfps]</a><br>"
+			dat += "<b>FPS:</b> <a href='?_src_=prefs;preference=clientfps;task=input'>[clientfps]</a><br>"
 /*
 			dat += "<b>Parallax (Fancy Space):</b> <a href='?_src_=prefs;preference=parallaxdown' oncontextmenu='window.location.href=\"?_src_=prefs;preference=parallaxup\";return false;'>"
 			switch (parallax)
@@ -746,7 +741,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "</td></tr></table>"
 
 		if(2) //OOC Preferences
-			used_title = "ooc"
+			used_title = "OOC"
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 			dat += "<h2>OOC Settings</h2>"
 			dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
@@ -755,14 +750,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
-
-
-			if(user.client)
-				if(unlock_content)
-					dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Public" : "Hidden"]</a><br>"
-
-				if(unlock_content || check_rights_for(user.client, R_ADMIN))
-					dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
 
 			dat += "</td>"
 
@@ -865,11 +852,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 		switch(N.ready)
 			if(PLAYER_NOT_READY)
-				dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
+				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>\[You are not ready\]</a>"
 			if(PLAYER_READY_TO_PLAY)
-				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
+				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>\[Ready\]</a>"
 	else
-		dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+		dat += "<a href='byond://?src=[REF(N)];late_join=1'>\[Join hell\]</a>"
 
 //	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
 	dat += "</center>"
@@ -880,7 +867,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	winshow(user, "preferencess_window", TRUE)
 	var/datum/browser/popup = new(user, "preferences_browser", "<div align='center'>[used_title]</div>")
 	popup.set_window_options("can_close=0")
-	popup.set_content(dat.Join())
+	popup.set_content(dat)
 	popup.open(FALSE)
 	update_preview_icon()
 //	onclose(user, "preferencess_window", src)
@@ -1416,6 +1403,10 @@ Slots: [job.spawn_positions]</span>
 				SetChoices(user)
 		return 1
 
+	else if(href_list["preference"] == "descriptors")
+		show_descriptors_ui(user)
+		return
+
 	else if(href_list["preference"] == "trait")
 		switch(href_list["task"])
 			if("close")
@@ -1557,6 +1548,10 @@ Slots: [job.spawn_positions]</span>
 		return TRUE
 
 	switch(href_list["task"])
+		if("change_descriptor")
+			handle_descriptors_topic(user, href_list)
+			show_descriptors_ui(user)
+			return
 		if("random")
 			switch(href_list["preference"])
 				if("name")

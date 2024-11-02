@@ -39,6 +39,8 @@
 
 	/// A weak reference to another datum
 	var/datum/weakref/weak_reference
+	var/abstract_type = /datum
+	var/list/cooldowns
 
 #ifdef TESTING
 	var/running_find_references
@@ -214,3 +216,38 @@
 		qdel(D)
 	else
 		return returned
+
+/**
+  * Callback called by a timer to end an associative-list-indexed cooldown.
+  *
+  * Arguments:
+  * * source - datum storing the cooldown
+  * * index - string index storing the cooldown on the cooldowns associative list
+  *
+  * This sends a signal reporting the cooldown end.
+  */
+/proc/end_cooldown(datum/source, index)
+	if(QDELETED(source))
+		return
+	SEND_SIGNAL(source, COMSIG_CD_STOP(index))
+	TIMER_COOLDOWN_END(source, index)
+
+
+/**
+  * Proc used by stoppable timers to end a cooldown before the time has ran out.
+  *
+  * Arguments:
+  * * source - datum storing the cooldown
+  * * index - string index storing the cooldown on the cooldowns associative list
+  *
+  * This sends a signal reporting the cooldown end, passing the time left as an argument.
+  */
+/proc/reset_cooldown(datum/source, index)
+	if(QDELETED(source))
+		return
+	SEND_SIGNAL(source, COMSIG_CD_RESET(index), S_TIMER_COOLDOWN_TIMELEFT(source, index))
+	TIMER_COOLDOWN_END(source, index)
+
+/// Returns whether a type is an abstract type.
+/proc/is_abstract(datum/datum_type)
+	return (initial(datum_type.abstract_type) == datum_type)

@@ -304,7 +304,7 @@
 	armor = list("blunt" = 0, "slash" = 0, "stab" = 0, "bullet" = 0, "laser" = -5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = -5, "fire" = 0, "acid" = 0)
 	equip_delay_other = 140
 	clothing_flags = ANTI_TINFOIL_MANEUVER
-	var/datum/brain_trauma/mild/phobia/conspiracies/paranoia
+	var/datum/brain_trauma/mild/phobia/god/paranoia
 	var/warped = FALSE
 
 /obj/item/clothing/head/foilhat/Initialize(mapload)

@@ -31,6 +31,7 @@
 				dead = TRUE
 				playsound(get_turf(user), 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
 				icon_state = "srat1"
+				dir = pick(GLOB.cardinals)
 				rotprocess = 15 MINUTES
 				user.add_stress(/datum/stressevent/drankrat)
 			return
@@ -54,6 +55,7 @@
 		if(burning >= burntime)
 			dead = TRUE
 			playsound(src, 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
+			dir = pick(GLOB.cardinals)
 			icon_state = "srat1"
 			rotprocess = 15 MINUTES
 	. = ..()

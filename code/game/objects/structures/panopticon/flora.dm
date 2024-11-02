@@ -5,6 +5,22 @@
 	layer = ABOVE_MOB_LAYER
 	max_integrity = 1
 
+/obj/structure/flora/panopticon/grass/Crossed(atom/movable/AM)
+	. = ..()
+
+	if(isliving(AM))
+		var/mob/living/L = AM
+		if(L.m_intent == MOVE_INTENT_SNEAK)
+			return
+		else
+			playsound(src.loc, "plantcross", 100, FALSE, -1)
+			var/oldx = src.pixel_x
+			animate(src, pixel_x = oldx+1, time = 0.5)
+			animate(pixel_x = oldx-1, time = 0.5)
+			animate(pixel_x = oldx, time = 0.5)
+			L.consider_ambush()
+	return
+
 /obj/structure/flora/panopticon/grass/Initialize()
 	. = ..()
 	icon_state = "g[rand(1,4)]"

@@ -10,6 +10,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/necroleninist
+	job_greet_text = FALSE
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE
 	tutorial = "A Cult of people who idolize a legendary revolutionary named Lenin. But this man is probably not connected to their fascination with bio-magick."

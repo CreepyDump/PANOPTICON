@@ -21,7 +21,7 @@
 #else
 	name = "PANOPTICON"
 #endif
-	fps = 20
+	fps = 45
 #ifdef FIND_REF_NO_CHECK_TICK
 	loop_checks = FALSE
 #endif

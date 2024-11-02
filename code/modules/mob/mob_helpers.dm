@@ -570,7 +570,7 @@
 		SSdroning.play_area_sound(get_area(src), client)
 		cmode = FALSE
 		if(client && HAS_TRAIT(src, TRAIT_SCREENSHAKE))
-			animate(client, pixel_y)
+			animate(client, pixel_y = 0)
 	else
 		cmode = TRUE
 		playsound_local(src, 'sound/misc/combon.ogg', 100)

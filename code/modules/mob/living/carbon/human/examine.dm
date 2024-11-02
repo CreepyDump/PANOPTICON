@@ -481,6 +481,9 @@
 			. += "<a href='?src=[REF(src)];inspect_limb=[checked_zone]'>Inspect [parse_zone(checked_zone)]</a>"
 			if(!(mobility_flags & MOBILITY_STAND) && user != src && (user.zone_selected == BODY_ZONE_CHEST))
 				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
+	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
+	for(var/line in lines)
+		. += span_info(line)
 
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))

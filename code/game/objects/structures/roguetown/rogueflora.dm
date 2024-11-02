@@ -249,6 +249,7 @@
 	desc = "A bush, I think I can see some spiders crawling in it."
 	icon_state = "bush1"
 	layer = ABOVE_ALL_MOB_LAYER
+	plane = GAME_PLANE_UPPER
 	var/res_replenish
 	blade_dulling = DULLING_CUT
 	max_integrity = 35

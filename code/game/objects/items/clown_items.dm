@@ -131,7 +131,7 @@
  */
 
 /obj/item/bikehorn
-	name = "bike horn"
+	name = "Klaxon"
 	desc = ""
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "bike_horn"
@@ -144,11 +144,10 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
 	throw_speed = 1
 	throw_range = 7
-	attack_verb = list("HONKED")
 
 /obj/item/bikehorn/Initialize()
 	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/blank.ogg'=1), 50)
+	AddComponent(/datum/component/squeak, list('sound/panopticon/bikehorn.ogg'=1), 50)
 
 /obj/item/bikehorn/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(user != M && ishuman(user))
@@ -159,7 +158,7 @@
 
 /obj/item/bikehorn/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] solemnly points [src] at [user.p_their()] temple! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src, 'sound/blank.ogg', 50, TRUE)
+	playsound(src, 'sound/panopticon/bikehorn.ogg', 50, TRUE)
 	return (BRUTELOSS)
 
 //air horn

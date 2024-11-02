@@ -477,6 +477,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
 	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
 	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
+	
+	S["descriptor_entries"] >> descriptor_entries
+	descriptor_entries = SANITIZE_LIST(descriptor_entries)
+	S["custom_descriptors"] >> custom_descriptors
+	custom_descriptors = SANITIZE_LIST(custom_descriptors)
+	validate_descriptors()
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -557,7 +563,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Patron
 	WRITE_FILE(S["selected_patron"]		, selected_patron.name)
-
+	
+	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
+	WRITE_FILE(S["custom_descriptors"] , custom_descriptors)
 	return TRUE
 
 

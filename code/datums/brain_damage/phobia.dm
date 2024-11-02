@@ -2,8 +2,8 @@
 	name = "Phobia"
 	desc = ""
 	scan_desc = ""
-	gain_text = "<span class='warning'>I start finding default values very unnerving...</span>"
-	lose_text = "<span class='notice'>I no longer feel afraid of default values.</span>"
+	gain_text = "<span class='warning'>I have a phobia.. default values...</span>"
+	lose_text = "<span class='notice'>I no longer feel my default values.</span>"
 	var/phobia_type
 	var/next_check = 0
 	var/next_scare = 0
@@ -21,8 +21,8 @@
 	if(!phobia_type)
 		phobia_type = pick(SStraumas.phobia_types)
 
-	gain_text = "<span class='warning'>I start finding [phobia_type] very unnerving...</span>"
-	lose_text = "<span class='notice'>I no longer feel afraid of [phobia_type].</span>"
+	gain_text = "<span class='warning'>I have a phobia.. [phobia_type]...</span>"
+	lose_text = "<span class='notice'>I no longer feel my [phobia_type].</span>"
 	scan_desc += " of [phobia_type]"
 	trigger_words = SStraumas.phobia_words[phobia_type]
 	trigger_mobs = SStraumas.phobia_mobs[phobia_type]
@@ -137,73 +137,29 @@
 // Defined phobia types for badminry, not included in the RNG trauma pool to avoid diluting.
 
 /datum/brain_trauma/mild/phobia/spiders
-	phobia_type = "spiders"
+	phobia_type = "Arachnophobia"
 	random_gain = FALSE
 
-/datum/brain_trauma/mild/phobia/space
-	phobia_type = "space"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/security
-	phobia_type = "security"
+/datum/brain_trauma/mild/phobia/blood
+	phobia_type = "Hemophobia"
 	random_gain = FALSE
 
 /datum/brain_trauma/mild/phobia/clowns
-	phobia_type = "clowns"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/greytide
-	phobia_type = "greytide"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/lizards
-	phobia_type = "lizards"
+	phobia_type = "Coulrophobia"
 	random_gain = FALSE
 
 /datum/brain_trauma/mild/phobia/skeletons
-	phobia_type = "skeletons"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/snakes
-	phobia_type = "snakes"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/robots
-	phobia_type = "robots"
+	phobia_type = "Cartilogenophobia"
 	random_gain = FALSE
 
 /datum/brain_trauma/mild/phobia/doctors
-	phobia_type = "doctors"
+	phobia_type = "Iatrophobia"
 	random_gain = FALSE
 
-/datum/brain_trauma/mild/phobia/authority
-	phobia_type = "authority"
+/datum/brain_trauma/mild/phobia/god
+	phobia_type = "Theophobia"
 	random_gain = FALSE
 
-/datum/brain_trauma/mild/phobia/supernatural
-	phobia_type = "the supernatural"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/aliens
-	phobia_type = "aliens"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/strangers
-	phobia_type = "strangers"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/birds
-	phobia_type = "birds"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/falling
-	phobia_type = "falling"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/anime
-	phobia_type = "anime"
-	random_gain = FALSE
-
-/datum/brain_trauma/mild/phobia/conspiracies
-	phobia_type = "conspiracies"
+/datum/brain_trauma/mild/phobia/guns
+	phobia_type = "Hoplophobia"
 	random_gain = FALSE

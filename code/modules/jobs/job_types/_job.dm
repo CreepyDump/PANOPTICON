@@ -81,6 +81,8 @@
 
 	var/f_title = null
 
+	var/job_greet_text = TRUE
+
 	var/tutorial = null
 
 	var/whitelist_req = FALSE
@@ -140,13 +142,16 @@
 //H is usually a human unless an /equip override transformed it
 /datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
 	if(ishuman(H))
+		var/mob/living/carbon/human/spawned_human = H
+		if(prob(28))
+			spawned_human.gain_trauma(/datum/brain_trauma/mild/phobia, TRAUMA_RESILIENCE_LOBOTOMY)
 		H.announceshit()
 		var/list/in_range = range(2, H)
 		var/obj/structure/bed/a_mimir
 		if(a_mimir in range (in_range))
-			H.forceMove(get_turf(a_mimir))
+			spawned_human.forceMove(get_turf(a_mimir))
 			a_mimir.buckle_mob(H)
-			H.AdjustSleeping(4 SECONDS)
+			spawned_human.AdjustSleeping(4 SECONDS)
 		if(H?.ckey == "lolkekxdbruh")
 			new /obj/item/clothing/head/panopticon/keptyouwaitinghuh(H.drop_location(), FALSE)
 		if(H?.ckey == "crazyduster")
@@ -458,3 +463,10 @@
 		return list(ACCESS_MAINT_TUNNELS)
 	return list()
 
+/datum/job/proc/greet(mob/player)
+	if(!job_greet_text)
+		return
+	to_chat(player, span_notice("You are the <b>[title]</b>"))
+	if(tutorial)
+		to_chat(player, span_notice("*-----------------*"))
+		to_chat(player, span_notice(tutorial))

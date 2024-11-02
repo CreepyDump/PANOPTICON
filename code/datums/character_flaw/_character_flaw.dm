@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(character_flaws, list("Alcoholic"=/datum/charflaw/addiction/alc
 	"Cyclops (L)"=/datum/charflaw/noeyel,
 	"No Arm (R)"=/datum/charflaw/limbloss/arm_r,
 	"No Arm (L)"=/datum/charflaw/limbloss/arm_l,
-	"Paranoid"=/datum/charflaw/paranoid,
+//	"Paranoid"=/datum/charflaw/paranoid,
 	"Faggot"=/datum/charflaw/faggot,
 	"Random Sin"=/datum/charflaw/randflaw))
 

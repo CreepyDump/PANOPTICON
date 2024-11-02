@@ -153,10 +153,10 @@ PICTURE_LOGGING_CAMERA
 # KICK_INACTIVE
 
 ## Comment this out to stop admins being able to choose their personal ooccolor
-ALLOW_ADMIN_OOCCOLOR
+#ALLOW_ADMIN_OOCCOLOR
 
 ## Comment this out to stop admins being able to choose their personal asay color
-ALLOW_ADMIN_ASAYCOLOR
+#ALLOW_ADMIN_ASAYCOLOR
 
 ## Job slot open/close by identification consoles delay in seconds
 ID_CONSOLE_JOBSLOT_DELAY 30
@@ -235,10 +235,10 @@ USEBLACKLIST
 # FORUMURL http://tgstation13.org/phpBB/index.php
 
 ## Wiki address
-# WIKIURL http://www.tgstation13.org/wiki
+ WIKIURL https://panopticon.miraheze.org/wiki/Main_Page
 
 ## Rules address
-# RULESURL http://www.tgstation13.org/wiki/Rules
+RULESURL https://panopticon.miraheze.org/wiki/RULES
 
 ## Github address
 # GITHUBURL https://www.github.com/tgstation/tgstation
@@ -260,7 +260,7 @@ USEBLACKLIST
 # GITHUBREPOID 3234987
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-# BANAPPEALS http://justanotherday.example.com
+BANAPPEALS https://discord.gg/7RvmsDmzNH
 
 ## System command that invokes youtube-dl, used by Play Internet Sound.
 ## You can install youtube-dl with
@@ -282,7 +282,7 @@ USEBLACKLIST
 #POPUP_ADMIN_PM
 
 ## Uncomment to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
-ALLOW_HOLIDAYS
+#ALLOW_HOLIDAYS
 
 ## Uncomment to show the names of the admin sending a pm from IRC instead of showing as a stealthmin.
 #SHOW_IRC_NAME

@@ -1395,6 +1395,9 @@
 	if(QDELETED(src))
 		return
 	if(out)
+		var/matrix/M = matrix()
+		M.Scale(1.8, 1.8)
+		animate(src, time = 30, transform = M, easing = SINE_EASING)
 		animate(src, alpha = 0, time = 30)
 	else
 		alpha = 0

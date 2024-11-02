@@ -444,10 +444,10 @@ GLOBAL_VAR_INIT(mobids, 1)
 		return
 
 	if(is_blind(src))
-		to_chat(src, "<span class='warning'>Something is there but I can't see it!</span>")
+		to_chat(src, "<span class='warning'>I can't see, but i bet there's something.</span>")
 		return
 
-	if(isliving(src))
+	if(isturf(A.loc) && isliving(src) && (src.m_intent != MOVE_INTENT_SNEAK))
 		var/target = "\the [A]"
 		var/message = "[src] looks at"
 		if(A.loc == src)
