@@ -63,6 +63,15 @@
 	specstats_f = list("strength" = 1, "perception" = -1, "intelligence" = 2, "constitution" = 0, "endurance" = 1, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
 
 /datum/species/elf/dark/get_span_language(datum/language/message_language)
 	if(!message_language)

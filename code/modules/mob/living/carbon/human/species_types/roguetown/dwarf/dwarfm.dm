@@ -53,6 +53,17 @@
 	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 2, "endurance" = 1, "speed" = -2, "fortune" = 0)
 	enflamed_icon = "widefire"
 
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
+
+
 /datum/species/dwarf/mountain/check_roundstart_eligible()
 	return FALSE
 

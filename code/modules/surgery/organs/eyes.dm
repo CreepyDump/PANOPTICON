@@ -22,7 +22,9 @@
 	var/sight_flags = 0
 	var/see_in_dark = 8
 	var/tint = 0
-	var/eye_color = "" //set to a hex code to override a mob's eye color
+	var/eye_color = "#FFFFFF"
+	var/heterochromia = FALSE
+	var/second_color = "#FFFFFF"
 	var/eye_icon_state = "eyes"
 	var/old_eye_color = "fff"
 	var/flash_protect = FLASH_PROTECTION_NONE

@@ -266,8 +266,7 @@
 		icon_state = "toiletdown"
 
 /obj/structure/ladder/toiletladder/attackby(obj/item/W, mob/user, params)
-	var/obj/item/kitchen/fork/Fork = W
-	if(Fork)
+	if(istype(W, /obj/item/kitchen/fork))
 		to_chat(user, "<span class='notice'>I start cleaning the toilet...</span>")
 		playsound(get_turf(src), 'sound/panopticon/vilka.ogg', 65, FALSE, FALSE)
 		if(do_after(user, 4 SECONDS, target = src))

@@ -235,7 +235,7 @@ USEBLACKLIST
 # FORUMURL http://tgstation13.org/phpBB/index.php
 
 ## Wiki address
- WIKIURL https://panopticon.miraheze.org/wiki/Main_Page
+WIKIURL https://panopticon.miraheze.org/wiki/Main_Page
 
 ## Rules address
 RULESURL https://panopticon.miraheze.org/wiki/RULES

@@ -287,7 +287,20 @@
 	if (sawn_off)
 		bonus_spread += SAWN_OFF_ACC_PENALTY
 	. = ..()
-
+	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+		var/obj/projectile/BB = CB.BB
+		if(user.client.chargedprog < 100)
+			BB.damage = BB.damage - (BB.damage * (user.client.chargedprog / 100))
+			BB.embedchance = 5
+		else
+			BB.damage = BB.damage
+			BB.embedchance = 100
+			BB.accuracy += 15 //fully aiming bow makes your accuracy better.
+		BB.damage = BB.damage * (user.STAPER / 10)
+		if(user.STAPER > 8)
+			BB.accuracy += (user.STAPER - 8) * 4 //each point of perception above 8 increases standard accuracy by 4.
+			BB.bonus_accuracy += (user.STAPER - 8) //Also, increases bonus accuracy by 1, which cannot fall off due to distance.
+		BB.bonus_accuracy += (user.mind.get_skill_level(/datum/skill/combat/guns) * 5) //+5 accuracy per level in bows. Bonus accuracy will not drop-off.
 ///Installs a new suppressor, assumes that the suppressor is already in the contents of src
 /obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/S)
 	suppressed = S

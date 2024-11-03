@@ -42,6 +42,14 @@
 	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 1, "constitution" = -2, "endurance" = 0, "speed" = -1, "fortune" = 1)
 	enflamed_icon = "widefire"
 
+	customizers = list(
+		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/accessory,
+	)
+	body_markings = list(
+		/datum/body_marking/tonage,
+	)
+
 /datum/species/human/odongh/send_voice(mob/living/carbon/human/H)
 	playsound(get_turf(H), pick('sound/misc/odonghtalk.ogg'), 100, TRUE, -1)
 

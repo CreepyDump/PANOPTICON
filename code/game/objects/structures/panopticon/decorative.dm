@@ -351,14 +351,3 @@
 	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 	density = FALSE
-
-
-/obj/structure/panopticon/gallow
-	name = "Gallow"
-	desc = "You're next."
-	icon_state = "gallow"
-	icon = 'icons/panopticon/obj/64x64.dmi'
-	max_integrity = 310
-	density = TRUE
-	layer = ABOVE_MOB_LAYER
-	plane = GAME_PLANE_UPPER

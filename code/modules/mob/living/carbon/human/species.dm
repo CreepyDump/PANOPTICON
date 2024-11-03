@@ -110,6 +110,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/obj/item/organ/liver/mutantliver
 	var/obj/item/organ/stomach/mutantstomach
+	var/obj/item/organ/guts/mutantguts
 	var/override_float = FALSE
 
 	//Bitflag that controls what in game ways can select this species as a spawnable source
@@ -122,6 +123,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	/// Some species have less than standard gender locks
 	var/gender_swapping = FALSE 
+
+	/// List of bodypart features of this species
+	var/list/bodypart_features
 
 	/// List of descriptor choices this species gets in preferences customization
 	var/list/descriptor_choices = list(
@@ -138,10 +142,38 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		/datum/descriptor_choice/prominent_four,
 	)
 
+	/// List of organ customizers for preferences to customize organs.
+	var/list/customizers
+	/// List of possible body marking sets that the player can choose from in customization
+	var/list/body_marking_sets = list(
+		/datum/body_marking_set/none,
+	)
+	/// List all of body markings that the player can choose from in customization. Body markings from sets get added to here
+	var/list/body_markings
+
+
+
+
 ///////////
 // PROCS //
 ///////////
 
+/datum/species/proc/is_bodypart_feature_slot_allowed(mob/living/carbon/human/human, feature_slot)
+	switch(feature_slot)
+		if(BODYPART_FEATURE_FACIAL_HAIR)
+			return (human.gender == MALE)
+	return TRUE
+
+/datum/species/proc/add_marking_sets_to_markings()
+	if(!body_marking_sets)
+		return
+	if(!body_markings)
+		body_markings = list()
+	var/datum/body_marking_set/bodyset
+	for(var/set_type in body_marking_sets)
+		bodyset = GLOB.body_marking_sets_by_type[set_type]
+		for(var/body_marking_type in bodyset.body_marking_list)
+			body_markings |= body_marking_type
 
 /datum/species/New()
 
@@ -425,6 +457,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/tongue/tongue = C.getorganslot(ORGAN_SLOT_TONGUE)
 	var/obj/item/organ/liver/liver = C.getorganslot(ORGAN_SLOT_LIVER)
 	var/obj/item/organ/stomach/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/guts/guts = C.getorganslot(ORGAN_SLOT_STOMACH_AID)
 	var/obj/item/organ/tail/tail = C.getorganslot(ORGAN_SLOT_TAIL)
 
 	var/should_have_brain = TRUE
@@ -467,13 +500,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	if(stomach && (!should_have_stomach || replace_current))
 		stomach.Remove(C,1)
+		guts.Remove(C,1)
 		QDEL_NULL(stomach)
+		QDEL_NULL(guts)
 	if(should_have_stomach && !stomach)
 		if(mutantstomach)
 			stomach = new mutantstomach()
+			guts = new mutantguts()
 		else
 			stomach = new()
+			guts = new()
 		stomach.Insert(C)
+		guts.Insert(C)
 
 	if(appendix && (!should_have_appendix || replace_current))
 		appendix.Remove(C,1)
@@ -560,7 +598,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.update_body_parts()
 
 
-/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, datum/preferences/pref_load)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
 		C.gender = PLURAL
@@ -627,6 +665,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	soundpack_f = new soundpack_f()
 
 	C.add_movespeed_modifier(MOVESPEED_ID_SPECIES, TRUE, 100, override=TRUE, multiplicative_slowdown=speedmod, movetypes=(~FLYING))
+
+	C.remove_all_bodypart_features()
+	for(var/bodypart_feature_type in bodypart_features)
+		var/datum/bodypart_feature/feature = new bodypart_feature_type()
+		if(!is_bodypart_feature_slot_allowed(C, feature.feature_slot))
+			continue
+		C.add_bodypart_feature(feature)
+	if(pref_load)
+		pref_load.apply_customizers_to_character(C)
+		pref_load.apply_descriptors(C)
 
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 

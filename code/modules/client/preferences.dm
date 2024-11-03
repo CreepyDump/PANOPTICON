@@ -13,8 +13,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/muted = 0
 	var/last_ip
 	var/last_id
-	var/list/descriptor_entries = list()
-	var/list/custom_descriptors = list()
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
 	var/ooccolor = "#c43b23"
@@ -85,7 +83,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/detail_color = "000"
 	var/datum/species/pref_species = new /datum/species/human/northern()	//Mutant race
 	var/datum/patrongods/selected_patron = new /datum/patrongods/astrata()
-	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_markings" = "None")
+	var/list/features = MANDATORY_FEATURE_LIST
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = FALSE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female")
 	var/phobia = "spiders"
@@ -141,6 +139,12 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/crt = FALSE
 
+	var/list/customizer_entries = list()
+	var/list/list/body_markings = list()
+	var/update_mutant_colors = TRUE
+
+	var/list/descriptor_entries = list()
+	var/list/custom_descriptors = list()
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -389,8 +393,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //				dat += "<h3>Eye Color</h3>"
 				dat += "<b>Eye Color: </b><a href='?_src_=prefs;preference=eyes;task=input'>Change </a>"
 //				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EYE_COLOR]'>[(randomise[RANDOM_EYE_COLOR]) ? "Lock" : "Unlock"]</A>"
-				dat += "<br>"
-				dat += "<b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
+				dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 				dat += "<br>"
 				dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 				dat += "<br>"
@@ -404,7 +407,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "<br>"
 				dat += "<b>Face Detail:</b> <a href='?_src_=prefs;preference=detail;task=input'>[detail]</a>"
 				dat += "<br>"
-				dat += "<b>Body Detail:</b> <a href='?_src_=prefs;preference=bdetail;task=input'>[body_detail]</a>"
+				dat += "<b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
 				if(gender == FEMALE)
 					dat += "<br>"
 				dat += "<br></td>"
@@ -1403,8 +1406,15 @@ Slots: [job.spawn_positions]</span>
 				SetChoices(user)
 		return 1
 
+	else if(href_list["preference"] == "markings")
+		ShowMarkings(user)
+		return
 	else if(href_list["preference"] == "descriptors")
 		show_descriptors_ui(user)
+		return
+
+	else if(href_list["preference"] == "customizers")
+		ShowCustomizers(user)
 		return
 
 	else if(href_list["preference"] == "trait")
@@ -1548,6 +1558,16 @@ Slots: [job.spawn_positions]</span>
 		return TRUE
 
 	switch(href_list["task"])
+		if("change_customizer")
+			handle_customizer_topic(user, href_list)
+			ShowChoices(user)
+			ShowCustomizers(user)
+			return
+		if("change_marking")
+			handle_body_markings_topic(user, href_list)
+			ShowChoices(user)
+			ShowMarkings(user)
+			return
 		if("change_descriptor")
 			handle_descriptors_topic(user, href_list)
 			show_descriptors_ui(user)
@@ -2322,7 +2342,8 @@ Slots: [job.spawn_positions]</span>
 	character.age = age
 
 	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	character.gender = gender
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = src)
 
 	if((randomise[RANDOM_NAME] || randomise[RANDOM_NAME_ANTAG] && antagonist) && !character_setup)
 		slot_randomized = TRUE

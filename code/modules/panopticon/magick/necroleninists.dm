@@ -139,3 +139,15 @@ var/leninalive = FALSE
 		sleep(1 SECONDS)
 		for(var/mob/living/carbon/human/M in GLOB.player_list)
 			M.gib(FALSE, FALSE, FALSE)	
+
+/datum/crafting_recipe/roguetown/panopticonalchemy
+	always_availible = TRUE
+	skillcraft = /datum/skill/craft/alchemy
+
+/datum/crafting_recipe/roguetown/panopticonalchemy/bluebaby
+	name = "Blue premature-baby"
+	result = /obj/item/needle/thorn
+	reqs = list(/obj/item/stack/sheet/animalhide/human = 1,
+				/obj/item/natural/bone = 1,
+				/obj/item/organ/brain = 1)
+	craftdiff = 0

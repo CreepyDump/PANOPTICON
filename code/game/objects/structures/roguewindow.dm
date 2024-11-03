@@ -1,4 +1,3 @@
-
 /obj/structure/roguewindow
 	name = "window"
 	desc = ""
@@ -27,18 +26,67 @@
 	update_icon()
 	..()
 
-/obj/structure/roguewindow/update_icon()
-	if(brokenstate)
-		icon_state = "[base_state]br"
-		return
-	icon_state = "[base_state]"
-
 /obj/structure/roguewindow/stained
 	icon_state = "stained-silver"
 	base_state = "stained-silver"
 	opacity = TRUE
 	max_integrity = 100
 	integrity_failure = 0.75
+
+/obj/structure/roguewindow/update_icon()
+	if(brokenstate)
+		icon_state = "[base_state]br"
+	if(climbable)
+		icon_state = "[base_state]op"
+	else
+		icon_state = "[base_state]"
+
+/obj/structure/roguewindow/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover) && (mover.pass_flags & PASSTABLE) && climbable)
+		return 1
+	if(isliving(mover))
+		if(mover.throwing)
+			if(!climbable)
+				take_damage(10)
+			if(brokenstate)
+				return 1
+	else if(isitem(mover))
+		var/obj/item/I = mover
+		if(I.throwforce >= 10)
+			take_damage(10)
+			if(brokenstate)
+				return 1
+		else
+			return !density
+	return ..()
+
+/obj/structure/roguewindow/attackby(obj/item/W, mob/user, params)
+	return ..()
+
+/obj/structure/roguewindow/attack_paw(mob/living/user)
+	attack_hand(user)
+
+/obj/structure/roguewindow/attack_hand(mob/living/user)
+	. = ..()
+	if(.)
+		return
+	if(brokenstate)
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	src.visible_message("<span class='info'>[user] knocks on [src].</span>")
+	add_fingerprint(user)
+	playsound(src, 'sound/misc/glassknock.ogg', 100)
+
+/obj/structure/roguewindow/obj_break(damage_flag)
+	if(!brokenstate)
+		attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
+		new /obj/item/shard (get_turf(src))
+		climbable = TRUE
+		brokenstate = TRUE
+		opacity = FALSE
+	update_icon()
+	..()
+
 
 /obj/structure/roguewindow/openclose
 	icon_state = "woodwindowdir"
@@ -106,49 +154,3 @@
 	climbable = FALSE
 	opacity = TRUE
 	update_icon()
-
-/obj/structure/roguewindow/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover) && (mover.pass_flags & PASSTABLE) && climbable)
-		return 1
-	if(isliving(mover))
-		if(mover.throwing)
-			if(!climbable)
-				take_damage(10)
-			if(brokenstate)
-				return 1
-	else if(isitem(mover))
-		var/obj/item/I = mover
-		if(I.throwforce >= 10)
-			take_damage(10)
-			if(brokenstate)
-				return 1
-		else
-			return !density
-	return ..()
-
-/obj/structure/roguewindow/attackby(obj/item/W, mob/user, params)
-	return ..()
-
-/obj/structure/roguewindow/attack_paw(mob/living/user)
-	attack_hand(user)
-
-/obj/structure/roguewindow/attack_hand(mob/living/user)
-	. = ..()
-	if(.)
-		return
-	if(brokenstate)
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
-	src.visible_message("<span class='info'>[user] knocks on [src].</span>")
-	add_fingerprint(user)
-	playsound(src, 'sound/misc/glassknock.ogg', 100)
-
-/obj/structure/roguewindow/obj_break(damage_flag)
-	if(!brokenstate)
-		attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
-		new /obj/item/shard (get_turf(src))
-		climbable = TRUE
-		brokenstate = TRUE
-		opacity = FALSE
-	update_icon()
-	..()

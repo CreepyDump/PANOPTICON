@@ -27,7 +27,8 @@
 	var/list/permutated = list() // we've passed through these atoms, don't try to hit them again
 	var/p_x = 16
 	var/p_y = 16			// the pixel location of the tile that the player clicked. Default is the center
-
+	var/accuracy = 65 //How likely the project will hit it's intended target area. Decreases over distance moved, increased from perception.
+	var/bonus_accuracy = 0 //bonus accuracy that cannot be affected by range drop off.
 	//Fired processing vars
 	var/fired = FALSE	//Have we been fired yet
 	var/paused = FALSE	//for suspending the projectile midair
@@ -128,6 +129,8 @@
 
 /obj/projectile/proc/Range()
 	range--
+	if(accuracy > 20) //so there is always a somewhat prevalent chance to hit the target, despite distance.
+		accuracy -= 10
 	if(range <= 0 && loc)
 		on_range()
 

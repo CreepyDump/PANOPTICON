@@ -7,7 +7,11 @@
 
 /obj/item/stack/sheet/animalhide/human
 	name = "human skin"
+	icon = 'icons/panopticon/items/materials.dmi'
+	icon_state = "skin"
+	item_state = "skin"
 	desc = ""
+	color = "#fcccb3"
 	singular_name = "human skin piece"
 	novariants = FALSE
 

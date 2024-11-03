@@ -1,0 +1,83 @@
+/obj/item/reagent_containers/food/snacks/bluebaby
+	name = "Blue baby"
+	desc = "What the FUCK is that, and why armies using that as an grenade?!"
+	icon_state = "bluebaby"
+	icon = 'icons/panopticon/items/consumable.dmi'
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	foodtype = RAW | MEAT | TOXIC
+	verb_say = "cries"
+	verb_yell = "cries"
+	obj_flags = CAN_BE_HIT
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+	max_integrity = 25
+	sellprice = 35
+	rotprocess = null
+	fried_type = /obj/item/ashbaby
+	var/active = 0
+	var/det_time = 50
+
+/obj/item/reagent_containers/food/snacks/bluebaby/fire_act(added, maxstacks)
+	playsound(src.loc, 'sound/panopticon/babydeath.ogg', 100)
+	explosion(get_turf(src), 1, 0, 3, 0, flame_range = 2)
+	sleep(1 SECONDS)
+	new /obj/item/ashbaby(src.loc)
+	qdel(src)
+/obj/item/reagent_containers/food/snacks/bluebaby/process()
+	if(HAS_BLOOD_DNA(src))
+		playsound(src.loc, 'sound/panopticon/klara_heal.ogg', 100)
+		qdel(src)
+
+/obj/item/reagent_containers/food/snacks/bluebaby/attack_self(mob/user)
+	if(!active)
+		preprime(user)
+
+/obj/item/reagent_containers/food/snacks/bluebaby/waitiamred
+	name = "Red baby"
+	desc = "Fucking lord, we're doomed."
+	icon_state = "redbaby"
+	icon = 'icons/panopticon/items/consumable.dmi'
+	list_reagents = list(/datum/reagent/consumable/nutriment = 50)
+	verb_say = "ༀ༓༓ཧཧཕཧཧཚ"
+	verb_yell = "卐卐卐卐卐"
+	obj_flags = CAN_BE_HIT
+	eat_effect = null
+	max_integrity = 99999
+	sellprice = 70
+	fried_type = null
+
+/obj/item/reagent_containers/food/snacks/bluebaby/waitiamred/fire_act(added, maxstacks)
+	return
+
+/obj/item/ashbaby
+	name = "Ash baby"
+	desc = ""
+	icon_state = "ashbaby"
+	icon = 'icons/panopticon/items/consumable.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	item_flags = NOBLUDGEON
+	resistance_flags = FIRE_PROOF
+
+/obj/item/reagent_containers/food/snacks/bluebaby/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
+	var/turf/T = get_turf(src)
+	if(user)
+		add_fingerprint(user)
+		if(msg)
+			to_chat(user, "<span class='warning'>I prime [src]! [capitalize(DisplayTimeText(det_time))]!</span>")
+	playsound(src, 'sound/panopticon/babydeath.ogg', volume, TRUE)
+	active = TRUE
+	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+
+/obj/item/reagent_containers/food/snacks/bluebaby/proc/prime()
+	var/turf/T = get_turf(src)
+	set waitfor = 0
+	if(prob(50))
+		explosion(T,1,2,3,0, TRUE, FALSE, 0, FALSE, FALSE, 'sound/misc/FragGrenade.ogg')
+	else
+		visible_message("<span class='warning'>[src] refused to detonate!</span>")
+	qdel(src)
+
+/obj/item/reagent_containers/food/snacks/bluebaby/waitiamred/prime()
+	var/turf/T = get_turf(src)
+	set waitfor = 0
+	if(prob(100))
+		explosion(T,2,3,4,0, TRUE, FALSE, 4, FALSE, FALSE, 'sound/misc/FragGrenade.ogg')

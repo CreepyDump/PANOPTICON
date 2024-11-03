@@ -5,6 +5,7 @@
 	force = 3
 	throwforce = 3
 	w_class = WEIGHT_CLASS_SMALL
+	sellprice = 5
 	icon = 'icons/mob/human_parts.dmi'
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
@@ -87,6 +88,12 @@
 	var/skeletonized = FALSE
 
 	var/fingers = TRUE
+
+	/// Visual markings to be rendered alongside the bodypart
+	var/list/markings
+	var/list/aux_markings
+	/// Visual features of the bodypart, such as hair and accessories
+	var/list/bodypart_features
 
 	resistance_flags = FLAMMABLE
 

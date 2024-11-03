@@ -240,3 +240,11 @@
 	reqs = list(/obj/item/natural/bone = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/bomb
+	name = "bomb"
+	result = /obj/item/bomb
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/reagent_containers/glass/bottle = 1)
+	structurecraft = /obj/structure/fermenting_barrel/beer
+	craftdiff = 0

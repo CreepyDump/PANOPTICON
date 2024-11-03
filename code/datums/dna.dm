@@ -5,7 +5,7 @@
 	var/uni_identity
 	var/blood_type
 	var/datum/species/species = new /datum/species/human //The type of mutant race the player is if applicable (i.e. potato-man)
-	var/list/features = list("FFF") //first value is mutant color
+	var/list/features = MANDATORY_FEATURE_LIST
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
@@ -15,6 +15,9 @@
 	var/mutation_index[DNA_MUTATION_BLOCKS] //List of which mutations this carbon has and its assigned block
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
+	var/list/organ_dna = list()
+	///Body markings of the DNA's owner. This is for storing their original state for re-creating the character. They'll get changed on species mutation
+	var/list/list/body_markings = list()
 
 /datum/dna/New(mob/living/new_holder)
 	if(istype(new_holder))
@@ -43,6 +46,7 @@
 	destination.dna.uni_identity = uni_identity
 	destination.dna.blood_type = blood_type
 	destination.set_species(species.type, icon_update=0)
+	destination.dna.body_markings = deepCopyList(body_markings)
 	destination.dna.features = features.Copy()
 	destination.dna.real_name = real_name
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
@@ -54,6 +58,7 @@
 	new_dna.mutation_index = mutation_index
 	new_dna.uni_identity = uni_identity
 	new_dna.blood_type = blood_type
+	new_dna.body_markings = deepCopyList(body_markings)
 	new_dna.features = features.Copy()
 	new_dna.species = new species.type
 	new_dna.real_name = real_name
@@ -291,7 +296,7 @@
 			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
 
 
-/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, datum/preferences/pref_load = null)
 	if(mrace && has_dna())
 		var/datum/species/new_race
 		if(ispath(mrace))
@@ -304,14 +309,18 @@
 		dna.species.on_species_loss(src, new_race, pref_load)
 		var/datum/species/old_species = dna.species
 		dna.species = new_race
+		//BODYPARTS AND FEATURES
+		if(pref_load)
+			dna.features = pref_load.features.Copy()
+			dna.body_markings = deepCopyList(pref_load.body_markings)
 		dna.species.on_species_gain(src, old_species, pref_load)
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, datum/preferences/pref_load = null)
 	..()
 	if(icon_update)
 		update_body()
 		update_hair()
-		update_body_parts()
+		update_body_parts(TRUE)
 		update_mutations_overlay()// no lizard with human hulk overlay please.
 
 
