@@ -69,8 +69,8 @@
 
 /atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
 	filters = list()
-	if(!istype(src, /obj/effect/turf_decal))
-		if(!istype(src, /obj/structure/panopticon/noshadow))
+	if(!istype(src, /obj/structure/panopticon/noshadow/road))
+		if(!istype(src, /obj/effect/turf_decal))
 			add_filter("AO", 1, GENERAL_AMBIENT_OCCLUSION1)
 			add_filter("AO2", 2, GENERAL_AMBIENT_OCCLUSION2)
 			add_filter("AO3", 3, GENERAL_AMBIENT_OCCLUSION3)

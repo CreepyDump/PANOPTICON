@@ -43,7 +43,7 @@
 		ADD_TRAIT(H, TRAIT_POHYI, TRAIT_GENERIC)
 		H.apply_status_effect(/datum/status_effect/shizophrenia)
 		H.STALUC = rand(1, 20)
-		H.STASTR = rand(5, 12)
+		H.STASTR = rand(5, 15)
 		H.STAINT = rand(1, 10)
 		H.STAPER = rand(8,18)
 		if(prob(10))

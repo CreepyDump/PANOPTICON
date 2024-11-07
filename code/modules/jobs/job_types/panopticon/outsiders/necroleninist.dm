@@ -31,21 +31,23 @@
 	if(H.mind)
 		H.verbs += list(/mob/living/carbon/human/proc/chanting)	
 		H.mind.add_antag_datum(/datum/antagonist/necroleninist)
-		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(3,4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(1,2,3), TRUE)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/blood, pick(1,2,3), TRUE)
-		H.STASTR = rand(8, 13)
+		H.STASTR = rand(7, 18)
+		H.STAINT = rand(7, 12)
+		H.STACON = rand(7, 14)
 		if(prob(25))
 			r_hand = /obj/item/gun/ballistic/rifle/gusyevboltovka
 			beltr = /obj/item/panopticonweapon/knife
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(3,4,5,6), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,2,3,4), TRUE)
 		else
 			r_hand = /obj/item/flashlight/flare/torch/lantern
 			beltl = /obj/item/rogueweapon/sickle
 			beltr = /obj/item/rogueweapon/hammer
 			H.mind.adjust_skillrank(/datum/skill/labor/farming, pick(3,4,5,6), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3,4,5), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3), TRUE)
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/leninist()

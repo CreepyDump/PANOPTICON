@@ -28,9 +28,10 @@
 	belt = /obj/item/storage/belt/rogue/leather/hand
 	beltr =/obj/item/rogueweapon/pick
 	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/labor/butchering, pick(2,3,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mining, pick(1,2,3,4,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, pick(1,2,3,), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, pick(1,2,3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3), TRUE)
 
 /datum/outfit/job/panopticon/nomad
 	shirt = /obj/item/clothing/suit/panopticon/shirt/odongh

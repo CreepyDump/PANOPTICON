@@ -216,6 +216,7 @@
 	icon_state = "pervitin"
 	item_state = "pervitin"
 	w_class = WEIGHT_CLASS_TINY
+	sellprice = 50
 
 /obj/item/storage/pill_bottle/pervitin/PopulateContents()
 	for(var/i in 1 to 5)

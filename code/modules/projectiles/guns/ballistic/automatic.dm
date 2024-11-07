@@ -351,7 +351,7 @@
 	icon_state = "krasnik"
 	item_state = "krasnik"
 	weapon_weight = WEAPON_MEDIUM
-	mag_type = /obj/item/ammo_box/magazine/smgm45
+	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
 	fire_delay = 30
 	wlength = WLENGTH_LONG
 	bigboy = 1

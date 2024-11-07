@@ -158,4 +158,3 @@
 	else
 		playsound(get_turf(C), pick('sound/panopticon/suckmydick.ogg', 'sound/panopticon/unlucky.ogg', 'sound/panopticon/gondon.ogg', 'sound/panopticon/puppy.ogg'), 90, ignore_walls = TRUE, soundping = TRUE)
 	C.visible_message("<span class='necrosis'>\The [C] slurs.</span>")
-	var/turf/source = get_turf(src)

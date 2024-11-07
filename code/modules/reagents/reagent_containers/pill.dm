@@ -265,3 +265,4 @@
 	desc = ""
 	icon_state = "pill9"
 	list_reagents = list(/datum/reagent/medicine/morphine = 10)
+	sellprice = 10

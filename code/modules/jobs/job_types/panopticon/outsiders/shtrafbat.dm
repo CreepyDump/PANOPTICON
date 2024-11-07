@@ -41,7 +41,7 @@
 	if(H.mind)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		H.mind.adjust_skillrank(/datum/skill/combat/guns, pick(1,2,3,4,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3,4,5), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, pick(1,2,3), TRUE)
 	if(prob(50))
 		backpack_contents = list(/obj/item/reagent_containers/glass/bottle/heroinium = 1)
 		neck = /obj/item/clothing/neck/panopticon/govnar

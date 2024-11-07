@@ -33,7 +33,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, pick(1,2,3,4,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/hooch, pick(1,2,3), TRUE)

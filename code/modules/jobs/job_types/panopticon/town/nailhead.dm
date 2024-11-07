@@ -69,28 +69,3 @@
 		to_chat(H, "<span class='cult italic'><b><span class='big'>I AM SICK WITH DISEASE.</span></b></span>")
 		chuma.try_infect(H)
 		mask = /obj/item/clothing/mask/infected
-
-/datum/outfit/job/panopticon/hnysar
-	uniform = null
-	id = null
-	ears = null
-	belt = null
-	back = null
-	shoes = /obj/item/clothing/shoes/panopticon
-	pants = /obj/item/clothing/under/panopticon/civilianpants
-	shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
-	box = null
-	backpack = null
-	satchel  = null
-	duffelbag = null
-
-/mob/living/carbon/human/proc/insultsomeone()
-	set name = "Insult"
-	set category = "Noises"
-	var/mob/living/carbon/C = usr
-	if(C.gender == FEMALE)
-		playsound(get_turf(C), pick('sound/panopticon/sdohni.ogg','sound/panopticon/fuckyou.ogg',), 90, ignore_walls = TRUE, soundping = TRUE)
-	else
-		playsound(get_turf(C), pick('sound/panopticon/suckmydick.ogg', 'sound/panopticon/unlucky.ogg', 'sound/panopticon/gondon.ogg', 'sound/panopticon/puppy.ogg'), 90, ignore_walls = TRUE, soundping = TRUE)
-	C.visible_message("<span class='necrosis'>\The [C] slurs.</span>")
-	var/turf/source = get_turf(src)

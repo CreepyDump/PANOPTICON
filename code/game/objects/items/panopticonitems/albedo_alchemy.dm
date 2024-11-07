@@ -58,7 +58,6 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/reagent_containers/food/snacks/bluebaby/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
-	var/turf/T = get_turf(src)
 	if(user)
 		add_fingerprint(user)
 		if(msg)
