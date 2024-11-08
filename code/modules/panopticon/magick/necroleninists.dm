@@ -146,7 +146,7 @@ var/leninalive = FALSE
 
 /datum/crafting_recipe/roguetown/panopticonalchemy/bluebaby
 	name = "Blue premature-baby"
-	result = /obj/item/needle/thorn
+	result = /obj/item/reagent_containers/food/snacks/bluebaby
 	reqs = list(/obj/item/stack/sheet/animalhide/human = 1,
 				/obj/item/natural/bone = 1,
 				/obj/item/organ/brain = 1)
