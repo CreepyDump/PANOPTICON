@@ -55,7 +55,7 @@
 	max_integrity = 9999999
 
 /obj/structure/panopticon/trader/proc/speak(message)
-	say()
+	say(message)
 	playsound(get_turf(src), 'sound/panopticon/dealer.ogg', 100 , FALSE, FALSE)
 
 /obj/structure/panopticon/trader/attack_hand(mob/user)
