@@ -122,6 +122,8 @@
 					face_atom(C)
 					src.visible_message("<span class='danger'>[src] starts to rip apart [C]!</span>")
 					if(do_after(src,100, target = L))
+						if(istype(src, /mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant/brut))
+							playsound(src, 'sound/panopticon/healthy/death.ogg', 100, TRUE, -1)
 						var/obj/item/bodypart/limb
 						var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 						for(var/zone in limb_list)

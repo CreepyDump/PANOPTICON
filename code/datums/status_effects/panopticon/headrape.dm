@@ -6,6 +6,7 @@
 /datum/status_effect/incapacitating/headrape
 	id = "head_rape"
 	status_type = STATUS_EFFECT_REFRESH
+	processing_speed = STATUS_EFFECT_NORMAL_PROCESS
 	tick_interval = 4 SECONDS
 	/// Alpha of the first composite layer
 	var/starting_alpha = 64
@@ -77,6 +78,7 @@
 	update_filters(4 SECONDS)
 
 /datum/status_effect/incapacitating/headrape/proc/end_animation()
+	var/atom/movable/screen/plane_master/rendering_plate/old_filter_plate = filter_plate
 	var/list/old_filters_handled = list()
 	var/kill_color = rgb(255, 255, 255, 0)
 	for(var/filter_name in filters_handled)
@@ -87,6 +89,10 @@
 	update_filters(4 SECONDS)
 	//Sleep call ensures the ending looks smooth no matter what
 	sleep(4 SECONDS)
+	//KILL the filters now
+	if(!QDELETED(old_filter_plate))
+		for(var/filter_name in old_filters_handled)
+			old_filter_plate.remove_filter(filter_name)
 
 /datum/status_effect/incapacitating/headrape/proc/update_filters(time = 4 SECONDS)
 	for(var/filter_name in filters_handled)

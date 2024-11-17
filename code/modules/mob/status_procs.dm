@@ -120,7 +120,6 @@
 		src.emote("scream")
 
 //HEAD RAPE
-/*
 /mob/living/proc/IsHeadRape()
 	return has_status_effect(STATUS_EFFECT_HEADRAPE)
 
@@ -175,4 +174,3 @@
 	else if(amount > 0)
 		I = apply_status_effect(STATUS_EFFECT_HEADRAPE, CEILING(amount, 4 SECONDS), updating)
 	return I
-*/

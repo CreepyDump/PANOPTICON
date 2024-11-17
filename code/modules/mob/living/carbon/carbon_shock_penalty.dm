@@ -32,7 +32,7 @@
 	switch(body_zone)
 		if(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE)
 			drop_all_held_items()
-//			HeadRape(8 SECONDS)
+			HeadRape(8 SECONDS)
 			flash_pain_major()
 			//rev deconversion through trauma
 			var/datum/antagonist/rev/rev = mind?.has_antag_datum(/datum/antagonist/rev)

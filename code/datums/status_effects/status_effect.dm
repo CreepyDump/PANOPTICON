@@ -13,6 +13,8 @@
 	var/alert_type = /atom/movable/screen/alert/status_effect //the alert thrown by the status effect, contains name and description
 	var/atom/movable/screen/alert/status_effect/linked_alert = null //the alert itself, if it exists
 	var/list/effectedstats = list()
+	///Processing speed - used to define if the status effect should be using SSfastprocess or SSprocessing
+	var/processing_speed = STATUS_EFFECT_FAST_PROCESS
 
 /datum/status_effect/New(list/arguments)
 	on_creation(arglist(arguments))
@@ -33,12 +35,22 @@
 		var/atom/movable/screen/alert/status_effect/A = owner.throw_alert(id, alert_type)
 		A.attached_effect = src //so the alert can reference us, if it needs to
 		linked_alert = A //so we can reference the alert, if we need to
-	START_PROCESSING(SSfastprocess, src)
+	if(duration > 0 || initial(tick_interval) > 0) //don't process if we don't care
+		switch(processing_speed)
+			if(STATUS_EFFECT_FAST_PROCESS)
+				START_PROCESSING(SSfastprocess, src)
+			if (STATUS_EFFECT_NORMAL_PROCESS)
+				START_PROCESSING(SSprocessing, src)
 	return TRUE
 
 /datum/status_effect/Destroy()
-	STOP_PROCESSING(SSfastprocess, src)
+	switch(processing_speed)
+		if(STATUS_EFFECT_FAST_PROCESS)
+			STOP_PROCESSING(SSfastprocess, src)
+		if (STATUS_EFFECT_NORMAL_PROCESS)
+			STOP_PROCESSING(SSprocessing, src)
 	if(owner)
+		linked_alert = null
 		owner.clear_alert(id)
 		LAZYREMOVE(owner.status_effects, src)
 		on_remove()

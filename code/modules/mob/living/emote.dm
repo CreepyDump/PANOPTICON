@@ -873,8 +873,12 @@
 /mob/living/carbon/human/verb/emote_rage()
 	set name = "Rage"
 	set category = "Noises"
-
+	
 	emote("rage", intentional = TRUE)
+	if(src.job == "Slug")
+		for(var/mob/M in range(7,src))
+			shake_camera(M, 5, 2)
+			HeadRape(5 SECONDS)
 
 /datum/emote/living/attnwhistle
 	key = "attnwhistle"

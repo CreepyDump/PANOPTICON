@@ -130,8 +130,6 @@
 
 
 /datum/looping_sound/tinnitus
-	mid_sounds = list('sound/misc/loops/earbleeding.ogg')
-	mid_length = 12 SECONDS
+	mid_sounds = list('sound/panopticon/healthy/earfucker.ogg')
+	mid_length = 12
 	volume = 100
-	extra_range = 0
-	direct = TRUE

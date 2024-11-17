@@ -62,7 +62,6 @@
 		for(var/mob/living/V in victimsa)
 			V.mob_timers["ambushlast"] = world.time
 		var/spawnedtype = pickweight(AR.ambush_mobs)
-		var/mustype = 1
 		for(var/i in 1 to CLAMP(victims*1,2,3))
 			var/spawnloc = pick(possible_targets)
 			if(spawnloc)
@@ -77,11 +76,7 @@
 					H.del_on_deaggro = 44 SECONDS
 					H.last_aggro_loss = world.time
 					H.retaliate(src)
-					mustype = 2
-		if(mustype == 1)
-			playsound_local(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
-		else
-			playsound_local(src, pick('sound/misc/jumphumans (1).ogg','sound/misc/jumphumans (2).ogg','sound/misc/jumphumans (3).ogg'), 100)
+		playsound_local(src, pick('sound/panopticon/appear.ogg'), 100)
 		shake_camera(src, 2, 2)
 		if(iscarbon(src))
 			var/mob/living/carbon/C = src
