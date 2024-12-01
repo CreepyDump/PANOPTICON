@@ -978,7 +978,7 @@
 	name = "damage zone"
 	icon_state = "m-zone_sel"
 	screen_loc = rogueui_targetdoll
-	var/overlay_icon = 'icons/mob/roguehud96.dmi'
+	var/overlay_icon = 'icons/mob/roguehud64.dmi'
 	var/static/list/hover_overlays_cache = list()
 	var/hovering
 	var/arrowheight = 0
@@ -1027,7 +1027,7 @@
 	vis_contents += overlay_object
 
 /obj/effect/overlay/zone_sel
-	icon = 'icons/mob/roguehud96.dmi'
+	icon = 'icons/mob/roguehud64.dmi'
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	alpha = 128
 	anchored = TRUE
@@ -1042,87 +1042,81 @@
 /atom/movable/screen/zone_sel/proc/get_zone_at(icon_x, icon_y, gender = MALE)
 	if(gender == MALE)
 		switch(icon_y)
-			if(1 to 3)
+			if(1 to 6)
 				switch(icon_x)
-					if(5 to 7)
+					if(1 to 2)
 						return BODY_ZONE_PRECISE_R_INHAND
-					if(17 to 28)
+					if(22 to 34)
 						return BODY_ZONE_PRECISE_R_FOOT
-					if(38 to 49)
+					if(60 to 72)
 						return BODY_ZONE_PRECISE_L_FOOT
-					if(59 to 61)
+					if(95 to 96)
 						return BODY_ZONE_PRECISE_L_INHAND
-			if(4 to 5)
+			if(7 to 9)
 				switch(icon_x)
-					if(5 to 7)
+					if(1 to 2)
 						return BODY_ZONE_PRECISE_R_INHAND
-					if(17 to 28)
+					if(22 to 34)
 						return BODY_ZONE_PRECISE_R_FOOT
-					if(38 to 49)
+					if(60 to 72)
 						return BODY_ZONE_PRECISE_L_FOOT
-					if(59 to 61)
+					if(95 to 96)
 						return BODY_ZONE_PRECISE_L_INHAND
-			if(6 to 15)
+			if(10 to 32)
 				switch(icon_x)
-					if(5 to 7)
+					if(1 to 2)
 						return BODY_ZONE_PRECISE_R_INHAND
-					if(20 to 29)
+					if(29 to 44)
 						return BODY_ZONE_R_LEG
-					if(37 to 46)
+					if(50 to 65)
 						return BODY_ZONE_L_LEG
-					if(59 to 61)
+					if(95 to 96)
 						return BODY_ZONE_PRECISE_L_INHAND
-			if(16 to 21)
+			if(33 to 45)
 				switch(icon_x)
-					if(5 to 7)
+					if(1 to 2)
 						return BODY_ZONE_PRECISE_R_INHAND
-					if(12 to 18)
-						return BODY_ZONE_PRECISE_R_HAND
-					if(20 to 29)
+					if(29 to 44)
 						return BODY_ZONE_R_LEG
-					if(37 to 46)
+					if(50 to 65)
 						return BODY_ZONE_L_LEG
-					if(48 to 54)
-						return BODY_ZONE_PRECISE_L_HAND
-					if(59 to 61)
+					if(95 to 96)
 						return BODY_ZONE_PRECISE_L_INHAND
-			if(22 to 24)
-				switch(icon_x)
-					if(5 to 7)
-						return BODY_ZONE_PRECISE_R_INHAND
-					if(12 to 18)
-						return BODY_ZONE_PRECISE_R_HAND
-					if(20 to 29)
-						return BODY_ZONE_R_LEG
-					if(30 to 36)
+					if(44 to 50)
 						return BODY_ZONE_PRECISE_GROIN
-					if(37 to 46)
-						return BODY_ZONE_L_LEG
-					if(48 to 54)
-						return BODY_ZONE_PRECISE_L_HAND
-					if(59 to 61)
-						return BODY_ZONE_PRECISE_L_INHAND
-			if(25 to 29)
+			if(46 to 54)
 				switch(icon_x)
-					if(16 to 22)
-						return BODY_ZONE_R_ARM
-					if(27 to 39)
+					if(1 to 2)
+						return BODY_ZONE_PRECISE_R_INHAND
+					if(12 to 18)
+						return BODY_ZONE_PRECISE_R_HAND
+					if(38 to 56)
 						return BODY_ZONE_PRECISE_STOMACH
-					if(44 to 50)
-						return BODY_ZONE_L_ARM
-			if(30 to 38)
+			if(54 to 61)
 				switch(icon_x)
-					if(16 to 22)
-						return BODY_ZONE_R_ARM
-					if(24 to 42)
+					if(37 to 57)
 						return BODY_ZONE_CHEST
-					if(44 to 50)
-						return BODY_ZONE_L_ARM
-			if(39)
+					if(icon_y in 55 to 63)
+						if(icon_x in 9 to 19)
+							return BODY_ZONE_PRECISE_R_HAND
+						if(icon_x in 77 to 86)
+							return BODY_ZONE_PRECISE_L_HAND
+					if(icon_y in 55 to 72)
+						if(icon_x in 19 to 37)
+							return BODY_ZONE_R_ARM
+						if(icon_x in 57 to 76)
+							return BODY_ZONE_L_ARM
+					return BODY_ZONE_CHEST
+			if(73 to 77)
 				switch(icon_x)
-					if(29 to 37)
-						return BODY_ZONE_PRECISE_NECK
-			if(40 to 46)
+					if(39 to 56)
+						if(icon_y in 73 to 77)
+							return BODY_ZONE_PRECISE_NECK
+						if(icon_y in 75 to 76)
+							if(icon_x in 45 to 50)
+								return BODY_ZONE_PRECISE_SKULL
+						BODY_ZONE_PRECISE_NECK
+			if(77 to 89)
 				switch(icon_x)
 					if(27 to 39)
 						if(icon_y in 40 to 41)
@@ -1135,7 +1129,7 @@
 							if(icon_x in 32 to 34)
 								return BODY_ZONE_PRECISE_NOSE
 						return BODY_ZONE_HEAD
-			if(47 to 50)
+			if(77 to 89)
 				switch(icon_x)
 					if(24 to 26)
 						return BODY_ZONE_PRECISE_EARS
@@ -1188,7 +1182,7 @@
 			if(BP.body_zone in H.get_missing_limbs())
 				continue
 			if(HAS_TRAIT(H, TRAIT_NOPAIN))
-				var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]")
+				var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]")
 				limby.color = "#78a8ba"
 				. += limby
 				continue
@@ -1196,14 +1190,14 @@
 			if(damage > BP.max_damage)
 				damage = BP.max_damage
 			var/comparison = (damage/BP.max_damage)
-			. += mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]") //apply healthy limb
-			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]w-[BP.body_zone]") //apply wounded overlay
+			. += mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]") //apply healthy limb
+			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]w-[BP.body_zone]") //apply wounded overlay
 			limby.alpha = (comparison*255)*2
 			. += limby
 			if(BP.get_bleed_rate())
-				. += mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]-bleed") //apply healthy limb
+				. += mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]-bleed") //apply healthy limb
 		for(var/X in H.get_missing_limbs())
-			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]-[X]") //missing limb
+			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]-[X]") //missing limb
 			limby.color = "#2f002f"
 			. += limby
 

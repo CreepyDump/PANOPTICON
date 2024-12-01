@@ -181,7 +181,7 @@
 #define rogueui_advsetup "CENTER-1,CENTER-1:16"
 #define rogueui_craft "WEST-4,CENTER+3"
 #define rogueui_skills "WEST-4,CENTER+3"
-#define rogueui_targetdoll "EAST-1, NORTH-13"
+#define rogueui_targetdoll "WEST-3:-25, CENTER+4:9"
 #define rogueui_quad "WEST-4:-16,SOUTH+7"
 #define rogueui_give "WEST-1:-16,SOUTH+7"
 #define rogueui_aim "WEST-4:9,CENTER+4"
