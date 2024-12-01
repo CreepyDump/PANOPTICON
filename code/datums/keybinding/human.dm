@@ -2,7 +2,9 @@
 	category = CATEGORY_HUMAN
 	weight = WEIGHT_MOB
 
-/*
+/datum/keybinding/human/can_use(client/user)
+	return ishuman(user.mob)
+
 /datum/keybinding/human/quick_equip
 	hotkey_keys = list("E")
 	name = "quick_equip"
@@ -35,7 +37,6 @@
 	var/mob/living/carbon/human/H = user.mob
 	H.smart_equipbag()
 	return TRUE
-*/
 
 /datum/keybinding/human/fixeye
 	hotkey_keys = list("F")

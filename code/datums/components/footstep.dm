@@ -11,6 +11,7 @@
 	///This can be a list OR a soundfile OR null. Determines whatever sound gets played.
 	var/footstep_sounds
 	var/last_sound
+	var/turf_footstep
 
 /datum/component/footstep/Initialize(footstep_type_ = FOOTSTEP_MOB_BAREFOOT, volume_ = 0.5, e_range_ = -1)
 	if(!isliving(parent))
@@ -59,7 +60,7 @@
 	if(steps >= 6)
 		steps = 0
 
-	if(steps % 2)
+	if(steps % 3)	// How many tiles the mob must travel before firing one footstep sound. Raised from 2 to see it if helps with the looping sound bug.
 		return
 
 	if(steps != 0 && !LM.has_gravity(T)) // don't need to step as often when you hop around
@@ -73,7 +74,6 @@
 	if(isfile(footstep_sounds) || istext(footstep_sounds))
 		playsound(T, footstep_sounds, volume)
 		return
-	var/turf_footstep
 	switch(footstep_type)
 		if(FOOTSTEP_MOB_CLAW)
 			turf_footstep = T.clawfootstep

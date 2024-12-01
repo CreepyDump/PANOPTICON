@@ -112,13 +112,15 @@
 	var/text_to_show
 	if(!mind)
 		return
-	switch(pick(1,2,3))
+	switch(pick(1,2,3,4))
 		if(1)
 			text_to_show = "The people who have really\nmade history are the martyrs."
 		if(2)
 			text_to_show = "I feel like my head is a great cliff.\nAnd every, every day quietly\nthe soil is shattering."
 		if(3)
 			text_to_show = "Our mankind\nwas a mistake."
+		if(4)
+			text_to_show = "Some parts of this server may be considered Homer Simpson."
 	if(!text_to_show)
 		return
 	if(text_to_show in mind.areas_entered)
@@ -170,16 +172,6 @@
 			else
 				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
 		if(H?.ckey == "uhboer")
-			if(H.gender == MALE)
-				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
-			else
-				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
-		if(H?.ckey == "moonMagick")
-			if(H.gender == MALE)
-				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
-			else
-				H.put_in_hands(new /obj/item/clothing/mask/carnaval/female(H.drop_location()), FALSE)
-		if(H?.ckey == "user21466654")
 			if(H.gender == MALE)
 				H.put_in_hands(new /obj/item/clothing/mask/carnaval(H.drop_location()), FALSE)
 			else

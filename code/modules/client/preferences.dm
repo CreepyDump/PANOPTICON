@@ -407,7 +407,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "<br>"
 				dat += "<b>Face Detail:</b> <a href='?_src_=prefs;preference=detail;task=input'>[detail]</a>"
 				dat += "<br>"
-				dat += "<b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
+//				dat += "<b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
 				if(gender == FEMALE)
 					dat += "<br>"
 				dat += "<br></td>"

@@ -79,6 +79,9 @@
 	if(paralysis)
 		ADD_TRAIT(affected, TRAIT_NO_BITE, "[type]")
 		ADD_TRAIT(affected, TRAIT_PARALYSIS, "[type]")
+		ADD_TRAIT(affected, TRAIT_GARGLE_SPEECH, "[type]")
+		ADD_TRAIT(affected, TRAIT_DEAF, "[type]")
+		affected.become_nearsighted()
 		if(iscarbon(affected))
 			var/mob/living/carbon/carbon_affected = affected
 			carbon_affected.update_disabled_bodyparts()
@@ -91,6 +94,9 @@
 	if(paralysis)
 		REMOVE_TRAIT(affected, TRAIT_NO_BITE, "[type]")
 		REMOVE_TRAIT(affected, TRAIT_PARALYSIS, "[type]")
+		REMOVE_TRAIT(affected, TRAIT_GARGLE_SPEECH, "[type]")
+		REMOVE_TRAIT(affected, TRAIT_DEAF, "[type]")
+		affected.cure_nearsighted()
 		if(iscarbon(affected))
 			var/mob/living/carbon/carbon_affected = affected
 			carbon_affected.update_disabled_bodyparts()
@@ -110,6 +116,10 @@
 	paralysis = TRUE
 	mortal = FALSE
 	dents_brain = TRUE
+
+/datum/wound/fracture/head/brain/on_life()
+	. = ..()
+	owner.adjustOxyLoss(2.5)
 
 /datum/wound/fracture/head/eyes
 	name = "orbital fracture"
@@ -197,6 +207,10 @@
 	if(iscarbon(affected))
 		var/mob/living/carbon/carbon_affected = affected
 		carbon_affected.update_disabled_bodyparts()
+
+/datum/wound/fracture/neck/on_life()
+	. = ..()
+	owner.adjustOxyLoss(2.5)
 
 /datum/wound/fracture/chest
 	name = "rib fracture"

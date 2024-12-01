@@ -6,8 +6,6 @@
 	#ifdef ALL_MAPS
 		#include "map_files\panopticon\mirkwood.dmm"
 		#include "map_files\Rogueworld\Rogueworld.dmm"
-		#include "map_files\panopticon\gurmani.dmm"
-
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
 		#endif

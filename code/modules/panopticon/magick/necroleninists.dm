@@ -41,7 +41,7 @@ var/leninalive = FALSE
 
 /obj/effect/proc_holder/spell/targeted/touch/necroleninistrevive
 	name = "Revive"
-	overlay_state = "Revive"
+	overlay_state = "revive"
 	desc = ""
 	hand_path = /obj/item/melee/touch_attack/revive
 	charge_max = 600

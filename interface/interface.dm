@@ -1,5 +1,5 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
-/client/verb/wiki(query as text)
+/mob/dead/new_player/verb/wiki(query as text)
 	set name = "Wiki"
 	set desc = ""
 	set category = "Memory"
@@ -25,7 +25,7 @@
 		to_chat(src, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
 	return
 
-/client/verb/rules()
+/mob/dead/new_player/verb/rules()
 	set name = "Rules"
 	set desc = ""
 	set category = "Memory"

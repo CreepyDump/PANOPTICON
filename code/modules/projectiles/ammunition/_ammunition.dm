@@ -80,6 +80,7 @@
 /obj/item/ammo_casing/proc/bounce_away(still_warm = FALSE, bounce_delay = 3)
 	if(!heavy_metal)
 		return
+	sound_hint()
 	update_icon()
 	undo_messy()
 	do_messy()

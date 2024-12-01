@@ -106,8 +106,8 @@
 				qdel(src)
 
 /obj/structure/panopticon/panopticontree
-	name = "Strange tree"
-	desc = "Looks bizzare!"
+	name = "A tree"
+	desc = "How did they remained here? No one knows."
 	icon = 'icons/panopticon/obj/longass_trees.dmi'
 	icon_state = "panoptree_1"
 	density = 1
@@ -195,7 +195,7 @@
 	..()
 
 /obj/structure/flora/panopticontree/log
-	name = "Strange log"
+	name = "Log"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 	icon_state = "brevno"
 	opacity = 0

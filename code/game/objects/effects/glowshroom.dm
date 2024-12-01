@@ -1,8 +1,8 @@
 //separate dm since hydro is getting bloated already
 
 /obj/structure/glowshroom
-	name = "kneestingers"
-	desc = ""
+	name = "glowberries"
+	desc = "That's a glowberries! They say you should not eat them. Or they're lying?"
 	anchored = TRUE
 	opacity = 0
 	density = FALSE
@@ -10,6 +10,7 @@
 	icon_state = "glowshroom1" //replaced in New
 	layer = ABOVE_NORMAL_TURF_LAYER
 	max_integrity = 30
+	attacked_sound = 'sound/misc/shelest.ogg'
 	blade_dulling = DULLING_CUT
 	resistance_flags = FLAMMABLE
 	var/delay = 1200
@@ -19,7 +20,8 @@
 	var/obj/item/seeds/myseed = /obj/item/seeds/glowshroom
 	var/static/list/blacklisted_glowshroom_turfs = typecacheof(list(
 	/turf/open/lava,
-	/turf/open/floor/plating/beach/water))
+	/turf/open/floor/plating/beach/water,
+	/turf/open/floor/panopticon/darkgrass)) //they should spread only in caves
 
 /obj/structure/glowshroom/fire_act(added, maxstacks)
 	visible_message("<span class='warning'>[src] catches fire!</span>")
@@ -29,14 +31,14 @@
 
 /obj/structure/glowshroom/CanPass(atom/movable/mover, turf/target)
 	if(isliving(mover) && mover.z == z)
-//		var/throwdir = get_dir(src, mover)
+		var/throwdir = get_dir(src, mover)
 		var/mob/living/L = mover
 		if(L.electrocute_act(30, src))
 			L.consider_ambush()
 			if(L.throwing)
 				L.throwing.finalize(FALSE)
-//			if(mover.loc != loc && L.stat == CONSCIOUS)
-//				L.throw_at(get_step(L, throwdir), 1, 1, L, spin = FALSE)
+			if(mover.loc != loc && L.stat == CONSCIOUS)
+				L.throw_at(get_step(L, throwdir), 1, 1, L, spin = FALSE)
 			return FALSE
 	. = ..()
 
@@ -106,14 +108,14 @@
 		G = new G
 		myseed.genes += G
 	set_light(G.glow_range(myseed), G.glow_power(myseed), G.glow_color)
-//	setDir(CalcDir())
+	setDir(CalcDir())
 
 	icon_state = "glowshroom[rand(1,3)]"
 
 	pixel_x = rand(-4, 4)
 	pixel_y = rand(0,5)
 
-/*
+
 	var/base_icon_state = initial(icon_state)
 	if(!floor)
 		switch(dir) //offset to make it be on the wall rather than on the floor
@@ -128,8 +130,8 @@
 		icon_state = "[base_icon_state][rand(1,3)]"
 	else //if on the floor, glowshroom on-floor sprite
 		icon_state = base_icon_state
-*/
-//	addtimer(CALLBACK(src, .proc/Spread), delay)
+
+	addtimer(CALLBACK(src, .proc/Spread), delay)
 
 /obj/structure/glowshroom/proc/Spread()
 	var/turf/ownturf = get_turf(src)

@@ -799,6 +799,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(hit_atom && !QDELETED(hit_atom))
+		sound_hint()
 		undo_messy()
 		do_messy(duration = 4)
 		SEND_SIGNAL(src, COMSIG_MOVABLE_IMPACT, hit_atom, throwingdatum)
@@ -851,6 +852,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/onZImpact(turf/T, levels)
 	. = ..()
+	sound_hint()
 	undo_messy()
 	do_messy(duration = 4)
 

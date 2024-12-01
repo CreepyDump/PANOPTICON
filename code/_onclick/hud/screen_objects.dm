@@ -978,7 +978,7 @@
 	name = "damage zone"
 	icon_state = "m-zone_sel"
 	screen_loc = rogueui_targetdoll
-	var/overlay_icon = 'icons/mob/roguehud64.dmi'
+	var/overlay_icon = 'icons/mob/roguehud96.dmi'
 	var/static/list/hover_overlays_cache = list()
 	var/hovering
 	var/arrowheight = 0
@@ -1027,7 +1027,7 @@
 	vis_contents += overlay_object
 
 /obj/effect/overlay/zone_sel
-	icon = 'icons/mob/roguehud64.dmi'
+	icon = 'icons/mob/roguehud96.dmi'
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	alpha = 128
 	anchored = TRUE
@@ -1188,7 +1188,7 @@
 			if(BP.body_zone in H.get_missing_limbs())
 				continue
 			if(HAS_TRAIT(H, TRAIT_NOPAIN))
-				var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]")
+				var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]")
 				limby.color = "#78a8ba"
 				. += limby
 				continue
@@ -1196,14 +1196,14 @@
 			if(damage > BP.max_damage)
 				damage = BP.max_damage
 			var/comparison = (damage/BP.max_damage)
-			. += mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]") //apply healthy limb
-			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]w-[BP.body_zone]") //apply wounded overlay
+			. += mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]") //apply healthy limb
+			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]w-[BP.body_zone]") //apply wounded overlay
 			limby.alpha = (comparison*255)*2
 			. += limby
 			if(BP.get_bleed_rate())
-				. += mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]-bleed") //apply healthy limb
+				. += mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]-[BP.body_zone]-bleed") //apply healthy limb
 		for(var/X in H.get_missing_limbs())
-			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud64.dmi', "[H.gender == "male" ? "m" : "m"]-[X]") //missing limb
+			var/mutable_appearance/limby = mutable_appearance('icons/mob/roguehud96.dmi', "[H.gender == "male" ? "m" : "m"]-[X]") //missing limb
 			limby.color = "#2f002f"
 			. += limby
 

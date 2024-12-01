@@ -15,7 +15,6 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_VIRUSIMMUNE,TRAIT_NOHUNGER)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
-	sexes = 0
 	possible_ages = list(AGE_ADULT, AGE_OLD)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE

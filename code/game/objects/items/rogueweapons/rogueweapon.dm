@@ -67,7 +67,7 @@
 		else
 			return 0
 
-	if(nuforce < 10)
+	if(nuforce < 18)
 		return 0
 	
 	var/probability = nuforce * (total_dam / affecting.max_damage)

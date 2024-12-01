@@ -16,29 +16,25 @@
 	if(motd)
 		to_chat(src, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
 
-	if(GLOB.rogue_round_id)
-		to_chat(src, "<span class='info'>ROUND ID: [GLOB.rogue_round_id]</span>")
+//	if(GLOB.rogue_round_id)
+//		to_chat(src, "<span class='info'>ROUND ID: [GLOB.rogue_round_id]</span>")
 
 	if(client)
-		if(client.is_new_player())
-			to_chat(src, "<span class='userdanger'>Due to an invasion of goblins trying to play ROGUETOWN, you need to register your discord account or support us on patreon to join.</span>")
-			to_chat(src, "<span class='info'>We dislike discord too, but it's necessary. To register your discord or patreon, please click the 'Register' tab in the top right of the window, and then choose one of the options.</span>")
-		else
-			var/shown_patreon_level = client.patreonlevel()
-			if(!shown_patreon_level)
-				shown_patreon_level = "None"
-			switch(shown_patreon_level)
-				if(1)
-					shown_patreon_level = "Silver"
-				if(2)
-					shown_patreon_level = "Gold"
-				if(3)
-					shown_patreon_level = "Mythril"
-				if(4)
-					shown_patreon_level = "Merchant"
-				if(5)
-					shown_patreon_level = "Lord"
-			to_chat(src, "<span class='info'>Donator Level: [shown_patreon_level]</span>")
+		var/shown_patreon_level = client.patreonlevel()
+		if(!shown_patreon_level)
+			shown_patreon_level = "RETARDED CREATURE"
+		switch(shown_patreon_level)
+			if(1)
+				shown_patreon_level = "SLAVE FOR GODS"
+			if(2)
+				shown_patreon_level = "OUTGRAVER"
+			if(3)
+				shown_patreon_level = "GOURMET CLUB"
+			if(4)
+				shown_patreon_level = "NO ONE IN PARTICULAR"
+			if(5)
+				shown_patreon_level = "..."
+		to_chat(src, "<span class='his_grace'>You're for us an.. |[shown_patreon_level]|</span>")
 
 	if(CONFIG_GET(flag/usewhitelist))
 		if(!client.whitelisted())
@@ -65,10 +61,10 @@
 		var/tl = SSticker.GetTimeLeft()
 		var/postfix
 		if(tl > 0)
-			postfix = "in about [DisplayTimeText(tl)]"
+			postfix = "in [DisplayTimeText(tl)]"
 		else
 			postfix = "soon"
-		to_chat(src, "The game will start [postfix].")
+		to_chat(src, "Journey begins [postfix].")
 /*
 	if(!client.patreonlevel())
 		verbs += /mob/dead/new_player/proc/register_patreon

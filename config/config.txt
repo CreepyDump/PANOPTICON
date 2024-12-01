@@ -76,6 +76,9 @@ ADMIN_LEGACY_SYSTEM
 ## log OOC channel
 LOG_OOC
 
+## log LOOC channel
+LOG_LOOC
+
 ## log client Say
 LOG_SAY
 

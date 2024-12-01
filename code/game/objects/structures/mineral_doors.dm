@@ -78,6 +78,7 @@
 			user.visible_message("<span class='warning'>[user] kicks open [src]!</span>", \
 				"<span class='notice'>I kick open [src]!</span>")
 			force_open()
+	sound_hint()
 
 /obj/structure/mineral_door/proc/force_open()
 	isSwitchingStates = TRUE
