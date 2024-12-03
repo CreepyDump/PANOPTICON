@@ -135,6 +135,16 @@
 	stressies.screen_loc = rogueui_stress
 	static_inventory += stressies
 
+	drinkshit = new /atom/movable/screen/thirst
+	drinkshit.hud = src
+	drinkshit.screen_loc = panopticon_thirst
+	static_inventory += drinkshit
+
+	eatshit = new /atom/movable/screen/food
+	eatshit.hud = src
+	eatshit.screen_loc = panopticon_nutriment
+	static_inventory += eatshit
+
 	rmb_intent = new /atom/movable/screen/rmbintent(owner.client)
 	rmb_intent.hud = src
 	rmb_intent.screen_loc = rogueui_rmbintents
@@ -441,7 +451,7 @@
 	infodisplay += healthdoll
 */
 	zone_select =  new /atom/movable/screen/zone_sel()
-	zone_select.icon = 'icons/mob/roguehud64.dmi'
+	zone_select.icon = 'icons/mob/roguehud96.dmi'
 	zone_select.screen_loc = rogueui_targetdoll
 	zone_select.update_icon()
 	zone_select.hud = src

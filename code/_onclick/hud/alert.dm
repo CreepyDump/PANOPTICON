@@ -624,14 +624,14 @@ so as to remain in compliance with the most up-to-date laws."
 						. = ui_alert5
 					if(6)
 						. = ui_alert6
-					if(7)
-						. = ui_alert7
-					if(8)
-						. = ui_alert8
-					if(9)
-						. = ui_alert9
-					if(10)
-						. = ui_alert10
+//					if(7)
+//						. = ui_alert7
+//					if(8)
+//						. = ui_alert8
+//					if(9)
+//						. = ui_alert9
+//					if(10)
+//						. = ui_alert10
 					else
 						. = ""
 			if(ALERT_BUFF)
@@ -649,14 +649,14 @@ so as to remain in compliance with the most up-to-date laws."
 						. = ui_balert5
 					if(6)
 						. = ui_balert6
-					if(7)
-						. = ui_balert7
-					if(8)
-						. = ui_balert8
-					if(9)
-						. = ui_balert9
-					if(10)
-						. = ui_balert10
+//					if(7)
+//						. = ui_balert7
+//					if(8)
+//						. = ui_balert8
+//					if(9)
+//						. = ui_balert9
+//					if(10)
+//						. = ui_balert10
 					else
 						. = ""
 			if(ALERT_DEBUFF)
@@ -674,14 +674,14 @@ so as to remain in compliance with the most up-to-date laws."
 						. = ui_dalert5
 					if(6)
 						. = ui_dalert6
-					if(7)
-						. = ui_dalert7
-					if(8)
-						. = ui_dalert8
-					if(9)
-						. = ui_dalert9
-					if(10)
-						. = ui_dalert10
+//					if(7)
+//						. = ui_dalert7
+//					if(8)
+//						. = ui_dalert8
+//					if(9)
+//						. = ui_dalert9
+//					if(10)
+//						. = ui_dalert10
 					else
 						. = ""
 		alert.screen_loc = .

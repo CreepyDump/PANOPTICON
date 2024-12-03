@@ -97,41 +97,40 @@
 
 
 //Upper-left (alerts)
-#define ui_alert1 "WEST-5:0,TOP:-64" // FIRST ROW STARTS HERE // 1
-#define ui_alert2 "WEST-5:19,TOP:-64" // 2
-#define ui_alert3 "WEST-5:38,TOP:-64" // 3
-#define ui_alert4 "WEST-5:57,TOP:-64" // 4
-#define ui_alert5 "WEST-5:76,TOP:-64" // 5
-#define ui_alert6 "WEST-5:95,TOP:-64" // 6
-#define ui_alert7 "WEST-5:114,TOP:-64" // 7
-#define ui_alert8 "WEST-5:133,TOP:-64" // 8
-#define ui_alert9 "WEST-5:152,TOP:-64" // FIRST ROW ENDS HERE // 9
+#define ui_alert1 "WEST +13:10,CENTER-2:39" // FIRST ROW STARTS HERE // 1
+#define ui_alert2 "WEST +13:10,CENTER-2:49" // 2
+#define ui_alert3 "WEST +13:20,CENTER-2:39" // 3
+#define ui_alert4 "WEST +13:20,CENTER-2:49" // 4
+#define ui_alert5 "WEST +13:30,CENTER-2:39" // 5
+#define ui_alert6 "WEST +13:30,CENTER-2:49" // 6
+//#define ui_alert7 "WEST-5:114,TOP:-64" // 7
+//#define ui_alert8 "WEST-5:133,TOP:-64" // 8
+//#define ui_alert9 "WEST-5:152,TOP:-64" // FIRST ROW ENDS HERE // 9
 
-#define ui_alert10 "WEST-5:114,TOP:-96" // 10
-
-
-#define ui_balert1 "WEST-5:0,TOP:-32" // SECOND ROW STARTS HERE // 1
-#define ui_balert2 "WEST-5:19,TOP:-32" // 2
-#define ui_balert3 "WEST-5:38,TOP:-32" // 3
-#define ui_balert4 "WEST-5:57,TOP:-32" // 4
-#define ui_balert5 "WEST-5:76,TOP:-32" // 5
-#define ui_balert6 "WEST-5:95,TOP:-32" // 6
-#define ui_balert7 "WEST-5:114,TOP:-32" // 7
-#define ui_balert8 "WEST-5:133,TOP:-32" // 8
-#define ui_balert9 "WEST-5:152,TOP:-32" // SECOND ROW ENDS HERE // 9
-
-#define ui_balert10 "WEST-5:19,TOP:-96" // 10
+//#define ui_alert10 "WEST-5:114,TOP:-96" // 10
 
 
-#define ui_dalert1 "WEST-5:0,TOP:0" // 1 // THIRST
-#define ui_dalert2 "WEST-5:19,TOP:0" // 2
-#define ui_dalert3 "WEST-5:38,TOP:0" // 3
-#define ui_dalert4 "WEST-5:57,TOP:0" // 4
-#define ui_dalert5 "WEST-5:76,TOP:0" // 5
-#define ui_dalert6 "WEST-5:95,TOP:0" // 6
-#define ui_dalert7 "WEST-5:114,TOP:0" // 7
-#define ui_dalert8 "WEST-5:133,TOP:0" // 8
-#define ui_dalert9 "WEST-5:152,TOP:0" // THIRD ROW ENDS HERE // 9
+#define ui_balert1 "WEST +13:10,CENTER-2:34" // SECOND ROW STARTS HERE // 1
+#define ui_balert2 "WEST +13:10,CENTER-2:44" // 2
+#define ui_balert3 "WEST +13:20,CENTER-2:34" // 3
+#define ui_balert4 "WEST +13:20,CENTER-2:44" // 4
+#define ui_balert5 "WEST +13:30,CENTER-2:34" // 5
+#define ui_balert6 "WEST +13:30,CENTER-2:44" // 6
+//#define ui_balert7 "WEST-5:114,TOP:-32" // 7
+//#define ui_balert8 "WEST-5:133,TOP:-32" // 8
+//#define ui_balert9 "WEST-5:152,TOP:-32" // SECOND ROW ENDS HERE // 9
+//#define ui_balert10 "WEST-5:19,TOP:-96" // 10
+
+
+#define ui_dalert1 "WEST +13:10,CENTER-2:24" // 1 // THIRST
+#define ui_dalert2 "WEST +13:10,CENTER-2:29" // 2
+#define ui_dalert3 "WEST +13:20,CENTER-2:24" // 3
+#define ui_dalert4 "WEST +13:20,CENTER-2:29" // 4
+#define ui_dalert5 "WEST +13:30,CENTER-2:24" // 5
+#define ui_dalert6 "WEST +13:30,CENTER-2:29" // 6
+//#define ui_dalert7 "WEST-5:114,TOP:0" // 7
+//#define ui_dalert8 "WEST-5:133,TOP:0" // 8
+//#define ui_dalert9 "WEST-5:152,TOP:0" // THIRD ROW ENDS HERE // 9
 
 #define ui_dalert10 "WEST-5:0,TOP:-96" // 10
 
@@ -177,11 +176,13 @@
 #define rogueui_moves "WEST-3,CENTER+2"
 #define rogueui_movec "WEST-2,CENTER+2"
 #define rogueui_moveq "WEST-1,CENTER+2"
-#define rogueui_eye "WEST-2,CENTER+3"
+#define rogueui_eye "WEST +13:10,CENTER+1:19"
 #define rogueui_advsetup "CENTER-1,CENTER-1:16"
-#define rogueui_craft "WEST-4,CENTER+3"
-#define rogueui_skills "WEST-4,CENTER+3"
-#define rogueui_targetdoll "EAST-1, NORTH-13"
+#define rogueui_craft "WEST +13:10,CENTER-1:+50"
+#define rogueui_skills "WEST +13:10,CENTER-1:+50"
+#define panopticon_thirst "WEST +13:10,CENTER-3:+20"
+#define panopticon_nutriment "WEST +13:28,CENTER-3:+20"
+#define rogueui_targetdoll "WEST-3:-21, CENTER+3:12"
 #define rogueui_quad "WEST-4:-16,SOUTH+7"
 #define rogueui_give "WEST-1:-16,SOUTH+7"
 #define rogueui_aim "WEST-4:9,CENTER+4"
@@ -189,14 +190,14 @@
 #define rogueui_clock "WEST-3:-16,CENTER+6:1"
 
 #define rogueui_intents "WEST-5:-16,SOUTH+8"
-#define rogueui_stress "WEST-1:-16,CENTER+1"
+#define rogueui_stress "WEST +12:46,CENTER+3:31"
 #define rogueui_spells "WEST-4:2,SOUTH+8"
 
-#define rogueui_fat "WEST-1,CENTER+2"
-#define rogueui_stam "WEST-1:0,CENTER+4"
-#define rogueui_blood "EAST-1, NORTH-11"
+#define rogueui_fat "WEST +14:9,CENTER-1:40"
+#define rogueui_stam "WEST +14:9,CENTER-2:40"
+#define rogueui_blood "EAST-1:6, CENTER+2:8"
 
-#define rogueui_cmode "WEST-3,CENTER+3"
+#define rogueui_cmode "WEST-1:-16,CENTER+1"
 #define rogueui_def "WEST-2,NORTH-5"
 
 #define rogueui_rmbintents "WEST-4:-16,CENTER+1"

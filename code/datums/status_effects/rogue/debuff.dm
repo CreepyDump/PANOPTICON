@@ -5,71 +5,71 @@
 
 /datum/status_effect/debuff/hungryt1
 	id = "hungryt1"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt1
+	alert_type = null
 	effectedstats = list("constitution" = -1)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt1
 	name = "Hungry"
 	desc = "Hunger exists only in the mind of the living."
-	icon_state = "hunger1"
+	icon_state = null
 
 /datum/status_effect/debuff/hungryt2
 	id = "hungryt2"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt2
+	alert_type = null
 	effectedstats = list("strength" = -2, "constitution" = -2, "endurance" = -1)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt2
 	name = "Hungry"
 	desc = "Hunger exists only in the mind of the living."
-	icon_state = "hunger2"
+	icon_state = null
 
 /datum/status_effect/debuff/hungryt3
 	id = "hungryt3"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt3
+	alert_type = null
 	effectedstats = list("strength" = -5, "constitution" = -3, "endurance" = -2)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt3
 	name = "Hungry"
 	desc = "Hunger exists only in the mind of the living."
-	icon_state = "hunger3"
+	icon_state = null
 
 ////////////////////
 
 /datum/status_effect/debuff/thirstyt1
 	id = "thirsty"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt1
+	alert_type = null
 	effectedstats = list("endurance" = -1)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt1
 	name = "Thirsty"
 	desc = "I need water."
-	icon_state = "thirst1"
+	icon_state = null
 
 /datum/status_effect/debuff/thirstyt2
 	id = "thirsty"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt2
+	alert_type = null
 	effectedstats = list("speed" = -1, "endurance" = -2)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt2
 	name = "Thirsty"
 	desc = "I need water."
-	icon_state = "thirst2"
+	icon_state = null
 
 /datum/status_effect/debuff/thirstyt3
 	id = "thirsty"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt3
+	alert_type = null
 	effectedstats = list("strength" = -1, "speed" = -2, "endurance" = -3)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt3
 	name = "Thirsty"
 	desc = "I need water."
-	icon_state = "thirst3"
+	icon_state = null
 
 /////////
 

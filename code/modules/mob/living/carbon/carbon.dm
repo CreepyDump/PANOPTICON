@@ -112,7 +112,7 @@
 		if(possible_len)
 			var/datum/surgery_step/done_step
 			if(possible_len > 1)
-				var/input = input(user, "Which surgery step do you want to perform?", "PESTRA", ) as null|anything in possible_steps
+				var/input = input(user, "Which surgery step do you want to perform?", "SURGERY", ) as null|anything in possible_steps
 				if(input)
 					done_step = possible_steps[input]
 			else
@@ -638,13 +638,12 @@
 			playsound(src, pick('sound/vo/throat.ogg','sound/vo/throat2.ogg','sound/vo/throat3.ogg'), 100, FALSE)
 
 	blur_eyes(10)
-
+	adjustToxLoss(-3)
 	var/turf/T = get_turf(src)
 	if(!blood)
 		if(nutrition > 50)
 			adjust_nutrition(-lost_nutrition)
 			adjust_hydration(-lost_nutrition)
-//adjustToxLoss(-3)
 	if(harm)
 		adjustBruteLoss(3)
 	for(var/i=0 to distance)
@@ -712,8 +711,8 @@
 	staminaloss = round(total_stamina, DAMAGE_PRECISION)
 	update_stat()
 	update_mobility()
-//	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD) && stat == DEAD )
-//		become_husk("burn")
+	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD) && stat == DEAD )
+		become_husk("burn")
 
 	med_hud_set_health()
 	if(stat == SOFT_CRIT)
@@ -1039,7 +1038,7 @@
 //called when we get cuffed/uncuffed
 /mob/living/carbon/proc/update_handcuffed()
 	if(handcuffed)
-//		drop_all_held_items()
+		drop_all_held_items()
 		stop_pulling()
 		throw_alert("handcuffed", /atom/movable/screen/alert/restrained/handcuffed, new_master = src.handcuffed)
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "handcuffed", /datum/mood_event/handcuffed)

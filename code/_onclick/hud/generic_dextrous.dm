@@ -319,7 +319,7 @@
 	infodisplay += healthdoll
 */
 	zone_select =  new /atom/movable/screen/zone_sel()
-	zone_select.icon = 'icons/mob/roguehud64.dmi'
+	zone_select.icon = 'icons/mob/roguehud96.dmi'
 	zone_select.screen_loc = rogueui_targetdoll
 	zone_select.update_icon()
 	zone_select.hud = src

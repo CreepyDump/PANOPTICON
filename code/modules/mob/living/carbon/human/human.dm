@@ -1009,7 +1009,40 @@
 					hud_used.stams.icon_state = "stam20"
 				else if(rogstam > 0)
 					hud_used.stams.icon_state = "stam10"
-
+		if(hud_used.drinkshit)
+			if(stat != DEAD)
+				. = 1
+				if(hydration <= HYDRATION_LEVEL_DEHYDRATED)
+					hud_used.drinkshit.icon_state = "thirst7"
+				else if(hydration > 980)
+					hud_used.drinkshit.icon_state = "thirst1"
+				else if(hydration > 850)
+					hud_used.drinkshit.icon_state =	"thirst2"
+				else if(hydration > HYDRATION_LEVEL_SMALLTHIRST)
+					hud_used.drinkshit.icon_state =	"thirst3"
+				else if(hydration > 450)
+					hud_used.drinkshit.icon_state =	"thirst4"
+				else if(hydration > HYDRATION_LEVEL_THIRSTY)
+					hud_used.drinkshit.icon_state = "thirst5"
+				else if(hydration > 250)
+					hud_used.drinkshit.icon_state = "thirst6"
+		if(hud_used.eatshit)
+			if(stat != DEAD)
+				. = 1
+				if(nutrition <= NUTRITION_LEVEL_STARVING)
+					hud_used.eatshit.icon_state = "hunger7"
+				else if(nutrition > 850)
+					hud_used.eatshit.icon_state = "hunger1"
+				else if(nutrition > 700)
+					hud_used.eatshit.icon_state = "hunger2"
+				else if(nutrition > NUTRITION_LEVEL_FED)
+					hud_used.eatshit.icon_state = "hunger3"
+				else if(nutrition > 400)
+					hud_used.eatshit.icon_state = "hunger4"
+				else if(nutrition > NUTRITION_LEVEL_HUNGRY)
+					hud_used.eatshit.icon_state = "hunger5"
+				else if(nutrition > 250)
+					hud_used.eatshit.icon_state = "hunger6"
 		if(hud_used.zone_select)
 			hud_used.zone_select.update_icon()
 

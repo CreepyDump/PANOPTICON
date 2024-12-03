@@ -53,9 +53,9 @@
 				qdel(D)
 	if(stress != oldstress)
 		if(stress > oldstress)
-			to_chat(src, "<span class='red'>I gain stress.</span>")
+			to_chat(src, "<span class='red'>I feel stress.</span>")
 		else
-			to_chat(src, "<span class='green'>I gain peace.</span>")
+			to_chat(src, "<span class='green'>I feel peace.</span>")
 	oldstress = stress
 	if(hud_used)
 		if(hud_used.stressies)
@@ -240,32 +240,29 @@
 /datum/stressevent/peckish
 	timer = 10 MINUTES
 	stressadd = 1
-	desc = "<span class='red'>I'm peckish.</span>"
 
 /datum/stressevent/hungry
 	timer = 10 MINUTES
 	stressadd = 2
-	desc = "<span class='red'>I'm hungry.</span>"
 
 /datum/stressevent/starving
 	timer = 10 MINUTES
 	stressadd = 3
-	desc = "<span class='red'>I'm starving.</span>"
 
 /datum/stressevent/drym
 	timer = 10 MINUTES
 	stressadd = 1
-	desc = "<span class='red'>I'm a little thirsty.</span>"
+	desc = null
 
 /datum/stressevent/thirst
 	timer = 10 MINUTES
 	stressadd = 2
-	desc = "<span class='red'>I'm thirsty.</span>"
+	desc = null
 
 /datum/stressevent/parched
 	timer = 10 MINUTES
 	stressadd = 3
-	desc = "<span class='red'>I'm going to die of thirst.</span>"
+	desc = null
 
 /datum/stressevent/dismembered
 	timer = 40 MINUTES
