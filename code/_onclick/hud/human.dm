@@ -144,7 +144,12 @@
 	eatshit.hud = src
 	eatshit.screen_loc = panopticon_nutriment
 	static_inventory += eatshit
-
+/*
+	stat_viewer = new /atom/movable/screen/stats
+	stat_viewer.screen_loc = panopticon_stats
+	stat_viewer.hud = src
+	static_inventory += stat_viewer
+*/
 	rmb_intent = new /atom/movable/screen/rmbintent(owner.client)
 	rmb_intent.hud = src
 	rmb_intent.screen_loc = rogueui_rmbintents

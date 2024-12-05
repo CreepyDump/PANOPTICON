@@ -49,6 +49,7 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 	var/atom/movable/screen/stress/stressies
 	var/atom/movable/screen/thirst/drinkshit
 	var/atom/movable/screen/food/eatshit
+	var/atom/movable/screen/stats/stat_viewer
 	var/atom/movable/screen/cmode_button
 	var/atom/movable/screen/rmbintent/rmb_intent
 	var/atom/movable/screen/fullscreen/pain_flash/pain_flash

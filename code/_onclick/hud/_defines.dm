@@ -182,6 +182,7 @@
 #define rogueui_skills "WEST +13:10,CENTER-1:+50"
 #define panopticon_thirst "WEST +13:10,CENTER-3:+20"
 #define panopticon_nutriment "WEST +13:28,CENTER-3:+20"
+#define panopticon_stats "EAST,NORTH"
 #define rogueui_targetdoll "WEST-3:-21, CENTER+3:12"
 #define rogueui_quad "WEST-4:-16,SOUTH+7"
 #define rogueui_give "WEST-1:-16,SOUTH+7"
