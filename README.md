@@ -1,11 +1,11 @@
 <p align="center">
  <h1 align="center">PANOPTICON</h1>
  <h2 align="center">Modified Frankenstein-code of RT</h2>
- <h2 align="center">And "MAD-ROLEPLAY EXPERIENCE"</h2>
- <img width="600px" src="https://images2.imgbox.com/af/09/7ytqqwgf_o.png" align="center" alt="NECROLENINIST" />
+ <img width="250px" src="https://images2.imgbox.com/af/09/7ytqqwgf_o.png" align="center" alt="NECROLENINIST" />
+ <h2 align="center">IS NEAR</h2>
 </p>
 
-[![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
 <div align="center">
 Whole code is used with [AGPL-3.0 license](https://github.com/CreepyDump/PANOPTICON/blob/master/GPLv3.txt) (God curse Oranges)
