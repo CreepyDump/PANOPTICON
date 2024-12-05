@@ -9,7 +9,7 @@
 
 <div align="center">
 Whole code is used with AGPL-3.0 license (God curse Oranges)
-Our official community server is (https://discord.gg/p4n0pt1c0n , other servers are fake-ass copies.
+Our official community server is https://discord.gg/p4n0pt1c0n , other servers are fake-ass copies.
 </div>
 
 # LICENSE
