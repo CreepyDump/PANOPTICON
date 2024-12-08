@@ -1837,6 +1837,10 @@
 				var/obj/item/restraints/legcuffs/beartrap/M = O
 				if(isturf(M.loc) && M.armed)
 					found_ping(get_turf(M), client, "trap")
+			if(istype(O, /obj/effect/mine/explosive/panopticon/landmine))
+				found_ping(get_turf(O), client, "trap")
+			if(istype(O, /obj/structure/glowshroom))
+				found_ping(get_turf(O), client, "trap")
 			if(istype(O, /obj/structure/flora/roguegrass/maneater/real))
 				found_ping(get_turf(O), client, "trap")
 

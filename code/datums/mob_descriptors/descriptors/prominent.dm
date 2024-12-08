@@ -224,14 +224,6 @@
 	name = "Tribal Tattoos"
 	verbage = "%HAVE%"
 
-/datum/mob_descriptor/prominent/slave_tattoos
-	name = "Slave Tattoos"
-	verbage = "%HAVE%"
-
-/datum/mob_descriptor/prominent/enigmatic_tattoos
-	name = "Enigmatic Tattoos"
-	verbage = "%HAVE%"
-
 /datum/mob_descriptor/prominent/mean_look
 	name = "Mean Look"
 	verbage = "%HAVE%"

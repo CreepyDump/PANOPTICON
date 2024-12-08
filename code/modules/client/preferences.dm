@@ -1671,7 +1671,7 @@ Slots: [job.spawn_positions]</span>
 							ghost_others = GHOST_OTHERS_SIMPLE
 
 				if("name")
-					var/new_name = input(user, "Choose your character's name:", "Identity")  as text|null
+					var/new_name = input(user, "Choose your character's name:", "Character Preference")  as text|null
 					if(new_name)
 						new_name = reject_bad_name(new_name)
 						if(new_name)
@@ -1685,7 +1685,7 @@ Slots: [job.spawn_positions]</span>
 //						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
 
 				if("age")
-					var/new_age = input(user, "Choose your character's age (18-[pref_species.max_age])", "Character Preference") as null|anything in pref_species.possible_ages
+					var/new_age = input(user, "Choose your character's age", "Character Preference") as null|anything in pref_species.possible_ages
 					if(new_age)
 						age = new_age
 						var/list/hairs

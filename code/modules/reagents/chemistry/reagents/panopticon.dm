@@ -13,7 +13,17 @@
 	M.update_body_parts_head_only()
 	SSdroning.area_entered(get_area(M), M.client)
 	M.overlay_fullscreen("narcos", /atom/movable/screen/fullscreen/narcos)
-
+	if(M.client)
+		M.add_client_colour(/datum/client_colour/test2)
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		var/list/screens = list(C.hud_used.plane_masters["[FLOOR_PLANE]"], C.hud_used.plane_masters["[GAME_PLANE]"], C.hud_used.plane_masters["[LIGHTING_PLANE]"])
+		var/matrix/skew = matrix()
+		skew.Scale(2)
+		var/matrix/newmatrix = skew
+		for(var/whole_screen in screens)
+			animate(whole_screen, transform = newmatrix, time = 5, easing = QUAD_EASING, loop = -1)
+			animate(transform = -newmatrix, time = 5, easing = QUAD_EASING)
 /datum/reagent/psychick/on_mob_life(mob/living/carbon/M)
 	if(M.has_flaw(/datum/charflaw/addiction/junkie))
 		M.sate_addiction()
@@ -21,6 +31,13 @@
 	..()
 
 /datum/reagent/psychick/on_mob_end_metabolize(mob/living/M)
+	if(M.client)
+		M.remove_client_colour(/datum/client_colour/test2)
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		var/list/screens = list(C.hud_used.plane_masters["[FLOOR_PLANE]"], C.hud_used.plane_masters["[GAME_PLANE]"], C.hud_used.plane_masters["[LIGHTING_PLANE]"])
+		for(var/whole_screen in screens)
+			animate(whole_screen, transform = matrix(), time = 5, easing = QUAD_EASING)
 	to_chat(M, "<span class='danger'>I feel mentally retarded</span>")
 	M.playsound_local(M, 'sound/misc/mechsound.ogg', 100, FALSE)
 	M.SetSleeping(100)
@@ -50,20 +67,12 @@
 /datum/reagent/heroin/on_mob_metabolize(mob/living/M)
 	ADD_TRAIT(M, TRAIT_DRUQK, "based")
 	M.update_body_parts_head_only()
+	if(M.client)
+		M.add_client_colour(/datum/client_colour/test3)
 	SSdroning.area_entered(get_area(M), M.client)
 	REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 //	if(!M.hud_used)
 //		return
-
-/datum/reagent/psychick/on_mob_end_metabolize(mob/living/M)
-	to_chat(M, "<span class='danger'>I feel mentally retarded</span>")
-	M.playsound_local(M, 'sound/misc/mechsound.ogg', 100, FALSE)
-	M.SetSleeping(100)
-	M.clear_fullscreen("narcos")
-	M.update_body_parts_head_only()
-	REMOVE_TRAIT(M, TRAIT_PSYCHICK, "based")
-	SSdroning.play_area_sound(get_area(M), M.client)
-
 /datum/reagent/heroin/overdose_process(mob/living/M)
 	M.adjustToxLoss(1, 0)
 	M.adjustOxyLoss(1.5*REM, 0)
@@ -72,6 +81,8 @@
 	REMOVE_TRAIT(M, TRAIT_DRUQK, "based")
 	M.update_body_parts_head_only()
 	SSdroning.area_entered(get_area(M), M.client)
+	if(M.client)
+		M.remove_client_colour(/datum/client_colour/test3)
 
 /datum/reagent/psychicksamogon
 	name = "Fungus jus"
@@ -101,7 +112,7 @@
 
 /datum/reagent/psychicksamogon/on_mob_metabolize(mob/living/carbon/lean_monster, delta_time)
 	ADD_TRAIT(lean_monster, TRAIT_HHHHH, "based")
-	to_chat(lean_monster, span_love(span_big("SHIT !!!")))
+	to_chat(lean_monster, span_love(span_big("SHIT!!!")))
 	lean_monster.playsound_local(lean_monster, 'sound/misc/leanend.ogg', 50)
 	SSdroning.area_entered(get_area(lean_monster), lean_monster.client)
 	lean_monster.flash_fullscreen("maniac")
@@ -112,6 +123,8 @@
 			'sound/misc/comic4.ogg',
 		)
 	lean_monster.playsound_local(lean_monster, pick(funnies), 100)
+	if(lean_monster.client)
+		lean_monster.add_client_colour(/datum/client_colour/samogon)
 
 /datum/reagent/psychicksamogon/on_mob_end_metabolize(mob/living/carbon/lean_monster)
 	REMOVE_TRAIT(lean_monster, TRAIT_HHHHH, "based")
@@ -121,6 +134,8 @@
 			lean_monster.set_heartattack(TRUE)
 	lean_monster.update_body_parts_head_only()
 	SSdroning.play_area_sound(get_area(lean_monster), lean_monster.client)
+	if(lean_monster.client)
+		lean_monster.remove_client_colour(/datum/client_colour/samogon)
 
 /datum/reagent/shmacksamogonka
 	name = "Fungus jus"

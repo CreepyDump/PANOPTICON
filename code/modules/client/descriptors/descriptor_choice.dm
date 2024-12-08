@@ -254,8 +254,6 @@
 	/datum/mob_descriptor/prominent/elaborate_tattoos,\
 	/datum/mob_descriptor/prominent/ritual_tattoos,\
 	/datum/mob_descriptor/prominent/tribal_tattoos,\
-	/datum/mob_descriptor/prominent/slave_tattoos,\
-	/datum/mob_descriptor/prominent/enigmatic_tattoos,\
 	/datum/mob_descriptor/prominent/mean_look,\
 	/datum/mob_descriptor/prominent/haughty_atmosphere,\
 	/datum/mob_descriptor/prominent/untrustworthy,\
