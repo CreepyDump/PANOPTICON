@@ -609,12 +609,12 @@
 /turf/closed/mineral/random/rogue/med
 	icon_state = "minrandmed"
 	mineralChance = 10
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 5,/turf/closed/mineral/rogue/gold = 3,/turf/closed/mineral/rogue/iron = 33,/turf/closed/mineral/rogue/coal = 14)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 5,/turf/closed/mineral/rogue/gold = 3,/turf/closed/mineral/rogue/iron = 33,/turf/closed/mineral/rogue/coal = 14,/turf/closed/mineral/rogue/saltpeter = 16)
 
 /turf/closed/mineral/random/rogue/high
 	icon_state = "minrandhigh"
 	mineralChance = 33
-	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 5,/turf/closed/mineral/rogue/gold = 9,/turf/closed/mineral/rogue/iron = 33,/turf/closed/mineral/rogue/coal = 19)
+	mineralSpawnChanceList = list(/turf/closed/mineral/rogue/salt = 5,/turf/closed/mineral/rogue/gold = 9,/turf/closed/mineral/rogue/iron = 33,/turf/closed/mineral/rogue/coal = 19,/turf/closed/mineral/rogue/saltpeter = 20)
 
 
 //begin actual mineral turfs
@@ -663,6 +663,13 @@
 	icon_state = "mingold"
 	mineralType = /obj/item/rogueore/coal
 	rockType = /obj/item/natural/rock/coal
+	spreadChance = 33
+	spread = 11
+
+/turf/closed/mineral/rogue/saltpeter
+	icon_state = "saltpeter"
+	mineralType = /obj/item/reagent_containers/powder/flour/blackpowder
+	rockType = /obj/item/natural/rock/salt
 	spreadChance = 33
 	spread = 11
 

@@ -34,6 +34,7 @@
 	if(has_buckled_mobs())
 		var/mob/living/carbon/H = buckled_mobs[1]
 		unbuckle_mob(H)
+		playsound(src, 'sound/panopticon/wheelchair-crash.ogg', 75, TRUE)
 	return ..()
 
 /obj/vehicle/ridden/wheelchair/driver_move(mob/living/user, direction)
@@ -55,7 +56,7 @@
 /obj/vehicle/ridden/wheelchair/Moved()
 	. = ..()
 	cut_overlays()
-	playsound(src, 'sound/blank.ogg', 75, TRUE)
+	playsound(src, 'sound/panopticon/wheelchair.ogg', 75, TRUE)
 	if(has_buckled_mobs())
 		handle_rotation_overlayed()
 

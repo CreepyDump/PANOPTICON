@@ -107,3 +107,6 @@
 
 /obj/item/natural/rock/salt
 	mineralType = /obj/item/reagent_containers/powder/flour/salt
+
+/obj/item/natural/rock/saltpeter
+	mineralType = /obj/item/reagent_containers/powder/flour/blackpowder

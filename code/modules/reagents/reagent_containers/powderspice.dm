@@ -286,3 +286,25 @@
 
 /datum/reagent/moondust_purest/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
+
+/obj/item/reagent_containers/powder/flour/blackpowder
+	name = "blackpowder"
+	desc = ""
+	gender = PLURAL
+	icon_state = "ozium"
+	color = "#202020"
+	list_reagents = list(/datum/reagent/blackpowder = 1)
+	volume = 1
+	sellprice = 10
+
+/datum/reagent/blackpowder
+	name = "blackpowder"
+	description = ""
+	color = "#202020"
+
+/datum/reagent/floure/on_mob_life(mob/living/carbon/M)
+	if(prob(60))
+		M.confused = max(M.confused+3,0)
+	M.emote(pick("cough"))
+	M.adjustToxLoss(10, 0)
+	..()
