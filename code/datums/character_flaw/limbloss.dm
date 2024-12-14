@@ -47,11 +47,10 @@
 /datum/charflaw/limbloss/nolegs/on_mob_creation(mob/user)
 	..()
 	if(!ishuman(user))
-		return
-	var/mob/living/carbon/human/H = user
-	var/obj/item/bodypart/l_leg = user.get_bodypart(BODY_ZONE_L_LEG)
-	var/obj/item/bodypart/r_leg = user.get_bodypart(BODY_ZONE_R_LEG)
-	if(l_leg)
-		l_leg.dismember()
-	if(r_leg)
-		r_leg.dismember()
+		var/mob/living/carbon/huesos = user
+		var/obj/item/bodypart/l_leg = huesos.get_bodypart(BODY_ZONE_L_LEG)
+		var/obj/item/bodypart/r_leg = huesos.get_bodypart(BODY_ZONE_R_LEG)
+		if(l_leg)
+			l_leg.dismember()
+		if(r_leg)
+			r_leg.dismember()
