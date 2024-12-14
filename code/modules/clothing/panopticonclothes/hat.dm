@@ -163,11 +163,11 @@
 	armor = list("blunt" = 60, "bullet" = 60, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
-/obj/item/clothing/head/panopticon/vargcap
+/obj/item/clothing/head/panopticon/papakha
 	name = "Papakha"
 	desc = "Anarchia mama!"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
-	icon_state = "varg"
-	item_state = "varg"
+	icon_state = "papakha"
+	item_state = "papakha"
 	flags_inv = HIDEEARS|HIDEHAIR
