@@ -38,3 +38,8 @@
 	var/mob/living/carbon/human/H = user
 	var/obj/item/bodypart/l_arm/rproesthetic/L = new()
 	L.attach_limb(H)
+
+/datum/charflaw/limbloss/nolegs
+	name = "Disabled"
+	desc = "I lost my legs at war. But i still have wheelchair."
+	lost_zone = list(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)

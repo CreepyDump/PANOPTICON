@@ -154,6 +154,8 @@
 			spawned_human.forceMove(get_turf(a_mimir))
 			a_mimir.buckle_mob(H)
 			spawned_human.AdjustSleeping(4 SECONDS)
+		if(H.charflaw.type == /datum/charflaw/limbloss/nolegs)
+			new /obj/vehicle/ridden/wheelchair(H.loc)
 		if(H?.ckey == "lolkekxdbruh")
 			new /obj/item/clothing/head/panopticon/keptyouwaitinghuh(H.drop_location(), FALSE)
 		if(H?.ckey == "crazyduster")
