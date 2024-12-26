@@ -71,7 +71,9 @@
 		"sus": "suspicious",
 		"сасси": "подозрительно",
 		"сус": "подозрительно",
-		"baka": "retard",
+		"baka": "priživnik",
+		"retard": "priživnik",
+		"ретард": "приживник",
 		"banban": "untermensch",
 		"bambalina": "untermensch",
 		"jumbo": "untermensch",
@@ -114,7 +116,11 @@
 		"bum": "smerd",
 		"бомж": "смерд",
 		"нищий": "смердный",
-		"adonai": "Gods"
-		
+		"bread": "pechevo",
+		"похлеб": "суп",
+		"pohleb": "soup",
+		"долбоеб": "приживник",
+		"еблан": "приживник",
+		"adonai": "Gods"	
 	}
 }

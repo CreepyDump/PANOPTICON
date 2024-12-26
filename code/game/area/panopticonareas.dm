@@ -283,3 +283,10 @@
 	droning_sound = 'sound/music/area/necronox_day.ogg'
 	converted_type = /area/panopticon/indoors/necronox
 	soundenv = 4
+	ambush_times = list("night", "dawn", "day")
+	ambush_types = list(
+				/turf/open/floor/panopticon/darkgrass,
+				/turf/open/floor/panopticon/mud)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 36,
+				/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/baun = 30)

@@ -171,3 +171,10 @@
 	icon_state = "papakha"
 	item_state = "papakha"
 	flags_inv = HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/head/panopticon/santa
+	name = "Winter-festal hat"
+	desc = "Merry Krauxmas!"
+	icon_state = "santahat"
+	item_state = "santahat"
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR

@@ -232,6 +232,52 @@
 /turf/open/floor/panopticon/gulag/snow/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
+	if(locate(/obj/structure/) in get_turf(src))
+			return
+	if(locate(/turf/open/water/) in get_turf(src))
+		return
+	var/state = pick_weight(list("darkgrass" = 6, "bush" = 5, "tree" = 4, "dirthole" = 1, "stones" = 5, "smallstone" = 2, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "nothing" = 40))
+	switch(state)
+		if ("darkgrass")
+			new /obj/structure/flora/panopticon/grass(get_turf(src))
+		if("nothing")
+			return
+		if ("bush")
+			new /obj/structure/flora/roguegrass/bush(get_turf(src))
+		if ("dirthole")
+			new /obj/structure/closet/dirthole/closed(get_turf(src))
+		if("stones")
+			new /obj/structure/panopticon/mirkstones(get_turf(src))
+		if("smallstone")
+			new /obj/item/natural/stone(get_turf(src))
+		if("seltshmack")
+			new /obj/structure/panopticon/seltshmack(get_turf(src))
+		if("psychickshroom")
+			new /obj/structure/panopticon/psychickgrib(get_turf(src))
+		if("throbber")
+			new /obj/structure/panopticon/throbber(get_turf(src))
+		if("tree")
+			var/canspawn = TRUE
+			var/near_t = range(2, src)
+			if((locate(/turf/closed/wall) in near_t) || (locate(/obj/structure/panopticon/panopticontree) in near_t) || (locate(/obj/structure/flora/panopticontree/log) in near_t))
+				canspawn = FALSE
+			if(canspawn)
+				new /obj/structure/panopticon/panopticontree(get_turf(src))
+				new /turf/open/floor/panopticon/mud(get_turf(src))
+	if (prob(1))
+		var/canspawn = TRUE
+		var/near_t = range(1, src)
+		if((locate(/turf/closed/wall) in near_t) || (locate(/turf/open/water/cleanshallow) in near_t) || (locate(/turf/open/water/swamp/deep) in near_t))
+			canspawn = FALSE
+		if(canspawn)
+			if(prob(40))
+				new /obj/effect/mine/explosive/panopticon/landmine(get_turf(src))
+			else if(prob(30))
+				new /obj/item/restraints/legcuffs/beartrap/armed(get_turf(src))
+			else
+				new /obj/item/restraints/legcuffs/beartrap/armed/camouflage(get_turf(src))
+	if (prob(1))
+		new /obj/structure/panopticon/skull(get_turf(src))
 
 /obj/effect/turf_decal/panopticon/snowcorner
 	name = ""
