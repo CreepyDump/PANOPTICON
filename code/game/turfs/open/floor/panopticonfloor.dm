@@ -233,7 +233,7 @@
 	. = ..()
 	dir = pick(GLOB.cardinals)
 	if(locate(/obj/structure/) in get_turf(src))
-			return
+		return
 	if(locate(/turf/open/water/) in get_turf(src))
 		return
 	var/state = pick_weight(list("darkgrass" = 6, "bush" = 5, "tree" = 4, "dirthole" = 1, "stones" = 5, "smallstone" = 2, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "nothing" = 40))
