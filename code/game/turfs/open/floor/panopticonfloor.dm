@@ -236,18 +236,12 @@
 		return
 	if(locate(/turf/open/water/) in get_turf(src))
 		return
-	var/state = pick_weight(list("darkgrass" = 6, "bush" = 5, "tree" = 4, "dirthole" = 1, "stones" = 5, "smallstone" = 2, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "nothing" = 40))
+	var/state = pick_weight(list("tree" = 4, "dirthole" = 1, "smallstone" = 5, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "nothing" = 40))
 	switch(state)
-		if ("darkgrass")
-			new /obj/structure/flora/panopticon/grass(get_turf(src))
 		if("nothing")
 			return
-		if ("bush")
-			new /obj/structure/flora/roguegrass/bush(get_turf(src))
 		if ("dirthole")
 			new /obj/structure/closet/dirthole/closed(get_turf(src))
-		if("stones")
-			new /obj/structure/panopticon/mirkstones(get_turf(src))
 		if("smallstone")
 			new /obj/item/natural/stone(get_turf(src))
 		if("seltshmack")
