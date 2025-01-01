@@ -267,26 +267,6 @@
 	water_color = pick("#705a43")
 	.  = ..()
 
-/turf/open/water/swamp/Entered(atom/movable/AM, atom/oldLoc)
-	. = ..()
-	if(isliving(AM) && !AM.throwing)
-		if(!prob(3))
-			return
-		if(iscarbon(AM))
-			var/mob/living/carbon/C = AM
-			if(C.blood_volume <= 0)
-				return
-			var/zonee = list(BODY_ZONE_R_LEG,BODY_ZONE_L_LEG)
-			for(var/X in zonee)
-				var/obj/item/bodypart/BP = C.get_bodypart(X)
-				if(!BP)
-					continue
-				if(BP.skeletonized)
-					continue
-				var/obj/item/natural/worms/leeches/I = new(C)
-				BP.embedded_objects |= I
-				return .
-
 /turf/open/water/swamp/deep
 	name = "murk"
 	icon_state = "dirtW"
@@ -294,26 +274,6 @@
 	water_color = "#705a43"
 	slowdown = 5
 	swim_skill = TRUE
-
-/turf/open/water/swamp/deep/Entered(atom/movable/AM, atom/oldLoc)
-	. = ..()
-	if(isliving(AM) && !AM.throwing)
-		if(!prob(8))
-			return
-		if(iscarbon(AM))
-			var/mob/living/carbon/C = AM
-			if(C.blood_volume <= 0)
-				return
-			var/zonee = list(BODY_ZONE_CHEST,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_R_ARM,BODY_ZONE_L_ARM)
-			for(var/X in zonee)
-				var/obj/item/bodypart/BP = C.get_bodypart(X)
-				if(!BP)
-					continue
-				if(BP.skeletonized)
-					continue
-				var/obj/item/natural/worms/leeches/I = new(C)
-				BP.embedded_objects |= I
-				return .
 
 /turf/open/water/cleanshallow
 	name = "water"

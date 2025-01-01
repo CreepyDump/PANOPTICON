@@ -99,7 +99,10 @@
 			if ("bush")
 				new /obj/structure/flora/roguegrass/bush(get_turf(src))
 			if ("dirthole")
-				new /obj/structure/closet/dirthole/closed(get_turf(src))
+				if(prob(10))
+					new /obj/structure/closet/dirthole/closed/loot(get_turf(src))
+				else
+					new /obj/structure/closet/dirthole/closed(get_turf(src))
 			if("stones")
 				new /obj/structure/panopticon/mirkstones(get_turf(src))
 			if("smallstone")
@@ -236,12 +239,10 @@
 		return
 	if(locate(/turf/open/water/) in get_turf(src))
 		return
-	var/state = pick_weight(list("tree" = 4, "dirthole" = 1, "smallstone" = 5, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "nothing" = 40))
+	var/state = pick_weight(list("tree" = 4, "smallstone" = 5, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "nothing" = 40))
 	switch(state)
 		if("nothing")
 			return
-		if ("dirthole")
-			new /obj/structure/closet/dirthole/closed(get_turf(src))
 		if("smallstone")
 			new /obj/item/natural/stone(get_turf(src))
 		if("seltshmack")
@@ -257,7 +258,6 @@
 				canspawn = FALSE
 			if(canspawn)
 				new /obj/structure/panopticon/panopticontree(get_turf(src))
-				new /turf/open/floor/panopticon/mud(get_turf(src))
 	if (prob(1))
 		var/canspawn = TRUE
 		var/near_t = range(1, src)

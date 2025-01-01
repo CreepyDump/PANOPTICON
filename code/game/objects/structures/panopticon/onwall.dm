@@ -111,6 +111,15 @@
 	icon = 'icons/panopticon/obj/bigass.dmi'
 	icon_state = "vostok_sign"
 
+/obj/structure/panopticon/onwall/theater
+	name = "Theater painting"
+	desc = ""
+	icon = 'icons/panopticon/obj/longass_trees.dmi'
+	icon_state = "theater1"
+
+/obj/structure/panopticon/onwall/theater/two
+	icon_state = "theater2"
+
 /obj/structure/panopticon/onwall/graffiti
 	icon_state = "graffiti"
 
@@ -234,3 +243,30 @@
 /obj/structure/panopticon/onwall/americanburger
 	name = "Newland Merica flag"
 	icon_state = "confederat"
+
+/obj/structure/panopticon/onwall/etje
+	name = "Eternal Jew"
+	icon_state = "pnposter19"
+
+/obj/structure/panopticon/onwall/icona
+	name = "Icona"
+	icon_state = "pnposter20"
+
+/obj/structure/panopticon/onwall/porno
+	name = "Lewd poster"
+	icon_state = "obscene1"
+
+/obj/structure/panopticon/onwall/porno/two
+	icon_state = "obscene2"
+
+/obj/structure/panopticon/onwall/porno/three
+	icon_state = "obscene3"
+
+/obj/structure/panopticon/onwall/porno/four
+	icon_state = "obscene4"
+
+/obj/structure/panopticon/onwall/porno/five
+	icon_state = "obscene5"
+
+/obj/structure/panopticon/onwall/porno/six
+	icon_state = "obscene6"

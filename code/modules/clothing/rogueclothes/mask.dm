@@ -6,8 +6,11 @@
 	slot_flags = ITEM_SLOT_MASK
 
 /obj/item/clothing/mask/rogue/spectacles
-	name = "spectacles"
+	name = "glasses"
+	icon = 'icons/panopticon/obj/clothes/masks.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/mask.dmi'
 	icon_state = "glasses"
+	item_state = "glasses"
 	break_sound = "glassbreak"
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
 	max_integrity = 20
@@ -18,7 +21,10 @@
 
 /obj/item/clothing/mask/rogue/spectacles/golden
 	name = "golden spectacles"
+	icon = 'icons/roguetown/clothing/masks.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/masks.dmi'
 	icon_state = "goggles"
+	item_state = "goggles"
 	break_sound = "glassbreak"
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
 	max_integrity = 35

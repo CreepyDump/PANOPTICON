@@ -1,0 +1,6 @@
+{
+    "map_name": "Bunker",
+    "map_path": "map_files/panopticon",
+    "map_file": "bunker.dmm",
+	"traits": [{"Up": 1}, {"Down": -1}]
+}

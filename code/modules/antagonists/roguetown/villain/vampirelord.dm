@@ -287,14 +287,10 @@
 
 /datum/antagonist/vampirelord/proc/finalize_vampire()
 	owner.current.forceMove(pick(GLOB.vlord_starts))
-	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-	
 
 /datum/antagonist/vampirelord/proc/finalize_vampire_lesser()
 	if(!sired)
-		owner.current.forceMove(pick(GLOB.vspawn_starts))
-	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-	
+		owner.current.forceMove(pick(GLOB.vspawn_starts))	
 
 /datum/antagonist/vampirelord/proc/vamp_look()
 	var/mob/living/carbon/human/V = owner.current

@@ -17,6 +17,8 @@
 				used = list('sound/vo/badlung1.ogg','sound/vo/badlung2.ogg')
 			if("burp")
 				used = 'sound/vo/male/gen/burp.ogg'
+			if("clap")
+				used = pick('sound/vo/clap (1).ogg','sound/vo/clap (2).ogg','sound/vo/clap (3).ogg','sound/vo/clap (4).ogg')
 			if("choke")
 				used = 'sound/vo/male/gen/choke.ogg'
 			if("chuckle")

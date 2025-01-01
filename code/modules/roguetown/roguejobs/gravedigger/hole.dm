@@ -45,7 +45,7 @@
 		looted = TRUE
 		switch(lootroll)
 			if(1)
-				new /mob/living/carbon/human/species/skeleton/npc(mastert)
+				new /mob/living/carbon/human/species/skeleton/npc/ambush(mastert)
 			if(2)
 				new /obj/structure/closet/crate/chest/lootbox(mastert)
 	..()

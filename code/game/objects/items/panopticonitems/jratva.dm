@@ -40,6 +40,11 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/seltshmack/fried
 	sellprice = 5
 
+/obj/item/reagent_containers/food/snacks/seltshmack/fake/examine(mob/user)
+	. = ..()
+	if(prob(1))
+		. += "<span class='danger'>Wait.. THIS ONE IS FAKE!.</span>"
+
 /obj/item/reagent_containers/food/snacks/seltshmack/fried
 	name = "fried seltshmack"
 	desc = "A shroom!"

@@ -12,7 +12,7 @@
 	outfit = /datum/outfit/job/panopticon/lesnik
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE
-	tutorial = "Totally mad oldman with axe. He claims to be protecting the woods, however, we know that he's just another fuckhead. He also can't use guns"
+	tutorial = "Totally mad oldman with axe. He claims to be protecting the woods, however, we know that he's just another fuckhead. He also can't use guns."
 	display_order = JDO_LESHIY
 	show_in_credits = TRUE
 	give_bank_account = FALSE

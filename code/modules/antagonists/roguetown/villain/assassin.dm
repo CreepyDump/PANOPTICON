@@ -66,7 +66,7 @@
 	..()
 
 /datum/antagonist/villain/proc/finalize_villain()
-	owner.current.playsound_local(get_turf(owner.current), 'sound/music/traitor.ogg', 80, FALSE, pressure_affected = FALSE)
+	owner.current.playsound_local(get_turf(owner.current), 'sound/panopticon/villain.ogg', 80, FALSE, pressure_affected = FALSE)
 
 //TODO Collate
 /datum/antagonist/roundend_report()

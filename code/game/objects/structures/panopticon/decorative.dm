@@ -23,6 +23,7 @@
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	density = TRUE
 	attacked_sound = 'sound/foley/slap (1).ogg'
+	drag_slowdown = 1
 
 /obj/structure/panopticon/barrel/red/fire_act(added, maxstacks)
 	explosion(get_turf(src), 0, 1, 5, flame_range = 5)
@@ -64,30 +65,35 @@
 	density = TRUE
 	climbable = TRUE
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
+	drag_slowdown = 2
 
 /obj/structure/closet/crate/drawer/bunkercabinet/sidetable
 	name = "Side table"
 	icon = 'icons/panopticon/obj/town.dmi'
 	icon_state = "sidetable"
 	base_icon_state = "sidetable"
+	drag_slowdown = 2
 
 /obj/structure/rack/panopticon/shelf
 	name = "Shelf"
 	icon = 'icons/panopticon/obj/town.dmi'
 	icon_state = "shelf"
 	climbable = FALSE
+	anchored = TRUE
 
 /obj/structure/closet/crate/panopticoncrate
 	name = "Wooden crate"
 	icon = 'icons/panopticon/obj/town.dmi'
 	base_icon_state = "crate"
 	icon_state = "crate"
+	drag_slowdown = 3
 
 /obj/structure/closet/crate/metalshkaf
 	name = "Metal cabinet"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
 	base_icon_state = "shkaf"
 	icon_state = "shkaf"
+	anchored = TRUE
 
 /obj/structure/closet/crate/bigshkaf
 	name = "Closet"
@@ -95,6 +101,7 @@
 	icon_state = "closet"
 	dir = SOUTH
 	pixel_y = 32
+	anchored = TRUE
 
 /obj/effect/turf_decal/panopticon/mysor
 	name = "Rubbish"
@@ -114,6 +121,10 @@
 	icon_state = "musorinki"
 	icon = 'icons/panopticon/obj/town.dmi'
 
+/obj/effect/turf_decal/panopticon/mysor/town/alt2
+	icon_state = "scrap"
+	icon = 'icons/panopticon/obj/town.dmi'
+
 /obj/effect/turf_decal/panopticon/mysor/town/alt/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
@@ -123,7 +134,7 @@
 	desc = "I hope it feels fantastic!"
 	icon_state = "loh_sdoh"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
-	max_integrity = 0
+	max_integrity = 9999
 	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 
@@ -137,14 +148,14 @@
 	name = "Radiator"
 	icon_state = "radiator"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
-	max_integrity = 0
+	max_integrity = 9999
 	attacked_sound = 'sound/foley/slap (1).ogg'
 
 /obj/structure/panopticon/stove
 	name = "Stove"
 	icon_state = "plitka"
 	icon = 'icons/panopticon/obj/town.dmi'
-	max_integrity = 0
+	max_integrity = 500
 	attacked_sound = 'sound/foley/slap (1).ogg'
 
 
@@ -233,10 +244,10 @@
 			var/choice = alert(user,"The gods have heard you. What do you want?",,"Medicinae dose...","Sclopetis...","Magicae Sanitatem...")
 			switch(choice)
 				if("Medicinae dose...")
-					playsound(src, 'sound/misc/Logic_transform.ogg', 100)
+					playsound(src, 'sound/misc/Logic_transform.ogg', 75)
 					new /obj/item/reagent_containers/glass/bottle/heroinium(get_turf(user))
 				if("Sclopetis...")
-					playsound(src, 'sound/misc/Logic_transform.ogg', 100)
+					playsound(src, 'sound/misc/Logic_transform.ogg', 75)
 					var/gun = pick(1,2,3)
 					switch(gun)
 						if(1)
@@ -246,7 +257,7 @@
 						if(3)
 							new /obj/item/gun/ballistic/rifle/gusyevboltovka(get_turf(user))
 				if("Magicae Sanitatem...")
-					playsound(src, 'sound/misc/Logic_transform.ogg', 100)
+					playsound(src, 'sound/misc/Logic_transform.ogg', 75)
 					C.fully_heal()
 					for(var/datum/disease/anthrax/A in C.diseases)
 						A.cure()
@@ -271,14 +282,14 @@
 	desc = ""
 	icon_state = "junk_cabinet"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
-	max_integrity = 0
+	max_integrity = 20
 
 /obj/structure/panopticon/brklocker
 	name = "Broken locker"
 	desc = ""
 	icon_state = "junk_locker"
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
-	max_integrity = 0
+	max_integrity = 20
 
 /obj/structure/panopticon/brklocker/Initialize()
 	. = ..()
@@ -296,7 +307,7 @@
 	desc = "They are here so long ago opened up that they've been driven into the ground."
 	icon_state = "shutter"
 	icon = 'icons/panopticon/obj/town.dmi'
-	max_integrity = 0
+	max_integrity = 100
 
 /obj/structure/chair/bench/oldasscouch
 	icon = 'icons/panopticon/obj/indoorsen.dmi'
@@ -304,6 +315,14 @@
 
 /obj/structure/chair/bench/oldasscouch/r
 	icon_state = "divan2"
+
+/obj/structure/chair/bench/oldasscouch/another
+	icon_state = "capchair_center"
+
+/obj/structure/chair/bench/oldasscouch/another/l
+	icon_state = "capchair_left"
+/obj/structure/chair/bench/oldasscouch/another/r
+	icon_state = "capchair_right"
 
 /obj/structure/panopticon/crate
 	name = "Steel stash"
@@ -328,20 +347,6 @@
 	playsound(src,'sound/combat/hits/onmetal/grille (2).ogg', 50, TRUE)
 	qdel(src)
 
-/obj/structure/climbshit
-	icon_state = null
-	opacity = 0
-	max_integrity = 100
-	climbable = TRUE
-	climb_time = 0
-	layer = TABLE_LAYER
-	plane = GAME_PLANE
-	blade_dulling = DULLING_PICK
-	static_debris = null
-	debris = null
-	alpha = 255
-	climb_offset = 14
-
 /obj/structure/panopticon/randomshit
 	name = ""
 	desc = ""
@@ -351,3 +356,27 @@
 	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 	density = FALSE
+
+/obj/structure/panopticon/randomshit/concreteblock
+	name = "Concrete block"
+	icon_state = "concrete_block"
+	icon = 'icons/panopticon/obj/town.dmi'
+
+/obj/structure/panopticon/randomshit/concretepillar
+	name = "Concrete block"
+	icon_state = "concrete_pillar"
+	icon = 'icons/panopticon/obj/town.dmi'
+
+/obj/structure/panopticon/randomshit/concretepillar/Initialize()
+	. = ..()
+	if(prob(45))
+		layer = BELOW_MOB_LAYER
+		plane = GAME_PLANE
+	if(prob(25))
+		icon_state = "concrete_pillar_holes"
+
+/obj/structure/bars/panopticonshit
+	name = "Lattice"
+	desc = ""
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "grid"

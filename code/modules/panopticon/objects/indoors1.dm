@@ -91,3 +91,16 @@
 			hanging.anchored = TRUE
 			hanging = null
 
+
+/obj/structure/fluff/clock/panopticon
+	name = "clock"
+	desc = "Tick-tock, tick-tock, tick-tock, three piggies standing in the dock."
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	icon_state = "pclock"
+	density = TRUE
+	anchored = TRUE
+
+/obj/structure/fluff/clock/panopticon/examine(mob/user)
+	. = ..()
+	if(!broke)
+		. += "it's [station_time_timestamp("hh:mm")]."

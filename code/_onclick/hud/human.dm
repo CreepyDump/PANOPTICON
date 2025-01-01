@@ -781,6 +781,12 @@
 		if(H.head)
 			H.head.screen_loc = rogueui_head
 			screenmob.client.screen += H.head
+		if(H.beltr)
+			H.beltr.screen_loc = rogueui_beltr
+			screenmob.client.screen += H.beltr
+		if(H.beltl)
+			H.beltl.screen_loc = rogueui_beltl
+			screenmob.client.screen += H.beltl
 	else
 		return
 
