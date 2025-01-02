@@ -280,8 +280,10 @@
 	ambientnight = AMB_TOWNNIGHT
 	spookysounds = HORROR_FOREST
 	spookynight = SPOOKY_NIGHT
-	droning_sound = 'sound/music/area/necronox_day.ogg'
 	converted_type = /area/panopticon/indoors/necronox
+	droning_sound = 'sound/music/area/necronox_day.ogg'
+	droning_sound_dusk = 'sound/music/area/necronox_day.ogg'
+	droning_sound_night = 'sound/music/area/necronox_day.ogg'
 	soundenv = 4
 	ambush_times = list("night", "dawn", "day")
 	ambush_types = list(

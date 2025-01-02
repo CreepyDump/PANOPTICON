@@ -176,9 +176,6 @@
 		return
 	if(!isopenturf(T) || R.ontile)
 		T = get_turf(user.loc)
-	if(!R.TurfCheck(user, T))
-		to_chat(user, "<span class='warning'>I can't craft here.</span>")
-		return
 	if(istype(T, /turf/open/water))
 		to_chat(user, "<span class='warning'>I can't craft here.</span>")
 		return
