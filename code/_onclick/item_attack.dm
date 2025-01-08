@@ -170,8 +170,7 @@
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.used_intent.name)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
-	user.sound_hint()
-	sound_hint()
+
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)

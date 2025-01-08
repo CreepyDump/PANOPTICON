@@ -198,8 +198,8 @@
 	name = "bite"
 	candodge = TRUE
 	canparry = TRUE
-	chargedrain = 0
-	chargetime = 0
+	chargedrain = 3
+	chargetime = 4
 	swingdelay = 0
 	unarmed = TRUE
 	noaa = TRUE

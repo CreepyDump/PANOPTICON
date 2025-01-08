@@ -62,11 +62,11 @@
 					findonerotten = TRUE
 					shouldupdate = TRUE
 					C.change_stat("constitution", -8, "rottenlimbs")
-				if(amount > 10 MINUTES)
+				if(amount > 5 MINUTES)
 					if(istype(C, /mob/living/carbon/human))
 						C.add_overlay(hive)
 					new /mob/living/simple_animal/hostile/retaliate/rogue/panopticon/flies(src)
-				if(amount > 30 MINUTES)
+				if(amount > 15 MINUTES)
 					if(!is_zombie)
 						B.skeletonize()
 						if(C.dna && C.dna.species)
@@ -75,7 +75,7 @@
 						shouldupdate = TRUE
 				else
 					findonerotten = TRUE
-		if(amount > 60 MINUTES)
+		if(amount > 35 MINUTES)
 			if(!is_zombie)
 				if(B.skeletonized)
 					dustme = TRUE
