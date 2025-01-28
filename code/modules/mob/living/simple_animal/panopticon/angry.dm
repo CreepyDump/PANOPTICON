@@ -377,3 +377,74 @@
 		for(var/E in begotten)
 			var/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/mutant/brut/F = E
 			F.GiveTarget(cross)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/lichinka
+	name = "Corpsemag"
+	desc = "Maggot that will eat your soul.."
+	icon = 'icons/panopticon/mob/npc.dmi'
+	icon_state = "lichintus"
+	icon_living = "lichintus"
+	icon_dead = null
+	mob_biotypes = MOB_UNDEAD
+	mob_size = MOB_SIZE_SMALL
+	movement_type = GROUND
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	pass_flags = LETPASSTHROW
+	base_intents = list(/datum/intent/simple/bite)
+	gender = NEUTER
+	speak_chance = 0
+	turns_per_move = 1
+	aggro_vision_range = 5
+	maxHealth = 8
+	health = 8
+	speed = 0.8
+	move_to_delay = 2 //delay for the automated movement.
+	harm_intent_damage = 1
+	obj_damage = 1
+	melee_damage_lower = 8
+	melee_damage_upper = 25
+	attack_same = TRUE
+	attack_sound = 'sound/panopticon/healthy/weirdo.ogg'
+	dodge_sound = 'sound/panopticon/healthy/weirdo.ogg'
+	parry_sound = 'sound/panopticon/healthy/weirdo.ogg'
+	d_intent = INTENT_HARM
+	bloodcrawl = BLOODCRAWL_EAT
+	del_on_death = TRUE
+	faction = list("lichinki")
+	footstep_type = null
+	aggressive = 1
+
+/obj/structure/fuckingspawnerofcorpsemags
+	icon = 'icons/roguetown/mob/monster/wraith.dmi'
+	icon_state = "hauntpile"
+	max_integrity = 0
+	anchored = TRUE
+	density = FALSE
+	layer = BELOW_OBJ_LAYER
+	var/list/mags = list()
+	var/maxmags = 1
+	var/datum/looping_sound/boneloop/soundloop
+	var/spawning = FALSE
+
+/obj/structure/fuckingspawnerofcorpsemags/Initialize()
+	. = ..()
+	icon_state = null
+	spawn_mag()
+
+/obj/structure/fuckingspawnerofcorpsemags/proc/createmag()
+	if(QDELETED(src))
+		return
+	if(!spawning)
+		return
+	spawning = FALSE
+	var/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/lichinka/H = new (get_turf(src))
+	mags += H
+	update_icon()
+
+/obj/structure/fuckingspawnerofcorpsemags/proc/spawn_mag()
+	if(QDELETED(src))
+		return
+	if(spawning)
+		return
+	spawning = TRUE
+	addtimer(CALLBACK(src, .proc/createmag), 4 SECONDS)

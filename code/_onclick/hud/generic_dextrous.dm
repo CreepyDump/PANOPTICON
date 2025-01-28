@@ -2,12 +2,13 @@
 /datum/hud/dextrous/New(mob/living/owner)
 
 	..()
-	owner.overlay_fullscreen("see_through_darkness", /atom/movable/screen/fullscreen/see_through_darkness)
+//	owner.overlay_fullscreen("see_through_darkness", /atom/movable/screen/fullscreen/see_through_darkness) NAH MAN FUCK YOUR NIGHT VISION
 /*
 	var/widescreen_layout = FALSE
 	if(owner.client?.prefs?.widescreenpref)
 		widescreen_layout = FALSE
 */
+	var/atom/movable/screen/plane_master/shadowcasting/p3 = new
 	var/atom/movable/screen/using
 	var/atom/movable/screen/inventory/inv_box
 
@@ -22,7 +23,9 @@
 	scannies = new /atom/movable/screen/scannies
 	scannies.hud = src
 	static_inventory += scannies
-
+	p3.plane = SHADOWCASTING_PLANE
+	p3.add_filter("turf_blocker", 5, list("type" = "alpha", render_source="all4", flags=MASK_INVERSE))
+	p3.render_target = "all3"
 	action_intent = new /atom/movable/screen/act_intent/rogintent
 	action_intent.hud = src
 	action_intent.screen_loc = rogueui_intents
@@ -118,7 +121,7 @@
 	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "backl"
 	inv_box.icon = ui_style
-	inv_box.icon_state = "back"
+	inv_box.icon_state = "backl"
 	inv_box.screen_loc = rogueui_backl
 	inv_box.slot_id = SLOT_BACK_L
 	inv_box.hud = src
@@ -127,7 +130,7 @@
 	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "backr"
 	inv_box.icon = ui_style
-	inv_box.icon_state = "back"
+	inv_box.icon_state = "backr"
 	inv_box.screen_loc = rogueui_backr
 	inv_box.slot_id = SLOT_BACK_R
 	inv_box.hud = src
@@ -136,20 +139,18 @@
 	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "pocket r"
 	inv_box.icon = ui_style
-	inv_box.icon_state = "pocket"
+	inv_box.icon_state = "pocketr"
 	inv_box.screen_loc = rogueui_pocketr
 	inv_box.slot_id = SLOT_R_STORE
-	inv_box.icon_full = "genslot"
 	inv_box.hud = src
 	static_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "pocket l"
 	inv_box.icon = ui_style
-	inv_box.icon_state = "pocket"
+	inv_box.icon_state = "pocketl"
 	inv_box.screen_loc = rogueui_pocketl
 	inv_box.slot_id = SLOT_L_STORE
-	inv_box.icon_full = "genslot"
 	inv_box.hud = src
 	static_inventory += inv_box
 
@@ -192,7 +193,7 @@
 	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "hip r"
 	inv_box.icon = ui_style
-	inv_box.icon_state = "hip"
+	inv_box.icon_state = "hipr"
 	inv_box.screen_loc = rogueui_beltr
 	inv_box.slot_id = SLOT_BELT_R
 	inv_box.hud = src
@@ -201,7 +202,7 @@
 	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "hip l"
 	inv_box.icon = ui_style
-	inv_box.icon_state = "hip"
+	inv_box.icon_state = "hipl"
 	inv_box.screen_loc = rogueui_beltl
 	inv_box.slot_id = SLOT_BELT_L
 	inv_box.hud = src

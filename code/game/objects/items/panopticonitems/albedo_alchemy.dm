@@ -80,3 +80,53 @@
 	set waitfor = 0
 	if(prob(100))
 		explosion(T,2,3,4,0, TRUE, FALSE, 4, FALSE, FALSE, 'sound/misc/FragGrenade.ogg')
+
+/obj/structure/panopticon/zalupa
+	name = "Degeneration"
+	desc = "卐 卐 卐 卐 卐"
+	icon = 'icons/panopticon/obj/indoorsen.dmi'
+	icon_state = "matka"
+	density = FALSE
+	anchored = TRUE
+	var/getready = FALSE
+	var/datum/looping_sound/tinnitus/soundloop
+	var/datum/looping_sound/matka/soundloopdva
+	max_integrity = 0
+
+/obj/structure/panopticon/zalupa/Initialize()
+	soundloop = new(list(src), FALSE)
+	soundloop.start()
+	. = ..()
+
+/obj/structure/panopticon/zalupa/Destroy()
+	if(soundloop)
+		soundloop.stop()
+		soundloopdva.stop()
+	..()
+
+/obj/structure/panopticon/zalupa/obj_break(damage_flag)
+	if(soundloop)
+		soundloop.stop()
+		soundloopdva.stop()
+	..()
+
+/obj/structure/panopticon/zalupa/attack_hand(mob/living/user)
+	if(!getready)
+		soundloop.stop()
+		playsound(src, 'sound/panopticon/morda_open_short_01.ogg', 85, TRUE)
+		icon_state = "matka_opening"
+		if(do_after(user, 4 SECONDS, target = src))
+			activatedzalupa()
+			update_icon_state()
+		else
+			icon_state = "matka"
+			update_icon_state()
+	else
+		if(alert("Reincarnate..", "", "Yes", "No") == "Yes")
+			user.returntolobby()
+			qdel(src)
+		return
+/obj/structure/panopticon/zalupa/proc/activatedzalupa()
+	getready = TRUE
+	soundloopdva.start()
+	icon_state = "matka_open"

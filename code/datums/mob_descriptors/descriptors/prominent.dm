@@ -204,7 +204,7 @@
 	prefix = "a"
 
 /datum/mob_descriptor/prominent/aristocratic_haughtiness
-	name = "Aristocratic Disdain"
+	name = "Bourgeois Disdain"
 	verbage = "%HAVE%"
 	prefix = "an"
 

@@ -238,6 +238,21 @@
 	converted_type = /area/panopticon/indoors/hell
 	soundenv = 4
 
+/area/panopticon/outdoors/hell/andanother
+	name = "HELL"
+	icon_state = "isnear"
+	outdoors = FALSE
+	ambientrain = null
+	ambientsounds = AMB_BASEMENT
+	ambientnight = AMB_CAVELAVA
+	spookysounds = SPOOKY_BUNKER
+	spookynight = SPOOKY_BUNKER
+	droning_sound = 'sound/music/area/deathdeathdeath.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/panopticon/indoors/hell
+	soundenv = 4
+
 /area/panopticon/indoors/hell
 	name = "HELL INDOORS"
 	icon_state = "isnear"

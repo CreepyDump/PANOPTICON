@@ -86,6 +86,8 @@
 	if(SSticker.current_state == GAME_STATE_FINISHED)
 		do_game_over()
 
+	if (client.chatOutput.loaded && !isnull(client.chatOutput))
+		client.chatOutput.start()
 	log_message("Client [key_name(src)] has taken ownership of mob [src]([src.type])", LOG_OWNERSHIP)
 	SEND_SIGNAL(src, COMSIG_MOB_CLIENT_LOGIN, client)
 

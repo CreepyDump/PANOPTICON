@@ -1,5 +1,6 @@
 /turf/closed/wall/mineral/panopticon
 	canSmoothWith = null
+	plane = WALL_PLANE
 	desc = ""
 	smooth = SMOOTH_FALSE
 	var/smooth_icon = null
@@ -14,7 +15,7 @@
 	. = ..()
 
 /turf/closed/wall/mineral/panopticon/bunker
-	name = "Bunker wall"
+	name = "Metal wall"
 	icon = 'icons/turf/walls/bunkerwall.dmi'
 	icon_state = "bunkerwall"
 	smooth = SMOOTH_MORE
@@ -115,3 +116,14 @@
 	canSmoothWith = list(/turf/closed/wall/mineral/panopticon/woods/alt)
 	wallclimb = FALSE
 	damage_deflection = 20
+
+/turf/closed/wall/mineral/panopticon/hell
+	name = "tent"
+	icon = 'icons/turf/panopticonfloor.dmi'
+	icon_state = "WALL"
+	smooth = SMOOTH_FALSE
+	blade_dulling = DULLING_BASHCHOP
+	max_integrity = 666666666666666666666666666666666666666
+	above_floor = /turf/open/floor/panopticon/hell/bruh
+	baseturfs = list(/turf/open/floor/panopticon/hell/bruh)
+	wallclimb = FALSE

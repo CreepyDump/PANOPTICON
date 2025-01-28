@@ -76,6 +76,10 @@
 			put_in_hands(W)
 			best_force = W.force
 			return TRUE
+	else if(istype(I, /obj/item/reagent_containers/food/snacks/bluebaby/waitiamred))
+		var/obj/item/reagent_containers/food/snacks/bluebaby/waitiamred/C = I
+		monkeyDrop(C)
+		return TRUE
 
 	// CLOTHING
 	else if(istype(I, /obj/item/clothing))

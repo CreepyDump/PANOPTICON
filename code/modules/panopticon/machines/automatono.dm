@@ -147,13 +147,13 @@
 /obj/structure/mineral_door/panopticon/bunker
 	name = "bunker door"
 	desc = ""
+	plane = WALL_PLANE
 	icon_state = "bunkerdoor"
 	openSound = 'sound/foley/doors/bunkerdoor.ogg'
 	closeSound = 'sound/foley/doors/bunkerdoor.ogg'
 	resistance_flags = null
 	max_integrity = 2000
 	damage_deflection = 15
-	layer = ABOVE_MOB_LAYER
 	icon = 'icons/roguetown/misc/doors.dmi'
 	locksound = 'sound/foley/doors/lock.ogg'
 	unlocksound = 'sound/foley/doors/unlock.ogg'
@@ -373,3 +373,20 @@
 		new /obj/item/panopticonmoney/one(get_turf(user), inputmoneyshit)
 		playsound(get_turf(src), 'sound/panopticon/automatono_accept.ogg', 100 , FALSE, FALSE)
 	desc = "An automatic-drug-machine, that is a true trove for heroin crackheads. It has [moneyz] farkas."
+
+
+/obj/structure/panopticon/torgash
+	name = "Buy // Sell"
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "torgash"
+	density = FALSE
+	anchored = TRUE
+	max_integrity = 0
+
+/obj/structure/panopticon/torgash/attack_hand(mob/user)
+
+/obj/structure/panopticon/torgash/proc/sellorbuyfuckingnigger(mob/user, tabchoice)
+	var/dat = "<META charset='UTF-8'> <Title>TRADING</title> <style type='text/css'> html {overflow: auto;}; overflow:hidden; font-family: Times; background-repeat:repeat-x; } a {text-decoration:none;outline: none;border: none;margin:-1px;} a:focus{outline:none;border: none;} a:hover {Color:#0d0d0d;background:#505055;outline: none;border: none;} a.active { text-decoration:none; Color:#533333;border: none;} a.inactive:hover {Color:#0d0d0d;background:#bb0000;border: none;} a.active:hover {Color:#bb0000;background:#0f0f0f;} a.inactive:hover { text-decoration:none; Color:#0d0d0d; background:#bb0000;border: none;} a img { border: 0; } TABLE.winto { z-index:-1; position: absolute; top: 12; left:14; background-position: bottom; background-repeat:repeat-x; border: 4px dotted #222222; /* border-top:4px double #777777; */ border-bottom: none; border-top: none; } TR { border: 0px; } </style>"
+	dat += "<p style='text-align: left;'><span style='text-decoration: underline; color: #993300;'><strong>WHAT WE'RE SELLING</strong></span></p>"
+	dat += "<a https://kill_niggers.com><p style='text-align: left; padding-left: 30px;'><span style='color: #993300;'>CHECK OUT!</span></p><a/>"
+	user << browse(dat,"window = licker")

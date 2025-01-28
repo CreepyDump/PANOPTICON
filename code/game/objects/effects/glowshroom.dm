@@ -2,7 +2,7 @@
 
 /obj/structure/glowshroom
 	name = "glowberries"
-	desc = "That's a glowberries! They say you should not eat them. Or they're lying?"
+	desc = "a glowberries! They say you should not eat them. Or they're lying?"
 	anchored = TRUE
 	opacity = 0
 	density = FALSE

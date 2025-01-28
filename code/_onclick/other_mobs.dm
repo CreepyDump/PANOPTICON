@@ -160,6 +160,10 @@
 	if(user.mouth)
 		to_chat(user, span_warning("My mouth has something in it."))
 		return FALSE
+	
+	if(user.wear_mask)
+		to_chat(user, span_warning("I have mask on my face!"))
+		return FALSE
 
 	var/datum/intent/bite/bitten = new()
 	if(checkdefense(bitten, user))

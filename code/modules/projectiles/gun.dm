@@ -20,6 +20,8 @@
 /obj/item/gun
 	name = "gun"
 	desc = ""
+	var/image/rust_overlay = null //for condition shit
+	var/condition_icon = 'icons/obj/guns/projectile.dmi'
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "detective"
 	item_state = "gun"
@@ -38,7 +40,7 @@
 	var/fire_sound = 'sound/blank.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
-	var/dry_fire_sound = 'sound/blank.ogg'
+	var/dry_fire_sound = 'sound/panopticon/empty.ogg'
 	var/suppressed = null					//whether or not a message is displayed when fired
 	var/can_suppress = FALSE
 	var/suppressed_sound = 'sound/blank.ogg'
@@ -65,6 +67,7 @@
 	var/spread = 0						//Spread induced by the gun itself.
 	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
 
+	var/candeaf = 1 // can go deaf or nah
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 
@@ -96,6 +99,13 @@
 
 	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds
 	var/pb_knockback = 0
+
+	var/is_jammed = FALSE	//Whether this gun is jammed
+	var/condition = 100
+//	var/safety = FALSE	//Whether or not the safety is on.
+	var/broken = FALSE //weapon broken or no
+	var/jammed_icon
+	var/can_jam = FALSE
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -141,6 +151,9 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
+	if(is_jammed)
+		. += span_warning("[src] looks <b>jammed</b>.</span>")
+	. += span_info("CONDITION: <b>[CheckCondition()]</b>")
 //	if(pin)
 //		. += "It has \a [pin] installed."
 //	else
@@ -172,11 +185,17 @@
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
 /obj/item/gun/proc/can_shoot()
+	if(is_jammed) //If it's jammed always melee attack.
+		return FALSE
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, span_danger("*click*"))
-	playsound(src, dry_fire_sound, 30, TRUE)
+	if(is_jammed)
+		to_chat(user, span_danger("*jam jam*"))
+		playsound(src, 'sound/panopticon/jam.ogg', 50, TRUE)
+	else
+		to_chat(user, span_danger("*click click*"))
+		playsound(src, dry_fire_sound, 50, TRUE)
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user as mob|obj, pointblank = 0, mob/pbtarget = null, message = 1)
@@ -204,6 +223,9 @@
 			user.visible_message(span_danger("[user] shoots [src]!"), \
 							span_danger("I shoot [src]!"), \
 							COMBAT_MESSAGE_RANGE)
+	if(!user.STAPER >= 13 && candeaf == 1)
+		if(prob(85))
+			user.soundbang_act()
 	if(barrel_smoke_on_shoot)
 		var/x_component = sin(get_angle(user, pbtarget)) * 40
 		var/y_component = cos(get_angle(user, pbtarget)) * 40
@@ -245,10 +267,10 @@
 		if(!can_trigger_gun(L))
 			return
 
-//	if(flag)
-//		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
-//			handle_suicide(user, target, params)
-//			return
+	if(flag)
+		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
+			handle_suicide(user, target, params)
+			return
 
 	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
 		shoot_with_empty_chamber(user)
@@ -266,6 +288,14 @@
 				process_fire(user, user, FALSE, params, shot_leg)
 				user.dropItemToGround(src, TRUE)
 				return
+	if(broken)
+		to_chat(user, "<span class='danger'>The gun is broken!</span>")
+		shoot_with_empty_chamber(user)
+		return 0
+
+	if(is_jammed)
+		shoot_with_empty_chamber(user)
+		return 0
 //	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
 //	if(weapon_weight == WEAPON_HEAVY && (user.get_inactive_held_item() || !other_hand))
 //		to_chat(user, "<span class='warning'>I need two hands to fire \the [src]!</span>")
@@ -289,6 +319,10 @@
 
 /obj/item/gun/can_trigger_gun(mob/living/user)
 	. = ..()
+	if(is_jammed) //If it's jammed always melee attack.
+		return FALSE
+	if(check_for_jam())
+		return null
 	if(!handle_pins(user))
 		return FALSE
 
@@ -382,6 +416,10 @@
 			shoot_with_empty_chamber(user)
 			return
 		process_chamber()
+		if(istype(src, /obj/item/gun/ballistic))
+			var/obj/item/gun/ballistic/P = src
+			if(P.can_jam)
+				P.condition -= 1
 		update_icon()
 		semicd = TRUE
 		addtimer(CALLBACK(src, PROC_REF(reset_semicd)), fire_delay)
@@ -393,7 +431,16 @@
 
 /obj/item/gun/update_icon()
 	..()
-
+	overlays.Remove(rust_overlay)
+	var/icon/I = new/icon(icon, icon_state)
+	I.Blend(new /icon(condition_icon,rgb(255,255,255)), ICON_MULTIPLY)
+	I.Blend(new /icon(condition_icon, icon_state = "[get_condition_icon()]"), ICON_ADD)
+	rust_overlay = image(I)
+	rust_overlay.color = "#773d28"
+	overlays += rust_overlay
+	if(is_jammed)
+		if(jammed_icon)
+			icon_state = jammed_icon
 
 /obj/item/gun/proc/reset_semicd()
 	semicd = FALSE
@@ -567,10 +614,10 @@
 
 	if(user == target)
 		target.visible_message(span_warning("[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger..."), \
-			span_danger("I stick [src] in your mouth, ready to pull the trigger..."))
+			span_danger("I stick [src] in mouth, ready to pull the trigger..."))
 	else
 		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
-			span_danger("[user] points [src] at your head, ready to pull the trigger..."))
+			span_danger("[user] points [src] at head, ready to pull the trigger..."))
 
 	semicd = TRUE
 
@@ -588,8 +635,20 @@
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_danger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
 	if(chambered && chambered.BB)
-		chambered.BB.damage *= 5
-
+		if(prob(95))
+			var/obj/item/bodypart/head/head = target.get_bodypart(BODY_ZONE_HEAD)
+			target.death(FALSE)
+			head.dismember(BRUTE, destroy = TRUE)
+			chambered.BB.damage *= 30
+			var/obj/item/organ/brain/brain = target.getorganslot(ORGAN_SLOT_BRAIN)
+			if(brain)
+				brain.applyOrganDamage(500)
+		else
+			target.visible_message(span_alert("[target] is still alive after the shoot!"), span_userdanger("I AM STILL ALIVE!.."))
+			target.emote("agony")
+			target.Knockdown(110)
+			target.Jitter(110)
+			chambered.BB.damage *= 15
 	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
 
 /obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
@@ -667,3 +726,104 @@
 	if(zoomable)
 		azoom = new()
 		azoom.gun = src
+
+/obj/item/gun/proc/unjam(var/mob/M)
+	if(is_jammed)
+		M.visible_message("<span class='notice'>\The [M] begins to unjam [src].</span>", "<span class='notice'>You begin to clear the jam of [src]</span>")
+		if(!do_after(M, 20, src))
+			return
+		is_jammed = 0
+		playsound(src.loc, 'sound/panopticon/unjam.ogg', 65, 1)
+		update_icon()
+		return
+
+/obj/item/gun/MiddleClick(mob/user, params)
+	if(is_jammed)
+		unjam(user)
+//	else
+//		safety = !safety
+//		playsound(user, 'sound/panopticon/safety.ogg', 50, 1)
+//		to_chat(user, "<span class='notice'>You toggle the safety [safety ? "on":"off"].</span>")
+	return TRUE
+
+/obj/item/gun/proc/GetConditionProb()
+	switch(condition)
+		if(0)
+			return 100
+		if(1 to 10)
+			return rand(20,40)
+		if(11 to 20)
+			return rand(8,30)
+		if(21 to 30)
+			return rand(4,25)
+		if(31 to 40)
+			return rand(2,20)
+		if(41 to 50)
+			return rand(1,15)
+		if(51 to 60)
+			return rand(0,10)
+		if(61 to 70)
+			return rand(0,7)
+		if(71 to 80)
+			return rand(0,5)
+		if(81 to 90)
+			return rand(0,3)
+		if(91 to 100)
+			return rand(0,2)
+		if(100 to INFINITY)
+			return 0
+
+/obj/item/gun/proc/check_for_jam()
+	if(!can_jam)//If the gun can't jam then always return true.
+		return FALSE
+	if((!is_jammed && prob(GetConditionProb())))
+		var/mob/user = usr
+		playsound(src.loc, 'sound/panopticon/jam.ogg', 60, 1)
+		to_chat(user, span_danger("The [src] jams!"))
+		is_jammed = 1
+		update_icon()
+		return TRUE
+
+/obj/item/gun/proc/get_condition_icon()
+	switch(condition)
+		if(1 to 30)
+			return "condition_8"
+		if(31 to 40)
+			return "condition_7"
+		if(41 to 50)
+			return "condition_6"
+		if(51 to 60)
+			return "condition_5"
+		if(61 to 70)
+			return "condition_4"
+		if(71 to 80)
+			return "condition_3"
+		if(81 to 90)
+			return "condition_2"
+		if(91 to INFINITY)
+			return "condition_1"
+
+/obj/item/gun/proc/CheckCondition()
+	switch(condition)
+		if(0)
+			return "Broken"
+		if(1 to 10)
+			return "Terrible"
+		if(11 to 20)
+			return "Poor"
+		if(21 to 30)
+			return "Shoddy"
+		if(31 to 40)
+			return "Fair"
+		if(41 to 50)
+			return "Average"
+		if(51 to 60)
+			return "Good"
+		if(61 to 70)
+			return "Great"
+		if(71 to 80)
+			return "Excellent"
+		if(81 to 90)
+			return "Superb"
+		if(91 to INFINITY)
+			return "Perfect"

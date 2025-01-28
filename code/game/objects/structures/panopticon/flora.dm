@@ -2,7 +2,7 @@
 	name = "Grass"
 	icon_state = "g1"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
-	layer = ABOVE_MOB_LAYER
+	layer = BELOW_MOB_LAYER
 	max_integrity = 1
 
 /obj/structure/flora/panopticon/grass/Crossed(atom/movable/AM)
@@ -24,7 +24,7 @@
 /obj/structure/flora/panopticon/grass/Initialize()
 	. = ..()
 	icon_state = "g[rand(1,4)]"
-	if(prob(35))
+	if(prob(64))
 		layer = ABOVE_MOB_LAYER
 		plane = GAME_PLANE_UPPER
 
@@ -210,3 +210,18 @@
 	alpha = 255
 	pixel_x = -16
 	climb_offset = 14
+
+/obj/structure/flora/panopticon/grass/small
+	icon_state = "g_small"
+	layer = BELOW_MOB_LAYER
+
+/obj/structure/flora/panopticon/grass/small/Crossed(atom/movable/AM)
+	return
+
+/obj/structure/flora/panopticon/grass/small/Initialize()
+	dir = pick(GLOB.cardinals)
+	pixel_x = rand(-3,3)
+	pixel_y = rand(-3,3)
+
+/obj/structure/flora/panopticon/grass/small/travka
+	icon_state = "travka"

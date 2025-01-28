@@ -13,6 +13,11 @@
 	set_cap = 2.5
 	light_color = LIGHT_COLOR_RED
 
+/obj/effect/light_emitter/piztec //used so there's a combination of both their head light and light coming off the energy sword
+	set_luminosity = 12
+	set_cap = 8
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
+
 
 /mob/living/simple_animal/hostile/syndicate
 	name = "Syndicate Operative"

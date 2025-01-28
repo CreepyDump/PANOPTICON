@@ -7,6 +7,14 @@
 #define FIELD_OF_VISION_BLOCKER_PLANE -199
 #define FIELD_OF_VISION_BLOCKER_RENDER_TARGET "*fovblock"
 
+//---------- DEFILTER PLANES -------------
+#define DEFILTER_REFLECTIVE_PLANE_ALL -102
+#define DEFILTER_REFLECTIVE_PLANE_ALL_RENDER_TARGET "*DEFILTER_REFLECTIVE_PLANE_ALL_RENDER_TARGET"
+#define DEFILTER_MANUAL_REFLECTIVE_PLANE -101
+#define DEFILTER_MANUAL_REFLECTIVE_PLANE_RENDER_TARGET "*DEFILTER_MANUAL_REFLECTIVE_PLANE_RENDER_TARGET"
+#define DEFILTER_MANUAL_REFLECTIVE_MASK_PLANE -100
+#define DEFILTER_MANUAL_REFLECTIVE_PLANE_MASK_RENDER_TARGET "*DEFILTER_MANUAL_REFLECTIVE_PLANE_MASK_RENDER_TARGET"
+
 #define CLICKCATCHER_PLANE -99
 
 #define PLANE_SPACE -95
@@ -20,21 +28,60 @@
 #define WEATHER_OVERLAY_LAYER -80
 #define WEATHER_RENDER_TARGET "*WEATHER_OVERLAY_PLANE"
 
-#define OPENSPACE_LAYER 17 //Openspace layer over all
-#define OPENSPACE_PLANE -7 //Openspace plane below all turfs
-#define OPENSPACE_BACKDROP_PLANE -6
+//---------- REFLECTIONS -------------
+#define MANUAL_REFLECTIVE_PLANE -88 //Plane for manual reflections, like moving mobs, so we don't get displacement issues
+#define MANUAL_REFLECTIVE_PLANE_RENDER_TARGET "*MANUAL_REFLECTIVE_PLANE_RENDER_TARGET"
+#define MANUAL_REFLECTIVE_MASK_PLANE -87 //Plane for masking manual stuff
+#define MANUAL_REFLECTIVE_MASK_PLANE_RENDER_TARGET "*MANUAL_REFLECTIVE_MASK_PLANE_RENDER_TARGET"
 
+#define REFLECTIVE_DISPLACEMENT_PLANE -86 //Plane for flipping reflected stuff
+#define REFLECTIVE_DISPLACEMENT_PLANE_RENDER_TARGET "*REFLECTIVE_DISPLACEMENT_PLANE_RENDER_TARGET"
+
+#define REFLECTIVE_PLANE -85 //Plane for reflective surfaces below the game plane
+#define REFLECTIVE_PLANE_RENDER_TARGET "*REFLECTIVE_PLANE_RENDER_TARGET"
+#define REFLECTIVE_PLANE_ABOVE -84 //Plane for reflections above the game plane
+#define REFLECTIVE_PLANE_ABOVE_RENDER_TARGET "*REFLECTIVE_PLANE_ABOVE_RENDER_TARGET"
+
+#define REFLECTIVE_ALL_PLANE -83
+#define REFLECTIVE_ALL_PLANE_RENDER_TARGET "*REFLECTIVE_PLANE_ALL_RENDER_TARGET"
+#define REFLECTIVE_ALL_ABOVE_PLANE -82
+#define REFLECTIVE_ALL_ABOVE_PLANE_RENDER_TARGET "*REFLECTIVE_ALL_ABOVE_PLANE_RENDER_TARGET"
+
+#define SHADOWCASTING_REFLECTOR_PLANE -50
+
+#define SHADOWCASTING_PLANE 0
+
+/atom/movable/screen/plane_master/shadowcasting
+	name = "shadowcasting plane master"
+	plane = SHADOWCASTING_PLANE
+	render_target = "all3"
+	appearance_flags = PLANE_MASTER
+
+/atom/movable/screen/plane_master/shadowcasting/backdrop(mob/mymob)
+	. = ..()
+	filters = list()
+	filters += filter(type="ripple",x=80,size=50,radius=0,falloff = 1)
+
+#define WALL_PLANE 	5
+
+#define OPENSPACE_LAYER 17 //Openspace layer over all
+#define OPENSPACE_PLANE -9 //Openspace plane below all turfs
+#define OPENSPACE_BACKDROP_PLANE -8
+
+#define FLOOR_PLANE -7
+#define REFLECTION_PLANE -6
+#define GAME_PLANE -5
+#define GAME_PLANE_RENDER_TARGET "GAME_PLANE_RENDER_TARGET"
+#define GAME_PLANE_FOV_HIDDEN -4
+#define GAME_PLANE_UPPER -3
+#define WEATHER_EFFECT_PLANE -2
+#define REFLECTION_PLANE_ABOVE -1
 // RANDOM EFFECT PLANES (?)
 #define GRAVITY_PULSE_PLANE -27
 #define GRAVITY_PULSE_RENDER_TARGET "*GRAVPULSE_RENDER_TARGET"
 
-#define FLOOR_PLANE -5
-#define WEATHER_EFFECT_PLANE -4
 #define FLOOR_PLANE_FOV_HIDDEN -3
 #define SHADOW_LAYER 2.075
-#define GAME_PLANE -3
-#define GAME_PLANE_FOV_HIDDEN -2
-#define GAME_PLANE_UPPER -1
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 
 #define SPACE_LAYER 1.8
@@ -127,7 +174,7 @@
 
 #define LIGHTING_EXPOSURE_PLANE 16
 #define LIGHTING_LAMPS_SELFGLOW 17 // Light sources glow (lamps, doors overlay, etc.)
-#define LIGHTING_LAMPS_PLANE 18 // Light sources themselves (lamps, screens, etc.)
+#define LIGHTING_LAMPS_PLANE 4 // Light sources themselves (lamps, screens, etc.)
 #define LIGHTING_LAMPS_GLARE 19
 #define LIGHTING_LAMPS_RENDER_TARGET "*LIGHTING_LAMPS_RENDER_TARGET"
 #define TRANSPARENT_FLOOR_PLANE -11 //Transparent plane that shows openspace underneath the floor

@@ -64,7 +64,7 @@
 		amountinworld += 1
 	if(amountinworld < 3)
 		for(var/obj/effect/landmark/underworldcoin/B in world)
-			new /obj/item/underworld/coin(B.loc)
+			new /obj/structure/panopticon/zalupa(B.loc)
 	
 
 // shit that eventually will need moved elsewhere

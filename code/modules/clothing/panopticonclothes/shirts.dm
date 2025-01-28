@@ -54,3 +54,19 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 	icon_state = "strafbat"
 	item_state = "strafbat"
+
+/obj/item/clothing/suit/panopticon/shirt/vatnik
+	name = "Vatnik"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS
+	icon_state = "vatnik"
+	item_state = "vatnik"
+
+/obj/item/clothing/suit/panopticon/shirt/manhuntaahshit
+	name = "Manhunter"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS
+	icon_state = "manhunt"
+	item_state = "manhunt"

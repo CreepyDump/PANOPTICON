@@ -20,7 +20,7 @@
 	)
 
 //Dismember a limb
-/obj/item/bodypart/proc/dismember(dam_type = BRUTE, bclass = BCLASS_CUT, mob/living/user, zone_precise = src.body_zone)
+/obj/item/bodypart/proc/dismember(dam_type = BRUTE, bclass = BCLASS_CUT, mob/living/user, zone_precise = src.body_zone, destroy = FALSE)
 	if(!owner)
 		return FALSE
 	var/mob/living/carbon/C = owner
@@ -66,7 +66,7 @@
 		qdel(grabbedby)
 		grabbedby = null
 
-	drop_limb()
+	drop_limb(destroyed = destroy)
 	if(dam_type == BURN)
 		burn()
 		return TRUE
@@ -110,7 +110,7 @@
 			return
 	
 //limb removal. The "special" argument is used for swapping a limb with a new one without the effects of losing a limb kicking in.
-/obj/item/bodypart/proc/drop_limb(special)
+/obj/item/bodypart/proc/drop_limb(special, destroyed = FALSE)
 	if(!owner)
 		return FALSE
 	testing("begin drop limb")
@@ -171,7 +171,10 @@
 	if(!drop_location)
 		qdel(src)
 		return TRUE
-
+	if(destroyed)
+		// We want the organs inside us to be gone, but bodyparts inside us to remain intact
+		drop_organs(was_owner)
+		qdel(src)
 	// pseudoparts shouldn't have organs, but just in case
 	if(is_pseudopart)
 		drop_organs(was_owner)

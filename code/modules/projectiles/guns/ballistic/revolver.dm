@@ -26,7 +26,7 @@
 	..()
 	chamber_round(TRUE)
 
-/obj/item/gun/ballistic/revolver/AltClick(mob/user)
+/obj/item/gun/ballistic/revolver/AltRightClick(mob/user)
 	..()
 	spin()
 
@@ -45,7 +45,7 @@
 	recent_spin = world.time + spin_delay
 
 	if(do_spin())
-		playsound(usr, "revolver_spin", 30, FALSE)
+		playsound(usr, 'sound/combat/Ranged/baraban.ogg', 65, FALSE)
 		usr.visible_message("<span class='notice'>[usr] spins [src]'s chamber.</span>", "<span class='notice'>I spin [src]'s chamber.</span>")
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
@@ -258,3 +258,22 @@
 		user.emote("scream")
 		user.drop_all_held_items()
 		user.Paralyze(80)
+
+/obj/item/gun/ballistic/revolver/panopticon
+	name = "\improper .357 revolver"
+	desc = ""
+	icon = 'icons/panopticon/items/guns.dmi'
+	icon_state = "revolver"
+	fire_sound = 'sound/combat/Ranged/revolver-shoot.ogg'
+	load_sound = 'sound/combat/Ranged/revolver-load.ogg'
+	eject_sound = 'sound/combat/Ranged/eject.ogg'
+	dry_fire_sound = 'sound/combat/Ranged/RevolverNoAmmo.ogg'
+
+/obj/item/gun/ballistic/revolver/panopticon/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.4,"sx" = -11,"sy" = -2,"nx" = 11,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -4,"sturn" = -50,"wturn" = 0,"eturn" = -3,"nflip" = 0,"sflip" = 4,"wflip" = 8,"eflip" = 1,)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)

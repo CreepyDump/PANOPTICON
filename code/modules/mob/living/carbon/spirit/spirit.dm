@@ -5,8 +5,8 @@
 	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
 	icon_state = "hollow"
 	gender = NEUTER
-	pass_flags = PASSTABLE
-	mob_biotypes = MOB_SPIRIT|MOB_HUMANOID
+	pass_flags = LETPASSTHROW
+	mob_biotypes = MOB_UNDEAD|MOB_HUMANOID
 	gib_type = /obj/effect/decal/cleanable/blood/gibs
 	bodyparts = list(/obj/item/bodypart/chest/spirit, /obj/item/bodypart/head/spirit, /obj/item/bodypart/l_arm/spirit,
 					 /obj/item/bodypart/r_arm/spirit, /obj/item/bodypart/r_leg/spirit, /obj/item/bodypart/l_leg/spirit)
@@ -45,14 +45,12 @@
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
 	ADD_TRAIT(src, TRAIT_PACIFISM, TRAIT_GENERIC)
-	name = pick("Wanderer", "Traveler", "Pilgrim", "Mourner", "Sorrowful", "Forlorn", "Regretful", "Piteous", "Rueful", "Dejected")
+	name = pick("BITCH", "SLUT", "CUNT", "RAPED", "PANOPTICONIZED", "GODS PERSONAL SERVICE", "WHORE")
 
 	//initialize limbs
 	create_bodyparts()
 	create_internal_organs()
 	. = ..()
-	var/L = new /obj/item/flashlight/lantern/shrunken(src.loc)
-	put_in_hands(L)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, 2)
 
 /mob/living/carbon/spirit/create_internal_organs()
@@ -125,8 +123,8 @@
 	if(beingmoved)
 		return
 	beingmoved = TRUE
-	to_chat(src, "<B><font size=3 color=red>Your soul is dragged to an infathomably cruel place where it endures severe torment. You've all but given up hope when you feel a presence drag you back to that Forest.</font></B>")
-	playsound(src, 'sound/combat/caught.ogg', 80, TRUE, -1)
+	to_chat(src, "<B><font size=3 color=red>Try again!</font></B>")
+	playsound(src, 'sound/combat/confuse.wav', 80, TRUE, -1)
 	for(var/obj/effect/landmark/underworld/A in world)
 		forceMove(A.loc)
 	beingmoved = FALSE

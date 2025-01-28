@@ -40,12 +40,20 @@
 	var/swim_skill = FALSE
 	nomouseover = FALSE
 	var/swimdir = FALSE
-
+	shine = SHINE_SHINY
 /turf/open/water/Initialize()
 	.  = ..()
 	water_overlay = new(src)
 	water_top_overlay = new(src)
 	update_icon()
+	transform *= 1
+
+#define WAVE_COUNT 1
+atom/proc/WaterEffect()
+	filters += filter(type="wave", x=10, y=2, size=1, offset=0.5)
+	var/f = filters[1]
+	animate(f, offset=f:offset, time=0, loop=-1, flags=ANIMATION_PARALLEL)
+	animate(offset=f:offset-1, time=rand()*10+5)
 
 /turf/open/water/update_icon()
 	if(water_overlay)

@@ -113,7 +113,10 @@
 
 
 /datum/antagonist/necroleninist/greet()
-	to_chat(owner.current, "<span class='cult'>Foolish mortals tried to stop us, but this day is going to be an final song for them! We're need to revive our leader - Lenin!</span>")
+	var/message = "<div class='infodiv'><big>You are the <b>Necroleninist</bb></ig>\n"
+	message += "*-----------------*\n"
+	message += "<span class='cult'>Foolish mortals tried to stop us, but this day is going to be an final song for them! We're need to revive our leader - Lenin!</span>"
+	to_chat(owner.current, "[message]</div>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/panopticon/revolutsia.ogg', 100, FALSE, pressure_affected = FALSE)
 
 
@@ -143,7 +146,10 @@
 	return
 
 /datum/antagonist/necroleninist/proc/finalize_necroleninist()
-	to_chat(owner.current, "<span class='cult'>Foolish mortals tried to stop us, but this day is going to be an final song for them! We're need to revive our leader - Lenin!</span>")
+	var/message = "<div class='infodiv'><big>You are the <b>Necroleninist</bb></ig>\n"
+	message += "*-----------------*\n"
+	message += "<span class='cult'>Foolish mortals tried to stop us, but this day is going to be an final song for them! We're need to revive our leader - Lenin!</span>"
+	to_chat(owner.current, "[message]</div>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/panopticon/revolutsia.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /datum/antagonist/necroleninist/proc/on_examinate(datum/source, atom/A)

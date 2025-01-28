@@ -181,6 +181,11 @@
 	icon_state = "wartrash"
 	icon = 'icons/panopticon/obj/mirkwood.dmi'
 
+/obj/structure/panopticon/rotwood
+	name = "Rotten logs"
+	icon_state = "logs"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+
 /obj/structure/panopticon/minesdoski
 	name = ""
 	desc = ""

@@ -27,9 +27,10 @@
 	shoes = /obj/item/clothing/shoes/panopticon
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	pants = /obj/item/clothing/under/panopticon/civilianpants
-	head = /obj/item/clothing/head/panopticon/vargcap
+	head = /obj/item/clothing/head/panopticon/papakha
 	backl = /obj/item/storage/backpack/rogue/backpack
 	belt = /obj/item/storage/belt/rogue/leather
+	cloak = /obj/item/clothing/armor/panopticon/cloak/cossack
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	beltr = null
 	back = null

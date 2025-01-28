@@ -58,12 +58,6 @@
 		var/image/b = image(icon, src, "b[right]")
 		a.pixel_x = b.pixel_x = overlay_x
 		a.pixel_y = b.pixel_y = overlay_y + y_off
-		if(num_value > raw_num_value)
-			a.color = list(0,1,0,0, 1,0,0,0, 0,0,1,0, 0,0,0,1, 0,0,0,0)
-			b.color = a.color
-		else if(num_value < raw_num_value)
-			a.color = list(0,1,0,0, 1,0,0,0, 0,0,1,0, 0,0,0,1, 0,0,0,0)
-			b.color = a.color
 		stat_to_number_overlays[stat_path] = list(a, b)
 		all_number_overlays |= stat_to_number_overlays[stat_path]
 

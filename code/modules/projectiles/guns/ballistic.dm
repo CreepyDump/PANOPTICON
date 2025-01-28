@@ -15,6 +15,7 @@
 	///whether loading sound should vary
 	var/load_sound_vary = TRUE
 	///sound of racking
+	can_jam = TRUE
 	var/rack_sound = 'sound/blank.ogg'
 	///volume of racking
 	var/rack_sound_volume = 60

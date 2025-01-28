@@ -1,3 +1,3 @@
-<h1 style><b>PANOPTICON...</b></h1>
-<i><h2 style="color:rgb(152, 7, 10);">The Blood-Sun Epoch is a time of great wonders</h2></i>
-<a href="https://discord.gg/DgZHVfeHvf">OUR DISCORD SERVER</a>
+<h1 style="text-align: justify;"><span style="color: #993300;"><strong>PANOPTICON...</strong></span></h1>
+<h2 style="color: #98070a; text-align: justify;"><span style="color: #993300;">The Blood-Sun Epoch is a time of great wonders</span></h2>
+<p style="text-align: justify;"><a href="https://discord.gg/DgZHVfeHvf">OUR DISCORD SERVER</a></p>

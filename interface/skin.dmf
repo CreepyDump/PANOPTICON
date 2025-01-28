@@ -13,23 +13,6 @@ macro "default"
 		command = "Aghost"
 
 
-menu "menu"
-	elem 
-		name = "&Game"
-		command = ""
-		saved-params = "is-checked"
-	elem "reconnectbutton"
-		name = "&Reconnect"
-		command = ".reconnect"
-		category = "&Game"
-		saved-params = "is-checked"
-	elem 
-		name = "&Quit\tAlt-F4"
-		command = ".quit"
-		category = "&Game"
-		saved-params = "is-checked"
-
-
 window "mainwindow"
 	elem "mainwindow"
 		type = MAIN
@@ -45,6 +28,11 @@ window "mainwindow"
 		icon = 'icons\\tg_32.png'
 		macro = "default"
 		menu = "menu"
+		outer-size = 1936x1048
+		outer-pos = -8,-8
+		inner-size = 1920x989
+		inner-pos = 8,51
+		screen-size = 1920x1032
 	elem "split"
 		type = CHILD
 		pos = 3,0
@@ -72,6 +60,7 @@ window "mainwindow"
 		size = 999x999
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		is-visible = false
 		saved-params = ""
 
@@ -103,7 +92,7 @@ window "infowindow"
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = #000000
+		background-color = #171717
 		saved-params = "pos;size"
 		is-pane = true
 	elem "info"
@@ -112,7 +101,7 @@ window "infowindow"
 		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = #000000
+		background-color = #171717
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
@@ -126,10 +115,26 @@ window "outputwindow"
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = #320000
-		is-transparent = true
-		saved-params = "pos;size"
+		background-color = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
 		is-pane = true
+		image = 'code\\modules\\goonchat\\browserassets\\css\\chatbg.png'
+		outer-size = 654x728
+		outer-pos = 291,0
+		inner-size = 640x714
+	elem "browser"
+		type = BROWSER
+		pos = 0,0
+		size = 411x316
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		background-color = #060606
+		saved-params = ""
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
@@ -138,20 +143,7 @@ window "outputwindow"
 		anchor2 = 100,100
 		background-color = #000000
 		is-visible = false
-		is-disabled = true
 		saved-params = ""
-	elem "output"
-		type = OUTPUT
-		pos = 0,0
-		size = 635x440
-		anchor1 = 0,0
-		anchor2 = 100,100
-		background-color = #000000
-		is-default = true
-		saved-params = "max-lines"
-		enable-http-images = true
-		max-lines = 100
-		image = 'code\\modules\\goonchat\\browserassets\\css\\chatbg.png'
 	elem "input"
 		type = INPUT
 		pos = 0,445
@@ -159,12 +151,23 @@ window "outputwindow"
 		anchor1 = 0,100
 		anchor2 = 100,100
 		font-size = 12
-		text-color = #ad9eb4
+		text-color = #f9976c
 		background-color = #000000
 		is-default = true
 		border = sunken
 		saved-params = ""
 		command = "say"
+	elem "csay"
+		type = INPUT
+		pos = 0,657
+		size = 640x23
+		anchor1 = 0,100
+		anchor2 = 100,100
+		font-size = 12
+		text-color = #ff0000
+		is-visible = false
+		is-default = true
+		saved-params = "command"
 
 window "statwindow"
 	elem "statwindow"
@@ -177,10 +180,6 @@ window "statwindow"
 		background-color = #000000
 		saved-params = "pos;size"
 		is-pane = true
-		outer-size = 656x538
-		outer-pos = 291,0
-		inner-pos = 8,31
-		screen-size = 1920x1032
 	elem "stat"
 		type = INFO
 		pos = 0,0

@@ -154,9 +154,6 @@
 			spawned_human.forceMove(get_turf(a_mimir))
 			a_mimir.buckle_mob(H)
 			spawned_human.AdjustSleeping(4 SECONDS)
-		if(spawned_human.charflaw)
-			if(spawned_human.charflaw.type == /datum/charflaw/limbloss/nolegs)
-				new /obj/vehicle/ridden/wheelchair(H.loc)
 		if(H?.ckey == "lolkekxdbruh")
 			new /obj/item/clothing/head/panopticon/keptyouwaitinghuh(H.drop_location(), FALSE)
 		if(H?.ckey == "crazyduster")
@@ -461,7 +458,8 @@
 /datum/job/proc/greet(mob/player)
 	if(!job_greet_text)
 		return
-	to_chat(player, span_notice("You are the <b>[title]</b>"))
+	var/message = "<div class='infodiv'><big>You are the <b>[title]</bb></ig>\n"
 	if(tutorial)
-		to_chat(player, span_notice("*-----------------*"))
-		to_chat(player, span_notice(tutorial))
+		message += "*-----------------*\n"
+		message += "<span class='notice'>[tutorial]</span>\n"
+	to_chat(player, "[message]</div>")

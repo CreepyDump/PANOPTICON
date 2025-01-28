@@ -38,19 +38,3 @@
 	var/mob/living/carbon/human/H = user
 	var/obj/item/bodypart/l_arm/rproesthetic/L = new()
 	L.attach_limb(H)
-
-/datum/charflaw/limbloss/nolegs
-	name = "Disabled"
-	desc = "I lost my legs at war. But i still have wheelchair."
-	lost_zone = BODY_ZONE_R_LEG
-
-/datum/charflaw/limbloss/nolegs/on_mob_creation(mob/user)
-	..()
-	if(!ishuman(user))
-		var/mob/living/carbon/huesos = user
-		var/obj/item/bodypart/l_leg = huesos.get_bodypart(BODY_ZONE_L_LEG)
-		var/obj/item/bodypart/r_leg = huesos.get_bodypart(BODY_ZONE_R_LEG)
-		if(l_leg)
-			l_leg.dismember()
-		if(r_leg)
-			r_leg.dismember()

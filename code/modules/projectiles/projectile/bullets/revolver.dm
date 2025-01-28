@@ -58,3 +58,4 @@
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
 	damage = 60
+	armor_penetration = 5

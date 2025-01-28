@@ -107,15 +107,15 @@
 		return
 	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
 	if(reason)
-		to_chat(owner, "<span class='danger'>Seeing [reason] [message]!</span>")
+		to_chat(owner, "<span class='phobia'>Seeing [reason] [message]!</span>")
 	else if(trigger_word)
-		to_chat(owner, "<span class='danger'>Hearing \"[trigger_word]\" [message]!</span>")
+		to_chat(owner, "<span class='phobia'>Hearing \"[trigger_word]\" [message]!</span>")
 	else
-		to_chat(owner, "<span class='danger'>Something [message]!</span>")
+		to_chat(owner, "<span class='phobia'>Something [message]!</span>")
 	var/reaction = rand(1,4)
 	switch(reaction)
 		if(1)
-			to_chat(owner, "<span class='warning'>I are paralyzed with fear!</span>")
+			to_chat(owner, "<span class='phobia'>I are paralyzed with fear!</span>")
 			owner.Stun(70)
 			owner.Jitter(8)
 		if(2)
@@ -125,9 +125,10 @@
 			if(reason)
 				owner.pointed(reason)
 		if(3)
-			to_chat(owner, "<span class='warning'>I shut your eyes in terror!</span>")
+			to_chat(owner, "<span class='phobia'>I shut eyes in terror!</span>")
 			owner.Jitter(5)
 			owner.blind_eyes(10)
+			owner.eyesclosed = 1
 		if(4)
 			owner.dizziness += 10
 			owner.confused += 10

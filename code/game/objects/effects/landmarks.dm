@@ -784,7 +784,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "safe zone"
 
 /obj/effect/landmark/underworldcoin/Initialize(mapload)
-	GLOB.underworldcoin += loc
+	GLOB.zalupa += loc
 	return
 
 

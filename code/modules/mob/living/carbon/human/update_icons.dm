@@ -1957,3 +1957,13 @@ generate/load female uniform sprites matching all previously decided variables
 	if(update_icons)	update_icons()
 	update_hair()
 */
+
+/mob/living/carbon/human/proc/add_coldbreath(var/update_icons=1)
+	if(coldbreath)	return //We alreayd have coldbreath don't add it again.
+	//if(wear_mask)	return //Don't need this if we're wearing a mask.
+	if(stat == DEAD || wear_mask)//	return //Don't need this if we're dead
+		overlays_standing[RIPPLE_LAYER] = null
+	var/mutable_appearance/standing = mutable_appearance('icons/mob/cold_breath.dmi', "breath", -BODY_LAYER)
+	overlays_standing[RIPPLE_LAYER] = standing
+	coldbreath = TRUE
+	

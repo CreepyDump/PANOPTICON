@@ -5,7 +5,14 @@ For the main html chat area
 //Precaching a bunch of shit
 GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of icons for the browser output
 
-//On client, created on login
+#define MAX_COOKIE_LENGTH 5
+#define SPAM_TRIGGER_AUTOMUTE 10
+
+/client/New()
+	chatOutput = new (src)
+	return ..()
+
+/// Member of /client that manages caching and sending messages to its holder
 /datum/chatOutput
 	var/client/owner	 //client ref
 	var/loaded       = FALSE // Has the client loaded the browser output area?
@@ -14,6 +21,11 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	var/broken       = FALSE
 	var/list/connectionHistory //Contains the connection history passed from chat cookie
 	var/adminMusicVolume = 50 //This is for the Play Global Sound verb
+	var/next_time_to_clear = 0
+	var/total_checks = 0
+
+/datum/chatOutput/Destroy()
+	return ..()
 
 /datum/chatOutput/New(client/C)
 	owner = C
@@ -33,7 +45,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		alert(owner.mob, "Updated chat window does not exist. If you are using a custom skin file please allow the game to update.")
 		return
 
-	if(winget(owner, "browseroutput", "is-visible") == "true") //Already setup
+	if (owner && winget(owner, "browseroutput", "is-visible") == "true")
 		doneLoading()
 
 	else //Not setup
@@ -60,7 +72,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	var/list/params = list()
 	for(var/key in href_list)
 		if(length(key) > 7 && findtext(key, "param")) // 7 is the amount of characters in the basic param key template.
-			var/param_name = copytext_char(key, 7, -1)
+			var/param_name = copytext(key, 7, -1)
 			var/item       = href_list[key]
 
 			params[param_name] = item
@@ -85,7 +97,9 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 			swaptodarkmode()
 		if("swaptolightmode")
 			swaptolightmode()
-
+		if("reload")
+			loaded = FALSE
+			start()
 	if(data)
 		ehjax_send(data = data)
 
@@ -109,13 +123,19 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 	syncRegex()
 
-	//do not convert to to_chat()
+	//do not convert to to_chat
 	SEND_TEXT(owner, "<span class=\"userdanger\">Failed to load fancy chat, reverting to old chat. Certain features won't work.</span>")
+	SEND_TEXT(owner, "<span class=\"userdanger\"> we <a href='?_src_=chat&proc=reload'>try again</a>?</span>") // do NOT convert to to_chat()
 
 /datum/chatOutput/proc/showChat()
 	winset(owner, "output", "is-visible=false")
 	winset(owner, "browseroutput", "is-disabled=false;is-visible=true")
 
+/datum/chatOutput/proc/updatePing()
+	if (!owner)
+		qdel(src)
+		return
+	ehjax_send(data = owner.is_afk(29 SECONDS) ? "softPang" : "pang")
 /proc/syncChatRegexes()
 	for (var/user in GLOB.clients)
 		var/client/C = user
@@ -130,7 +150,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		regexes["show_filtered_ic_chat"] = list(
 			config.ic_filter_regex.name,
 			"ig",
-			"<span class='boldwarning'>$1</span>"
+			span_boldwarning("$1")
 		)
 
 	if (regexes.len)
@@ -172,6 +192,14 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 //Called by client, sent data to investigate (cookie history so far)
 /datum/chatOutput/proc/analyzeClientData(cookie = "")
+	if(world.time  >  next_time_to_clear)
+		next_time_to_clear = world.time + (3 SECONDS)
+		total_checks = 0
+	total_checks += 1
+	if(total_checks > SPAM_TRIGGER_AUTOMUTE)
+		message_admins("[key_name(owner)] kicked for goonchat topic spam")
+		qdel(owner)
+		return
 	if(!cookie)
 		return
 
@@ -205,7 +233,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	log_world("\[[time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")]\] Client: [(src.owner.key ? src.owner.key : src.owner)] triggered JS error: [error]")
 
 //Global chat procs
-/proc/to_chat_immediate(target, message, handle_whitespace = TRUE)
+/proc/to_chat_immediate(target, message, handle_whitespace = TRUE, trailing_newline = TRUE)
 	if(!target || !message)
 		return
 
@@ -215,8 +243,15 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	var/original_message = message
 	if(handle_whitespace)
 		message = replacetext(message, "\n", "<br>")
-		message = replacetext(message, "\t", "[FOURSPACES][FOURSPACES]") //EIGHT SPACES IN TOTAL!!
-
+		message = replacetext(message, "\t", "[FOURSPACES][FOURSPACES]")
+	//Replace expanded \icon macro with icon2html
+	//regex/Replace with a proc won't work here because icon2html takes target as an argument and there is no way to pass it to the replacement proc
+	//not even hacks with reassigning usr work
+	var/regex/i = new(@/<IMG CLASS=icon SRC=(\[[^]]+])(?: ICONSTATE='([^']+)')?>/, "g")
+	while(i.Find_char(message))
+		message = copytext(message,1,i.index)+icon2html(locate(i.group[1]), target, icon_state=i.group[2])+copytext(message,i.next)
+	if(trailing_newline)
+		message += "<br>"
 	if(islist(target))
 		// Do the double-encoding outside the loop to save nanoseconds
 		var/twiceEncoded = url_encode(url_encode(message))
@@ -258,14 +293,18 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		// url_encode it TWICE, this way any UTF-8 characters are able to be decoded by the Javascript.
 		C << output(url_encode(url_encode(message)), "browseroutput:output")
 
-/proc/to_chat(target, message, handle_whitespace = TRUE)
+/proc/to_chat(target, message, handle_whitespace = TRUE, trailing_newline = TRUE)
 	if(Master.current_runlevel == RUNLEVEL_INIT || !SSchat?.initialized)
 		to_chat_immediate(target, message, handle_whitespace)
 		return
-	SSchat.queue(target, message, handle_whitespace)
+	SSchat.queue(target, message, handle_whitespace, trailing_newline)
 
 /datum/chatOutput/proc/swaptolightmode() //Dark mode light mode stuff. Yell at KMC if this breaks! (See darkmode.dm for documentation)
 	owner.force_white_theme()
 
 /datum/chatOutput/proc/swaptodarkmode()
 	owner.force_dark_theme()
+
+
+#undef MAX_COOKIE_LENGTH
+#undef SPAM_TRIGGER_AUTOMUTE

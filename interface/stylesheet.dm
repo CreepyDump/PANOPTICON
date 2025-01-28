@@ -60,7 +60,7 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Crimson Text, TrueType;}
 
 .alert					{color: #d82020;}
 
-.emote					{color: #b1bb9f;}
+.emote					{color: #b1bb9f; font-size: 75%;}
 
 .crit					{color: #fd5b5b; font-weight: bold; text-shadow: 0px 0px 2px rgba(167, 43, 43, 0.4);}
 .userdanger				{color: #FF6D6D;	font-weight: bold;	font-size: 115%;}

@@ -35,7 +35,7 @@
 	back = null
 	id = null
 	belt = /obj/item/storage/belt/rogue/panopticon/strafbat
-	beltl = /obj/item/flashlight/flare/torch/lantern
+	beltl = null
 	beltr = null
 	backpack_contents = list(/obj/item/panopticonweapon/molotok = 1)
 	if(H.mind)
@@ -50,7 +50,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(3,4,5), TRUE)
 		backpack_contents = list(/obj/item/ammo_box/a762 = 4)
 		head = /obj/item/clothing/head/panopticon/shtrafbathelm/helek
+		beltl = /obj/item/flashlight/flare/torch/lantern
 	else if(prob(5))
+		var/obj/item/flashlight/flare/torch/lantern/T = new()
+		T.spark_act()
+		H.put_in_hands(T)
 		r_hand = /obj/item/panopticonweapon/sledge
 
 /datum/outfit/job/panopticon/shtrafbat

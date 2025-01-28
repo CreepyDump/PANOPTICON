@@ -18,7 +18,6 @@
 
 	var/valid_territory = TRUE // If it's a valid territory for cult summoning or the CRAB-17 phone to spawn
 	var/blob_allowed = TRUE // If blobs can spawn there and if it counts towards their score.
-
 	var/fire = null
 //	var/atmos = TRUE
 	var/atmosalm = FALSE
@@ -619,6 +618,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		return
 
 	var/mob/living/L = M
+	var/mob/living/carbon/human/H = M
 	if(!L.ckey || L.stat == DEAD)
 		return
 
@@ -629,7 +629,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 
 	if(first_time_text)
 		L.intro_area(src)
-
+	if(GLOB.tod == "night")
+		if(outdoors)
+			H.add_coldbreath()
 //	L.play_ambience(src)
 
 /client

@@ -1,6 +1,6 @@
 /particles/explosion_smoke
-	icon = 'icons/effects/96x96.dmi'
-	icon_state = "smoke3"
+	icon = 'icons/effects/smokes_updated.dmi'
+	icon_state = "smokkum"
 	width = 1000
 	height = 1000
 	count = 75
@@ -16,7 +16,7 @@
 	friction = generator(GEN_NUM, 0.1, 0.5)
 	gravity = list(1, 2)
 	scale = 0.25
-	grow = 0.05
+	grow = generator(GEN_NUM, 0.01, 0.04, NORMAL_RAND)
 
 /particles/explosion_smoke/deva
 	scale = 0.5

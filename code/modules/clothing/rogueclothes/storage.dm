@@ -88,7 +88,7 @@
 	color = "#575160"
 
 /obj/item/storage/belt/rogue/leather/cloth/bandit
-	color = "#ff0000"
+	color = "#80400c"
 
 /obj/item/storage/belt/rogue/pouch
 	name = "pouch"

@@ -303,9 +303,11 @@
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	plane = FULLSCREEN_PLANE
 	layer = GRAIN_LAYER
+	alpha = 195
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/poggers = 1
 	var/loggers = "k"
+	show_when_dead = FALSE
 
 /atom/movable/screen/fullscreen/noise/update_for_view(client_view)
 	screen_loc = "WEST,SOUTH to EAST,NORTH"

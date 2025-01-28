@@ -26,7 +26,7 @@
 	//Facial hair colour and style
 	var/facial_hair_color = "000"
 	var/facial_hairstyle = "Shaved"
-
+	var/coldbreath = FALSE //dumb snowflake bullshit for coldbreath don't worry about it g
 	//Eye colour
 	var/eye_color = "000"
 

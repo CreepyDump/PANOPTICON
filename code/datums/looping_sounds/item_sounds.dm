@@ -131,5 +131,16 @@
 
 /datum/looping_sound/tinnitus
 	mid_sounds = list('sound/panopticon/healthy/earfucker.ogg')
-	mid_length = 12
-	volume = 100
+	mid_length = 6
+	volume = 85
+	extra_range = 5
+	vary = TRUE
+	ignore_wallz = TRUE
+
+/datum/looping_sound/matka
+	mid_sounds = list('sound/panopticon/larva_big_01_idle.ogg')
+	mid_length = 6
+	volume = 89
+	extra_range = 5
+	vary = TRUE
+	ignore_wallz = TRUE

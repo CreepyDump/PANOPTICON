@@ -13,6 +13,7 @@
 	spread = 0
 	can_parry = TRUE
 	pin = /obj/item/firing_pin
+	candeaf = 0
 	force = 10
 	var/cocked = FALSE
 	cartridge_wording = "bolt"

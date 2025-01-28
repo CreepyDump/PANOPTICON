@@ -31,7 +31,7 @@
 	armor = list("blunt" = 15, "slash" = 15, "stab" = 15, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/armor/panopticon/cloak/holycloak
-	name = "Helek officer-jacket"
+	name = "Helekian Gunslinger jacket"
 	allowed_sex = list(MALE, FEMALE)
 	icon = 'icons/panopticon/obj/clothes/cloak.dmi'
 	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
@@ -43,6 +43,11 @@
 
 /obj/item/clothing/armor/panopticon/cloak/brown
 	name = "Brown coat"
+	icon_state = "bosinn"
+	item_state = "bosinn"
+
+/obj/item/clothing/armor/panopticon/cloak/cossack
+	name = "Cossack coat"
 	icon_state = "bosinn"
 	item_state = "bosinn"
 

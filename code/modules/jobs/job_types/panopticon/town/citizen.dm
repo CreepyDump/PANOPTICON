@@ -68,17 +68,3 @@
 		to_chat(H, "<span class='cult italic'><b><span class='big'>I AM SICK WITH DISEASE.</span></b></span>")
 		chuma.try_infect(H)
 		mask = /obj/item/clothing/mask/infected
-
-/datum/outfit/job/panopticon/citizen
-	uniform = null
-	id = null
-	ears = null
-	belt = null
-	back = null
-	shoes = /obj/item/clothing/shoes/panopticon
-	pants = /obj/item/clothing/under/panopticon/civilianpants
-	shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
-	box = null
-	backpack = null
-	satchel  = null
-	duffelbag = null

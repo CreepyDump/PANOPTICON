@@ -21,6 +21,7 @@
 	var/whitelist_req = FALSE
 	var/ispilgrim = FALSE
 	var/isvillager = FALSE
+	var/islodger = FALSE
 	var/horse = FALSE
 	var/vampcompat = TRUE
 
@@ -40,9 +41,9 @@
 	H.SetStun(0)
 	sleep(1)
 	testing("[H] spawn troch")
-	var/obj/item/flashlight/flare/torch/T = new()
-	T.spark_act()
-	H.put_in_hands(T)
+//	var/obj/item/flashlight/flare/torch/T = new()
+//	T.spark_act()
+//	H.put_in_hands(T)
 
 	var/turf/TU = get_turf(H)
 	if(TU)

@@ -27,50 +27,56 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 	var/last_asset_job = 0 // Last job done.
 
 //This proc sends the asset to the client, but only if it needs it.
-//This proc blocks(sleeps) unless verify is set to false
-/proc/send_asset(client/client, asset_name, verify = TRUE)
+//This proc blocks(sleeps)
+/proc/send_asset(client/client, asset_name)
+	if(!send_asset_internal(client, asset_name))
+		return FALSE
+	client.sending |= asset_name
+	var/job = client.browse_queue_flush()
+	if(!isnull(job) && client) // if job is null we runtimed somehow
+		client.sending -= asset_name
+		client.cache |= asset_name
+		client.completed_asset_jobs -= job
+
+//This proc doesn't
+/proc/send_asset_async(client/client, asset_name)
+	if(!send_asset_internal(client, asset_name))
+		return FALSE
+	client.cache += asset_name
+	return TRUE
+
+/proc/send_asset_internal(client/client, asset_name)
 	if(!istype(client))
 		if(ismob(client))
 			var/mob/M = client
 			if(M.client)
 				client = M.client
-
 			else
-				return 0
-
+				return FALSE
 		else
-			return 0
+			return FALSE
 
 	if(client.cache.Find(asset_name) || client.sending.Find(asset_name))
-		return 0
+		return FALSE
 
 	log_asset("Sending asset [asset_name] to client [client]")
 	client << browse_rsc(SSassets.cache[asset_name], asset_name)
-	if(!verify)
-		client.cache += asset_name
-		return 1
+	return TRUE // sent, but not necessarily received
 
-	client.sending |= asset_name
-	var/job = ++client.last_asset_job
-
-	client << browse({"
+/client/proc/browse_queue_flush()
+	var/job = ++last_asset_job
+	var/t = 0
+	var/timeout_time = (ASSET_CACHE_SEND_TIMEOUT * sending.len) + ASSET_CACHE_SEND_TIMEOUT
+	src << browse({"
 	<script>
 		window.location.href="?asset_cache_confirm_arrival=[job]"
 	</script>
 	"}, "window=asset_cache_browser")
-
-	var/t = 0
-	var/timeout_time = (ASSET_CACHE_SEND_TIMEOUT * client.sending.len) + ASSET_CACHE_SEND_TIMEOUT
-	while(client && !client.completed_asset_jobs.Find(job) && t < timeout_time) // Reception is handled in Topic()
+	while(!completed_asset_jobs.Find(job) && t < timeout_time) // Reception is handled in Topic()
 		stoplag(1) // Lock up the caller until this is received.
 		t++
 
-	if(client)
-		client.sending -= asset_name
-		client.cache |= asset_name
-		client.completed_asset_jobs -= job
-
-	return 1
+	return job
 
 //This proc blocks(sleeps) unless verify is set to false
 /proc/send_asset_list(client/client, list/asset_list, verify = TRUE)
@@ -136,7 +142,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 			send_asset(client, file)
 		else
 			concurrent_tracker++
-			send_asset(client, file, verify=FALSE)
+			send_asset_async(client, file)
 
 		stoplag(0) //queuing calls like this too quickly can cause issues in some client versions
 
@@ -522,40 +528,105 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"changelog.css" = 'html/changelog.css'
 	)*/
 
+/datum/asset/group/statpanel
+	children = list(
+		/datum/asset/simple/statpanel_images,
+		/datum/asset/simple/jquery,
+		/datum/asset/simple/js_content
+	)
+
+/datum/asset/simple/js_content
+	verify = TRUE
+	assets = list(
+		"prototype.js" = 'code/modules/statpanel/html/js/prototype.js',
+		"scriptaculous.js" = 'code/modules/statpanel/html/js/scriptaculous.js',
+		"effects.js" = 'code/modules/statpanel/html/js/effects.js',
+		"controls.js" = 'code/modules/statpanel/html/js/controls.js',
+		"slider.js" = 'code/modules/statpanel/html/js/slider.js',
+		"livepipe.js" = 'code/modules/statpanel/html/js/livepipe.js',
+		"scrollbar.js" = 'code/modules/statpanel/html/js/scrollbar.js',
+	)
+
+/datum/asset/simple/statpanel_images
+	verify = FALSE
+	assets = list(
+		"arcanos.png" = 'code/modules/statpanel/html/images/arcanos.png',
+		"button_chrome.png" = 'code/modules/statpanel/html/images/button_chrome.png',
+		"button_note.png" = 'code/modules/statpanel/html/images/button_note.png',
+		"button_options.png" = 'code/modules/statpanel/html/images/button_options.png',
+		"button_pig.png" = 'code/modules/statpanel/html/images/button_pig.png',
+		"cond.ttf" = 'code/modules/statpanel/html/images/cond.ttf',
+		"craft.png" = 'code/modules/statpanel/html/images/craft.png',
+		"cross.png" = 'code/modules/statpanel/html/images/cross.png',
+		"crown.png" = 'code/modules/statpanel/html/images/crown.png',
+		"dead.png" = 'code/modules/statpanel/html/images/dead.png',
+		"emotes.png" = 'code/modules/statpanel/html/images/emotes.png',
+		"fangs.png" = 'code/modules/statpanel/html/images/fangs.png',
+		"gpc.png" = 'code/modules/statpanel/html/images/gpc.png',
+		"heart.png" = 'code/modules/statpanel/html/images/heart.png',
+		"Panel.png" = 'code/modules/statpanel/html/images/Panel.png',
+		"plot.png" = 'code/modules/statpanel/html/images/plot.png',
+		"pointer.cur" = 'code/modules/statpanel/html/images/pointer.cur',
+		"PTSANS.ttf" = 'code/modules/statpanel/html/images/PTSANS.ttf',
+		"stats.png" = 'code/modules/statpanel/html/images/stats.png',
+		"stats1.png" = 'code/modules/statpanel/html/images/stats1.png',
+		"thanati.png" = 'code/modules/statpanel/html/images/thanati.png',
+		"verbs.png" = 'code/modules/statpanel/html/images/verbs.png',
+		"villain.png" = 'code/modules/statpanel/html/images/villain.png',
+		"uibutton.ogg" = 'code/modules/statpanel/html/images/uibutton.ogg',
+	)
+
 /datum/asset/group/goonchat
 	children = list(
 		/datum/asset/simple/jquery,
 		/datum/asset/simple/goonchat,
 		/datum/asset/spritesheet/goonchat,
+		/datum/asset/simple/goonchat_images,
 		/datum/asset/simple/fontawesome
 	)
 
 
 /datum/asset/simple/jquery
 	verify = FALSE
-/*	assets = list(
+	assets = list(
 		"jquery.min.js"            = 'code/modules/goonchat/browserassets/js/jquery.min.js',
-	)*/
+	)
+
+/datum/asset/simple/goonchat_images
+	verify = FALSE
+	assets = list(
+		"background.png"            		= 'code/modules/goonchat/browserassets/css/chatbg.png',
+		"chatscrollbar-bg.png"				= 'code/modules/goonchat/browserassets/css/chatscrollbar-bg.png',
+		"chatscrollbar-scrolldown.png"		= 'code/modules/goonchat/browserassets/css/chatscrollbar-scrolldown.png',
+		"chatscrollbar-scrollup.png"		= 'code/modules/goonchat/browserassets/css/chatscrollbar-scrollup.png',
+		"chatscroller-b.png"				= 'code/modules/goonchat/browserassets/css/chatscroller-b.png',
+		"chatscroller-m.png"				= 'code/modules/goonchat/browserassets/css/chatscroller-m.png',
+		"chatscroller-t.png"				= 'code/modules/goonchat/browserassets/css/chatscroller-t.png',
+		"chatshadow.png"					= 'code/modules/goonchat/browserassets/css/chatshadow.png',
+		"helpbg.png"						= 'code/modules/goonchat/browserassets/css/helpbg.png'
+	)
 
 /datum/asset/simple/goonchat
 	verify = FALSE
-/*	assets = list(
+	assets = list(
 		"json2.min.js"             = 'code/modules/goonchat/browserassets/js/json2.min.js',
 		"browserOutput.js"         = 'code/modules/goonchat/browserassets/js/browserOutput.js',
 		"browserOutput.css"	       = 'code/modules/goonchat/browserassets/css/browserOutput.css',
+		"scrollbar_chat.js"             = 'code/modules/goonchat/browserassets/js/scrollbar_chat.js',
 		"browserOutput_white.css"	      = 'code/modules/goonchat/browserassets/css/browserOutput.css',
-	)*/
+		"cursor.cur" = 'icons/effects/mousemice/cursor.cur'
+	)
 
 /datum/asset/simple/fontawesome
 	verify = FALSE
-/*	assets = list(
+	assets = list(
 		"fa-regular-400.eot"  = 'html/font-awesome/webfonts/fa-regular-400.eot',
 		"fa-regular-400.woff" = 'html/font-awesome/webfonts/fa-regular-400.woff',
 		"fa-solid-900.eot"    = 'html/font-awesome/webfonts/fa-solid-900.eot',
 		"fa-solid-900.woff"   = 'html/font-awesome/webfonts/fa-solid-900.woff',
 		"font-awesome.css"    = 'html/font-awesome/css/all.min.css',
 		"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
-	)*/
+	)
 
 /datum/asset/simple/roguefonts
 	verify = TRUE
@@ -573,14 +644,14 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"hell.ttf" = 'interface/fonts/languages/hell.ttf',
 		"orc.ttf" = 'interface/fonts/languages/orc.ttf',
 		"sand.ttf" = 'interface/fonts/languages/sand.ttf',
-		"undead.ttf" = 'interface/fonts/languages/undead.ttf',
+		"undead.ttf" = 'interface/fonts/languages/undead.ttf'
 	)
 
 /datum/asset/spritesheet/goonchat
 	name = "chat"
 
 /datum/asset/spritesheet/goonchat/register()
-/*	InsertAll("emoji", 'icons/emoji.dmi')
+	InsertAll("emoji", 'icons/emoji.dmi')
 
 	// pre-loading all lanugage icons also helps to avoid meta
 	InsertAll("language", 'icons/misc/language.dmi')
@@ -591,7 +662,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		if (icon != 'icons/misc/language.dmi')
 			var/icon_state = initial(L.icon_state)
 			Insert("language-[icon_state]", icon, icon_state=icon_state)
-*/
+
 	..()
 
 /datum/asset/simple/permissions

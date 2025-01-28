@@ -44,12 +44,7 @@
 	var/can_be_z_moved = TRUE
 	var/jumping = FALSE
 	var/zfalling = FALSE
-
-	///Lazylist to keep track on the sources of illumination.
-	var/list/affected_dynamic_lights
-	///Highest-intensity light affecting us, which determines our visibility.
-	var/affecting_dynamic_lumi = 0
-
+	
 /atom/movable/proc/can_zFall(turf/source, levels = 1, turf/target, direction)
 	if(!direction)
 		direction = DOWN

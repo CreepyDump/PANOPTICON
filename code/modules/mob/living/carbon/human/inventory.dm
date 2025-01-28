@@ -349,6 +349,7 @@
 		mouth = null
 		if(!QDELETED(src))
 			update_inv_mouth()
+	update_reflection()
 
 //	if(!QDELETED(src))
 //		if(I.eweight)

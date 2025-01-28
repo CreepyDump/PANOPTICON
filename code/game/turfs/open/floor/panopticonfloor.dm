@@ -64,6 +64,7 @@
 /turf/open/floor/panopticon/bunker/scorched
 	icon_state = "dick_scorched"
 	footstepstealth = TRUE
+	shine = SHINE_SHINY
 
 /turf/open/floor/panopticon/bunker/bunkergrid
 	icon_state = "reshetka_floor"
@@ -90,8 +91,18 @@
 			return
 		if(locate(/turf/open/water/) in get_turf(src))
 			return
-		var/state = pick_weight(list("darkgrass" = 6, "bush" = 5, "tree" = 4, "log" = 1, "dirthole" = 1, "stones" = 5, "smallstone" = 2, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "mud" = 1, "water" = 2, "nothing" = 40))
+		var/state = pick_weight(list("remains" = 1, "smallgrass" = 14, "darkgrass" = 6, "bush" = 5, "tree" = 4, "log" = 1, "dirthole" = 1, "stones" = 5, "smallstone" = 2, "seltshmack" = 3, "psychickshroom" = 2, "throbber" = 2, "mud" = 1, "water" = 2, "nothing" = 40))
 		switch(state)
+			if ("remains")
+				new /obj/effect/decal/remains(get_turf(src))
+			if ("smallgrass")
+				switch(pick(1,2))
+					if(1)
+						new /obj/structure/flora/panopticon/grass/small(get_turf(src))
+					if(2)
+						new /obj/structure/flora/panopticon/grass/small/travka(get_turf(src))
+			if ("darkgrass")
+				new /obj/structure/flora/panopticon/grass(get_turf(src))
 			if ("darkgrass")
 				new /obj/structure/flora/panopticon/grass(get_turf(src))
 			if("nothing")
@@ -159,6 +170,9 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
 
+/turf/open/floor/panopticon/beton/kirpich
+	icon_state = "kirpich"
+
 /turf/open/floor/panopticon/beton/stone
 	icon_state = "stone"
 
@@ -169,6 +183,17 @@
 	barefootstep = FOOTSTEP_SOFT_BAREFOOT
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
+
+/turf/open/floor/panopticon/hell/bruh
+	icon_state = "meat"
+	footstep = 'sound/panopticon/squishy.ogg'
+	barefootstep = 'sound/panopticon/squishy.ogg'
+	heavyfootstep = 'sound/panopticon/squishy.ogg'
+	landsound = 'sound/panopticon/crybaby.ogg'
+
+/turf/open/floor/panopticon/hell/bruh/Initialize()
+	. = ..()
+	dir = pick(GLOB.cardinals)
 
 /turf/open/floor/panopticon/road
 	icon_state = "road"
@@ -201,6 +226,11 @@
 
 /turf/open/floor/panopticon/town/plitka
 	icon_state = "plitka_old"
+	footstep = FOOTSTEP_STONE
+	landsound = 'sound/foley/jumpland/stoneland.wav'
+
+/turf/open/floor/panopticon/town/plitka/stone
+	icon_state = "plitka"
 	footstep = FOOTSTEP_STONE
 	landsound = 'sound/foley/jumpland/stoneland.wav'
 
@@ -309,3 +339,11 @@
 	name = ""
 	icon = 'icons/turf/panopticonfloor.dmi'
 	icon_state = "bordur"
+
+/turf/open/floor/panopticon/carpet
+	icon_state = "kover"
+	landsound = 'sound/foley/jumpland/carpetland.wav'
+	footstep = FOOTSTEP_CARPET
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	clawfootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY

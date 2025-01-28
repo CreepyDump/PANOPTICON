@@ -156,7 +156,7 @@ GLOBAL_LIST_EMPTY(billagerspawns)
 		return TRUE
 	var/blacklisted = check_blacklist(ckey)
 	if(possibleclass.len && !blacklisted)
-		var/datum/advclass/C = input(src, "What is my class?", "Adventure") as null|anything in sortNames(possibleclass)
+		var/datum/advclass/C = input(src, "Who am i?", "PANOPTICON") as null|anything in sortNames(possibleclass)
 		if(C && advsetup)
 			if(C.maxchosen > -1)
 				for(var/datum/advclass/A in GLOB.adv_classes)
