@@ -332,7 +332,7 @@
 "Rw" = (/obj/structure/fluff/statue/evil,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/woods)
 "RC" = (/obj/machinery/light/rogue/wallfire/candle/r,/turf/open/floor/rogue/herringbone,/area/rogue/indoors)
 "RH" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors)
-"RX" = (/turf/closed/indestructible/riveted,/area/start)
+"RX" = (/turf/closed/wall/mineral/rogue/wooddark/window,/area/start)
 "Se" = (/obj/structure/table/wood{icon_state = "tablewood1"; dir = 1},/obj/item/candle/skull/lit,/turf/open/floor/rogue/hexstone,/area/rogue/indoors)
 "Sn" = (/obj/structure/fluff/railing/fence,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/woods)
 "Sq" = (/obj/structure/roguewindow/stained,/turf/open/floor/rogue/herringbone,/area/rogue/indoors)
