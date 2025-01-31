@@ -28,3 +28,10 @@
 	sleevetype = "leg"
 	bloody_icon_state = "shoeblood"
 	resistance_flags = FREEZE_PROOF
+
+/obj/item/clothing/shoes/panopticon/bastardo
+	name = "Police boots"
+	icon_state = "bastard"
+	item_state = "bastard"
+	bloody_icon_state = "shoeblood"
+	resistance_flags = FREEZE_PROOF | FIRE_PROOF

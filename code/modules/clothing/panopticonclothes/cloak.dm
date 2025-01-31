@@ -94,12 +94,3 @@
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
-
-/obj/item/clothing/cloak/panopticon/douglas
-	name = "Piss-camo cloak"
-	icon_state = "douglas"
-	sleeved = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
-	item_state = "douglas"
-	alternate_worn_layer = TABARD_LAYER
-	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK

@@ -17,10 +17,10 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/hatblu
-	pants = /obj/item/clothing/under/panopticon/civilianpants
-	shirt = /obj/item/clothing/suit/panopticon/shirt/vatnik
+	pants = /obj/item/clothing/under/panopticon/podtyajki
+	shirt = /obj/item/clothing/suit/panopticon/shirt/formalshirt
 	shoes = /obj/item/clothing/shoes/panopticon/jackboots
-	belt = /obj/item/storage/belt/rogue/leather/cloth/bandit
+	belt = /obj/item/storage/belt/rogue/panopticon/suspenders
 	beltr = /obj/item/panopticonweapon/molotok
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", -2)

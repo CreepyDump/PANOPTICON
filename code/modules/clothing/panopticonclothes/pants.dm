@@ -70,3 +70,18 @@
 	gender = PLURAL
 	icon_state = "strafbat"
 	item_state = "strafbat"
+
+/obj/item/clothing/under/panopticon/podtyajki
+	name = "Factory worker pants"
+	gender = PLURAL
+	icon_state = "podtyajki"
+	item_state = "podtyajki"
+	hoodtype = /obj/item/storage/belt/rogue/panopticon/suspenders
+
+/obj/item/storage/belt/rogue/panopticon/suspenders
+	name = "Suspenders"
+	icon = 'icons/panopticon/obj/clothes/pants.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/pants.dmi'
+	icon_state = "podtyajki_up"
+	item_state = "podtyajki_up"
+	component_type = null

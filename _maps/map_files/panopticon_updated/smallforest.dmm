@@ -1,331 +1,354 @@
 "aa" = (/obj/structure/panopticon/wartrash,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"ab" = (/obj/structure/fence/corner{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"ab" = (/obj/structure/fence/corner{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "ar" = (/turf/open/floor/panopticon/mud,/area/panopticon/indoors/hell)
-"aB" = (/turf/closed,/area/panopticon)
-"aS" = (/obj/structure/panopticon/meatpile,/obj/structure/fence{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon)
-"bg" = (/obj/structure/panopticon/skull{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon)
-"bk" = (/turf/closed,/turf/closed/mineral/rogue/bedrock,/area/panopticon)
-"bp" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"bt" = (/obj/structure/fence/post{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"aB" = (/turf/closed,/area/panopticon/outdoors/darkwood)
+"aS" = (/obj/structure/panopticon/meatpile,/obj/structure/fence{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"bg" = (/obj/structure/panopticon/skull{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"bk" = (/turf/closed,/turf/closed/mineral/rogue/bedrock,/area/panopticon/outdoors/darkwood)
+"bp" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"bt" = (/obj/structure/fence/post{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "by" = (/obj/structure/panopticon/onwall/oldass{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/shelter/darkwood)
 "bE" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon/indoors/hell)
-"bK" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon)
-"bP" = (/obj/structure/panopticon/idol{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"cB" = (/obj/effect/decal/cleanable/blood/gibs/body{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon)
-"cD" = (/obj/structure/fence/end{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"cH" = (/obj/machinery/light/rogue/firebowl/church,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"cL" = (/obj/structure/panopticon/mirkstones{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"bI" = (/obj/structure/panopticon/mirkstones{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"bK" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood)
+"bP" = (/obj/structure/panopticon/idol{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"cB" = (/obj/effect/decal/cleanable/blood/gibs/body{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"cD" = (/obj/structure/fence/end{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"cE" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"cH" = (/obj/machinery/light/rogue/firebowl/church,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"cL" = (/obj/structure/panopticon/mirkstones{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "cM" = (/obj/machinery/light/rogue/campfire/densefire,/turf/open/floor/rogue/cobble,/area/panopticon/indoors/hell)
 "cN" = (/obj/structure/roguewindow,/turf/closed/mineral/random/rogue/med,/area/panopticon/indoors/shelter/darkwood)
 "cP" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/vtable/v2,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"cS" = (/obj/structure/panopticon/kol,/turf/open/floor/panopticon/hell,/area/panopticon)
-"cW" = (/obj/structure/flora/roguegrass/bush,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"di" = (/obj/structure/panopticon/wartrash{dir = 2},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"dA" = (/obj/effect/decal/cleanable/blood/gibs/bubblegum,/turf/open/floor/panopticon/hell,/area/panopticon)
-"dD" = (/obj/structure/panopticon/idol{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"dG" = (/turf/open/floor/panopticon/darkwood/parketpizda,/area/panopticon)
-"dI" = (/obj/structure/fence{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"dQ" = (/obj/structure/panopticon/crate,/turf/open/floor/panopticon/mud,/area/panopticon)
-"dZ" = (/obj/structure/panopticon/kol,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"ej" = (/obj/structure/flora/roguegrass/bush/wall/tall,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
+"cS" = (/obj/structure/panopticon/kol,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"cW" = (/obj/structure/flora/roguegrass/bush,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"di" = (/obj/structure/panopticon/wartrash{dir = 2},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"dA" = (/obj/effect/decal/cleanable/blood/gibs/bubblegum,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"dD" = (/obj/structure/panopticon/idol{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"dG" = (/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"dI" = (/obj/structure/fence{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"dQ" = (/obj/structure/panopticon/crate,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood)
+"dZ" = (/obj/structure/panopticon/kol,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"ej" = (/obj/structure/flora/roguegrass/bush/wall/tall,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "es" = (/obj/structure/mineral_door/wood/deadbolt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"eD" = (/obj/structure/stairs/panopticon/stonistic{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"eD" = (/obj/structure/stairs/panopticon/stonistic{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"eE" = (/obj/structure/panopticon/wartrash{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "eF" = (/turf/closed/wall/mineral/rogue/tent,/area/panopticon/indoors/hell)
-"fc" = (/obj/structure/fence{dir = 1},/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"fe" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"fy" = (/obj/structure/fence/cut/medium{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon)
-"fA" = (/turf/open/chasm/jungle,/area/panopticon)
+"fc" = (/obj/structure/fence{dir = 1},/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"fe" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"fy" = (/obj/structure/fence/cut/medium{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"fA" = (/turf/open/chasm/jungle,/area/panopticon/outdoors/darkwood/pole)
 "fG" = (/obj/structure/bookcase,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"fZ" = (/obj/structure/fence/cut/large{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon)
+"fZ" = (/obj/structure/fence/cut/large{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "ga" = (/obj/structure/mineral_door/wood/deadbolt{dir = 8; lockid = barmenhyita},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"gy" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/obj/structure/fence{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"gI" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/hell,/area/panopticon)
-"hb" = (/obj/effect/decal/cleanable/blood/gibs/limb,/turf/open/floor/panopticon/hell,/area/panopticon)
+"gb" = (/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/pole)
+"gr" = (/obj/effect/landmark/start/lesnik{dir = 4},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"gy" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/obj/structure/fence{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"gI" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"hb" = (/obj/effect/decal/cleanable/blood/gibs/limb,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "hc" = (/turf/closed/mineral/random/rogue,/area/panopticon/indoors/caves)
 "hg" = (/turf/closed/mineral/random/rogue/med,/area/panopticon/indoors/caves)
 "hj" = (/obj/structure/mineral_door/wood/deadbolt{dir = 4},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"hA" = (/obj/structure/fence{dir = 1},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
+"hA" = (/obj/structure/fence{dir = 1},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "hB" = (/obj/structure/bed/rogue/shit,/turf/open/floor/rogue/cobble,/area/panopticon/indoors/hell)
 "hD" = (/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon/indoors/hell)
-"hH" = (/obj/structure/panopticon/meatpile{dir = 2},/turf/open/floor/panopticon/hell,/area/panopticon)
+"hH" = (/obj/structure/panopticon/meatpile{dir = 2},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "ia" = (/obj/structure/panopticon/onwall/oldass{dir = 8},/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/shelter/darkwood)
-"iM" = (/obj/structure/panopticon/skull{dir = 10},/turf/open/floor/panopticon/hell,/area/panopticon)
+"ib" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"iM" = (/obj/structure/panopticon/skull{dir = 10},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "iS" = (/obj/structure/mineral_door/wood/deadbolt,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"jC" = (/obj/structure/panopticon/mirkstones,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"kc" = (/turf/open/floor/panopticon/darkgrass,/turf/closed/mineral/rogue/bedrock,/area/panopticon)
-"ke" = (/obj/structure/fluff/railing/wood/broken{dir = 6},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"kn" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"kv" = (/obj/structure/fluff/railing/wood/broken{dir = 2},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"kx" = (/obj/structure/panopticon/automat/heroinmachine,/obj/effect/decal/cleanable/poo{icon_state = "poosplat7"},/turf/open/floor/panopticon/bunker/metal,/area/panopticon)
-"kS" = (/obj/structure/fence/corner{dir = 9},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"kU" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/obj/structure/panopticon/wartrash{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"lj" = (/obj/effect/decal/cleanable/blood/gibs/body{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"lk" = (/obj/structure/fence/cut/large{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"ll" = (/obj/structure/panopticon/mirkstones,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"lr" = (/obj/structure/panopticon/onwall/oldass/anotherome{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
-"ly" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/panopticon/mud,/area/panopticon)
+"jC" = (/obj/structure/panopticon/mirkstones,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"jL" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood)
+"kc" = (/turf/open/floor/panopticon/darkgrass,/turf/closed/mineral/rogue/bedrock,/area/panopticon/outdoors/darkwood)
+"ke" = (/obj/structure/fluff/railing/wood/broken{dir = 6},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"kn" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"kv" = (/obj/structure/fluff/railing/wood/broken{dir = 2},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"kx" = (/obj/structure/panopticon/automat/heroinmachine,/obj/effect/decal/cleanable/poo{icon_state = "poosplat7"},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"kS" = (/obj/structure/fence/corner{dir = 9},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"kU" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/obj/structure/panopticon/wartrash{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"lj" = (/obj/effect/decal/cleanable/blood/gibs/body{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"lk" = (/obj/structure/fence/cut/large{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"ll" = (/obj/structure/panopticon/mirkstones,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"lr" = (/obj/structure/panopticon/onwall/oldass/anotherome{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"ly" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "lF" = (/obj/effect/decal/cleanable/cobweb,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 "mf" = (/obj/structure/panopticon/onwall/oldass{dir = 4},/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/shelter/darkwood)
-"mu" = (/obj/effect/decal/cleanable/blood/gibs/body{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon)
-"mF" = (/obj/effect/decal/cleanable/blood/gibs/core,/obj/structure/panopticon/wartrash{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon)
-"mJ" = (/obj/structure/panopticon/meatpile{dir = 2},/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/hell,/area/panopticon)
+"mu" = (/obj/effect/decal/cleanable/blood/gibs/body{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"mF" = (/obj/effect/decal/cleanable/blood/gibs/core,/obj/structure/panopticon/wartrash{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"mJ" = (/obj/structure/panopticon/meatpile{dir = 2},/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "mK" = (/obj/effect/turf_decal/panopticon/mysor/town,/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"mY" = (/obj/structure/panopticon/meatpile{dir = 2},/obj/structure/panopticon/skull,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"nb" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"nu" = (/obj/structure/fence/corner{dir = 4},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
+"mY" = (/obj/structure/panopticon/meatpile{dir = 2},/obj/structure/panopticon/skull,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"nb" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/deadvillage)
+"nu" = (/obj/structure/fence/corner{dir = 4},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "nO" = (/obj/structure/roguewindow{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/indoors/shelter/darkwood)
-"of" = (/obj/structure/flora/roguegrass/bush,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"ol" = (/obj/structure/panopticon/idol,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"om" = (/turf/closed/mineral/random/rogue,/area/panopticon)
-"oq" = (/obj/structure/fluff/railing/wood{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"ox" = (/obj/structure/fluff/railing/wood{dir = 6},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"oA" = (/obj/structure/fence/cut/medium{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"nR" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood)
+"of" = (/obj/structure/flora/roguegrass/bush,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"ol" = (/obj/structure/panopticon/idol,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"om" = (/turf/closed/mineral/random/rogue,/area/panopticon/outdoors/darkwood)
+"oq" = (/obj/structure/fluff/railing/wood{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"ox" = (/obj/structure/fluff/railing/wood{dir = 6},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"oA" = (/obj/structure/fence/cut/medium{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "oX" = (/obj/structure/panopticon/onwall/runes/other/one,/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon/indoors/hell)
+"pj" = (/obj/structure/panopticon/mirkstones{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "pt" = (/obj/structure/bookcase,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 "pu" = (/turf/open/floor/panopticon/road,/area/panopticon/indoors/caves)
-"pw" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"pw" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "pE" = (/obj/effect/turf_decal/panopticon/mysor/doski{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
 "qd" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"qC" = (/obj/structure/fence/end,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"qN" = (/obj/structure/panopticon/meatpile{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"qR" = (/obj/structure/fluff/railing/wood/broken{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"qS" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"qC" = (/obj/structure/fence/end,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"qN" = (/obj/structure/panopticon/meatpile{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"qR" = (/obj/structure/fluff/railing/wood/broken{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"qS" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "qU" = (/obj/structure/bed/panopticon/wooden,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"qV" = (/obj/structure/panopticon/onwall/wallpipe,/turf/open/floor/panopticon/bunker/metal,/area/panopticon)
+"qV" = (/obj/structure/panopticon/onwall/wallpipe,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
 "qX" = (/turf/closed/wall/mineral/panopticon/woods,/area/panopticon/indoors/shelter/darkwood)
 "ru" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon/indoors/caves)
 "rC" = (/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"rK" = (/obj/structure/panopticon/kol{dir = 1},/turf/open/floor/panopticon/mud,/area/panopticon)
+"rK" = (/obj/structure/panopticon/kol{dir = 1},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "rO" = (/obj/structure/bed/panopticon/wooden,/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/start/shtrafspawn,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
 "sk" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon/indoors/hell)
 "sq" = (/obj/structure/fluff/traveltile{aportalgoesto = "mirkwoodin"; aportalid = "mirkwoodout"},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "sC" = (/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/shelter/darkwood)
 "sN" = (/obj/structure/panopticon/onwall/graffiti{dir = 1},/turf/closed/wall/mineral/panopticon/woods,/area/panopticon/indoors/shelter/darkwood)
-"tc" = (/obj/structure/closet/crate/roguecloset/crafted,/obj/item/flashlight/flare/torch/lantern,/obj/item/flashlight/flare/torch/lantern,/obj/item/flashlight/flare/torch/lantern,/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"tF" = (/obj/structure/panopticon/skull{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"tK" = (/obj/structure/panopticon/kol{dir = 4},/turf/open/floor/panopticon/mud,/area/panopticon)
-"tL" = (/obj/structure/fluff/railing/wood/broken{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"tM" = (/obj/structure/panopticon/meatpile{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon)
+"tc" = (/obj/structure/closet/crate/roguecloset/crafted,/obj/item/flashlight/flare/torch/lantern,/obj/item/flashlight/flare/torch/lantern,/obj/item/flashlight/flare/torch/lantern,/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"tF" = (/obj/structure/panopticon/skull{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"tK" = (/obj/structure/panopticon/kol{dir = 4},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
+"tL" = (/obj/structure/fluff/railing/wood/broken{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"tM" = (/obj/structure/panopticon/meatpile{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "tY" = (/obj/structure/panopticon/skull{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"tZ" = (/obj/structure/panopticon/wartrash{dir = 2; pixel_y = 15},/turf/open/floor/panopticon/hell,/area/panopticon)
-"ub" = (/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
-"uf" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon)
+"tZ" = (/obj/structure/panopticon/wartrash{dir = 2; pixel_y = 15},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"ub" = (/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"uf" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "uk" = (/obj/effect/turf_decal/panopticon/mysor/doski,/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"uo" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"uG" = (/turf/open/floor/panopticon/bunker/metal,/area/panopticon)
-"uX" = (/obj/machinery/light/small{dir = 2},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
+"uo" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"uG" = (/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"uX" = (/obj/machinery/light/small{dir = 2},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
 "va" = (/obj/structure/panopticon/onwall/runes,/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon/indoors/hell)
-"vh" = (/obj/structure/fence/corner,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
+"vh" = (/obj/structure/fence/corner,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "vk" = (/obj/structure/bookcase,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"vn" = (/obj/structure/panopticon/meatpile{dir = 2},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"vn" = (/obj/structure/panopticon/meatpile{dir = 2},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "vw" = (/obj/structure/panopticon/onwall/there{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/shelter/darkwood)
-"vK" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat1"},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"vO" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"vV" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"vW" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat7"},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"wm" = (/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon)
-"wt" = (/obj/structure/fence,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"wJ" = (/obj/effect/decal/cleanable/blood/gibs/limb{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon)
-"wN" = (/obj/structure/well,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"wW" = (/obj/structure/panopticon/mirkstones{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"xh" = (/obj/structure/flora/newtree,/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
+"vK" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat1"},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"vO" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"vV" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/deadvillage)
+"vW" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat7"},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"wm" = (/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/outdoors/darkwood/pole)
+"wt" = (/obj/structure/fence,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"wJ" = (/obj/effect/decal/cleanable/blood/gibs/limb{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"wN" = (/obj/structure/well,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"wW" = (/obj/structure/panopticon/mirkstones{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"wZ" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"xh" = (/obj/structure/flora/newtree,/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "xl" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"xD" = (/obj/structure/chair/stool/rogue,/turf/open/floor/panopticon/mud,/area/panopticon)
+"xD" = (/obj/structure/chair/stool/rogue,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "xK" = (/obj/structure/stairs/stone,/turf/open/floor/rogue/cobble,/area/panopticon/indoors/hell)
+"xU" = (/obj/effect/landmark/start/shtrafslate,/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood)
+"xZ" = (/obj/effect/landmark/start/lesnik,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "yc" = (/obj/structure/panopticon/onwall/runes{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon/indoors/hell)
-"yu" = (/obj/structure/panopticon/idol{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"yA" = (/obj/structure/panopticon/pit,/obj/effect/decal/remains/wolf,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"yH" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/obj/structure/fence/post{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"yu" = (/obj/structure/panopticon/idol{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"yA" = (/obj/structure/panopticon/pit,/obj/effect/decal/remains/wolf,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"yH" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/obj/structure/fence/post{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "yP" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat2"},/obj/item/reagent_containers/food/snacks/poo,/turf/open/floor/panopticon/mud,/area/panopticon/indoors/shelter/darkwood)
-"yV" = (/obj/structure/fence{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"zm" = (/obj/structure/fence/cut{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"yV" = (/obj/structure/fence{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"zm" = (/obj/structure/fence/cut{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "zq" = (/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"zB" = (/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon)
-"zK" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/area/panopticon)
+"zB" = (/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood)
+"zK" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "zN" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon/indoors/caves)
-"zY" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"Az" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon)
+"zY" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"Az" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "AC" = (/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/indoors/caves)
-"AO" = (/obj/structure/panopticon/onwall/commiesagain,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
+"AI" = (/obj/effect/landmark/start/lesnik{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"AO" = (/obj/structure/panopticon/onwall/commiesagain,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
 "AR" = (/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "AW" = (/obj/structure/panopticon/onwall/graffiti,/turf/closed/wall/mineral/panopticon/woods,/area/panopticon/indoors/shelter/darkwood)
-"AX" = (/obj/structure/panopticon/onwall/commies,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
-"AY" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"Bc" = (/obj/structure/panopticon/onwall/oldass,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
+"AX" = (/obj/structure/panopticon/onwall/commies,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"AY" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"Bc" = (/obj/structure/panopticon/onwall/oldass,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
 "Bl" = (/obj/structure/panopticon/skull{dir = 10},/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"Bm" = (/obj/structure/fence/door,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"Bo" = (/turf/open/transparent/openspace,/area/panopticon)
+"Bm" = (/obj/structure/fence/door,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"Bo" = (/turf/open/transparent/openspace,/area/panopticon/outdoors/darkwood)
+"Bq" = (/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood)
 "BI" = (/obj/structure/bed/panopticon/pigs,/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"Cc" = (/obj/structure/panopticon/kol{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon)
+"Cc" = (/obj/structure/panopticon/kol{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "Cd" = (/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"Cf" = (/obj/structure/panopticon/radiator,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
+"Cf" = (/obj/structure/panopticon/radiator,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
 "CD" = (/turf/open/floor/rogue/cobble,/area/panopticon/indoors/hell)
-"CF" = (/obj/structure/fence/corner{dir = 9},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"CG" = (/obj/effect/decal/cleanable/blood/gibs/torso{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon)
-"CN" = (/obj/structure/panopticon/wartrash{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"CF" = (/obj/structure/fence/corner{dir = 9},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"CG" = (/obj/effect/decal/cleanable/blood/gibs/torso{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"CN" = (/obj/structure/panopticon/wartrash{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "Dc" = (/obj/structure/bed/panopticon/wooden,/obj/effect/decal/cleanable/poo{icon_state = "poosplat7"},/obj/item/reagent_containers/food/snacks/poo{icon_state = "poo4"},/obj/effect/landmark/start/shtrafspawn{dir = 8},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"Dl" = (/obj/structure/panopticon/kol{dir = 2},/turf/open/floor/panopticon/hell,/area/panopticon)
+"Dl" = (/obj/structure/panopticon/kol{dir = 2},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "Dm" = (/obj/structure/panopticon/mirkstones{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/indoors/shelter/darkwood)
-"Ep" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"EZ" = (/obj/structure/fence/end{dir = 4},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"Fb" = (/obj/structure/fluff/railing/wood{dir = 5},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"Fe" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necroleninist{dir = 1},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
+"Ep" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"EZ" = (/obj/structure/fence/end{dir = 4},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"Fb" = (/obj/structure/fluff/railing/wood{dir = 5},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"Fe" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necroleninist{dir = 1},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
 "Fh" = (/obj/structure/panopticon/automat/radio{pixel_y = 7},/obj/effect/decal/cleanable/dirt,/obj/structure/table/vtable,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"Fn" = (/obj/structure/panopticon/meatpile{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon)
-"Fy" = (/obj/structure/panopticon/meatpile{dir = 1},/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/hell,/area/panopticon)
-"FW" = (/obj/structure/fluff/railing/wood/broken{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"GG" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/panopticon/hell,/area/panopticon)
-"GK" = (/obj/structure/chair/stool/rogue,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"GV" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necroleninist,/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"Hc" = (/obj/structure/panopticon/skull{dir = 9},/turf/open/floor/panopticon/hell,/area/panopticon)
-"Hh" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/mud,/area/panopticon)
-"Hn" = (/obj/structure/panopticon/onwall/runes/other/two,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
+"Fn" = (/obj/structure/panopticon/meatpile{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"Fy" = (/obj/structure/panopticon/meatpile{dir = 1},/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"FW" = (/obj/structure/fluff/railing/wood/broken{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"GG" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"GK" = (/obj/structure/chair/stool/rogue,/obj/effect/landmark/start/shtrafspawn{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"GV" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necroleninist,/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"Hc" = (/obj/structure/panopticon/skull{dir = 9},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"Hh" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
+"Hj" = (/obj/effect/landmark/start/lesnik{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"Hn" = (/obj/structure/panopticon/onwall/runes/other/two,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
 "HH" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon,/area/panopticon)
-"HI" = (/obj/structure/fluff/railing/wood{dir = 10},/turf/open/floor/panopticon/mud,/area/panopticon)
+"HI" = (/obj/structure/fluff/railing/wood{dir = 10},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "Ik" = (/obj/structure/bed/panopticon/wooden,/obj/effect/landmark/start/shtrafspawn,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"Iy" = (/obj/structure/panopticon/skull{dir = 6},/turf/open/floor/panopticon/hell,/area/panopticon)
-"ID" = (/obj/structure/panopticon/crate,/turf/open/floor/panopticon/hell,/area/panopticon)
-"IF" = (/obj/structure/panopticon/meatpile,/turf/open/floor/panopticon/hell,/area/panopticon)
-"IG" = (/obj/structure/panopticon/meatpile{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"IY" = (/obj/structure/fence/corner{dir = 5},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"Jc" = (/turf/open/floor/panopticon/hell,/area/panopticon)
+"Iy" = (/obj/structure/panopticon/skull{dir = 6},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"ID" = (/obj/structure/panopticon/crate,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"IF" = (/obj/structure/panopticon/meatpile,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"IG" = (/obj/structure/panopticon/meatpile{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"IY" = (/obj/structure/fence/corner{dir = 5},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"Jc" = (/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "Jn" = (/obj/structure/panopticon/radiator{dir = 4},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"Jz" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"JA" = (/obj/structure/panopticon/onwall/runes/other/three,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
+"Jz" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"JA" = (/obj/structure/panopticon/onwall/runes/other/three,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
 "Kb" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necroleninist{dir = 1},/turf/open/floor/rogue/dirt/road,/area/panopticon/indoors/hell)
-"Kd" = (/turf/closed/mineral/random/rogue/med,/area/panopticon)
-"Ki" = (/obj/effect/decal/cleanable/blood/gibs/limb{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon)
-"KL" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necroleninist{dir = 4},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"KT" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon)
-"Lg" = (/obj/structure/panopticon/kol{dir = 2},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"Lt" = (/obj/structure/panopticon/kol,/turf/open/floor/panopticon/mud,/area/panopticon)
-"Lu" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"Kd" = (/turf/closed/mineral/random/rogue/med,/area/panopticon/outdoors/darkwood)
+"Ki" = (/obj/effect/decal/cleanable/blood/gibs/limb{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"KL" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necroleninist{dir = 4},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"KT" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"Lg" = (/obj/structure/panopticon/kol{dir = 2},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"Lt" = (/obj/structure/panopticon/kol,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
+"Lu" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "Lz" = (/obj/effect/decal/cleanable/dirt,/obj/structure/panopticon/skull{dir = 5},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"LO" = (/obj/item/chair/stool/bar/rogue,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"LO" = (/obj/item/chair/stool/bar/rogue,/obj/effect/landmark/start/shtrafspawn{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "Mk" = (/obj/structure/panopticon/radiator,/turf/closed/wall/mineral/panopticon/woods,/area/panopticon/indoors/shelter/darkwood)
-"Mw" = (/turf/closed/wall/mineral/panopticon/woods,/area/panopticon)
+"Mw" = (/turf/closed/wall/mineral/panopticon/woods,/area/panopticon/outdoors/darkwood)
 "My" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light/rogue/oven/south,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"MC" = (/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
+"MC" = (/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood/deadvillage)
 "MW" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/urine,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"Nf" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"Nf" = (/obj/effect/landmark/start/shtrafslate,/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "Nk" = (/obj/structure/ladder/earth,/turf/open/floor/panopticon/mud,/area/panopticon/indoors/shelter/darkwood)
-"Nq" = (/obj/structure/panopticon/automat/kotel,/turf/open/floor/panopticon/bunker/metal,/area/panopticon)
-"NI" = (/obj/structure/panopticon/onwall/oldass{dir = 8},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
-"NX" = (/obj/structure/panopticon/onwall/oldass/anotherome{dir = 4},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
+"Nq" = (/obj/structure/panopticon/automat/kotel,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"NI" = (/obj/structure/panopticon/onwall/oldass{dir = 8},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"NX" = (/obj/structure/panopticon/onwall/oldass/anotherome{dir = 4},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
 "Oj" = (/obj/effect/decal/cleanable/cobweb/cobweb2,/obj/structure/panopticon/skull{dir = 9},/turf/open/floor/panopticon/mud,/area/panopticon/indoors/shelter/darkwood)
 "Ou" = (/obj/structure/bed/panopticon/wooden,/obj/effect/landmark/start/shtrafspawn{dir = 1},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 "OG" = (/obj/structure/panopticon/onwall/necroleninism,/turf/closed/wall/mineral/panopticon/woods,/area/panopticon/indoors/shelter/darkwood)
-"OJ" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"OO" = (/obj/structure/fence{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"OP" = (/obj/structure/stairs/panopticon/stonistic{dir = 1},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"OX" = (/obj/structure/panopticon/onwall/oldass/anotherome{dir = 8},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
+"OJ" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"OO" = (/obj/structure/fence{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"OP" = (/obj/structure/stairs/panopticon/stonistic{dir = 1},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"OX" = (/obj/structure/panopticon/onwall/oldass/anotherome{dir = 8},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
 "Pj" = (/obj/effect/turf_decal/panopticon/mysor/doski{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
 "Pn" = (/obj/structure/panopticon/brklocker,/turf/open/floor/rogue/cobble,/area/panopticon/indoors/hell)
-"Pp" = (/obj/structure/fence/corner{dir = 10},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"Pq" = (/obj/structure/panopticon/radiator{dir = 8},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"Pt" = (/obj/structure/panopticon/onwall/oldass/anotherome,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
-"PA" = (/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"PD" = (/obj/structure/fence,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"PG" = (/obj/structure/panopticon/kol{dir = 8},/turf/open/floor/panopticon/mud,/area/panopticon)
+"Pp" = (/obj/structure/fence/corner{dir = 10},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"Pq" = (/obj/structure/panopticon/radiator{dir = 8},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"Pt" = (/obj/structure/panopticon/onwall/oldass/anotherome,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"PA" = (/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"PD" = (/obj/structure/fence,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"PG" = (/obj/structure/panopticon/kol{dir = 8},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "PL" = (/obj/structure/table/wood{icon_state = "tablewood1"},/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"PM" = (/obj/structure/panopticon/wartrash{dir = 2},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
-"Qy" = (/obj/structure/fluff/railing/wood{dir = 10},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"QE" = (/obj/structure/fence{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon)
-"QG" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon)
+"PM" = (/obj/structure/panopticon/wartrash{dir = 2},/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/outdoors/darkwood/pole)
+"Qy" = (/obj/structure/fluff/railing/wood{dir = 10},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"QE" = (/obj/structure/fence{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"QG" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "QM" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon/indoors/shelter/darkwood)
-"Rg" = (/turf/closed/mineral/random/rogue/high,/area/panopticon)
-"Rt" = (/turf/open/floor/panopticon/mud,/area/panopticon)
-"Rv" = (/turf/open/floor/panopticon/road,/area/panopticon)
-"RE" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat2"},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"RH" = (/obj/structure/fluff/traveltile{aportalgoesto = "panoptownout"; aportalid = "panoptownin"},/turf/open/floor/panopticon/road,/area/panopticon)
-"RN" = (/obj/structure/fence{dir = 4},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
+"Rg" = (/turf/closed/mineral/random/rogue/high,/area/panopticon/outdoors/darkwood)
+"Rt" = (/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
+"Rv" = (/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood)
+"RE" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat2"},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"RH" = (/obj/structure/fluff/traveltile{aportalgoesto = "panoptownout"; aportalid = "panoptownin"},/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood)
+"RN" = (/obj/structure/fence{dir = 4},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "RT" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon)
-"SR" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/mud,/area/panopticon)
-"Tf" = (/obj/structure/panopticon/onwall/oldass{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
-"Tj" = (/obj/structure/panopticon/meatpile{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon)
-"Tr" = (/obj/structure/panopticon/mirkstones{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"Ty" = (/obj/structure/panopticon/onwall/oldass{dir = 4},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
-"Tz" = (/obj/effect/decal/cleanable/blood/gibs/torso{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon)
+"Su" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"SR" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
+"SX" = (/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood/deadvillage)
+"Tf" = (/obj/structure/panopticon/onwall/oldass{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"Tj" = (/obj/structure/panopticon/meatpile{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"Tr" = (/obj/structure/panopticon/mirkstones{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"Tt" = (/obj/structure/fluff/railing/wood,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"Ty" = (/obj/structure/panopticon/onwall/oldass{dir = 4},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
+"Tz" = (/obj/effect/decal/cleanable/blood/gibs/torso{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"TC" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon/outdoors/darkwood/pole)
+"TW" = (/obj/effect/landmark/start/shtrafspawn,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "Uh" = (/obj/structure/table/wood{icon_state = "tablewood1"; dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
 "Ul" = (/obj/effect/decal/cleanable/dirt,/obj/structure/fermenting_barrel/beer,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
 "UJ" = (/obj/structure/mirror,/obj/effect/decal/cleanable/dirt,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
-"UT" = (/obj/structure/panopticon/wartrash{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"Ve" = (/obj/structure/panopticon/onwall/oldass{dir = 2},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon)
+"US" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"UT" = (/obj/structure/panopticon/wartrash{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"Ve" = (/obj/structure/panopticon/onwall/oldass{dir = 2},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood/pole)
 "Vh" = (/turf/closed,/turf/closed/mineral/rogue/bedrock,/area/panopticon/indoors/caves)
-"Vi" = (/obj/structure/flora/roguegrass/bush/wall/tall,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"Vi" = (/obj/structure/flora/roguegrass/bush/wall/tall,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "Vq" = (/obj/effect/decal/cleanable/dirt,/obj/structure/mineral_door/wood/deadbolt{dir = 4},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
-"VW" = (/obj/structure/panopticon/kol{dir = 2},/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"Vw" = (/turf/open/floor/panopticon/darkgrass,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood)
+"VW" = (/obj/structure/panopticon/kol{dir = 2},/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "VZ" = (/obj/structure/panopticon/onwall/oldass,/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/shelter/darkwood)
+"WB" = (/obj/effect/landmark/start/lesnik{dir = 1},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "WD" = (/turf/closed/wall/mineral/panopticon/woods,/turf/open/floor/panopticon/mud,/area/panopticon/indoors/shelter/darkwood)
-"WW" = (/obj/effect/decal/cleanable/blood/gibs/limb{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon)
-"WY" = (/obj/structure/panopticon/wartrash{dir = 4; pixel_x = -3},/turf/open/floor/panopticon/hell,/area/panopticon)
-"WZ" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon)
-"Xg" = (/obj/structure/spawnerofmutantz,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"WW" = (/obj/effect/decal/cleanable/blood/gibs/limb{dir = 8},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"WY" = (/obj/structure/panopticon/wartrash{dir = 4; pixel_x = -3},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
+"WZ" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"Xg" = (/obj/structure/spawnerofmutantz,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "Xi" = (/obj/structure/panopticon/skull{dir = 4; pixel_x = 10; pixel_y = -2},/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"XG" = (/turf/closed/wall/mineral/panopticon/kirpich/beton,/area/panopticon)
-"XH" = (/obj/machinery/light/rogue/campfire,/turf/open/floor/panopticon/mud,/area/panopticon)
+"XG" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon/outdoors/darkwood)
+"XH" = (/obj/machinery/light/rogue/campfire,/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "XO" = (/turf/open/floor/panopticon/mud,/area/panopticon/indoors/shelter/darkwood)
-"XR" = (/obj/structure/fence/cut/medium{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
-"Yi" = (/obj/structure/flora/roguegrass/bush/wall,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon)
+"XR" = (/obj/structure/fence/cut/medium{dir = 8},/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
+"Yi" = (/obj/structure/flora/roguegrass/bush/wall,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "Yn" = (/obj/structure/roguewindow{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/indoors/shelter/darkwood)
-"Yv" = (/obj/structure/panopticon/wartrash,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"Yx" = (/obj/structure/panopticon/wartrash{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon)
+"Yv" = (/obj/structure/panopticon/wartrash,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"Yx" = (/obj/structure/panopticon/wartrash{dir = 1},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "Yy" = (/obj/structure/mineral_door/wood/donjon/stone,/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"YA" = (/obj/structure/fence/corner{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"YA" = (/obj/structure/fence/corner{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "YD" = (/obj/structure/roguetent,/turf/open/floor/rogue/dirt,/area/panopticon/indoors/hell)
-"YH" = (/obj/effect/decal/cleanable/urine,/turf/open/floor/panopticon/bunker/metal,/area/panopticon)
-"YN" = (/obj/structure/panopticon/meatpile,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"YU" = (/obj/structure/panopticon/kol{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"YH" = (/obj/effect/decal/cleanable/urine,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/outdoors/darkwood/pole)
+"YN" = (/obj/structure/panopticon/meatpile,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"YU" = (/obj/structure/panopticon/kol{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "Zl" = (/obj/machinery/light/rogue/campfire/densefire,/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
-"Zm" = (/obj/structure/fluff/railing/wood{dir = 9},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"Zu" = (/obj/structure/flora/roguegrass/bush/wall,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"ZG" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"ZJ" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat2"; pixel_y = 12},/turf/open/floor/panopticon/darkgrass,/area/panopticon)
+"Zm" = (/obj/structure/fluff/railing/wood{dir = 9},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"Zu" = (/obj/structure/flora/roguegrass/bush/wall,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
+"ZG" = (/obj/effect/mob_spawn/human/corpse/skotomogilnik,/obj/effect/mob_spawn/human/corpse/skotomogilnik,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
+"ZJ" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat2"; pixel_y = 12},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
 "ZW" = (/obj/effect/decal/cleanable/dirt,/obj/structure/panopticon/radiator{dir = 8},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 
 (1,1,1) = {"
 VhVhVhrururururuVhVhVhVhVhVhVhVhVhruVhVhruhDskskskskskskskskskskCDskskskskskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-rurururubpbpbpbpbpbpbpbphchchchchcrurururuhDskskskskskskskskskskCDCDskskskskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-rurubpbpLubpbpbpbpbpbpbpbpbphchchcrurururuhDskskskskhDhDskskskskCDCDCDychDskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-rubpbpbpbpbpbpbpbpLuLubpbpbpbphchchcrururuhDskskskskhDPnCDskskCDCDCDCDCDhDskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpbpbpbpbpbpbpbpbpbpbpbpbpbphchchcrururuhDskskskskhDCDCDCDCDCDCDCDCDskskskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTmYbpbpbpbpbpbpbpbpbpLubpbpbphchcrurururuhDhDskskskoXCDCDhBCDCDbECDskskskskskskhDhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTREbpIGZGbpbpbpbpbpbpbpbpbpLuhchchcrurururuhDskskskhDCDCDcMCDarbECDskskskskskskhDrurururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTJcbpbpLubpbpbpbpbpbpbpbpbpbpbphchcrurururuhDskskskhDYDeFCDCDarbECDskskskskskskhDrurururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTHcbpbpbpbpbpbpbpbpbpbpbpbpbpbphchchcrururuhDhDhDhDhDKbeFhDskxKxKvaCDskhDhDhDhDhDrurururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTGGfebpbpbpbpbpbpbpbpbpbpbpbpbpbpbphchchcrururururuhDhDhDskskskxKhDhDhDhDrurururururururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTfefebpdATjJcJcbpbpbpbpbpbpbpbpbpbphchcrurururururururururuCDCDCDhDrururururururururururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTbpJcJcIymFJcbpLubpbpbpbpbpbpbpbpbpbphghghghgrurururururuCDCDarrurururururururururururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTbpbpbptFbpbpbpJcJcbgbpTzMCMCMCbpbpbpbpbpbpbpVWbpbpbpwtbpbpbpbpbpvKfcbpbpbpRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTbpbpbpbpLubpbpYNJcJcJcbpMCMCbpbpbpbpbpbpbpbpbpbpbpbpYAabbpbpbpbpCFabbpbpbpRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTLubpbpbpLubpbpLuvWCGJcbpLubpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTbpbpbpbpbpbpbpbpbpJcbpbpbpLubpbpbpbpbpbpiMJcJcbpbpbpbpZJbpbpbpbpbpbpbpbpJcRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTbpbpbpbpbpbpbpbpbpJcbpbpbpbpbpbpbpbpmJgIJcJcbpbpbpbpbpbpbpbpbpbpbpbpbpJcJcRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTbpbpbpbpfAfAvObpbpbpbpbpbpbpbpbpbpJcJcJcIDtMJcbpbpbpbpbpbpbpbpcSJckUJcJcJcRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTbpbpbpfAfAfAfALufAfAfAfAvObpbpbpbpbpJcJcJcYxcBbpbpbpbpbpbpbpbpbpJctMJchHJcJcRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTbpbpbpfAfAfAfAfAfAfAfAfAfAbpbpbpbpbpbpbpbpbpJcbpbpbpbpbpbpbpbpbpJcJcFyJcJctZRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpLubpbpbpfAfAfAfAfAfAfAfAfAfAdZbpbpbpbpbpbpbpLubpbpbpbpbpbpbpbpbpbpJcJcTjJcJcJcHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpbpbpLubpvOfAfAfAfAfAfAfAfAfAdibpbpbpbpLubpbpbpbpbpLuLubpbpbpbpbpJcqNJcJcJcJcJcHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpbpLubpbpbpbpfAfAfAfAfAfAfAfAfAbpbpbpbpbpbpbpbpYUbpbpbpbpbpbpbpJcJcbpbpJcIFJcJcHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpbpbpbpbpbpbpbpfAfAfAfAfAfAfAfALubpAYbpLubpbpbpbpbpbpbpLuJcbpbpbpJcbpbpbpJcWYJcHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpbpbpbpbpbpbpbpbpvOfAfAfAfAfAvObpbpbpbpbpbpbpbpbpbpbpbpJcJcJcbpJcJcJcbpbpbpJcJcHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpbpLgbpbpbpbpJcbpbpbpbpLubpbpbpbpbpbpbpbpbpbpbpbpbpbpJcJctMbpbpbpbpbpbpbpbpJcRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpLubpbpbpLuJcbpYUJcJcbpbpbpbpNXubNIJAububbpvWbpbpbpbpJcJcJcbpJcbpbpbpbpbpbpbpRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpbpbpbpbpLuJcbplrubububububububPMPAPAPAwmbpbpbpbpbpLubpJcJcbpJcJcJcbpbpbpbpbpRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpbpbpIGbpJcbpbpOXNqYHuGNquGKTubPAPAPAJzubbpbpbpbpbpbpbpbpbpbpJcJcJcbpbpbpbpbpRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTyVyVdIlkgydIdIbtubWZuGuGuGuGkxubPAPAubPtTfyHoAzmdIdIBmdIdIdIBmaSfyQEyVyVfZyVRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTbpJcbpbpJcJcbpNIubqVuGuGuGuGBcCfwmwmAXTjJcbpbpbpbpbpbpbpbpbpbpJcJcbpbpbpJcJcRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTvnJcJcbpJcJcbpubPAPAPAPAPAPAGVPAPAPAububIFbpbpbpbpbpbpLubpbpbpJcJcbpbphHJcJcRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTJcJcbptMbpbpbpubtcPAPAKLPAPAPAPAPAPAOJTyJcmuJcKibpLubpLubpbpbpJcbpbpbpbpDlhbRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTJcbpbpJcJcJcbpubEpPAPAPAPAPAKLPAPAPAPAHnJcbpbpbpbpbpbpbpbpbpbpJcLubpbpbpJcJcRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTJcJcbpbpbpbpbpubtcPAKLPAPAPAPAPAPAFePqubJcbpbpbpbpbpbpLuJcbpJcJcbpbpLubpbpbpRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTJcJcbpbpbpbpbpAOPAPAPAuXPAFePAuXPAPAPAubJcbpbpbpbpJcbpJcJcbpJcJcJcJcbpbpbpbpbpRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTTjJcbpbpbpbpbpubububububNIublrububVeubTfCNJcgIWWJcbpbpljCcbpJcwJbpbpbpbpbpbpbpRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTJcbpbpbpbpbpRTRTRTRTRTFnJcIFJcJcJcbpbpbpbpbpbpbpbpbpLubpbpbpbpbpbpbpbpbpbpbpbpRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTJcbpRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTbpbpbpbpbpbpbpbpbpbpbpRTRTRTRTRTbpbpbpbpRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTbpbpbpbpbpbpRTRTRTRTRTRTRTRTbpRTRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTHHHHHHHHHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTeDeDeDRTRTRTRTRTRTRTRTRTRTRTRTRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
-RTHHHHHHHHHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+rurururuibibibibibibibibhchchchchcrurururuhDskskskskskskskskskskCDCDskskskskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+ruruibibLuibibibibibibibibibhchchcrurururuhDskskskskhDhDskskskskCDCDCDychDskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+ruibibibibibibibibLuLuibibibibhchchcrururuhDskskskskhDPnCDskskCDCDCDCDCDhDskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCibibibibibibibibibibibibibibhchchcrururuhDskskskskhDCDCDCDCDCDCDCDCDskskskskskskhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCmYibibibibibibibibibLuibibibhchcrurururuhDhDskskskoXCDCDhBCDCDbECDskskskskskskhDhDrururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCREibIGZGibibibibibibibibibLuhchchcrurururuhDskskskhDCDCDcMCDarbECDskskskskskskhDrurururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCJcibibLuibibibibibibibibibibibhchcrurururuhDskskskhDYDeFCDCDarbECDskskskskskskhDrurururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCHcibibibibibibibibibibibibibibhchchcrururuhDhDhDhDhDKbeFhDskxKxKvaCDskhDhDhDhDhDrurururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCGGfeibibibibibibibibibibibibibibibhchchcrururururuhDhDhDskskskxKhDhDhDhDrurururururururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCfefeibdATjJcJcibibibibibibibibibibhchcrurururururururururuCDCDCDhDrururururururururururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCTCibJcJcIymFJcibLuibibibibibibibibibibhghghghgrurururururuCDCDarrurururururururururururuRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCTCibibibtFibibibJcJcbgibTzgbgbgbibibibibibibibVWibibibwtibibibibibvKfcibibibTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCTCibibibibLuibibYNJcJcJcibgbgbibibibibibibibibibibibibYAabibibibibCFabibibibTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCTCLuibibibLuibibLuvWCGJcibLuibibibibibibibibibibibibibibibibibibibibibibibibTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCTCibibibibibibibibibJcibibibLuibibibibibibiMJcJcibibibibZJibibibibibibibibJcTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+TCTCibibibibibibibibibJcibibibibibibibibmJgIJcJcibibibibibibibibibibibibibJcJcTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTTCibibibibfAfAvOibibibibibibibibibibJcJcJcIDtMJcibibibibibibibibcSJckUJcJcJcTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTTCibibibfAfAfAfALufAfAfAfAvOibibibibibJcJcJcYxcBibibibibibibibibibJctMJchHJcJcTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTTCibibibfAfAfAfAfAfAfAfAfAfAibibibibibibibibibJcibibibibibibibibibJcJcFyJcJctZTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibLuibibibfAfAfAfAfAfAfAfAfAfAdZibibibibibibibLuibibibibibibibibibibJcJcTjJcJcJcTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibibibLuibvOfAfAfAfAfAfAfAfAfAdiibibibibLuibibibibibLuLuibibibibibJcqNJcJcJcJcJcTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibibLuibibibibfAfAfAfAfAfAfAfAfAibibibibibibibibYUibibibibibibibJcJcibibJcIFJcJcTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibibibibibibibibfAfAfAfAfAfAfAfALuibAYibLuibibibibibibibLuJcibibibJcibibibJcWYJcTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibibibibibibibibibvOfAfAfAfAfAvOibibibibibibibibibibibibJcJcJcibJcJcJcibibibJcJcTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibibLgibibibibJcibibibibLuibibibibibibibibibibibibibibJcJctMibibibibibibibibJcTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibLuibibibLuJcibYUJcJcibibibibNXubNIJAububibvWibibibibJcJcJcibJcibibibibibibibTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibibibibibLuJciblrubububububububPMPAPAPAwmibibibibibLuibJcJcibJcJcJcibibibibibTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibibibIGibJcibibOXNqYHuGNquGKTubPAPAPAJzubibibibibibibibibibibJcJcJcibibibibibTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTyVyVdIlkgydIdIbtubWZuGuGuGuGkxubPAPAubPtTfyHoAzmdIdIBmdIdIdIBmaSfyQEyVyVfZyVTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTibJcibibJcJcibNIubqVuGuGuGuGBcCfwmwmAXTjJcibibibibibibibibibibJcJcibibibJcJcTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTvnJcJcibJcJcibubPAPAPAPAPAPAGVPAPAPAububIFibibibibibibLuibibibJcJcibibhHJcJcTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTJcJcibtMibibibubtcPAPAKLPAPAPAPAPAPAOJTyJcmuJcKiibLuibLuibibibJcibibibibDlhbTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTJcibibJcJcJcibubEpPAPAPAPAPAKLPAPAPAPAHnJcibibibibibibibibibibJcLuibibibJcJcTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTJcJcibibibibibubtcPAKLPAPAPAPAPAPAFePqubJcibibibibibibLuJcibJcJcibibLuibibibTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTJcJcibibibibibAOPAPAPAuXPAFePAuXPAPAPAubJcibibibibJcibJcJcibJcJcJcJcibibibibibTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTTjJcibibibibibubububububNIublrububVeubTfeEJcgIWWJcibibljCcibJcwJibibibibibibibTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTJcibibibibibTCTCTCTCTCFnJcIFJcJcJcibibibibibibibibibLuibibibibibibibibibibibibTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTJcibTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCibibibibibibibibibibibTCTCTCTCTCibibibibTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCibibibibibibTCTCTCTCTCTCTCTCibTCTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCeDeDeDTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+RTTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
 RTHHHHHHHHHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
 RTHHHHHHHHHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
 RTHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
@@ -414,132 +437,132 @@ RTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
 RTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
 "}
 (1,1,2) = {"
-bkbkbkRTRTRTRTRTbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkRTbkkckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcaBaBkckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcRTRTkcRT
-RTRTRTRTBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCMCMCMCMComomomKdomomRgomomomMCMCMCMCbpMCMCMCMCMCMCuobpbpbpbpbpbpbpbpbpNfRvbpbpbpbpdQqXqXqXMkqXqXqXqXbKufzKbpomomomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCKdKdRTRTRTRT
-RTRTBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCMCMCMCMCMCMComKdKdomRgRgomomMCMCMCMCMCMCbpMCzYzYzYMCMCuobpbpbpbpbpbpjCbpbpRvbpbpbpqXqXqXyPXOqdrOqdqdqXpwbpQGzKMCMComomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCKdKdRgRgRTRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCMCMCMCMCMCMCzYomomomRgKdKdomzYzYMCMCMCbpbpMCMCzYzYMCMCuobpbpbpbpbpbpbpbpRvRvbpbpbpqXUJVqqdqdqdqdqdqdqXpwbpufzKMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComRgRgRTRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCzYMCMCMCMCMCMCMCMComomomRgomomzYzYMCMCMCbpbpMCMCMCMCMCMCqXqXqXqXbpbpbpbpbpbpRvbpbpbpbpqXxlqXqXqdFhcPqdqdqXZmqSqSlykvFbMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMComKdRTRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCzYzYMCMCMCMCMCMCMCMCKdomRgRgomKdMCMCMCMCMCbpbpMCMCMCMCMCMCqXfGvkqXbpbpbpbpbpbpRvbpbpbpbpqXrCOjqXqXqXYnYnqXqXbpbpbpbpbppwMCMCzYzYzYMCMCMCMCzYzYzYzYzYMCMCMCMCzYzYMCMCMCKdRTRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCzYzYMCMCMCMCMCzYzYMCMComomRgKdKdomMCMCMCMCMCMCMCMCMCMCMCMCMCqXCdaaqXMCbpRtRtbpRvbpRvbpbpzKqXrCxlqXbpbpRtRtCNYvbpbpbpbpbppwMCMCMCzYzYMCMCMCMCMCMCMCzYzYMCMCMCMCzYzYMCMCMCMCRTRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCMCMCMCMCMCzYzYzYzYMComomKdKdMCMCMCMCMCMCMCMCzYMCMCMCMCMwCdCdqXqXqXqXXOQMQMRvRvbpbpzKqXiSqXqXRtcLbpbpbpbpbpbpbpbpbppwbpMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCRTRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCMCMCMCMCMCMCMCMCMCMComKdomzYzYMCMCMCMCMCbpzYzYMCMCMCMCqXJnrCrCptptqXqXqXqXbpRvRvbpufzKbpbpbpbpbpbpbpbpbpcLbpRtRtbppwbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCMCMCzYMCMCMCMCMCMCMComomKdzYzYMCMCMCMCMCMCzYzYMCMCMCMCnOrCDcrCqUrCqXrCrCqXbpbpRvbpbpbpbpbpbpbpbpbpbpbpqXqXqXqXqXqXoqknFbMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCMCMCzYMCMCMCMCMCMCMCKdomKdMCMCMCMCMCMCMCMCfeMCMCMCMCMCnOrCrCrCrCrCgarCrCXObpbpbpbpbpbpbpbpbpbpbpbpbpbpqXlFrCrCrCqXbpbppwbpbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTMCMCMCMCzYzYzYzYzYMCMCMCMCKdomomMCMCMCMCMCMCMCMCzYMCMCMCMCMCqXrCqUrCqUrCqXrCXOqXbpbpbpRvbpbpbpbpbpyAbpbpbpbphjrCrCrCrCqXbpbppwbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoRTMCMCMCMCMCzYzYzYzYzYzYMCMCMCKdKdMCMCMCMCMCMCMCMCbpMCMCMCMCMCMCqXrCrCrCrCrCqXqXqXOGbpbpbpRvRvbpbpwNbpbpbpbpbpbpqXrCrCrCIkqXbpbppwbpbpMCbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComKdRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCzYzYzYzYMCMCMCzYzYMCMComKdKdMCMCzYzYMCMCbpMCMCMCMCMCMCMCqXqXqXqXqXqXqXRtRtRtbpbpbpbpRvRtRtbpbpbpbpbpbpRtqXqXrCrCXOqXbpbppwbpbpbpMCMCMCzYMCMCMCMCzYzYMCMCMCMCMCMCMCMComKdRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCzYzYzYMCMCMCMCzYzYzYMCMComKdMCMCzYzYMCMCMCMCMCMCMCMCMCMCufzKRtHhRtRtRtbpbpbpbpbpbpbpbpRvRvRtRtRtbpbpbptKRtqXrCXONkqXbpbppwbpbpMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMComomRgRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCzYzYMCMCMCMCMCMCzYzYzYomMComMCzYzYzYMCMCMCMCMCMCMCMCMCMCzKzBRtHhbpbpbpbpbpbpbpbpbpbpbpRvRvRvxDXHLObpbpRtRtsNOuXOXOqXbpbppwbpbpMCbpMCzYMCMCMCMCMCMCMCMCMCMCMCzYzYMComomRgRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCbpbpbpuobpbpbpqXqXqXqXqXqXqXDmbpRvRvbpGKbpbpbpUTRtqXqXqXqXqXbpbppwbpMCbpMCMCzYzYMCMCMCMCMCMCMCMCMCMCzYzYMComKdRgRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPpnuMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCzYzYzYMCMCMCMCbpbpbpuobpzKbpqXUlLzMyqdqdqXXObpbpbpRvbpbpbpbpbpbpbpbpbpbpbpbpbppwbpbpbpMCMCzYzYMCMCMCMCzYMCMCMCMCMCMCMCMCMCKdKdRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCfefefeuobpzKbpqXqdqdMWqdUlcNQMbpbpbpRvRvbpbpbpbpbpqXqXAWqXqXqXbppwbpbpbpMCMCzYzYMCMCMCzYzYMCMCMCMCMCMCMCMCMComKdRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPpnuMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCfefefeuobpzKbpqXqdqdqdqdqdqXQMbpbpbpRvRvbpbpbpbpbphjxlxlxlxlqXbpHIFbbpMCMCMCzYzYMCMCMCMCzYMCMCMCMCMCMCMCMCMCMComRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCbpbpMCMCMCzYMCMCbpbpbpuobpbpQGqXqXesqXqXqXqXqXbpbpbpbpRvbpbpbpbpbpqXqXqXxlxlqXbpbppwMCbpMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCzYzYMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCbpMCMCMCzYzYMCMCbpbpbpuobpbpAzqXXOrCrCrCrCrCqXbpbpbpRvRvbpbpbpbpbpbpRtqXNkXOqXbpbppwMCbpbpMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCzYMCbpbpbpuobpbpAzqXrCrCrCrCrCrCgabpbpbpRvRvbpbpbpbpbpbpRtnOXOZWqXbpbppwbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCbpMCbpbpfebpbpbpbpuobpbpzKnOrCrCrCqXqXqXqXbpbpbpRvRvbpbpbpbpbpRtbpnOxlxlqXbpbppwbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCfefebpbpbpbpfebpbpbpbpuobpbpbpnOrCrCrCqXLtRtbpbpbpbpRvbpbpbpbpbpbpRtbpqXxlxlqXbpXgpwfebpbpMCMCMCMCMCMCMCMCzYzYzYzYzYMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoMCPDMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCzYfefefebpbpbpbpbpbpbpbpuobpbpbpqXrCrCrCqXRtbpbpbpbpbpRvbpbpbpbpbpbpbpbpqXWDqXqXbpbppwbpbpbpMCMCMCMCMCMCMCzYzYzYzYzYMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBozYPDMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCzYfefebpbpbpbpbpbpbpbpbpuobpbpbpqXrCXOXOqXRtbpbpbpbpbpRvbpbpbpTrbpbpbpzKzKzKufzKbpbppwbpbpbpMCMCMCMCMCMCzYzYzYzYzYzYzYMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBozYPDMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCfebpbpbpbpbpbpbpbpbpbpoqFbbpbpqXOurCXOqXbpbpbpbpbpbpRvRvbpbpbprKRtbpbpbpbpufQGbpbppwbpbpbpMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBozYPDMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCzYzYzYMCMCMCfebpbpbpbpbpbpbpbpbpbpbpuobpbpqXqXqXqXqXbpbpbpbpbpbpRvRvbpbpRtRtRtbpbpzKzKbpbpbpbppwbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPpOOIYMCMCMCMCMCMCMCMCzYMCMCMCMCMCzYzYzYzYMCMCMCbpMCbpbpbpbpbpbpbpbpbpbpnbbpbpRtRtPGRtRtbpbpbpbpbpbpRvRvbpbpRtbpbpbpbpbpbpbpbpbpbppwbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBohAMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCzYzYMCMCzYMCMCMCbpbpbpfebpbpbpbpbpbpbpuobpbpRtRtRtRtbpbpbpbpbpbpbpbpRvbpkeknknknknknknkntLSRSRSRoxbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBohAMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCzYMCMCMCMCMCMCbpbpbpfefebpbpbpbpbpbpbpQytLSRSRSRSRqRvVvVknknFWbpbpbpRvRvbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpMCMCzYzYMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCbpfefefebpbpbpbpbpbpbpbpbpbpbpbpbpbpbpMCMCMCbpbpbpbpRvRvRvRvbpMCbpbpbpbpbpfefefefefebpbpMCMCzYzYMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCfefefebpbpbpbpbpbpbpbpbpfefefefebpMCMCMCMCMCMCMCbpbpbpRvRvRvbpMCMCbpbpbpbpfefefebpbpMCbpbpbpbpbpMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBokSvhMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYfefebpbpbpbpbpbpfebpbpbpbpfefefebpMCMCMCMCMCMCMCbpbpbpRvRvbpbpbpMCbpbpbpbpbpbpMCMCMCMCbpbpbpbpbpMCMCMCMCMCMCzYzYMCzYMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpMCMCMCMCMCMCMCMCMCMCMCMCRvbpbpbpMCMCMCMCMCbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBohAMCzYzYMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpMCMCMCMCMCMCMCMCMCMCMCMCbpRvbpMCMCMCMCMCMCbpbpMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYMCMCMCMCMCMCMCMCRT
-RTBoBoBoBoBoBoEZRNOOOOcDBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDzYzYzYMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvbpbpMCMCMCMCMCMCbpMCMCzYzYzYMCMCMCMCzYzYMCMCMCzYzYzYMCMCMCMCMCMCzYzYMCRT
-RTBoBoEZOOOORNcDMCMCMCEZOORNRNOOOORNRNcDBoBoBoBoBoBoBoBoBoBoBoEZXROORNcDBoBoBoBoPDzYzYzYMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCzYMCMCMCMCMCMCMCMCzYMCMCRT
-RTOOOOcDMCMCMCMCMCMCzYzYMCMCMCzYzYMCMCEZRNOOcDBoBoBoBoBoBoEZOOcDzYMCzYEZcDBoPpRNnuMCMCzYzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpRvRvbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCzYzYMCMCMCzYzYMCMCMCzYMCEZcDBoBoBoPpRNnuzYzYzYzYMCMCEZOOIYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComomomRgRgomomomMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCbpRvRvRvbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCqCOPOPOPqCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRgomomRgRgRgomMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCbpRvRvRvbpbpbpMCMCMCzYzYMCMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYMCMCzYMCMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMComomomomKdRgomMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpbpRvRvbpbpbpMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCzYzYMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCzYzYzYMCMCMCMCMCMComRgomKdKdomomMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpRvRvRvbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCzYzYzYMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCzYzYzYzYzYMCMCMCMCMCMCzYzYzYzYMCMCMCMComRgomomMCMCMCMCzYzYMCMCMCMCMCMCMCzYMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCbpbpbpRvRvbpbpbpMCMCMCMCMCMCMCMCMCMCMComomomomomMCMCMCMCzYMCMCzYzYzYMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCzYMCMCMCMCMCzYMCMCzYMCzYMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMComomomomMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCbpbpRvRvRvbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMComomomomomMCMCMCMCMCzYMCMCzYMCzYzYzYRT
-RTMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCzYzYzYzYzYzYzYMCMCzYzYzYMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComKdomMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpRvRvRvbpbpzYzYMCMCMCMCMCMCMCMCMCMCMCMCMComomKdKdKdomMCMCMCMCMCMCzYzYzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCzYzYzYzYMCMCzYzYzYzYMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComomMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpRvRvRvbpbpzYzYMCMCMCMCMCMCMCzYzYzYzYzYMCMCMComKdKdomMCMCMCMCMCMCMCMCzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCzYMCMCMCzYMCzYMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComomMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCbpbpbpRvRvbpbpzYzYMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMComomomMCMCMCMCMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCzYMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCbpbpbpRvRvbpbpMCzYMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCzYzYMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCbpbpbpRvRvbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCzYzYzYMCMCMCzYzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYMCMCMCMCMCMCzYMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCzYzYzYMCMCMCMCMCMCbpbpRvRvbpbpMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCzYzYMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCbpbpbpbpbpVibpVibpbpbpbpbpbpzYMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCzYzYzYzYzYMCMCMCMCMCMCbpbpRvRvbpbpbpMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCzYzYzYzYMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCbpbpMCbpMCbpMCZuMCVibpbpMCbpMCMCMCMCMCzYzYzYzYzYzYMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCzYMCzYbpRvRvbpbpbpMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCzYzYzYMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCbpejMCbpbpwWbpbpbpofVibpMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCzYzYfebpbpRvbpbpbpMCMCMCMCzYzYMCMComMCMCMCMCMCMCzYzYzYzYMCMCMCzYzYzYzYMCMCzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCbpbpbpbpbpbpbpbPbpbpbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCzYzYbpbpRvRvRvbpbpMCMCMCMCzYzYMCMComomMCMCMCMCMCMCzYzYzYMCMCMCzYzYzYzYMCMCzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCofMCMCbpbpyuMCbpbpbpTrbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCzYzYMCbpbpRvRvRvbpbpMCMCMCzYzYMCMComKdomomMCMCMCMCMCzYzYMCMCMCMCzYzYzYzYMCMCzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCzYzYzYMCMCzYMCMCbpMCbpbpbpMCbpbpcHbpbpbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCbpbpRvRvRvbpbpMCMCMCzYzYMComKdKdomomMCMCMCMCMCMCzYzYMCMCMCMCMCzYzYMCMCzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCzYzYzYMCMCzYMCMCbpcWbpVibpllbpMCbpbpolMCMCbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCbpbpRvRvRvbpbpMCMCMCMCMCMCMCKdomMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCzYMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCbpbpYiZubpbpbpdDbpbpMCMCMCViMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCzYMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCbpbpRvRvRvbpbpMCMCMCMCMCMCMComMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCzYMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCbpMCVibpbpbpMCbpbpbpcLbpcWZuMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYbpbpbpRvRvbpbpMCMCMCMCzYMCMCMComMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCzYzYzYMCMCMCMCbpbpbpbpbpbpMCbpbpMCbpMCbpbpMCMCMCMCMCMCzYMCMCzYzYMCMCMCMCMCzYzYzYzYzYMCMCMCMCzYMCMCMCzYzYzYzYzYzYMCbpbpbpRvRvbpbpMCMCMCMCzYzYMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCzYzYzYMCMCMCMCbpbpbpbpbpbpejbpbpbpMCbpbpbpMCMCMCMCMCzYzYzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCzYzYMCMCMCMCMCbpbpbpRvRvbpbpMCMCMCMCzYzYMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCzYzYzYzYzYMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpMCRvRvbpbpMCMCMCMCzYzYMCzYzYzYzYzYzYMCMCMCMCMCMCMCMCzYzYzYMCMCzYMCMCMCMCMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpbpbpbpbpbpzYzYMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCzYMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvRvbpMCzYzYMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCzYzYzYMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCxhzYMCMCMCMCMCMCzYzYMCzYzYMCMCMCMCMCMCMCzYMCMCMCMCzYzYMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCRvRvMCbpMCzYzYMCMCzYzYzYMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCRT
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCzYzYzYzYzYMCMCMCMCzYzYMCMCMCzYzYMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYzYMCMCMCMCMCzYMCzYzYzYzYzYzYzYzYzYMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCRvRvRvbpzYzYzYMCMCzYMCzYzYzYzYMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCbp
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCzYzYMCMCzYzYMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYzYMCMCMCzYzYzYzYMCMCMCMCMCMCzYzYzYzYzYMCMCMCRvRvMCbpzYzYMCMCMCMCMCzYzYzYzYMCMCMCzYzYzYzYzYMCMCMCMCMCbpbpbpbpbpMCMCMCMCbp
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCzYzYzYzYMCMCMCMCMCMCzYzYzYzYzYzYzYzYMCMCMCzYMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCzYMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCzYzYMCMCMCMCRvRvbpbpMCzYMCMCMCMCzYzYzYzYzYzYMCMCMCMCMCbpbpbpbpbpbpbpbpbpMCMCMCbpbpbpbpbp
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCzYzYMCMCMCRvRvMCbpMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCbpbpbpbpbpMCRvRvRvRvRvRvRvRvRvRvRH
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCzYzYMCMCMCRvRvMCbpMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCbpbpbpbpMCRvRvRvRvRvRvRvRvRvRvRvRvRvRvRH
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCzYMCMCMCMCRvRvMCbpbpMCMCMCMCMCMCMCMCMCbpbpbpbpbpbpbpMCRvRvRvRvRvMCMCMCbpbpMCMCMCMCMCMCbp
-RTMCMCMCMCMCMCMCMCMCMCMCMCMCbpMCMComMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCzYMCMCMCMCRvRvRvMCbpzYzYMCMCMCMCMCbpbpbpbpbpRvRvRvRvRvRvRvMCMCMCMCMCMCMCbpbpbpbpbpbpbpbp
-RTMCMCMCbpMCMCbpMCMCMCMCbpMCbpMComomMCMCMCzYMCMCMCMCzYzYzYMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCzYMCMCMCMCRvRvRvMCbpzYzYMCMCbpbpbpbpRvRvRvRvRvRvRvRvRvMCMCzYzYzYbpbpbpbpbpMCMCMCMCMCMCbp
-RTMCMCMCMCMCbpMCMCMCMCMComomomKdRgomMCMCMCzYMCMCMCMCzYzYzYMCMCMCMCMCMCzYzYzYMCMCMCzYzYMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCzYMCMCMCMCRvRvMCMCbpMCbpbpbpbpMCRvRvRvRvRvRvRvMCMCbpbpbpbpfebpbpbpMCMCMCMCMCMCMCzYMCMCRT
-RTMCMCMCbpbpMCMCbpMCKdomomomRgKdomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYzYzYzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvMCRvbpbpMCMCRvRvRvRvRvRvMCMCMCMCMCbpbpzYzYzYMCMCMCMCMCMCzYMCMCMCzYMCMCMCRT
-RTMCMCMCMCMCMCMCbpKdKdomRgomKdomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYzYzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvMCMCMCMCRvRvRvRvRvMCMCzYMCzYMCbpbpMCMCzYzYzYMCMCMCMCMCMCMCzYMCMCzYMCMCMCRT
-RTMCMCbpMCbpMCMCMCKdomKdKdKdomomMCMCMCbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvRvRvRvRvRvRvMCMCMCzYzYzYMCbpbpMCMCzYzYzYMCMCMCMCMCMCMCMCzYMCMCzYMCMCMCRT
-RTMCMCMCMCbpMCMCMComomRgomomombpMCMCbpbpMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvRvRvRvMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvMCMCMCMCMCMCfefefebpMCMCMCMCzYMCMCMCMCMCzYMCMCMCMCzYzYMCzYMCMCMCRT
-RTMCMCMCbpMCMCMComomomombpbpMCMCMCMCMCbpMCMCMCMCMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvRvRvRvRvRvRvMCRvRvRvRvRvRvRvRvRvRvRvRvMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvzYMCMCMCMCbpbpbpbpbpbpbpMCMCMCMCMCzYMCzYMCMCMCzYzYzYMCMCMCMCMCzYMCzYMCMCMCRT
-RTMCMCbpMCbpMCMComKdKdomMCbpbpMCMCMCbpbpMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvMCMCMCMCMCRvRvRvRvRvRvMCRvMCMCMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCzYzYzYMCMCMCMCMCzYzYzYMCMCMCMCRT
-RTMCMCbpMCbpMCMCMCKdKdbpbpbpMCMCMCbpMCbpbpMCMCMCRvRvRvRvRvRvRvRvMCMCRvRvRvMCRvRvRvMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvMCMCMCMCRvRvRvRvRvRvMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCfezYbpMCbpMCMCMCMCMCzYzYMCzYzYMCMCzYzYzYMCzYzYzYzYMCMCMCMCMCMCzYzYzYMCMCMCMCRT
-RTMCMCMCMCbpMCbpbpbpbpbpMCMCbpMCMCbpbpbpbpMCMCMCRvRvRvMCMCMCRvMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCbpbpMCMCMCMCMCMCMCMCMCMCRvRvRvRvRvRvRvRvRvRvRvMCMCMCMCMCMCMCMCzYzYzYMCMCbpbpbpbpfefefeMCMCMCMCMCMCzYzYzYzYzYzYzYzYzYzYzYzYzYMCzYMCzYzYMCMCMCMCMCMCMCzYzYMCMCMCMCRT
-RTMCMCMCMCbpMCMCMCbpbpbpbpbpbpMCMCMCbpMCMCMCMCMCMCMCRvRvMCMCRvRvMCMCbpbpMCMCMCbpbpMCMCMCMCbpbpMCMCbpbpbpMCMCMCMCMCzYzYMCMCMCRvRvRvRvMCMCMCMCMCMCMCMCMCMCMCfezYMCbpbpbpMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCzYzYMCMCMCzYzYMCMCMCKdMCMCMCzYzYMCMCMCMCRT
-RTMCMCMCMCbpbpMCMCMCbpbpbpbpbpbpMCbpMCMCbpbpbpbpRvRvRvMCMCMCMCRvRvbpbpbpbpMCbpbpbpMCMCMCbpMCMCbpbpbpMCbpbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYfezYzYzYMCMCMCMCzYzYzYMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCzYzYMCMCzYzYMCMCMComKdMCMCMCzYzYzYMCMCMCRT
-RTMCMCMCMCbpMCMCMCbpMCbpMCbpbpMCMCMCMCMCbpbpbpMCbpbpbpMCMCMCRvRvbpbpbpbpbpbpbpbpbpbpbpbpbpbpMCbpMCbpbpbpMCbpbpbpMCbpMCbpbpMCMCMCMCMCMCzYfezYfezYMCMCMCbpMCbpbpMCMCMCzYMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCzYMCMCMCzYzYMCMCMComomomMCMCMCzYzYMCMCMCRT
-RTMCMCMCMCbpMCMCMCMCMCMCbpbpMCMCMCbpbpMCMCbpbpbpMCMCbpMCMCMCMCRvRvMCbpbpbpbpbpbpMCMCbpbpbpMCMCMCMCMCbpbpMCbpbpbpMCMCbpbpMCfezYfeMCMCbpzYzYzYbpbpbpbpMCbpMCMCbpMCMCMCMCMCMCMCzYzYzYMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMComomomMCMCMCzYzYMCMCMCRT
-RTMCMCMCMCbpMCMCMCbpbpMCMCMCbpMCMCMCMCMCMCbpMCbpbpMCbpbpbpMCMCMCRvMCbpbpbpbpbpbpMCMCbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCbpbpbpbpMCMCbpMCMCbpMCbpMCzYzYzYMCzYMCMCMCMCMCMComKdKdKdomMCMCMCMCMCMCMCMCzYzYMCMCMCMCMComomMCMCMCzYzYMCMCMCRT
-RTomomMCMCbpMCMCMCMCMCMCbpbpbpMCbpbpbpMCbpMCMCMCMCMCMCbpbpMCMCMCRvMCbpbpbpbpbpbpbpbpbpMCMCMCbpbpbpbpbpbpbpbpbpbpbpbpMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMComomomKdKdKdKdomomMCMCMCMCMCMCzYzYMCMCMCMCMCMCKdomMCMCzYzYMCMCMCRT
-RTomomomMCbpMCMCMCMCMCMCMCbpMCMCMCbpMCbpbpMCbpMCbpMCMCbpbpMCMCRvRvRvMCbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpMCMCMCzYMCMCMCMCMCMCMCzYMCMCMCzYMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCKdKdomomKdomomomKdKdKdomMCMCMCMCzYMCMCMCMCzYMCMCKdomMCMCzYzYMCMCMCRT
-RTomomomMCbpMCMCMCMCMCbpMCbpMCMCMCbpbpbpMCMCbpbpMCMCMCMCbpMCMCRvRvRvMCbpbpbpbpbpbpMCbpbpbpMCbpbpXGXGXGdGXGXGXGXGXGbpbpbpbpbpbpMCMCMCMCMCMCMCMCzYMCMCMCMCzYMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCKdomMCMCMCMCMCMCKdKdKdomMCMCMCMCMCMCzYzYzYMCMCKdKdomMCMCzYMCMCMCRT
-RTomomomombpMCbpbpbpMCbpbpbpbpMCMCbpMCbpMCbpbpbpbpMCMCMCMCMCMCRvRvRvMCbpbpbpbpbpbpbpMCbpMCMCbpbpXGdGdGdGdGdGdGdGXGXGXGXGXGbpbpMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCzYzYMCMCMComKdKdMCMCzYMCMCzYRT
-RTomomKdomombpMCbpbpbpMCbpbpbpbpbpbpbpbpbpMCMCbpbpbpMCMCMCMCMCRvRvRvMCbpMCbpbpbpbpbpbpMCMCMCbpbpXGdGdGdGdGdGdGdGXGPAPAPAXGbpbpMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMComKdKdMCMCMCMCMCzYRT
-RTRgomKdomombpMCbpMCbpbpbpbpMCbpbpMCbpbpbpMCMCMCbpMCMCMCMCMCbpMCRvRvMCMCMCMCbpbpbpbpbpMCbpMCbpbpXGdGdGdGdGdGdGdGPAPAPAPAXGbpbpMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCKdMCMCMCMCzYzYRT
-RTRgomKdombpMCMCbpMCMCMCbpMCMCMCMCbpMCMCbpbpMCbpMCbpbpMCMCbpMCMCRvRvRvMCMCMCMCMCbpbpbpbpMCMCbpbpXGdGdGdGdGdGdGdGXGPAPAPAXGbpbpMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYzYMCMCzYMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYzYMCMCMCMCMCzYzYMCRT
-RTomomKdomMCbpMCbpbpMCbpMCbpbpMCMCMCMCMCbpbpbpMCbpbpMCMCbpMCMCMCRvRvRvMCMCMCMCMCbpbpbpbpMCMCbpbpXGdGdGdGdGdGdGdGXGXGXGXGXGbpbpMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCzYzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCzYMCzYzYzYzYzYzYzYzYMCMCMCzYzYMCRT
-RTomKdKdMCMCMCMCbpbpMCbpMCbpMCbpMCbpMCbpMCMCbpbpMCbpbpbpMCbpMCMCMCRvRvMCMCMCMCMCMCbpbpbpbpMCbpbpXGXGXGXGXGXGXGXGXGbpbpbpbpbpbpMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCzYzYzYzYzYMCMCMCMCMCMCMCMCRT
-RTomomomomMCMCbpbpbpMCbpMCMCbpMCbpMCbpMCMCMCbpbpbpbpbpbpbpMCMCbpMCRvRvMCMCMCMCMCMCbpbpbpbpMCbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCzYzYzYzYMCMCMCMCMCMCMCMCMCzYzYzYzYMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCRT
-RTomomomomomMCMCMCbpbpbpbpMCbpMCbpMCbpMCMCMCbpbpbpbpbpbpbpMCMCMCMCMCRvMCMCMCMCMCMCbpbpbpbpMCbpbpbpbpbpbpbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCzYMCMCMCMCMCMCMCMCMCzYMCMCMCzYzYzYzYzYzYMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCzYzYMCMCRT
-RTomomomomomomomomomMCbpbpMCMCMCbpbpMCMCbpbpbpbpbpMCbpbpbpMCMCbpMCMCRvMCRvMCMCMCMCMCbpbpbpMCMCMCMCMCMCMCbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYMCMCMCMCMCMCMCMCzYzYMCMCzYzYMCzYzYMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCzYzYMCMCRT
-RTomomomomomomomomomomomombpbpbpMCbpMCbpMCMCbpbpbpbpbpbpbpbpMCMCbpMCMCRvRvMCMCMCMCMCbpbpbpMCMCbpMCMCMCMCMCMCMCbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCzYMCMCMCMCMCzYMCMCMCMCsCsCbysCsCsCsCzYzYzYMCMCMCMCMCzYzYzYMCRT
-RTomomomomKdomomomomomomomomomombpbpbpMCbpMCMCMCbpbpbpbpbpbpbpMCMCMCMCRvRvMCMCMCMCMCMCbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCzYMCMCMCMCsCXiPLUhPjzqsCMCzYMCMCMCMCMCMCzYzYzYMCRT
-RTomomomomomomomomomomomomomomomomomomMCbpMCMCMCMCbpbpbpbpbpbpbpMCMCMCMCRvMCMCMCMCMCbpbpMCbpMCbpMCMCbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCsCzqzqzqzqtYsCMCzYMCMCMCMCMCMCMCMCMCMCRT
-RTomRgomomomomomomKdKdKdKdomomomomomomomomomombpMCbpbpbpbpbpbpbpbpMCMCMCRvMCMCMCMCMCMCbpbpMCMCMCbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCVZzqzqmKzqBIiaMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTomRgomomomKdRgomomomKdKdomomomomKdomKdomomomomomomombpbpbpbpMCbpMCMCRvRvMCMCMCMCMCMCMCMCMCMCMCbpMCMCMCbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCMCMCMCMCMCMCzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCYyzqzqZlzqzqsCMCMCMCMCMCMCMCMCzYzYMCMCRT
-RTomRgomomKdomomomomomomomomomomKdomomomomomomomomomomomomomomRTRTruACpupupuARRTRTRTMCMCMCMCMCMCbpbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCvwBlzqzqzquksCMCMCMCMCMCMCMCMCzYzYMCMCRT
-RTomRgomKdKdomomomRgKdomomomomomomomomomomRgRgomomomomomRTRTRTRTruruARpupupuARARruruRTRTRTomomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCzYzYzYMCMCMCMCMCzYMCMCMCsCpEzqzqzqzqsCMCMCMCMCMCMCMCMCzYzYMCMCRT
-RTomRgKdomomRgomomomKdKdomomomomomomomomRgRgomomomomRTRTRTRTRTRTruARARpupuARARARruruRTRTRTomomomomomomomombpMCbpbpMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYzYzYzYzYMCMCMCMCMCMCzYMCMCMCsCsCsCsCmfsCsCMCMCMCMCMCMCMCMCzYMCMCMCRT
-RTomRgKdomomRgomomRgomomomomomomomomRgomomomomRTRTRTRTRTRTRTRTRTruARARARARARARARARruRTRTRTRTomomomomomomKdomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYzYzYMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCzYMCMCMCMCRT
-RTomomKdomomRgomomRgomKdKdKdRgRgRgKdRgomomRTRTRTRTRTRTRTRTRTRTRTARARARARARARARARARruRTRTRTRTomomomomomomKdKdomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComomMCMCMCMCMCMCMCMCMCzYMCMCMCMCRT
-RTomomomomomRgomomRgomomomomomomomKdomRTRTRTRTRTRTRTRTRTRTRTRTRTARARARARARARARARARruRTRTRTRTRTomomomomomomKdomomomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComKdomMCMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTomomKdomomomomomomomomRgKdomomomomomRTRTRTRTRTRTRTRTRTRTRTRTRTARARARARARARARARARruRTRTRTRTRTRTomomomKdKdomKdomomomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCKdomomMCMCMCMCMCMCMCzYMCMCMCMCRT
-RTomKdomomKdKdomomomomomRgKdomomomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTARARARARARARARARARARRTRTRTRTRTRTRTomomomKdKdKdKdomomomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComKdomMCMCMCMCMCMCMCMCMCMCMCMCRT
-RTomKdomomomomomomomomomKdKdomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTruARARARARARARARARARRTRTRTRTRTRTRTomomomomomKdKdKdKdKdomKdomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCKdKdomMCMCMCMCMCMCMCMCMCMCMCRT
-RTomomomomKdomomomRgomomomomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTruARARARARARARARARARRTRTRTRTRTRTRTomomKdKdKdKdKdomKdomomKdKdomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComKdKdomomomMCMCMCMCMCMComomomRT
-RTRgomomKdKdKdomRgRgomomomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTruruARARARARARARARARRTRTRTRTRTRTRTRTomKdomomomomomomKdomomomKdomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComomKdomomomomomomomomomomomomRT
-RTRgomomKdKdKdomRgomomomomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTACruARARARARARARARARRTRTRTRTRTRTRTRTomomomomomRgomomomomomomomKdomomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComomomomomomKdomomomomomomomKdKdomomRT
-RTomomRgKdKdKdomomomKdKdomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTACruruARARARARARARARRTRTRTRTRTRTRTRTomomomomRgomRgomomomomomomKdomomomomomomomomomomomMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMComomomMCMCMCMCMCMCMCMComomomomomomomomomomKdKdomomKdomomKdKdomomRT
-RTomomRgKdomomRgRgomomomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTACACruARARARARARARARRTRTRTRTRTRTRTRTRTomomomRgomomRgomomomomomomKdomomomomomomomomomomomomomomomomomomMCMCMCMCMCMCMCMCMCMCMComomomomomMCMCMCMCMComomomomomomomKdKdomomomKdomomomomomomomomomomRT
-RTomomKdKdKdKdomRgKdomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTzNACruruARARARARARruRTRTRTRTRTRTRTRTRTomRgRgKdKdKdomRgomomomomomomKdomomomomomomomomomKdomKdomomomomomomomomMCMCMCMCMCMCMCMComomomomomomMCMComomomomomomomKdomomomKdKdomKdomomomomomomKdKdKdomRT
-RTomKdKdomKdRgomomKdomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTACACACruARARARARARruRTRTRTRTRTRTRTRTRTRTomKdKdomKdomomRgomomKdKdKdKdKdKdKdKdKdomomomomomKdomKdomKdKdomomomomomomomomMCMCMComomomomomomomomomomomomomomomomomKdomKdomomomomKdomKdKdomKdKdKdomomRT
-RTomKdomomomRgomomKdomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTACACACruruARARARruruRTRTRTRTRTRTRTRTRTRTomKdomKdKdomomomomRgomKdomKdKdKdomomKdKdKdKdomomomKdKdomKdomKdKdKdomomomomomomomomomomRgomomomomRgomomRgomomRgomomomomRgomomomomRgomomRgRgRgomomomomomRT
-RTomKdKdomRgRgomKdomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTACACACACrurusqsqruruRTRTRTRTRTRTRTRTRTRTRTomomomomomomomomomomKdKdKdomKdomomKdKdKdomomomRgRgomRgomRgomomRgomomRgomomRgKdKdKdKdomKdKdomomomomRgomomomomomRgomomomomomRgomomRgomomomomomomomomomRT
-RTomomKdKdomKdKdKdomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRThghgRTRTRTRTRTRTRTRTRTRTRTRTRTRTomomomomomomomomomKdomKdKdomRgKdomRgomomRgomRgomomRgomomomomomomomomomomomomKdomKdKdKdomomomomomomomomomomomomomomRgomomomomRgomRgRgomomomomomomomRT
-RTRTRTRTomomomomomRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRgRgRgRgRgRgomomomomomomomomomomomomomomomomomomomomomKdKdKdKdKdKdomomKdKdomomomomomomomomKdKdKdKdRgRgomomomomRgomomRgomomomomomomomomomRgRgRgRgRT
-RTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRgomRgRgRgomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomRgomRgomomomRgomomomomomomomomomomomomomRgomRTRTRTRT
-RTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRTRT
+bkbkbkXGXGXGXGXGbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkXGbkkckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcaBaBkckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcXGXGkcXG
+XGXGXGXGBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGdGdGdGdGomomomKdomomRgomomomdGdGdGdGbpdGdGdGdGdGdGuobpbpbpbpbpbpbpbpbpNfxUbpbpbpbpdQqXqXqXMkqXqXqXqXbKjLnRbpomomomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGKdKdXGXGXGXG
+XGXGBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGdGdGdGdGdGdGomKdKdomRgRgomomdGdGdGdGdGdGbpdGzYzYzYdGdGuobpbpbpbpbpbpjCbpbpRvbpbpbpqXqXqXyPXOqdrOqdqdqXcEbpVwnRdGdGomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGKdKdRgRgXGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGdGdGdGdGdGdGzYomomomRgKdKdomzYzYdGdGdGbpbpdGdGzYzYdGdGuobpbpbpbpbpbpbpbpRvRvbpbpbpqXUJVqqdqdqdqdqdqdqXcEbpjLnRdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomRgRgXGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGzYdGdGdGdGdGdGdGdGomomomRgomomzYzYdGdGdGbpbpdGdGdGdGdGdGqXqXqXqXbpbpbpbpbpbpRvbpbpbpbpqXxlqXqXqdFhcPqdqdqXZmqSqSlykvFbdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGomKdXGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGzYzYdGdGdGdGdGdGdGdGKdomRgRgomKddGdGdGdGdGbpbpdGdGdGdGdGdGqXfGvkqXwZwZwZwZwZwZSXwZwZwZwZqXrCOjqXqXqXYnYnqXqXwZwZwZwZwZpwdGdGzYzYzYdGdGdGdGzYzYzYzYzYdGdGdGdGzYzYdGdGdGKdXGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGzYzYdGdGdGdGdGzYzYdGdGomomRgKdKdomdGdGdGdGdGdGdGdGdGdGdGdGdGqXCdaaqXMCwZRtRtwZSXwZSXwZwZzKqXrCxlqXwZwZRtRtCNYvwZwZwZwZwZpwdGdGdGzYzYdGdGdGdGdGdGdGzYzYdGdGdGdGzYzYdGdGdGdGXGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGdGdGdGWBdGzYzYzYzYdGomomKdKddGdGdGdGdGdGdGdGzYdGdGdGdGMwCdCdqXqXqXqXXOQMQMSXSXwZwZzKqXiSqXqXRtcLwZwZwZwZwZwZwZwZwZpwwZdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGXGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomKdomzYzYdGdGdGdGdGbpzYzYdGdGdGdGqXJnrCrCptptqXqXqXqXwZSXSXwZufzKwZwZwZwZwZwZwZwZwZcLwZRtRtwZpwbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGdGdGzYdGdGdGdGdGdGdGomomKdzYzYdGdGdGdGdGdGzYzYdGdGdGdGnOrCDcrCqUrCqXrCrCqXwZwZSXwZwZwZwZwZwZwZwZwZwZwZqXqXqXqXqXqXoqknFbdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGdGdGzYdGdGdGdGdGdGdGKdomKddGdGdGdGdGdGdGdGSudGdGdGdGdGnOrCrCrCrCrCgarCrCXOwZwZwZwZwZwZwZwZwZwZwZwZwZwZqXlFrCrCrCqXwZwZpwbpbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGdGdGdGdGzYzYzYzYzYdGdGdGdGKdomomdGdGdGdGdGdGdGdGzYdGdGdGdGdGqXrCqUrCqUrCqXrCXOqXwZwZwZSXwZwZwZwZwZyAwZwZwZwZhjrCrCrCrCqXwZwZpwbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoXGdGdGdGdGdGzYzYzYzYzYzYdGdGdGKdKddGdGdGdGdGdGdGdGbpdGdGdGdGdGdGqXrCrCrCrCrCqXqXqXOGwZwZwZSXSXwZwZwNwZwZwZwZwZwZqXrCrCrCIkqXwZwZpwbpbpdGbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomKdXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGzYzYzYzYdGdGdGzYzYdGdGomKdKddGdGzYzYdGdGbpdGdGdGdGdGdGdGqXqXqXqXqXqXqXRtRtRtwZwZwZwZSXRtRtwZwZwZwZwZwZRtqXqXrCrCXOqXwZwZpwbpbpbpdGdGdGzYdGdGdGdGzYzYdGdGdGdGdGdGdGdGomKdXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGzYzYzYdGdGdGdGzYzYzYdGdGomKddGdGzYzYdGdGdGdGdGdGdGdGdGdGjLnRBqHhRtRtRtwZwZwZwZwZwZwZwZSXSXRtRtTWwZwZwZtKRtqXrCXONkqXwZwZpwbpbpdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGomomRgXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGzYzYdGdGdGdGdGdGzYzYzYomdGomdGzYzYzYdGdGdGdGdGdGdGdGdGdGnRzBBqHhwZwZwZwZwZwZwZwZwZwZwZSXSXSXxDXHLOwZwZRtRtsNOuXOXOqXwZwZpwbpbpdGbpdGzYdGdGdGdGdGdGdGdGdGdGdGzYzYdGomomRgXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGbpbpbpUSwZwZwZqXqXqXqXqXqXqXDmwZSXSXwZGKwZwZwZUTRtqXqXqXqXqXwZwZpwbpdGbpdGdGzYzYdGdGdGdGdGdGdGdGdGdGzYzYdGomKdRgXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPpnudGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGzYzYzYdGdGdGdGbpbpbpUSwZzKwZqXUlLzMyqdqdqXXOwZwZwZSXwZwZwZwZwZwZwZwZwZwZwZwZwZpwwZbpbpdGdGzYzYdGdGdGdGzYdGdGdGdGdGdGdGdGdGKdKdXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGSuSuSuUSwZzKwZqXqdqdMWqdUlcNQMwZwZwZSXSXwZwZwZwZwZqXqXAWqXqXqXwZpwwZbpbpdGdGzYzYdGdGdGzYzYdGdGdGdGdGdGdGdGdGomKdXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPpnudGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGSuSuSuUSwZzKwZqXqdqdqdqdqdqXQMwZwZwZSXSXwZwZwZwZwZhjxlxlxlxlqXwZHIFbbpdGdGdGzYzYdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGomXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGbpbpdGdGdGzYdGdGbpbpbpUSwZwZQGqXqXesqXqXqXqXqXwZwZwZwZSXwZwZwZwZwZqXqXqXxlxlqXwZwZpwdGbpdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGzYzYdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGbpdGdGdGzYzYdGdGbpbpbpUSwZwZAzqXXOrCrCrCrCrCqXwZwZwZSXSXwZwZwZwZwZwZRtqXNkXOqXwZwZpwdGbpbpdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGzYdGbpbpbpUSwZwZAzqXrCrCrCrCrCrCgawZwZwZSXSXwZwZwZwZwZwZRtnOXOZWqXwZwZpwbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGbpdGbpbpSubpbpbpbpUSwZwZzKnOrCrCrCqXqXqXqXwZwZwZSXSXwZwZwZwZwZRtwZnOxlxlqXwZwZpwbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGSuSubpbpbpbpSubpbpbpbpUSwZwZwZnOrCrCrCqXLtRtwZwZwZwZSXwZwZwZwZwZwZRtwZqXxlxlqXwZXgpwSubpbpdGdGdGdGdGdGdGdGzYzYzYzYzYdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBodGPDdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGzYSuSuSubpbpbpbpbpbpbpbpUSwZwZwZqXrCrCrCqXRtwZwZwZwZwZSXwZwZwZwZwZwZwZwZqXWDqXqXwZwZpwbpbpbpdGdGdGdGdGdGdGzYzYzYzYzYdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBozYPDdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGzYSuSubpbpbpbpbpbpbpbpbpUSwZwZwZqXrCXOXOqXRtwZwZwZwZwZSXwZwZwZTrwZwZwZzKzKzKufzKwZwZpwbpbpbpdGdGdGdGdGdGzYzYzYzYzYzYzYdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBozYPDdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGSubpbpbpbpbpbpbpbpbpbpoqFbwZwZqXOurCXOqXwZwZwZwZwZwZSXSXwZwZwZrKRtwZwZwZwZufQGwZwZpwbpbpbpdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBozYPDdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGzYzYzYdGdGdGSubpbpbpbpbpbpbpbpbpbpbpUSwZwZqXqXqXqXqXwZwZwZwZwZwZSXSXwZwZRtRtRtwZwZzKzKwZwZwZwZpwbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPpOOIYdGdGdGdGdGdGdGdGzYdGdGdGdGdGzYzYzYzYdGdGdGbpdGbpbpbpbpbpbpbpbpbpbpnbwZwZRtRtPGRtRtwZwZwZwZwZwZSXSXwZwZRtwZwZwZwZwZwZwZwZwZwZpwbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBohAdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGzYzYdGdGzYdGdGdGbpbpbpSubpbpbpbpbpbpbpUSwZwZRtRtRtRtwZwZwZwZwZwZwZwZSXwZkeknknknknknknkntLSRSRSRoxbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBohAdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGzYdGdGdGdGdGdGbpbpbpSuSubpbpbpbpbpbpbpQytLSRSRSRSRqRvVvVknTtFWbpbpbpRvRvbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGdGzYzYdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGbpSuSuSubpbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGdGdGbpbpbpbpRvRvRvRvbpdGbpbpbpbpbpSuSuSuSuSubpbpdGdGzYzYdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGSuSuSubpbpbpbpbpbpbpbpbpSuSuSuSubpdGdGdGdGdGdGdGbpbpbpRvRvRvbpdGdGbpbpbpbpSuSuSubpbpdGbpbpbpbpbpdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBokSvhdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYSuSubpbpbpbpbpbpSubpbpbpbpSuSuSubpdGdGdGdGdGdGdGbpbpbpRvRvbpbpbpdGbpbpbpbpbpbpdGdGdGdGbpbpbpbpbpdGdGdGdGdGdGzYzYdGzYdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpdGdGdGdGdGdGdGdGdGdGdGdGRvbpbpbpdGdGdGdGdGbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBohAdGzYzYdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpdGdGdGdGdGdGdGdGdGdGdGdGbpRvbpdGdGdGdGdGdGbpbpdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYdGdGdGdGdGdGdGdGXG
+XGBoBoBoBoBoBoEZRNOOOOcDBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoBoPDzYzYzYdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvbpbpdGdGdGdGdGdGbpdGdGzYzYzYdGdGdGdGzYzYdGdGdGzYzYzYdGdGdGdGdGdGzYzYdGXG
+XGBoBoEZOOOORNcDdGdGdGEZOORNRNOOOORNRNcDBoBoBoBoBoBoBoBoBoBoBoEZXROORNcDBoBoBoBoPDzYzYzYdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGzYdGdGdGdGdGdGdGdGzYdGdGXG
+XGOOOOcDdGdGdGdGdGdGzYzYdGdGdGzYzYdGdGEZRNOOcDBoBoBoBoBoBoEZOOcDzYdGzYEZcDBoPpRNnudGdGzYzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpRvRvbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGzYzYdGdGdGzYzYdGdGdGzYdGEZcDBoBoBoPpRNnuzYzYzYzYdGdGEZOOIYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomomomRgRgomomomdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGbpRvRvRvbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGqCOPOPOPqCdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRgomomRgRgRgomdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGbpRvRvRvbpbpbpdGdGdGzYzYdGdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYdGdGzYdGdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGomomomomKdRgomdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpbpRvRvbpbpbpdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGzYzYdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGzYzYzYdGdGdGdGdGdGomRgomKdKdomomdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpRvRvRvbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGzYzYzYdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGzYzYzYzYzYdGdGdGdGdGdGzYzYzYzYdGdGdGdGomRgomomdGdGdGdGzYzYdGdGdGdGdGdGdGzYdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGbpbpbpRvRvbpbpbpdGdGdGdGdGdGdGdGdGdGdGomomomomomdGdGdGdGzYdGdGzYzYzYdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGzYdGdGdGdGdGzYdGdGzYdGzYdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGomomomomdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGbpbpRvRvRvbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGomomomomomdGdGdGdGdGzYdGdGzYdGzYzYzYXG
+XGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGzYzYzYzYzYzYzYdGdGzYzYzYdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomKdomdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpRvRvRvbpbpzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGomomKdKdKdomdGdGdGdGdGdGzYzYzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGzYzYzYzYdGdGzYzYzYzYdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomomdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpRvRvRvbpbpzYzYdGdGdGdGdGdGdGzYzYzYzYzYdGdGdGomKdKdomdGdGdGdGdGdGdGdGzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGzYdGdGdGzYdGzYdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomomdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGbpbpbpRvRvbpbpzYzYdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGomomomdGdGdGdGdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGzYdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGbpbpbpRvRvbpbpdGzYdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGzYzYdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGbpbpbpRvRvbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGzYzYzYdGdGdGzYzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYdGdGdGdGdGdGzYdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGzYzYzYdGdGdGdGdGdGbpbpRvRvbpbpdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGzYzYdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGxZdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGbpbpbpbpbpVibpVibpbpbpbpbpbpzYdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGzYzYzYzYzYdGdGdGdGdGdGbpbpRvRvbpbpbpdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGzYzYzYzYdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGbpbpdGbpdGbpdGZudGVibpbpdGbpdGdGdGdGdGzYzYzYzYzYzYdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGzYdGzYbpRvRvbpbpbpdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGzYzYzYdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGbpejdGbpbpwWbpbpbpofVibpdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGzYzYSubpbpRvbpbpbpdGdGdGdGzYzYdGdGomdGdGdGdGdGdGzYzYzYzYdGdGdGzYzYzYzYdGdGzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGbpbpbpbpbpbpbpbPbpbpbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGzYzYbpbpRvRvRvbpbpdGdGdGdGzYzYdGdGomomdGdGdGdGdGdGzYzYzYdGdGdGzYzYzYzYdGdGzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGofdGdGbpbpyudGbpbpbpbIbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGzYzYdGbpbpRvRvRvbpbpdGdGdGzYzYdGdGomKdomomdGdGdGdGdGzYzYdGdGdGdGzYzYzYzYdGdGzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGzYzYzYdGdGzYdGdGbpdGbpbpbpgrbpbpcHbpbpbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGbpbpRvRvRvbpbpdGdGdGzYzYdGomKdKdomomdGdGdGdGdGdGzYzYdGdGdGdGdGzYzYdGdGzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGzYzYzYdGdGzYdGdGbpcWbpVibpllbpdGbpbpoldGdGbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGbpbpRvRvRvbpbpdGdGdGdGdGdGdGKdomdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGzYdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGbpbpYiZubpbpbpdDbpbpdGdGdGVidGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGzYdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGbpbpRvRvRvbpbpdGdGdGdGdGdGdGomdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGzYdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGbpdGVibpbpbpdGbpbpbppjbpcWZudGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYbpbpbpRvRvbpbpdGdGdGdGzYdGdGdGomdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGzYzYzYdGdGdGdGbpbpbpbpbpbpdGbpbpdGbpdGbpbpdGdGdGdGdGdGzYdGdGzYzYdGdGdGdGdGzYzYzYzYzYdGdGdGdGzYdGdGdGzYzYzYzYzYzYdGbpbpbpRvRvbpbpdGdGdGdGzYzYdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGzYzYzYdGdGdGdGbpbpbpbpbpbpejbpbpbpdGbpbpbpdGdGdGdGdGzYzYzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGzYzYdGdGdGdGdGbpbpbpRvRvbpbpdGdGdGdGzYzYdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGzYzYzYzYzYdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpdGRvRvbpbpdGdGdGdGzYzYdGzYzYzYzYzYzYdGdGdGdGdGdGdGdGzYzYzYdGdGzYdGdGdGdGdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpbpbpbpbpbpzYzYdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGzYdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvRvbpdGzYzYdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGzYzYzYdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGxhzYdGdGdGdGdGdGzYzYdGzYzYdGdGdGdGdGdGdGzYdGdGdGdGzYzYdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGRvRvdGbpdGzYzYdGdGzYzYzYdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGXG
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGzYzYzYzYzYdGdGdGdGzYzYdGdGdGzYzYdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYzYdGdGdGdGdGzYdGzYzYzYzYzYzYzYzYzYdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGRvRvRvbpzYzYzYdGdGzYdGzYzYzYzYdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGbp
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGzYzYdGdGzYzYdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYzYdGdGdGzYzYzYzYdGdGdGdGdGdGzYzYzYzYzYdGdGdGRvRvdGbpzYzYdGdGdGdGdGzYzYzYzYdGdGdGzYzYzYzYzYdGdGdGdGdGbpbpbpbpbpdGdGdGdGbp
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGzYzYzYzYdGdGdGdGdGdGzYzYzYzYzYzYzYzYdGdGdGzYdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGzYdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGzYzYdGdGdGdGRvRvbpbpdGzYdGdGdGdGzYzYzYzYzYzYdGdGdGdGdGbpbpbpbpbpbpbpbpbpdGdGdGbpbpbpbpbp
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGzYzYdGdGdGRvRvdGbpdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGbpbpbpbpbpdGRvRvRvRvRvRvRvRvRvRvRH
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGzYzYdGdGdGRvRvdGbpdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGbpbpbpbpdGRvRvRvRvRvRvRvRvRvRvRvRvRvRvRH
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGzYdGdGdGdGRvRvdGbpbpdGdGdGdGdGdGdGdGdGbpbpbpbpbpbpbpdGRvRvRvRvRvdGdGdGbpbpdGdGdGdGdGdGbp
+XGdGdGdGdGdGdGdGdGdGdGdGdGdGbpdGdGomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGzYdGdGdGdGRvRvRvdGbpzYzYdGdGdGdGdGbpbpbpbpbpRvRvRvRvRvRvRvdGdGdGdGdGdGdGbpbpbpbpbpbpbpbp
+XGdGdGdGbpdGdGbpdGdGdGdGbpdGbpdGomomdGdGdGzYdGdGdGdGzYzYzYdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGzYdGdGdGdGRvRvRvdGbpzYzYdGdGbpbpbpbpRvRvRvRvRvRvRvRvRvdGdGzYzYzYbpbpbpbpbpdGdGdGdGdGdGbp
+XGdGdGdGdGdGbpdGdGdGdGdGomomomKdRgomdGdGdGzYdGdGdGdGzYzYzYdGdGdGdGdGdGzYzYzYdGdGdGzYzYdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGzYdGdGdGdGRvRvdGdGbpdGbpbpbpbpdGRvRvRvRvRvRvRvdGdGbpbpbpbpSubpbpbpdGdGdGdGdGdGdGzYdGdGXG
+XGdGdGdGbpbpdGdGbpdGKdomomomRgKdomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYzYzYzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvdGRvbpbpdGdGRvRvRvRvRvRvdGdGdGdGdGbpbpzYzYzYdGdGdGdGdGdGzYdGdGdGzYdGdGdGXG
+XGdGdGdGdGdGdGdGbpKdKdomRgomKdomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYzYzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvdGdGdGdGRvRvRvRvRvdGdGzYdGzYdGbpbpdGdGzYzYzYdGdGdGdGdGdGdGzYdGdGzYdGdGdGXG
+XGdGdGbpdGbpdGdGdGKdomKdKdKdomomdGdGdGbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvRvRvRvRvRvRvdGdGdGzYzYzYdGbpbpdGdGzYzYzYdGdGdGdGdGdGdGdGzYdGdGzYdGdGdGXG
+XGdGdGdGdGbpdGdGdGomomRgomomombpdGdGbpbpdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvRvRvRvdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvdGdGdGdGdGdGSuSuSubpdGdGdGdGzYdGdGdGdGdGzYdGdGdGdGzYzYdGzYdGdGdGXG
+XGdGdGdGbpdGdGdGomomomombpbpdGdGdGdGdGbpdGdGdGdGdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvRvRvRvRvRvRvdGRvRvRvRvRvRvRvRvRvRvRvRvdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvzYdGdGdGdGbpbpbpbpbpbpbpdGdGdGdGdGzYdGzYdGdGdGzYzYzYdGdGdGdGdGzYdGzYdGdGdGXG
+XGdGdGbpdGbpdGdGomKdKdomdGbpbpdGdGdGbpbpdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvRvdGdGdGdGdGRvRvRvRvRvRvdGRvdGdGdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGzYzYzYdGdGdGdGdGzYzYzYdGdGdGdGXG
+XGdGdGbpdGbpdGdGdGKdKdbpbpbpdGdGdGbpdGbpbpdGdGdGRvRvRvRvRvRvRvRvdGdGRvRvRvdGRvRvRvdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvdGdGdGdGRvRvRvRvRvRvdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGSuzYbpdGbpdGdGdGdGdGzYzYdGzYzYdGdGzYzYzYdGzYzYzYzYdGdGdGdGdGdGzYzYzYdGdGdGdGXG
+XGdGdGdGdGbpdGbpbpbpbpbpdGdGbpdGdGbpbpbpbpdGdGdGRvRvRvdGdGdGRvdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpdGdGdGdGdGdGdGdGdGdGRvRvRvRvRvRvRvRvRvRvRvdGdGdGdGdGdGdGdGzYzYzYdGdGbpbpbpbpSuSuSudGdGdGdGdGdGzYzYzYzYzYzYzYzYzYzYzYzYzYdGzYdGzYzYdGdGdGdGdGdGdGzYzYdGdGdGdGXG
+XGdGdGdGdGbpdGdGdGbpbpbpbpbpbpdGdGdGbpdGdGdGdGdGdGdGRvRvdGdGRvRvdGdGbpbpdGdGdGbpbpdGdGdGdGbpbpdGdGbpbpbpdGdGdGdGdGzYzYdGdGdGRvRvRvRvdGdGdGdGdGdGdGdGdGdGdGSuzYdGbpbpbpdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGzYzYdGdGdGzYzYdGdGdGKddGdGdGzYzYdGdGdGdGXG
+XGdGdGdGdGbpbpdGdGdGbpbpbpbpbpbpdGbpdGdGbpbpbpbpRvRvRvdGdGdGdGRvRvbpbpbpbpdGbpbpbpdGdGdGbpdGdGbpbpbpdGbpbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYSuzYzYzYdGdGdGdGzYzYzYdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGzYzYdGdGzYzYdGdGdGomKddGdGdGzYzYzYdGdGdGXG
+XGdGdGdGdGbpdGdGdGbpdGbpdGbpbpdGdGdGdGdGbpbpbpdGbpbpbpdGdGdGRvRvbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGbpdGbpbpbpdGbpbpbpdGbpdGbpbpdGdGdGdGdGdGzYSuzYSuzYdGdGdGbpdGbpbpdGdGdGzYdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGzYdGdGdGzYzYdGdGdGomomomdGdGdGzYzYdGdGdGXG
+XGdGdGdGdGbpdGdGdGdGdGdGbpbpdGdGdGbpbpdGdGbpbpbpdGdGbpdGdGdGdGRvRvdGbpbpbpbpbpbpdGdGbpbpbpdGdGdGdGdGbpbpdGbpbpbpdGdGbpbpdGSuzYSudGdGbpzYzYzYbpbpbpbpdGbpdGdGbpdGdGdGdGdGdGdGzYzYzYdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGomomomdGdGdGzYzYdGdGdGXG
+XGdGdGdGdGbpdGdGdGbpbpdGdGdGbpdGdGdGdGdGdGbpdGbpbpdGbpbpbpdGdGdGRvdGbpbpbpbpbpbpdGdGbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGbpbpbpbpdGdGbpdGdGbpdGbpdGzYzYzYdGzYdGdGdGdGdGdGomKdKdKdomdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGomomdGdGdGzYzYdGdGdGXG
+XGomomdGdGbpdGdGdGdGdGdGbpbpbpdGbpbpbpdGbpdGdGdGdGdGdGbpbpdGdGdGRvdGbpbpbpbpbpbpbpbpbpdGdGdGbpbpbpbpbpbpbpbpbpbpbpbpdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGomomomKdKdKdKdomomdGdGdGdGdGdGzYzYdGdGdGdGdGdGKdomdGdGzYzYdGdGdGXG
+XGomomomdGbpdGdGdGdGdGdGdGbpdGdGdGbpdGbpbpdGbpdGbpdGdGbpbpdGdGRvRvRvdGbpbpbpbpbpbpbpbpbpbpdGdGbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGdGdGzYdGdGdGdGdGdGdGzYdGdGdGzYdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGKdKdomomKdomomomKdKdKdomdGdGdGdGzYdGdGdGdGzYdGdGKdomdGdGzYzYdGdGdGXG
+XGomomomdGbpdGdGdGdGdGbpdGbpdGdGdGbpbpbpdGdGbpbpdGdGdGdGbpdGdGRvRvRvdGbpbpbpbpbpbpdGbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpbpbpdGdGdGdGdGdGdGdGzYdGdGdGdGzYdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGKdomdGdGdGdGdGdGKdKdKdomdGdGdGdGdGdGzYzYzYdGdGKdKdomdGdGzYdGdGdGXG
+XGomomomombpdGbpbpbpdGbpbpbpbpdGdGbpdGbpdGbpbpbpbpdGdGdGdGdGdGRvRvRvdGbpbpbpbpbpbpbpdGbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGbpbpbpdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGzYzYdGdGdGomKdKddGdGzYdGdGzYXG
+XGomomKdomombpdGbpbpbpdGbpbpbpbpbpbpbpbpbpdGdGbpbpbpdGdGdGdGdGRvRvRvdGbpdGbpbpbpbpbpbpdGdGbpbpbpbpbpbpbpbpbpbpbpbpbpdGdGbpbpbpdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGomKdKddGdGdGdGdGzYXG
+XGRgomKdomombpdGbpdGbpbpbpbpdGbpbpdGbpbpbpdGdGdGbpdGdGdGdGdGbpdGRvRvdGdGdGdGbpbpbpbpbpdGbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGKddGdGdGdGzYzYXG
+XGRgomKdombpdGdGbpdGdGdGbpdGdGdGdGbpdGdGbpbpdGbpdGbpbpdGdGbpdGdGRvRvRvdGdGdGdGdGbpbpbpbpdGbpbpbpbpdGbpdGbpbpbpbpbpbpbpbpbpbpbpdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYzYdGdGzYdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYzYdGdGdGdGdGzYzYdGXG
+XGomomKdomdGbpdGbpbpdGbpdGbpbpdGdGdGdGdGbpbpbpdGbpbpdGdGbpdGdGdGRvRvRvdGdGdGdGdGbpbpbpbpdGbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGbpbpbpdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGzYzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGzYdGzYzYzYzYzYzYzYzYdGdGdGzYzYdGXG
+XGomKdKddGdGdGdGbpbpdGbpdGbpdGbpdGbpdGbpdGdGbpbpdGbpbpbpdGbpdGdGdGRvRvdGdGdGdGdGdGbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGbpdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGzYzYzYzYzYdGdGdGdGdGdGdGdGXG
+XGomomomomdGdGbpbpbpdGbpdGdGbpdGbpdGbpdGdGdGbpbpbpbpbpbpbpdGdGbpdGRvRvdGdGdGdGdGdGbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpbpdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGzYzYzYzYdGdGdGdGdGdGdGdGdGzYzYzYzYdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGXG
+XGomomomomomdGdGdGbpbpbpbpdGbpdGbpdGbpdGdGdGbpbpbpbpbpbpbpdGdGdGdGdGRvdGdGdGdGdGdGbpbpbpbpdGbpbpbpbpbpbpbpbpbpdGdGdGbpbpbpdGbpdGdGdGdGdGdGdGdGdGdGzYdGzYdGdGdGdGdGdGdGdGdGzYdGdGdGzYzYzYzYzYzYdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGzYzYdGdGXG
+XGomomomomomomomomomdGbpbpdGdGdGbpbpdGdGbpbpbpbpbpdGbpbpbpdGdGbpdGdGRvdGRvdGdGdGdGdGbpbpbpdGdGdGdGdGdGdGbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYdGdGdGdGdGdGdGdGzYzYdGdGzYzYdGzYzYdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGzYzYdGdGXG
+XGomomomomomomomomomomomombpbpbpdGbpdGbpdGdGbpbpbpbpbpbpbpbpdGdGbpdGdGRvRvdGdGdGdGdGbpbpbpdGdGbpdGdGdGdGdGdGdGbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGzYdGdGdGdGdGzYdGdGdGdGsCsCbysCsCsCsCzYzYzYdGdGdGdGdGzYzYzYdGXG
+XGomomomomKdomomomomomomomomomombpbpbpdGbpdGdGdGbpbpbpbpbpbpbpdGdGdGdGRvRvdGdGdGdGdGdGbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGzYdGdGdGdGsCXiPLUhPjzqsCdGzYdGdGdGdGdGdGzYzYzYdGXG
+XGomomomomomomomomomomomomomomomomomomdGbpdGdGdGdGbpbpbpbpbpbpbpdGdGdGdGRvdGdGdGdGdGbpbpdGbpdGbpdGdGbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGsCzqzqzqzqtYsCdGzYdGdGdGdGdGdGdGdGdGdGXG
+XGomRgomomomomomomKdKdKdKdomomomomomomomomomombpdGbpbpbpbpbpbpbpbpdGdGdGRvdGdGdGdGdGdGbpbpdGdGdGHjdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGVZzqzqmKzqBIiadGdGdGdGdGdGdGdGdGdGdGdGXG
+XGomRgomomomKdRgomomomKdKdomomomomKdomKdomomomomomomombpbpbpbpdGbpdGdGRvRvdGdGdGdGdGdGdGdGdGdGdGbpdGdGdGbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGdGdGdGdGdGdGzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGYyzqzqZlzqzqsCdGdGdGdGdGdGdGdGzYzYdGdGXG
+XGomRgomomKdomomomomomomomomomomKdomomomomomomomomomomomomomomXGXGruACpupupuARXGXGXGdGdGdGdGdGdGbpbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGvwBlzqzqzquksCdGdGdGdGdGdGdGdGzYzYdGdGXG
+XGomRgomKdKdomomomRgKdomomomomomomomomomomRgRgomomomomomXGXGXGXGruruARpupupuARARruruXGXGXGomomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGzYzYzYdGdGdGdGdGzYdGdGdGsCpEzqzqzqzqsCdGdGdGdGdGdGdGdGzYzYdGdGXG
+XGomRgKdomomRgomomomKdKdomomomomomomomomRgRgomomomomXGXGXGXGXGXGruARARpupuARARARruruXGXGXGomomomomomomomombpdGbpbpdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYzYzYzYzYdGdGdGdGdGdGzYdGdGdGsCsCsCsCmfsCsCdGdGdGdGdGdGdGdGzYdGdGdGXG
+XGomRgKdomomRgomomRgomomomomomomomomRgomomomomXGXGXGXGXGXGXGXGXGruARARARARARARARARruXGXGXGXGomomomomomomKdomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYzYzYdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGzYdGdGdGdGXG
+XGomomKdomomRgomomRgomKdKdKdRgRgRgKdRgomomXGXGXGXGXGXGXGXGXGXGXGARARARARARARARARARruXGXGXGXGomomomomomomKdKdomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGAIdGomomdGdGdGdGdGdGdGdGdGzYdGdGdGdGXG
+XGomomomomomRgomomRgomomomomomomomKdomXGXGXGXGXGXGXGXGXGXGXGXGXGARARARARARARARARARruXGXGXGXGXGomomomomomomKdomomomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomKdomdGdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGomomKdomomomomomomomomRgKdomomomomomXGXGXGXGXGXGXGXGXGXGXGXGXGARARARARARARARARARruXGXGXGXGXGXGomomomKdKdomKdomomomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGKdomomdGdGdGdGdGdGdGzYdGdGdGdGXG
+XGomKdomomKdKdomomomomomRgKdomomomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGARARARARARARARARARARXGXGXGXGXGXGXGomomomKdKdKdKdomomomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomKdomdGdGdGdGdGdGdGdGdGdGdGdGXG
+XGomKdomomomomomomomomomKdKdomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGruARARARARARARARARARXGXGXGXGXGXGXGomomomomomKdKdKdKdKdomKdomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGKdKdomdGdGdGdGdGdGdGdGdGdGdGXG
+XGomomomomKdomomomRgomomomomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGruARARARARARARARARARXGXGXGXGXGXGXGomomKdKdKdKdKdomKdomomKdKdomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomKdKdomomomdGdGdGdGdGdGomomomXG
+XGRgomomKdKdKdomRgRgomomomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGruruARARARARARARARARXGXGXGXGXGXGXGXGomKdomomomomomomKdomomomKdomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomomKdomomomomomomomomomomomomXG
+XGRgomomKdKdKdomRgomomomomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGACruARARARARARARARARXGXGXGXGXGXGXGXGomomomomomRgomomomomomomomKdomomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomomomomomomKdomomomomomomomKdKdomomXG
+XGomomRgKdKdKdomomomKdKdomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGACruruARARARARARARARXGXGXGXGXGXGXGXGomomomomRgomRgomomomomomomKdomomomomomomomomomomomdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGdGomomomdGdGdGdGdGdGdGdGomomomomomomomomomomKdKdomomKdomomKdKdomomXG
+XGomomRgKdomomRgRgomomomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGACACruARARARARARARARXGXGXGXGXGXGXGXGXGomomomRgomomRgomomomomomomKdomomomomomomomomomomomomomomomomomomdGdGdGdGdGdGdGdGdGdGdGomomomomomdGdGdGdGdGomomomomomomomKdKdomomomKdomomomomomomomomomomXG
+XGomomKdKdKdKdomRgKdomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGzNACruruARARARARARruXGXGXGXGXGXGXGXGXGomRgRgKdKdKdomRgomomomomomomKdomomomomomomomomomKdomKdomomomomomomomomdGdGdGdGdGdGdGdGomomomomomomdGdGomomomomomomomKdomomomKdKdomKdomomomomomomKdKdKdomXG
+XGomKdKdomKdRgomomKdomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGACACACruARARARARARruXGXGXGXGXGXGXGXGXGXGomKdKdomKdomomRgomomKdKdKdKdKdKdKdKdKdomomomomomKdomKdomKdKdomomomomomomomomdGdGdGomomomomomomomomomomomomomomomomomKdomKdomomomomKdomKdKdomKdKdKdomomXG
+XGomKdomomomRgomomKdomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGACACACruruARARARruruXGXGXGXGXGXGXGXGXGXGomKdomKdKdomomomomRgomKdomKdKdKdomomKdKdKdKdomomomKdKdomKdomKdKdKdomomomomomomomomomomRgomomomomRgomomRgomomRgomomomomRgomomomomRgomomRgRgRgomomomomomXG
+XGomKdKdomRgRgomKdomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGACACACACrurusqsqruruXGXGXGXGXGXGXGXGXGXGXGomomomomomomomomomomKdKdKdomKdomomKdKdKdomomomRgRgomRgomRgomomRgomomRgomomRgKdKdKdKdomKdKdomomomomRgomomomomomRgomomomomomRgomomRgomomomomomomomomomXG
+XGomomKdKdomKdKdKdomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGhghgXGXGXGXGXGXGXGXGXGXGXGXGXGXGomomomomomomomomomKdomKdKdomRgKdomRgomomRgomRgomomRgomomomomomomomomomomomomKdomKdKdKdomomomomomomomomomomomomomomRgomomomomRgomRgRgomomomomomomomXG
+XGXGXGXGomomomomomXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGRgRgRgRgRgRgomomomomomomomomomomomomomomomomomomomomomKdKdKdKdKdKdomomKdKdomomomomomomomomKdKdKdKdRgRgomomomomRgomomRgomomomomomomomomomRgRgRgRgXG
+XGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGRgomRgRgRgomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomRgomRgomomomRgomomomomomomomomomomomomomRgomXGXGXGXG
+XGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXGXG
 "}

@@ -178,3 +178,9 @@
 	icon_state = "santahat"
 	item_state = "santahat"
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/head/panopticon/huliganka
+	name = "Hooliganka"
+	icon_state = "huliganka"
+	item_state = "huliganka"
+	flags_inv = HIDEEARS|HIDEHAIR

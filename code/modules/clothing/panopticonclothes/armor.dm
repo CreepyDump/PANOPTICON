@@ -48,8 +48,11 @@
 
 /obj/item/clothing/armor/panopticon/cloak/cossack
 	name = "Cossack coat"
-	icon_state = "bosinn"
-	item_state = "bosinn"
+	icon_state = "cossack"
+	item_state = "cossack"
+	icon = 'icons/panopticon/obj/clothes/cloak.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
+	sleeved = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
 
 /obj/item/clothing/armor/panopticon
 	name = "steel armor"
