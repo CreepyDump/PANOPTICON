@@ -337,30 +337,42 @@ GLOBAL_VAR(restart_counter)
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
 	..()
 
+/proc/vessel_name()
+	var/name = ""
+
+	//Rare: Pre-Prefix
+
+	// Prefix
+
+	name = "PANOPTICON (RU | ENG): "
+	name += pick("Murder", "Eat", "Kill the", "Eat the","Rape the","Castrate the","Save","Dying", "Paranoid", "Civil", "Eastern", "Communist", "Begotten","Sleeping","Dangerous","Overdosed","Depressed","Nazi","Foolish","Oblivion")
+	name += " "
+	name += pick("sun", "rats", "odonghs", "shit", "front", "death", "major", "strafbat","humane", "gormet", "russki","pendos","feeder","bastards","slut","God","Lenin")
+
+	world.name = name
+
+	return name
+
 /world/proc/update_status()
+	var/players = GLOB.clients.len
+	var/popcaptext = ""
 	var/s = ""
-	s += "<a href=\"https://discord.gg/DgZHVfeHvf\">"
-#ifdef MATURESERVER
-	s += "<big><b>PANOPTICON (RU | ENG)</b> &#8212; </big></a><br>"
+	s += "<big><b>[vessel_name()]</b></big></a><br>"
 	s += "<center><b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
-#else
-	s += "<big><b>PANOPTICON(RU | ENG)</b> &#8212; </big></a><br>"
-	s += "<center><b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
-#endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"
 
 //	s += "! <b>UPDATE 4.4</b> 4/22/2022<br><br>"
-#ifdef MATURESERVER
 	var/hostedby
 	s += ""
+	s += "<a href=\"https://discord.gg/DgZHVfeHvf\">"
+	s += ""
 	hostedby = CONFIG_GET(string/hostedby)
-	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		s += "&#5859; <b> SERVER STATUS:</b> IN LOBBY &#5833;<br> "
-	else
-		s += "&#5859; <b>GAME STATUS:</b> PLAYING &#5833;<br> "
+	if (players > 1)
+		s += "[players][popcaptext] victims"
+	else if (players > 0)
+		s += "[players][popcaptext] victim"
 	if (!host && hostedby)
 		s += "Hosted by <b>Crazy Duster</b>"
-#endif
 	status = s
 	return s
 /*
