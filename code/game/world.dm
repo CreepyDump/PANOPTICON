@@ -369,8 +369,10 @@ GLOBAL_VAR(restart_counter)
 	hostedby = CONFIG_GET(string/hostedby)
 	if (players > 1)
 		s += "[players][popcaptext] victims"
+		s += ""
 	else if (players > 0)
 		s += "[players][popcaptext] victim"
+		s += ""
 	if (!host && hostedby)
 		s += "Hosted by <b>Crazy Duster</b>"
 	status = s
