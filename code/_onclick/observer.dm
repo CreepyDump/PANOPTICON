@@ -44,6 +44,9 @@
 		return
 
 	if(world.time <= next_move)
+		if(!(world.time % 3))
+			to_chat(src, click_fail_msg())
+			src.playsound_local(get_turf(src), 'sound/panopticon/ouch.ogg', 30, FALSE)
 		return
 	// You are responsible for checking config.ghost_interaction when you override this function
 	// Not all of them require checking, see below

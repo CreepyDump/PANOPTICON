@@ -193,6 +193,13 @@
 	icon_state = "purest"
 	alpha = 100
 
+
+/atom/movable/screen/fullscreen/mood
+	icon = 'icons/mob/screen_gen.dmi'
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	icon_state = "dark128"
+	alpha = 0
+
 /atom/movable/screen/fullscreen/panopticontitle
 	icon = 'icons/mob/screen_full.dmi'
 	screen_loc = "1,1"

@@ -94,6 +94,9 @@
 		return
 
 	if(next_move > world.time)
+		if(!(world.time % 3))
+			to_chat(src, click_fail_msg())
+			src.playsound_local(get_turf(src), 'sound/panopticon/ouch.ogg', 30, FALSE)
 		return
 
 	if(modifiers["middle"])
@@ -863,3 +866,6 @@
 	tempfixeye = TRUE
 	for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
 		eyet.update_icon(src) //Update eye icon
+
+/proc/click_fail_msg()
+	return span_failednigga(pick("Stop!", "Not now!", "What a faggotry.. FUCK!", "Fuck!", "I AM GOING TO KILL MYSELF!"))

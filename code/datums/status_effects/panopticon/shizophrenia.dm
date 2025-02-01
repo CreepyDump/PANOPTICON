@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(shizo_rights, world.file2list('strings/shizo.txt'))
 		if(prob(66))
 			var/list/ligma = GLOB.shizo_rights.Copy()
 			ligma |= "[rand(0,9)][rand(0,9)][rand(0,9)][rand(0,9)]"
-			message = pick(ligma)
+			message = span_shaketext(pick(ligma))
 		message = replacetext_char(message, "SRC", "[owner.real_name]")
 		message = replacetext_char(message, "CAPITALIZEME", "[uppertext(owner.real_name)]")
 		var/obj/speaker = pick(objects)

@@ -33,7 +33,6 @@
 	pants = /obj/item/clothing/under/panopticon/civilianpants
 	shirt = /obj/item/clothing/suit/panopticon/shirt/civilianshirt
 	shoes = /obj/item/clothing/shoes/panopticon
-	belt = /obj/item/storage/belt/rogue/leather/cloth/bandit
 	if(prob(20))
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	if(prob(40))

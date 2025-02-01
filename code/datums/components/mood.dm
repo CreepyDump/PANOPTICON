@@ -98,7 +98,6 @@
 		src.playsound_local(src, spoopysound, 100)
 
 /datum/component/mood/proc/update_mood()
-	var/mob/living/owner = parent
 	mood = 0
 	shown_mood = 0
 	for(var/i in mood_events)
@@ -111,13 +110,10 @@
 
 	switch(mood)
 		if(-INFINITY to MOOD_LEVEL_SAD4)
-			owner.flash_sadness()
 			mood_level = 1
 		if(MOOD_LEVEL_SAD4 to MOOD_LEVEL_SAD3)
-			owner.flash_sadness()
 			mood_level = 2
 		if(MOOD_LEVEL_SAD3 to MOOD_LEVEL_SAD2)
-			owner.flash_sadness()
 			mood_level = 3
 		if(MOOD_LEVEL_SAD2 to MOOD_LEVEL_SAD1)
 			mood_level = 4
@@ -132,6 +128,44 @@
 		if(MOOD_LEVEL_HAPPY4 to INFINITY)
 			mood_level = 9
 	update_mood_icon()
+
+/mob/living/carbon/proc/handle_happiness()
+	var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
+	var/atom/movable/screen/fullscreen/mood/moodscreen
+	switch(mood)
+		if(-INFINITY to MOOD_LEVEL_SAD4)
+			flash_sadness()
+			if(moodscreen)
+				animate(moodscreen, alpha = 255, time = 10)
+		if(MOOD_LEVEL_SAD4 to MOOD_LEVEL_SAD3)
+			flash_sadness()
+			if(moodscreen)
+				animate(moodscreen, alpha = 200, time = 10)
+		if(MOOD_LEVEL_SAD3 to MOOD_LEVEL_SAD2)
+			flash_sadness()
+			if(moodscreen)
+				animate(moodscreen, alpha = 120, time = 10)
+		if(MOOD_LEVEL_SAD2 to MOOD_LEVEL_SAD1)
+			if(moodscreen)
+				animate(moodscreen, alpha = 40, time = 10)
+		if(MOOD_LEVEL_SAD1 to MOOD_LEVEL_NEUTRAL)
+			if(moodscreen)
+				animate(moodscreen, alpha = 0, time = 10)
+		if(MOOD_LEVEL_NEUTRAL to MOOD_LEVEL_HAPPY1)
+			if(moodscreen)
+				animate(moodscreen, alpha = 0, time = 10)
+		if(MOOD_LEVEL_HAPPY1 to MOOD_LEVEL_HAPPY2)
+			if(moodscreen)
+				animate(moodscreen, alpha = 0, time = 10)
+		if(MOOD_LEVEL_HAPPY2 to MOOD_LEVEL_HAPPY3)
+			if(moodscreen)
+				animate(moodscreen, alpha = 0, time = 10)
+		if(MOOD_LEVEL_HAPPY3 to MOOD_LEVEL_HAPPY4)
+			if(moodscreen)
+				animate(moodscreen, alpha = 0, time = 10)
+		if(MOOD_LEVEL_HAPPY4 to INFINITY)
+			if(moodscreen)
+				animate(moodscreen, alpha = 0, time = 10)
 
 /datum/component/mood/proc/update_mood_icon()
 	var/mob/living/owner = parent

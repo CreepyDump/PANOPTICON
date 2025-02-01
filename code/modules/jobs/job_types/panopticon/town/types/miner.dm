@@ -1,11 +1,11 @@
-/datum/advclass/miner
+/datum/advclass/miningguy
 	name = "Miner"
 	allowed_sexes = list("male")
 	allowed_races = list("Humen")
-	outfit = /datum/outfit/job/roguetown/adventurer/minerrr
+	outfit = /datum/outfit/job/roguetown/adventurer/miningguy
 	islodger = TRUE
 
-/datum/outfit/job/roguetown/adventurer/minerrr/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/miningguy/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, rand(1,3), TRUE)

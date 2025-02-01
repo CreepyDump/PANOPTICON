@@ -88,6 +88,8 @@
 #define span_medradio(str) ("<span class='medradio'>" + str + "</span>")
 #define span_memo(str) ("<span class='memo'>" + str + "</span>")
 #define span_memoedit(str) ("<span class='memoedit'>" + str + "</span>")
+#define span_failednigga(str) ("<span class='failednigga'>" + str + "</span>")
+#define span_shaketext(str) ("<span class='shaketext'>" + str + "</span>")
 #define span_mind_control(str) ("<span class='mind_control'>" + str + "</span>")
 #define span_minorannounce(str) ("<span class='minorannounce'>" + str + "</span>")
 #define span_monkey(str) ("<span class='monkey'>" + str + "</span>")
