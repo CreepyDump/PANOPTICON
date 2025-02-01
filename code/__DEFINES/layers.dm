@@ -62,7 +62,7 @@
 	filters = list()
 	filters += filter(type="ripple",x=80,size=50,radius=0,falloff = 1)
 
-#define WALL_PLANE 	5
+#define WALL_PLANE 	1
 
 #define OPENSPACE_LAYER 17 //Openspace layer over all
 #define OPENSPACE_PLANE -9 //Openspace plane below all turfs

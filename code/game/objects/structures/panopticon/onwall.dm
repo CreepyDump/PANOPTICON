@@ -7,7 +7,8 @@
 	anchored = TRUE
 	density = FALSE
 	max_integrity = 0
-	layer = ABOVE_MOB_LAYER+0.1
+	layer = WALL_OBJ_LAYER+0.1
+	plane = AREA_PLANE
 
 /obj/structure/panopticon/onwall/proc/get_attached_wall()
 	return
