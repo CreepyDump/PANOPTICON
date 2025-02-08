@@ -620,6 +620,7 @@
 //begin actual mineral turfs
 /turf/closed/mineral/rogue
 //	layer = ABOVE_MOB_LAYER
+	plane = WALL_PLANE
 	name = "rock"
 	desc = ""
 	icon = 'icons/turf/roguewall.dmi'

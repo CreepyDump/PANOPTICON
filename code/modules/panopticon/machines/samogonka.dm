@@ -4,6 +4,8 @@
 	name = "hooch distiller"
 	desc = "An moonshine apparat. Turns any shrooms into alcohol."
 	density = FALSE
+	layer = WALL_OBJ_LAYER+0.1
+	plane = AREA_PLANE
 	anchored = TRUE
 	icon = 'icons/panopticon/obj/samogon.dmi'
 	icon_state = "samogon"

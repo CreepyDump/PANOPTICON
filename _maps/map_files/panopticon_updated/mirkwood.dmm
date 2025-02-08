@@ -109,7 +109,7 @@
 "rK" = (/obj/structure/panopticon/kol{dir = 1},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
 "rO" = (/obj/structure/bed/panopticon/wooden,/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/start/shtrafspawn,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
 "sk" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon/indoors/hell)
-"sq" = (/obj/structure/fluff/traveltile{aportalgoesto = "mirkwoodin"; aportalid = "mirkwoodout"},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
+"sq" = (/turf/closed,/area/panopticon)
 "sC" = (/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/shelter/darkwood)
 "sN" = (/obj/structure/panopticon/onwall/graffiti{dir = 1},/turf/closed/wall/mineral/panopticon/woods,/area/panopticon/indoors/shelter/darkwood)
 "sP" = (/turf/open/floor/panopticon/beton/kirpich,/area/panopticon/outdoors/darkwood)

@@ -40,6 +40,8 @@
 	desc = ""
 	icon_state = "propan"
 	icon = 'icons/panopticon/obj/64x64.dmi'
+	layer = WALL_OBJ_LAYER+0.1
+	plane = AREA_PLANE
 
 /obj/structure/panopticon/barrel/blue
 	name = "Blue barrel"
@@ -368,8 +370,8 @@
 	icon_state = "townthing"
 	icon = 'icons/panopticon/obj/bigass.dmi'
 	max_integrity = 310
-	layer = ABOVE_MOB_LAYER
-	plane = GAME_PLANE_UPPER
+	layer = WALL_OBJ_LAYER+0.1
+	plane = AREA_PLANE
 	density = FALSE
 
 /obj/structure/panopticon/randomshit/concreteblock

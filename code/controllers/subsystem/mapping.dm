@@ -245,8 +245,8 @@ SUBSYSTEM_DEF(mapping)
 	otherZ += load_map_config("_maps/map_files/panopticon_updated/mirkwood.json")
 	otherZ += load_map_config("_maps/map_files/panopticon_updated/town.json")
 //	otherZ += load_map_config("_maps/map_files/panopticon/town.json")
-//	otherZ += load_map_config("_maps/map_files/panopticon/gurmani.json")
-//	otherZ += load_map_config("_maps/map_files/panopticon_updated/underworld.json")
+	otherZ += load_map_config("_maps/map_files/panopticon/gurmani.json")
+	otherZ += load_map_config("_maps/map_files/panopticon_updated/underworld.json")
 	#endif
 	#ifdef ROGUEWORLD
 	otherZ += load_map_config("_maps/map_files/panopticon/snowles.json")
