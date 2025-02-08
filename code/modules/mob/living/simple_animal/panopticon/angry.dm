@@ -288,7 +288,7 @@
 	del_on_deaggro = 44 SECONDS
 	retreat_health = 0
 	food = 0
-	attack_sound = list('sound/combat/hits/punch/punch (1).ogg','sound/combat/hits/punch/punch (2).ogg','sound/combat/hits/punch/punch (3).ogg')
+	attack_sound = list('sound/combat/hits/punch/punch (1).ogg','sound/combat/hits/punch/punch (2).ogg')
 	dodgetime = 12
 	aggressive = 1
 	canparry = TRUE

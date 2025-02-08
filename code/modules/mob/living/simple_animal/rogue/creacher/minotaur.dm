@@ -38,7 +38,7 @@
 	del_on_deaggro = 44 SECONDS
 	retreat_health = 0
 	food = 0
-	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
+	attack_sound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	dodgetime = 0
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS

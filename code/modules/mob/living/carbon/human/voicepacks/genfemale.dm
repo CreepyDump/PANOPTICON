@@ -20,7 +20,7 @@
 			if("clap")
 				used = pick('sound/vo/clap (1).ogg','sound/vo/clap (2).ogg','sound/vo/clap (3).ogg','sound/vo/clap (4).ogg')
 			if("choke")
-				used = list('sound/vo/female/gen/choke (1).ogg','sound/vo/female/gen/choke (2).ogg','sound/vo/female/gen/choke (3).ogg')
+				used = 'sound/vo/male/gen/choke2.ogg'
 			if("chuckle")
 				used = list('sound/vo/female/gen/chuckle (1).ogg','sound/vo/female/gen/chuckle (2).ogg','sound/vo/female/gen/chuckle (3).ogg')
 			if("clearthroat")

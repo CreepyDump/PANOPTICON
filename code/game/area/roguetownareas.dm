@@ -413,12 +413,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/church
 	name = "church"
 	icon_state = "blueold"
-	droning_sound = 'sound/music/area/necronox_indoors.ogg'
+	droning_sound = 'sound/music/area/indoorsen.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/church
 /area/rogue/outdoors/exposed/church
-	droning_sound = 'sound/music/area/necronox_indoors.ogg'
+	droning_sound = 'sound/music/area/indoorsen.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -524,12 +524,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/town
 	name = "basement"
 	icon_state = "pink"
-	droning_sound = 'sound/music/area/bunkerspecial.ogg'
+	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/under/town
 /area/rogue/outdoors/exposed/under/town
-	droning_sound = 'sound/music/area/bunkerspecial.ogg'
+	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -572,13 +572,13 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_BASEMENT
 	spookysounds = SPOOKY_BUNKER
 	spookynight = SPOOKY_BUNKER
-	droning_sound = 'sound/music/area/bunkerspecial.ogg'
+	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	soundenv = 5
 	converted_type = /area/rogue/outdoors/exposed/under/basement
 /area/rogue/outdoors/exposed/under/basement
-	droning_sound = 'sound/music/area/bunkerspecial.ogg'
+	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -586,6 +586,6 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/underworld
 	name = "underworld"
 	icon_state = "pink"
-	droning_sound = 'sound/music/area/underworlddrone.ogg'
+	droning_sound = 'sound/music/area/deathdeathdeath.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null

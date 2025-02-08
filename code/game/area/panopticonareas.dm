@@ -49,29 +49,6 @@
 	droning_sound_dusk = null
 	droning_sound_night = null
 
-//BUNKER
-/area/panopticon/indoors/bunker
-	name = "bunker"
-	icon_state = "bunkerzone"
-	droning_sound = 'sound/music/area/bunker.ogg'
-	ambientsounds = AMB_BUNKER
-	ambientnight = AMB_BUNKER
-	spookysounds = SPOOKY_BUNKER
-	droning_sound_dusk = null
-	droning_sound_night = null
-	soundenv = 16
-	converted_type = /area/rogue/outdoors/caves
-
-/area/panopticon/indoors/bunker/special
-	name = "bunker special"
-	icon_state = "bunkerspecial"
-	droning_sound = 'sound/music/area/bunkerspecial2.ogg'
-
-/area/panopticon/indoors/bunker/specialdva
-	name = "bunker special two"
-	icon_state = "isnear"
-	droning_sound = 'sound/music/area/bunkerspecial.ogg'
-
 /area/panopticon/indoors/caves
 	name = "cave"
 	ambientsounds = AMB_GENCAVE
@@ -168,7 +145,7 @@
 	spookynight = TOWN_AMBIENT
 	droning_sound = 'sound/music/area/town.ogg'
 	droning_sound_dusk = 'sound/music/area/town_dusk.ogg'
-	droning_sound_night = 'sound/music/area/districtsmusic.ogg'
+	droning_sound_night = 'sound/music/area/jutkayahyina.ogg'
 	converted_type = /area/panopticon/indoors
 	soundenv = 16
 
@@ -190,7 +167,7 @@
 	ambientrain = RAIN_OUT
 	spookysounds = SPOOKY_RATS
 	spookynight = null
-	droning_sound = 'sound/music/area/necronox_indoors.ogg'
+	droning_sound = 'sound/music/area/indoorsen.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/panopticon/outdoors/town
@@ -232,7 +209,7 @@
 	ambientnight = AMB_CAVELAVA
 	spookysounds = SPOOKY_BUNKER
 	spookynight = SPOOKY_BUNKER
-	droning_sound = 'sound/music/area/underworlddrone.ogg'
+	droning_sound = 'sound/music/area/deathdeathdeath.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/panopticon/indoors/hell
@@ -262,7 +239,7 @@
 	ambientnight = AMB_INGEN
 	spookysounds = SPOOKY_BUNKER
 	spookynight = SPOOKY_BUNKER
-	droning_sound = 'sound/music/area/hell.ogg'
+	droning_sound = 'sound/music/area/deathdeathdeath.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	soundenv = 0
@@ -271,39 +248,3 @@
 	name = "HELL DINNER"
 	icon_state = "isnear"
 	droning_sound = 'sound/music/area/dinner.ogg'
-
-/area/panopticon/indoors/necronox
-	name = "INDOORS PANOPTICON"
-	icon_state = "green"
-	ambientrain = RAIN_IN
-	ambientsounds = AMB_INGEN
-	ambientnight = AMB_INGEN
-	spookysounds = SPOOKY_BUNKER
-	spookynight = SPOOKY_BUNKER
-	droning_sound = 'sound/music/area/necronox_indoors.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
-	soundenv = 4
-	plane = INDOOR_PLANE
-	converted_type = /area/panopticon/outdoors/necronox
-
-/area/panopticon/outdoors/necronox
-	name = "Necronox snows"
-	icon_state = "isnear"
-	outdoors = TRUE
-	ambientrain = null
-	ambientsounds = AMB_TOWNDAY
-	ambientnight = AMB_TOWNNIGHT
-	spookysounds = HORROR_FOREST
-	spookynight = SPOOKY_NIGHT
-	converted_type = /area/panopticon/indoors/necronox
-	droning_sound = 'sound/music/area/necronox_day.ogg'
-	droning_sound_dusk = 'sound/music/area/necronox_day.ogg'
-	droning_sound_night = 'sound/music/area/necronox_day.ogg'
-	soundenv = 4
-	ambush_times = list("night", "dawn", "day")
-	ambush_types = list(
-				/turf/open/floor/panopticon/darkgrass,
-				/turf/open/floor/panopticon/mud)
-	ambush_mobs = list(
-				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 36,
-				/mob/living/simple_animal/hostile/retaliate/rogue/panopticon/baun = 30)

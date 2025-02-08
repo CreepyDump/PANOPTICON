@@ -1,6 +1,8 @@
 /obj/effect/projectile/impact
 	name = "beam impact"
+	icon_state = "impact"
 	icon = 'icons/obj/projectiles_impact.dmi'
+	light_color = COLOR_MUZZLE_FLASH
 
 /obj/effect/projectile/impact/laser
 	name = "laser impact"

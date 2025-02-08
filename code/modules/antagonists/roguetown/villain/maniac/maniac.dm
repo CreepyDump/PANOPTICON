@@ -76,7 +76,7 @@
 	if(owner.current)
 		if(ishuman(owner.current))
 			var/mob/living/carbon/human/dreamer = owner.current
-			dreamer.cmode_music = 'sound/music/combat/imsick.ogg'
+			dreamer.cmode_music = 'sound/music/combat/iamalive.ogg'
 			owner.adjust_skillrank(/datum/skill/combat/knives, 6, TRUE)
 			owner.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 			owner.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
@@ -134,7 +134,7 @@
 		sum_keys += text2num(i)
 
 /datum/antagonist/maniac/proc/agony(mob/living/carbon/dreamer)
-	var/sound/im_sick = sound('sound/music/combat/imsick.ogg', TRUE, FALSE, CHANNEL_CMUSIC, 100)
+	var/sound/im_sick = sound('sound/music/combat/iamalive.ogg', TRUE, FALSE, CHANNEL_CMUSIC, 100)
 	SEND_SOUND(dreamer, im_sick)
 	dreamer.overlay_fullscreen("dream", /atom/movable/screen/fullscreen/dreaming)
 	dreamer.overlay_fullscreen("wakeup", /atom/movable/screen/fullscreen/dreaming/waking_up)

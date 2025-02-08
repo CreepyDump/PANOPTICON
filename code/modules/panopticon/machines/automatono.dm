@@ -147,7 +147,7 @@
 /obj/structure/mineral_door/panopticon/bunker
 	name = "bunker door"
 	desc = ""
-	plane = WALL_PLANE
+//	plane = WALL_PLANE
 	icon_state = "bunkerdoor"
 	openSound = 'sound/foley/doors/bunkerdoor.ogg'
 	closeSound = 'sound/foley/doors/bunkerdoor.ogg'

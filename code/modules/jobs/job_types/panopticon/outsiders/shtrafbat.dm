@@ -16,7 +16,6 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
-	cmode_music = 'sound/music/combat/desperation.ogg'
 
 
 /datum/job/panopticon/shtrafbat/New()

@@ -539,14 +539,14 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	dat += "<table><tr><td valign='top'>"
 	var/column_counter = 0
 
-	var/list/omegalist = list(GLOB.bunker_positions, GLOB.town_positions, GLOB.outside_positions)
+	var/list/omegalist = list(GLOB.town_positions, GLOB.outside_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
 		if(C.allmig)
-			omegalist = list(GLOB.bunker_positions)
+			omegalist = list(GLOB.outside_positions)
 	if(istype(SSticker.mode, /datum/game_mode/roguewar))
-		omegalist = list(GLOB.bunker_positions)
+		omegalist = list(GLOB.outside_positions)
 
 	for(var/list/category in omegalist)
 		if(!SSjob.name_occupations[category[1]])
@@ -563,8 +563,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 			var/cat_color = SSjob.name_occupations[category[1]].selection_color //use the color of the first job in the category (the department head) as the category color
 			var/cat_name = ""
 			switch (SSjob.name_occupations[category[1]].department_flag)
-				if (BUNKER)
-					cat_name = "Bunker folks"
 				if (TOWN)
 					cat_name = "Town members"
 				if (OUTSIDERS)

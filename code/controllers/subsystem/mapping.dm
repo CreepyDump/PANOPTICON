@@ -241,11 +241,12 @@ SUBSYSTEM_DEF(mapping)
 	var/list/otherZ = list()
 
 	#ifndef FASTLOAD
-	otherZ += load_map_config("_maps/map_files/panopticon/bunker.json")
-	otherZ += load_map_config("_maps/map_files/panopticon/mirkwood.json")
-	otherZ += load_map_config("_maps/map_files/panopticon/town.json")
-	otherZ += load_map_config("_maps/map_files/panopticon/gurmani.json")
-	otherZ += load_map_config("_maps/map_files/panopticon_updated/underworld.json")
+//	otherZ += load_map_config("_maps/map_files/panopticon/bunker.json")
+	otherZ += load_map_config("_maps/map_files/panopticon_updated/mirkwood.json")
+	otherZ += load_map_config("_maps/map_files/panopticon_updated/town.json")
+//	otherZ += load_map_config("_maps/map_files/panopticon/town.json")
+//	otherZ += load_map_config("_maps/map_files/panopticon/gurmani.json")
+//	otherZ += load_map_config("_maps/map_files/panopticon_updated/underworld.json")
 	#endif
 	#ifdef ROGUEWORLD
 	otherZ += load_map_config("_maps/map_files/panopticon/snowles.json")

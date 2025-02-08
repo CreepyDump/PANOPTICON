@@ -30,7 +30,7 @@
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
+	swingsound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	tool_behaviour = TOOL_SCALPEL
 
@@ -41,7 +41,7 @@
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	slot_flags = ITEM_SLOT_HIP
 	parrysound = list('sound/combat/parry/bladed/bladedmedium (1).ogg','sound/combat/parry/bladed/bladedmedium (2).ogg','sound/combat/parry/bladed/bladedmedium (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
+	swingsound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	force = 16
 	throwforce = 16
@@ -58,7 +58,7 @@
 	possible_item_intents = list(/datum/intent/use)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
+	swingsound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	tool_behaviour = TOOL_HEMOSTAT
 
@@ -69,7 +69,7 @@
 	possible_item_intents = list(/datum/intent/use)
 	slot_flags = ITEM_SLOT_HIP
 	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
+	swingsound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	wdefense = 3
 	wbalance = 1
@@ -84,7 +84,7 @@
 	possible_item_intents = list(/datum/intent/use)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
+	swingsound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	tool_behaviour = TOOL_BONESETTER
 

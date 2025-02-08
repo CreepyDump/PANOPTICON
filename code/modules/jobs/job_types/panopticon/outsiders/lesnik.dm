@@ -17,7 +17,6 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
-	cmode_music = 'sound/music/combat/bornagain.ogg'
 
 /datum/job/panopticon/lesnik/New()
 	. = ..()

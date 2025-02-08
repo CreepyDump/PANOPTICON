@@ -574,7 +574,10 @@
 	else
 		cmode = TRUE
 		playsound_local(src, 'sound/misc/combon.ogg', 100)
-		if(L.cmode_music)
+		if(!L.cmode_music)
+			var/cmbt = pick('sound/music/combat/music1.ogg','sound/music/combat/music2.ogg','sound/music/combat/music3.ogg','sound/music/combat/music4.ogg','sound/music/combat/music5.ogg')
+			SSdroning.play_combat_music(cmbt, client)
+		else
 			SSdroning.play_combat_music(L.cmode_music, client)
 		if(client && HAS_TRAIT(src, TRAIT_SCHIZO_AMBIENCE))
 			animate(client, pixel_y = 1, time = 1, loop = -1, flags = ANIMATION_RELATIVE)
@@ -586,8 +589,7 @@
 /mob
 	var/last_aimhchange = 0
 	var/aimheight = 11
-	var/cmode_music = 'sound/music/combat/iamalive.ogg'
-
+	var/cmode_music = null
 /mob/proc/aimheight_change(input)
 	var/old_zone = zone_selected
 	if(isnum(input))

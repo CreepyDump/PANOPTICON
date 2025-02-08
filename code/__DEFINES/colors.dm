@@ -21,6 +21,7 @@
 #define COLOR_OLIVE            "#808000"
 #define COLOR_LIME             "#32CD32"
 #define COLOR_GREEN            "#008000"
+#define COLOR_MUZZLE_FLASH     "#ffffb2"
 #define COLOR_CYAN             "#00FFFF"
 #define COLOR_TEAL             "#008080"
 #define COLOR_BLUE             "#0000FF"

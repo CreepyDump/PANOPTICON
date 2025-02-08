@@ -1,6 +1,13 @@
 /obj/effect/projectile/muzzle
 	name = "muzzle flash"
+	icon_state = "muzzle"
 	icon = 'icons/obj/projectiles_muzzle.dmi'
+	light_range = 5
+	light_power = 1
+
+/obj/effect/projectile/muzzle/bullet
+	icon_state = "muzzle_bullet"
+	light_color = COLOR_MUZZLE_FLASH
 
 /obj/effect/projectile/muzzle/laser
 	icon_state = "muzzle_laser"

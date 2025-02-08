@@ -342,7 +342,7 @@
 'sound/combat/fracture/headcrush (3).ogg',
 'sound/combat/fracture/headcrush (4).ogg')
 			if("punch")
-				soundin = pick('sound/combat/hits/punch/punch (1).ogg','sound/combat/hits/punch/punch (2).ogg','sound/combat/hits/punch/punch (3).ogg')
+				soundin = pick('sound/combat/hits/punch/punch (1).ogg','sound/combat/hits/punch/punch (2).ogg')
 			if("punch_hard")
 				soundin = pick('sound/combat/hits/punch/punch_hard (1).ogg','sound/combat/hits/punch/punch_hard (2).ogg','sound/combat/hits/punch/punch_hard (3).ogg')
 			if("smallslash")
@@ -360,11 +360,11 @@
 			if("genslash")
 				soundin = pick('sound/combat/hits/bladed/genslash (1).ogg','sound/combat/hits/bladed/genslash (2).ogg','sound/combat/hits/bladed/genslash (3).ogg')
 			if("bladewooshsmall")
-				soundin = pick('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
+				soundin = pick('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 			if("bluntwooshmed")
-				soundin = pick('sound/combat/wooshes/blunt/wooshmed (1).ogg','sound/combat/wooshes/blunt/wooshmed (2).ogg','sound/combat/wooshes/blunt/wooshmed (3).ogg')
+				soundin = pick('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 			if("bluntwooshlarge")
-				soundin = pick('sound/combat/wooshes/blunt/wooshlarge (1).ogg','sound/combat/wooshes/blunt/wooshlarge (2).ogg','sound/combat/wooshes/blunt/wooshlarge (3).ogg')
+				soundin = pick('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 			if("punchwoosh")
 				soundin = pick('sound/combat/wooshes/punch/punchwoosh (1).ogg','sound/combat/wooshes/punch/punchwoosh (2).ogg','sound/combat/wooshes/punch/punchwoosh (3).ogg')
 

@@ -336,7 +336,7 @@
 	attack_verb = list("punches", "jabs", "clocks", "strikes")
 	chargetime = 0
 	animname = "blank22"
-	hitsound = list('sound/combat/hits/punch/punch (1).ogg', 'sound/combat/hits/punch/punch (2).ogg', 'sound/combat/hits/punch/punch (3).ogg')
+	hitsound = list('sound/combat/hits/punch/punch (1).ogg', 'sound/combat/hits/punch/punch (2).ogg')
 	misscost = 5
 	releasedrain = 5
 	swingdelay = 0

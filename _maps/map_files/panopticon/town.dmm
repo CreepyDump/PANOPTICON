@@ -18,7 +18,7 @@
 "bc" = (/obj/structure/panopticon/pallet{dir = 8},/obj/structure/panopticon/noshadow/townborders{dir = 4},/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "be" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 2},/turf/open/water/sewer,/area/panopticon/indoors/sewerslut)
 "bf" = (/obj/structure/panopticon/onwall/wallpipe{dir = 8},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
-"bl" = (/obj/structure/closet/crate/roguecloset/dark,/obj/machinery/light/small{dir = 8},/obj/item/gun/ballistic/automatic/pistol/knuckleshot,/obj/item/gun/ballistic/automatic/pistol/knuckleshot,/obj/item/gun/ballistic/automatic/pistol/knuckleshot,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"bl" = (/obj/structure/closet/crate/roguecloset/dark,/obj/machinery/light/small{dir = 8},/obj/item/gun/ballistic/automatic/pistol/knuckleshot,/obj/item/gun/ballistic/automatic/pistol/knuckleshot,/obj/item/gun/ballistic/automatic/pistol/knuckleshot,/turf/open/floor/panopticon/bunker/metal)
 "bm" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 8},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
 "bn" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/panopticon/noshadow/pepeldeco{dir = 1},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 "bo" = (/obj/structure/panopticon/noshadow/road{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
@@ -33,7 +33,7 @@
 "bH" = (/obj/structure/mineral_door/bars,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/town)
 "bP" = (/turf/closed/wall/mineral/panopticon/kirpich/beton,/area/panopticon/outdoors/town)
 "bQ" = (/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors)
-"bR" = (/obj/structure/bed/rogue/inn/wooldouble,/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"bR" = (/obj/structure/bed/rogue/inn/wooldouble,/turf/open/floor/panopticon/bunker/scorched)
 "bT" = (/obj/structure/chair/stool/rogue{dir = 4},/obj/effect/landmark/start/lodger{dir = 8},/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town/shop)
 "cf" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
 "ch" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon/indoors/sewerslut)
@@ -62,7 +62,7 @@
 "dN" = (/obj/machinery/light/small/broken{dir = 8},/obj/item/reagent_containers/food/snacks/poo{icon_state = "poo3"},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
 "dR" = (/obj/structure/panopticon/noshadow/road{dir = 5},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "dS" = (/obj/structure/bed/panopticon/pigs,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
-"dZ" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"dZ" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/metal)
 "ed" = (/obj/structure/panopticon/noshadow/road{dir = 5},/obj/structure/panopticon/randomshit{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "ee" = (/obj/structure/panopticon/barrel/blue{dir = 1},/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/shelter/darkwood)
 "eh" = (/obj/structure/ladder/toiletladder,/turf/open/floor/panopticon/darkwood,/area/panopticon/outdoors/darkwood)
@@ -180,7 +180,7 @@
 "kF" = (/obj/effect/turf_decal/panopticon/sewergrate{dir = 1},/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "kJ" = (/obj/structure/panopticon/onwall/oldass{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/indoors/sewerslut)
 "kM" = (/obj/structure/panopticon/onwall/oldass/anotherome,/turf/closed/wall/mineral/panopticon/kirpich/townwall/alt,/area/panopticon/outdoors/town)
-"kP" = (/obj/structure/table,/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"kP" = (/obj/structure/table,/turf/open/floor/panopticon/bunker/scorched)
 "kS" = (/obj/structure/fluff/statue/pillar,/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town/shop)
 "kT" = (/obj/effect/turf_decal/panopticon/mysor/town/alt{dir = 6},/obj/structure/panopticon/noshadow/townborders,/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "kV" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/shelter/darkwood)
@@ -205,7 +205,7 @@
 "mj" = (/obj/structure/panopticon/noshadow/road,/obj/structure/panopticon/randomshit{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "mn" = (/obj/structure/spawnerofmutantz,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "ms" = (/obj/structure/closet/crate/roguecloset,/turf/open/floor/panopticon/darkwood/birchwood,/area/panopticon/indoors/town/shop)
-"mw" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors/bunker)
+"mw" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/bunkergrid)
 "mx" = (/obj/machinery/light/rogue/wallfire/candle/l,/turf/open/floor/panopticon/town/plitka{dir = 1},/area/panopticon/indoors/town/shop)
 "my" = (/obj/item/reagent_containers/food/snacks/smallrat,/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "mz" = (/obj/structure/panopticon/onwall/oldass,/turf/closed/wall/mineral/panopticon/kirpich/townwall/alt,/area/panopticon/outdoors/town)
@@ -213,10 +213,10 @@
 "mC" = (/obj/structure/fluff/statue/pillar,/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town)
 "mD" = (/obj/structure/panopticon/onwall/hospital,/turf/closed/wall/mineral/panopticon/kirpich/beton,/area/panopticon/outdoors/town)
 "mE" = (/obj/effect/turf_decal/panopticon/mysor/doski{dir = 2},/obj/structure/panopticon/noshadow/townborders{dir = 1},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
-"mI" = (/obj/machinery/light/small{dir = 2},/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"mI" = (/obj/machinery/light/small{dir = 2},/turf/open/floor/panopticon/bunker/scorched)
 "na" = (/obj/structure/panopticon/onwall/burn{dir = 1},/turf/closed/wall/mineral/panopticon/woods/alt,/area/panopticon/outdoors/town)
 "nf" = (/obj/structure/fluff/traveltile{aportalgoesto = "panoptownin"; aportalid = "panoptownout"},/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood)
-"ni" = (/obj/structure/closet/crate/drawer/bunkercabinet,/obj/item/ammo_box/m10mm,/obj/item/ammo_box/m10mm,/obj/item/ammo_box/m10mm,/obj/item/ammo_box/m10mm,/obj/item/grenade/syndieminibomb/concussion/frag,/obj/item/grenade/syndieminibomb/concussion/frag,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"ni" = (/obj/structure/closet/crate/drawer/bunkercabinet,/obj/item/ammo_box/m10mm,/obj/item/ammo_box/m10mm,/obj/item/ammo_box/m10mm,/obj/item/ammo_box/m10mm,/obj/item/grenade/syndieminibomb/concussion/frag,/obj/item/grenade/syndieminibomb/concussion/frag,/turf/open/floor/panopticon/bunker/metal)
 "nj" = (/obj/effect/turf_decal/panopticon/mysor/doski{dir = 4},/obj/structure/panopticon/noshadow/townborders,/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "nk" = (/obj/structure/panopticon/panopticontree,/obj/structure/panopticon/mirkstones,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/town)
 "nl" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/town/shop)
@@ -246,7 +246,7 @@
 "ot" = (/obj/structure/chair/wood/rogue/fancy,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/town/shop)
 "ox" = (/obj/structure/mineral_door/wood/fancywood{locked = 1},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
 "oA" = (/turf/open/floor/panopticon/darkgrass,/area/panopticon)
-"oB" = (/obj/structure/panopticon/automat/announcer,/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"oB" = (/obj/structure/panopticon/automat/announcer,/turf/open/floor/panopticon/bunker/scorched)
 "oC" = (/turf/open/floor/panopticon/darkwood/birchwood,/area/panopticon/indoors/town)
 "oI" = (/obj/structure/closet/crate/drawer/inn,/obj/item/storage/fancy/cigarettes/jeltomorkanal,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
 "oL" = (/obj/structure/table/wood{icon_state = "largetable"; dir = 1},/obj/item/candle/yellow/lit,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
@@ -257,12 +257,11 @@
 "pa" = (/obj/structure/panopticon/noshadow/road{dir = 5},/obj/structure/panopticon/noshadow/road{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "pc" = (/turf/open/floor/panopticon/beton/stone,/area/panopticon/indoors/town/shop)
 "pe" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
-"pf" = (/obj/structure/bed/panopticon/bunker,/obj/effect/landmark/start/policia{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"pf" = (/obj/structure/bed/panopticon/bunker,/obj/effect/landmark/start/policia{dir = 8},/turf/open/floor/panopticon/bunker/metal)
 "pg" = (/obj/structure/mineral_door/wood/fancywood{lockid = dolboebcashier; locked = 1},/turf/open/floor/panopticon/darkwood,/area/panopticon/outdoors/town)
 "pj" = (/mob/living/carbon/human/species/human/northern/bum/ambush,/obj/item/panopticonweapon/boner/nailplank,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
 "pl" = (/turf/closed/wall/mineral/panopticon/woods/alt,/area/panopticon/outdoors/town)
 "pm" = (/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood)
-"pt" = (/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors/bunker)
 "pu" = (/obj/effect/decal/cleanable/blood/splatter,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
 "pv" = (/obj/structure/panopticon/onwall/medic{dir = 8; pixel_y = 32},/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town)
 "pw" = (/obj/structure/panopticon/noshadow/townborders{dir = 1},/obj/structure/panopticon/noshadow/townborders{dir = 8},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
@@ -295,7 +294,7 @@
 "rD" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
 "rJ" = (/obj/structure/table/wood{icon_state = "largetable"; dir = 6},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
 "rM" = (/obj/structure/panopticon/onwall/consulposter,/turf/closed/wall/mineral/panopticon/bunker/rustwall,/area/panopticon/indoors/town/shop)
-"rW" = (/turf/closed/wall/mineral/panopticon/bunker/rustwall,/area/panopticon/indoors/bunker)
+"rW" = (/turf/closed/wall/mineral/panopticon/bunker/rustwall)
 "rX" = (/obj/structure/flora/newtree,/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "rY" = (/obj/machinery/light/rogue/hearth{pixel_y = 32},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
 "se" = (/obj/structure/panopticon/onwall/oldass{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich/townwall,/area/panopticon/outdoors/town)
@@ -317,7 +316,7 @@
 "sT" = (/obj/structure/mineral_door/wood/donjon/panopticon{lockid = jailcells},/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors)
 "sV" = (/obj/structure/stairs,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
 "sX" = (/obj/structure/fluff/wallclock/r,/turf/open/floor/panopticon/town/plitka{dir = 4},/area/panopticon/indoors/town/shop)
-"ta" = (/obj/structure/mineral_door/wood/donjon{dir = 2; lockid = major},/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"ta" = (/obj/structure/mineral_door/wood/donjon{dir = 2; lockid = major},/turf/open/floor/panopticon/bunker/scorched)
 "tc" = (/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "ti" = (/obj/effect/turf_decal/panopticon/sewergrate,/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "to" = (/obj/effect/decal/cleanable/urine,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
@@ -392,7 +391,7 @@
 "xy" = (/obj/structure/panopticon/onwall/oldass/anotherome{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich/townwall,/area/panopticon/outdoors/town)
 "xD" = (/obj/structure/ladder/toiletladder,/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors)
 "xH" = (/mob/living/carbon/human/species/human/northern/bum/ambush,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
-"xQ" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"xQ" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/turf/open/floor/panopticon/bunker/metal)
 "xR" = (/obj/item/storage/fancy/cigarettes/jeltomorkanal,/obj/structure/closet/crate/roguecloset/inn/chest,/turf/open/floor/carpet/red,/area/panopticon/indoors/town)
 "xX" = (/obj/structure/panopticon/barrel/blue{dir = 8},/obj/structure/panopticon/onwall/wallpipe,/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/shelter/darkwood)
 "yb" = (/obj/structure/bed/panopticon/pigs,/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors)
@@ -416,7 +415,7 @@
 "zb" = (/turf/open/water/river{dir = 8},/area/panopticon/outdoors/darkwood)
 "zj" = (/turf/open/floor/rogue/tile/bath,/area/panopticon/indoors/town)
 "zk" = (/obj/machinery/light/rogue/wallfire/candle/r,/obj/structure/stairs,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
-"zo" = (/obj/effect/landmark/start/policia{dir = 4},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"zo" = (/obj/effect/landmark/start/policia{dir = 4},/turf/open/floor/panopticon/bunker/metal)
 "zp" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
 "zq" = (/obj/effect/turf_decal/panopticon/mysor/town/alt{dir = 8},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "zr" = (/obj/effect/turf_decal/panopticon/mysor/town/alt{dir = 4},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
@@ -425,7 +424,7 @@
 "zy" = (/obj/structure/stairs{dir = 8; icon_state = "stairs"},/turf/open/transparent/openspace,/area/panopticon/indoors/town)
 "zA" = (/turf/open/floor/panopticon/town,/area/panopticon/outdoors/town)
 "zF" = (/obj/structure/panopticon/onwall/oldass{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich/townwall/alt,/area/panopticon/outdoors/town)
-"zG" = (/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"zG" = (/turf/open/floor/panopticon/bunker/metal)
 "zI" = (/turf/open/water/river{dir = 4},/area/panopticon/outdoors/darkwood)
 "zR" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/panopticon/skulldraw,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 "zT" = (/turf/open/floor/panopticon/cement)
@@ -482,7 +481,7 @@
 "Co" = (/obj/structure/closet/crate/drawer/bunkercabinet,/turf/open/floor/panopticon/darkwood/parketpizda,/area/panopticon/indoors/town)
 "Cp" = (/obj/structure/panopticon/noshadow/road{dir = 5},/obj/structure/panopticon/randomshit,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "Cs" = (/obj/effect/decal/cleanable/blood/gibs/limb{dir = 4},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
-"Ct" = (/obj/structure/mineral_door/wood/donjon{dir = 8; lockid = armoury},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"Ct" = (/obj/structure/mineral_door/wood/donjon{dir = 8; lockid = armoury},/turf/open/floor/panopticon/bunker/metal)
 "Cu" = (/obj/effect/turf_decal/panopticon/mysor/town/alt{dir = 1},/obj/structure/panopticon/noshadow/townborders,/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "Cw" = (/obj/structure/bed/panopticon/wooden,/obj/effect/landmark/start/bandit{dir = 8},/turf/open/floor/panopticon/gulag/derevo)
 "Cx" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon/indoors/caves/odonghs)
@@ -551,7 +550,7 @@
 "FV" = (/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
 "FW" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/shelter/darkwood)
 "Gk" = (/obj/machinery/light/roguestreet/midlamp,/obj/structure/panopticon/noshadow/townborders{dir = 4},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
-"Gr" = (/obj/structure/ladder/toiletladder,/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors/bunker)
+"Gr" = (/obj/structure/ladder/toiletladder,/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/bunkergrid)
 "Gt" = (/obj/structure/panopticon/noshadow/road{dir = 10},/obj/structure/panopticon/noshadow/road{dir = 1},/obj/structure/panopticon/noshadow/road{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "GC" = (/obj/structure/panopticon/onwall/ungern,/turf/closed/wall/mineral/panopticon/woods/alt,/area/panopticon/indoors/town/church)
 "GD" = (/obj/structure/panopticon/noshadow/road,/obj/structure/spawnerofmutantz,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
@@ -561,14 +560,14 @@
 "GM" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/panopticon/noshadow/pepeldeco{dir = 9},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 "GQ" = (/obj/structure/mineral_door/wood/donjon,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/shelter/darkwood)
 "GT" = (/obj/machinery/light/rogue/wallfire/candle/l,/turf/open/floor/carpet/red,/area/panopticon/indoors/town)
-"Hc" = (/obj/structure/table,/obj/item/gun/ballistic/rifle/gusyevboltovka,/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"Hc" = (/obj/structure/table,/obj/item/gun/ballistic/rifle/gusyevboltovka,/turf/open/floor/panopticon/bunker/scorched)
 "Hd" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
 "He" = (/obj/structure/mineral_door/wood/deadbolt,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town/shop)
 "Hn" = (/obj/structure/panopticon/onwall/oldass/anotherome,/obj/structure/panopticon/onwall/oldass,/turf/closed/wall/mineral/panopticon/kirpich/townwall/alt,/area/panopticon/outdoors/town)
 "Ho" = (/obj/structure/panopticon/onwall/wallpipe{dir = 1},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
 "Hr" = (/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood)
 "Hu" = (/obj/structure/mineral_door/wood/window,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
-"HA" = (/obj/structure/closet/crate/roguecloset/dark,/obj/machinery/light/small{dir = 8},/obj/item/clothing/armor/panopticon,/obj/item/clothing/armor/panopticon,/obj/item/clothing/armor/panopticon,/obj/item/clothing/head/panopticon/grey,/obj/item/clothing/head/panopticon/grey,/obj/item/clothing/head/panopticon/grey,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"HA" = (/obj/structure/closet/crate/roguecloset/dark,/obj/machinery/light/small{dir = 8},/obj/item/clothing/armor/panopticon,/obj/item/clothing/armor/panopticon,/obj/item/clothing/armor/panopticon,/obj/item/clothing/head/panopticon/grey,/obj/item/clothing/head/panopticon/grey,/obj/item/clothing/head/panopticon/grey,/turf/open/floor/panopticon/bunker/metal)
 "HE" = (/turf/closed/wall/mineral/panopticon/kirpich/townwall/alt,/area/panopticon/indoors/town)
 "HF" = (/obj/structure/spawnerofmutantz,/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood)
 "HH" = (/obj/structure/rack/rogue/shelf,/obj/structure/closet/crate/roguecloset,/obj/item/reagent_containers/food/snacks/seltshmack,/obj/item/reagent_containers/food/snacks/seltshmack,/obj/item/reagent_containers/glass/cup/wooden,/obj/item/reagent_containers/glass/cup/wooden,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
@@ -577,11 +576,11 @@
 "HR" = (/obj/structure/spawnerofmutantz,/obj/structure/spawnerofmutantz,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "Ib" = (/obj/structure/panopticon/onwall/skullposter,/turf/closed/wall/mineral/panopticon/kirpich/townwall/alt,/area/panopticon/outdoors/town)
 "Id" = (/obj/structure/panopticon/noshadow/road{dir = 5},/obj/structure/panopticon/noshadow/road,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
-"Ie" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"Ie" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/metal)
 "Ih" = (/obj/structure/panopticon/onwall/panopticonn,/turf/closed/wall/mineral/panopticon/kirpich/townwall,/area/panopticon/outdoors/town)
 "Ip" = (/obj/structure/table/wood{icon_state = "largetable"; dir = 9},/obj/item/reagent_containers/glass/cup/wooden,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
-"Ir" = (/obj/structure/mineral_door/wood/donjon/stone,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
-"Is" = (/obj/structure/table,/obj/item/storage/fancy/cigarettes/jeltomorkanal,/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"Ir" = (/obj/structure/mineral_door/wood/donjon/stone,/turf/open/floor/panopticon/bunker/metal)
+"Is" = (/obj/structure/table,/obj/item/storage/fancy/cigarettes/jeltomorkanal,/turf/open/floor/panopticon/bunker/scorched)
 "Iu" = (/obj/structure/stairs/panopticon{dir = 4},/obj/effect/turf_decal/panopticon/mysor/town/alt{dir = 4},/obj/structure/fluff/traveltile/bandit{aportalid = "banditiebanie"; aportalgoesto = "tothepit"},/turf/open/floor/panopticon/cement)
 "Iv" = (/obj/structure/fluff/statue/pillar,/turf/open/floor/panopticon/darkwood/parketpizda,/area/panopticon/indoors/town)
 "Iy" = (/turf/open/floor/rogue/rooftop{dir = 8},/area/panopticon/outdoors/town)
@@ -669,7 +668,7 @@
 "NK" = (/obj/effect/landmark/start/nomad{dir = 8},/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves/odonghs)
 "NM" = (/obj/structure/panopticon/crate,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
 "NN" = (/obj/structure/panopticon/noshadow/road{dir = 4},/obj/structure/panopticon/noshadow/road{dir = 8},/obj/structure/panopticon/noshadow/road{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
-"NP" = (/obj/structure/chair/wood/rogue/fancy{icon_state = "chair1"; dir = 1},/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"NP" = (/obj/structure/chair/wood/rogue/fancy{icon_state = "chair1"; dir = 1},/turf/open/floor/panopticon/bunker/scorched)
 "NZ" = (/obj/structure/stairs,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
 "Oa" = (/obj/structure/flora/newtree,/obj/structure/flora/newtree,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "Og" = (/obj/structure/roguewindow{dir = 8},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/outdoors/town)
@@ -693,12 +692,12 @@
 "Pa" = (/obj/structure/panopticon/noshadow/road,/obj/structure/panopticon/noshadow/road{dir = 8},/turf/open/floor/panopticon/road,/area/panopticon/outdoors/darkwood)
 "Pl" = (/turf/open/floor/panopticon/town/plitka{dir = 8},/area/panopticon/indoors/town/shop)
 "Pp" = (/obj/structure/zabor/border{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/town)
-"Pr" = (/obj/machinery/light/small{dir = 4},/obj/structure/bed/panopticon/bunker,/obj/effect/landmark/start/policia{dir = 8},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"Pr" = (/obj/machinery/light/small{dir = 4},/obj/structure/bed/panopticon/bunker,/obj/effect/landmark/start/policia{dir = 8},/turf/open/floor/panopticon/bunker/metal)
 "Ps" = (/turf/open/water/river,/area/panopticon/outdoors/town)
 "Pv" = (/obj/structure/closet/crate/bigshkaf{pixel_y = 0},/obj/item/storage/firstaid/panopticon,/obj/item/natural/cloth/bandages,/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town)
 "Pw" = (/obj/structure/panopticon/wartrash{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/town)
 "PA" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat2"},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/sewerslut)
-"PD" = (/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/bunker)
+"PD" = (/turf/open/floor/panopticon/bunker/scorched)
 "PG" = (/obj/structure/panopticon/noshadow/road{dir = 6},/obj/structure/panopticon/noshadow/road{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "PJ" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 4},/turf/open/water/sewer,/area/panopticon/indoors/sewerslut)
 "PM" = (/obj/structure/panopticon/onwall/burn{dir = 8},/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass)
@@ -716,7 +715,7 @@
 "Qc" = (/obj/structure/panopticon/randomshit{dir = 1},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "Qf" = (/obj/structure/panopticon/onwall/eroch,/obj/structure/panopticon/noshadow/townborders{dir = 4},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "Qh" = (/turf/open/water/cleanshallow,/area/panopticon/outdoors/darkwood)
-"Qi" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors/bunker)
+"Qi" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/bunkergrid)
 "Qp" = (/obj/effect/turf_decal/panopticon/mysor/town,/obj/structure/panopticon/noshadow/townborders{dir = 8},/obj/structure/panopticon/noshadow/townborders{dir = 1},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "Qs" = (/obj/structure/zabor,/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/darkwood)
 "Qw" = (/obj/effect/turf_decal/panopticon/mysor/doski,/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
@@ -737,7 +736,7 @@
 "Rr" = (/obj/machinery/light/rogue/wallfire/candle/r,/obj/structure/closet/crate/roguecloset,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
 "Rs" = (/obj/structure/panopticon/onwall/runes,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/indoors/sewerslut)
 "Rt" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 4},/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
-"Ru" = (/obj/structure/panopticon/onwall/sun,/turf/closed/wall/mineral/panopticon/bunker/rustwall,/area/panopticon/indoors/bunker)
+"Ru" = (/obj/structure/panopticon/onwall/sun,/turf/closed/wall/mineral/panopticon/bunker/rustwall)
 "Rw" = (/obj/structure/panopticon/noshadow/pepeldeco,/obj/structure/panopticon/noshadow/pepeldeco{dir = 1},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
 "Ry" = (/obj/structure/panopticon/noshadow/pepeldeco{dir = 4},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
 "RB" = (/obj/structure/panopticon/automat/kotel,/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/shelter/darkwood)
@@ -796,7 +795,7 @@
 "UK" = (/obj/structure/panopticon/skull{dir = 1},/turf/open/floor/rogue/naturalstone,/area/panopticon/outdoors/darkwood)
 "UN" = (/obj/structure/panopticon/randomshit,/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/town)
 "UQ" = (/obj/structure/stairs{dir = 1},/turf/open/transparent/openspace,/area/panopticon/indoors/town)
-"US" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/clothing/armor/panopticon,/obj/item/clothing/armor/panopticon,/obj/item/clothing/head/panopticon/grey,/obj/item/clothing/head/panopticon/grey,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/bunker)
+"US" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/clothing/armor/panopticon,/obj/item/clothing/armor/panopticon,/obj/item/clothing/head/panopticon/grey,/obj/item/clothing/head/panopticon/grey,/turf/open/floor/panopticon/bunker/metal)
 "UT" = (/mob/living/carbon/human/species/human/northern/bum,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
 "UW" = (/obj/structure/panopticon/onwall/oldass{dir = 8},/turf/closed/wall/mineral/panopticon/woods/alt,/area/panopticon/outdoors/town)
 "UZ" = (/obj/machinery/light{dir = 4},/turf/open/floor/panopticon/gulag/derevo)
@@ -1006,17 +1005,17 @@ OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
 OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOwOwOBJdbdbyIyIyIOHOHOHOHOHOHOHOHOHOHOHOHOHOQbyttmdbybyMFKOACMfWFOQOHOHyITDyITDyIOHOHyIdbwOwOhcdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
 OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOwOwOdbExyIyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQmxbybybyttbybybybySIOQOHOHOHOHOHOHOHOHOHyIdbwOwORhdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
 OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrWrWrWrWOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOwOwOrDyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQOQOQOQOQOQbybybybyofOQOHOHOHOHOHOHOHOHOHyIdbwOwOwOXFyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWptGrptrWOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOwOwOHoyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQWbbybybywArMOHOHOHOHOHOHOHOHOHyIpuwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWptptptrWOHOHOHOHrWrWrWrWrWrWOHOHOHOHOHOHOHyIdbpSwOwOdbTDOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQDnbybybygYOQOHOHOHOHOHOHOHOHOHyIvIwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWptptptrWOHOHOHOHrWzGzGzGpfrWOHOHOHOHOHOHOHyIdbwORhwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQbybybybyOQOQOHOHOHOHOHOHOHOHOHyIaewOpSwOdbExOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrWptrWrWOHOHOHOHrWzGzGzGdZrWOHOHOHOHOHOHOHyIhAwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQOQHeOQOQOQOHOHSTSTSTSTOHOHOHOHyIkxwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrWrWrWrWOHOHOHOHOHrWptrWOHrWrWrWrWrWIezGzGpfrWOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQJCjzactuOQSTSTSTXOpcSTOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWxQzGzGrWOHOHOHOHOHrWptrWOHrWptmwptIrzGzGzGzGrWOHOHOHOHOHOHOHyIdbwOwOwOrDyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQjzFzFzFzJdpcpcpcpcvQSTOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWblzozGrWrWrWrWrWrWrWptrWrWrWptrWrWrWzGzGzGPrrWOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQsOFzFzFzOQSTSTpcpcpcSTOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWnizGzGCtptptptmwptptptptmwptptrWOHrWzGzGzGzGrWOHOHOHOHOHOHOHyIdbwOhcwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQjzjzjztuOQOHSTqmpcDBSTOHOHOHOHyIxHjDwOwOLhyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWzozGzGrWrWrWrWptrWrWrWrWrWrWrWrWOHrWIezGzGpfrWOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQOQOQOQOQOQOHSTZspcekSTOHOHOHOHyIdbwOwOwOXFyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWHAzozGrWOHOHrWptrWOHOHOHOHOHOHOHOHrWzGzGzGdZrWOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHSTSTSTSTSTOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
-OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWUSzGzGrWOHOHrWptrWOHOHOHOHOHOHOHOHrWzGzGzGpfrWOHOHOHOHOHOHOHyIdbwOwOwOHoyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOwOwOvuyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrzGrrzrWOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOwOwOHoyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQWbbybybywArMOHOHOHOHOHOHOHOHOHyIpuwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrzrzrzrWOHOHOHOHrWrWrWrWrWrWOHOHOHOHOHOHOHyIdbpSwOwOdbTDOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQDnbybybygYOQOHOHOHOHOHOHOHOHOHyIvIwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrzrzrzrWOHOHOHOHrWzGzGzGpfrWOHOHOHOHOHOHOHyIdbwORhwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQbybybybyOQOQOHOHOHOHOHOHOHOHOHyIaewOpSwOdbExOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrWrzrWrWOHOHOHOHrWzGzGzGdZrWOHOHOHOHOHOHOHyIhAwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQOQHeOQOQOQOHOHSTSTSTSTOHOHOHOHyIkxwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrWrWrWrWOHOHOHOHOHrWrzrWOHrWrWrWrWrWIezGzGpfrWOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQJCjzactuOQSTSTSTXOpcSTOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWxQzGzGrWOHOHOHOHOHrWrzrWOHrWrzmwrzIrzGzGzGzGrWOHOHOHOHOHOHOHyIdbwOwOwOrDyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQjzFzFzFzJdpcpcpcpcvQSTOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWblzozGrWrWrWrWrWrWrWrzrWrWrWrzrWrWrWzGzGzGPrrWOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQsOFzFzFzOQSTSTpcpcpcSTOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWnizGzGCtrzrzrzmwrzrzrzrzmwrzrzrWOHrWzGzGzGzGrWOHOHOHOHOHOHOHyIdbwOhcwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQjzjzjztuOQOHSTqmpcDBSTOHOHOHOHyIxHjDwOwOLhyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWzozGzGrWrWrWrWrzrWrWrWrWrWrWrWrWOHrWIezGzGpfrWOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOQOQOQOQOQOQOHSTZspcekSTOHOHOHOHyIdbwOwOwOXFyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWHAzozGrWOHOHrWrzrWOHOHOHOHOHOHOHOHrWzGzGzGdZrWOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHSTSTSTSTSTOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
+OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWUSzGzGrWOHOHrWrzrWOHOHOHOHOHOHOHOHrWzGzGzGpfrWOHOHOHOHOHOHOHyIdbwOwOwOHoyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOwOwOvuyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
 OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWrWrWrWrWOHOHrWQirWOHOHOHOHOHOHOHOHrWrWrWrWrWrWOHOHOHOHOHOHOHyIdbwOwOwOrDyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIfTwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
 OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWRurWrWtarWrWOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOKWwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH
 OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHrWkPoBHcPDPDrWOHOHOHOHOHyIyIyIkoyIExyIyIyIyIyIyIyIyIyIyIdbwOwOwOdbyIyIyIyIyIyIyIyIyIyIyIyIyIyITDyIyIyIyIyIyIyIyIyIyIkoyIyIyIyIyIyIyIyIExyIyIyIyIyIdbwOwOwOdbyIOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOHOH

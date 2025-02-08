@@ -45,6 +45,7 @@
 #define ORGAN_SLOT_BRAIN_ANTIDROP "brain_antidrop"
 #define ORGAN_SLOT_BRAIN_ANTISTUN "brain_antistun"
 #define ORGAN_SLOT_TAIL "tail"
+#define ORGAN_SLOT_PENIS "penis"
 #define ORGAN_SLOT_PARASITE_EGG "parasite_egg"
 #define ORGAN_SLOT_REGENERATIVE_CORE "regen_core"
 

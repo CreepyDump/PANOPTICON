@@ -17,7 +17,6 @@
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
-	cmode_music = 'sound/music/combat/fake_orchestra.ogg'
 
 /datum/job/panopticon/mayor/New()
 	. = ..()

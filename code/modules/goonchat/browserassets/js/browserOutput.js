@@ -34,7 +34,6 @@ var opts = {
 	'wasd': false, //Is the user in wasd mode?
 	'priorChatHeight': 0, //Thing for height-resizing detection
 	'restarting': false, //Is the round restarting?
-	'iconsize': 12,
 	'darkmode': false, //Are we using darkmode? If not WHY ARE YOU LIVING IN 2009???
 
 	//Options menu
@@ -251,9 +250,6 @@ function iconError(E) {
 	}, opts.imageRetryDelay);
 }
 
-function updateIconsSize(html) {
-	$(html).find(".icon").not('.text_tag').css({'height': opts.iconsize, 'width': opts.iconsize});
-}
 //Send a message to the client
 function output(message, flag) {
 	if (typeof message === 'undefined') {
@@ -325,9 +321,9 @@ function output(message, flag) {
 	//Stuff we do along with appending a message
 	var atBottom = false;
 	if (!filteredOut) {
-		var bodyHeight = $('#scrollbar_content').scrollHeight;
+		var bodyHeight = $('body').height();
 		var messagesHeight = $messages.outerHeight();
-		var scrollPos = $('#scrollbar_content').children('#scrollbar_content').scrollTop();
+		var scrollPos = $('body,html').scrollTop();
 
 		//Should we snap the output to the bottom?
 		if (bodyHeight + scrollPos >= messagesHeight - opts.scrollSnapTolerance) {
@@ -348,9 +344,6 @@ function output(message, flag) {
 			} else {
 				$messages.after('<a href="#" id="newMessages"><span class="number">1</span> new <span class="messageWord">message</span> <i class="icon-double-angle-down"></i></a>');
 			}
-			evt = document.createEvent("Event");
-			evt.initEvent("messagenew", true, true);
-			document.dispatchEvent(evt);
 		}
 	}
 
@@ -383,7 +376,7 @@ function output(message, flag) {
 			} else {
 				badge = $('<span/>', { 'class': 'r', 'text': 2 });
 			}
-			lastmessages.html(message.replace(/<br\s*\/?>\s*$/g,'&ensp;'));
+			lastmessages.html(message);
 			lastmessages.find('[replaceRegex]').each(replaceRegex);
 			lastmessages.append(badge);
 			badge.animate({
@@ -434,7 +427,7 @@ function output(message, flag) {
 	}
 
 	if (!filteredOut && atBottom) {
-		$('#scrollbar_content').children('#scrollbar_content').scrollTop($messages.outerHeight());
+		$('body,html').scrollTop($messages.outerHeight());
 	}
 }
 
@@ -714,7 +707,7 @@ $(function () {
 	$selectedSub = $subOptions;
 
 	//Hey look it's a controller loop!
-	setInterval(function() {
+	setInterval(function () {
 		if (opts.lastPang + opts.pangLimit < Date.now() && !opts.restarting) { //Every pingLimit
 			if (!opts.noResponse) { //Only actually append a message if the previous ping didn't also fail (to prevent spam)
 				opts.noResponse = true;
@@ -943,7 +936,7 @@ $(function () {
 	//Mildly hacky fix for scroll issues on mob change (interface gets resized sometimes, messing up snap-scroll)
 	$(window).on('resize', function (e) {
 		if ($(this).height() !== opts.priorChatHeight) {
-			$('#scrollbar_content').children('#scrollbar_content').scrollTop($messages.outerHeight());
+			$('body,html').scrollTop($messages.outerHeight());
 			opts.priorChatHeight = $(this).height();
 		}
 	});
@@ -957,7 +950,7 @@ $(function () {
 
 	$('body').on('click', '#newMessages', function (e) {
 		var messagesHeight = $messages.outerHeight();
-		$('#scrollbar_content').children('#scrollbar_content').scrollTop(messagesHeight);
+		$('body,html').scrollTop(messagesHeight);
 		$('#newMessages').remove();
 		runByond('byond://winset?mapwindow.map.focus=true');
 	});

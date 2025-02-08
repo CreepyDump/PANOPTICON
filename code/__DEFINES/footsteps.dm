@@ -53,7 +53,8 @@ GLOBAL_LIST_INIT(footstep, list(
 	FOOTSTEP_PLATING = list(list(
 		'sound/foley/footsteps/FTMET_A1.ogg',
 		'sound/foley/footsteps/FTMET_A2.ogg',
-		'sound/foley/footsteps/FTMET_A3.ogg'), 100, 0),
+		'sound/foley/footsteps/FTMET_A3.ogg',
+		'sound/foley/footsteps/FTMET_A4.ogg'), 100, 0),
 	FOOTSTEP_CARPET = list(list(
 		'sound/foley/footsteps/FTCAR_A1.ogg',
 		'sound/foley/footsteps/FTCAR_A2.ogg',

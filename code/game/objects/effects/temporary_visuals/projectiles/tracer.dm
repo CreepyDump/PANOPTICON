@@ -21,9 +21,12 @@
 		QDEL_IN(PB, qdel_in)
 
 /obj/effect/projectile/tracer
-	name = "beam"
+	name = "tracer"
+	icon_state = "tracer"
 	icon = 'icons/obj/projectiles_tracer.dmi'
-
+	light_color = COLOR_MUZZLE_FLASH
+	light_power = 1
+	light_range = 4
 /obj/effect/projectile/tracer/laser
 	name = "laser"
 	icon_state = "beam"

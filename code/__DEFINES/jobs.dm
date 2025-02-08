@@ -1,12 +1,5 @@
 // PANOPTICON //
 
-#define JCOLOR_BUNKER "#2c662f"
-#define BUNKER	(1<<0)
-
-#define SLUG	(1<<0)
-
-#define JDO_SLUG 1
-
 #define JCOLOR_TOWN "#3e6274"
 #define TOWN	(1<<1)
 
@@ -29,6 +22,10 @@
 #define CITIZEN	(1<<4)
 
 #define JDO_CITIZEN 6
+
+#define SLUG	(1<<5)
+
+#define JDO_SLUG 7
 
 #define JCOLOR_OUTSIDERS "#96832f"
 #define OUTSIDERS	(1<<2)

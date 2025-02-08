@@ -17,7 +17,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
 	max_blade_int = 100
-	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
+	swingsound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	throwforce = 12
@@ -92,7 +92,7 @@
 	icon_state = "cleav"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	parrysound = list('sound/combat/parry/bladed/bladedmedium (1).ogg','sound/combat/parry/bladed/bladedmedium (2).ogg','sound/combat/parry/bladed/bladedmedium (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
+	swingsound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	throwforce = 15
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP
@@ -107,7 +107,7 @@
 	icon_state = "combatknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	parrysound = list('sound/combat/parry/bladed/bladedmedium (1).ogg','sound/combat/parry/bladed/bladedmedium (2).ogg','sound/combat/parry/bladed/bladedmedium (3).ogg')
-	swingsound = list('sound/combat/wooshes/bladed/wooshmed (1).ogg','sound/combat/wooshes/bladed/wooshmed (2).ogg','sound/combat/wooshes/bladed/wooshmed (3).ogg')
+	swingsound = list('sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg','sound/combat/wooshes/blunt/SWISH.ogg')
 	throwforce = 16
 	slot_flags = ITEM_SLOT_HIP
 	thrown_bclass = BCLASS_CHOP

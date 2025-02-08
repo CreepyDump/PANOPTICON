@@ -15,3 +15,6 @@
 	light_power = 1
 	light_color = "#bd9355"
 	light_on = TRUE
+	tracer_type = /obj/effect/projectile/tracer
+	muzzle_type = /obj/effect/projectile/muzzle/bullet
+	impact_type = /obj/effect/projectile/impact

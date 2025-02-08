@@ -138,6 +138,12 @@
 	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 
+/obj/structure/panopticon/dead
+	name = "Dead creature"
+	icon_state = "dead"
+	icon = 'icons/panopticon/obj/mirkwood.dmi'
+
+
 /obj/structure/panopticon/pit
 	name = "Pit"
 	desc = "How deep the humanity-hole goes."
@@ -206,6 +212,10 @@
 	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 
+/obj/structure/panopticon/meatpile/deadpeople
+	name = "Dead pile"
+	desc = ""
+	icon_state = "corpses"
 /obj/structure/panopticon/meatpile/Initialize()
 	soundloop = new(list(src), FALSE)
 	soundloop.start()

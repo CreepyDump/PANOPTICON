@@ -3,18 +3,19 @@
 	flag = CITIZEN
 	department_flag = TOWN
 	faction = "Station"
-	total_positions = -1
-	spawn_positions = -1
-	allowed_races = list("Humen")
-	tutorial = "A regular fella living in this shithole. Nothing fancy."
-	outfit = /datum/outfit/job/panopticon/citizen
-	outfit_female = null
-	var/islodger = TRUE
+	total_positions = 15
+	spawn_positions = 15
 	selection_color = JCOLOR_TOWN
+	var/islodger = TRUE
+	allowed_races = list("Humen")
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	outfit = /datum/outfit/job/panopticon/citizen
+	bypass_lastclass = TRUE
+	bypass_jobban = TRUE
+	tutorial = "A regular fella living in this shithole. Nothing fancy."
 	display_order = JDO_CITIZEN
-	show_in_credits = FALSE
+	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
 

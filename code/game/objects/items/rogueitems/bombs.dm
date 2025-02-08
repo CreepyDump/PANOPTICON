@@ -24,6 +24,7 @@
 	if(!QDELETED(src))
 		lit = TRUE
 		explode(TRUE)
+	playsound(src.loc, 'sound/items/molotov_sound.ogg', 85)
 
 /obj/item/bomb/proc/light()
 	if(!lit)

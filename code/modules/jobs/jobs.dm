@@ -149,10 +149,6 @@ GLOBAL_LIST_INIT(roguefight_positions, list(
 	"Green Fighter"
 	))
 
-GLOBAL_LIST_INIT(bunker_positions, list(
-	"Slug"
-	))
-
 GLOBAL_LIST_INIT(outside_positions, list(
 	"Necroleninist",
 	"Lesnik",
@@ -164,7 +160,8 @@ GLOBAL_LIST_INIT(town_positions, list(
 	"Major",
 	"Gendarme",
 	"Tippler",
-	"Lodger"
+	"Lodger",
+	"Slug"
 	))
 
 GLOBAL_LIST_INIT(test_positions, list(

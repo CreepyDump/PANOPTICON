@@ -11,7 +11,7 @@
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
 	rack_sound = "sound/weapons/gun/shotgun/rack.ogg"
-	load_sound = "sound/weapons/gun/shotgun/insert_shell.ogg"
+	load_sound = "sound/weapons/gun/shotgun/insert_sdeathdeathdeath.ogg"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	flags_1 =  CONDUCT_1

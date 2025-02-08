@@ -1,22 +1,23 @@
 /datum/job/panopticon/slug
 	title = "Slug"
 	flag = SLUG
-	department_flag = BUNKER
+	department_flag = TOWN
 	faction = "Station"
 	total_positions = 15
 	spawn_positions = 15
-	selection_color = JCOLOR_BUNKER
+	selection_color = JCOLOR_TOWN
 	allowed_races = list("Humen")
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/slug
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE
-	tutorial = "A bunch of crackheads, hobos, outlaws and other dregs of society forced to hide deep in the wilds, occupying a godforsaken bunker."
+	tutorial = "A bunch of crackheads, hobos, outlaws and other dregs of society forced to hide deep in catacombs."
 	display_order = JDO_SLUG
 	show_in_credits = TRUE
 	give_bank_account = FALSE
 	can_random = FALSE
+	cmode_music = 'sound/music/combat/iamalive.ogg'
 
 /datum/job/panopticon/slug/New()
 	. = ..()

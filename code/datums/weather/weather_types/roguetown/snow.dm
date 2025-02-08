@@ -20,7 +20,7 @@
 	end_message = ""
 	end_sound = 'sound/blank.ogg'
 
-	area_type = list(/area/panopticon/outdoors/necronox)
+//	area_type = list(/area/panopticon/outdoors/necronox)
 	protected_areas = list(/area/rogue/indoors,/area/rogue/outdoors,/area/panopticon/outdoors,/area/rogue/under,/area/panopticon/indoors)
 	impacted_z_levels = list()
 	var/lastlightning = 0
