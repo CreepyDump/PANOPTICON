@@ -160,7 +160,7 @@
 "jw" = (/obj/machinery/light/small{dir = 2},/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/shelter)
 "jz" = (/obj/structure/panopticon/crate,/turf/open/water/sewer,/area/panopticon/indoors/sewerslut)
 "jA" = (/turf/closed/mineral/random/rogue,/area/panopticon/indoors/sewerslut)
-"jC" = (/obj/structure/stairs/panopticon/stonistic{dir = 1},/turf/open/floor/panopticon/beton,/area/panopticon/indoors)
+"jC" = (/obj/structure/stairs/panopticon/stonistic,/turf/open/floor/panopticon/beton,/area/panopticon/indoors)
 "jW" = (/obj/structure/panopticon/onwall/runes{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon/indoors/sewerslut)
 "kc" = (/obj/structure/panopticon/noshadow/pepeldeco{dir = 4},/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon)
 "kf" = (/obj/structure/panopticon/randomshit/concreteblock{dir = 1},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)

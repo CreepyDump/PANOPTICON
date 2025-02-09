@@ -135,4 +135,4 @@
 				targethumano.Jitter(100)
 				to_chat(targethumano, "<span class='notice'>I live, AGAIN!</span>")
 				sleep(rand(1,5))
-		targethumano.visible_message("<span class='warning'>Nothing happens.</span>")
+		targethumano.visible_message("<span class='warning'>You need a fresh corpse!</span>")

@@ -868,4 +868,4 @@
 		eyet.update_icon(src) //Update eye icon
 
 /proc/click_fail_msg()
-	return span_failednigga(pick("Stop!", "Not now!", "What a faggotry.. FUCK!", "Fuck!", "I AM GOING TO KILL MYSELF!"))
+	return span_failednigga(pick("Stop!", "Not now!", "What a faggotry.. FUCK!", "Fuck!", "I AM GOING TO KILL MYSELF!", "Patience, you fool!", "The Blood-Red Sun demands patience!", "Calm down, meatbag!", "Do you want to die? Wait!", "Not yet, not yet, NOT YET!", "The Rot takes its time. So should you."))

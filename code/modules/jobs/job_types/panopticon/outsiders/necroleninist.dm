@@ -178,8 +178,8 @@
 		C.visible_message("<span class='necrosis'>\The [C] humming a blood melody.</span>")
 		var/turf/source = get_turf(src)
 		for(O in get_hearers_in_view(15, source))
-			if(O.job == "Necroleninist")
-				O.apply_status_effect(/datum/status_effect/buff/chant)
-			else
+			if(!O.job == "Necroleninist")
 				O.apply_status_effect(/datum/status_effect/debuff/chant)
+			else
+				O.apply_status_effect(/datum/status_effect/buff/chant)
 	chlenin.last_use = world.time

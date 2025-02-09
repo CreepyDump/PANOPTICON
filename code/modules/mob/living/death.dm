@@ -121,7 +121,8 @@
 		S.sharerDies(gibbed)
 
 //	for(var/datum/death_tracker/D in target.death_trackers)
-
+	if(src.job == "Major")
+		martial_law = TRUE
 	if(!gibbed && rot_type)
 		LoadComponent(rot_type)
 

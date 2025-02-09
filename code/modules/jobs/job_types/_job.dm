@@ -108,19 +108,12 @@
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
 	return TRUE
 
+GLOBAL_LIST_INIT(announce_text, world.file2list('strings/announce.txt'))
+
 /mob/living/proc/announceshit()
-	var/text_to_show
+	var/list/text_to_show = GLOB.announce_text.Copy()
 	if(!mind)
 		return
-	switch(pick(1,2,3,4))
-		if(1)
-			text_to_show = "The people who have really\nmade history are the martyrs."
-		if(2)
-			text_to_show = "I feel like my head is a great cliff.\nAnd every, every day quietly\nthe soil is shattering."
-		if(3)
-			text_to_show = "Our mankind\nwas a mistake."
-		if(4)
-			text_to_show = "Some parts of this server may be considered Homer Simpson."
 	if(!text_to_show)
 		return
 	if(text_to_show in mind.areas_entered)
@@ -131,7 +124,7 @@
 	T.maptext = {"<span style='vertical-align:top; text-align:center;
 				color: #CE1C1C; font-size: 150%;
 				text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
-				font-family:"Crimson Text";'>[text_to_show]</span>"}
+				font-family:"Crimson Text";'>"[(pick(text_to_show))]"</span>"}
 	T.maptext_width = 205
 	T.maptext_height = 209
 	T.maptext_x = 12

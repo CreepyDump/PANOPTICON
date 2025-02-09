@@ -230,25 +230,31 @@
 
 /obj/structure/panopticon/automat/announcer/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
-	var/thing = input(user, "You want to scream something for the lands?") in list("Yes", "No")
+	var/thing = input(user, "Old-World Announcer") in list("Make an announce", "Declare martial law", "Cancel")
 	if(!thing)
 		return
-	if(thing == "Yes")
+	if(thing == "Make an announce")	
 		if(!can_scream)
 			return
 		scream(user)
+	else if(thing == "Declare martial law")
+		if(martial_law == FALSE)
+			return
+		martial_law()
 	else
 		return
 
+/obj/structure/panopticon/automat/announcer/proc/martial_law()
+	priority_announce("Major is dead", "Old-World Announcer", 'sound/misc/alert.ogg', "Captain")
 /obj/structure/panopticon/automat/announcer/proc/scream(mob/living/carbon/user)
-	var/inputmoneyshit = stripped_input(user, "What you want to say?", "")
-	if(!inputmoneyshit)
+	var/inputshit = stripped_input(user, "What you want to say?", "")
+	if(!inputshit)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if(!can_scream)
 		return
-	priority_announce(inputmoneyshit, "Old-World Announcer", 'sound/misc/alert.ogg', "Captain")
+	priority_announce(inputshit, "Old-World Announcer", 'sound/misc/alert.ogg', "Captain")
 //	SEND_SOUND(world, sound('sound/misc/alert.ogg'))
 	can_scream = FALSE
 	addtimer(CALLBACK(src, .proc/cann_scream), timeout)

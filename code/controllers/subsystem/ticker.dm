@@ -1,5 +1,5 @@
 #define ROUND_START_MUSIC_LIST "strings/round_start_sounds.txt"
-
+var/martial_law = FALSE
 
 GLOBAL_VAR_INIT(round_timer, INITIAL_ROUND_TIMER)
 

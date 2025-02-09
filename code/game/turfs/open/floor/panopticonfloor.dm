@@ -203,12 +203,11 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/grassland.wav'
+	neighborlay_override = "edge"
+	smooth = SMOOTH_TRUE
 
-/obj/structure/panopticon/noshadow/road
-	name = ""
-	layer = BELOW_OBJ_LAYER
-	icon = 'icons/turf/panopticonfloor.dmi'
-	icon_state = "roadover"
+/turf/open/floor/panopticon/road/cardinal_smooth(adjacencies)
+	roguesmooth(adjacencies)
 
 /turf/open/floor/panopticon/town
 	icon_state = "townroof"
