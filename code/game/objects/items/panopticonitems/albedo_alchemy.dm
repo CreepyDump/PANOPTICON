@@ -13,15 +13,9 @@
 	sellprice = 35
 	rotprocess = null
 	fried_type = /obj/item/ashbaby
+	smeltresult = /obj/item/ashbaby
 	var/active = 0
 	var/det_time = 50
-
-/obj/item/reagent_containers/food/snacks/bluebaby/fire_act(added, maxstacks)
-	playsound(src.loc, 'sound/panopticon/babydeath.ogg', 100)
-	explosion(get_turf(src), 1, 0, 3, 0, flame_range = 2)
-	sleep(1 SECONDS)
-	new /obj/item/ashbaby(src.loc)
-	qdel(src)
 /obj/item/reagent_containers/food/snacks/bluebaby/process()
 	if(HAS_BLOOD_DNA(src))
 		playsound(src.loc, 'sound/panopticon/klara_heal.ogg', 100)

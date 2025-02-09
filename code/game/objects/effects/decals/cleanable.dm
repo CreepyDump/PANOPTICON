@@ -83,6 +83,10 @@
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
 /obj/effect/decal/cleanable/Crossed(atom/movable/O)
+	if(istype(O, /obj/item/reagent_containers/food/snacks/bluebaby))
+		playsound(src.loc, 'sound/panopticon/klara_heal.ogg', 100)
+		qdel(O)
+		new /obj/item/reagent_containers/food/snacks/bluebaby/waitiamred(get_turf(src), 1)
 	..()
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O

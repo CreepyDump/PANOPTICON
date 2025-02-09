@@ -358,7 +358,7 @@ GLOBAL_VAR(restart_counter)
 	var/popcaptext = ""
 	var/s = ""
 	s += "<big><b>[vessel_name()]</b></big></a><br>"
-	s += "<center><b>ᛉ MAD ROLEPLAY EXPERIENCE ᛣ</b></center><br>"
+	s += "<center><b>MAD ROLEPLAY EXPERIENCE</b></center><br>"
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"
 
 //	s += "! <b>UPDATE 4.4</b> 4/22/2022<br><br>"

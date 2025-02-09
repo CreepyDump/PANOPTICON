@@ -30,6 +30,8 @@
 	var/wash_precent = 0
 	COOLDOWN_DECLARE(wash_cooldown)
 
+/obj/effect/decal/cleanable/blood/Crossed(atom/movable/O)
+	..()
 /obj/effect/decal/cleanable/blood/weather_act_on(weather_trait, severity)
 	if(weather_trait != PARTICLEWEATHER_RAIN || !COOLDOWN_FINISHED(src, wash_cooldown))
 		return
