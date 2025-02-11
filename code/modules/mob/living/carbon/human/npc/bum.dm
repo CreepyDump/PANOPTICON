@@ -107,6 +107,12 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 	if(prob(25))
 		chuma.try_infect(H)
 		mask = /obj/item/clothing/mask/infected
+	uniform = null
 	id = null
 	ears = null
+	belt = null
+	back = null
 	box = null
+	backpack = null
+	satchel  = null
+	duffelbag = null

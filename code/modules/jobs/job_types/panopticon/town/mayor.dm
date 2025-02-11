@@ -26,7 +26,7 @@
 /datum/outfit/job/panopticon/mayor/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/panopticon/jackboots
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+	shirt = /obj/item/clothing/suit/panopticon/shirt/greys/major
 	pants = /obj/item/clothing/under/panopticon/greys
 	mask = /obj/item/clothing/mask/gas/panopticon
 	cloak = /obj/item/clothing/armor/panopticon/cloak/grey

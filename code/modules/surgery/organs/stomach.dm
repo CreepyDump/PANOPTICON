@@ -142,3 +142,15 @@
 	high_threshold_passed = "<span class='warning'>My guts flares up with constant pain.</span>"
 	high_threshold_cleared = "<span class='info'>The pain in my guts die down for now.</span>"
 	low_threshold_cleared = "<span class='info'>The last bouts of pain in my guts have died out.</span>"
+
+/obj/item/organ/guts/on_life()
+	..()
+	if(organ_flags & ORGAN_FAILING)
+		if(owner.stat == CONSCIOUS)
+			if(prob(2))
+				if(prob(35))
+					owner.vomit(blood = TRUE, harm = TRUE)
+				var/mob/living/carbon/human/H = owner
+				if(ishuman(owner))
+					if(prob(10))
+						H.defecate()

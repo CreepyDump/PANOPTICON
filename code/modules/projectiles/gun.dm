@@ -223,7 +223,8 @@
 			user.visible_message(span_danger("[user] shoots [src]!"), \
 							span_danger("I shoot [src]!"), \
 							COMBAT_MESSAGE_RANGE)
-	if(!user.STAPER >= 13 && candeaf == 1)
+	user.overlay_fullscreen("supress",/atom/movable/screen/fullscreen/oxy, 6)
+	if(!user.STAPER >= 11 && candeaf == 1)
 		if(prob(85))
 			user.soundbang_act()
 	if(barrel_smoke_on_shoot)
@@ -234,7 +235,8 @@
 		addtimer(VARSET_CALLBACK(gun_smoke.particles, count, 0), 5)
 		addtimer(VARSET_CALLBACK(gun_smoke.particles, drift, 0), 3)
 		QDEL_IN(gun_smoke, 0.6 SECONDS)
-
+	sleep(0.3 SECONDS)	
+	user.clear_fullscreen("supress")
 
 
 /obj/item/gun/emp_act(severity)

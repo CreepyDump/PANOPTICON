@@ -531,7 +531,7 @@
 					// you need earmuffs, inacusiate, or replacement
 			else if(ears.damage >= 5)
 				to_chat(src, span_warning("My ears start to ring!"))
-			SEND_SOUND(src, sound('sound/blank.ogg',0,1,0,250))
+			SEND_SOUND(src, sound('sound/panopticon/healthy/earfucker.ogg',0,1,0,250))
 		return effect_amount //how soundbanged we are
 
 

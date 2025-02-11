@@ -46,7 +46,7 @@
 	icon_state = "odongh"
 	item_state = "odongh"
 	body_parts_covered = CHEST|ARMS|VITALS
-
+	allowed_race = list("odongh")
 /obj/item/clothing/suit/panopticon/shirt/strafbatshirt
 	name = "Strafbat-Brown shirt"
 	r_sleeve_status = SLEEVE_NORMAL
@@ -78,3 +78,21 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 	icon_state = "formal"
 	item_state = "formal"
+
+
+/obj/item/clothing/suit/panopticon/shirt/greys
+	name = "Greys shirt"
+	icon_state = "grayshirt"
+	item_state = "grayshirt"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS
+
+/obj/item/clothing/suit/panopticon/shirt/greys/major
+	name = "Major shirt"
+	icon_state = "majorshirt"
+	item_state = "majorshirt"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	body_parts_covered = CHEST|ARMS|VITALS
+	allowed_sex = list(MALE)

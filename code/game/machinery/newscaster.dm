@@ -257,7 +257,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 /obj/machinery/newscaster/ui_interact(mob/user)
 	. = ..()
 	if(ishuman(user) || issilicon(user))
-		var/mob/living/human_or_robot_user = user
+		var/mob/living/carbon/human_or_robot_user = user
 		var/dat
 		scan_user(human_or_robot_user)
 		switch(screen)

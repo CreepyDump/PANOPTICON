@@ -1,254 +1,252 @@
-//FLAMETHROWER
 
-/obj/item/gun/flamer
+/obj/item/gun/flamethrower
 	name = "HC-2 'FIRESTARTER'"
 	icon = 'icons/panopticon/items/guns.dmi'
 	desc = "Flamethrower made to light people you don't like on fire."
-	icon_state = "flamethrower"
-//	item_state = "flamer"
+	icon_state = "m2_flamethrower"
+	item_state = "m2_flamethrower"
+	var/base_icon = "m2_flamethrower"
+	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = SLOT_BACK
+	var/active = FALSE
+	var/lastfire = 0
+	var/max_range = 4
+	fire_sound = 'sound/panopticon/ihopeyoudieinfire.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15
-	fire_sound = 'sound/panopticon/ihopeyoudieinfire.ogg'
-	var/max_range = 5
-	var/lit = 0 //Turn the flamer on/off
 
-	attack_self(mob/user)
-		. = ..()
-		toggle_flame(user)
-
-	examine(mob/user)
-		..()
-		to_chat(user,"It's turned [lit? "on" : "off"].")
-/*
-/atom/proc/flamer_fire_act()
-	return
-*/
-/obj/item/gun/flamer/proc/toggle_flame(mob/user)
-	playsound(user,'sound/panopticon/svarka_on.ogg', 45, 1)
-	lit = !lit
-	if (lit)
-		icon_state = "flamer-lit"
+/obj/item/gun/flamethrower/update_icon()
+	if (active)
+		icon_state = "[base_icon]_on"
+		item_state = "[base_icon]_on"
 	else
-		icon_state = "flamer"
+		icon_state = base_icon
+		item_state = base_icon
 
-/obj/item/gun/flamer/process_fire(atom/target, mob/living/user, params, reflex)
-	set waitfor = 0
-	var/turf/curloc = get_turf(user) //In case the target or we are expired.
-	var/turf/targloc = get_turf(target)
-	if (!targloc || !curloc) return //Something has gone wrong...
+/obj/item/gun/flamethrower/attack_self(var/mob/living/H)
+	if (active)
+		active=FALSE
+		update_icon()
+		H.visible_message(span_notice("[H] extinguishes \the [src]."), span_notice("You extinguish \the [src]."))
+		set_light(0)
+	else
+		active=TRUE
+		update_icon()
+		H.visible_message(span_notice("[H] lights \the [src]."), span_notice("You light \the [src]."))
+		set_light(2, 1, "#FF9900")
 
-	if(!lit)
-		to_chat(user, "<span class='alert'>The weapon isn't lit</span>")
+/obj/item/gun/flamethrower/afterattack(var/mob/living/carbon/human/H,var/cdir=null,atom/target)
+	if (!active || !H)
+		return
+	if (world.time<=lastfire)
+		return
+	if (!cdir)
+		cdir = H.dir
+	var/obj/item/weapon/reagent_containers/glass/flamethrower/FM = null
+	if (!H.back || !istype(H.back,/obj/item/weapon/reagent_containers/glass/flamethrower))
+		to_chat(H, span_warning("You need a fuel tank on your back in order to be able to use a flamethrower!"))
+		return
+	if (istype(H.back,/obj/item/weapon/reagent_containers/glass/flamethrower))
+		FM = H.back
+	if (!FM)
+		to_chat(H, span_warning("You need a fuel tank on your back in order to be able to use a flamethrower!"))
+		return
+	if (FM.reagents && FM.reagents.get_reagent_amount("gasoline") < 5)
+		to_chat(H, span_warning("The fuel tank doesn't have enough fuel to operate the flamethrower!"))
+		return
+	else
+		process_fire(H,FM,cdir,target)
 		return
 
-	unleash_flame(target, user)
+/obj/item/gun/flamethrower/process_fire(var/mob/living/carbon/human/user, var/obj/item/weapon/reagent_containers/glass/flamethrower/FM, var/cdir = null, atom/target)
+	if (!cdir || !(cdir in list(NORTH,SOUTH,EAST,WEST)))
+		cdir = user.dir
+	if (FM.reagents && FM.reagents.get_reagent_amount("gasoline") >= 5)
+		FM.reagents.remove_reagent("gasoline",5)
+		lastfire = world.time+20
+		//message_admins("[user.name] ([user.ckey]) fired a flamethrower from: X=[user.x];Y=[user.y];Z[user.z]", user.ckey)
+		var/turf/source_turf = get_turf(user)
 
-/proc/getline2(atom/from_atom, atom/to_atom, exclude_origin=FALSE)
+		var/list/turfs = getline2(source_turf, target)
 
-/obj/item/gun/flamer/proc/unleash_flame(atom/target, mob/living/user)
-	set waitfor = 0
-	var/burnlevel = 50
-	var/burntime = 40
-	var/fire_color = "red"
-	var/list/turf/turfs = getline2(user,target)
-	playsound(user, fire_sound, 50, 1)
-	var/distance = 1
-	var/turf/prev_T
+		var/distance = 0
+		var/stop_at_turf = FALSE
 
-	for(var/turf/T in turfs)
-		if(T == user.loc)
-			prev_T = T
-			continue
-		if(T.density)
-			break
-		if(loc != user)
-			break
-		if(distance > max_range)
-			break
-		flame_turf(T,user, burntime, burnlevel, fire_color)
-		distance++
-		prev_T = T
-		sleep(1)
+		playsound(source_turf, firing_sound, 100, TRUE)
 
-/obj/item/gun/flamer/proc/flame_turf(turf/T, mob/living/user, heat, burn, f_color = "red")
-	if(!istype(T))
-		return
-
-	// No stacking flames
-	if (locate(/obj/flamer_fire) in T)
-		return
-
-	new /obj/flamer_fire(T, heat, burn, f_color)
-
-	for(var/mob/living/M in T) //Deal bonus damage if someone's caught directly in initial stream
-		if(M.stat == DEAD)		continue
-		M.adjust_fire_stacks(rand(5,burn*2))
-		M.IgniteMob()
-		M.adjustFireLoss(rand(burn,(burn*2))) // Make it so its the amount of heat or twice it for the initial blast.
-		to_chat(M, "<span class='danger'>Augh! You are roasted by the flames!")
-
-/obj/item/gun/flamer/proc/triangular_flame(var/atom/target, var/mob/living/user, var/burntime, var/burnlevel)
-	set waitfor = 0
-
-	var/unleash_dir = user.dir //don't want the player to turn around mid-unleash to bend the fire.
-	var/list/turf/turfs = getline2(user,target)
-	playsound(user, fire_sound, 50, 1)
-	var/distance = 1
-	var/turf/prev_T
-	for(var/turf/T in turfs)
-		if(T == user.loc)
-			prev_T = T
-			continue
-		if(T.density)
-			break
-		if(loc != user)
-			break
-		if(distance > max_range)
-			break
-		flame_turf(T,user, burntime, burnlevel, "green")
-		prev_T = T
-		sleep(1)
-
-		var/list/turf/right = list()
-		var/list/turf/left = list()
-		var/turf/right_turf = T
-		var/turf/left_turf = T
-		var/right_dir = turn(unleash_dir, 90)
-		var/left_dir = turn(unleash_dir, -90)
-		for (var/i = 0, i < distance - 1, i++)
-			right_turf = get_step(right_turf, right_dir)
-			right += right_turf
-			left_turf = get_step(left_turf, left_dir)
-			left += left_turf
-
-		for (var/turf/R in right)
-
-			if (R.density)
+		for(var/turf/T in turfs)
+			if(distance > max_range)
 				break
 
-			flame_turf(R, user, burntime, burnlevel, "green")
-			var/turf/prev_R = T
-			prev_R = R
-			sleep(1)
-
-		for (var/turf/L in left)
-			if (L.density)
+			if(istype(T, /turf/floor/space))
 				break
-			flame_turf(L, user, burntime, burnlevel, "green")
-			var/turf/prev_L = T
-			prev_L = L
-			sleep(1)
 
-		distance++
+			if(T.density)
+				stop_at_turf = TRUE
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
-//Time to redo part of abby's code.
-//Create a flame sprite object. Doesn't work like regular fire, ie. does not affect atmos or heat
-/obj/flamer_fire
-	name = "fire"
-	desc = "Ouch!"
-	anchored = 1
-	mouse_opacity = 0
-	icon = 'icons/effects/fire.dmi'
-	icon_state = "red_2"
-	layer = BELOW_OBJ_LAYER
-	var/firelevel = 12 //Tracks how much "fire" there is. Basically the timer of how long the fire burns
-	var/burnlevel = 10 //Tracks how HOT the fire is. This is basically the heat level of the fire and determines the temperature.
-	var/flame_color = "red"
+			for(var/obj/covers/C in T)
+				if(C.density)
+					stop_at_turf = TRUE
+			for(var/obj/structure/vehicleparts/frame/F in T)
+				var/penloc = F.get_wall_name(get_dir(source_turf, T))
+				if(!(F.is_ambrasure(penloc)))
+					stop_at_turf = TRUE
 
-/obj/flamer_fire/New(loc, fire_lvl, burn_lvl, f_color, fire_spread_amount)
+			if(stop_at_turf)
+				break
+			else
+				if (distance > 0)
+					ignite_turf(get_turf(T), 6, 70) // 6 second 70 damage flame
+
+			if(T == target.loc)
+				if(stop_at_turf)
+					break
+				continue
+
+			distance++
+
+/obj/item/weapon/reagent_containers/glass/flamethrower
+	name = "M2 Flamethrower backpack"
+	desc = "A flamethrower backpack. Up to 100 liters of gasoline."
+	icon = 'icons/obj/guns/gun.dmi'
+	icon_state = "m2_flamethrower_back"
+	item_state = "m2_flamethrower"
+	flags = CONDUCT
+	sharp = FALSE
+	edge = FALSE
+	nothrow = TRUE
+	flags = CONDUCT
+	attack_verb = list("bashed", "hit")
+	force = WEAPON_FORCE_WEAK
+	throwforce = WEAPON_FORCE_WEAK
+	flammable = TRUE
+	w_class = 10
+	slot_flags = SLOT_BACK
+	throw_speed = 1
+	throw_range = 1
+	amount_per_transfer_from_this = 25
+	volume = 100
+	density = FALSE
+	dropsound = 'sound/effects/drop_default.ogg'
+
+/obj/item/weapon/reagent_containers/glass/flamethrower/filled/New()
 	..()
-	if (f_color)
-		flame_color = f_color
+	reagents.add_reagent("gasoline",100)
 
-	icon_state = "[flame_color]_2"
-	if(fire_lvl) firelevel = fire_lvl
-	if(burn_lvl) burnlevel = burn_lvl
-	START_PROCESSING(SSobj,src)
+/obj/item/gun/flamethrower/flammenwerfer
+	name = "Flammenwerfer hoose"
+	icon_state = "flammenwerfer"
+	item_state = "flammenwerfer"
+	base_icon = "flammenwerfer"
 
-	if(fire_spread_amount > 0)
-		var/turf/T
-		for(var/dirn in GLOB.cardinals)
-			T = get_step(loc, dirn)
-			if(istype(T,/turf/open)) continue
-			if(locate(/obj/flamer_fire) in T) continue //No stacking
-			var/new_spread_amt = T.density ? 0 : fire_spread_amount - 1 //walls stop the spread
-			if(new_spread_amt)
-				for(var/obj/O in T)
-					if(!O.CanPass(src, loc))
-						new_spread_amt = 0
-						break
-			addtimer(CALLBACK(src, .proc/make_more_fire,T, fire_lvl, burn_lvl, f_color, new_spread_amt), 0) //Do not put spawns in recursive things.
+/obj/item/weapon/reagent_containers/glass/flamethrower/flammenwerfer
+	name = "Flammenwerfer backpack"
+	icon_state = "flammenwerfer_back"
+	item_state = "flammenwerfer"
 
-obj/flamer_fire/proc/make_more_fire(var/T, var/f_level, var/b_level, var/fcolor, var/new_spread)
-	new /obj/flamer_fire(T, f_level, b_level, fcolor, new_spread)
+/obj/item/weapon/reagent_containers/glass/flamethrower/flammenwerfer/filled/New()
+	..()
+	reagents.add_reagent("gasoline",100)
 
-/obj/flamer_fire/Destroy()
-	set_light(0)
-	STOP_PROCESSING(SSobj,src)
-	. = ..()
+/obj/item/gun/flamethrower/type100
+	name = "Type100 Flamethrower hose"
+	icon_state = "type100_flamethrower"
+	item_state = "type100_flamethrower"
+	base_icon = "type100_flamethrower"
 
+/obj/item/weapon/reagent_containers/glass/flamethrower/type100
+	name = "Type100 Flamethrower Canister"
+	icon_state = "type100_flamethrower_back"
+	item_state = "type100_flamethrower"
 
-/obj/flamer_fire/Crossed(mob/living/M) //Only way to get it to reliable do it when you walk into it.
-	if(istype(M))
-//		if(ishuman(M))
-//			var/mob/living/carbon/human/H = M
-//			if(istype(H.wear_suit, /obj/item/clothing/suit/fire))
-//				H.show_message(text("Your suit protects you from the flames."),1)
-//				H.adjustFireLoss(burnlevel*0.25) //Does small burn damage to a person wearing one of the suits.
-//				return
-		M.adjust_fire_stacks(burnlevel) //Make it possible to light them on fire later.
-		if (prob(firelevel + 2*M.fire_stacks)) //the more soaked in fire you are, the likelier to be ignited
-			M.IgniteMob()
+/obj/item/weapon/reagent_containers/glass/flamethrower/type100/filled/New()
+	..()
+	reagents.add_reagent("gasoline",100)
 
-		M.adjustFireLoss(round(burnlevel*0.5)) //This makes fire stronk.
-		to_chat(M, "<span class='danger'>You are burned!</span>")
+/obj/item/gun/flamethrower/eins
+	name = "Einstossflammenwerfer 46 hose"
+	desc = "Single use flamethrower hose, aim carefully."
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BELT|SLOT_POCKET|SLOT_SHOULDER
+	max_range = 5
+	icon_state = "eins"
+	item_state = "eins"
+	base_icon = "eins"
 
+/obj/item/weapon/reagent_containers/glass/flamethrower/eins //until someone makes it so the eins is just a single item that you can fire and drop there will be a canister
+	name = "Einstossflammenwerfer 46 canister"
+	desc = "A eins single use flamethrower canister. put it on your back to use it with the hose."
+	icon_state = "eins_back"
+	item_state = "eins_back"
+	slowdown = 0.2
+	amount_per_transfer_from_this = 1
+	volume = 5
+	w_class = ITEM_SIZE_NORMAL
 
-/obj/flamer_fire/proc/updateicon()
-	if(burnlevel < 15)
-		color = "#c1c1c1" //make it darker to make show its weaker.
-	switch(firelevel)
-		if(1 to 9)
-			icon_state = "[flame_color]_1"
-			set_light(2, l_color = "#E38F46")
-		if(10 to 25)
-			icon_state = "[flame_color]_2"
-			set_light(4, l_color = "#E38F46")
-		if(25 to INFINITY) //Change the icons and luminosity based on the fire's intensity
-			icon_state = "[flame_color]_3"
-			set_light(6, l_color = "#E38F46")
+/obj/item/weapon/reagent_containers/glass/flamethrower/eins/filled/New()
+	..()
+	reagents.add_reagent("gasoline",5)
 
+/obj/item/gun/flamethrower/lpo
+	name = "LPO50 Flamethrower hose"
+	icon_state = "lpo_flamethrower"
+	item_state = "lpo_flamethrower"
+	base_icon = "lpo_flamethrower"
+	max_range = 5 //effective maximum range is 50m
 
-/obj/flamer_fire/Initialize()
-	. = ..()
-	var/turf/T = loc
-	firelevel = max(0, firelevel)
-	if(!istype(T)) //Is it a valid turf? Has to be on a floor
-		qdel(src)
-		return
+/obj/item/weapon/reagent_containers/glass/flamethrower/lpo
+	name = "LPO50 Flamethrower Canister"
+	icon_state = "lpo_flamethrower_back"
+	item_state = "lpo_flamethrower_back"
+	volume = 150
 
-	updateicon()
+/obj/item/weapon/reagent_containers/glass/flamethrower/lpo/filled/New()
+	..()
+	reagents.add_reagent("gasoline",150)
 
-	if(!firelevel)
-		qdel(src)
-		return
+/obj/item/gun/flamethrower/roks2
+	name = "ROKS2 Flamethrower hose"
+	icon_state = "roks2_flamethrower"
+	item_state = "roks2_flamethrower"
+	base_icon = "roks2_flamethrower"
 
-//	var/j = 0
-	for(var/mob/living/I in loc)
-//		if(istype(I,/mob/living/carbon/human))
-//			var/mob/living/carbon/human/M = I
-//			if(istype(M.wear_suit, /obj/item/clothing/suit/fire))
-//				M.show_message(text("Your suit protects you from the flames."),1)
-//				M.adjustFireLoss(rand(0 ,burnlevel*0.25)) //Does small burn damage to a person wearing one of the suits.
-//				continue
-		I.adjust_fire_stacks(burnlevel) //If i stand in the fire i deserve all of this. Also Napalm stacks quickly.
-		if(prob(firelevel)) I.IgniteMob()
-		I.show_message(text("<span class='warning'>You are burned!</span>"),1)
-/* //Uncomment when you decide to make this proc do something.
-	for(var/obj/O in loc)
-		O.flamer_fire_act()
-*/
-	firelevel -= 2 //reduce the intensity by 2 per tick
-	return
+/obj/item/weapon/reagent_containers/glass/flamethrower/roks2
+	name = "ROKS2 Flamethrower Canister"
+	icon_state = "roks2_flamethrower_back"
+	item_state = "roks2_flamethrower"
+
+/obj/item/weapon/reagent_containers/glass/flamethrower/roks2/filled/New()
+	..()
+	reagents.add_reagent("gasoline",100)
+
+/obj/item/weapon/reagent_containers/glass/flamethrower_mg
+	name = "Stationary Flamethrower Tank"
+	desc = "A flamethrower tank. Up to 200 liters of gasoline."
+	icon = 'icons/obj/guns/gun.dmi'
+	icon_state = "coaxflam_ammo"
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/items/lefthand.dmi',
+		slot_r_hand_str = 'icons/mob/items/righthand.dmi',
+		)
+	item_state = "ammo_can"
+	flags = CONDUCT
+	sharp = FALSE
+	edge = FALSE
+	nothrow = TRUE
+	flags = CONDUCT
+	attack_verb = list("bashed", "hit")
+	force = WEAPON_FORCE_WEAK
+	throwforce = WEAPON_FORCE_WEAK
+	flammable = TRUE
+	w_class = 14
+	slot_flags = null
+	throw_speed = 1
+	throw_range = 1
+	amount_per_transfer_from_this = 25
+	volume = 200
+	density = FALSE
+	dropsound = 'sound/effects/drop_default.ogg'
+	
+/obj/item/weapon/reagent_containers/glass/flamethrower_mg/filled/New()
+	..()
+	reagents.add_reagent("gasoline",200)

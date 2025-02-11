@@ -26,7 +26,7 @@
 /datum/outfit/job/panopticon/greydivision/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/panopticon/bastardo
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+	shirt = /obj/item/clothing/suit/panopticon/shirt/greys
 	pants = /obj/item/clothing/under/panopticon/greys
 	mask = /obj/item/clothing/mask/gas/panopticon/greys
 	gloves = /obj/item/clothing/gloves/roguetown/angle
