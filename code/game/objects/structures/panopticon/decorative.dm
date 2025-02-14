@@ -361,6 +361,8 @@
 		new /obj/item/panopticonmoney/ten(get_turf(src))
 	if(prob(1))
 		new /obj/item/panopticonmoney/hundred(get_turf(src))
+	if(prob(25))
+		new /obj/item/reagent_containers/food/snacks/canned/panopticon(get_turf(src))
 	playsound(src,'sound/combat/hits/onmetal/grille (2).ogg', 50, TRUE)
 	qdel(src)
 
