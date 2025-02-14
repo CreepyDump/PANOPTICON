@@ -2196,7 +2196,6 @@
 #include "code\modules\jobs\job_types\panopticon\panopticon.dm"
 #include "code\modules\jobs\job_types\panopticon\bunker\slug.dm"
 #include "code\modules\jobs\job_types\panopticon\necronox\helekian.dm"
-#include "code\modules\jobs\job_types\panopticon\necronox\meatman.dm"
 #include "code\modules\jobs\job_types\panopticon\necronox\zek.dm"
 #include "code\modules\jobs\job_types\panopticon\outsiders\lesnik.dm"
 #include "code\modules\jobs\job_types\panopticon\outsiders\necroleninist.dm"
