@@ -108,9 +108,6 @@
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/atom/movable/screen/using
-	var/atom/movable/screen/plane_master/shadowcasting/p3
-	p3.remove_filter("turf_blocker")
-	p3.render_target = null
 	using =  new /atom/movable/screen/backhudl/ghost()
 	using.hud = src
 	static_inventory += using
