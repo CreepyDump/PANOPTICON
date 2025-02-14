@@ -791,19 +791,19 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Crimson Text, TrueType;}
 
 em						{font-style: normal;	font-weight: bold;}
 
-.ooc					{color: #9494b5;	font-weight: bold;}
-.adminobserverooc		{color: #0099cc;	font-weight: bold;}
-.adminooc				{color: #3d5bc3;	font-weight: bold;}
+.ooc					{color: #9494b5;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
+.adminobserverooc		{color: #0099cc;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
+.adminooc				{color: #3d5bc3;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
 
-.adminsay				{color: #ff4500;	font-weight: bold;}
-.admin					{color: #5975da;	font-weight: bold;}
+.adminsay				{color: #ff4500;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
+.admin					{color: #5975da;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
 
 .name					{					font-weight: bold;}
 
-.say					{font-family: Crimson Text;}
-.deadsay				{color: #e2c1ff}
-.binarysay				{color: #20c20e;	background-color: #000000;	display: block;}
-.binarysay a			{color: #00ff00;}
+.say					{font-family: Crimson Text;	animation: messageFadeIn 0.2s linear;}
+.deadsay				{color: #e2c1ff;   animation: messageFadeIn 0.2s linear;}
+.binarysay				{color: #20c20e;	background-color: #000000;	display: block; animation: messageFadeIn 0.3s ease-in;}
+.binarysay a			{color: #00ff00; animation: messageFadeIn 0.3s ease-in;}
 .binarysay a:active, .binarysay a:visited {color: #88ff88;}
 .radio					{color: #1ecc43;}
 .sciradio				{color: #c68cfa;}
@@ -819,11 +819,11 @@ em						{font-style: normal;	font-weight: bold;}
 .redteamradio			{color: #ff4444;}
 .blueteamradio			{color: #3434fd;}
 
-.yell					{					font-weight: bold;}
+.yell					{					font-weight: bold; animation: messageFadeIn 0.3s ease-in;}
 
 .alert					{color: #d82020;}
 
-.emote					{color: #b98c59;	font-style: italic;}
+.emote					{color: #b98c59;	font-style: italic; animation: messageFadeIn 0.3s ease-in;}
 
 .crit					{color: #fd5b5b; font-weight: bold; text-shadow: 0px 0px 2px rgba(167, 43, 43, 0.4);}
 .userdanger {
@@ -968,3 +968,14 @@ em						{font-style: normal;	font-weight: bold;}
 /* HELPER CLASSES */
 .text-normal {font-weight: normal;	font-style: normal;}
 .hidden {display: none;	visibility: hidden;}
+
+@keyframes messageFadeIn {
+	from {
+	  opacity: 0;
+	  transform: translateY(10px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }

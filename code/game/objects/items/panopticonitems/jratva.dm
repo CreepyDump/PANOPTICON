@@ -92,3 +92,40 @@
 	foodtype = MEAT | GROSS
 	rotprocess = 15 MINUTES
 	sellprice = 100
+
+/obj/item/reagent_containers/food/snacks/fungaljerky
+	name = "Fungal Jerky"
+	desc = "Dried strips of carnivorous fungus. It is chewy and slighty toxic."
+	bitesize = 2
+	icon = 'icons/panopticon/items/consumable.dmi'
+	icon_state = "fungal-jerky"
+
+
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin = 1)
+	filling_color = "#a13131"
+	foodtype = GROSS | VEGETABLES
+	sellprice = 8
+
+/obj/item/reagent_containers/food/snacks/canned/panopticon
+	name = "Asswipes"
+	icon = 'icons/panopticon/items/misc.dmi'
+	desc = "Preserved leftovers of unspecified nature. The label shows a smiley face and the inscription: 'Eat me if you dare!'"
+	icon_state = "can"
+	bitesize = 5
+	trash = /obj/item/trash/can/food/panopticon
+	tastes = list("Shit" = 1, "Hopeless" = 1)
+	foodtype = GROSS | MEAT
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/toxin = 5)
+
+/obj/item/trash/can/food/panopticon
+	name = "Can"
+	icon = 'icons/panopticon/items/misc.dmi'
+	icon_state = "can_empty"
+
+/obj/item/reagent_containers/food/snacks/canned/panopticon/On_Consume(mob/living/carbon/human/M)
+	if(prob(50))
+		to_chat(M, "<span class='notice'>You kinda starting to like this taste. Maybe this shit is not that bad?</span>")
+		M.reagents.add_reagent(/datum/reagent/medicine/ephedrine, 5)
+	else
+		M.reagents.add_reagent(/datum/reagent/toxin/bad_food, 10)
+	. = ..()

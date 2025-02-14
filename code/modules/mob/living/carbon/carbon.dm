@@ -845,10 +845,10 @@
 
 	if(!client)
 		return
-	if(cmode)
-		overlay_fullscreen("CMODE", /atom/movable/screen/fullscreen/crit/cmode)
-	else
-		clear_fullscreen("CMODE")
+//	if(cmode)
+//		overlay_fullscreen("CMODE", /atom/movable/screen/fullscreen/crit/cmode)
+//	else
+//		clear_fullscreen("CMODE")
 
 	if(health <= crit_threshold || (blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE))
 		var/severity = 0
@@ -894,7 +894,7 @@
 		if(!succumb_timer)
 			succumb_timer = world.time
 		overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
-		overlay_fullscreen("DD", /atom/movable/screen/fullscreen/crit/death)
+//		overlay_fullscreen("DD", /atom/movable/screen/fullscreen/crit/death)
 	else
 		if(succumb_timer)
 			succumb_timer = 0

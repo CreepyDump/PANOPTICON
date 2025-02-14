@@ -260,8 +260,8 @@
 		user.Paralyze(80)
 
 /obj/item/gun/ballistic/revolver/panopticon
-	name = "\improper .357 revolver"
-	desc = ""
+	name = "\improper Revolver"
+	desc = "A finely made revolver from Budufsberg. It's a status symbol among the elite."
 	icon = 'icons/panopticon/items/guns.dmi'
 	icon_state = "revolver"
 	fire_sound = 'sound/combat/Ranged/revolver-shoot.ogg'

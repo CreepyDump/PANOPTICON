@@ -96,9 +96,11 @@
 	if(human_owner && human_owner.client)
 		SSdroning.play_area_sound(get_area(src), human_owner.client)
 		SSdroning.play_loop(get_area(src), human_owner.client)
+	carbon_owner.dreaming = FALSE
 	. = ..()
 
 /datum/status_effect/incapacitating/sleeping/Destroy()
+	carbon_owner.dreaming = FALSE
 	carbon_owner = null
 	human_owner = null
 	return ..()

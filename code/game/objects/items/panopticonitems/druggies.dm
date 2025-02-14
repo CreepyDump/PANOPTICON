@@ -21,6 +21,10 @@
 	list_reagents = list(/datum/reagent/psychicksamogon = 30)
 	sellprice = 30
 
-///obj/item/reagent_containers/glass/bottle/shmacksamogonka
-//	name = "Moonshine"
-//	list_reagents = list(/datum/reagent/shmacksamogonka = 30)
+/obj/item/reagent_containers/glass/bottle/corpsewine
+	name = "Corpse-Wine"
+	desc = "A dark, pungent wine brewed from fermented fungus. It smells like death."
+	icon_state = "corpsewine"
+	icon = 'icons/panopticon/items/consumable.dmi'
+	list_reagents = list(/datum/reagent/consumable/ethanol = 10)
+	sellprice = 30

@@ -30,7 +30,7 @@
 	item_state = "hitman"
 	armor = list("blunt" = 15, "slash" = 15, "stab" = 15, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/armor/panopticon/cloak/holycloak
+/obj/item/clothing/armor/panopticon/cloak/strafbat
 	name = "Helekian Gunslinger jacket"
 	allowed_sex = list(MALE, FEMALE)
 	icon = 'icons/panopticon/obj/clothes/cloak.dmi'
@@ -67,3 +67,13 @@
 	equip_delay_self = 15
 	bloody_icon_state = "bodyblood"
 	armor = list("blunt" = 26, "bullet" = 45, "laser" = 0,"energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/armor/panopticon/cloak/strafbat/holycloak
+	name = "Helekian Gunslinger jacket"
+	allowed_sex = list(MALE, FEMALE)
+	icon = 'icons/panopticon/obj/clothes/cloak.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
+	sleeved = 'icons/panopticon/obj/clothes/onmob/cloak.dmi'
+	icon_state = "holy_cloak"
+	item_state = "holy_cloak"
+	armor = list("blunt" = 5, "slash" = 5, "stab" = 5, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)

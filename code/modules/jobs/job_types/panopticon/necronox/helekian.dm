@@ -51,7 +51,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(3,4,5), TRUE)
 		backpack_contents = list(/obj/item/ammo_box/a762 = 4)
 		head = /obj/item/clothing/head/panopticon/shtrafbathelm/helek
-		cloak = /obj/item/clothing/armor/panopticon/cloak/strafbat
+		cloak = /obj/item/clothing/armor/panopticon/cloak/strafbat/holycloak
 		beltl = /obj/item/flashlight/flare/torch/lantern
 	else if(prob(5))
 		var/obj/item/flashlight/flare/torch/lantern/T = new()
