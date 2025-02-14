@@ -1,5 +1,5 @@
 #define MUSIC_TAV list("Мясокомбинат" = 'sound/music/jukeboxes/myasokombinat.ogg', "Заговор" = 'sound/music/jukeboxes/zagovor.ogg', "Солдатами не рождаются" = 'sound/music/jukeboxes/soldat.ogg', "Эй брат любер!" = 'sound/music/jukeboxes/bratluber.ogg', "Не смешно" = 'sound/music/jukeboxes/nesmeshno.ogg', "Панк и Рок-н-ролл" = 'sound/music/jukeboxes/punknrocknroll.ogg', "Свобода" = 'sound/music/jukeboxes/svoboda.ogg', "Зоопарк" = 'sound/music/jukeboxes/zoopark.ogg', "Мы из Кронштадта" = 'sound/music/jukeboxes/kronshtadt.ogg')
-#define MUSIC_BAR list("BAR TRACK 1" = 'sound/music/jukeboxes/bar1.ogg', "BAR TRACK 2" = 'sound/music/jukeboxes/bar2.ogg', "BAR TRACK 3" = 'sound/music/jukeboxes/bar3.ogg', "BAR TRACK 4" = 'sound/music/jukeboxes/bar4.ogg', "BAR TRACK 5" = 'sound/music/jukeboxes/bar5.ogg', "BAR TRACK 6" = 'sound/music/jukeboxes/bar6.ogg')
+#define MUSIC_BAR list("BAR TRACK 1" = 'sound/music/jukeboxes/bar1.ogg', "BAR TRACK 2" = 'sound/music/jukeboxes/bar2.ogg', "BAR TRACK 3" = 'sound/music/jukeboxes/bar3.ogg', "BAR TRACK 4" = 'sound/music/jukeboxes/bar4.ogg', "BAR TRACK 5" = 'sound/music/jukeboxes/bar5.ogg', "BAR TRACK 6" = 'sound/music/jukeboxes/bar6.ogg', "BAR TRACK 7" = 'sound/music/jukeboxes/bar7.ogg')
 
 /datum/looping_sound/musloop
 	mid_sounds = list()
