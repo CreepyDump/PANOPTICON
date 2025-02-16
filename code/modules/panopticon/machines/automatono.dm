@@ -238,14 +238,22 @@
 			return
 		scream(user)
 	else if(thing == "Declare martial law")
-		if(martial_law == FALSE)
-			return
-		martial_law()
+		if(martial_law == 1)
+			martial_law()
+		else if(martial_law == 2)
+			to_chat(user, span_alert("Dude, Major is already dead.."))
+		else
+			to_chat(user, span_alert("Not yet, Major is alive."))
 	else
 		return
 
 /obj/structure/panopticon/automat/announcer/proc/martial_law()
-	priority_announce("Major is dead", "Old-World Announcer", 'sound/misc/alert.ogg', "Captain")
+	martial_law = 2
+	priority_announce("THE MARTIAL LAW WAS ANNOUNCED. WITHIN HOURS ANY MAN ON THE STREETS GOING TO BE ELIMINATED BY GREY DIVISION.", "Old-World Announcer", 'sound/misc/martiallaw.ogg', "Captain")
+	for(var/mob/living/carbon/human/H in GLOB.human_list)
+		if(H.job == "Gendarme")
+			to_chat(H, span_boldannounce("Martial law? That means it's time for a real war."))
+
 /obj/structure/panopticon/automat/announcer/proc/scream(mob/living/carbon/user)
 	var/inputshit = stripped_input(user, "What you want to say?", "")
 	if(!inputshit)
@@ -263,6 +271,32 @@
 	if(QDELETED(src))
 		return
 	can_scream = TRUE
+
+/obj/structure/panopticon/automat/gromko
+	name = "Speaker"
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "announcer"
+	plane = GAME_PLANE_UPPER
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+	max_integrity = 1000
+	var/datum/looping_sound/siren/soundloop
+
+/obj/structure/panopticon/automat/gromko/process()
+	if(martial_law == 2)
+		soundloop = new(list(src), FALSE)
+		soundloop.start()
+
+/obj/structure/panopticon/automat/gromko/Destroy()
+	if(soundloop)
+		soundloop.stop()
+	..()
+
+/obj/structure/panopticon/automat/gromko/obj_break(damage_flag)
+	if(soundloop)
+		soundloop.stop()
+	..()
 
 /obj/structure/panopticon/automat/heroinmachine
 	name = "COP Automato"
@@ -396,3 +430,43 @@
 	dat += "<p style='text-align: left;'><span style='text-decoration: underline; color: #993300;'><strong>WHAT WE'RE SELLING</strong></span></p>"
 	dat += "<a https://kill_niggers.com><p style='text-align: left; padding-left: 30px;'><span style='color: #993300;'>CHECK OUT!</span></p><a/>"
 	user << browse(dat,"window = licker")
+
+/obj/structure/panopticon/automat/ammoline
+	name = "PANGLOBE-145"
+	desc = ""
+	icon = 'icons/panopticon/obj/town.dmi'
+	icon_state = "stanok1"
+	density = TRUE
+	destroy_sound = 'sound/foley/breaksound.ogg'
+	break_sound = 'sound/foley/machinebreak.ogg'
+	anchored = TRUE
+	max_integrity = 0
+	var/step = 0
+
+/obj/structure/panopticon/automat/ammoline/attackby(obj/item/I, mob/user, params)
+	if(step == 0 && istype(I, /obj/item/rogueore/iron))	
+		visible_message(span_warning("[user] loading [I] into [src]"))
+		if(do_after(user, 5 SECONDS, target = src))
+			qdel(I)
+			step = 1
+		else
+			user.visible_message(span_alertwarning("I've failed loading the [I]!"))
+	if(step == 1 && istype(I, /obj/item/reagent_containers/powder/flour/blackpowder))
+		visible_message(span_warning("[user] loading [I] into [src]"))
+		if(do_after(user, 3 SECONDS, target = src))
+			qdel(I)
+			step = 2
+		else
+			user.visible_message(span_alertwarning("I've failed loading the [I]!"))
+	if(step == 2)
+		var/choice = alert(user,"Which ammo type am I making?","10mm","7.62",".357")
+		switch(choice)
+			if("10mm")
+				new /obj/item/ammo_casing/c10mm(src.loc)
+				step = 0
+			if("7.62")
+				new /obj/item/ammo_casing/a762(src.loc)
+				step = 0
+			if("7.62")
+				new /obj/item/ammo_casing/a357(src.loc)
+				step = 0

@@ -122,7 +122,7 @@
 
 //	for(var/datum/death_tracker/D in target.death_trackers)
 	if(src.job == "Major")
-		martial_law = TRUE
+		martial_law = 1
 	if(!gibbed && rot_type)
 		LoadComponent(rot_type)
 

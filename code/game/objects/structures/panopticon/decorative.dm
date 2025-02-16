@@ -254,7 +254,7 @@
 			if(C.can_heartattack())
 				C.set_heartattack(TRUE)
 				C.say(pick("OH MY BALLSSSSSSS!!", "ARGHH!", "AAAAAAH, HELP!!!!", "I AM DYING!!!", "AAAAAAAAAAA!"))
-				playsound(user, 'sound/misc/DEATH.ogg', 85)
+				playsound(user, 'sound/misc/DEATH.ogg', 30)
 				C.playsound_local(user, 'sound/misc/deadbell.ogg', 100)
 				to_chat(user, span_cultlarge("FUCKING WEAKLING CREATURE, IT'S TIME TO DIE!"))
 		else
