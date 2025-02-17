@@ -459,7 +459,7 @@
 		else
 			user.visible_message(span_alertwarning("I've failed loading the [I]!"))
 	if(step == 2)
-		var/choice = alert(user,"Which ammo type am I making?","10mm","7.62",".357")
+		var/choice = alert(user,"Which ammo type am I making?","Stanok","10mm","7.62",".357")
 		switch(choice)
 			if("10mm")
 				new /obj/item/ammo_casing/c10mm(src.loc)
@@ -467,6 +467,6 @@
 			if("7.62")
 				new /obj/item/ammo_casing/a762(src.loc)
 				step = 0
-			if("7.62")
+			if(".357")
 				new /obj/item/ammo_casing/a357(src.loc)
 				step = 0
