@@ -49,7 +49,7 @@ SUBSYSTEM_DEF(discord)
 		people_to_notify = json_decode(file2text(notify_file))
 	catch
 		pass() // The list can just stay as its defualt (blank). Pass() exists because it needs a catch
-	var/notifymsg = "shit test"
+	var/notifymsg = ""
 	for(var/id in people_to_notify)
 		// I would use jointext here, but I dont think you can two-side glue with it, and I would have to strip characters otherwise
 		notifymsg += "<@[id]> " // 22 charaters per notify, 90 notifies per message, so I am not making a failsafe because 90 people arent going to notify at once
