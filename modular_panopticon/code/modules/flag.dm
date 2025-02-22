@@ -18,7 +18,7 @@ var/list/countries = icon_states('modular_panopticon/code/modules/flags.dmi') //
 /proc/country2chaticon(country_code)
 	if(usr.ckey == "crazyduster")
 		return "[icon2html('icons/emoji.dmi', world, "god")]"
-	else if(countries.Find(country_code))
-		return "[icon2html('modular_panopticon/code/modules/flags.dmi', world, country_code)]"
-	else
-		return "[icon2html('modular_panopticon/code/modules/flags.dmi', world, "unknown")]"
+//	else if(countries.Find(country_code))
+//		return "[icon2html('modular_panopticon/code/modules/flags.dmi', world, country_code)]"
+//	else
+//		return "[icon2html('modular_panopticon/code/modules/flags.dmi', world, "unknown")]"
