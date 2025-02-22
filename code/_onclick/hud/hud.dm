@@ -82,6 +82,10 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 	var/atom/movable/screen/textl
 	var/atom/movable/screen/textr
 
+	var/atom/movable/screen/new_player/selection/observe/observe
+	var/atom/movable/screen/new_player/selection/settings/settings
+	var/atom/movable/screen/new_player/selection/join_game/join_game
+
 /datum/hud/New(mob/owner)
 	mymob = owner
 
@@ -106,6 +110,19 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 
 /datum/hud/new_player/New(mob/owner)
 	..()
+	join_game = new /atom/movable/screen/new_player/selection/join_game
+	join_game.hud = src
+	static_inventory += join_game
+
+	settings = new	/atom/movable/screen/new_player/selection/settings
+	settings.hud = src
+	static_inventory += settings
+
+	if(check_rights(R_ADMIN))
+		observe = new	/atom/movable/screen/new_player/selection/observe
+		observe.hud = src
+		static_inventory += observe
+
 	scannies = new /atom/movable/screen/scannies
 	scannies.hud = src
 	static_inventory += scannies

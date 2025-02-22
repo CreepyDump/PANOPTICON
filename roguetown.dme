@@ -3395,6 +3395,7 @@
 #include "code\modules\surgery\organs\liver.dm"
 #include "code\modules\surgery\organs\lungs.dm"
 #include "code\modules\surgery\organs\organ_internal.dm"
+#include "code\modules\surgery\organs\penis.dm"
 #include "code\modules\surgery\organs\stomach.dm"
 #include "code\modules\surgery\organs\tails.dm"
 #include "code\modules\surgery\organs\tongue.dm"
@@ -3492,4 +3493,6 @@
 #include "interface\skin.dmf"
 #include "modular_panopticon\code\controllers\subsystem\sexo.dm"
 #include "modular_panopticon\code\interface\LOOC.dm"
+#include "modular_panopticon\code\modules\flag.dm"
+#include "modular_panopticon\code\modules\new_player\menu.dm"
 // END_INCLUDE

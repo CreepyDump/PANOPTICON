@@ -446,6 +446,7 @@
 /obj/structure/panopticon/automat/ammoline/attackby(obj/item/I, mob/user, params)
 	if(step == 0 && istype(I, /obj/item/rogueore/iron))	
 		visible_message(span_warning("[user] loading [I] into [src]"))
+		playsound(get_turf(src), 'sound/misc/workshop.ogg', 85, FALSE, FALSE)
 		if(do_after(user, 5 SECONDS, target = src))
 			qdel(I)
 			step = 1
@@ -453,6 +454,7 @@
 			user.visible_message(span_alertwarning("I've failed loading the [I]!"))
 	if(step == 1 && istype(I, /obj/item/reagent_containers/powder/flour/blackpowder))
 		visible_message(span_warning("[user] loading [I] into [src]"))
+		playsound(get_turf(src), 'sound/misc/blackpowder.ogg', 85, FALSE, FALSE)
 		if(do_after(user, 3 SECONDS, target = src))
 			qdel(I)
 			step = 2

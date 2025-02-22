@@ -8,7 +8,6 @@
 	if(owner.client?.prefs?.widescreenpref)
 		widescreen_layout = FALSE
 */
-	var/atom/movable/screen/plane_master/shadowcasting/p3 = new
 	var/atom/movable/screen/using
 	var/atom/movable/screen/inventory/inv_box
 
@@ -23,9 +22,6 @@
 	scannies = new /atom/movable/screen/scannies
 	scannies.hud = src
 	static_inventory += scannies
-	p3.plane = SHADOWCASTING_PLANE
-	p3.add_filter("turf_blocker", 5, list("type" = "alpha", render_source="all4", flags=MASK_INVERSE))
-	p3.render_target = "all3"
 	action_intent = new /atom/movable/screen/act_intent/rogintent
 	action_intent.hud = src
 	action_intent.screen_loc = rogueui_intents

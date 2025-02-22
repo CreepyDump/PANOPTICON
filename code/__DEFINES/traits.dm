@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	RTRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
 	RTRAIT_TORTURER = "I've learned the art of confessions.",
 	RTRAIT_HATEWOMEN = "Double damage against female mobs.",
-	RTRAIT_GOODLOVER = "It's a lucky thing to share my bed.",
+	TRAIT_GOODLOVER = "It's a lucky thing to share my bed.",
 	TRAIT_CRITICAL_WEAKNESS = span_danger("I am weak to wounds that others could survive."),
 	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),
 	TRAIT_CYCLOPS_RIGHT = span_warning("My right eye has been poked out..."),

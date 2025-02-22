@@ -369,6 +369,11 @@
 
 /obj/structure/spawnerofmutantz/Crossed(atom/movable/AM)
 	. = ..()
+	if(isobserver(AM))
+		var/mob/dead/observer/O = AM
+		if(world.time > O.last_helld + 30)
+			O.last_helld = world.time
+			O.go2hell()
 	var/mob/living/carbon/cross = AM
 	if(cross)
 		for(var/H in begotten)

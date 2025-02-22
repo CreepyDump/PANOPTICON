@@ -81,9 +81,9 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		var/chat_color = "#c5c5c5"
 		if(C.prefs.chat_toggles & CHAT_OOC)
 			if(holder)
-				to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='#BA1616'><span class='message linkify'>[msg]</span></font>")
+				to_chat(C, "<font color='[color2use]'>[country2chaticon(C.country)]<EM>[keyname]:</EM></font> <font color='#BA1616'><span class='message linkify'>[msg]</span></font>")
 			else
-				to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='[chat_color]'><span class='message linkify'>[msg]</span></font>")
+				to_chat(C, "<font color='[color2use]'>[country2chaticon(C.country)]<EM>[keyname]:</EM></font> <font color='[chat_color]'><span class='message linkify'>[msg]</span></font>")
 
 //				if(!holder.fakekey || C.holder)
 //					if(check_rights_for(src, R_ADMIN))
@@ -183,9 +183,9 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			var/chat_color = "#c5c5c5"
 			if(C.prefs.chat_toggles & CHAT_OOC)
 				if(holder)
-					to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='#BA1616'><span class='message linkify'>[msg]</span></font>")
+					to_chat(C, "<font color='[color2use]'>[country2chaticon(C.country)]<EM>[keyname]:</EM></font> <font color='#BA1616'><span class='message linkify'>[msg]</span></font>")
 				else
-					to_chat(C, "<font color='[color2use]'><EM>[keyname]:</EM></font> <font color='[chat_color]'><span class='message linkify'>[msg]</span></font>")
+					to_chat(C, "<font color='[color2use]'>[country2chaticon(C.country)]<EM>[keyname]:</EM></font> <font color='[chat_color]'><span class='message linkify'>[msg]</span></font>")
 
 
 /proc/toggle_ooc(toggle = null)

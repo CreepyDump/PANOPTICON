@@ -7,7 +7,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	name = "ghost"
 	desc = "" //jinkies!
 	icon = 'icons/mob/mob.dmi'
-	icon_state = ""
+	icon_state = "ghost1"
 	layer = GHOST_LAYER
 	stat = DEAD
 	density = FALSE
@@ -78,8 +78,6 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 /mob/dead/observer/rogue/nodraw
 	draw_icon = FALSE
-	icon = 'icons/roguetown/mob/misc.dmi'
-	icon_state = "ghost"
 	alpha = 100
 
 /mob/dead/observer/rogue/Move(n, direct)

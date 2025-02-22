@@ -31,12 +31,8 @@
 /obj/item/pda/mime/msg_input(mob/living/U = usr)
 	if(emped || toff)
 		return
-	var/emojis = emoji_sanitize(stripped_input(U, "Please enter emojis", name))
-	if(!emojis)
-		return
 	if(!U.canUseTopic(src, BE_CLOSE))
 		return
-	return emojis
 
 // Special AI/pAI PDAs that cannot explode.
 /obj/item/pda/ai

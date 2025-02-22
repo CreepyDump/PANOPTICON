@@ -172,7 +172,6 @@
 /client/proc/update_opacity_image()
 	var/turf/T = get_turf(mob)
 	reflector.vis_contents.Cut()
-	//Ah hell naw my nigga we in nullspace
 	if(!T)
 		return
 	else if(!T.shadowcasting_initialized)
@@ -204,6 +203,8 @@
 	icon = 'icons/panopticon/misc/triangle.dmi'
 	icon_state = "triangle"
 	plane = SHADOWCASTING_PLANE
+	mouse_opacity = 0
+	opacity = 0
 
 /atom/movable/triangle/New(x1, y1, x2, y2, x3, y3)
 	transform = matrix((x3*0.03125)-(x2*0.03125),-(x2*0.03125)+(x1*0.03125),(x3*0.5)+(x1*0.5),-(y2*0.03125)+(y3*0.03125),(y1*0.03125)-(y2*0.03125),(y1*0.5)+(y3*0.5))

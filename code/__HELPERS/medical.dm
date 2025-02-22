@@ -86,6 +86,12 @@
 			return "tail"
 		if(ORGAN_SLOT_PARASITE_EGG)
 			return "parasite egg"
+		if(ORGAN_SLOT_BUTT)
+			return "butt"
+		if(ORGAN_SLOT_PENIS)
+			return "penis"
+		if(ORGAN_SLOT_BOOBS)
+			return "boobs"
 		if(ORGAN_SLOT_REGENERATIVE_CORE)
 			return "regenerative core"
 	return slot

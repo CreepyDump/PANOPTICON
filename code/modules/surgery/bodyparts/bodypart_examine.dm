@@ -9,9 +9,8 @@
 	var/list/head_status = list()
 	if(!brain)
 		head_status += span_dead("The brain is missing.")
-	/*		
 	else if(brain.suicided || brainmob?.suiciding)
-		. += span_info("There's a pretty dumb expression on [real_name]'s face; they must have really hated life. There is no hope of recovery.")
+		. += span_info("There's a pretty dumb expression on face; they must have really hated life. There is no hope of recovery.")
 	else if(brain.brain_death || brainmob?.health <= HEALTH_THRESHOLD_DEAD)
 		. += span_info("")
 	else if(brainmob)
@@ -23,7 +22,6 @@
 		. += span_info("It seems particularly lifeless. Perhaps there'll be a chance for them later.")
 	else
 		. += span_info("It seems completely devoid of life.")
-	*/
 
 	if(!eyes)
 		head_status += span_warning("The eyes appear to be missing.")

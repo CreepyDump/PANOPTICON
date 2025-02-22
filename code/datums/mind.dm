@@ -607,7 +607,11 @@
 /datum/mind/proc/show_memory(mob/recipient, window=1)
 	if(!recipient)
 		recipient = current
-	var/output = "<B>[current.real_name]'s Memories:</B><br>"
+	var/output = ""
+	if(window)
+		output += "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Memoria:</title></head>"
+	else
+		output = "<B>Memoria:</B><br>"
 	output += memory
 
 

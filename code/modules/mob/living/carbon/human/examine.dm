@@ -59,12 +59,6 @@
 			var/used_title = J.title
 			if(J.f_title && (t_He == "She"))
 				used_title = J.f_title
-			if(used_title == "Adventurer")
-				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name].")
-			else
-				used_title = advjob
-				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [islatejoin ? "returning " : ""][race_name] [used_title].")
-		else
 			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
 		
 

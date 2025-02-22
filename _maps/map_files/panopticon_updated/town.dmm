@@ -139,8 +139,8 @@
 "hR" = (/obj/effect/decal/cleanable/cobweb,/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/sewerslut)
 "hU" = (/obj/structure/stairs/panopticon{dir = 4},/obj/structure/panopticon/onwall/there{dir = 8; pixel_y = 32},/obj/structure/fluff/traveltile/bandit{aportalid = "banditiebanie"; aportalgoesto = "tothepit"},/turf/open/floor/panopticon/cement,/area/panopticon)
 "hX" = (/obj/effect/turf_decal/panopticon/mysor,/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
-"if" = (/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/darkwood)
-"is" = (/obj/structure/roguewindow{dir = 4},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/outdoors/town)
+"if" = (/obj/structure/panopticon/onwall/inwallpipe,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/indoors/shelter/darkwood)
+"is" = (/obj/structure/roguewindow{dir = 4},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/shelter/darkwood)
 "iu" = (/obj/structure/table/wood{icon_state = "table2"; dir = 1},/obj/item/reagent_containers/glass/cup/wooden{pixel_x = -9; pixel_y = 5},/obj/item/reagent_containers/glass/cup/wooden{pixel_y = 4},/turf/open/floor/panopticon/darkwood/parketpizda,/area/panopticon/indoors/town/shop)
 "iw" = (/obj/structure/fence,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "iA" = (/turf/closed/wall/mineral/panopticon/bunker/rustwall,/area/panopticon/indoors/shelter)
@@ -168,6 +168,7 @@
 "kr" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors)
 "kt" = (/obj/structure/table/wood{icon_state = "longtable"},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/town/shop)
 "kx" = (/obj/structure/roguewindow/openclose{dir = 8},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/hell)
+"kD" = (/obj/structure/panopticon/barrel/red{dir = 1},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/shelter/darkwood)
 "kI" = (/obj/structure/panopticon/onwall/oldass{dir = 1},/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon/indoors/sewerslut)
 "kJ" = (/obj/structure/fluff/walldeco/church/line,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 "kL" = (/obj/structure/table/wood{icon_state = "table2"; dir = 1},/turf/open/floor/panopticon/darkwood/parketpizda,/area/panopticon/indoors/town/shop)
@@ -180,6 +181,7 @@
 "lc" = (/obj/structure/panopticon/onwall/medic{dir = 1; pixel_y = 32},/turf/open/floor/panopticon/town/plitka{dir = 10},/area/panopticon/indoors/town)
 "ld" = (/obj/structure/rack/rogue,/obj/machinery/light{dir = 4},/turf/open/floor/panopticon/beton/stone,/area/panopticon)
 "lj" = (/obj/structure/fence{dir = 8},/obj/structure/panopticon/noshadow/townborders,/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
+"lk" = (/obj/structure/panopticon/barrel/red{dir = 4},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/shelter/darkwood)
 "lu" = (/obj/structure/closet/crate/roguecloset/dark,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/obj/item/panopticonweapon/dubinka,/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors)
 "lv" = (/turf/closed/mineral/random/rogue/med,/area/panopticon/indoors/caves)
 "ly" = (/turf/closed/wall/mineral/panopticon/kirpich/stone,/area/panopticon/indoors/town/shop)
@@ -225,6 +227,7 @@
 "nS" = (/obj/structure/panopticon/onwall/wallpipe{dir = 8},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
 "nY" = (/obj/effect/landmark/start/slugslate{dir = 8},/turf/open/floor/rogue/hexstone,/area/panopticon/indoors/sewerslut)
 "nZ" = (/obj/structure/bed/panopticon/wooden,/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town)
+"oa" = (/obj/machinery/conveyor{dir = 4; id = "deutsch"},/obj/structure/plasticflaps,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/shelter/darkwood)
 "oc" = (/obj/machinery/light/small/broken,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/shelter/darkwood)
 "od" = (/obj/structure/mineral_door/wood/deadbolt{dir = 4},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/outdoors/town)
 "of" = (/obj/structure/chair/wood/rogue/chair3,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town)
@@ -239,7 +242,7 @@
 "oB" = (/obj/effect/decal/cleanable/glass{dir = 4},/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "oL" = (/obj/machinery/light{dir = 1},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/shelter/darkwood)
 "oM" = (/obj/effect/turf_decal/panopticon/mysor/town/alt{dir = 6},/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
-"oN" = (/obj/structure/panopticon/barrel/red,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/shelter/darkwood)
+"oN" = (/obj/structure/panopticon/barrel/red,/obj/structure/plasticflaps,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/shelter/darkwood)
 "oT" = (/turf/open/floor/panopticon/town/plitka{dir = 5},/area/panopticon/indoors/town)
 "oU" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat7"},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
 "oV" = (/turf/open/floor/panopticon/town/plitka/stone,/area/panopticon/indoors/hell)
@@ -332,6 +335,7 @@
 "uN" = (/obj/structure/panopticon/noshadow/townborders{dir = 6},/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "uO" = (/obj/machinery/light/rogue/wallfire/candle,/turf/open/floor/panopticon/bunker,/area/panopticon/indoors/town/church)
 "uP" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat3"},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
+"uS" = (/obj/machinery/conveyor_switch/oneway{id = sd; pixel_x = 15},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/shelter/darkwood)
 "uT" = (/obj/structure/panopticon/noshadow/pepeldeco{dir = 8},/obj/structure/panopticon/noshadow/pepeldeco{dir = 10},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
 "uW" = (/obj/structure/panopticon/pallet{dir = 8},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
 "uZ" = (/obj/structure/fermenting_barrel/random,/turf/open/floor/panopticon/gulag/derevo,/area/panopticon)
@@ -387,7 +391,7 @@
 "yM" = (/obj/effect/turf_decal/panopticon/mysor{dir = 1},/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/sewerslut)
 "yR" = (/obj/item/reagent_containers/food/snacks/poo{icon_state = "poo2"},/turf/open/water/sewer,/area/panopticon/indoors/sewerslut)
 "yW" = (/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/shelter/darkwood)
-"yZ" = (/obj/structure/roguewindow{dir = 1},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/outdoors/darkwood)
+"yZ" = (/obj/structure/roguewindow{dir = 1},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/shelter/darkwood)
 "zb" = (/turf/open/floor/panopticon/darkwood/birchwood,/area/panopticon/indoors/town/shop)
 "zl" = (/obj/structure/fermenting_barrel/beer,/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/town/shop)
 "zn" = (/obj/structure/closet/crate/bigshkaf{pixel_y = 0},/obj/item/rogueweapon/surgery/retractor,/obj/item/rogueweapon/surgery/hemostat,/obj/item/rogueweapon/surgery/scalpel,/obj/item/rogueweapon/surgery/saw,/obj/item/rogueweapon/surgery/bonesetter,/obj/item/weldingtool,/obj/item/surgicaldrill,/obj/item/surgical_drapes,/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town)
@@ -410,6 +414,7 @@
 "Aj" = (/obj/structure/panopticon/randomshit/concreteblock{dir = 8},/obj/structure/panopticon/wartrash{dir = 1},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "As" = (/obj/machinery/light/small/broken{dir = 1},/turf/open/transparent/openspace,/area/panopticon/indoors/shelter/darkwood)
 "Au" = (/obj/effect/turf_decal/panopticon/mysor/doski{dir = 1},/obj/structure/fence/corner{dir = 5},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
+"AA" = (/obj/machinery/conveyor{dir = 4; id = "deutsch"},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/shelter/darkwood)
 "AD" = (/obj/structure/panopticon/noshadow/pepeldeco{dir = 4},/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
 "AE" = (/obj/structure/panopticon/onwall/grobposter,/turf/closed/wall/mineral/panopticon/kirpich/townwall,/area/panopticon/outdoors/town)
 "AF" = (/obj/machinery/light/roguestreet/midlamp,/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
@@ -485,7 +490,7 @@
 "Ev" = (/obj/effect/decal/cleanable/glass,/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "EB" = (/obj/structure/panopticon/onwall/objavlenia{pixel_x = 32},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "EG" = (/obj/structure/panopticon/barrel/red,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
-"EI" = (/obj/structure/panopticon/onwall/inwallpipe,/turf/closed/wall/mineral/panopticon/kirpich,/area/panopticon/outdoors/town)
+"EI" = (/obj/structure/table/wood{icon_state = "tablewood3"; dir = 2},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/shelter/darkwood)
 "EK" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 8},/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/shelter/darkwood)
 "EO" = (/obj/structure/fluff/statue/pillar,/turf/open/floor/panopticon/town/plitka,/area/panopticon/indoors/town)
 "EP" = (/obj/structure/panopticon/skull{dir = 9},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
@@ -618,6 +623,7 @@
 "MS" = (/obj/effect/turf_decal/panopticon/mysor/town/alt{dir = 6},/obj/structure/panopticon/noshadow/townborders{dir = 4},/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "MU" = (/obj/structure/panopticon/noshadow/pepeldeco,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/town)
 "Na" = (/obj/structure/panopticon/onwall/gedvanytsa,/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon/indoors/sewerslut)
+"Nd" = (/obj/machinery/conveyor/inverted{dir = 9; id = "deutsch"},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/shelter/darkwood)
 "Nh" = (/obj/effect/turf_decal/panopticon/mysor/town/alt{dir = 10},/turf/open/floor/panopticon/cement,/area/panopticon/outdoors/town)
 "Nj" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 8},/turf/open/floor/panopticon/bunker/bunkergrid,/area/panopticon/indoors/sewerslut)
 "Nq" = (/obj/structure/panopticon/automat/announcer,/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/shelter)
@@ -768,7 +774,7 @@
 "WI" = (/obj/effect/decal/cleanable/cobweb/cobweb2,/obj/structure/panopticon/barrel/blue,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/sewerslut)
 "WJ" = (/obj/structure/panopticon/pallet{dir = 1; pixel_x = 12},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
 "WN" = (/obj/structure/panopticon/noshadow/townborders{dir = 5},/turf/open/floor/panopticon/town/streets,/area/panopticon/outdoors/town)
-"WO" = (/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/outdoors/town)
+"WO" = (/obj/machinery/conveyor{dir = 4; id = "deutsch"},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/shelter/darkwood)
 "WP" = (/obj/structure/closet/crate/roguecloset/inn/chest,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,/obj/item/reagent_containers/glass/bottle/rogue/water,/obj/item/reagent_containers/glass/bottle/rogue/water,/obj/item/reagent_containers/glass/bottle/rogue/water,/obj/item/reagent_containers/glass/bottle/rogue/water,/obj/item/reagent_containers/glass/bottle/rogue/water,/turf/open/floor/panopticon/beton,/area/panopticon/indoors)
 "WT" = (/obj/structure/table/wood{icon_state = "table1"; dir = 1},/obj/item/kitchen/fork{pixel_x = -5},/obj/item/kitchen/fork{pixel_y = -2; pixel_x = 6},/turf/open/floor/panopticon/darkwood/parketpizda,/area/panopticon/indoors/town/shop)
 "WV" = (/obj/structure/panopticon/onwall/americanburger,/turf/closed/wall/mineral/panopticon/kirpich/beton/blackass,/area/panopticon)
@@ -1035,17 +1041,17 @@ CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmF
 CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFmFmFmFrcXwLXLOdALOIMIMTLXwaKXwXwCsXwCsWJrcXwlQXwrcmFmFmFmFmFmFmFmFmFLmmFmFmFmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
 CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFoyqQLXLOLOLOLOLOIMsDIMIMIMTLXwJAXwrcXwQBXwrcmFmFmFmFLmmFmFmFmFLmmFmFmFmFmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
 CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgxxFgFgxxmFmFmFmFmFmFoyTLLXZiZiLOLOLOLOLOLOmNLOIMTLXwXwRaXwEPnEjcmFmFmFmFmFmFmFmFmFmFLmmFmFmFmFmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgLmLmmFLmmFmFPpWEqYXwLXZiZiZiZiZiZiLOnfoMTLXwXwrcXwnEjcmFmFmFmFmFLmmFmFmFmFmFLmmFmFmFmFmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFoygnXwXwXwXwXwXwXwLXZiLOLOIMTLXwrcOLrcmFmFmFmFmFmFmFmFmFmFmFmFmFLmmFmFmFmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFoyffffffgaffffffffXwLXLOLOLOZvXwrcnEjcmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFlAffoVoVoVoVoVoVffXwLXLOLOLOTLXwnEjcmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFmFffxYoVoVoVoVoVkxlRLXLOLOLOIMTLFtFtFtFtFtFtFtFtFtFtEIFtFtFtFtFtFtFtFtFtFtFtFtmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFffMCoVoVoVoVoVffsSxSZiLOLOLOTLFtkNeYWAeYeYeYtMhdTbZqZqXhZqoLZqTbZqZqMeZqZqFtmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFffoVoVoVoVoVoVffegXwLXILLOLOTLiseYeYeYeYeYeYyWZqyWyWyWyWppewyWyWdEkXyWaPZqFtmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFffffffffrVwDrVffegVYLXLOLOLOqiiseYeYeYeYeYeYyWyWyWyWyWyWyWyWEKBAyWyWyWZTfDFtmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgxxxxFgxxFgFgxxFgFgFgFgxxFgxxFgFgxxFgFgxxFgFgxxFgFgxxFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgmFffyrsUsUsUsUsUsUegXwLXLOLOLOTLFteYeYeYeYeYeYoNZqyWFUyWyWyWyWyWyWyWyWyWwcZqFtmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgxxFgFgFgFgFgFgmFfftqsUsUDUsUsUsoegEVLXLOLOLOJMFtyZyZifyZyZififcqZqBIZqZqZqZqZqZqZqZqBIZqBDFttfcemFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
-CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFffyrsUsUsUsUsUsUegXwLXLOLOLOPeXwIqXwXwbUtIvaFtFtFtFtFtFtFtFtWOFtFtFtFtFtFtFtmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgLmLmmFLmmFmFPpWEqYXwLXZiZiZiZiZiZiLOnfoMTLXwXwrcXwnEjcmFmFmFtMtMtMiftMtMtMtMtMtMtMtMtMtMtMtMOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFoygnXwXwXwXwXwXwXwLXZiLOLOIMTLXwrcOLrcmFmFmFmFtMhdTbZqZqXhZqoLZqTblkZqMeZqZqtMOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFoyffffffgaffffffffXwLXLOLOLOZvXwrcnEjcmFmFmFmFtMZqyWEIyWyWyWEIyWyWyWkXyWaPZqtMmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFlAffoVoVoVoVoVoVffXwLXLOLOLOTLXwnEjcmFmFmFmFmFtMZqyWyWyWyWyWyWEKBAyWyWyWZTfDtMmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFmFmFmFffxYoVoVoVoVoVkxlRLXLOLOLOIMTLtMtMtMtMtMtMtMtMZqyWFUyWyWyWyWyWyWyWyWyWwcZqtMmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFmFmFmFmFffMCoVoVoVoVoVffsSxSZiLOLOLOTLtMkNuSWAeYeYeYtMcqZqZqZqZqZqZqZqZqZqZqBIZqBDtMmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFffoVoVoVoVoVoVffegXwLXILLOLOTLiseYNdAAAAAAAAoaWOEIyWyWyWEIyWyWyWdEkXyWaPZqtMmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFffffffffrVwDrVffegVYLXLOLOLOqiiseYeYeYeYeYeYyWyWyWyWyWyWyWyWEKBAyWyWyWyWfDtMmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgxxxxFgxxFgFgxxFgFgFgFgxxFgxxFgFgxxFgFgxxFgFgxxFgFgxxFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgmFffyrsUsUsUsUsUsUegXwLXLOLOLOTLtMeYeYeYeYeYeYoNZqyWFUyWyWppewyWyWyWyWkDkXZqtMmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgxxFgFgFgFgFgFgmFfftqsUsUDUsUsUsoegEVLXLOLOLOJMtMyZyZtMyZyZtMtMcqZqBIZqZqZqZqZqZqZqZqBIZqZqtMtfcemFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
+CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFffyrsUsUsUsUsUsUegXwLXLOLOLOPeXwIqXwXwbUtIvatMtMtMtMtMtMtMtMZqtMtMtMtMtMtMtMmFmFmFOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwOwCq
 CqFgFgFgxxFgFgFgFgFgFgFgFgxxFgFgFgFgFgFgFgFgxxFgFgFgFgFgFgxxFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFffffffsUaksUffffegXwLXLOLOLOzTIrIrIrIrIrreTLYgXwXwXwXwWGAFXwXwXwXwXwhuXwUAXwAFXwXwJiululululululululululululululululululululululululululululululululululCq
 CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgffffffffffmFJXXwLXTkLOLOLOLOLOLOLOLOLOIrWNBvBvBvBvBvBvBvBvBvBvBvBvBvBvBvBvBvhIYRvdgtZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWCq
 CqFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgFgxxFgFgFgFgFgFgFgFgFgFgFgFgFgFgmFJXXwXwkQIRZiZiZiZiZiZiLOoBLOLOzILOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOEvgtZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWZWCq
@@ -1166,9 +1172,9 @@ vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
 vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
 vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
 vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
-vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
-vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmEjEjEjEjEjEjEjEjvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
-vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmEjEjEjEjEjEjEjEjvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
+vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
+vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmEjEjEjEjEjEjEjEjvmvmvmvmvmvmvmvmvmvmvmvmvmvmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
+vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmEjEjEjEjEjEjEjEjvmvmvmvmvmvmvmvmvmvmvmvmvmvmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
 vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmEjEjEjEjEjEjEjEjvmvmvmvmvmvmvmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
 vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmEjEjEjEjEjEjEjEjvmvmvmvmvmvmvmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm
 vmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmEjEjEjEjEjEjEjEjEjvmvmvmvmvmvmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvmvm

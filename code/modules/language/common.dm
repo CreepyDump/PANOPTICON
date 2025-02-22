@@ -10,7 +10,7 @@
 	flags = LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	default_priority = 100
 //	spans = list(SPAN_HUMAN)
-	icon_state = "galcom"
+	icon_state = "aphasia"
 
 //Syllable Lists
 /*

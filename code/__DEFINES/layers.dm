@@ -59,8 +59,11 @@
 
 /atom/movable/screen/plane_master/shadowcasting/backdrop(mob/mymob)
 	. = ..()
-	filters = list()
-	filters += filter(type="ripple",x=80,size=50,radius=0,falloff = 1)
+	add_filter("blur", 4, list("type" = "blur", size=2))
+
+/atom/movable/screen/plane_master/shadowcasting/New()
+	. = ..()
+	add_filter("blur", 4, list("type" = "blur", size=2))
 
 #define WALL_PLANE 	1
 

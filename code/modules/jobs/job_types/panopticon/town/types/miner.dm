@@ -10,7 +10,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, rand(1,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/mining, rand(1,3), TRUE)
-	pants = /obj/item/clothing/under/roguetown/tights
+	pants = /obj/item/clothing/under/roguetown/tights/miner
 	if(prob(65))
 		shirt = /obj/item/clothing/suit/panopticon/shirt/vatnik
 	else
@@ -26,3 +26,5 @@
 	H.change_stat("speed", -1)
 	H.change_stat("endurance", 3)
 
+/obj/item/clothing/under/roguetown/tights/miner
+	color = "#5a5043"
