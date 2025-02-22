@@ -35,7 +35,6 @@
 
 /obj/item/organ/boobs
     name = "breasts"
-	icon_state = "breasts"
     desc = "A pair of breasts."
     zone = BODY_ZONE_CHEST
     slot = ORGAN_SLOT_BOOBS
