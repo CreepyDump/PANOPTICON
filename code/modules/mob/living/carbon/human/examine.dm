@@ -55,10 +55,6 @@
 		if(observer_privilege)
 			used_name = real_name
 		if(job)
-			var/datum/job/J = SSjob.GetJob(job)
-			var/used_title = J.title
-			if(J.f_title && (t_He == "She"))
-				used_title = J.f_title
 			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
 		
 
@@ -230,6 +226,21 @@
 	if(wear_wrists && !(SLOT_WRISTS in obscured))
 		. += "[m3] [wear_wrists.get_examine_string(user)] on [m2] wrists."
 
+	var/obj/item/organ/butt/butt = getorganslot(ORGAN_SLOT_BUTT)
+	var/obj/item/organ/penis/penis = getorganslot(ORGAN_SLOT_PENIS)
+	var/obj/item/organ/boobs/boobs = getorganslot(ORGAN_SLOT_BOOBS)
+	if(butt)
+		. += span_love("[src]'s butt look [butt.butt_size < 1 ? "small" : butt.butt_size > 1.5 ? "large" : "average"].")
+	if(penis)
+		if(src.wear_pants)
+			. += span_love("[src]'s bulge is about [penis.penis_length / 2] cm in length and [penis.penis_girth / 2] cm in girth.")
+		else
+			. += span_love("[src]'s penis measures [penis.penis_length] cm in length and [penis.penis_girth] cm in girth.")
+	if(boobs)
+		if(src.gender == FEMALE)
+			. += span_love("[src]'s breasts look [boobs.boob_size < 1 ? "small" : boobs.boob_size > 1.5 ? "large" : "average"].")
+		else
+			return
 	//handcuffed?
 	if(handcuffed)
 		. += "<A href='?src=[REF(src)];item=[SLOT_HANDCUFFED]'><span class='warning'>[m1] tied up with \a [handcuffed]!</span></A>"

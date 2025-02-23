@@ -1,3 +1,4 @@
+#define MUSIC_BOOMBOX list("Boombox {1}" = 'sound/music/jukeboxes/boombox1.ogg', "Boombox {2}" = 'sound/music/jukeboxes/boombox2.ogg', "Boombox {3}" = 'sound/music/jukeboxes/boombox3.ogg', "Boombox {4}" = 'sound/music/jukeboxes/boombox4.ogg', "Boombox {5}" = 'sound/music/jukeboxes/planet_burg.ogg', "Boombox {?}" = 'sound/music/jukeboxes/hava.ogg')
 #define CTYPE_THOUSAND 1
 #define CTYPE_TEN 2
 #define CTYPE_ONE 3
@@ -286,3 +287,62 @@
 		if(get_dist(player, src) > 7)
 			player.playsound_local(get_turf(player), 'sound/misc/necrolenin_alert.ogg', 35, FALSE, pressure_affected = FALSE)
 			to_chat(player, span_warningbig("I hear the horn alarm!"))
+
+/obj/item/boombox
+	name = "Boombox"
+	desc = "It is interesting that such an expensive item is here!"
+	icon = 'icons/panopticon/items/Boombox.dmi'
+	icon_state = "boombox"
+	var/datum/looping_sound/musloop/soundloop
+	var/curfile
+	var/playing = FALSE
+	var/curvol = 85
+	var/list/music_tracks
+
+/obj/item/boombox/Initialize()
+	soundloop = new(list(src), FALSE)
+	music_tracks = MUSIC_BOOMBOX
+	. = ..()
+
+/obj/item/boombox/attack_right(mob/user)
+	. = ..()
+	if(.)
+		return
+	if(playing)
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	var/selection = input(user, "Which song?", "Radio Frequency", name) as null|anything in music_tracks
+	if(!selection)
+		return
+	if(!Adjacent(user))
+		return
+	playsound(loc, 'sound/panopticon/bominside.ogg', 80, FALSE, -1)
+	playing = FALSE
+	soundloop.stop()
+	curfile = music_tracks[selection]
+
+/obj/item/boombox/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	if(loc == user)
+		if(!user.is_holding(src))
+			return ..()
+		user.changeNext_move(CLICK_CD_MELEE)
+		playsound(loc, 'sound/panopticon/bomclick.ogg', 80, FALSE, -1)
+		if(!playing)
+			if(curfile)
+				playing = TRUE
+				soundloop.mid_sounds = list(curfile)
+				soundloop.cursound = null
+				soundloop.volume = curvol
+				soundloop.start()
+		else
+			playing = FALSE
+			soundloop.stop()
+
+/obj/item/boombox/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		if(tag == "gen")
+			return list("shrink" = 0.4,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)

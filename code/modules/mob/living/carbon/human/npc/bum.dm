@@ -116,3 +116,14 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 	backpack = null
 	satchel  = null
 	duffelbag = null
+
+/datum/outfit/job/panopticon/citizen/bum
+	uniform = null
+	id = null
+	ears = null
+	belt = null
+	back = null
+	box = null
+	backpack = null
+	satchel  = null
+	duffelbag = null
