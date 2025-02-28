@@ -237,10 +237,7 @@
 		else
 			. += span_love("[src]'s penis measures [penis.penis_length] cm in length and [penis.penis_girth] cm in girth.")
 	if(boobs)
-		if(src.gender == FEMALE)
-			. += span_love("[src]'s breasts look [boobs.boob_size < 1 ? "small" : boobs.boob_size > 1.5 ? "large" : "average"].")
-		else
-			return
+		. += span_love("[src]'s breasts look [boobs.boob_size < 1 ? "small" : boobs.boob_size > 1.5 ? "large" : "average"].")
 	//handcuffed?
 	if(handcuffed)
 		. += "<A href='?src=[REF(src)];item=[SLOT_HANDCUFFED]'><span class='warning'>[m1] tied up with \a [handcuffed]!</span></A>"

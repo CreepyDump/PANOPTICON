@@ -14,10 +14,11 @@ window.onerror = function (msg, url, line, col, error) {
 		extra += !error ? '' : ' | error: ' + error;
 		extra += !navigator.userAgent ? '' : ' | user agent: ' + navigator.userAgent;
 		var debugLine = 'Error: ' + msg + ' | url: ' + url + ' | line: ' + line + extra;
-		window.location = '?_src_=chat&proc=debug&param[error]=' + escaper(debugLine);
+		window.location = '?_src_=chat&proc=debug&param[error]='+escaper(debugLine);
 	}
 	return true;
 };
+
 
 //Globals
 window.status = 'Output';

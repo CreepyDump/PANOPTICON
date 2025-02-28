@@ -88,6 +88,9 @@
 			return
 	if(!amt)
 		return
+	if(client && hud_used)
+		if(hud_used.stat_viewer)
+			hud_used.stat_viewer.update_from_owner()
 	if(index)
 		if(statindex[index])
 			return //we cannot make a new index

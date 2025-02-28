@@ -1,18 +1,30 @@
 /**
-  *This is the proc that handles the order of an item_attack.
-  *The order of procs called is:
-  *tool_act on the target. If it returns TRUE, the chain will be stopped.
-  *pre_attack() on src. If this returns TRUE, the chain will be stopped.
-  *attackby on the target. If it returns TRUE, the chain will be stopped.
-  *and lastly
-  *afterattack. The return value does not matter.
-  */
+ *This is the proc that handles the order of an item_attack.
+ *The order of procs called is:
+ *tool_act on the target. If it returns TRUE, the chain will be stopped.
+ *pre_attack() on src. If this returns TRUE, the chain will be stopped.
+ *attackby on the target. If it returns TRUE, the chain will be stopped.
+ *and lastly
+ *afterattack. The return value does not matter.
+ */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(user.check_arm_grabbed(user.active_hand_index))
-		to_chat(user, span_notice("I can't move my arm!"))
-		return
-	if(!user.has_hand_for_held_index(user.active_hand_index, TRUE)) //we obviously have a hadn, but we need to check for fingers/prosthetics
-		to_chat(user, span_warning("I can't move the fingers."))
+		var/mob/living/G = user.pulledby
+		var/mob/living/U = user
+		var/userskill = 1
+		if(U?.mind?.get_skill_level(/datum/skill/combat/wrestling))
+			userskill = ((U.mind.get_skill_level(/datum/skill/combat/wrestling) * 0.1) + 1)
+		var/grabberskill = 1
+		if(G?.mind?.get_skill_level(/datum/skill/combat/wrestling))
+			grabberskill = ((G.mind.get_skill_level(/datum/skill/combat/wrestling) * 0.1) + 1)
+		if(((U.STASTR + rand(1, 6)) * userskill) < ((G.STASTR + rand(1, 6)) * grabberskill))
+			to_chat(user, span_notice("I can't move my arm!"))
+			user.changeNext_move(CLICK_CD_GRABBING)
+			return
+		else
+			user.resist_grab()
+	if(!user.has_hand_for_held_index(user.active_hand_index, TRUE)) //we obviously have a hand, but we need to check for fingers/prosthetics
+		to_chat(user, "<span class='warning'>I can't move the fingers of my [user.active_hand_index == 1 ? "left" : "right"] hand.</span>")
 		return
 	if(!istype(src, /obj/item/grabbing))
 		if(HAS_TRAIT(user, TRAIT_CHUNKYFINGERS))
@@ -40,6 +52,9 @@
 		return TRUE
 	return FALSE //return TRUE to avoid calling attackby after this proc does stuff
 
+/atom/proc/pre_attack_right(atom/A, mob/living/user, params)
+	return FALSE
+
 // No comment
 /atom/proc/attackby(obj/item/W, mob/user, params)
 	if(user.used_intent.tranged)
@@ -50,6 +65,9 @@
 
 /obj/attackby(obj/item/I, mob/living/user, params)
 	return ..() || ((obj_flags & CAN_BE_HIT) && I.attack_obj(src, user))
+
+/turf/attackby(obj/item/I, mob/living/user, params)
+	return ..() || (max_integrity && I.attack_turf(src, user))
 
 /mob/living/attackby(obj/item/I, mob/living/user, params)
 	if(..())
@@ -64,6 +82,7 @@
 
 /mob/living
 	var/tempatarget = null
+	var/pegleg = 0			//Handles check & slowdown for peglegs. Fuckin' bootleg, literally, but hey it at least works.
 
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
@@ -73,7 +92,7 @@
 		return FALSE
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("I don't want to harm other living beings!"))
+		to_chat(user, "<span class='warning'>I don't want to harm other living beings!</span>")
 		return
 
 	M.lastattacker = user.real_name
@@ -135,7 +154,8 @@
 			if(!user.used_intent.swingdelay)
 				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 		return
-
+	if(!user.used_intent.noaa)
+		user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 	if(user.zone_selected == BODY_ZONE_PRECISE_R_INHAND)
 		var/offh = 0
 		var/obj/item/W = M.held_items[1]
@@ -144,8 +164,8 @@
 				M.throw_item(get_step(M,turn(M.dir, 90)), offhand = offh)
 			else
 				M.dropItemToGround(W)
-			M.visible_message(span_notice("[user] disarms [M]!"), \
-							span_boldwarning("I'm disarmed by [user]!"))
+			M.visible_message("<span class='notice'>[user] disarms [M]!</span>", \
+							"<span class='boldwarning'>I'm disarmed by [user]!</span>")
 			return
 
 	if(user.zone_selected == BODY_ZONE_PRECISE_L_INHAND)
@@ -156,8 +176,8 @@
 				M.throw_item(get_step(M,turn(M.dir, 270)), offhand = offh)
 			else
 				M.dropItemToGround(W)
-			M.visible_message(span_notice("[user] disarms [M]!"), \
-							span_boldwarning("I'm disarmed by [user]!"))
+			M.visible_message("<span class='notice'>[user] disarms [M]!</span>", \
+							"<span class='boldwarning'>I'm disarmed by [user]!</span>")
 			return
 
 	if(M.attacked_by(src, user))
@@ -195,25 +215,41 @@
 /atom/movable/proc/attacked_by()
 	return FALSE
 
-
+/*
+* I didnt code this but this is what ive deciphered.
+* Complex damage is the final calculation of damage
+* and the source of dulling for weapons.
+* This proc is also not overridable due to having no root.
+* -IP
+*/
 /proc/get_complex_damage(obj/item/I, mob/living/user, blade_dulling, turf/closed/mineral/T)
 	var/dullfactor = 1
 	if(!I?.force)
 		return 0
+	// newforce starts here and is the default amount of damage the item does.
 	var/newforce = I.force
 	testing("startforce [newforce]")
+	// If this weapon has no user and is somehow attacking you just return default.
 	if(!istype(user))
 		return newforce
 	var/cont = FALSE
 	var/used_str = user.STASTR
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
+		/*
+		* If you have a dominant hand which is assigned at
+		* character creation. You suffer a -1 Str if your
+		* no using the item in your dominant hand.
+		* Check living/carbon/carbon.dm for more info.
+		*/
 		if(C.domhand)
 			used_str = C.get_str_arms(C.used_hand)
+	//STR is +1 from STRONG stance and -1 from WEAK stance
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 		used_str++
 	if(istype(user.rmb_intent, /datum/rmb_intent/weak))
 		used_str--
+	//Your max STR is 20.
 	used_str = CLAMP(used_str, 1, 20)
 	if(used_str >= 11)
 		newforce = newforce + (newforce * ((used_str - 10) * 0.1))
@@ -224,9 +260,11 @@
 		var/effective = I.minstr
 		if(I.wielded)
 			effective = max(I.minstr / 2, 1)
+		//Strength influence is reduced to 30%
 		if(effective > user.STASTR)
 			newforce = max(newforce*0.3, 1)
 
+	//Blade Dulling Starts here.
 	switch(blade_dulling)
 		if(DULLING_CUT) //wooden that can't be attacked by clubs (trees, bushes, grass)
 			switch(user.used_intent.blade_class)
@@ -240,13 +278,10 @@
 						lumberjacker.mind.adjust_experience(/datum/skill/labor, (lumberjacker.STAINT*0.2))
 					cont = TRUE
 				if(BCLASS_CHOP)
-					var/mob/living/lumberjacker = user
-					var/lumberskill = lumberjacker.mind.get_skill_level(/datum/skill/labor)
 					if(!I.remove_bintegrity(1))
 						dullfactor = 0.2
 					else
-						dullfactor = 1.2 + (lumberskill * 0.15)
-						lumberjacker.mind.adjust_experience(/datum/skill/labor, (lumberjacker.STAINT*0.2))
+						dullfactor = 1.5
 					cont = TRUE
 			if(!cont)
 				return 0
@@ -265,11 +300,11 @@
 		if(DULLING_BASHCHOP) //structures that can be attacked by clubs also (doors fences etc)
 			switch(user.used_intent.blade_class)
 				if(BCLASS_CUT)
-					if(!I.remove_bintegrity(1))
+					if(!I.remove_bintegrity(1, user))
 						dullfactor = 0.8
 					cont = TRUE
 				if(BCLASS_CHOP)
-					if(!I.remove_bintegrity(1))
+					if(!I.remove_bintegrity(1, user))
 						dullfactor = 0.8
 					else
 						dullfactor = 1.5
@@ -282,24 +317,42 @@
 				if(BCLASS_PICK)
 					var/mob/living/miner = user
 					var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
-					dullfactor = 1.5 * (mineskill * 0.1)
+					dullfactor = 1.6 - (mineskill * 0.1)
 					cont = TRUE
 			if(!cont)
 				return 0
 		if(DULLING_PICK) //cannot deal damage if not a pick item. aka rock walls
-				    
+			if(!(user.mobility_flags & MOBILITY_STAND))
+				to_chat(user, span_warning("I need to stand up to get a proper swing."))
+				return 0
 			if(user.used_intent.blade_class != BCLASS_PICK)
 				return 0
 			var/mob/living/miner = user
+			//Mining Skill force multiplier.
 			var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
 			newforce = newforce * (8+(mineskill*1.5))
 			shake_camera(user, 1, 1)
 			miner.mind.adjust_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
-	
+	/*
+	* Ill be honest this final thing is extremely confusing.
+	* Newforce after being altered by strength stat is then
+	* multiplied by the damage factor of used_intent datum
+	* for exsample /datum/intent/mace/smash has a damfactor
+	* of 1.1. This value is then multiplied again by the
+	* dullfactor which ranges from 0.2 to 1.6 and is 1 by
+	* default. Picks are not effected by dullfactor if hitting
+	* a rock wall or anything with DULLING_PICK blade_dulling
+	* flag. This is alot.
+	*/
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
-		newforce = newforce * 0.5
+		newforce = newforce * round(user.client?.chargedprog / 100, 0.1)
+	// newforce = round(newforce, 1)
+	if(!(user.mobility_flags & MOBILITY_STAND))
+		newforce *= 0.5
+	// newforce is rounded upto the nearest intiger.
 	newforce = round(newforce,1)
+	//This is returning the maximum of the arguments meaning this is to prevent negative values.
 	newforce = max(newforce, 1)
 	testing("endforce [newforce]")
 	return newforce
@@ -322,13 +375,13 @@
 		if(user.rogfat_add(5))
 			user.visible_message(span_danger("[user] [verbu] [src] with [I]!"))
 		else
-			user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
+			user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
 			newforce = 1
 	else
 		user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
 	take_damage(newforce, I.damtype, I.d_type, 1)
 	if(newforce > 1)
-		I.take_damage(1, BRUTE, I.d_type)
+		I.take_damage(1, BRUTE, "blunt")
 	return TRUE
 
 /turf/proc/attacked_by(obj/item/I, mob/living/user)
@@ -349,63 +402,23 @@
 		if(user.rogfat_add(5))
 			user.visible_message(span_danger("[user] [verbu] [src] with [I]!"))
 		else
-			user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
+			user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
 			newforce = 1
 	else
-		user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
+		user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
 
 	take_damage(newforce, I.damtype, I.d_type, 1)
 	if(newforce > 1)
-		I.take_damage(1, BRUTE, I.d_type)
+		I.take_damage(1, BRUTE, "blunt")
 	return TRUE
 
 /mob/living/proc/simple_limb_hit(zone)
 	if(!zone)
 		return ""
-	switch(zone)
-		if(BODY_ZONE_HEAD)
-			return "body"
-		if(BODY_ZONE_CHEST)
-			return "body"
-		if(BODY_ZONE_R_LEG)
-			return "body"
-		if(BODY_ZONE_L_LEG)
-			return "body"
-		if(BODY_ZONE_R_ARM)
-			return "body"
-		if(BODY_ZONE_L_ARM)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_EYE)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_EYE)
-			return "body"
-		if(BODY_ZONE_PRECISE_NOSE)
-			return "body"
-		if(BODY_ZONE_PRECISE_MOUTH)
-			return "body"
-		if(BODY_ZONE_PRECISE_SKULL)
-			return "body"
-		if(BODY_ZONE_PRECISE_EARS)
-			return "body"
-		if(BODY_ZONE_PRECISE_NECK)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_HAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_HAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_FOOT)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_FOOT)
-			return "body"
-		if(BODY_ZONE_PRECISE_STOMACH)
-			return "body"
-		if(BODY_ZONE_PRECISE_GROIN)
-			return "body"
-		if(BODY_ZONE_PRECISE_R_INHAND)
-			return "body"
-		if(BODY_ZONE_PRECISE_L_INHAND)
-			return "body"
-	return "body"
+	if(istype(src, /mob/living/simple_animal))
+		return zone
+	else
+		return "body"
 
 /obj/item/proc/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
 	return
@@ -452,7 +465,7 @@
 
 // Proximity_flag is 1 if this afterattack was called on something adjacent, in your square, or on your person.
 // Click parameters is the params string from byond Click() code, see that documentation.
-/obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+/obj/item/proc/afterattack(atom/target, mob/living/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	if(force && !user.used_intent.tranged && !user.used_intent.tshield)
@@ -503,7 +516,8 @@
 	if(user in viewers(src, null))
 		attack_message = "[user] [message_verb] [src][message_hit_area] with [I]!"
 		attack_message_local = "[user] [message_verb] me[message_hit_area] with [I]!"
-	visible_message(span_danger("[attack_message][next_attack_msg.Join()]"),\
-		span_danger("[attack_message_local][next_attack_msg.Join()]"), null, COMBAT_MESSAGE_RANGE)
+	visible_message("<span class='danger'>[attack_message][next_attack_msg.Join()]</span>",\
+		"<span class='danger'>[attack_message_local][next_attack_msg.Join()]</span>", null, COMBAT_MESSAGE_RANGE)
 	next_attack_msg.Cut()
 	return 1
+

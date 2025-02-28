@@ -203,8 +203,9 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/grassland.wav'
-	neighborlay_override = "edge"
+	neighborlay = "edge"
 	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/open/floor/panopticon/road, /turf/open/floor/panopticon/darkgrass)
 
 /turf/open/floor/panopticon/road/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)

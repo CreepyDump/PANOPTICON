@@ -346,3 +346,129 @@
 	if(tag)
 		if(tag == "gen")
 			return list("shrink" = 0.4,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+
+/*
+/obj/item/flashlight/crank
+    name = "hand-crank flashlight"
+    desc = "A flashlight powered by a hand crank. Crank it to generate power for illumination."
+    icon = 'icons/obj/lighting.dmi' // Make sure to have appropriate icons
+    icon_state = "flashlight-crank"
+    item_state = "flashlight-crank"
+    
+    // Variables specific to the crank flashlight
+    var/charge_level = 0 // Current charge (0-100)
+    var/max_charge = 100 // Maximum charge capacity
+    var/charge_per_crank = 10 // How much charge each crank provides
+    var/charge_consumption_rate = 1 // How much charge is used per tick when on
+    var/cranking = FALSE // Whether the flashlight is currently being cranked
+    var/last_crank_time = 0 // For tracking crank cooldown
+    var/crank_cooldown = 10 // Time between cranks (in deciseconds)
+
+    // Override the default flashlight behavior
+    light_power = 0.8 // Slightly dimmer than standard flashlight
+    light_range = 4 // Default light range when powered
+
+/obj/item/flashlight/crank/New()
+    ..()
+    update_icon() // Update appearance based on initial state
+
+/obj/item/flashlight/crank/update_icon()
+    if(charge_level > 0 && on)
+        icon_state = "[initial(icon_state)]-on"
+    else
+        icon_state = initial(icon_state)
+    ..()
+
+// Crank verb - this is what players will use to charge the flashlight
+/obj/item/flashlight/crank/verb/crank()
+    set name = "Crank Flashlight"
+    set category = "Object"
+    set src in usr
+
+    if(!usr.canUseTopic(src, BE_CLOSE))
+        return
+
+    // Check if we're already cranking or on cooldown
+    if(cranking || (world.time - last_crank_time) < crank_cooldown)
+        usr << "<span class='warning'>You're cranking too fast!</span>"
+        return
+
+    // Start cranking
+    cranking = TRUE
+    last_crank_time = world.time
+    usr.visible_message(
+        "<span class='notice'>[usr] starts cranking [src].</span>",
+        "<span class='notice'>You start cranking [src].</span>"
+    )
+
+    // Cranking animation/sound (you'll need to implement these assets)
+    usr << sound('sound/items/crank_turn.ogg', volume=50) // Placeholder sound
+    animate(usr, pixel_y = usr.pixel_y + 2, time = 2)
+    animate(pixel_y = usr.pixel_y - 2, time = 2)
+
+    // Add charge
+    if(charge_level < max_charge)
+        charge_level = min(charge_level + charge_per_crank, max_charge)
+        usr << "<span class='notice'>[src]'s charge level increases to [charge_level]%.</span>"
+    else
+        usr << "<span class='warning'>[src] is already fully charged!</span>"
+
+    // Update appearance and light
+    update_brightness()
+    update_icon()
+
+    // Reset cranking state after a short delay
+    sleep(5)
+    cranking = FALSE
+
+// Override the toggle proc to check for charge
+/obj/item/flashlight/crank/toggle()
+    if(charge_level <= 0)
+        usr << "<span class='warning'>[src] has no charge! Crank it to generate power.</span>"
+        return
+    ..() // Call parent toggle if we have charge
+    update_brightness()
+    update_icon()
+
+// Process charge consumption when the light is on
+/obj/item/flashlight/crank/process()
+    if(!on)
+        return
+
+    if(charge_level > 0)
+        charge_level = max(charge_level - charge_consumption_rate, 0)
+        if(charge_level <= 0)
+            on = FALSE
+            usr << "<span class='warning'>[src] flickers and goes out!</span>"
+            update_brightness()
+            update_icon()
+    else
+        on = FALSE
+        update_brightness()
+        update_icon()
+
+// Examine override to show charge level
+/obj/item/flashlight/crank/examine(mob/user)
+    ..()
+    user << "<span class='notice'>The charge indicator shows [charge_level]% power remaining.</span>"
+
+// Attack self for quick toggle
+/obj/item/flashlight/crank/attack_self(mob/user)
+    toggle()
+    return ..()
+
+// Start processing when turned on
+/obj/item/flashlight/crank/turn_on()
+    if(charge_level > 0)
+        ..()
+        START_PROCESSING(SSobj, src)
+    else
+        on = FALSE
+        update_brightness()
+        update_icon()
+
+// Stop processing when turned off
+/obj/item/flashlight/crank/turn_off()
+    ..()
+    STOP_PROCESSING(SSobj, src)
+*/

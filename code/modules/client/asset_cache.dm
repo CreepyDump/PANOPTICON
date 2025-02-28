@@ -590,6 +590,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	verify = FALSE
 	assets = list(
 		"jquery.min.js"            = 'code/modules/goonchat/browserassets/js/jquery.min.js',
+		"jquery.jscrollpane.min.js"		 = 'code/modules/goonchat/browserassets/js/scrollbar/jquery.jscrollpane.min.js',
 	)
 
 /datum/asset/simple/goonchat_images
@@ -612,8 +613,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"json2.min.js"             = 'code/modules/goonchat/browserassets/js/json2.min.js',
 		"browserOutput.js"         = 'code/modules/goonchat/browserassets/js/browserOutput.js',
 		"browserOutput.css"	       = 'code/modules/goonchat/browserassets/css/browserOutput.css',
-		"scrollbar_chat.js"             = 'code/modules/goonchat/browserassets/js/scrollbar_chat.js',
-		"browserOutput_white.css"	      = 'code/modules/goonchat/browserassets/css/browserOutput.css',
+		"jquery.jscrollpane.css"		 = 'code/modules/goonchat/browserassets/js/scrollbar/jquery.jscrollpane.css',
 		"cursor.cur" = 'icons/effects/mousemice/cursor.cur'
 	)
 

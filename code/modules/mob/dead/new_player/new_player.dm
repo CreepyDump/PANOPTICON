@@ -658,7 +658,9 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	if(dna?.species)
 		dna.species.after_creation(src)
 	roll_stats()
-
+	if(client && hud_used)
+		if(hud_used.stat_viewer)
+			hud_used.stat_viewer.update_from_owner()
 /mob/dead/new_player/proc/transfer_character()
 	. = new_character
 	if(.)
