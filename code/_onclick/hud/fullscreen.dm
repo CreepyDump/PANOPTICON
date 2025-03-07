@@ -328,3 +328,7 @@
 /atom/movable/screen/fullscreen/maniac/New(client/C)
 	. = ..()
 	animate(src, alpha = 255, time = 30)
+
+/atom/movable/screen/fullscreen/proitvogaz
+	icon_state = "protivogaz"
+	alpha = 90

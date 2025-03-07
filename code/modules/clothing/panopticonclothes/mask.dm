@@ -8,6 +8,7 @@
 	item_state = "zelinskiy"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	equip_delay_self = 30
+	experimental_onhip = TRUE
 
 /obj/item/clothing/neck/panopticon/govnar
 	name = "Strafbat Balaclava"
@@ -108,3 +109,36 @@
 	flags_inv = HIDEEYES
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
 	body_parts_covered = EYES
+
+/obj/item/clothing/neck/panopticon/nightvision
+	name = "iron mask"
+	icon_state = "nv-mask"
+	item_state = "nv-mask"
+	max_integrity = 100
+	blocksound = PLATEHIT
+	icon = 'icons/panopticon/obj/clothes/masks.dmi'
+	mob_overlay_icon = 'icons/panopticon/obj/clothes/onmob/mask.dmi'	
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	resistance_flags = FIRE_PROOF
+	armor = list("blunt" = 100, "bullet" = 25, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+
+/obj/item/clothing/neck/panopticon/nightvision/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/neck/panopticon/nightvision/equipped(mob/living/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_MASK)
+		user.apply_status_effect(/datum/status_effect/lobotomized)
+
+/obj/item/clothing/neck/panopticon/nightvision/dropped(mob/living/carbon/human/user)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
+	user.remove_status_effect(/datum/status_effect/lobotomized)
