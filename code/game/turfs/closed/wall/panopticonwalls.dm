@@ -123,7 +123,7 @@
 	icon_state = "WALL"
 	smooth = SMOOTH_FALSE
 	blade_dulling = DULLING_BASHCHOP
-	max_integrity = 666666666666666666666666666666666666666
+	max_integrity = INFINITY
 	above_floor = /turf/open/floor/panopticon/hell/bruh
 	baseturfs = list(/turf/open/floor/panopticon/hell/bruh)
 	wallclimb = FALSE

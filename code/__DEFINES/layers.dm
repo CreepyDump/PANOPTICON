@@ -155,8 +155,6 @@
 #define MASSIVE_OBJ_LAYER 11
 #define POINT_LAYER 12
 
-#define CHAT_LAYER 13
-
 #define WARN_LAYER 12.2
 
 #define AREA_PLANE	12

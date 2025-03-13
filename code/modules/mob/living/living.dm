@@ -81,7 +81,7 @@
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
 
- 	create_reflection()
+	create_reflection()
 
 /mob/living/prepare_huds()
 	..()

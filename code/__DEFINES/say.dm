@@ -63,11 +63,6 @@
 #define SPAN_HELL "infernal"
 #define SPAN_BEAST "beast"
 
-//bitflag #defines for return value of the radio() proc.
-#define ITALICS 1
-#define REDUCE_RANGE 2
-#define NOPASS 4
-
 //Eavesdropping
 #define EAVESDROP_EXTRA_RANGE 1 //how much past the specified message_range does the message get starred, whispering only
 

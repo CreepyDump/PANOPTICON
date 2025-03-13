@@ -551,20 +551,21 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 
-	/area/rogue/under/town/caverogue
-		name = "miningcave (roguetown)"
-		ambientsounds = AMB_GENCAVE
-		ambientnight = AMB_GENCAVE
-		spookysounds = SPOOKY_CAVE
-		spookynight = SPOOKY_CAVE
-		droning_sound = 'sound/music/area/caves.ogg'
-		droning_sound_dusk = null
-		droning_sound_night = null
-		converted_type = /area/rogue/outdoors/exposed/under/caves
-	/area/rogue/outdoors/exposed/under/caves
-		droning_sound = 'sound/music/area/caves.ogg'
-		droning_sound_dusk = null
-		droning_sound_night = null
+/area/rogue/under/town/caverogue
+	name = "miningcave (roguetown)"
+	ambientsounds = AMB_GENCAVE
+	ambientnight = AMB_GENCAVE
+	spookysounds = SPOOKY_CAVE
+	spookynight = SPOOKY_CAVE
+	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/rogue/outdoors/exposed/under/caves
+
+/area/rogue/outdoors/exposed/under/caves
+	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
 
 /area/rogue/under/town/basement
 	name = "basement"
@@ -577,12 +578,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 	soundenv = 5
 	converted_type = /area/rogue/outdoors/exposed/under/basement
+
 /area/rogue/outdoors/exposed/under/basement
 	droning_sound = 'sound/music/area/town_indoors.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
-// underworld
 /area/rogue/underworld
 	name = "underworld"
 	icon_state = "pink"

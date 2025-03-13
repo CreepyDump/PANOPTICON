@@ -733,10 +733,6 @@
 GLOBAL_LIST_EMPTY(name_to_chat_color)
 GLOBAL_LIST_EMPTY(name_to_chat_color_darkened)
 
-#define SORT_FIRST_INDEX(list) (list[1])
-#define SORT_COMPARE_DIRECTLY(thing) (thing)
-#define SORT_VAR_NO_TYPE(varname) var/varname
-
 //Scales a range (i.e 1,100) and picks an item from the list based on your passed value
 //i.e in a list with length 4, a 25 in the 1-100 range will give you the 2nd item
 //This assumes your ranges start with 1, I am not good at math and can't do linear scaling

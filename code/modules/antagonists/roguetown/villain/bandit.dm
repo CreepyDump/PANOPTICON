@@ -136,14 +136,10 @@
 		to_chat(world, "[the_name] was a bandit.")
 	return
 
-	var/traitorwin = TRUE
-
 	var/count = 0
-	if(objectives.len)//If the traitor had no objectives, don't need to process this.
+	if(objectives.len)
 		for(var/datum/objective/objective in objectives)
 			objective.update_explanation_text()
-			if(!objective.check_completion())
-				traitorwin = FALSE
 			count += objective.triumph_count
 
 	if(!count)

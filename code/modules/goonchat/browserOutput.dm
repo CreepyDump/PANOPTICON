@@ -6,7 +6,6 @@ For the main html chat area
 GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of icons for the browser output
 
 #define MAX_COOKIE_LENGTH 5
-#define SPAM_TRIGGER_AUTOMUTE 10
 
 /client/New()
 	chatOutput = new (src)
@@ -307,4 +306,3 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 
 #undef MAX_COOKIE_LENGTH
-#undef SPAM_TRIGGER_AUTOMUTE

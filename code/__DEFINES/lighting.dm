@@ -1,7 +1,3 @@
-///Object doesn't use any of the light systems. Should be changed to add a light source to the object.
-#define NO_LIGHT_SUPPORT 0
-///Light made with the lighting datums, applying a matrix.
-#define STATIC_LIGHT 1
 ///Light made by masking the lighting darkness plane.
 #define MOVABLE_LIGHT 2
 
