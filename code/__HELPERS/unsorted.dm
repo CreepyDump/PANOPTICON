@@ -1126,9 +1126,6 @@ proc/pick_closest_path(value, list/matches = get_fancy_list_of_atom_types())
 
 //gives us the stack trace from CRASH() without ending the current proc.
 /proc/stack_trace(msg)
-	CRASH(msg)	
-
-/datum/proc/stack_trace(msg)
 	CRASH(msg)
 
 GLOBAL_REAL_VAR(list/stack_trace_storage)
