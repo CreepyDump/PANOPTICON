@@ -773,196 +773,652 @@ a.popt {text-decoration: none;}
 ******************************************/
 
 /* MOTD */
-.motd {color: #c9c1ba;	font-family: Crimson Text, TrueType;}
-.motd h1, .motd h2, .motd h3, .motd h4, .motd h5, .motd h6 {color: #c9c1ba;	text-decoration: underline;}
-.motd a, .motd a:link, .motd a:visited, .motd a:active, .motd a:hover {color: #c9c1ba;}
+.motd {
+    color: #d3c5af; /* Lighter Text for MOTD */
+    font-family: Crimson Text, TrueType;
+}
+
+.motd h1, .motd h2, .motd h3, .motd h4, .motd h5, .motd h6 {
+    color: #d3c5af;
+    text-decoration: underline;
+}
+
+.motd a, .motd a:link, .motd a:visited, .motd a:active, .motd a:hover {
+    color: #d3c5af;
+}
 
 /* ADD HERE FOR BOLD */
-.bold, .name, .prefix, .ooc, .looc, .adminooc, .admin, .medal, .yell {font-weight: bold;}
+.bold, .name, .prefix, .ooc, .looc, .adminooc, .admin, .medal, .yell {
+    font-weight: bold;
+}
 
 /* ADD HERE FOR ITALIC */
-.italic, .italics, .emote {font-style: italic;}
+.italic, .italics, .emote {
+    font-style: italic;
+}
 
 /* OUTPUT COLORS */
-.highlight {background: yellow;}
+.highlight {
+    background: #f7e98b; /* Soft yellow highlight */
+}
 
-h1, h2, h3, h4, h5, h6	{color: #c9c1ba;font-family: Crimson Text, TrueType;}
-h1.alert, h2.alert	{color: #c9c1ba;font-family: Crimson Text, TrueType;}
+h1, h2, h3, h4, h5, h6 {
+    color: #d3c5af;
+    font-family: Crimson Text, TrueType;
+}
 
-em						{font-style: normal;	font-weight: bold;}
+h1.alert, h2.alert {
+    color: #d3c5af;
+    font-family: Crimson Text, TrueType;
+}
 
-.ooc					{color: #9494b5;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
-.adminobserverooc		{color: #0099cc;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
-.adminooc				{color: #3d5bc3;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
+em {
+    font-style: normal;
+    font-weight: bold;
+}
 
-.adminsay				{color: #ff4500;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
-.admin					{color: #5975da;	font-weight: bold; animation: messageFadeIn 0.2s linear;}
+.ooc {
+    color: #a8a8c7; /* Slightly more vibrant OOC */
+    font-weight: bold;
+    animation: messageFadeIn 0.2s linear;
+}
 
-.name					{					font-weight: bold;}
+.adminobserverooc {
+    color: #70c5e8; /* Cyan Admin OOC */
+    font-weight: bold;
+    animation: messageFadeIn 0.2s linear;
+}
 
-.say					{font-family: Crimson Text;	animation: messageFadeIn 0.2s linear;}
-.deadsay				{color: #e2c1ff;   animation: messageFadeIn 0.2s linear;}
-.binarysay				{color: #20c20e;	background-color: #000000;	display: block; animation: messageFadeIn 0.3s ease-in;}
-.binarysay a			{color: #00ff00; animation: messageFadeIn 0.3s ease-in;}
-.binarysay a:active, .binarysay a:visited {color: #88ff88;}
-.radio					{color: #1ecc43;}
-.sciradio				{color: #c68cfa;}
-.comradio				{color: #5177ff;}
-.secradio				{color: #dd3535;}
-.medradio				{color: #57b8f0;}
-.engradio				{color: #f37746;}
-.suppradio				{color: #b88646;}
-.servradio				{color: #6ca729;}
-.syndradio				{color: #8f4a4b;}
-.centcomradio			{color: #2681a5;}
-.aiprivradio			{color: #d65d95;}
-.redteamradio			{color: #ff4444;}
-.blueteamradio			{color: #3434fd;}
+.adminooc {
+    color: #9db6f0; /* Lighter blue Admin OOC */
+    font-weight: bold;
+    animation: messageFadeIn 0.2s linear;
+}
 
-.yell					{					font-weight: bold; animation: messageFadeIn 0.3s ease-in;}
+.adminsay {
+    color: #f08a39; /* Orange Admin Say */
+    font-weight: bold;
+    animation: messageFadeIn 0.2s linear;
+}
 
-.alert					{color: #d82020;}
+.admin {
+    color: #92a9f0; /* Light purple/blue Admin */
+    font-weight: bold;
+    animation: messageFadeIn 0.2s linear;
+}
 
-.emote					{color: #b98c59;	font-style: italic; animation: messageFadeIn 0.3s ease-in;}
+.name {
+    font-weight: bold;
+}
 
-.crit					{color: #fd5b5b; font-weight: bold; text-shadow: 0px 0px 2px rgba(167, 43, 43, 0.4);}
+.say {
+    font-family: Crimson Text;
+    animation: messageFadeIn 0.2s linear;
+}
+
+.deadsay {
+    color: #eec6ff; /* Light Purple Dead Say */
+    animation: messageFadeIn 0.2s linear;
+}
+
+.binarysay {
+    color: #00ff00; /* Green Binary */
+    background-color: #000000;
+    display: block;
+    animation: messageFadeIn 0.3s ease-in;
+}
+
+.binarysay a {
+    color: #90ee90; /* Lighter Green for Binary links */
+    animation: messageFadeIn 0.3s ease-in;
+}
+
+.binarysay a:active, .binarysay a:visited {
+    color: #66d966; /* Darker Green for visited Binary links */
+}
+
+.radio {
+    color: #71dd8e; /* Light Green Radio */
+}
+
+.sciradio {
+    color: #e9a7f0; /* Purple Radio */
+}
+
+.comradio {
+    color: #92b0ff; /* Light Blue Radio */
+}
+
+.secradio {
+    color: #ff8282; /* Red Radio */
+}
+
+.medradio {
+    color: #80daff; /* Light Cyan Radio */
+}
+
+.engradio {
+    color: #f7a77a; /* Orange-Brown Radio */
+}
+
+.suppradio {
+    color: #d6b27a; /* Beige Radio */
+}
+
+.servradio {
+    color: #96c96c; /* Green Radio */
+}
+
+.syndradio {
+    color: #c08484; /* Dark Red Radio */
+}
+
+.centcomradio {
+    color: #5ab4d0; /* Teal Radio */
+}
+
+.aiprivradio {
+    color: #f288c6; /* Pink Radio */
+}
+
+.redteamradio {
+    color: #ff7f7f; /* Light Red Radio */
+}
+
+.blueteamradio {
+    color: #7474ff; /* Light Blue Radio */
+}
+
+.yell {
+    font-weight: bold;
+    animation: messageFadeIn 0.3s ease-in;
+}
+
+.alert {
+    color: #f76c6c; /* Soft Red Alert */
+}
+
+.emote {
+    color: #d3a974; /* Brown Emote */
+    font-style: italic;
+    animation: messageFadeIn 0.3s ease-in;
+}
+
+.crit {
+    color: #ff8080; /* Light Red Crit */
+    font-weight: bold;
+    text-shadow: 0px 0px 3px rgba(255, 0, 0, 0.5);
+}
+
 .userdanger {
-	color: #FF6D6D;
-	text-shadow: 0 0 6px #c51e1e;
-	font-size: 110%;
-	animation: pain 2500ms infinite;
-  }
-  
-  @keyframes pain {
-	0% {
-	  color: #FF6D6D;
-	  text-shadow: 0 0 4px #c51e1e;
-	}
-  
-	50% {
-	  color: #941111;
-	  text-shadow: 0 0 8px #660808;
-	}
-  
-	100% {
-	  color: #FF0000;
-	  text-shadow: 0 0 4px #b9322b;
-	}
-  }
+    color: #ff7373; /* Light Red User Danger */
+    text-shadow: 0 0 6px #c51e1e;
+    font-size: 110%;
+    animation: pain 2500ms infinite;
+}
 
-.danger					{color: #c51e1e;	font-weight: bold;}
-.warning				{color: #c51e1e;	font-style: italic; font-size: 85%;} 
-.alertwarning			{color: #FF0000;	font-weight: bold}
-.boldwarning			{color: #b9322b;	font-weight: bold}
-.announce				{color: #c51e1e;	font-weight: bold;}
-.boldannounce			{color: #c51e1e;	font-weight: bold;}
-.greenannounce			{color: #059223;	font-weight: bold;}
-.rose					{color: #ff5050;}
-.info					{color: #03b840;						font-size: 85%;}
-.notice					{color: #7996ff;}
-.boldnotice				{color: #7996ff;	font-weight: bold;}
-.hear					{color: #dab885;	font-style: italic; text-shadow: #d68148;}
-.adminnotice			{color: #6685f5;}
-.adminhelp				{color: #ffa135;	font-weight: bold;}
-.unconscious			{color: #dfdfcf;	font-weight: bold;}
-.suicide				{color: #ff5050;	font-style: italic;}
-.green					{color: #80b077;}
-.red					{color: #b84d47}
-.blue					{color: #6a8cb7}
-.purple					{color: #967aaf;}
-.nicegreen				{color: #9bccd0;}
+@keyframes pain {
+    0% {
+        color: #ff7373;
+        text-shadow: 0 0 4px #c51e1e;
+    }
 
-.cult					{color: #aa1c1c;}
-.cultitalic				{color: #aa1c1c;	font-style: italic;}
-.cultbold				{color: #aa1c1c;	font-style: italic;	font-weight: bold;}
-.cultboldtalic			{color: #aa1c1c;	font-weight: bold;	font-size: 185%;}
+    50% {
+        color: #cc4f4f;
+        text-shadow: 0 0 8px #660808;
+    }
 
-.cultlarge				{color: #aa1c1c;	font-weight: bold;	font-size: 185%;}
-.narsie					{color: #aa1c1c;	font-weight: bold;	font-size: 925%;}
-.narsiesmall			{color: #aa1c1c;	font-weight: bold;	font-size: 370%;}
-.colossus				{color: #7F282A;	font-size: 310%;}
-.hierophant				{color: #b441ee;	font-weight: bold;	font-style: italic;}
-.hierophant_warning		{color: #c56bf1;	font-style: italic;}
-.holoparasite			{color: #88809c;}
+    100% {
+        color: #ff0000;
+        text-shadow: 0 0 4px #b9322b;
+    }
+}
 
-.revennotice			{color: #1d2953;}
-.revenboldnotice		{color: #1d2953;	font-weight: bold;}
-.revenbignotice			{color: #1d2953;	font-weight: bold;	font-size: 185%;}
-.revenminor				{color: #823abb}
-.revenwarning			{color: #760fbb;	font-style: italic;}
-.revendanger			{color: #760fbb;	font-weight: bold;	font-size: 185%;}
+.danger {
+    color: #f55555; /* Lighter Red Danger */
+    font-weight: bold;
+}
 
-.deconversion_message	{color: #a947ff;	font-size: 185%;	font-style: italic;}
+.warning {
+    color: #f55555; /* Lighter Red Warning */
+    font-style: italic;
+    font-size: 85%;
+}
 
-.ghostalert				{color: #6600ff;	font-style: italic;	font-weight: bold;}
+.alertwarning {
+    color: #ff5555; /*  Red Alert Warning*/
+    font-weight: bold;
+}
 
-.alien					{color: #855d85;}
-.noticealien			{color: #059223;}
-.alertalien				{color: #059223;	font-weight: bold;}
-.changeling				{color: #059223;	font-style: italic;}
-.alertsyndie			{color: #FF0000;	font-size: 185%;	font-weight: bold;}
+.boldwarning {
+    color: #d64646; /* Darker Red Bold Warning */
+    font-weight: bold;
+}
 
-.spider					{color: #8800ff;	font-weight: bold;	font-size: 185%;}
+.announce {
+    color: #f55555; /* Lighter Red Announce */
+    font-weight: bold;
+}
 
-.interface				{color: #750e75;}
+.boldannounce {
+    color: #f55555; /* Lighter Red Bold Announce */
+    font-weight: bold;
+}
 
-.sans					{font-family: "Comic Sans MS", cursive, sans-serif;}
-.papyrus				{font-family: "Papyrus", cursive, sans-serif;}
-.robot					{font-family: "Courier New", cursive, sans-serif;}
+.greenannounce {
+    color: #75d690; /* Light Green Announce */
+    font-weight: bold;
+}
 
-.command_headset		{font-weight: bold;	font-size: 160%;}
-.small					{font-size: 75%;}
-.big					{font-size: 120%;}
-.reallybig				{font-size: 180%;}
-.extremelybig			{font-size: 220%;}
-.greentext				{color: #3ac583;	font-size: 110%;}
-.redtext				{color: #c73838;	font-size: 110%;}
-.clown					{color: #ff70c1;	font-size: 160%;	font-family: "Comic Sans MS", cursive, sans-serif;	font-weight: bold;}
-.his_grace				{color: #15D512;	font-family: "Courier New", cursive, sans-serif;	font-style: italic;}
-.hypnophrase			{color: #202020;	font-weight: bold;	animation: hypnocolor 1500ms infinite; animation-direction: alternate;}
+.rose {
+    color: #ff9797; /* Light Pink Rose */
+}
+
+.info {
+    color: #62cc87; /* Light Green Info */
+    font-size: 85%;
+}
+
+.notice {
+    color: #96b2ff; /* Light Blue Notice */
+}
+
+.boldnotice {
+    color: #96b2ff; /* Light Blue Bold Notice */
+    font-weight: bold;
+}
+
+.hear {
+    color: #e8c193; /* Light Brown Hear */
+    font-style: italic;
+    text-shadow: #d68148;
+}
+
+.adminnotice {
+    color: #89a4ff; /* Light Blue Admin Notice */
+}
+
+.adminhelp {
+    color: #ffbc66; /* Orange Admin Help */
+    font-weight: bold;
+}
+
+.unconscious {
+    color: #e8e8d2; /* Light Grey Unconscious */
+    font-weight: bold;
+}
+
+.suicide {
+    color: #ff9797; /* Light Pink Suicide */
+    font-style: italic;
+}
+
+.green {
+    color: #a1d498; /* Light Green */
+}
+
+.red {
+    color: #d67e77; /* Light Red */
+}
+
+.blue {
+    color: #92abc7; /* Light Blue */
+}
+
+.purple {
+    color: #c0a8cc; /* Light Purple */
+}
+
+.nicegreen {
+    color: #c6e0e7; /* Light Cyan */
+}
+
+.cult {
+    color: #e13d3d; /* Dark Red Cult */
+}
+
+.cultitalic {
+    color: #e13d3d;
+    font-style: italic;
+}
+
+.cultbold {
+    color: #e13d3d;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.cultboldtalic {
+    color: #e13d3d;
+    font-weight: bold;
+    font-size: 185%;
+}
+
+.cultlarge {
+    color: #e13d3d;
+    font-weight: bold;
+    font-size: 185%;
+}
+
+.narsie {
+    color: #e13d3d; /* Dark Red Narsie */
+    font-weight: bold;
+    font-size: 925%;
+}
+
+.narsiesmall {
+    color: #e13d3d; /* Dark Red Narsie */
+    font-weight: bold;
+    font-size: 370%;
+}
+
+.colossus {
+    color: #a84e50; /* Darker Red Colossus */
+    font-size: 310%;
+}
+
+.hierophant {
+    color: #ce82f5; /* Light Purple Hierophant */
+    font-weight: bold;
+    font-style: italic;
+}
+
+.hierophant_warning {
+    color: #da96f7; /* Lighter Purple Hierophant Warning */
+    font-style: italic;
+}
+
+.holoparasite {
+    color: #b3acc3; /* Light Purple-Grey Holoparasite */
+}
+
+.revennotice {
+    color: #5463a8; /* Dark Blue Reven Notice */
+}
+
+.revenboldnotice {
+    color: #5463a8;
+    font-weight: bold;
+}
+
+.revenbignotice {
+    color: #5463a8;
+    font-weight: bold;
+    font-size: 185%;
+}
+
+.revenminor {
+    color: #b178d9; /* Light Purple Reven Minor */
+}
+
+.revenwarning {
+    color: #b861f7; /* Light Purple Reven Warning */
+    font-style: italic;
+}
+
+.revendanger {
+    color: #b861f7; /* Light Purple Reven Danger */
+    font-weight: bold;
+    font-size: 185%;
+}
+
+.deconversion_message {
+    color: #d19aff; /* Light Purple Deconversion */
+    font-size: 185%;
+    font-style: italic;
+}
+
+.ghostalert {
+    color: #ba7bff; /* Light Purple Ghost Alert */
+    font-style: italic;
+    font-weight: bold;
+}
+
+.alien {
+    color: #b299b2; /* Light Purple Alien */
+}
+
+.noticealien {
+    color: #75d690; /* Light Green Alien Notice */
+}
+
+.alertalien {
+    color: #75d690; /* Light Green Alien Alert */
+    font-weight: bold;
+}
+
+.changeling {
+    color: #75d690; /* Light Green Changeling */
+    font-style: italic;
+}
+
+.alertsyndie {
+    color: #ff5555; /* Lighter Red Alert Syndie */
+    font-size: 185%;
+    font-weight: bold;
+}
+
+.spider {
+    color: #ca89ff; /* Light Purple Spider */
+    font-weight: bold;
+    font-size: 185%;
+}
+
+.interface {
+    color: #ae75ae; /* Light Purple Interface */
+}
+
+.sans {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.papyrus {
+    font-family: "Papyrus", cursive, sans-serif;
+}
+
+.robot {
+    font-family: "Courier New", cursive, sans-serif;
+}
+
+.command_headset {
+    font-weight: bold;
+    font-size: 160%;
+}
+
+.small {
+    font-size: 75%;
+}
+
+.big {
+    font-size: 120%;
+}
+
+.reallybig {
+    font-size: 180%;
+}
+
+.extremelybig {
+    font-size: 220%;
+}
+
+.greentext {
+    color: #7ed6b1; /* Light Green Greentext */
+    font-size: 110%;
+}
+
+.redtext {
+    color: #f06464; /* Light Red Redtext */
+    font-size: 110%;
+}
+
+.clown {
+    color: #ffb0e2; /* Light Pink Clown */
+    font-size: 160%;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: bold;
+}
+
+.his_grace {
+    color: #5aff5a; /* Light Green His Grace */
+    font-family: "Courier New", cursive, sans-serif;
+    font-style: italic;
+}
+
+.hypnophrase {
+    color: #4d4d4d; /* Dark Grey Hypnophrase */
+    font-weight: bold;
+    animation: hypnocolor 1500ms infinite;
+    animation-direction: alternate;
+}
+
 @keyframes hypnocolor {
-	0%		{color: #202020;}
-	25%		{color: #4b02ac;}
-	50%		{color: #9f41f1;}
-	75%		{color: #541c9c;}
-	100%	{color: #7adbf3;}
+    0% {
+        color: #4d4d4d;
+    }
+
+    25% {
+        color: #7f47c8;
+    }
+
+    50% {
+        color: #c08cf8;
+    }
+
+    75% {
+        color: #9765d6;
+    }
+
+    100% {
+        color: #ace2f7;
+    }
 }
 
-.phobia			{color: #dd0000;	font-weight: bold;	animation: phobia 750ms infinite;}
+.phobia {
+    color: #f75a5a; /* Red Phobia */
+    font-weight: bold;
+    animation: phobia 750ms infinite;
+}
+
 @keyframes phobia {
-	0%		{color: #f75a5a;}
-	50%		{color: #dd0000;}
-	100%	{color: #f75a5a;}
+    0% {
+        color: #ff9999;
+    }
+
+    50% {
+        color: #f75a5a;
+    }
+
+    100% {
+        color: #ff9999;
+    }
 }
 
-.icon 					{height: 1em;	width: auto;}
+.icon {
+    height: 1em;
+    width: auto;
+}
 
-.memo					{color: #638500;	text-align: center;}
-.memoedit				{text-align: center;	font-size: 125%;}
-.abductor				{color: #c204c2;	font-style: italic;}
-.mind_control			{color: #df3da9;	font-size: 100%;	font-weight: bold;	font-style: italic;}
-.slime					{color: #00CED1;}
-.drone					{color: #848482;}
-.monkey					{color: #975032;}
-.swarmer				{color: #2C75FF;}
-.resonate				{color: #298F85;}
+.memo {
+    color: #90bd45; /* Light Green Memo */
+    text-align: center;
+}
 
-.monkeyhive				{color: #a56408;}
-.monkeylead				{color: #af6805;	font-size: 80%;}
+.memoedit {
+    text-align: center;
+    font-size: 125%;
+}
 
-.connectionClosed, .fatalError {background: red;	color: white;	padding: 5px;}
-.connectionClosed.restored {background: green;}
-.internal.boldnshit {color: #3d5bc3;	font-weight: bold;}
+.abductor {
+    color: #da67da; /* Light Pink Abductor */
+    font-style: italic;
+}
+
+.mind_control {
+    color: #f071cc; /* Light Pink Mind Control */
+    font-size: 100%;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.slime {
+    color: #66d3d3; /* Light Cyan Slime */
+}
+
+.drone {
+    color: #a2a2a0; /* Light Grey Drone */
+}
+
+.monkey {
+    color: #c98059; /* Light Brown Monkey */
+}
+
+.swarmer {
+    color: #6bb0ff; /* Light Blue Swarmer */
+}
+
+.resonate {
+    color: #6ac1b7; /* Light Teal Resonate */
+}
+
+.monkeyhive {
+    color: #d9903d; /* Light Orange Monkeyhive */
+}
+
+.monkeylead {
+    color: #de9736; /* Light Orange Monkeylead */
+    font-size: 80%;
+}
+
+.connectionClosed, .fatalError {
+    background: #ff5555; /* Light Red Connection Closed/Fatal Error */
+    color: white;
+    padding: 5px;
+}
+
+.connectionClosed.restored {
+    background: #7ed698; /* Light Green Connection Restored */
+}
+
+.internal.boldnshit {
+    color: #92a9f0; /* Light Purple/Blue Internal */
+    font-weight: bold;
+}
 
 /*PANOPTICON*/
-.shiten				{color: #55441f;	font-weight: bold; font-style: italic;}
-.pissen				{color: #b4bd37;	font-style: italic;}
-.dead					{color: #b280df;}
-.bloody					{color: #cc0f0f;}
-.artery					{color: #9B5455;}
-.infection				{color: #77c72b;}
-.necrosis				{color: #558d20;}
-.bone					{color: #e3dac9;}
+.shiten {
+    color: #8f784f; /* Brown Shiten */
+    font-weight: bold;
+    font-style: italic;
+}
+
+.pissen {
+    color: #e2e874; /* Light Yellow Pissen */
+    font-style: italic;
+}
+
+.dead {
+    color: #d9b1f4; /* Light Purple Dead */
+}
+
+.bloody {
+    color: #e64040; /* Light Red Bloody */
+}
+
+.artery {
+    color: #c07e7e; /* Light Red-Brown Artery */
+}
+
+.infection {
+    color: #a5e052; /* Light Green Infection */
+}
+
+.necrosis {
+    color: #90d05c; /* Light Green Necrosis */
+}
+
+.bone {
+    color: #f0e6d6; /* Light Beige Bone */
+}
 
 
 /* HELPER CLASSES */

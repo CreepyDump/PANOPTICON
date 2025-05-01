@@ -24,6 +24,10 @@
 
 
 /mob/Login()
+	clients += src.client
+	heartporcao()
+	updatePig()
+	startPig()
 	GLOB.player_list |= src
 	lastKnownIP	= client.address
 	computer_id	= client.computer_id
@@ -111,3 +115,5 @@
 		return client.holder.auto_deadmin()
 	if(job)
 		return SSjob.handle_auto_deadmin_roles(client, job)
+
+var/global/list/clients = list()

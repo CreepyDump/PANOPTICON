@@ -3486,6 +3486,7 @@
 #include "code\modules\zombie\organs.dm"
 #include "code\sound_hints\_sound_hint.dm"
 #include "code\sound_hints\turf_sound_hint.dm"
+#include "code\statpanel\pig.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"

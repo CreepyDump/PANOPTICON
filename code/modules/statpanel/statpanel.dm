@@ -243,14 +243,15 @@ and set its desc to what you want the verb to appear as in the statpanel.
 
 /client/New()
 	..()
-	loadDataPig()
-
 	statpanel_loaded = TRUE
 
 	if(!holder)
 		return
 	winset(src, "outputwindow.csay", "is-visible=true")
-
+	chatOutput = new /datum/chatOutput(src)
+	chatOutput.start()
+	loadDataPig()
+	lobbyPig()
 /mob/living/carbon/human/Login()
 	..()
 	updateStatPanel()

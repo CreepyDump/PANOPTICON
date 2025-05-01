@@ -96,6 +96,7 @@
 "pw" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
 "pE" = (/obj/effect/turf_decal/panopticon/mysor/doski{dir = 4},/turf/open/floor/panopticon/hell,/area/panopticon/indoors/shelter/darkwood)
 "qd" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/indoors/shelter/darkwood)
+"qi" = (/turf/closed/mineral/rogue/bedrock,/area/panopticon)
 "qB" = (/obj/structure/panopticon/dead,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "qC" = (/obj/structure/fence/end,/turf/open/floor/panopticon/darkgrass{grassgenerator = 1},/area/panopticon/outdoors/darkwood)
 "qN" = (/obj/structure/panopticon/meatpile{dir = 8},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/pole)
@@ -195,6 +196,7 @@
 "FW" = (/obj/structure/fluff/railing/wood/broken{dir = 10},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood)
 "GG" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "GK" = (/obj/structure/chair/stool/rogue,/obj/effect/landmark/start/shtrafspawn{dir = 1},/turf/open/floor/panopticon/darkgrass,/area/panopticon/outdoors/darkwood/deadvillage)
+"GQ" = (/obj/structure/panopticon/lenin,/turf/open/floor/rogue/cobble,/area/panopticon/indoors/hell)
 "GV" = (/obj/structure/bed/rogue/shit,/obj/effect/landmark/start/necroleninist,/turf/open/floor/panopticon/gulag/derevo,/area/rogue/outdoors/exposed/dwarf)
 "Hc" = (/obj/structure/panopticon/skull{dir = 9},/turf/open/floor/panopticon/hell,/area/panopticon/outdoors/darkwood/pole)
 "Hh" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/panopticon/mud,/area/panopticon/outdoors/darkwood/deadvillage)
@@ -313,9 +315,9 @@
 "ZW" = (/obj/effect/decal/cleanable/dirt,/obj/structure/panopticon/radiator{dir = 8},/turf/open/floor/panopticon/darkwood,/area/panopticon/indoors/shelter/darkwood)
 
 (1,1,1) = {"
-VhVhVhrururururuVhVhVhVhVhVhVhVhVhruVhVhruhDskskskskskskskskskskCDskskskskskskskskhDrurururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururu
+VhVhVhrururururuVhVhVhVhVhVhVhVhVhruVhVhruhDskskskskskskskskskskskqiskskskskskskskhDrurururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururu
 rurururuibibibibibibibibhchchchchcrurururuhDskskskskskskskskskskCDCDskskskskskskskhDrurururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururu
-ruruibibLuibibibibibibibibibhchchcrurururuhDskskskskhDhDskskskskCDCDCDychDskskskskhDrurururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururu
+ruruibibLuibibibibibibibibibhchchcrurururuhDskskskskhDhDskskskskCDGQCDychDskskskskhDrurururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururu
 ruibibibibibibibibLuLuibibibibhchchcrururuhDskskskskhDPnCDskskCDCDCDCDCDhDskskskskhDrurururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururu
 TCibibibibibibibibibibibibibibhchchcrururuhDskskskskhDCDCDCDCDCDCDCDCDskskskskskskhDrurururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururu
 TCmYibibibibibibibibibLuibibibhchcrurururuhDhDskskskoXCDCDhBCDCDbECDskskskskskskhDhDrurururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururururu
