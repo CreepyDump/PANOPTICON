@@ -399,3 +399,17 @@
 	desc = ""
 	icon = 'icons/panopticon/obj/town.dmi'
 	icon_state = "grid"
+
+
+/obj/structure/curtain/visyolky
+	name = "curtain"
+	desc = ""
+	icon = 'icons/panopticon/obj/curtain.dmi'
+	icon_state = "visyolky-open"
+	icon_type = "visyolky"
+	color = "#ffffff"
+	alpha = 255
+	layer = SIGN_LAYER
+	anchored = TRUE
+	opacity = 0
+	density = FALSE

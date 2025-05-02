@@ -92,8 +92,9 @@
 	var/newHTML = ""
 	newHTML += "<span class='smallstat'>Prefs Text</span>$"
 	return newHTML
-
+/*
 /mob/verb/ExecuteLife()
 	for(var/client/C in clients)
 		to_chat(C, "HELL YEAH!")
 	to_chat(src.client, "THANKS COMICAO!")
+*/

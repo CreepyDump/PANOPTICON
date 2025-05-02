@@ -472,3 +472,45 @@
 			if(".357")
 				new /obj/item/ammo_casing/a357(src.loc)
 				step = 0
+
+/obj/structure/panopticon/automat/food_canner
+    name = "JRA"
+    desc = "A machine that packages processed food into cans for long-term storage."
+    icon = 'icons/panopticon/obj/town.dmi'
+    icon_state = "stanok3"
+
+    density = TRUE
+    anchored = TRUE
+    var/operating = FALSE
+    var/can_capacity = 10
+    var/cans_stored = 0
+
+/obj/structure/panopticon/automat/food_canner/attackby(obj/item/O, mob/user)
+    if(istype(O, /obj/item/reagent_containers/food))
+        if(operating)
+            to_chat(user, "<span class='warning'>[src] is currently operating!</span>")
+            return
+        if(cans_stored >= can_capacity)
+            to_chat(user, "<span class='warning'>[src] cannot store any more cans!</span>")
+            return
+        user.visible_message("<span class='notice'>[user] places [O] into [src].</span>", "<span class='notice'>You place [O] into [src].</span>")
+        qdel(O)
+        operating = TRUE
+        playsound(src, 'sound/panopticon/automatono_accept.ogg', 100, 1)
+        addtimer(CALLBACK(src, .proc/create_can), 10 SECONDS)
+    else
+        ..()
+
+/obj/structure/panopticon/automat/food_canner/proc/create_can()
+    cans_stored++
+    operating = FALSE
+    playsound(src, 'sound/panopticon/bum.ogg', 70, 1)
+    
+/obj/structure/panopticon/automat/food_canner/attack_hand(mob/user)
+	if(!cans_stored)
+		to_chat(user, "<span class ='warning'>[src] has no canned food</span>")
+		return
+	user.visible_message("<span class='notice'>[user] dispenses a can from [src].</span>", "<span class='notice'>You dispense a can from [src].</span>")
+	new /obj/item/reagent_containers/food/snacks/canned/panopticon(loc)
+	cans_stored--
+	playsound(src, 'sound/panopticon/ding.ogg', 65, 1)

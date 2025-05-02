@@ -225,3 +225,10 @@
 
 /obj/structure/flora/panopticon/grass/small/travka
 	icon_state = "travka"
+
+/obj/structure/flora/panopticon/lean
+	name = "Vine"
+	icon_state = "huh"
+	icon = 'icons/panopticon/obj/decoration.dmi'
+	layer = SIGN_LAYER
+	max_integrity = 1

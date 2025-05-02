@@ -271,3 +271,29 @@
 
 /obj/structure/panopticon/onwall/porno/six
 	icon_state = "obscene6"
+
+/obj/structure/panopticon/onwall/damaged
+	name = "Wall crack"
+	icon_state = "damage"
+
+/obj/structure/panopticon/onwall/skullposterrwo
+	name = "Skull flag"
+	icon_state = "pnposter21"
+
+/obj/structure/panopticon/onwall/esoteric
+	name = "Esoteric poster"
+	icon_state = "pnposter22"
+
+/obj/structure/panopticon/onwall/esoteric/two
+	icon_state = "pnposter23"
+
+/obj/structure/panopticon/onwall/esoteric/three
+	icon_state = "pnposter25"
+
+/obj/structure/panopticon/onwall/eagle
+	name = "Helekian Eagle"
+	icon_state = "pnposter24"
+
+/obj/structure/panopticon/onwall/lenin
+	name = "Lenin frame"
+	icon_state = "lenin_portrait"
