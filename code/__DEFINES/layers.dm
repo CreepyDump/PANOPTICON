@@ -65,7 +65,7 @@
 	. = ..()
 	add_filter("blur", 4, list("type" = "blur", size=2))
 
-#define WALL_PLANE 	1
+#define WALL_PLANE 	5
 
 #define OPENSPACE_LAYER 17 //Openspace layer over all
 #define OPENSPACE_PLANE -9 //Openspace plane below all turfs

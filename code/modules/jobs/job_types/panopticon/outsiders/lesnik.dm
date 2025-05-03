@@ -6,7 +6,8 @@
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = JCOLOR_OUTSIDERS
-	allowed_races = list("Humen")
+//	allowed_races = list("Humen")
+	allowed_races = list("Dwarf")
 	allowed_sexes = list(MALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/lesnik

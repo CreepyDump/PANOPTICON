@@ -6,7 +6,8 @@
 	total_positions = 7
 	spawn_positions = 7
 	selection_color = JCOLOR_OUTSIDERS
-	allowed_races = list("Odongh")
+//	allowed_races = list("Odongh")
+	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/panopticon/nomad
 	bypass_lastclass = TRUE
 	bypass_jobban = TRUE

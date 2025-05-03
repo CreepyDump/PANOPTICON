@@ -539,14 +539,14 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	dat += "<table><tr><td valign='top'>"
 	var/column_counter = 0
 
-	var/list/omegalist = list(GLOB.town_positions, GLOB.outside_positions)
+	var/list/omegalist = list(GLOB.gulag_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
 		if(C.allmig)
-			omegalist = list(GLOB.outside_positions)
+			omegalist = list(GLOB.gulag_positions)
 	if(istype(SSticker.mode, /datum/game_mode/roguewar))
-		omegalist = list(GLOB.outside_positions)
+		omegalist = list(GLOB.gulag_positions)
 
 	for(var/list/category in omegalist)
 		if(!SSjob.name_occupations[category[1]])

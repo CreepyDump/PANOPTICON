@@ -147,7 +147,6 @@
 /obj/structure/mineral_door/panopticon/bunker
 	name = "bunker door"
 	desc = ""
-	plane = WALL_PLANE
 	icon_state = "bunkerdoor"
 	openSound = 'sound/foley/doors/bunkerdoor.ogg'
 	closeSound = 'sound/foley/doors/bunkerdoor.ogg'
@@ -478,7 +477,13 @@
     desc = "A machine that packages processed food into cans for long-term storage."
     icon = 'icons/panopticon/obj/town.dmi'
     icon_state = "stanok3"
-
+    var/list/can_list = list(
+        /obj/item/reagent_containers/food/snacks/canned/panopticon,
+        /obj/item/reagent_containers/food/snacks/canned/panopticon,
+        /obj/item/reagent_containers/food/snacks/canned/panopticon,
+        /obj/item/reagent_containers/food/snacks/canned/panopticon,
+        /obj/item/reagent_containers/food/snacks/canned/panopticon
+    )
     density = TRUE
     anchored = TRUE
     var/operating = FALSE
@@ -511,6 +516,7 @@
 		to_chat(user, "<span class ='warning'>[src] has no canned food</span>")
 		return
 	user.visible_message("<span class='notice'>[user] dispenses a can from [src].</span>", "<span class='notice'>You dispense a can from [src].</span>")
-	new /obj/item/reagent_containers/food/snacks/canned/panopticon(loc)
+	var/cantype = pick(can_list)
+	new cantype(loc)
 	cans_stored--
 	playsound(src, 'sound/panopticon/ding.ogg', 65, 1)

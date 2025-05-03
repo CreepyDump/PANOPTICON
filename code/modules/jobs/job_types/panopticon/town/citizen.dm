@@ -7,7 +7,8 @@
 	spawn_positions = 15
 	selection_color = JCOLOR_TOWN
 	var/islodger = TRUE
-	allowed_races = list("Humen")
+//	allowed_races = list("Humen")
+	allowed_races = list("Dwarf")
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	outfit = /datum/outfit/job/panopticon/citizen

@@ -7,7 +7,8 @@
 	spawn_positions = 10
 	selection_color = JCOLOR_TOWN
 	allowed_sexes = list(MALE)
-	allowed_races = list("Humen")
+//	allowed_races = list("Humen")
+	allowed_races = list("Dwarf")
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	outfit = /datum/outfit/job/panopticon/greydivision
 	bypass_lastclass = TRUE

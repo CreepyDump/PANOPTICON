@@ -7,7 +7,8 @@
 	spawn_positions = 2
 	selection_color = JCOLOR_TOWN
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen")
+//	allowed_races = list("Humen")
+	allowed_races = list("Dwarf")
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/barman
 	bypass_lastclass = TRUE

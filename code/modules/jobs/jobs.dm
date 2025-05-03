@@ -164,6 +164,11 @@ GLOBAL_LIST_INIT(town_positions, list(
 	"Slug"
 	))
 
+GLOBAL_LIST_INIT(gulag_positions, list(
+	"Necroleninist",
+	"Slug"
+	))
+
 GLOBAL_LIST_INIT(test_positions, list(
 	"Tester"
 	))

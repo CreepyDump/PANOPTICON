@@ -248,3 +248,37 @@
 	name = "HELL DINNER"
 	icon_state = "isnear"
 	droning_sound = 'sound/music/area/dinner.ogg'
+
+/area/panopticon/indoors/gulag
+	name = "GULAG"
+	ambientsounds = null
+	icon_state = "bunkerzone"
+	ambientrain = null
+	spookysounds = SPOOKY_BUNKER
+	spookynight = SPOOKY_BUNKER
+	droning_sound = 'sound/music/area/stalker3.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	soundenv = 5
+
+/area/panopticon/indoors/gulag/another
+	name = "GULAG SPECIAL"
+	icon_state = "bunkerspecial"
+	ambientrain = null
+	spookysounds = SPOOKY_BUNKER
+	spookynight = SPOOKY_BUNKER
+	droning_sound = 'sound/music/area/stalker1.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	soundenv = 5
+
+/area/panopticon/indoors/gulag/necroleninists
+	name = "Lenin Hideout"
+	icon_state = "purple"
+	ambientrain = null
+	spookysounds = SPOOKY_BUNKER
+	spookynight = SPOOKY_BUNKER
+	droning_sound = 'sound/music/area/stalker2.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	soundenv = 5

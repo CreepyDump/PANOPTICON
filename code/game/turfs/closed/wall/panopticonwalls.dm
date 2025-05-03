@@ -1,6 +1,5 @@
 /turf/closed/wall/mineral/panopticon
 	canSmoothWith = null
-	plane = WALL_PLANE
 	desc = ""
 	smooth = SMOOTH_FALSE
 	var/smooth_icon = null

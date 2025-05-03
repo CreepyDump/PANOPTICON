@@ -7,7 +7,8 @@
 	spawn_positions = 1
 	selection_color = JCOLOR_TOWN
 	allowed_sexes = list(MALE)
-	allowed_races = list("Humen")
+//	allowed_races = list("Humen")
+	allowed_races = list("Dwarf")
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/panopticon/mayor
 	bypass_lastclass = TRUE
