@@ -6,7 +6,6 @@ SUBSYSTEM_DEF(traumas)
 	var/list/phobia_mobs
 	var/list/phobia_objs
 	var/list/phobia_turfs
-	var/list/phobia_species
 
 #define PHOBIA_FILE "phobia.json"
 
@@ -44,16 +43,6 @@ SUBSYSTEM_DEF(traumas)
 	phobia_turfs = list("Hemophobia" = typecacheof(list(/turf/open/floor/panopticon/hell))
 						)
 
-/*	phobia_species = list("lizards" = typecacheof(list(/datum/species/lizard)),
-						  "skeletons" = typecacheof(list(/datum/species/skeleton, /datum/species/plasmaman)),
-						  "conspiracies" = typecacheof(list(/datum/species/abductor, /datum/species/lizard, /datum/species/synth)),
-						  "robots" = typecacheof(list(/datum/species/android)),
-						  "the supernatural" = typecacheof(list(/datum/species/golem/runic)),
-						  "aliens" = typecacheof(list(/datum/species/abductor, /datum/species/jelly, /datum/species/pod,
-						  /datum/species/shadow)),
-						  "anime" = typecacheof(list(/datum/species/human/felinid))
-						 )
-*/
 	return ..()
 
 #undef PHOBIA_FILE

@@ -78,8 +78,13 @@
 /mob/living/carbon/add_stress(event)
 	if(HAS_TRAIT(src, TRAIT_NOMOOD))
 		return FALSE
-	var/datum/stressevent/N = new event()
+	var/datum/stressevent/N
+	if(event)
+		N = new event()
 	var/countofus = 0
+	if(!N)
+		return
+
 	if(N.stressadd > 0)
 		for(var/datum/stressevent/D in negative_stressors)
 			if(D.type == event)
