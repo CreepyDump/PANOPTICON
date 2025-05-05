@@ -18,7 +18,7 @@
 "aT" = (/obj/structure/panopticon/brklocker,/obj/item/reagent_containers/powder/flour/blackpowder,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag/another)
 "aX" = (/turf/open/floor/panopticon/bunker,/area/panopticon/outdoors/hell)
 "aY" = (/obj/structure/table/wood/bar,/obj/item/kitchen/spoon/plastic,/obj/item/kitchen/spoon/plastic,/obj/item/kitchen/spoon/plastic,/obj/item/kitchen/spoon/plastic,/obj/item/kitchen/spoon/plastic,/obj/structure/bars/passage/shutter/open,/turf/open/floor/panopticon/beton,/area/panopticon/indoors/town/shop)
-"aZ" = (/obj/structure/closet/crate/metalshkaf,/obj/item/flashlight/flare/torch/lantern,/obj/item/flashlight/flare/torch/lantern,/obj/item/flashlight/flare/torch/lantern,/turf/open/floor/panopticon/town/plitka/stone,/area/panopticon/indoors/gulag)
+"aZ" = (/obj/structure/closet/crate/metalshkaf,/obj/item/flashlight/flare/torch/lantern,/obj/item/flashlight/flare/torch/lantern,/obj/item/flashlight/flare/torch/lantern,/obj/item/rogueweapon/pick,/obj/item/rogueweapon/pick,/obj/item/rogueweapon/pick,/obj/item/rogueweapon/pick,/obj/item/rogueweapon/pick,/obj/item/rogueweapon/pick,/obj/item/rogueweapon/pick,/turf/open/floor/panopticon/town/plitka/stone,/area/panopticon/indoors/gulag)
 "bb" = (/obj/effect/landmark/start/slugslate,/turf/open/water/piss,/area/panopticon/indoors/gulag/another)
 "bc" = (/obj/structure/panopticon/onwall/consulposter,/turf/closed/wall/mineral/panopticon/bunker/rustwall,/area/panopticon/indoors/town/shop)
 "bh" = (/obj/effect/decal/cleanable/vomit,/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)

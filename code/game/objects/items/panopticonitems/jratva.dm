@@ -129,3 +129,22 @@
 	else
 		M.reagents.add_reagent(/datum/reagent/toxin/bad_food, 10)
 	. = ..()
+
+/obj/item/reagent_containers/food/snacks/meat/slab/fucked
+	name = "Fucked meat"
+	desc = "A slab of grotesque, pulsating meat. It smells like regret and cosmic horror."
+	icon = 'icons/panopticon/items/misc.dmi'
+	icon_state = "fvcked_meat"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/mutagen = 5)
+	tastes = list("rotten flesh" = 1, "eldritch whispers" = 1)
+	foodtype = MEAT | TOXIC
+
+/obj/item/reagent_containers/food/snacks/meat/slab/fucked/On_Consume(mob/living/eater)
+	if(!isliving(eater))
+		return
+	to_chat(eater, "<span class='warning'>You feel an overwhelming sense of dread as you swallow the meat...</span>")
+	eater.hallucination += 50
+	if(prob(10))
+		eater.emote("scream")
+		to_chat(eater, "<span  class='userdanger'>The meat whispers to you from within!</span>")
+	..()
