@@ -138,6 +138,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/mutagen = 5)
 	tastes = list("rotten flesh" = 1, "eldritch whispers" = 1)
 	foodtype = MEAT | TOXIC
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
 
 /obj/item/reagent_containers/food/snacks/meat/slab/fucked/On_Consume(mob/living/eater)
 	if(!isliving(eater))

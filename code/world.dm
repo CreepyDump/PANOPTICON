@@ -17,7 +17,7 @@
 	view = "15x15"
 	hub = "Exadv1.spacestation13"
 #ifdef ROGUEWORLD
-	name = "PANOPTICON (NECRONOX)"
+	name = "PANOPTICON: THE BUNKER"
 #else
 	name = "PANOPTICON"
 #endif
