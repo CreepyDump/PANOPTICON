@@ -827,6 +827,7 @@
 				spell.updateButtonIcon()
 			if(mind.has_antag_datum(/datum/antagonist/zombie))
 				mind.remove_antag_datum(/datum/antagonist/zombie)
+
 /mob/living/proc/remove_CC(should_update_mobility = TRUE)
 	SetStun(0, FALSE)
 	SetKnockdown(0, FALSE)

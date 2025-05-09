@@ -1092,7 +1092,7 @@
 	dna?.species.spec_fully_heal(src)
 	if(admin_revive)
 		regenerate_limbs()
-		regenerate_organs()
+		regenerate_organs(replace_current = FALSE)
 	spill_embedded_objects()
 	set_heartattack(FALSE)
 	drunkenness = 0

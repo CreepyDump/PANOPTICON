@@ -120,15 +120,16 @@ GLOBAL_LIST_INIT(announce_text, world.file2list('strings/announce.txt'))
 		return
 	mind.areas_entered += text_to_show
 	var/atom/movable/screen/area_text/T = new()
-	client.screen += T
-	T.maptext = {"<span style='vertical-align:top; text-align:center;
-				color: #CE1C1C; font-size: 150%;
-				text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
-				font-family:"Crimson Text";'>"[(pick(text_to_show))]"</span>"}
-	T.maptext_width = 205
-	T.maptext_height = 209
-	T.maptext_x = 12
-	T.maptext_y = -120
+	if(client)
+		client.screen += T
+		T.maptext = {"<span style='vertical-align:top; text-align:center;
+					color: #CE1C1C; font-size: 150%;
+					text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+					font-family:"Crimson Text";'>"[(pick(text_to_show))]"</span>"}
+		T.maptext_width = 205
+		T.maptext_height = 209
+		T.maptext_x = 12
+		T.maptext_y = -120
 	playsound_local(src, 'sound/misc/hello.ogg', 85, FALSE)
 	animate(T, alpha = 255, time = 10, easing = EASE_IN)
 	addtimer(CALLBACK(src, PROC_REF(clear_area_text), T), 35)

@@ -141,19 +141,12 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"skin3" = "e8b59b"
 	)))
 
-/proc/random_skin_tone()
-	return GLOB.skin_tones[pick(GLOB.skin_tones)]
-
 GLOBAL_LIST_INIT(haircolor, sortList(list(
 	"black" = "#0a0707",
 	"brown" = "#362e25",
 	"blonde" = "#dfc999",
 	"red" = "#a34332"
 	)))
-
-
-/proc/random_haircolor()
-	return GLOB.haircolor[pick(GLOB.haircolor)]
 
 GLOBAL_LIST_INIT(oldhc, sortList(list(
 	"decay" = "6a6a6a",

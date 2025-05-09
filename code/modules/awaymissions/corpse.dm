@@ -185,7 +185,7 @@
 	if(skin_tone)
 		H.skin_tone = skin_tone
 	else
-		H.skin_tone = random_skin_tone()
+		H.skin_tone = pick(GLOB.skin_tones)
 	H.update_hair()
 	H.update_body()
 	if(outfit)
