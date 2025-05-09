@@ -56,7 +56,7 @@
 "dg" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 8},/turf/open/floor/panopticon/bunker,/area/panopticon/indoors/gulag/another)
 "dh" = (/obj/structure/closet/crate/metalshkaf,/turf/open/floor/panopticon/town/plitka/stone,/area/panopticon/indoors/gulag)
 "dj" = (/obj/structure/table/wood{icon_state = "map4"},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/hell/dinner)
-"dw" = (/obj/structure/panopticon/relsi{dir = 4},/obj/effect/landmark/start/slugslate{dir = 4},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
+"dw" = (/obj/structure/panopticon/relsi{dir = 4},/obj/effect/landmark/start/slugslate{dir = 4},/obj/effect/landmark/start/shtrafslate{dir = 4},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
 "dx" = (/obj/item/natural/stone,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "dD" = (/obj/machinery/light/small,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag/another)
 "dE" = (/obj/structure/lattice/catwalk,/obj/structure/panopticon/barrel/red/propan{dir = 1},/turf/open/floor/panopticon/town/plitka/stone,/area/panopticon/indoors/gulag)
@@ -275,8 +275,8 @@
 "tU" = (/obj/item/roguebin/water,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag/another)
 "tV" = (/obj/effect/decal/cleanable/blood/gibs/body{dir = 8},/turf/open/floor/panopticon/bunker,/area/panopticon/indoors/gulag/another)
 "tW" = (/obj/effect/landmark/start/slugsspawn,/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
-"tX" = (/obj/effect/turf_decal/panopticon/mysor{dir = 8},/obj/effect/landmark/start/slugsspawn,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag)
-"tZ" = (/obj/effect/turf_decal/panopticon/mysor{dir = 8},/obj/effect/turf_decal/panopticon/mysor,/obj/effect/landmark/start/slugslate{dir = 8},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
+"tX" = (/obj/effect/turf_decal/panopticon/mysor{dir = 8},/obj/effect/landmark/start/slugsspawn,/obj/effect/landmark/start/shtrafspawn,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag)
+"tZ" = (/obj/effect/turf_decal/panopticon/mysor{dir = 8},/obj/effect/turf_decal/panopticon/mysor,/obj/effect/landmark/start/slugslate{dir = 8},/obj/effect/landmark/start/shtrafslate{dir = 8},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
 "ua" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/town/plitka/stone,/area/panopticon/indoors/gulag)
 "uf" = (/obj/structure/panopticon/radiator{dir = 8},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag)
 "ug" = (/obj/structure/panopticon/wartrash,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/gulag)
@@ -307,7 +307,7 @@
 "vD" = (/obj/structure/panopticon/barrel/red{dir = 4},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag/another)
 "vG" = (/obj/structure/panopticon/skull{dir = 9},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/gulag)
 "vH" = (/obj/structure/panopticon/automat/ammoline,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/gulag/another)
-"vJ" = (/obj/effect/landmark/start/slugslate{dir = 4},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
+"vJ" = (/obj/effect/landmark/start/slugslate{dir = 4},/obj/effect/landmark/start/shtrafslate{dir = 4},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
 "vK" = (/obj/structure/panopticon/onwall/insectposter,/turf/closed/wall/mineral/panopticon/bunker,/area/panopticon/indoors/town/shop)
 "vW" = (/obj/structure/panopticon/crate,/obj/effect/decal/cleanable/oil,/turf/open/floor/panopticon/cement,/area/panopticon/indoors/gulag)
 "vY" = (/obj/effect/decal/cleanable/blood/tracks{dir = 6},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/gulag)
@@ -336,7 +336,7 @@
 "xc" = (/turf/open/floor/panopticon/gulag/derevo,/area/panopticon/indoors/gulag/necroleninists)
 "xe" = (/obj/machinery/light{dir = 4},/turf/open/floor/panopticon/beton,/area/panopticon/indoors/gulag/another)
 "xk" = (/obj/structure/mineral_door/panopticon/bunker,/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/gulag/another)
-"xx" = (/obj/structure/panopticon/relsi{dir = 4},/obj/effect/landmark/start/slugslate{dir = 8},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
+"xx" = (/obj/structure/panopticon/relsi{dir = 4},/obj/effect/landmark/start/slugslate{dir = 8},/obj/effect/landmark/start/shtrafslate{dir = 8},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
 "xA" = (/obj/structure/bars/passage/shutter/open,/obj/structure/panopticon/barrel/red,/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
 "xI" = (/obj/structure/panopticon/crate,/turf/open/floor/panopticon/beton,/area/panopticon/indoors/town/shop)
 "xJ" = (/obj/structure/fluff/railing/border{icon_state = "border"; dir = 9},/turf/open/floor/panopticon/bunker/metal,/area/panopticon/indoors/gulag/another)
@@ -415,7 +415,7 @@
 "CT" = (/obj/structure/mineral_door/panopticon/bunker,/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/town/shop)
 "CX" = (/obj/effect/turf_decal/panopticon/mysor{dir = 8},/obj/machinery/light/small{dir = 8; bulb_colour = "#FFF7C4"},/turf/open/floor/panopticon/beton,/area/panopticon/indoors/town/shop)
 "Da" = (/obj/structure/chair/wood/rogue{icon_state = "chair2"; dir = 4},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/gulag)
-"Dd" = (/obj/structure/panopticon/relsi{dir = 8},/obj/effect/landmark/start/slugslate{dir = 8},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
+"Dd" = (/obj/structure/panopticon/relsi{dir = 8},/obj/effect/landmark/start/slugslate{dir = 8},/obj/effect/landmark/start/shtrafslate{dir = 8},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
 "De" = (/obj/structure/panopticon/onwall/inwallpipe,/turf/closed/wall/mineral/panopticon/bunker,/area/panopticon/indoors/gulag/another)
 "Df" = (/obj/structure/sink{dir = 1},/turf/open/floor/panopticon/bunker/scorched,/area/panopticon/indoors/gulag/another)
 "Di" = (/obj/effect/decal/cleanable/poo{icon_state = "poosplat2"},/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag)
@@ -639,7 +639,7 @@
 "Tc" = (/obj/structure/stairs/stone{dir = 1},/turf/open/floor/panopticon/town/plitka/stone,/area/panopticon/indoors/gulag)
 "Tf" = (/obj/item/trash/tray,/obj/effect/turf_decal/panopticon/mysor{dir = 8},/obj/machinery/light/small{dir = 1},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/town/shop)
 "Th" = (/obj/item/reagent_containers/food/snacks/smallrat{dir = 4},/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/gulag/another)
-"Ti" = (/obj/structure/panopticon/relsi{dir = 8},/obj/effect/landmark/start/slugslate{dir = 4},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
+"Ti" = (/obj/structure/panopticon/relsi{dir = 8},/obj/effect/landmark/start/slugslate{dir = 4},/obj/effect/landmark/start/shtrafslate{dir = 4},/turf/open/floor/panopticon/bunker/cargo,/area/panopticon/indoors/gulag)
 "Tm" = (/obj/effect/decal/cleanable/blood/gibs,/obj/machinery/light/small{dir = 8},/turf/open/floor/panopticon/cement,/area/panopticon/indoors/gulag)
 "Tp" = (/obj/item/paint,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag)
 "Tu" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/panopticon/bunker,/area/panopticon/indoors/gulag/another)
@@ -696,7 +696,6 @@
 "Xx" = (/obj/effect/decal/cleanable/blood/gibs/up,/turf/open/floor/panopticon/bunker/oblivion,/area/panopticon/indoors/gulag/another)
 "XB" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/vtable/v2,/obj/machinery/light/small/broken,/turf/open/floor/panopticon/darkwood/parket,/area/panopticon/outdoors/hell)
 "XI" = (/obj/structure/mineral_door/panopticon/bunker,/turf/open/floor/panopticon/bunker/cargo/typetwo,/area/panopticon/indoors/gulag)
-"XJ" = (/obj/structure/spawner/skeleton,/turf/open/floor/rogue/naturalstone,/area/panopticon/indoors/caves)
 "XL" = (/obj/machinery/light/small/broken{dir = 4},/obj/structure/panopticon/crate,/turf/open/floor/panopticon/bunker/gridbunker,/area/panopticon/indoors/gulag/another)
 "XM" = (/obj/structure/panopticon/barrel/blue{dir = 8},/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/panopticon/beton,/area/rogue/indoors/town/bath)
 "XR" = (/obj/effect/decal/cleanable/cobweb,/turf/open/floor/panopticon/mud,/area/panopticon/indoors/caves)
@@ -785,7 +784,7 @@ IkvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqFgFgvqvqvqvqFgvqvqvqHZvqvqvqvqvqvqvqvqFgvqvqvqvq
 IkvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqHZvqvqvqvqvqvqvqvqvqHZvqvqvqvqHZvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqvqFgvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqIk
 IkvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqFgvqvqvqvqvqFgvqvqvqvqHZvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqHZHZvqvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqIk
 IkvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqvqHZvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqQXQXQXvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqTLTLvqHZHZHZHZvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgFgvqvqvqvqvqvqvqvqvqvqvqIk
-IkvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqvqQXQXTLTLTLvqvqvqvqvqvqvqvqvqvqvqbATLTLTLTLTLXJTLvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqHZHZvqvqvqHZvqvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqIk
+IkvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqvqQXQXTLTLTLvqvqvqvqvqvqvqvqvqvqvqbATLTLTLTLTLTLTLvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqHZHZvqvqvqHZvqvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqIk
 IkvqvqvqvqvqvqvqvqvqHZvqvqvqFgvqvqvqFgvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqsdwbTLTLvqvqHZvqvqvqvqvqvqFgvqbATLOXTLTLvqvqTLTLvqvqvqvqvqvqvqvqFgvqvqFgvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqIk
 IkvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqFgvqvqvqvqHZvqHZvqvqvqvqvqFgvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqFgvqNnTLvqvqvqvqvqvqvqvqvqvqvqvqTLTLTLTLvqvqvqvqvqvqvqvqvqvqvqHZvqFgFgvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqIk
 IkvqvqvqFgvqvqvqvqvqvqFgvqFgvqvqvqvqFgvqvqvqvqvqvqvqvqHZvqFgvqFgvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqvqvqNOTLTLvqvqHZvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqvqHZvqvqvqvqvqHZHZFgvqvqFgvqvqvqvqvqvqHZHZvqvqvqvqvqvqvqvqvqvqvqvqFgvqvqFgvqvqvqvqvqvqvqvqvqvqvqvqIk
