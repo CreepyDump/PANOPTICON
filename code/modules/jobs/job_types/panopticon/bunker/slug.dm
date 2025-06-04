@@ -3,8 +3,8 @@
 	flag = SLUG
 	department_flag = TOWN
 	faction = "Station"
-	total_positions = 15
-	spawn_positions = 15
+	total_positions = 30
+	spawn_positions = 30
 	selection_color = JCOLOR_TOWN
 	allowed_races = list("Humen", "Odongh")
 	allowed_sexes = list(MALE, FEMALE)

@@ -165,6 +165,8 @@ GLOBAL_LIST_INIT(town_positions, list(
 	))
 
 GLOBAL_LIST_INIT(gulag_positions, list(
+	"Strafbat",
+	"Lesnik",
 	"Necroleninist",
 	"Slug"
 	))
