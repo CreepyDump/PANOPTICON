@@ -2213,7 +2213,7 @@
 /turf/open/floor/panopticon/bunker/cargo,
 /area/panopticon/indoors/gulag)
 "Xd" = (
-/obj/effect/decal/panopticon/pit,
+/obj/structure/panopticon/pit,
 /turf/open/floor/panopticon/darkgrass,
 /area/panopticon/indoors/caves)
 "Xe" = (
